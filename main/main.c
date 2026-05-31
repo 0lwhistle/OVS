@@ -6,6 +6,9 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#define LED_CTRL_GPIO 4
+
+
 // ---------- Wi-Fi 配置 ----------
 #define WIFI_SSID       "816"
 #define WIFI_PASSWORD   "716717nb"
