@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "/root/progarms/web/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/root/esp-idf/esp-idf-v6.0.1/.git")
+set(GIT_DIR "/root/progarms/web/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

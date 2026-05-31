@@ -175,53 +175,53 @@ __idf_main/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
-mongoose.obj: mongoose.c.obj
-.PHONY : mongoose.obj
+__/modules/mongoose/mongoose.obj: __/modules/mongoose/mongoose.c.obj
+.PHONY : __/modules/mongoose/mongoose.obj
 
 # target to build an object file
-mongoose.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/mongoose.c.obj
-.PHONY : mongoose.c.obj
+__/modules/mongoose/mongoose.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj
+.PHONY : __/modules/mongoose/mongoose.c.obj
 
-mongoose.i: mongoose.c.i
-.PHONY : mongoose.i
+__/modules/mongoose/mongoose.i: __/modules/mongoose/mongoose.c.i
+.PHONY : __/modules/mongoose/mongoose.i
 
 # target to preprocess a source file
-mongoose.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/mongoose.c.i
-.PHONY : mongoose.c.i
+__/modules/mongoose/mongoose.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.i
+.PHONY : __/modules/mongoose/mongoose.c.i
 
-mongoose.s: mongoose.c.s
-.PHONY : mongoose.s
+__/modules/mongoose/mongoose.s: __/modules/mongoose/mongoose.c.s
+.PHONY : __/modules/mongoose/mongoose.s
 
 # target to generate assembly for a file
-mongoose.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/mongoose.c.s
-.PHONY : mongoose.c.s
+__/modules/mongoose/mongoose.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s
+.PHONY : __/modules/mongoose/mongoose.c.s
 
-web.obj: web.c.obj
-.PHONY : web.obj
+main.obj: main.c.obj
+.PHONY : main.obj
 
 # target to build an object file
-web.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/web.c.obj
-.PHONY : web.c.obj
+main.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+.PHONY : main.c.obj
 
-web.i: web.c.i
-.PHONY : web.i
+main.i: main.c.i
+.PHONY : main.i
 
 # target to preprocess a source file
-web.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/web.c.i
-.PHONY : web.c.i
+main.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i
+.PHONY : main.c.i
 
-web.s: web.c.s
-.PHONY : web.s
+main.s: main.c.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-web.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/web.c.s
-.PHONY : web.c.s
+main.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -236,12 +236,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
-	@echo "... mongoose.obj"
-	@echo "... mongoose.i"
-	@echo "... mongoose.s"
-	@echo "... web.obj"
-	@echo "... web.i"
-	@echo "... web.s"
+	@echo "... __/modules/mongoose/mongoose.obj"
+	@echo "... __/modules/mongoose/mongoose.i"
+	@echo "... __/modules/mongoose/mongoose.s"
+	@echo "... main.obj"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

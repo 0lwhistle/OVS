@@ -1,0 +1,2 @@
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libtask_manager.a CMakeFiles/__idf_task_manager.dir/task_manager.c.obj
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libtask_manager.a
