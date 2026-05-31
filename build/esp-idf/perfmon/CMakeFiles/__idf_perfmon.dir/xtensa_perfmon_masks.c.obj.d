@@ -1,0 +1,25 @@
+esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/xtensa_perfmon_masks.c.obj: \
+ /root/esp-idf/esp-idf-v6.0.1/components/perfmon/xtensa_perfmon_masks.c \
+ /root/esp-idf/esp-idf-v6.0.1/components/perfmon/include/xtensa_perfmon_masks.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /root/progarms/web/build/config/sdkconfig.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xt_perf_consts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h

@@ -1,0 +1,2 @@
+source /root/progarms/web/build/gdbinit/symbols
+source /root/progarms/web/build/gdbinit/connect
