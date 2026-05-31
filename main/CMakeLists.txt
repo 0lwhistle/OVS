@@ -1,8 +1,13 @@
 idf_component_register(SRCS 
 	"main.c"
-	"mongoose.c"
-			
-                    INCLUDE_DIRS ".")
+	"../modules/mongoose/mongoose.c"
+    INCLUDE_DIRS 
+	"."
+	"../modules/mongoose"
+	REQUIRES wifi web led_ctrl beep_ctrl sr04_ctrl task_manager
+	app_update
+	esp_timer
+	)
 
 
 # 关键：直接在 CMake 层面定义 Mongoose 需要的宏

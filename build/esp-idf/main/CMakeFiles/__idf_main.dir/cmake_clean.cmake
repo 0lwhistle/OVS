@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_main.dir/mongoose.c.obj"
-  "CMakeFiles/__idf_main.dir/mongoose.c.obj.d"
-  "CMakeFiles/__idf_main.dir/web.c.obj"
-  "CMakeFiles/__idf_main.dir/web.c.obj.d"
+  "CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj"
+  "CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj.d"
+  "CMakeFiles/__idf_main.dir/main.c.obj"
+  "CMakeFiles/__idf_main.dir/main.c.obj.d"
   "libmain.a"
   "libmain.pdb"
 )

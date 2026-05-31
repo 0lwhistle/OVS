@@ -27,6 +27,14 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
+  "/root/progarms/web/modules/wifi"
+  "/root/progarms/web/modules/web"
+  "/root/progarms/web/modules/gpio_ctrl"
+  "/root/progarms/web/modules/led_ctrl"
+  "/root/progarms/web/modules/beep_ctrl"
+  "/root/progarms/web/modules/sr04_ctrl"
+  "/root/progarms/web/modules/uart_ctrl"
+  "/root/progarms/web/modules/task_manager"
   "config"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_gdbstub/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_gdbstub/private_include"

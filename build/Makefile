@@ -2177,6 +2177,84 @@ __idf_spiffs/fast:
 .PHONY : __idf_spiffs/fast
 
 #=============================================================================
+# Target rules for targets named __idf_wifi
+
+# Build rule for target.
+__idf_wifi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_wifi
+.PHONY : __idf_wifi
+
+# fast build rule for target.
+__idf_wifi/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build.make esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build
+.PHONY : __idf_wifi/fast
+
+#=============================================================================
+# Target rules for targets named __idf_web
+
+# Build rule for target.
+__idf_web: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_web
+.PHONY : __idf_web
+
+# fast build rule for target.
+__idf_web/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/build
+.PHONY : __idf_web/fast
+
+#=============================================================================
+# Target rules for targets named __idf_led_ctrl
+
+# Build rule for target.
+__idf_led_ctrl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_led_ctrl
+.PHONY : __idf_led_ctrl
+
+# fast build rule for target.
+__idf_led_ctrl/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/led_ctrl/CMakeFiles/__idf_led_ctrl.dir/build.make esp-idf/led_ctrl/CMakeFiles/__idf_led_ctrl.dir/build
+.PHONY : __idf_led_ctrl/fast
+
+#=============================================================================
+# Target rules for targets named __idf_beep_ctrl
+
+# Build rule for target.
+__idf_beep_ctrl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_beep_ctrl
+.PHONY : __idf_beep_ctrl
+
+# fast build rule for target.
+__idf_beep_ctrl/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/beep_ctrl/CMakeFiles/__idf_beep_ctrl.dir/build.make esp-idf/beep_ctrl/CMakeFiles/__idf_beep_ctrl.dir/build
+.PHONY : __idf_beep_ctrl/fast
+
+#=============================================================================
+# Target rules for targets named __idf_sr04_ctrl
+
+# Build rule for target.
+__idf_sr04_ctrl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_sr04_ctrl
+.PHONY : __idf_sr04_ctrl
+
+# fast build rule for target.
+__idf_sr04_ctrl/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/sr04_ctrl/CMakeFiles/__idf_sr04_ctrl.dir/build.make esp-idf/sr04_ctrl/CMakeFiles/__idf_sr04_ctrl.dir/build
+.PHONY : __idf_sr04_ctrl/fast
+
+#=============================================================================
+# Target rules for targets named __idf_task_manager
+
+# Build rule for target.
+__idf_task_manager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_manager
+.PHONY : __idf_task_manager
+
+# fast build rule for target.
+__idf_task_manager/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build
+.PHONY : __idf_task_manager/fast
+
+#=============================================================================
 # Target rules for targets named __idf_main
 
 # Build rule for target.
@@ -2270,6 +2348,7 @@ help:
 	@echo "... uf2"
 	@echo "... uf2-app"
 	@echo "... __idf_app_update"
+	@echo "... __idf_beep_ctrl"
 	@echo "... __idf_bootloader_support"
 	@echo "... __idf_cmock"
 	@echo "... __idf_console"
@@ -2353,6 +2432,7 @@ help:
 	@echo "... __idf_hal"
 	@echo "... __idf_heap"
 	@echo "... __idf_http_parser"
+	@echo "... __idf_led_ctrl"
 	@echo "... __idf_log"
 	@echo "... __idf_lwip"
 	@echo "... __idf_main"
@@ -2368,10 +2448,14 @@ help:
 	@echo "... __idf_soc"
 	@echo "... __idf_spi_flash"
 	@echo "... __idf_spiffs"
+	@echo "... __idf_sr04_ctrl"
+	@echo "... __idf_task_manager"
 	@echo "... __idf_tcp_transport"
 	@echo "... __idf_unity"
 	@echo "... __idf_vfs"
 	@echo "... __idf_wear_levelling"
+	@echo "... __idf_web"
+	@echo "... __idf_wifi"
 	@echo "... __idf_wpa_supplicant"
 	@echo "... __idf_xtensa"
 	@echo "... builtin"
