@@ -100,6 +100,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/include/arch"
   "/root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/include/sys"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/include"
   )
 
 # The set of dependency files which are needed:
@@ -135,6 +137,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"
@@ -165,6 +168,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
@@ -186,7 +190,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/DependInfo.cmake"
-  "/root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/DependInfo.cmake"

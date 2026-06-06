@@ -115,6 +115,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
@@ -139,6 +140,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
@@ -166,7 +168,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/http_parser/CMakeFiles/__idf_http_parser.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/DependInfo.cmake"
-  "/root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

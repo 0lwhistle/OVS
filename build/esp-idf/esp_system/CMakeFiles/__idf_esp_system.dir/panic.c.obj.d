@@ -89,6 +89,7 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/panic.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_app_format/include/esp_app_desc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/espcoredump/include/esp_core_dump.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/include/hal/uart_hal.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/include/hal/uart_types.h \

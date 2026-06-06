@@ -178,6 +178,10 @@ esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj: ../mo
   /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h
 
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: ../modules/vue_frontend/vue_frontend.c \
+  ../modules/vue_frontend/vue_frontend.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h
+
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: ../main/main.c \
   ../modules/mongoose/mongoose.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/ctype.h \
@@ -389,7 +393,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: ../main/main.c \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
-  ../modules/gpio_ctrl/gpio_ctrl.h
+  ../modules/gpio_ctrl/gpio_ctrl.h \
+  ../modules/vue_frontend/vue_frontend.h
 
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h:
@@ -686,6 +691,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h:
 
+../modules/vue_frontend/vue_frontend.c:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
@@ -791,6 +798,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h:
+
+../modules/vue_frontend/vue_frontend.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h:
 

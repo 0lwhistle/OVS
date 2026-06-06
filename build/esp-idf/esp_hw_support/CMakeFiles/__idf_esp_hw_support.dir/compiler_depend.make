@@ -794,7 +794,17 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_memory_utils.c.ob
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h
 
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/heap_align_hw.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/heap_align_hw.c \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h \
@@ -4737,6 +4747,8 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/usb_phy/usb_phy.c.obj
 
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/bootloader_flash/include/bootloader_flash.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c:
+
 /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/regi2c_ctrl.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h:
@@ -4932,6 +4944,8 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/usb_phy/usb_phy.c.obj
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp_clk_tree_common.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h:
 
@@ -5364,5 +5378,3 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/include/esp_private/mspi_timing_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include/esp_private/mspi_timing_impl_types.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c:

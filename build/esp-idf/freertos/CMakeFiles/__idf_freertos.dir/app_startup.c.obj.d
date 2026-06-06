@@ -117,4 +117,6 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/app_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_freertos_hooks.h \
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps_init.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_chip_info.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_chip_info.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h

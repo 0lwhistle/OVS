@@ -76,4 +76,5 @@ esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.o
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_cache.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_cache.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_mspi.h

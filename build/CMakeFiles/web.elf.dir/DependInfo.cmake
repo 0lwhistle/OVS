@@ -115,6 +115,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/DependInfo.cmake"

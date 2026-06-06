@@ -131,6 +131,7 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/startup_internal.h
+ /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/esp_private/freertos_idf_additions_priv.h
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/soc/soc_memory_layout.h
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/heap_memory_layout.h
  /root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread_internal.h

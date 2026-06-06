@@ -67,7 +67,7 @@ include CMakeFiles/dfu.dir/compiler_depend.make
 include CMakeFiles/dfu.dir/progress.make
 
 CMakeFiles/dfu:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/web/build/dfu.bin --json /root/progarms/web/build/flasher_args.json --pid 9 --flash-size 2MB
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/web/build/dfu.bin --json /root/progarms/web/build/flasher_args.json --pid 9 --flash-size 16MB
 
 dfu: CMakeFiles/dfu
 dfu: CMakeFiles/dfu.dir/build.make

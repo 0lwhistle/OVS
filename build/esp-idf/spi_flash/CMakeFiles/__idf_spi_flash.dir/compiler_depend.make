@@ -676,6 +676,12 @@ esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_mmap.c.obj: /root/esp-idf
   /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_mmu_map.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_spiflash.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_spiflash_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/include/esp_private/mmu_psram_flash.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/param.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/param.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_private/cache_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/spi_flash_mmap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_spi_flash_counters.h
@@ -850,7 +856,8 @@ esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_ops.c.obj: /root/esp-idf/
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_io.h
 
 esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/memspi_host_driver.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/memspi_host_driver.c \
   config/sdkconfig.h \
@@ -2043,6 +2050,8 @@ esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_wrap.c.obj: /root/esp
 
 /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/spi_flash_blockdev.c:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_io.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_app_format.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/bootloader_flash/include/bootloader_flash_config.h:
@@ -2353,6 +2362,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_efuse.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:
@@ -2406,6 +2417,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_flash_chips/spi_flash_chip_generic.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/include/esp_private/mmu_psram_flash.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h:
 

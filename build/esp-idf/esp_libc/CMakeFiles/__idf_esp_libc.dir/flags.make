@@ -8,3 +8,5 @@ C_INCLUDES = -I/root/progarms/web/modules/wifi -I/root/progarms/web/modules/web 
 
 C_FLAGS = @"/root/progarms/web/build/toolchain/cflags" -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/root/progarms/web=. -fmacro-prefix-map=/root/esp-idf/esp-idf-v6.0.1=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce
 
+# Custom flags: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/xtensa/stdatomic_s32c1i.c.obj_FLAGS = -mno-disable-hardware-atomics
+

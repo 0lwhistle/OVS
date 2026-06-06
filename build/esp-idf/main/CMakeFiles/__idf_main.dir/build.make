@@ -97,19 +97,35 @@ esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s"
 	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/mongoose/mongoose.c -o CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s
 
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: ../modules/vue_frontend/vue_frontend.c
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj"
+	cd /root/progarms/web/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj -MF CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj.d -o CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj -c /root/progarms/web/modules/vue_frontend/vue_frontend.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i"
+	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/vue_frontend/vue_frontend.c > CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s"
+	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/vue_frontend/vue_frontend.c -o CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s
+
 # Object files for target __idf_main
 __idf_main_OBJECTS = \
 "CMakeFiles/__idf_main.dir/main.c.obj" \
-"CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj"
+"CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj" \
+"CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj"
 
 # External object files for target __idf_main
 __idf_main_EXTERNAL_OBJECTS =
 
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/build.make
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmain.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libmain.a"
 	cd /root/progarms/web/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
 	cd /root/progarms/web/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
 

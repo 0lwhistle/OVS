@@ -161,6 +161,172 @@ depend:
 	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/rule:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/rule
+.PHONY : esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/rule
+
+# Convenience name for target.
+__idf_espcoredump: esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/rule
+.PHONY : __idf_espcoredump
+
+# fast build rule for target.
+__idf_espcoredump/fast:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build
+.PHONY : __idf_espcoredump/fast
+
+src/core_dump_common.obj: src/core_dump_common.c.obj
+.PHONY : src/core_dump_common.obj
+
+# target to build an object file
+src/core_dump_common.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_common.c.obj
+.PHONY : src/core_dump_common.c.obj
+
+src/core_dump_common.i: src/core_dump_common.c.i
+.PHONY : src/core_dump_common.i
+
+# target to preprocess a source file
+src/core_dump_common.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_common.c.i
+.PHONY : src/core_dump_common.c.i
+
+src/core_dump_common.s: src/core_dump_common.c.s
+.PHONY : src/core_dump_common.s
+
+# target to generate assembly for a file
+src/core_dump_common.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_common.c.s
+.PHONY : src/core_dump_common.c.s
+
+src/core_dump_elf.obj: src/core_dump_elf.c.obj
+.PHONY : src/core_dump_elf.obj
+
+# target to build an object file
+src/core_dump_elf.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_elf.c.obj
+.PHONY : src/core_dump_elf.c.obj
+
+src/core_dump_elf.i: src/core_dump_elf.c.i
+.PHONY : src/core_dump_elf.i
+
+# target to preprocess a source file
+src/core_dump_elf.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_elf.c.i
+.PHONY : src/core_dump_elf.c.i
+
+src/core_dump_elf.s: src/core_dump_elf.c.s
+.PHONY : src/core_dump_elf.s
+
+# target to generate assembly for a file
+src/core_dump_elf.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_elf.c.s
+.PHONY : src/core_dump_elf.c.s
+
+src/core_dump_init.obj: src/core_dump_init.c.obj
+.PHONY : src/core_dump_init.obj
+
+# target to build an object file
+src/core_dump_init.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_init.c.obj
+.PHONY : src/core_dump_init.c.obj
+
+src/core_dump_init.i: src/core_dump_init.c.i
+.PHONY : src/core_dump_init.i
+
+# target to preprocess a source file
+src/core_dump_init.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_init.c.i
+.PHONY : src/core_dump_init.c.i
+
+src/core_dump_init.s: src/core_dump_init.c.s
+.PHONY : src/core_dump_init.s
+
+# target to generate assembly for a file
+src/core_dump_init.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_init.c.s
+.PHONY : src/core_dump_init.c.s
+
+src/core_dump_sha.obj: src/core_dump_sha.c.obj
+.PHONY : src/core_dump_sha.obj
+
+# target to build an object file
+src/core_dump_sha.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_sha.c.obj
+.PHONY : src/core_dump_sha.c.obj
+
+src/core_dump_sha.i: src/core_dump_sha.c.i
+.PHONY : src/core_dump_sha.i
+
+# target to preprocess a source file
+src/core_dump_sha.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_sha.c.i
+.PHONY : src/core_dump_sha.c.i
+
+src/core_dump_sha.s: src/core_dump_sha.c.s
+.PHONY : src/core_dump_sha.s
+
+# target to generate assembly for a file
+src/core_dump_sha.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_sha.c.s
+.PHONY : src/core_dump_sha.c.s
+
+src/core_dump_uart.obj: src/core_dump_uart.c.obj
+.PHONY : src/core_dump_uart.obj
+
+# target to build an object file
+src/core_dump_uart.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_uart.c.obj
+.PHONY : src/core_dump_uart.c.obj
+
+src/core_dump_uart.i: src/core_dump_uart.c.i
+.PHONY : src/core_dump_uart.i
+
+# target to preprocess a source file
+src/core_dump_uart.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_uart.c.i
+.PHONY : src/core_dump_uart.c.i
+
+src/core_dump_uart.s: src/core_dump_uart.c.s
+.PHONY : src/core_dump_uart.s
+
+# target to generate assembly for a file
+src/core_dump_uart.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_uart.c.s
+.PHONY : src/core_dump_uart.c.s
+
+src/port/xtensa/core_dump_port.obj: src/port/xtensa/core_dump_port.c.obj
+.PHONY : src/port/xtensa/core_dump_port.obj
+
+# target to build an object file
+src/port/xtensa/core_dump_port.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/port/xtensa/core_dump_port.c.obj
+.PHONY : src/port/xtensa/core_dump_port.c.obj
+
+src/port/xtensa/core_dump_port.i: src/port/xtensa/core_dump_port.c.i
+.PHONY : src/port/xtensa/core_dump_port.i
+
+# target to preprocess a source file
+src/port/xtensa/core_dump_port.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/port/xtensa/core_dump_port.c.i
+.PHONY : src/port/xtensa/core_dump_port.c.i
+
+src/port/xtensa/core_dump_port.s: src/port/xtensa/core_dump_port.c.s
+.PHONY : src/port/xtensa/core_dump_port.s
+
+# target to generate assembly for a file
+src/port/xtensa/core_dump_port.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/port/xtensa/core_dump_port.c.s
+.PHONY : src/port/xtensa/core_dump_port.c.s
+
+src/port/xtensa/core_dump_stack_switch.obj: src/port/xtensa/core_dump_stack_switch.S.obj
+.PHONY : src/port/xtensa/core_dump_stack_switch.obj
+
+# target to build an object file
+src/port/xtensa/core_dump_stack_switch.S.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/port/xtensa/core_dump_stack_switch.S.obj
+.PHONY : src/port/xtensa/core_dump_stack_switch.S.obj
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,6 +339,26 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... __idf_espcoredump"
+	@echo "... src/core_dump_common.obj"
+	@echo "... src/core_dump_common.i"
+	@echo "... src/core_dump_common.s"
+	@echo "... src/core_dump_elf.obj"
+	@echo "... src/core_dump_elf.i"
+	@echo "... src/core_dump_elf.s"
+	@echo "... src/core_dump_init.obj"
+	@echo "... src/core_dump_init.i"
+	@echo "... src/core_dump_init.s"
+	@echo "... src/core_dump_sha.obj"
+	@echo "... src/core_dump_sha.i"
+	@echo "... src/core_dump_sha.s"
+	@echo "... src/core_dump_uart.obj"
+	@echo "... src/core_dump_uart.i"
+	@echo "... src/core_dump_uart.s"
+	@echo "... src/port/xtensa/core_dump_port.obj"
+	@echo "... src/port/xtensa/core_dump_port.i"
+	@echo "... src/port/xtensa/core_dump_port.s"
+	@echo "... src/port/xtensa/core_dump_stack_switch.obj"
 .PHONY : help
 
 

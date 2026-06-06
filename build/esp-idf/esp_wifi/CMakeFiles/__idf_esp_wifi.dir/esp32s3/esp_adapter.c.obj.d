@@ -181,4 +181,5 @@ esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32s3/esp_adapter.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_coexist_adapter.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/ets_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_modem_wrapper.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_modem_wrapper.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h

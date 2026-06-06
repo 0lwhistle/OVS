@@ -1,0 +1,225 @@
+Command: /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --decode-coredumps info --target esp32s3 --revision 0 /root/progarms/web/build/web.elf /root/progarms/web/build/bootloader/bootloader.elf -m '/root/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/root/esp-idf/esp-idf-v6.0.1/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f58
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun  6 2026 07:51:52[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=2f7c0h (194496) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0003f7e8 vaddr=3fc99000 size=00830h (  2096) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=90148h (590152) map[0m
+[0;32mI (231) esp_image: segment 3: paddr=000d0170 vaddr=3fc99830 size=051e0h ( 20960) load[0m
+[0;32mI (236) esp_image: segment 4: paddr=000d5358 vaddr=40374000 size=14f40h ( 85824) load[0m
+[0;32mI (255) esp_image: segment 5: paddr=000ea2a0 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (264) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (264) boot: Disabling RNG early entropy source...[0m
+[0;32mI (274) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (275) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (275) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (277) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (281) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (285) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (289) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (294) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (299) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (304) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (309) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (313) MSPI Timing: Enter psram timing tuning[0m
+[0;32mI (318) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (321) esp_psram: Speed: 80MHz[0m
+[0;32mI (324) cpu_start: Multicore app[0m
+[0;32mI (753) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (762) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (762) cpu_start: Pro cpu start user code[0m
+[0;32mI (762) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (764) app_init: Application information:[0m
+[0;32mI (768) app_init: Project name:     web[0m
+[0;32mI (771) app_init: App version:      2542664-dirty[0m
+[0;32mI (776) app_init: Compile time:     Jun  6 2026 07:52:06[0m
+[0;32mI (781) app_init: ELF file SHA256:  ffda2a143...[0m
+[0;32mI (785) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (789) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (793) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (797) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (801) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (807) heap_init: At 3FCA2C70 len 00046AA0 (282 KiB): RAM[0m
+[0;32mI (812) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (817) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (822) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (828) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (835) spi_flash: detected chip: mxic[0m
+[0;32mI (838) spi_flash: flash io: dio[0m
+[0;32mI (841) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (847) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (853) esp_core_dump_uart: Init core dump to UART[0m
+[0;32mI (858) main_task: Started on CPU0[0m
+[0;32mI (878) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (878) main_task: Calling app_main()[0m
+[0;32mI (908) pp: pp rom version: e7ae62f[0m
+[0;32mI (908) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (918) wifi:wifi driver task: 3fced444, prio:23, stack:6656, core=0[0m
+[0;32mI (928) wifi:wifi firmware version: b37c951[0m
+[0;32mI (928) wifi:wifi certification version: v7.0[0m
+[0;32mI (928) wifi:config NVS flash: enabled[0m
+[0;32mI (928) wifi:config nano formatting: disabled[0m
+[0;32mI (938) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (938) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (938) wifi:Init management short buffer num: 32[0m
+[0;32mI (948) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (948) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (958) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (958) wifi:Init static rx buffer num: 10[0m
+[0;32mI (958) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (968) wifi_init: rx ba win: 6[0m
+[0;32mI (968) wifi_init: accept mbox: 6[0m
+[0;32mI (968) wifi_init: tcpip mbox: 32[0m
+[0;32mI (978) wifi_init: udp mbox: 6[0m
+[0;32mI (978) wifi_init: tcp mbox: 6[0m
+[0;32mI (978) wifi_init: tcp tx win: 5760[0m
+[0;32mI (988) wifi_init: tcp rx win: 5760[0m
+[0;32mI (988) wifi_init: tcp mss: 1440[0m
+[0;32mI (988) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (998) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (998) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1008) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (1048) wifi:mode : sta (ac:27:6e:a4:e7:a0) + softAP (ac:27:6e:a4:e7:a1)[0m
+[0;32mI (1048) wifi:enable tsf[0m
+[0;32mI (1058) wifi:Total power save buffer number: 16[0m
+[0;32mI (1058) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1058) wifi:Init max length of beacon: 752/752[0m
+Wi-Fi initialized in AP+STA mode
+Wi-Fi STA started, connecting to AP...
+  STA: connecting to 816
+  AP:  SSID=ESP32_AP, Password=12345678
+[0;32mI (1068) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1078) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1088) wifi:state: init -> auth (0xb0)[0m
+Wi-Fi AP started, SSID: ESP32_AP
+[0;32mI (1108) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1118) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1138) wifi:connected with 816, aid = 4, channel 1, BW20, bssid = d4:53:2a:d5:06:2e[0m
+[0;32mI (1138) wifi:security: WPA2-PSK, phy: bgn, rssi: -10, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1138) wifi:pm start, type: 1[0m
+
+[0;32mI (1148) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1148) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1168) wifi:<ba-add>idx:0 (ifx:0, d4:53:2a:d5:06:2e), tid:6, ssn:2, winSize:64[0m
+[0;32mI (1178) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2188) esp_netif_handlers: sta ip: 192.168.2.154, mask: 255.255.255.0, gw: 192.168.2.1[0m
+Got IP: 192.168.2.154
+[0;32mI (3128) wifi:<ba-add>idx:1 (ifx:0, d4:53:2a:d5:06:2e), tid:0, ssn:0, winSize:64[0m
+1464   3 mongoose.c:6434:mg_mgr_init    MG_IO_SIZE: 512, TLS: none
+1464   3 mongoose.c:6351:mg_listen      1 54 http://0.0.0.0:80
+Mongoose HTTP server started on port 80
+Vue frontend files loaded: 5
+b888   3 mongoose.c:12691:accept_conn   2 55 accepted 192.168.2.230:50675 -> 192.168.2.154:80
+b888   3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+b888   3 mongoose.c:12552:write_conn    2 55 snd 107/512 rcv 0/512 n=107 err=0
+1a2de  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+1a2e8  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+28d48  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+28d52  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+33f4a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+33f4a  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+342e2  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+342ec  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3458a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3458a  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3474c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+34756  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+349ae  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+349b8  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+34bb6  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+34bb6  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+34db4  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+34db4  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+34fb2  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+34fb2  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+35084  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3508e  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3514c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3514c  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+35214  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3521e  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3526e  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+35278  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3534a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+35354  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+353cc  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+353cc  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+354e4  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+354ee  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3552a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3552a  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+355d4  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+355d4  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+356e2  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+356ec  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+35746  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+35750  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3582c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+35836  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+358ea  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+358ea  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+35b4c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+35b4c  3 mongoose.c:12552:write_conn    2 55 snd 90/512 rcv 0/512 n=90 err=0
+3634e  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3634e  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+376ea  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+376ea  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+38a7c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+38a86  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+39e18  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+39e22  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+3b150  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3b150  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+3c4e2  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3c4ec  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+3d87e  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3d87e  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+3ec1a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3ec1a  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+3ffb6  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+3ffb6  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+41348  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+41352  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+42680  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+42680  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+43a3a  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+43a44  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+44dae  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+44db8  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+46168  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+46168  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4750e  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+4750e  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4888c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+48896  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+49bba  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+49bba  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4af4c  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+4af56  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4c2f2  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+4c2f2  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4d698  3 mongoose.c:12541:read_conn     2 55 0:0:0 317 err 0
+4d6a2  3 mongoose.c:12552:write_conn    2 55 snd 108/512 rcv 0/512 n=108 err=0
+4dc1a  3 mongoose.c:12541:read_conn     2 55 0:0:0 -1 err 128
+4dc1a  3 mongoose.c:6287:mg_close_conn  2 55 closed

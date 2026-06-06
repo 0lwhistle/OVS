@@ -1007,7 +1007,9 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/app_startup.c.obj: /root/esp-idf/
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_freertos_hooks.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps_init.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_chip_info.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_chip_info.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h
 
 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/esp_additions/idf_additions.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/idf_additions.c \
   config/sdkconfig.h \
@@ -1560,6 +1562,8 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/port_systick.c.obj: /root/esp-idf
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/idf_additions.c:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps_init.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
@@ -1709,6 +1713,8 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_private/esp_psram_extram.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h:
 
