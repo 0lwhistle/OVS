@@ -11,8 +11,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/adc_hal.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_hal.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_hal.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/adc_hal_common.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_hal_common.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_hal_common.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/adc_oneshot_hal.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_oneshot_hal.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_oneshot_hal.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32/adc_periph.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/adc_periph.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/adc_periph.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32/dac_periph.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/dac_periph.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/dac_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32s3/adc_periph.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/adc_periph.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/adc_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32s3/temperature_sensor_periph.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/temperature_sensor_periph.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/temperature_sensor_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/temperature_sensor_hal.c" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/temperature_sensor_hal.c.obj" "gcc" "esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/temperature_sensor_hal.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -24,12 +25,13 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/soc/CMakeFiles/__idf_soc.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/hal/CMakeFiles/__idf_hal.dir/DependInfo.cmake"
-  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/efuse/CMakeFiles/__idf_efuse.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"

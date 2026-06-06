@@ -6,7 +6,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
  /root/progarms/web/build/config/sdkconfig.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -97,8 +97,17 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecp.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -168,12 +177,12 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -183,7 +192,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -191,26 +200,23 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/x509_crt.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \

@@ -199,29 +199,29 @@ bootloader_flash/src/bootloader_flash.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash.c.s
 .PHONY : bootloader_flash/src/bootloader_flash.c.s
 
-bootloader_flash/src/bootloader_flash_config_esp32.obj: bootloader_flash/src/bootloader_flash_config_esp32.c.obj
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.obj
+bootloader_flash/src/bootloader_flash_config_esp32s3.obj: bootloader_flash/src/bootloader_flash_config_esp32s3.c.obj
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.obj
 
 # target to build an object file
-bootloader_flash/src/bootloader_flash_config_esp32.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.obj
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.c.obj
+bootloader_flash/src/bootloader_flash_config_esp32s3.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32s3.c.obj
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.c.obj
 
-bootloader_flash/src/bootloader_flash_config_esp32.i: bootloader_flash/src/bootloader_flash_config_esp32.c.i
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.i
+bootloader_flash/src/bootloader_flash_config_esp32s3.i: bootloader_flash/src/bootloader_flash_config_esp32s3.c.i
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.i
 
 # target to preprocess a source file
-bootloader_flash/src/bootloader_flash_config_esp32.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.i
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.c.i
+bootloader_flash/src/bootloader_flash_config_esp32s3.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32s3.c.i
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.c.i
 
-bootloader_flash/src/bootloader_flash_config_esp32.s: bootloader_flash/src/bootloader_flash_config_esp32.c.s
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.s
+bootloader_flash/src/bootloader_flash_config_esp32s3.s: bootloader_flash/src/bootloader_flash_config_esp32s3.c.s
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.s
 
 # target to generate assembly for a file
-bootloader_flash/src/bootloader_flash_config_esp32.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.s
-.PHONY : bootloader_flash/src/bootloader_flash_config_esp32.c.s
+bootloader_flash/src/bootloader_flash_config_esp32s3.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32s3.c.s
+.PHONY : bootloader_flash/src/bootloader_flash_config_esp32s3.c.s
 
 bootloader_flash/src/flash_qio_mode.obj: bootloader_flash/src/flash_qio_mode.c.obj
 .PHONY : bootloader_flash/src/flash_qio_mode.obj
@@ -391,29 +391,29 @@ src/bootloader_random.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random.c.s
 .PHONY : src/bootloader_random.c.s
 
-src/bootloader_random_esp32.obj: src/bootloader_random_esp32.c.obj
-.PHONY : src/bootloader_random_esp32.obj
+src/bootloader_random_esp32s3.obj: src/bootloader_random_esp32s3.c.obj
+.PHONY : src/bootloader_random_esp32s3.obj
 
 # target to build an object file
-src/bootloader_random_esp32.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.obj
-.PHONY : src/bootloader_random_esp32.c.obj
+src/bootloader_random_esp32s3.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32s3.c.obj
+.PHONY : src/bootloader_random_esp32s3.c.obj
 
-src/bootloader_random_esp32.i: src/bootloader_random_esp32.c.i
-.PHONY : src/bootloader_random_esp32.i
+src/bootloader_random_esp32s3.i: src/bootloader_random_esp32s3.c.i
+.PHONY : src/bootloader_random_esp32s3.i
 
 # target to preprocess a source file
-src/bootloader_random_esp32.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.i
-.PHONY : src/bootloader_random_esp32.c.i
+src/bootloader_random_esp32s3.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32s3.c.i
+.PHONY : src/bootloader_random_esp32s3.c.i
 
-src/bootloader_random_esp32.s: src/bootloader_random_esp32.c.s
-.PHONY : src/bootloader_random_esp32.s
+src/bootloader_random_esp32s3.s: src/bootloader_random_esp32s3.c.s
+.PHONY : src/bootloader_random_esp32s3.s
 
 # target to generate assembly for a file
-src/bootloader_random_esp32.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.s
-.PHONY : src/bootloader_random_esp32.c.s
+src/bootloader_random_esp32s3.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32s3.c.s
+.PHONY : src/bootloader_random_esp32s3.c.s
 
 src/bootloader_sha.obj: src/bootloader_sha.c.obj
 .PHONY : src/bootloader_sha.obj
@@ -463,29 +463,29 @@ src/bootloader_utility.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_utility.c.s
 .PHONY : src/bootloader_utility.c.s
 
-src/esp32/secure_boot_secure_features.obj: src/esp32/secure_boot_secure_features.c.obj
-.PHONY : src/esp32/secure_boot_secure_features.obj
+src/esp32s3/secure_boot_secure_features.obj: src/esp32s3/secure_boot_secure_features.c.obj
+.PHONY : src/esp32s3/secure_boot_secure_features.obj
 
 # target to build an object file
-src/esp32/secure_boot_secure_features.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/secure_boot_secure_features.c.obj
-.PHONY : src/esp32/secure_boot_secure_features.c.obj
+src/esp32s3/secure_boot_secure_features.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32s3/secure_boot_secure_features.c.obj
+.PHONY : src/esp32s3/secure_boot_secure_features.c.obj
 
-src/esp32/secure_boot_secure_features.i: src/esp32/secure_boot_secure_features.c.i
-.PHONY : src/esp32/secure_boot_secure_features.i
+src/esp32s3/secure_boot_secure_features.i: src/esp32s3/secure_boot_secure_features.c.i
+.PHONY : src/esp32s3/secure_boot_secure_features.i
 
 # target to preprocess a source file
-src/esp32/secure_boot_secure_features.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/secure_boot_secure_features.c.i
-.PHONY : src/esp32/secure_boot_secure_features.c.i
+src/esp32s3/secure_boot_secure_features.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32s3/secure_boot_secure_features.c.i
+.PHONY : src/esp32s3/secure_boot_secure_features.c.i
 
-src/esp32/secure_boot_secure_features.s: src/esp32/secure_boot_secure_features.c.s
-.PHONY : src/esp32/secure_boot_secure_features.s
+src/esp32s3/secure_boot_secure_features.s: src/esp32s3/secure_boot_secure_features.c.s
+.PHONY : src/esp32s3/secure_boot_secure_features.s
 
 # target to generate assembly for a file
-src/esp32/secure_boot_secure_features.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/secure_boot_secure_features.c.s
-.PHONY : src/esp32/secure_boot_secure_features.c.s
+src/esp32s3/secure_boot_secure_features.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/build.make esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32s3/secure_boot_secure_features.c.s
+.PHONY : src/esp32s3/secure_boot_secure_features.c.s
 
 src/esp_image_format.obj: src/esp_image_format.c.obj
 .PHONY : src/esp_image_format.obj
@@ -599,9 +599,9 @@ help:
 	@echo "... bootloader_flash/src/bootloader_flash.obj"
 	@echo "... bootloader_flash/src/bootloader_flash.i"
 	@echo "... bootloader_flash/src/bootloader_flash.s"
-	@echo "... bootloader_flash/src/bootloader_flash_config_esp32.obj"
-	@echo "... bootloader_flash/src/bootloader_flash_config_esp32.i"
-	@echo "... bootloader_flash/src/bootloader_flash_config_esp32.s"
+	@echo "... bootloader_flash/src/bootloader_flash_config_esp32s3.obj"
+	@echo "... bootloader_flash/src/bootloader_flash_config_esp32s3.i"
+	@echo "... bootloader_flash/src/bootloader_flash_config_esp32s3.s"
 	@echo "... bootloader_flash/src/flash_qio_mode.obj"
 	@echo "... bootloader_flash/src/flash_qio_mode.i"
 	@echo "... bootloader_flash/src/flash_qio_mode.s"
@@ -623,18 +623,18 @@ help:
 	@echo "... src/bootloader_random.obj"
 	@echo "... src/bootloader_random.i"
 	@echo "... src/bootloader_random.s"
-	@echo "... src/bootloader_random_esp32.obj"
-	@echo "... src/bootloader_random_esp32.i"
-	@echo "... src/bootloader_random_esp32.s"
+	@echo "... src/bootloader_random_esp32s3.obj"
+	@echo "... src/bootloader_random_esp32s3.i"
+	@echo "... src/bootloader_random_esp32s3.s"
 	@echo "... src/bootloader_sha.obj"
 	@echo "... src/bootloader_sha.i"
 	@echo "... src/bootloader_sha.s"
 	@echo "... src/bootloader_utility.obj"
 	@echo "... src/bootloader_utility.i"
 	@echo "... src/bootloader_utility.s"
-	@echo "... src/esp32/secure_boot_secure_features.obj"
-	@echo "... src/esp32/secure_boot_secure_features.i"
-	@echo "... src/esp32/secure_boot_secure_features.s"
+	@echo "... src/esp32s3/secure_boot_secure_features.obj"
+	@echo "... src/esp32s3/secure_boot_secure_features.i"
+	@echo "... src/esp32s3/secure_boot_secure_features.s"
 	@echo "... src/esp_image_format.obj"
 	@echo "... src/esp_image_format.i"
 	@echo "... src/esp_image_format.s"

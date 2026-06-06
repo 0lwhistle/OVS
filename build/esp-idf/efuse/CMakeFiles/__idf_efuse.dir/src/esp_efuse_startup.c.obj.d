@@ -1,10 +1,10 @@
 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/efuse/src/esp_efuse_startup.c \
  /root/progarms/web/build/config/sdkconfig.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/chip_revision.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_hal.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_hal.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
@@ -18,7 +18,7 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_ll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
@@ -27,8 +27,8 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/efuse_periph.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -36,14 +36,13 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/efuse_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32/rom/efuse.h \
  /root/esp-idf/esp-idf-v6.0.1/components/efuse/include/esp_efuse.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
@@ -55,7 +54,7 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
@@ -69,12 +68,12 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32/include/esp_efuse_chip.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
- /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32/include/esp_efuse_table.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/include/esp_efuse_chip.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/include/esp_efuse_table.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
  /root/esp-idf/esp-idf-v6.0.1/components/efuse/private_include/esp_efuse_utility.h \
- /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32/private_include/esp_efuse_utility.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/private_include/esp_efuse_utility.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/startup_internal.h \
@@ -82,17 +81,17 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \

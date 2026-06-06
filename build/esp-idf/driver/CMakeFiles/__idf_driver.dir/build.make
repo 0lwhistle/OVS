@@ -73,63 +73,63 @@ esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj: esp-idf/driver/CMakeFi
 esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c
 esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj"
-	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj -MF CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj.d -o CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c
+	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj -MF CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj.d -o CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_driver.dir/i2c/i2c.c.i"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c > CMakeFiles/__idf_driver.dir/i2c/i2c.c.i
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c > CMakeFiles/__idf_driver.dir/i2c/i2c.c.i
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_driver.dir/i2c/i2c.c.s"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c -o CMakeFiles/__idf_driver.dir/i2c/i2c.c.s
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/i2c.c -o CMakeFiles/__idf_driver.dir/i2c/i2c.c.s
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/flags.make
 esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c
 esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj"
-	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj -MF CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj.d -o CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c
+	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj -MF CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj.d -o CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.i"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c > CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.i
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c > CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.i
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.s"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c -o CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.s
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/touch_sensor_common.c -o CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.s
 
-esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/flags.make
-esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32/touch_sensor.c
-esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj"
-	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj -MF CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj.d -o CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32/touch_sensor.c
+esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/flags.make
+esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32s3/touch_sensor.c
+esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj"
+	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj -MF CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj.d -o CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32s3/touch_sensor.c
 
-esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.i"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32/touch_sensor.c > CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.i
+esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.i"
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32s3/touch_sensor.c > CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.i
 
-esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.s"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32/touch_sensor.c -o CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.s
+esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.s"
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/touch_sensor/esp32s3/touch_sensor.c -o CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.s
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/flags.make
 esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c
 esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj: esp-idf/driver/CMakeFiles/__idf_driver.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj"
-	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj -MF CMakeFiles/__idf_driver.dir/twai/twai.c.obj.d -o CMakeFiles/__idf_driver.dir/twai/twai.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c
+	cd /root/progarms/web/build/esp-idf/driver && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj -MF CMakeFiles/__idf_driver.dir/twai/twai.c.obj.d -o CMakeFiles/__idf_driver.dir/twai/twai.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_driver.dir/twai/twai.c.i"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c > CMakeFiles/__idf_driver.dir/twai/twai.c.i
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c > CMakeFiles/__idf_driver.dir/twai/twai.c.i
 
 esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_driver.dir/twai/twai.c.s"
-	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c -o CMakeFiles/__idf_driver.dir/twai/twai.c.s
+	cd /root/progarms/web/build/esp-idf/driver && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/twai.c -o CMakeFiles/__idf_driver.dir/twai/twai.c.s
 
 # Object files for target __idf_driver
 __idf_driver_OBJECTS = \
 "CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj" \
 "CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj" \
-"CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj" \
+"CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj" \
 "CMakeFiles/__idf_driver.dir/twai/twai.c.obj"
 
 # External object files for target __idf_driver
@@ -137,7 +137,7 @@ __idf_driver_EXTERNAL_OBJECTS =
 
 esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.obj
 esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/touch_sensor_common.c.obj
-esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj
+esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj
 esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj
 esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make
 esp-idf/driver/libdriver.a: esp-idf/driver/CMakeFiles/__idf_driver.dir/link.txt

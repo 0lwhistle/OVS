@@ -199,6 +199,54 @@ aes_hal.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/aes_hal.c.s
 .PHONY : aes_hal.c.s
 
+ds_hal.obj: ds_hal.c.obj
+.PHONY : ds_hal.obj
+
+# target to build an object file
+ds_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.obj
+.PHONY : ds_hal.c.obj
+
+ds_hal.i: ds_hal.c.i
+.PHONY : ds_hal.i
+
+# target to preprocess a source file
+ds_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.i
+.PHONY : ds_hal.c.i
+
+ds_hal.s: ds_hal.c.s
+.PHONY : ds_hal.s
+
+# target to generate assembly for a file
+ds_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.s
+.PHONY : ds_hal.c.s
+
+hmac_hal.obj: hmac_hal.c.obj
+.PHONY : hmac_hal.obj
+
+# target to build an object file
+hmac_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.obj
+.PHONY : hmac_hal.c.obj
+
+hmac_hal.i: hmac_hal.c.i
+.PHONY : hmac_hal.i
+
+# target to preprocess a source file
+hmac_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.i
+.PHONY : hmac_hal.c.i
+
+hmac_hal.s: hmac_hal.c.s
+.PHONY : hmac_hal.s
+
+# target to generate assembly for a file
+hmac_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/build.make esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.s
+.PHONY : hmac_hal.c.s
+
 mpi_hal.obj: mpi_hal.c.obj
 .PHONY : mpi_hal.obj
 
@@ -287,6 +335,12 @@ help:
 	@echo "... aes_hal.obj"
 	@echo "... aes_hal.i"
 	@echo "... aes_hal.s"
+	@echo "... ds_hal.obj"
+	@echo "... ds_hal.i"
+	@echo "... ds_hal.s"
+	@echo "... hmac_hal.obj"
+	@echo "... hmac_hal.i"
+	@echo "... hmac_hal.s"
 	@echo "... mpi_hal.obj"
 	@echo "... mpi_hal.i"
 	@echo "... mpi_hal.s"

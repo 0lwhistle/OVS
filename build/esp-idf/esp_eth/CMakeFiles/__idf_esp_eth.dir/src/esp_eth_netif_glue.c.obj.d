@@ -44,17 +44,16 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/eth_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/include/esp_eth_spec.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/include/esp_eth_mac_spi.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/include/esp_eth_mac.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/include/driver/spi_master.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpspi/include/hal/spi_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/include/driver/spi_common.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_ipc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/include/esp_eth_mac_esp.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/include/esp_eth_phy.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_net_stack.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event.h \
@@ -63,12 +62,12 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -78,7 +77,7 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -86,22 +85,21 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \

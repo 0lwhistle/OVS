@@ -67,7 +67,7 @@ include CMakeFiles/bootloader_check_size.dir/compiler_depend.make
 include CMakeFiles/bootloader_check_size.dir/progress.make
 
 CMakeFiles/bootloader_check_size:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /root/progarms/web/build/bootloader/bootloader.bin
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /root/progarms/web/build/bootloader/bootloader.bin
 
 bootloader_check_size: CMakeFiles/bootloader_check_size
 bootloader_check_size: CMakeFiles/bootloader_check_size.dir/build.make

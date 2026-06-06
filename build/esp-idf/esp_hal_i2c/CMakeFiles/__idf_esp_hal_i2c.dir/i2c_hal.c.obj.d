@@ -2,9 +2,8 @@ esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/i2c_hal.c \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/include/hal/i2c_hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
- /root/progarms/web/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/include/hal/i2c_types.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
@@ -15,12 +14,13 @@ esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /root/progarms/web/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/esp32/include/hal/i2c_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/esp32s3/include/hal/i2c_ll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
@@ -28,9 +28,10 @@ esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c/include/hal/i2c_periph.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/i2c_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/i2c_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -38,13 +39,11 @@ esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/i2c_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/i2c_struct.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h

@@ -161,6 +161,68 @@ depend:
 	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/rule:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/rule
+.PHONY : esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/rule
+
+# Convenience name for target.
+__idf_esp_hal_cam: esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/rule
+.PHONY : __idf_esp_hal_cam
+
+# fast build rule for target.
+__idf_esp_hal_cam/fast:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build
+.PHONY : __idf_esp_hal_cam/fast
+
+cam_hal.obj: cam_hal.c.obj
+.PHONY : cam_hal.obj
+
+# target to build an object file
+cam_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/cam_hal.c.obj
+.PHONY : cam_hal.c.obj
+
+cam_hal.i: cam_hal.c.i
+.PHONY : cam_hal.i
+
+# target to preprocess a source file
+cam_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/cam_hal.c.i
+.PHONY : cam_hal.c.i
+
+cam_hal.s: cam_hal.c.s
+.PHONY : cam_hal.s
+
+# target to generate assembly for a file
+cam_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/cam_hal.c.s
+.PHONY : cam_hal.c.s
+
+esp32s3/cam_periph.obj: esp32s3/cam_periph.c.obj
+.PHONY : esp32s3/cam_periph.obj
+
+# target to build an object file
+esp32s3/cam_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/esp32s3/cam_periph.c.obj
+.PHONY : esp32s3/cam_periph.c.obj
+
+esp32s3/cam_periph.i: esp32s3/cam_periph.c.i
+.PHONY : esp32s3/cam_periph.i
+
+# target to preprocess a source file
+esp32s3/cam_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/esp32s3/cam_periph.c.i
+.PHONY : esp32s3/cam_periph.c.i
+
+esp32s3/cam_periph.s: esp32s3/cam_periph.c.s
+.PHONY : esp32s3/cam_periph.s
+
+# target to generate assembly for a file
+esp32s3/cam_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/build.make esp-idf/esp_hal_cam/CMakeFiles/__idf_esp_hal_cam.dir/esp32s3/cam_periph.c.s
+.PHONY : esp32s3/cam_periph.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,6 +235,13 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... __idf_esp_hal_cam"
+	@echo "... cam_hal.obj"
+	@echo "... cam_hal.i"
+	@echo "... cam_hal.s"
+	@echo "... esp32s3/cam_periph.obj"
+	@echo "... esp32s3/cam_periph.i"
+	@echo "... esp32s3/cam_periph.s"
 .PHONY : help
 
 

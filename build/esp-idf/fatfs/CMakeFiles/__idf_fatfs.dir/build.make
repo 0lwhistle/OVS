@@ -73,141 +73,141 @@ esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj: esp-idf/fatfs/CMak
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_rawflash.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_rawflash.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_wl.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_wl.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj -MF CMakeFiles/__idf_fatfs.dir/src/ff.c.obj.d -o CMakeFiles/__idf_fatfs.dir/src/ff.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.obj -MF CMakeFiles/__idf_fatfs.dir/src/ff.c.obj.d -o CMakeFiles/__idf_fatfs.dir/src/ff.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/src/ff.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c > CMakeFiles/__idf_fatfs.dir/src/ff.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c > CMakeFiles/__idf_fatfs.dir/src/ff.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/src/ff.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c -o CMakeFiles/__idf_fatfs.dir/src/ff.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.c -o CMakeFiles/__idf_fatfs.dir/src/ff.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj -MF CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj.d -o CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj -MF CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj.d -o CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c > CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c > CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c -o CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c -o CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj -MF CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj.d -o CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj -MF CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj.d -o CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c > CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c > CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c -o CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/port/freertos/ffsystem.c -o CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj -MF CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj.d -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c > CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/diskio/diskio_sdmmc.c -o CMakeFiles/__idf_fatfs.dir/diskio/diskio_sdmmc.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_sdmmc.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_sdmmc.c.s
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/flags.make
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj"
-	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c
+	cd /root/progarms/web/build/esp-idf/fatfs && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj -MF CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj.d -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.i"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.i
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c > CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.i
 
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.s"
-	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.s
+	cd /root/progarms/web/build/esp-idf/fatfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/fatfs/vfs/vfs_fat_spiflash.c -o CMakeFiles/__idf_fatfs.dir/vfs/vfs_fat_spiflash.c.s
 
 # Object files for target __idf_fatfs
 __idf_fatfs_OBJECTS = \

@@ -175,53 +175,53 @@ __idf_esp_hal_touch_sens/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build
 .PHONY : __idf_esp_hal_touch_sens/fast
 
-esp32/touch_sensor_legacy_hal.obj: esp32/touch_sensor_legacy_hal.c.obj
-.PHONY : esp32/touch_sensor_legacy_hal.obj
+esp32s3/touch_sensor_legacy_hal.obj: esp32s3/touch_sensor_legacy_hal.c.obj
+.PHONY : esp32s3/touch_sensor_legacy_hal.obj
 
 # target to build an object file
-esp32/touch_sensor_legacy_hal.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_legacy_hal.c.obj
-.PHONY : esp32/touch_sensor_legacy_hal.c.obj
+esp32s3/touch_sensor_legacy_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_legacy_hal.c.obj
+.PHONY : esp32s3/touch_sensor_legacy_hal.c.obj
 
-esp32/touch_sensor_legacy_hal.i: esp32/touch_sensor_legacy_hal.c.i
-.PHONY : esp32/touch_sensor_legacy_hal.i
+esp32s3/touch_sensor_legacy_hal.i: esp32s3/touch_sensor_legacy_hal.c.i
+.PHONY : esp32s3/touch_sensor_legacy_hal.i
 
 # target to preprocess a source file
-esp32/touch_sensor_legacy_hal.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_legacy_hal.c.i
-.PHONY : esp32/touch_sensor_legacy_hal.c.i
+esp32s3/touch_sensor_legacy_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_legacy_hal.c.i
+.PHONY : esp32s3/touch_sensor_legacy_hal.c.i
 
-esp32/touch_sensor_legacy_hal.s: esp32/touch_sensor_legacy_hal.c.s
-.PHONY : esp32/touch_sensor_legacy_hal.s
+esp32s3/touch_sensor_legacy_hal.s: esp32s3/touch_sensor_legacy_hal.c.s
+.PHONY : esp32s3/touch_sensor_legacy_hal.s
 
 # target to generate assembly for a file
-esp32/touch_sensor_legacy_hal.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_legacy_hal.c.s
-.PHONY : esp32/touch_sensor_legacy_hal.c.s
+esp32s3/touch_sensor_legacy_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_legacy_hal.c.s
+.PHONY : esp32s3/touch_sensor_legacy_hal.c.s
 
-esp32/touch_sensor_periph.obj: esp32/touch_sensor_periph.c.obj
-.PHONY : esp32/touch_sensor_periph.obj
+esp32s3/touch_sensor_periph.obj: esp32s3/touch_sensor_periph.c.obj
+.PHONY : esp32s3/touch_sensor_periph.obj
 
 # target to build an object file
-esp32/touch_sensor_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_periph.c.obj
-.PHONY : esp32/touch_sensor_periph.c.obj
+esp32s3/touch_sensor_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_periph.c.obj
+.PHONY : esp32s3/touch_sensor_periph.c.obj
 
-esp32/touch_sensor_periph.i: esp32/touch_sensor_periph.c.i
-.PHONY : esp32/touch_sensor_periph.i
+esp32s3/touch_sensor_periph.i: esp32s3/touch_sensor_periph.c.i
+.PHONY : esp32s3/touch_sensor_periph.i
 
 # target to preprocess a source file
-esp32/touch_sensor_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_periph.c.i
-.PHONY : esp32/touch_sensor_periph.c.i
+esp32s3/touch_sensor_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_periph.c.i
+.PHONY : esp32s3/touch_sensor_periph.c.i
 
-esp32/touch_sensor_periph.s: esp32/touch_sensor_periph.c.s
-.PHONY : esp32/touch_sensor_periph.s
+esp32s3/touch_sensor_periph.s: esp32s3/touch_sensor_periph.c.s
+.PHONY : esp32s3/touch_sensor_periph.s
 
 # target to generate assembly for a file
-esp32/touch_sensor_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32/touch_sensor_periph.c.s
-.PHONY : esp32/touch_sensor_periph.c.s
+esp32s3/touch_sensor_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/build.make esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/esp32s3/touch_sensor_periph.c.s
+.PHONY : esp32s3/touch_sensor_periph.c.s
 
 touch_sens_hal.obj: touch_sens_hal.c.obj
 .PHONY : touch_sens_hal.obj
@@ -284,12 +284,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_touch_sens"
-	@echo "... esp32/touch_sensor_legacy_hal.obj"
-	@echo "... esp32/touch_sensor_legacy_hal.i"
-	@echo "... esp32/touch_sensor_legacy_hal.s"
-	@echo "... esp32/touch_sensor_periph.obj"
-	@echo "... esp32/touch_sensor_periph.i"
-	@echo "... esp32/touch_sensor_periph.s"
+	@echo "... esp32s3/touch_sensor_legacy_hal.obj"
+	@echo "... esp32s3/touch_sensor_legacy_hal.i"
+	@echo "... esp32s3/touch_sensor_legacy_hal.s"
+	@echo "... esp32s3/touch_sensor_periph.obj"
+	@echo "... esp32s3/touch_sensor_periph.i"
+	@echo "... esp32s3/touch_sensor_periph.s"
 	@echo "... touch_sens_hal.obj"
 	@echo "... touch_sens_hal.i"
 	@echo "... touch_sens_hal.s"

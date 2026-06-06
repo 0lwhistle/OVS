@@ -69,9 +69,9 @@ include esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/progress.make
 esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess: esp-idf/esp_system/ld/memory.ld
 
 esp-idf/esp_system/ld/memory.ld: config/sdkconfig.h
-esp-idf/esp_system/ld/memory.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32/memory.ld.in
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32/memory.ld.in -> /root/progarms/web/build/esp-idf/esp_system/ld/memory.ld"
-	cd /root/progarms/web/build/esp-idf/esp_system && /usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32/memory.ld.in -DTARGET=/root/progarms/web/build/esp-idf/esp_system/ld/memory.ld "-DCFLAGS=-I\"/root/progarms/web/build/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
+esp-idf/esp_system/ld/memory.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -> /root/progarms/web/build/esp-idf/esp_system/ld/memory.ld"
+	cd /root/progarms/web/build/esp-idf/esp_system && /usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -DTARGET=/root/progarms/web/build/esp-idf/esp_system/ld/memory.ld "-DCFLAGS=-I\"/root/progarms/web/build/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
 
 memory_ld_in_preprocess: esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess
 memory_ld_in_preprocess: esp-idf/esp_system/ld/memory.ld

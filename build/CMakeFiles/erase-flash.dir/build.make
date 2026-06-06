@@ -67,7 +67,7 @@ include CMakeFiles/erase-flash.dir/compiler_depend.make
 include CMakeFiles/erase-flash.dir/progress.make
 
 CMakeFiles/erase-flash:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32" -D SERIAL_TOOL_ARGS=erase-flash -P run_serial_tool.cmake
+	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32s3" -D SERIAL_TOOL_ARGS=erase-flash -P run_serial_tool.cmake
 
 erase-flash: CMakeFiles/erase-flash
 erase-flash: CMakeFiles/erase-flash.dir/build.make

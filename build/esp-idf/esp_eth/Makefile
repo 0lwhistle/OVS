@@ -223,78 +223,6 @@ src/esp_eth_netif_glue.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.s
 .PHONY : src/esp_eth_netif_glue.c.s
 
-src/mac/esp_eth_mac_esp.obj: src/mac/esp_eth_mac_esp.c.obj
-.PHONY : src/mac/esp_eth_mac_esp.obj
-
-# target to build an object file
-src/mac/esp_eth_mac_esp.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj
-.PHONY : src/mac/esp_eth_mac_esp.c.obj
-
-src/mac/esp_eth_mac_esp.i: src/mac/esp_eth_mac_esp.c.i
-.PHONY : src/mac/esp_eth_mac_esp.i
-
-# target to preprocess a source file
-src/mac/esp_eth_mac_esp.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.i
-.PHONY : src/mac/esp_eth_mac_esp.c.i
-
-src/mac/esp_eth_mac_esp.s: src/mac/esp_eth_mac_esp.c.s
-.PHONY : src/mac/esp_eth_mac_esp.s
-
-# target to generate assembly for a file
-src/mac/esp_eth_mac_esp.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.s
-.PHONY : src/mac/esp_eth_mac_esp.c.s
-
-src/mac/esp_eth_mac_esp_dma.obj: src/mac/esp_eth_mac_esp_dma.c.obj
-.PHONY : src/mac/esp_eth_mac_esp_dma.obj
-
-# target to build an object file
-src/mac/esp_eth_mac_esp_dma.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj
-.PHONY : src/mac/esp_eth_mac_esp_dma.c.obj
-
-src/mac/esp_eth_mac_esp_dma.i: src/mac/esp_eth_mac_esp_dma.c.i
-.PHONY : src/mac/esp_eth_mac_esp_dma.i
-
-# target to preprocess a source file
-src/mac/esp_eth_mac_esp_dma.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.i
-.PHONY : src/mac/esp_eth_mac_esp_dma.c.i
-
-src/mac/esp_eth_mac_esp_dma.s: src/mac/esp_eth_mac_esp_dma.c.s
-.PHONY : src/mac/esp_eth_mac_esp_dma.s
-
-# target to generate assembly for a file
-src/mac/esp_eth_mac_esp_dma.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.s
-.PHONY : src/mac/esp_eth_mac_esp_dma.c.s
-
-src/mac/esp_eth_mac_esp_gpio.obj: src/mac/esp_eth_mac_esp_gpio.c.obj
-.PHONY : src/mac/esp_eth_mac_esp_gpio.obj
-
-# target to build an object file
-src/mac/esp_eth_mac_esp_gpio.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj
-.PHONY : src/mac/esp_eth_mac_esp_gpio.c.obj
-
-src/mac/esp_eth_mac_esp_gpio.i: src/mac/esp_eth_mac_esp_gpio.c.i
-.PHONY : src/mac/esp_eth_mac_esp_gpio.i
-
-# target to preprocess a source file
-src/mac/esp_eth_mac_esp_gpio.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.i
-.PHONY : src/mac/esp_eth_mac_esp_gpio.c.i
-
-src/mac/esp_eth_mac_esp_gpio.s: src/mac/esp_eth_mac_esp_gpio.c.s
-.PHONY : src/mac/esp_eth_mac_esp_gpio.s
-
-# target to generate assembly for a file
-src/mac/esp_eth_mac_esp_gpio.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.s
-.PHONY : src/mac/esp_eth_mac_esp_gpio.c.s
-
 src/phy/esp_eth_phy_802_3.obj: src/phy/esp_eth_phy_802_3.c.obj
 .PHONY : src/phy/esp_eth_phy_802_3.obj
 
@@ -319,30 +247,6 @@ src/phy/esp_eth_phy_802_3.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.s
 .PHONY : src/phy/esp_eth_phy_802_3.c.s
 
-src/phy/esp_eth_phy_generic.obj: src/phy/esp_eth_phy_generic.c.obj
-.PHONY : src/phy/esp_eth_phy_generic.obj
-
-# target to build an object file
-src/phy/esp_eth_phy_generic.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj
-.PHONY : src/phy/esp_eth_phy_generic.c.obj
-
-src/phy/esp_eth_phy_generic.i: src/phy/esp_eth_phy_generic.c.i
-.PHONY : src/phy/esp_eth_phy_generic.i
-
-# target to preprocess a source file
-src/phy/esp_eth_phy_generic.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.i
-.PHONY : src/phy/esp_eth_phy_generic.c.i
-
-src/phy/esp_eth_phy_generic.s: src/phy/esp_eth_phy_generic.c.s
-.PHONY : src/phy/esp_eth_phy_generic.s
-
-# target to generate assembly for a file
-src/phy/esp_eth_phy_generic.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.s
-.PHONY : src/phy/esp_eth_phy_generic.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -362,21 +266,9 @@ help:
 	@echo "... src/esp_eth_netif_glue.obj"
 	@echo "... src/esp_eth_netif_glue.i"
 	@echo "... src/esp_eth_netif_glue.s"
-	@echo "... src/mac/esp_eth_mac_esp.obj"
-	@echo "... src/mac/esp_eth_mac_esp.i"
-	@echo "... src/mac/esp_eth_mac_esp.s"
-	@echo "... src/mac/esp_eth_mac_esp_dma.obj"
-	@echo "... src/mac/esp_eth_mac_esp_dma.i"
-	@echo "... src/mac/esp_eth_mac_esp_dma.s"
-	@echo "... src/mac/esp_eth_mac_esp_gpio.obj"
-	@echo "... src/mac/esp_eth_mac_esp_gpio.i"
-	@echo "... src/mac/esp_eth_mac_esp_gpio.s"
 	@echo "... src/phy/esp_eth_phy_802_3.obj"
 	@echo "... src/phy/esp_eth_phy_802_3.i"
 	@echo "... src/phy/esp_eth_phy_802_3.s"
-	@echo "... src/phy/esp_eth_phy_generic.obj"
-	@echo "... src/phy/esp_eth_phy_generic.i"
-	@echo "... src/phy/esp_eth_phy_generic.s"
 .PHONY : help
 
 

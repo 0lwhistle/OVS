@@ -42,12 +42,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -59,17 +59,17 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/spinlock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
@@ -82,16 +82,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -123,21 +122,23 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
@@ -145,16 +146,17 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
@@ -162,11 +164,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_common.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/esp_dma_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/clk_ctrl_os.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include/soc/rtc.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_cntl_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_struct.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h
 
 esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_encoder.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_encoder.h \
@@ -202,13 +200,13 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_private.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
@@ -226,12 +224,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -241,7 +239,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -249,22 +247,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -296,19 +293,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
@@ -316,14 +315,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder.c.obj
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
@@ -364,13 +364,13 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_private.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
@@ -388,12 +388,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -403,7 +403,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -411,22 +411,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -458,19 +457,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
@@ -478,14 +479,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_bytes
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
@@ -526,13 +528,13 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_private.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
@@ -550,12 +552,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -565,7 +567,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -573,22 +575,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -620,19 +621,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
@@ -640,14 +643,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_copy.
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
@@ -688,13 +692,13 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_private.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
@@ -712,12 +716,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -727,7 +731,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -735,22 +739,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -782,19 +785,21 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
@@ -802,14 +807,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_encoder_simpl
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
@@ -837,15 +843,14 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_cache.h \
@@ -859,19 +864,19 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_rx.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_common.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_private.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
@@ -888,12 +893,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -903,7 +908,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -911,7 +916,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
@@ -919,7 +924,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -951,30 +956,33 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_rx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_pm/include/esp_pm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_clk_tree_common.h \
@@ -996,30 +1004,25 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include/soc/rtc.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_cntl_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
@@ -1034,7 +1037,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_tx.h \
@@ -1058,12 +1061,12 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
@@ -1073,7 +1076,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
@@ -1081,7 +1084,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
@@ -1089,7 +1092,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
@@ -1121,67 +1124,64 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/regdma.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_pm/include/esp_pm.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/gdma_link.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_gpio_reserve.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_clk_tree_common.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/esp_dma_utils.h
 
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_tx.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_tx.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_rx.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_rx.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_encoder_simple.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_encoder_bytes.c:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_encoder.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_encoder.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_struct.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_cntl_periph.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_periph.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include/soc/rtc.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_types.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/esp_dma_utils.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/esp_private/gpio.h:
 
@@ -1201,43 +1201,43 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h:
+/root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/cache_hal.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/cache.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/cache_ll.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/sleep_retention.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/cache_ll.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/dma_types.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_config.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/hal_utils.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_tx.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdatomic.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h:
 
@@ -1251,11 +1251,15 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/src/rmt_tx.c.obj: /ro
 
 config/sdkconfig.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h:
 
@@ -1265,9 +1269,17 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rmt_struct.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/reent.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_common.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/clk_ctrl_os.h:
 
@@ -1278,6 +1290,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
@@ -1303,6 +1317,10 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_check.h:
 
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h:
@@ -1319,11 +1337,9 @@ config/sdkconfig.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h:
 
@@ -1335,17 +1351,11 @@ config/sdkconfig.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/limits.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rmt_struct.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/param.h:
 
@@ -1354,8 +1364,6 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h:
 
@@ -1383,21 +1391,11 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/include/esp_private/esp_dma_utils.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/src/rmt_rx.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:
 
@@ -1406,6 +1404,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/queue.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h:
 
@@ -1421,11 +1421,9 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/extmem_reg.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h:
 
@@ -1435,13 +1433,13 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h:
 
@@ -1453,6 +1451,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_common.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
@@ -1463,14 +1463,6 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_encoder.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h:
@@ -1479,7 +1471,15 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_periph.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32/include/hal/rmt_ll.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/include/driver/rmt_tx.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/esp32s3/include/hal/rmt_ll.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio_etm.h:
 
@@ -1489,8 +1489,10 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt/include/hal/rmt_types.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h:

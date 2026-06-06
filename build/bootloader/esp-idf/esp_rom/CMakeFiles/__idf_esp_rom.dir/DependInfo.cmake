@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S" "/root/progarms/web/build/bootloader/esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_writeback_esp32s3.S.obj"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_longjmp.S" "/root/progarms/web/build/bootloader/esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_longjmp.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
@@ -29,9 +30,9 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "config"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3"
   "/root/esp-idf/esp-idf-v6.0.1/components/log/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include"
@@ -43,35 +44,39 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/power_supply/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/modem/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/."
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/soc/esp32s3"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/."
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/."
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/xtensa/deprecated_include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/soc/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register"
   "/root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/hal/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_usb/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_usb/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2s/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2s/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/include"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32/include"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_crc.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_crc.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_crc.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_efuse.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_efuse.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_efuse.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_gpio.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_gpio.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_gpio.c.obj.d"
@@ -79,6 +84,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_serial_output.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_serial_output.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_serial_output.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_spiflash.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_sys.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_systimer.c" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.obj" "gcc" "esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -94,6 +100,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
@@ -105,7 +112,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
-  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

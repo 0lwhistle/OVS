@@ -223,6 +223,30 @@ spi_flash_hal.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.s
 .PHONY : spi_flash_hal.c.s
 
+spi_flash_hal_gpspi.obj: spi_flash_hal_gpspi.c.obj
+.PHONY : spi_flash_hal_gpspi.obj
+
+# target to build an object file
+spi_flash_hal_gpspi.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.obj
+.PHONY : spi_flash_hal_gpspi.c.obj
+
+spi_flash_hal_gpspi.i: spi_flash_hal_gpspi.c.i
+.PHONY : spi_flash_hal_gpspi.i
+
+# target to preprocess a source file
+spi_flash_hal_gpspi.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.i
+.PHONY : spi_flash_hal_gpspi.c.i
+
+spi_flash_hal_gpspi.s: spi_flash_hal_gpspi.c.s
+.PHONY : spi_flash_hal_gpspi.s
+
+# target to generate assembly for a file
+spi_flash_hal_gpspi.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.s
+.PHONY : spi_flash_hal_gpspi.c.s
+
 spi_flash_hal_iram.obj: spi_flash_hal_iram.c.obj
 .PHONY : spi_flash_hal_iram.obj
 
@@ -266,6 +290,9 @@ help:
 	@echo "... spi_flash_hal.obj"
 	@echo "... spi_flash_hal.i"
 	@echo "... spi_flash_hal.s"
+	@echo "... spi_flash_hal_gpspi.obj"
+	@echo "... spi_flash_hal_gpspi.i"
+	@echo "... spi_flash_hal_gpspi.s"
 	@echo "... spi_flash_hal_iram.obj"
 	@echo "... spi_flash_hal_iram.i"
 	@echo "... spi_flash_hal_iram.s"

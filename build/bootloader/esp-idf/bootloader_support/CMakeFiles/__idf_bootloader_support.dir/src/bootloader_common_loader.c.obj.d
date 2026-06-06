@@ -36,8 +36,8 @@ esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloade
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
@@ -57,22 +57,23 @@ esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloade
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_spiflash_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_crc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_flash_partitions.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/bootloader_flash/include/bootloader_flash.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/spi_flash_mmap.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_spi_flash_counters.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_private/spi_flash_os.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/include/hal/spi_flash_hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32/include/hal/spi_flash_ll.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/spi_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32s3/include/hal/spi_flash_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32s3/include/hal/gpspi_flash_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/spi_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/spi_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/spi_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpspi/include/hal/spi_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/include/hal/spi_flash_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/include/hal/esp_flash_err.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/param.h \
@@ -81,7 +82,11 @@ esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloade
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/param.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpspi/include/hal/spi_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32s3/include/hal/spimem_flash_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/spi_mem_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/spi_mem_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_flash.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev/include/esp_blockdev.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_flash_chips/esp_flash_types.h \
@@ -90,21 +95,17 @@ esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloade
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/bootloader_common.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_image_format.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_app_format.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include/soc/rtc.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_periph.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/rtc_cntl_periph.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_struct.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/efuse_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/chip_revision.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_hal.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_ll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/efuse_periph.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_struct.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/private_include/bootloader_sha.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/bootloader_flash/include/bootloader_flash_priv.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/ext_mem_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/esp_rom_caps.h
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/ext_mem_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/esp_rom_caps.h

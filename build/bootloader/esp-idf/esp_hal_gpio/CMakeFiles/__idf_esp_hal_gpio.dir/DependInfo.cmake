@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/rtc_io_periph.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/sdm_periph.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/dedic_gpio_periph.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/rtc_io_periph.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/sdm_periph.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj" "gcc" "esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj.d"
@@ -28,6 +29,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/efuse/CMakeFiles/__idf_efuse.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
@@ -39,7 +41,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
-  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

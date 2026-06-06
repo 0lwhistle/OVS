@@ -1,6 +1,6 @@
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
@@ -22,30 +22,23 @@ esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_hal.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/hal/gpio_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/hal/gpio_ll.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/gpio_struct.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_io_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/gpio_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rtc_cntl_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/usb_serial_jtag_reg.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/gpio_periph.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
- /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
- /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
- /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
- /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
- /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
- /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_sig_map.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_sig_map.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_gpio.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_pins.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_pins.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/config.h

@@ -78,7 +78,7 @@ soc/soc.h
 sdkconfig.h
 /root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/arch/xtensa/sdkconfig.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/highint_hdl.S
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/highint_hdl.S
 xtensa/coreasm.h
 -
 xtensa/corebits.h
@@ -86,21 +86,17 @@ xtensa/corebits.h
 xtensa/config/system.h
 -
 xtensa_context.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/xtensa_context.h
-freertos/xtensa_rtos.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/freertos/xtensa_rtos.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/xtensa_context.h
 esp_private/panic_reason.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/esp_private/panic_reason.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/esp_private/panic_reason.h
 sdkconfig.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/sdkconfig.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/sdkconfig.h
 soc/soc.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/soc/soc.h
-soc/soc_caps.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/soc/soc_caps.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/soc/soc.h
 soc/dport_reg.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/soc/dport_reg.h
-soc/timer_group_reg.h
-/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32/soc/timer_group_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/soc/dport_reg.h
+soc/soc_caps.h
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/port/soc/esp32s3/soc/soc_caps.h
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h
 xtensa/coreasm.h
@@ -136,65 +132,77 @@ sdkconfig.h
 xtensa_config.h
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/xtensa_config.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h
-stdint.h
--
-soc/soc_caps.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/soc_caps.h
-sdkconfig.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/sdkconfig.h
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_access.h
 stdint.h
 -
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_reg.h
+soc/interrupt_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/interrupt_reg.h
+soc/system_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/system_reg.h
+soc/sensitive_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/sensitive_reg.h
+soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/soc.h
+soc/dport_access.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/dport_access.h
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupt_reg.h
+soc/interrupt_core0_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/interrupt_core0_reg.h
+soc/interrupt_core1_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/interrupt_core1_reg.h
+soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h
 stdint.h
 -
 esp_assert.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/esp_assert.h
-soc/soc_caps.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/soc_caps.h
-soc/interrupts.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/interrupts.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/esp_assert.h
 esp_bit_defs.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/esp_bit_defs.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/esp_bit_defs.h
 soc/reg_base.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/reg_base.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/reg_base.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h
 soc/soc_caps_eval.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/soc_caps_eval.h
-sdkconfig.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/sdkconfig.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/soc_caps_eval.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core0_reg.h
 soc/soc.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/soc/soc.h
-soc/dport_access.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/soc/dport_access.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/soc/soc.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/timer_group_reg.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core1_reg.h
 soc/soc.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/soc/soc.h
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/sensitive_reg.h
+soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/soc/soc.h
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_reg.h
+soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/soc/soc.h
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h
 xtensa/hal.h
 -
 xtensa/xtensa-versions.h
 -
-xtensa/hal.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xtensa/hal.h
-xtensa/xtensa-versions.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xtensa/xtensa-versions.h
+../hal.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/hal.h
+../xtensa-versions.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/xtensa-versions.h
 xtensa/config/core-isa.h
 -
 xtensa/config/core-matmap.h
@@ -202,23 +210,23 @@ xtensa/config/core-matmap.h
 xtensa/config/tie.h
 -
 core-isa.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h
 core-matmap.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h
 tie.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h
 xtensa/config/tie-asm.h
 -
 tie-asm.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h
 xtensa/corebits.h
 -
 

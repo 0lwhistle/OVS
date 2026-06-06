@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_uart.dir/esp32/uart_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_uart.dir/esp32/uart_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_uart.dir/esp32s3/uart_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_uart.dir/esp32s3/uart_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.obj.d"
   "CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.obj"
   "CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_uart.dir/uhci_hal.c.obj"
+  "CMakeFiles/__idf_esp_hal_uart.dir/uhci_hal.c.obj.d"
   "libesp_hal_uart.a"
   "libesp_hal_uart.pdb"
 )

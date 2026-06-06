@@ -161,6 +161,116 @@ depend:
 	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/rule:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/rule
+.PHONY : esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/rule
+
+# Convenience name for target.
+__idf_esp_hal_usb: esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/rule
+.PHONY : __idf_esp_hal_usb
+
+# fast build rule for target.
+__idf_esp_hal_usb/fast:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build
+.PHONY : __idf_esp_hal_usb/fast
+
+esp32s3/usb_dwc_periph.obj: esp32s3/usb_dwc_periph.c.obj
+.PHONY : esp32s3/usb_dwc_periph.obj
+
+# target to build an object file
+esp32s3/usb_dwc_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/esp32s3/usb_dwc_periph.c.obj
+.PHONY : esp32s3/usb_dwc_periph.c.obj
+
+esp32s3/usb_dwc_periph.i: esp32s3/usb_dwc_periph.c.i
+.PHONY : esp32s3/usb_dwc_periph.i
+
+# target to preprocess a source file
+esp32s3/usb_dwc_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/esp32s3/usb_dwc_periph.c.i
+.PHONY : esp32s3/usb_dwc_periph.c.i
+
+esp32s3/usb_dwc_periph.s: esp32s3/usb_dwc_periph.c.s
+.PHONY : esp32s3/usb_dwc_periph.s
+
+# target to generate assembly for a file
+esp32s3/usb_dwc_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/esp32s3/usb_dwc_periph.c.s
+.PHONY : esp32s3/usb_dwc_periph.c.s
+
+usb_dwc_hal.obj: usb_dwc_hal.c.obj
+.PHONY : usb_dwc_hal.obj
+
+# target to build an object file
+usb_dwc_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_dwc_hal.c.obj
+.PHONY : usb_dwc_hal.c.obj
+
+usb_dwc_hal.i: usb_dwc_hal.c.i
+.PHONY : usb_dwc_hal.i
+
+# target to preprocess a source file
+usb_dwc_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_dwc_hal.c.i
+.PHONY : usb_dwc_hal.c.i
+
+usb_dwc_hal.s: usb_dwc_hal.c.s
+.PHONY : usb_dwc_hal.s
+
+# target to generate assembly for a file
+usb_dwc_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_dwc_hal.c.s
+.PHONY : usb_dwc_hal.c.s
+
+usb_serial_jtag_hal.obj: usb_serial_jtag_hal.c.obj
+.PHONY : usb_serial_jtag_hal.obj
+
+# target to build an object file
+usb_serial_jtag_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_serial_jtag_hal.c.obj
+.PHONY : usb_serial_jtag_hal.c.obj
+
+usb_serial_jtag_hal.i: usb_serial_jtag_hal.c.i
+.PHONY : usb_serial_jtag_hal.i
+
+# target to preprocess a source file
+usb_serial_jtag_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_serial_jtag_hal.c.i
+.PHONY : usb_serial_jtag_hal.c.i
+
+usb_serial_jtag_hal.s: usb_serial_jtag_hal.c.s
+.PHONY : usb_serial_jtag_hal.s
+
+# target to generate assembly for a file
+usb_serial_jtag_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_serial_jtag_hal.c.s
+.PHONY : usb_serial_jtag_hal.c.s
+
+usb_wrap_hal.obj: usb_wrap_hal.c.obj
+.PHONY : usb_wrap_hal.obj
+
+# target to build an object file
+usb_wrap_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_wrap_hal.c.obj
+.PHONY : usb_wrap_hal.c.obj
+
+usb_wrap_hal.i: usb_wrap_hal.c.i
+.PHONY : usb_wrap_hal.i
+
+# target to preprocess a source file
+usb_wrap_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_wrap_hal.c.i
+.PHONY : usb_wrap_hal.c.i
+
+usb_wrap_hal.s: usb_wrap_hal.c.s
+.PHONY : usb_wrap_hal.s
+
+# target to generate assembly for a file
+usb_wrap_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/usb_wrap_hal.c.s
+.PHONY : usb_wrap_hal.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,6 +283,19 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... __idf_esp_hal_usb"
+	@echo "... esp32s3/usb_dwc_periph.obj"
+	@echo "... esp32s3/usb_dwc_periph.i"
+	@echo "... esp32s3/usb_dwc_periph.s"
+	@echo "... usb_dwc_hal.obj"
+	@echo "... usb_dwc_hal.i"
+	@echo "... usb_dwc_hal.s"
+	@echo "... usb_serial_jtag_hal.obj"
+	@echo "... usb_serial_jtag_hal.i"
+	@echo "... usb_serial_jtag_hal.s"
+	@echo "... usb_wrap_hal.obj"
+	@echo "... usb_wrap_hal.i"
+	@echo "... usb_wrap_hal.s"
 .PHONY : help
 
 

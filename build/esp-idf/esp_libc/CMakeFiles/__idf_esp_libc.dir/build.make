@@ -73,351 +73,351 @@ esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj: esp-idf/esp_libc/
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/init.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/init.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/init.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c > CMakeFiles/__idf_esp_libc.dir/src/init.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c > CMakeFiles/__idf_esp_libc.dir/src/init.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/init.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c -o CMakeFiles/__idf_esp_libc.dir/src/init.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c -o CMakeFiles/__idf_esp_libc.dir/src/init.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/abort.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/abort.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c > CMakeFiles/__idf_esp_libc.dir/src/abort.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c > CMakeFiles/__idf_esp_libc.dir/src/abort.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/abort.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/abort.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c -o CMakeFiles/__idf_esp_libc.dir/src/abort.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/abort.c -o CMakeFiles/__idf_esp_libc.dir/src/abort.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/assert.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/assert.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c > CMakeFiles/__idf_esp_libc.dir/src/assert.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c > CMakeFiles/__idf_esp_libc.dir/src/assert.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/assert.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/assert.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c -o CMakeFiles/__idf_esp_libc.dir/src/assert.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/assert.c -o CMakeFiles/__idf_esp_libc.dir/src/assert.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/heap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/heap.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c > CMakeFiles/__idf_esp_libc.dir/src/heap.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c > CMakeFiles/__idf_esp_libc.dir/src/heap.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/heap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/heap.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c -o CMakeFiles/__idf_esp_libc.dir/src/heap.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/heap.c -o CMakeFiles/__idf_esp_libc.dir/src/heap.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/locks.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/locks.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c > CMakeFiles/__idf_esp_libc.dir/src/locks.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c > CMakeFiles/__idf_esp_libc.dir/src/locks.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/locks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/locks.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c -o CMakeFiles/__idf_esp_libc.dir/src/locks.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/locks.c -o CMakeFiles/__idf_esp_libc.dir/src/locks.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/poll.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c > CMakeFiles/__idf_esp_libc.dir/src/poll.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c > CMakeFiles/__idf_esp_libc.dir/src/poll.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/poll.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c -o CMakeFiles/__idf_esp_libc.dir/src/poll.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c -o CMakeFiles/__idf_esp_libc.dir/src/poll.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/pthread.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/pthread.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c > CMakeFiles/__idf_esp_libc.dir/src/pthread.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c > CMakeFiles/__idf_esp_libc.dir/src/pthread.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/pthread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/pthread.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c -o CMakeFiles/__idf_esp_libc.dir/src/pthread.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/pthread.c -o CMakeFiles/__idf_esp_libc.dir/src/pthread.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/random.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/random.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/random.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/random.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/random.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c > CMakeFiles/__idf_esp_libc.dir/src/random.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c > CMakeFiles/__idf_esp_libc.dir/src/random.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/random.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/random.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c -o CMakeFiles/__idf_esp_libc.dir/src/random.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/random.c -o CMakeFiles/__idf_esp_libc.dir/src/random.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c > CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c > CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c -o CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/getentropy.c -o CMakeFiles/__idf_esp_libc.dir/src/getentropy.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/termios.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c > CMakeFiles/__idf_esp_libc.dir/src/termios.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c > CMakeFiles/__idf_esp_libc.dir/src/termios.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/termios.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c -o CMakeFiles/__idf_esp_libc.dir/src/termios.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c -o CMakeFiles/__idf_esp_libc.dir/src/termios.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c > CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c > CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c -o CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/stdatomic.c -o CMakeFiles/__idf_esp_libc.dir/src/stdatomic.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/time.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/time.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/time.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/time.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/time.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c > CMakeFiles/__idf_esp_libc.dir/src/time.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c > CMakeFiles/__idf_esp_libc.dir/src/time.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/time.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c -o CMakeFiles/__idf_esp_libc.dir/src/time.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/time.c -o CMakeFiles/__idf_esp_libc.dir/src/time.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c > CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c > CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c -o CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/sysconf.c -o CMakeFiles/__idf_esp_libc.dir/src/sysconf.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/realpath.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/realpath.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c > CMakeFiles/__idf_esp_libc.dir/src/realpath.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c > CMakeFiles/__idf_esp_libc.dir/src/realpath.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/realpath.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/realpath.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c -o CMakeFiles/__idf_esp_libc.dir/src/realpath.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/realpath.c -o CMakeFiles/__idf_esp_libc.dir/src/realpath.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/scandir.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/scandir.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c > CMakeFiles/__idf_esp_libc.dir/src/scandir.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c > CMakeFiles/__idf_esp_libc.dir/src/scandir.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/scandir.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/scandir.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c -o CMakeFiles/__idf_esp_libc.dir/src/scandir.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/scandir.c -o CMakeFiles/__idf_esp_libc.dir/src/scandir.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c > CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c > CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c -o CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/syscalls.c -o CMakeFiles/__idf_esp_libc.dir/src/syscalls.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c > CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c > CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c -o CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/reent_syscalls.c -o CMakeFiles/__idf_esp_libc.dir/src/reent_syscalls.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c > CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c > CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c -o CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/port/esp_time_impl.c -o CMakeFiles/__idf_esp_libc.dir/src/port/esp_time_impl.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/picolibc_init.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/picolibc_init.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/rand.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/rand.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/open_memstream.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/open_memstream.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/errno.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/errno.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/bufio_setvbuf.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/bufio_setvbuf.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/getreent.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/getreent.c.s
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/flags.make
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c
+	cd /root/progarms/web/build/esp-idf/esp_libc && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj -MF CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj.d -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.i
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c > CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.i
 
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.s
+	cd /root/progarms/web/build/esp-idf/esp_libc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/fopencookie.c -o CMakeFiles/__idf_esp_libc.dir/src/picolibc/fopencookie.c.s
 
 # Object files for target __idf_esp_libc
 __idf_esp_libc_OBJECTS = \

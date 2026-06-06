@@ -7,7 +7,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -101,7 +101,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -129,7 +129,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -175,7 +175,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -221,7 +221,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -298,7 +298,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -394,7 +394,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -458,7 +458,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -540,7 +540,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -620,7 +620,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -666,7 +666,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -712,7 +712,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -767,7 +767,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -813,7 +813,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -890,7 +890,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -936,7 +936,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -982,7 +982,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1068,8 +1068,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -1099,7 +1108,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1184,8 +1193,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -1213,7 +1231,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1307,7 +1325,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1353,7 +1371,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1442,8 +1460,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -1488,7 +1515,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1548,7 +1575,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1646,7 +1673,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1724,7 +1751,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1822,7 +1849,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1887,7 +1914,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1933,7 +1960,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -1979,7 +2006,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2025,7 +2052,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2102,7 +2129,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2194,7 +2221,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2240,7 +2267,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2286,7 +2313,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2372,8 +2399,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -2421,7 +2457,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2467,7 +2503,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2513,7 +2549,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2559,7 +2595,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2647,8 +2683,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecp.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -2692,7 +2737,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2795,8 +2840,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/bignum.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -2808,7 +2862,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -2894,8 +2948,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -2946,7 +3009,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3032,8 +3095,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3077,7 +3149,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3163,8 +3235,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3208,7 +3289,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3295,8 +3376,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3345,7 +3435,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3435,8 +3525,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecp.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3482,7 +3581,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3568,8 +3667,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3621,7 +3729,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3707,8 +3815,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -3760,7 +3877,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3834,7 +3951,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3924,7 +4041,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -3970,7 +4087,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4055,8 +4172,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4101,7 +4227,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4186,8 +4312,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4232,7 +4367,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4316,8 +4451,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4367,7 +4511,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4451,8 +4595,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4501,7 +4654,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4585,8 +4738,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4626,7 +4788,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4710,8 +4872,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4753,7 +4924,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4837,8 +5008,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -4889,7 +5069,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -4973,8 +5153,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -5026,7 +5215,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5116,8 +5305,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -5157,7 +5355,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5203,7 +5401,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5322,8 +5520,17 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecp.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecdsa.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ecjpake.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_driver_contexts_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_builtin_key_derivation.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h \
@@ -5345,7 +5552,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5431,7 +5638,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5477,7 +5684,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5552,7 +5759,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5598,7 +5805,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5644,7 +5851,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
   config/sdkconfig.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -5715,13 +5922,9 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sched.h
 
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/sha512.c:
-
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/rsa.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/rsa_internal.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_mac.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_hash.c:
 
@@ -5734,8 +5937,6 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/core/psa_crypto_random_impl.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_cipher.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_aead.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/platform.c:
 
@@ -5831,15 +6032,29 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/cmac.c:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/constant_time.c:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_aead.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/cipher_wrap.c:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_opaque_contexts.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/md5.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_hmac_transparent_contexts.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_cmac_contexts.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/sha512.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/digital_signature.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_mac.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_hmac.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_rsa_ds_contexts.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/md.h:
 
@@ -5921,6 +6136,8 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/psa_crypto_aead.c:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/sched.h:
@@ -5932,6 +6149,8 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/poly1305.c:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/time.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/aes.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/select.h:
 
@@ -5965,17 +6184,19 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/sha512.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/aes.c:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/constant_time.c:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/cipher_wrap.c:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/platform.h:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_adjust_auto_enabled.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_sha_contexts.h:
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/config_adjust_legacy_crypto.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/aesce.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/sha3.c:
 
@@ -5997,6 +6218,8 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/ripemd160.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h:
@@ -6004,10 +6227,6 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private_access.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/rsa.h:
 
@@ -6059,9 +6278,23 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_security/include/esp_ds_err.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timespec.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/aesni.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_extra.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/platform.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/include/psa_crypto_driver_esp_sha_contexts.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/hmac_drbg.c:
 
@@ -6074,14 +6307,6 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/src
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/config_psa.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_adjust_auto_enabled.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/config_adjust_legacy_crypto.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/aesce.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/mbedtls/pem.h:
 

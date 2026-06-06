@@ -17,18 +17,18 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/aes_hal.c.obj: /r
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/aes_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/aes_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/aes_ll.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/hwcrypto_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -36,11 +36,94 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/aes_hal.c.obj: /r
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h
+
+esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/ds_hal.c \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/systimer_hal.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+  config/sdkconfig.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/systimer_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/ds_hal.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/ds_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/ds_ll.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h
+
+esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/hmac_hal.c \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
+  config/sdkconfig.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_hal.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/hmac_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h
 
 esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/mpi_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpi_hal.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_hal.h \
@@ -66,16 +149,17 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/mpi_hal.c.obj: /r
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/param.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/mpi_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/mpi_ll.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/hwcrypto_periph.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -83,13 +167,17 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/mpi_hal.c.obj: /r
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/hwcrypto_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/hwcrypto_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/mpi_periph.h
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupt_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core0_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core1_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/sensitive_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/mpi_periph.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h
 
 esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/mpu_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpu_hal.c \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -123,18 +211,18 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/mpu_hal.c.obj: /r
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpu_hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpu_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/mpu_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/mpu_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
   /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h
@@ -167,33 +255,33 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/sha_hal.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/lldesc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_lldesc.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/queue.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/sha_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32/rom/sha.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/sha_ll.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/sha.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/ets_sys.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/hwcrypto_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
-  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
-  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
-  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/sha_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupt_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core0_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core1_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/sensitive_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_access.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h
 
 
-/root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/sha_ll.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/sha_ll.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_lldesc.h:
 
@@ -207,23 +295,61 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/mpu_ll.h:
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/mpu_ll.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpu_types.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/lldesc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpu_hal.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/mpi_periph.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_access.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpu_hal.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_reg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core1_reg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/interrupt_core0_reg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_reg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/mpi_ll.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/param.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/sensitive_reg.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/hwcrypto_periph.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/aes_types.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/aes_ll.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/hwcrypto_reg.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h:
 
@@ -233,14 +359,6 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h:
@@ -249,13 +367,19 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/aes_hal.c:
 
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_types.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/aes_hal.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/mpi_ll.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h:
 
@@ -263,27 +387,39 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/ds_hal.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/ds_hal.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/aes_types.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/ets_sys.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/hmac_hal.c:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupt_reg.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpi_hal.c:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/queue.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h:
 
@@ -293,13 +429,13 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/sha_hal.c.obj: /r
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/hmac_hal.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
 
@@ -311,50 +447,36 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/sha.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32/rom/sha.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/mpi_periph.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/queue.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32/include/hal/aes_ll.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_hal.h:
+/root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/systimer_types.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/ds_ll.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/hwcrypto_reg.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/param.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_types.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpi_hal.c:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h:
+/root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/systimer_hal.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/hwcrypto_periph.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/mpu_hal.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/lldesc.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/ds_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/esp32s3/include/hal/hmac_ll.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security/include/hal/mpi_hal.h:

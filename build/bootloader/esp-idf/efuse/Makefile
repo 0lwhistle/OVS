@@ -228,101 +228,125 @@ efuse_test_table/fast:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build.make esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build
 .PHONY : efuse_test_table/fast
 
-esp32/esp_efuse_fields.obj: esp32/esp_efuse_fields.c.obj
-.PHONY : esp32/esp_efuse_fields.obj
+esp32s3/esp_efuse_fields.obj: esp32s3/esp_efuse_fields.c.obj
+.PHONY : esp32s3/esp_efuse_fields.obj
 
 # target to build an object file
-esp32/esp_efuse_fields.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj
-.PHONY : esp32/esp_efuse_fields.c.obj
+esp32s3/esp_efuse_fields.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.obj
+.PHONY : esp32s3/esp_efuse_fields.c.obj
 
-esp32/esp_efuse_fields.i: esp32/esp_efuse_fields.c.i
-.PHONY : esp32/esp_efuse_fields.i
+esp32s3/esp_efuse_fields.i: esp32s3/esp_efuse_fields.c.i
+.PHONY : esp32s3/esp_efuse_fields.i
 
 # target to preprocess a source file
-esp32/esp_efuse_fields.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.i
-.PHONY : esp32/esp_efuse_fields.c.i
+esp32s3/esp_efuse_fields.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.i
+.PHONY : esp32s3/esp_efuse_fields.c.i
 
-esp32/esp_efuse_fields.s: esp32/esp_efuse_fields.c.s
-.PHONY : esp32/esp_efuse_fields.s
+esp32s3/esp_efuse_fields.s: esp32s3/esp_efuse_fields.c.s
+.PHONY : esp32s3/esp_efuse_fields.s
 
 # target to generate assembly for a file
-esp32/esp_efuse_fields.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.s
-.PHONY : esp32/esp_efuse_fields.c.s
+esp32s3/esp_efuse_fields.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.s
+.PHONY : esp32s3/esp_efuse_fields.c.s
 
-esp32/esp_efuse_table.obj: esp32/esp_efuse_table.c.obj
-.PHONY : esp32/esp_efuse_table.obj
+esp32s3/esp_efuse_rtc_calib.obj: esp32s3/esp_efuse_rtc_calib.c.obj
+.PHONY : esp32s3/esp_efuse_rtc_calib.obj
 
 # target to build an object file
-esp32/esp_efuse_table.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj
-.PHONY : esp32/esp_efuse_table.c.obj
+esp32s3/esp_efuse_rtc_calib.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_rtc_calib.c.obj
+.PHONY : esp32s3/esp_efuse_rtc_calib.c.obj
 
-esp32/esp_efuse_table.i: esp32/esp_efuse_table.c.i
-.PHONY : esp32/esp_efuse_table.i
+esp32s3/esp_efuse_rtc_calib.i: esp32s3/esp_efuse_rtc_calib.c.i
+.PHONY : esp32s3/esp_efuse_rtc_calib.i
 
 # target to preprocess a source file
-esp32/esp_efuse_table.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.i
-.PHONY : esp32/esp_efuse_table.c.i
+esp32s3/esp_efuse_rtc_calib.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_rtc_calib.c.i
+.PHONY : esp32s3/esp_efuse_rtc_calib.c.i
 
-esp32/esp_efuse_table.s: esp32/esp_efuse_table.c.s
-.PHONY : esp32/esp_efuse_table.s
+esp32s3/esp_efuse_rtc_calib.s: esp32s3/esp_efuse_rtc_calib.c.s
+.PHONY : esp32s3/esp_efuse_rtc_calib.s
 
 # target to generate assembly for a file
-esp32/esp_efuse_table.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.s
-.PHONY : esp32/esp_efuse_table.c.s
+esp32s3/esp_efuse_rtc_calib.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_rtc_calib.c.s
+.PHONY : esp32s3/esp_efuse_rtc_calib.c.s
 
-esp32/esp_efuse_utility.obj: esp32/esp_efuse_utility.c.obj
-.PHONY : esp32/esp_efuse_utility.obj
+esp32s3/esp_efuse_table.obj: esp32s3/esp_efuse_table.c.obj
+.PHONY : esp32s3/esp_efuse_table.obj
 
 # target to build an object file
-esp32/esp_efuse_utility.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.obj
-.PHONY : esp32/esp_efuse_utility.c.obj
+esp32s3/esp_efuse_table.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_table.c.obj
+.PHONY : esp32s3/esp_efuse_table.c.obj
 
-esp32/esp_efuse_utility.i: esp32/esp_efuse_utility.c.i
-.PHONY : esp32/esp_efuse_utility.i
+esp32s3/esp_efuse_table.i: esp32s3/esp_efuse_table.c.i
+.PHONY : esp32s3/esp_efuse_table.i
 
 # target to preprocess a source file
-esp32/esp_efuse_utility.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.i
-.PHONY : esp32/esp_efuse_utility.c.i
+esp32s3/esp_efuse_table.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_table.c.i
+.PHONY : esp32s3/esp_efuse_table.c.i
 
-esp32/esp_efuse_utility.s: esp32/esp_efuse_utility.c.s
-.PHONY : esp32/esp_efuse_utility.s
+esp32s3/esp_efuse_table.s: esp32s3/esp_efuse_table.c.s
+.PHONY : esp32s3/esp_efuse_table.s
 
 # target to generate assembly for a file
-esp32/esp_efuse_utility.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.s
-.PHONY : esp32/esp_efuse_utility.c.s
+esp32s3/esp_efuse_table.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_table.c.s
+.PHONY : esp32s3/esp_efuse_table.c.s
 
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.obj: src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.obj
+esp32s3/esp_efuse_utility.obj: esp32s3/esp_efuse_utility.c.obj
+.PHONY : esp32s3/esp_efuse_utility.obj
 
 # target to build an object file
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj
+esp32s3/esp_efuse_utility.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.obj
+.PHONY : esp32s3/esp_efuse_utility.c.obj
 
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.i: src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.i
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.i
+esp32s3/esp_efuse_utility.i: esp32s3/esp_efuse_utility.c.i
+.PHONY : esp32s3/esp_efuse_utility.i
 
 # target to preprocess a source file
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.i
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.i
+esp32s3/esp_efuse_utility.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.i
+.PHONY : esp32s3/esp_efuse_utility.c.i
 
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.s: src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.s
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.s
+esp32s3/esp_efuse_utility.s: esp32s3/esp_efuse_utility.c.s
+.PHONY : esp32s3/esp_efuse_utility.s
 
 # target to generate assembly for a file
-src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.s
-.PHONY : src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.s
+esp32s3/esp_efuse_utility.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.s
+.PHONY : esp32s3/esp_efuse_utility.c.s
+
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.obj: src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.obj
+
+# target to build an object file
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj
+
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.i: src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.i
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.i
+
+# target to preprocess a source file
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.i
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.i
+
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.s: src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.s
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.s
+
+# target to generate assembly for a file
+src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/__idf_efuse.dir/build.make esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.s
+.PHONY : src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.s
 
 src/esp_efuse_api.obj: src/esp_efuse_api.c.obj
 .PHONY : src/esp_efuse_api.obj
@@ -412,18 +436,21 @@ help:
 	@echo "... show-efuse-table"
 	@echo "... show_efuse_table"
 	@echo "... __idf_efuse"
-	@echo "... esp32/esp_efuse_fields.obj"
-	@echo "... esp32/esp_efuse_fields.i"
-	@echo "... esp32/esp_efuse_fields.s"
-	@echo "... esp32/esp_efuse_table.obj"
-	@echo "... esp32/esp_efuse_table.i"
-	@echo "... esp32/esp_efuse_table.s"
-	@echo "... esp32/esp_efuse_utility.obj"
-	@echo "... esp32/esp_efuse_utility.i"
-	@echo "... esp32/esp_efuse_utility.s"
-	@echo "... src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.obj"
-	@echo "... src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.i"
-	@echo "... src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.s"
+	@echo "... esp32s3/esp_efuse_fields.obj"
+	@echo "... esp32s3/esp_efuse_fields.i"
+	@echo "... esp32s3/esp_efuse_fields.s"
+	@echo "... esp32s3/esp_efuse_rtc_calib.obj"
+	@echo "... esp32s3/esp_efuse_rtc_calib.i"
+	@echo "... esp32s3/esp_efuse_rtc_calib.s"
+	@echo "... esp32s3/esp_efuse_table.obj"
+	@echo "... esp32s3/esp_efuse_table.i"
+	@echo "... esp32s3/esp_efuse_table.s"
+	@echo "... esp32s3/esp_efuse_utility.obj"
+	@echo "... esp32s3/esp_efuse_utility.i"
+	@echo "... esp32s3/esp_efuse_utility.s"
+	@echo "... src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.obj"
+	@echo "... src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.i"
+	@echo "... src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.s"
 	@echo "... src/esp_efuse_api.obj"
 	@echo "... src/esp_efuse_api.i"
 	@echo "... src/esp_efuse_api.s"

@@ -73,15 +73,15 @@ esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.
 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c
 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_https_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj -MF CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj.d -o CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c
+	cd /root/progarms/web/build/esp-idf/esp_https_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj -MF CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj.d -o CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c
 
 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_https_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c > CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.i
+	cd /root/progarms/web/build/esp-idf/esp_https_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c > CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.i
 
 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_https_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c -o CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.s
+	cd /root/progarms/web/build/esp-idf/esp_https_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server/src/https_server.c -o CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.s
 
 # Object files for target __idf_esp_https_server
 __idf_esp_https_server_OBJECTS = \

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_i2s.dir/esp32/i2s_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_i2s.dir/esp32/i2s_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_i2s.dir/esp32s3/i2s_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_i2s.dir/esp32s3/i2s_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_i2s.dir/i2s_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_i2s.dir/i2s_hal.c.obj.d"
   "libesp_hal_i2s.a"

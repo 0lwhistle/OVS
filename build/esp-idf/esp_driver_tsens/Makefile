@@ -161,6 +161,44 @@ depend:
 	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/rule:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/rule
+.PHONY : esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/rule
+
+# Convenience name for target.
+__idf_esp_driver_tsens: esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/rule
+.PHONY : __idf_esp_driver_tsens
+
+# fast build rule for target.
+__idf_esp_driver_tsens/fast:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/build.make esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/build
+.PHONY : __idf_esp_driver_tsens/fast
+
+src/temperature_sensor.obj: src/temperature_sensor.c.obj
+.PHONY : src/temperature_sensor.obj
+
+# target to build an object file
+src/temperature_sensor.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/build.make esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/src/temperature_sensor.c.obj
+.PHONY : src/temperature_sensor.c.obj
+
+src/temperature_sensor.i: src/temperature_sensor.c.i
+.PHONY : src/temperature_sensor.i
+
+# target to preprocess a source file
+src/temperature_sensor.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/build.make esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/src/temperature_sensor.c.i
+.PHONY : src/temperature_sensor.c.i
+
+src/temperature_sensor.s: src/temperature_sensor.c.s
+.PHONY : src/temperature_sensor.s
+
+# target to generate assembly for a file
+src/temperature_sensor.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/build.make esp-idf/esp_driver_tsens/CMakeFiles/__idf_esp_driver_tsens.dir/src/temperature_sensor.c.s
+.PHONY : src/temperature_sensor.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,6 +211,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... __idf_esp_driver_tsens"
+	@echo "... src/temperature_sensor.obj"
+	@echo "... src/temperature_sensor.i"
+	@echo "... src/temperature_sensor.s"
 .PHONY : help
 
 

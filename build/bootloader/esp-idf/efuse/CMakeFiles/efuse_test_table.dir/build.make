@@ -67,7 +67,7 @@ include esp-idf/efuse/CMakeFiles/efuse_test_table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/efuse_test_table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/efuse_test_table:
-	cd /root/progarms/web/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/test/esp_efuse_test_table.csv -t esp32 --max_blk_len 192
+	cd /root/progarms/web/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/test/esp_efuse_test_table.csv -t esp32s3 --max_blk_len 256
 
 efuse_test_table: esp-idf/efuse/CMakeFiles/efuse_test_table
 efuse_test_table: esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build.make

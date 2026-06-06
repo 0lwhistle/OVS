@@ -19,8 +19,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
@@ -48,7 +48,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/esp_rom_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/esp_rom_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/private_include/bootloader_init.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
@@ -61,9 +61,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_app_format.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/private_include/bootloader_utility.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/private_include/bootloader_config.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/bootloader_common.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_hooks.h

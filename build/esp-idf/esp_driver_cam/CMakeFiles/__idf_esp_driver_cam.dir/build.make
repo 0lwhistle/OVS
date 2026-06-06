@@ -73,43 +73,75 @@ esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj: e
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c
 
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c > CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c > CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i
 
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c -o CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/esp_cam_ctlr.c -o CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s
 
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/flags.make
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c
 
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c > CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c > CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i
 
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c -o CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp_share_ctrl.c -o CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/flags.make
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_gdma.c
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_gdma.c
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_gdma.c > CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.i
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_gdma.c -o CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.s
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/flags.make
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_cam.c
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj -MF CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj.d -o CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_cam.c
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_cam.c > CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.i
+
+esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_driver_cam && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam/dvp/src/esp_cam_ctlr_dvp_cam.c -o CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.s
 
 # Object files for target __idf_esp_driver_cam
 __idf_esp_driver_cam_OBJECTS = \
 "CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj" \
-"CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj"
+"CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj" \
+"CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj" \
+"CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj"
 
 # External object files for target __idf_esp_driver_cam
 __idf_esp_driver_cam_EXTERNAL_OBJECTS =
 
 esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj
 esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj
+esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj
+esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj
 esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make
 esp-idf/esp_driver_cam/libesp_driver_cam.a: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libesp_driver_cam.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libesp_driver_cam.a"
 	cd /root/progarms/web/build/esp-idf/esp_driver_cam && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_cam.dir/cmake_clean_target.cmake
 	cd /root/progarms/web/build/esp-idf/esp_driver_cam && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_cam.dir/link.txt --verbose=$(VERBOSE)
 

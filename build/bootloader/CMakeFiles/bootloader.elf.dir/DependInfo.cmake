@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/progarms/web/build/bootloader/project_elf_src_esp32.c" "CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj" "gcc" "CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj.d"
+  "/root/progarms/web/build/bootloader/project_elf_src_esp32s3.c" "CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj" "gcc" "CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -17,7 +17,9 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/soc/CMakeFiles/__idf_soc.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/hal/CMakeFiles/__idf_hal.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
@@ -26,7 +28,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/DependInfo.cmake"
-  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"

@@ -154,6 +154,30 @@ brownout_hal.c.s:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build.make esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/brownout_hal.c.s
 .PHONY : brownout_hal.c.s
 
+esp32s3/rtc_cntl_hal.obj: esp32s3/rtc_cntl_hal.c.obj
+.PHONY : esp32s3/rtc_cntl_hal.obj
+
+# target to build an object file
+esp32s3/rtc_cntl_hal.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build.make esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/esp32s3/rtc_cntl_hal.c.obj
+.PHONY : esp32s3/rtc_cntl_hal.c.obj
+
+esp32s3/rtc_cntl_hal.i: esp32s3/rtc_cntl_hal.c.i
+.PHONY : esp32s3/rtc_cntl_hal.i
+
+# target to preprocess a source file
+esp32s3/rtc_cntl_hal.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build.make esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/esp32s3/rtc_cntl_hal.c.i
+.PHONY : esp32s3/rtc_cntl_hal.c.i
+
+esp32s3/rtc_cntl_hal.s: esp32s3/rtc_cntl_hal.c.s
+.PHONY : esp32s3/rtc_cntl_hal.s
+
+# target to generate assembly for a file
+esp32s3/rtc_cntl_hal.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build.make esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/esp32s3/rtc_cntl_hal.c.s
+.PHONY : esp32s3/rtc_cntl_hal.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -166,6 +190,9 @@ help:
 	@echo "... brownout_hal.obj"
 	@echo "... brownout_hal.i"
 	@echo "... brownout_hal.s"
+	@echo "... esp32s3/rtc_cntl_hal.obj"
+	@echo "... esp32s3/rtc_cntl_hal.i"
+	@echo "... esp32s3/rtc_cntl_hal.s"
 .PHONY : help
 
 

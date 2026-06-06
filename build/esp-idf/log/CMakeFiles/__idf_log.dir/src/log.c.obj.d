@@ -43,8 +43,8 @@ esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_print.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_message.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_format.h

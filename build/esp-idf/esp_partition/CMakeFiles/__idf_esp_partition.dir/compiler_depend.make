@@ -55,8 +55,8 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition.c.obj: /root/
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
@@ -70,22 +70,22 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition.c.obj: /root/
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32/include/esp_efuse_chip.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/include/esp_efuse_chip.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/spi_flash_mmap.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_spi_flash_counters.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_md5.h \
   /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/bootloader_util.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_hal.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_ll.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_hal.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_ll.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/efuse_periph.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_reg.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/efuse_defs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_struct.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_reg.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h \
   /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h
 
 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_partition/partition_target.c \
@@ -133,12 +133,12 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev/include/esp_blockdev.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_partition/include/esp_partition.h \
   /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_flash_encrypt.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
@@ -162,6 +162,8 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj:
   /root/esp-idf/esp-idf-v6.0.1/components/esp_bootloader_format/include/esp_bootloader_desc.h
 
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_bootloader_format/include/esp_bootloader_desc.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_app_format/include/esp_app_desc.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_app_format.h:
@@ -172,23 +174,29 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj:
 
 /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_struct.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_bootloader_format/include/esp_bootloader_desc.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/efuse_defs.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_reg.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/efuse_periph.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_ll.h:
+/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_ll.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_hal.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_md5.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/include/esp_spi_flash_counters.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/include/esp_efuse_chip.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/bootloader_util.h:
 
@@ -220,9 +228,13 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
 
@@ -244,23 +256,17 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/partition_target.c.obj:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/hal/esp32/include/hal/efuse_hal.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h:
 
@@ -310,17 +316,11 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32/include/esp_efuse_chip.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/efuse_reg.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_partition/include/esp_partition.h:
 
@@ -334,13 +334,13 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/include/hal/spi_flash_types.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
 
