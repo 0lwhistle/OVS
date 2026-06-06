@@ -130,6 +130,30 @@ __idf_hal/fast:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/build
 .PHONY : __idf_hal/fast
 
+cache_hal.obj: cache_hal.c.obj
+.PHONY : cache_hal.obj
+
+# target to build an object file
+cache_hal.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj
+.PHONY : cache_hal.c.obj
+
+cache_hal.i: cache_hal.c.i
+.PHONY : cache_hal.i
+
+# target to preprocess a source file
+cache_hal.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.i
+.PHONY : cache_hal.c.i
+
+cache_hal.s: cache_hal.c.s
+.PHONY : cache_hal.s
+
+# target to generate assembly for a file
+cache_hal.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.s
+.PHONY : cache_hal.c.s
+
 efuse_hal.obj: efuse_hal.c.obj
 .PHONY : efuse_hal.obj
 
@@ -154,53 +178,29 @@ efuse_hal.c.s:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.s
 .PHONY : efuse_hal.c.s
 
-esp32/cache_hal_esp32.obj: esp32/cache_hal_esp32.c.obj
-.PHONY : esp32/cache_hal_esp32.obj
+esp32s3/efuse_hal.obj: esp32s3/efuse_hal.c.obj
+.PHONY : esp32s3/efuse_hal.obj
 
 # target to build an object file
-esp32/cache_hal_esp32.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj
-.PHONY : esp32/cache_hal_esp32.c.obj
+esp32s3/efuse_hal.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj
+.PHONY : esp32s3/efuse_hal.c.obj
 
-esp32/cache_hal_esp32.i: esp32/cache_hal_esp32.c.i
-.PHONY : esp32/cache_hal_esp32.i
-
-# target to preprocess a source file
-esp32/cache_hal_esp32.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.i
-.PHONY : esp32/cache_hal_esp32.c.i
-
-esp32/cache_hal_esp32.s: esp32/cache_hal_esp32.c.s
-.PHONY : esp32/cache_hal_esp32.s
-
-# target to generate assembly for a file
-esp32/cache_hal_esp32.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.s
-.PHONY : esp32/cache_hal_esp32.c.s
-
-esp32/efuse_hal.obj: esp32/efuse_hal.c.obj
-.PHONY : esp32/efuse_hal.obj
-
-# target to build an object file
-esp32/efuse_hal.c.obj:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj
-.PHONY : esp32/efuse_hal.c.obj
-
-esp32/efuse_hal.i: esp32/efuse_hal.c.i
-.PHONY : esp32/efuse_hal.i
+esp32s3/efuse_hal.i: esp32s3/efuse_hal.c.i
+.PHONY : esp32s3/efuse_hal.i
 
 # target to preprocess a source file
-esp32/efuse_hal.c.i:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.i
-.PHONY : esp32/efuse_hal.c.i
+esp32s3/efuse_hal.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.i
+.PHONY : esp32s3/efuse_hal.c.i
 
-esp32/efuse_hal.s: esp32/efuse_hal.c.s
-.PHONY : esp32/efuse_hal.s
+esp32s3/efuse_hal.s: esp32s3/efuse_hal.c.s
+.PHONY : esp32s3/efuse_hal.s
 
 # target to generate assembly for a file
-esp32/efuse_hal.c.s:
-	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.s
-.PHONY : esp32/efuse_hal.c.s
+esp32s3/efuse_hal.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.s
+.PHONY : esp32s3/efuse_hal.c.s
 
 hal_utils.obj: hal_utils.c.obj
 .PHONY : hal_utils.obj
@@ -259,15 +259,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... __idf_hal"
+	@echo "... cache_hal.obj"
+	@echo "... cache_hal.i"
+	@echo "... cache_hal.s"
 	@echo "... efuse_hal.obj"
 	@echo "... efuse_hal.i"
 	@echo "... efuse_hal.s"
-	@echo "... esp32/cache_hal_esp32.obj"
-	@echo "... esp32/cache_hal_esp32.i"
-	@echo "... esp32/cache_hal_esp32.s"
-	@echo "... esp32/efuse_hal.obj"
-	@echo "... esp32/efuse_hal.i"
-	@echo "... esp32/efuse_hal.s"
+	@echo "... esp32s3/efuse_hal.obj"
+	@echo "... esp32s3/efuse_hal.i"
+	@echo "... esp32s3/efuse_hal.s"
 	@echo "... hal_utils.obj"
 	@echo "... hal_utils.i"
 	@echo "... hal_utils.s"

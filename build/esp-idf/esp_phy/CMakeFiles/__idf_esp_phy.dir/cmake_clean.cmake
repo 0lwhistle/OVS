@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj"
-  "CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj.d"
+  "CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj"
+  "CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj.d"
   "CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj"
   "CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj.d"
   "CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj"

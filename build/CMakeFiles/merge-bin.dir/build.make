@@ -67,7 +67,7 @@ include CMakeFiles/merge-bin.dir/compiler_depend.make
 include CMakeFiles/merge-bin.dir/progress.make
 
 CMakeFiles/merge-bin:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32" -D "SERIAL_TOOL_ARGS=merge-bin;-o;/root/progarms/web/build/merged-binary.bin;@/root/progarms/web/build/flash_args" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
+	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=merge-bin;-o;/root/progarms/web/build/merged-binary.bin;@/root/progarms/web/build/flash_args" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
 
 merge-bin: CMakeFiles/merge-bin
 merge-bin: CMakeFiles/merge-bin.dir/build.make

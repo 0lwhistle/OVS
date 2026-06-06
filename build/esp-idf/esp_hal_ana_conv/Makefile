@@ -247,53 +247,77 @@ adc_oneshot_hal.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/adc_oneshot_hal.c.s
 .PHONY : adc_oneshot_hal.c.s
 
-esp32/adc_periph.obj: esp32/adc_periph.c.obj
-.PHONY : esp32/adc_periph.obj
+esp32s3/adc_periph.obj: esp32s3/adc_periph.c.obj
+.PHONY : esp32s3/adc_periph.obj
 
 # target to build an object file
-esp32/adc_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/adc_periph.c.obj
-.PHONY : esp32/adc_periph.c.obj
+esp32s3/adc_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/adc_periph.c.obj
+.PHONY : esp32s3/adc_periph.c.obj
 
-esp32/adc_periph.i: esp32/adc_periph.c.i
-.PHONY : esp32/adc_periph.i
+esp32s3/adc_periph.i: esp32s3/adc_periph.c.i
+.PHONY : esp32s3/adc_periph.i
 
 # target to preprocess a source file
-esp32/adc_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/adc_periph.c.i
-.PHONY : esp32/adc_periph.c.i
+esp32s3/adc_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/adc_periph.c.i
+.PHONY : esp32s3/adc_periph.c.i
 
-esp32/adc_periph.s: esp32/adc_periph.c.s
-.PHONY : esp32/adc_periph.s
+esp32s3/adc_periph.s: esp32s3/adc_periph.c.s
+.PHONY : esp32s3/adc_periph.s
 
 # target to generate assembly for a file
-esp32/adc_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/adc_periph.c.s
-.PHONY : esp32/adc_periph.c.s
+esp32s3/adc_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/adc_periph.c.s
+.PHONY : esp32s3/adc_periph.c.s
 
-esp32/dac_periph.obj: esp32/dac_periph.c.obj
-.PHONY : esp32/dac_periph.obj
+esp32s3/temperature_sensor_periph.obj: esp32s3/temperature_sensor_periph.c.obj
+.PHONY : esp32s3/temperature_sensor_periph.obj
 
 # target to build an object file
-esp32/dac_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/dac_periph.c.obj
-.PHONY : esp32/dac_periph.c.obj
+esp32s3/temperature_sensor_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/temperature_sensor_periph.c.obj
+.PHONY : esp32s3/temperature_sensor_periph.c.obj
 
-esp32/dac_periph.i: esp32/dac_periph.c.i
-.PHONY : esp32/dac_periph.i
+esp32s3/temperature_sensor_periph.i: esp32s3/temperature_sensor_periph.c.i
+.PHONY : esp32s3/temperature_sensor_periph.i
 
 # target to preprocess a source file
-esp32/dac_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/dac_periph.c.i
-.PHONY : esp32/dac_periph.c.i
+esp32s3/temperature_sensor_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/temperature_sensor_periph.c.i
+.PHONY : esp32s3/temperature_sensor_periph.c.i
 
-esp32/dac_periph.s: esp32/dac_periph.c.s
-.PHONY : esp32/dac_periph.s
+esp32s3/temperature_sensor_periph.s: esp32s3/temperature_sensor_periph.c.s
+.PHONY : esp32s3/temperature_sensor_periph.s
 
 # target to generate assembly for a file
-esp32/dac_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32/dac_periph.c.s
-.PHONY : esp32/dac_periph.c.s
+esp32s3/temperature_sensor_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/esp32s3/temperature_sensor_periph.c.s
+.PHONY : esp32s3/temperature_sensor_periph.c.s
+
+temperature_sensor_hal.obj: temperature_sensor_hal.c.obj
+.PHONY : temperature_sensor_hal.obj
+
+# target to build an object file
+temperature_sensor_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/temperature_sensor_hal.c.obj
+.PHONY : temperature_sensor_hal.c.obj
+
+temperature_sensor_hal.i: temperature_sensor_hal.c.i
+.PHONY : temperature_sensor_hal.i
+
+# target to preprocess a source file
+temperature_sensor_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/temperature_sensor_hal.c.i
+.PHONY : temperature_sensor_hal.c.i
+
+temperature_sensor_hal.s: temperature_sensor_hal.c.s
+.PHONY : temperature_sensor_hal.s
+
+# target to generate assembly for a file
+temperature_sensor_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/build.make esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/temperature_sensor_hal.c.s
+.PHONY : temperature_sensor_hal.c.s
 
 # Help Target
 help:
@@ -317,12 +341,15 @@ help:
 	@echo "... adc_oneshot_hal.obj"
 	@echo "... adc_oneshot_hal.i"
 	@echo "... adc_oneshot_hal.s"
-	@echo "... esp32/adc_periph.obj"
-	@echo "... esp32/adc_periph.i"
-	@echo "... esp32/adc_periph.s"
-	@echo "... esp32/dac_periph.obj"
-	@echo "... esp32/dac_periph.i"
-	@echo "... esp32/dac_periph.s"
+	@echo "... esp32s3/adc_periph.obj"
+	@echo "... esp32s3/adc_periph.i"
+	@echo "... esp32s3/adc_periph.s"
+	@echo "... esp32s3/temperature_sensor_periph.obj"
+	@echo "... esp32s3/temperature_sensor_periph.i"
+	@echo "... esp32s3/temperature_sensor_periph.s"
+	@echo "... temperature_sensor_hal.obj"
+	@echo "... temperature_sensor_hal.i"
+	@echo "... temperature_sensor_hal.s"
 .PHONY : help
 
 

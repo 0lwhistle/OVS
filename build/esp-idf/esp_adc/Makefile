@@ -271,6 +271,54 @@ adc_continuous.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.s
 .PHONY : adc_continuous.c.s
 
+adc_filter.obj: adc_filter.c.obj
+.PHONY : adc_filter.obj
+
+# target to build an object file
+adc_filter.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj
+.PHONY : adc_filter.c.obj
+
+adc_filter.i: adc_filter.c.i
+.PHONY : adc_filter.i
+
+# target to preprocess a source file
+adc_filter.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.i
+.PHONY : adc_filter.c.i
+
+adc_filter.s: adc_filter.c.s
+.PHONY : adc_filter.s
+
+# target to generate assembly for a file
+adc_filter.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.s
+.PHONY : adc_filter.c.s
+
+adc_monitor.obj: adc_monitor.c.obj
+.PHONY : adc_monitor.obj
+
+# target to build an object file
+adc_monitor.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj
+.PHONY : adc_monitor.c.obj
+
+adc_monitor.i: adc_monitor.c.i
+.PHONY : adc_monitor.i
+
+# target to preprocess a source file
+adc_monitor.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.i
+.PHONY : adc_monitor.c.i
+
+adc_monitor.s: adc_monitor.c.s
+.PHONY : adc_monitor.s
+
+# target to generate assembly for a file
+adc_monitor.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.s
+.PHONY : adc_monitor.c.s
+
 adc_oneshot.obj: adc_oneshot.c.obj
 .PHONY : adc_oneshot.obj
 
@@ -295,53 +343,53 @@ adc_oneshot.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.s
 .PHONY : adc_oneshot.c.s
 
-esp32/adc_cali_line_fitting.obj: esp32/adc_cali_line_fitting.c.obj
-.PHONY : esp32/adc_cali_line_fitting.obj
+esp32s3/curve_fitting_coefficients.obj: esp32s3/curve_fitting_coefficients.c.obj
+.PHONY : esp32s3/curve_fitting_coefficients.obj
 
 # target to build an object file
-esp32/adc_cali_line_fitting.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj
-.PHONY : esp32/adc_cali_line_fitting.c.obj
+esp32s3/curve_fitting_coefficients.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj
+.PHONY : esp32s3/curve_fitting_coefficients.c.obj
 
-esp32/adc_cali_line_fitting.i: esp32/adc_cali_line_fitting.c.i
-.PHONY : esp32/adc_cali_line_fitting.i
+esp32s3/curve_fitting_coefficients.i: esp32s3/curve_fitting_coefficients.c.i
+.PHONY : esp32s3/curve_fitting_coefficients.i
 
 # target to preprocess a source file
-esp32/adc_cali_line_fitting.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.i
-.PHONY : esp32/adc_cali_line_fitting.c.i
+esp32s3/curve_fitting_coefficients.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.i
+.PHONY : esp32s3/curve_fitting_coefficients.c.i
 
-esp32/adc_cali_line_fitting.s: esp32/adc_cali_line_fitting.c.s
-.PHONY : esp32/adc_cali_line_fitting.s
+esp32s3/curve_fitting_coefficients.s: esp32s3/curve_fitting_coefficients.c.s
+.PHONY : esp32s3/curve_fitting_coefficients.s
 
 # target to generate assembly for a file
-esp32/adc_cali_line_fitting.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.s
-.PHONY : esp32/adc_cali_line_fitting.c.s
+esp32s3/curve_fitting_coefficients.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.s
+.PHONY : esp32s3/curve_fitting_coefficients.c.s
 
-esp32/adc_dma.obj: esp32/adc_dma.c.obj
-.PHONY : esp32/adc_dma.obj
+gdma/adc_dma.obj: gdma/adc_dma.c.obj
+.PHONY : gdma/adc_dma.obj
 
 # target to build an object file
-esp32/adc_dma.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj
-.PHONY : esp32/adc_dma.c.obj
+gdma/adc_dma.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj
+.PHONY : gdma/adc_dma.c.obj
 
-esp32/adc_dma.i: esp32/adc_dma.c.i
-.PHONY : esp32/adc_dma.i
+gdma/adc_dma.i: gdma/adc_dma.c.i
+.PHONY : gdma/adc_dma.i
 
 # target to preprocess a source file
-esp32/adc_dma.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.i
-.PHONY : esp32/adc_dma.c.i
+gdma/adc_dma.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.i
+.PHONY : gdma/adc_dma.c.i
 
-esp32/adc_dma.s: esp32/adc_dma.c.s
-.PHONY : esp32/adc_dma.s
+gdma/adc_dma.s: gdma/adc_dma.c.s
+.PHONY : gdma/adc_dma.s
 
 # target to generate assembly for a file
-esp32/adc_dma.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.s
-.PHONY : esp32/adc_dma.c.s
+gdma/adc_dma.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.s
+.PHONY : gdma/adc_dma.c.s
 
 # Help Target
 help:
@@ -368,15 +416,21 @@ help:
 	@echo "... adc_continuous.obj"
 	@echo "... adc_continuous.i"
 	@echo "... adc_continuous.s"
+	@echo "... adc_filter.obj"
+	@echo "... adc_filter.i"
+	@echo "... adc_filter.s"
+	@echo "... adc_monitor.obj"
+	@echo "... adc_monitor.i"
+	@echo "... adc_monitor.s"
 	@echo "... adc_oneshot.obj"
 	@echo "... adc_oneshot.i"
 	@echo "... adc_oneshot.s"
-	@echo "... esp32/adc_cali_line_fitting.obj"
-	@echo "... esp32/adc_cali_line_fitting.i"
-	@echo "... esp32/adc_cali_line_fitting.s"
-	@echo "... esp32/adc_dma.obj"
-	@echo "... esp32/adc_dma.i"
-	@echo "... esp32/adc_dma.s"
+	@echo "... esp32s3/curve_fitting_coefficients.obj"
+	@echo "... esp32s3/curve_fitting_coefficients.i"
+	@echo "... esp32s3/curve_fitting_coefficients.s"
+	@echo "... gdma/adc_dma.obj"
+	@echo "... gdma/adc_dma.i"
+	@echo "... gdma/adc_dma.s"
 .PHONY : help
 
 

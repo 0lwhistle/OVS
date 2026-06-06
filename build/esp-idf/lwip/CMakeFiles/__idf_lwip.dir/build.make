@@ -73,1275 +73,1275 @@ esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj: esp-idf/lwip/CMakeF
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c > CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c > CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c -o CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/sntp/sntp.c -o CMakeFiles/__idf_lwip.dir/apps/sntp/sntp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_lib.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_lib.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/api_msg.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/api_msg.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/err.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/err.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/if_api.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/if_api.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netbuf.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netbuf.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netdb.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netdb.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/netifapi.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/netifapi.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/sockets.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/sockets.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c > CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/api/tcpip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/api/tcpip.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c > CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c > CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/sntp/sntp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/sntp/sntp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c > CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c > CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/apps/netbiosns/netbiosns.c -o CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/def.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/def.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/dns.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/dns.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/inet_chksum.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/inet_chksum.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/init.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/init.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ip.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/mem.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/mem.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/memp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/memp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/netif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/netif.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/pbuf.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/pbuf.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/raw.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/raw.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/stats.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/stats.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/sys.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/sys.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_in.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_in.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/tcp_out.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp_out.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/timeouts.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/timeouts.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/udp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/udp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/autoip.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/autoip.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/dhcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/dhcp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/etharp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/etharp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/icmp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/icmp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/igmp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/igmp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_napt.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_napt.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_addr.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_addr.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv4/ip4_frag.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv4/ip4_frag.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/dhcp6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/dhcp6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ethip6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ethip6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/icmp6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/icmp6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/inet6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/inet6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_addr.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_addr.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/ip6_frag.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6_frag.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/mld6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/mld6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c > CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/core/ipv6/nd6.c -o CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/nd6.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ethernet.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ethernet.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/bridgeif_fdb.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/bridgeif_fdb.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/slipif.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/slipif.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/auth.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/auth.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ccp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-md5.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap-new.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-new.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-array-parameter -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/chap_ms.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap_ms.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/demand.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eap.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ecp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/eui64.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eui64.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/fsm.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/fsm.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipcp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ipv6cp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/lcp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/lcp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/magic.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/magic.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/mppe.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/mppe.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/multilink.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/ppp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ppp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppapi.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppapi.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppcrypt.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppcrypt.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppoe.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppoe.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppol2tp.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppol2tp.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-type-limits -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/pppos.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/pppos.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/upap.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/upap.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/utils.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/utils.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/vj.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/vj.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj -MF CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj -MF CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c > CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c > CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c -o CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/tcp_isn_default.c -o CMakeFiles/__idf_lwip.dir/port/hooks/tcp_isn_default.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj -MF CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj -MF CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c > CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c > CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c -o CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/hooks/lwip_default_hooks.c -o CMakeFiles/__idf_lwip.dir/port/hooks/lwip_default_hooks.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj -MF CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj -MF CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c > CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c > CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c -o CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/debug/lwip_debug.c -o CMakeFiles/__idf_lwip.dir/port/debug/lwip_debug.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj -MF CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj -MF CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c > CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c > CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c -o CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/sockets_ext.c -o CMakeFiles/__idf_lwip.dir/port/sockets_ext.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj -MF CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj -MF CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c > CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c > CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c -o CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/sys_arch.c -o CMakeFiles/__idf_lwip.dir/port/freertos/sys_arch.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj -MF CMakeFiles/__idf_lwip.dir/port/if_index.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/if_index.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.obj -MF CMakeFiles/__idf_lwip.dir/port/if_index.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/if_index.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/if_index.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c > CMakeFiles/__idf_lwip.dir/port/if_index.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c > CMakeFiles/__idf_lwip.dir/port/if_index.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/if_index.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/if_index.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c -o CMakeFiles/__idf_lwip.dir/port/if_index.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/if_index.c -o CMakeFiles/__idf_lwip.dir/port/if_index.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj -MF CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj -MF CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c > CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c > CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c -o CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/acd_dhcp_check.c -o CMakeFiles/__idf_lwip.dir/port/acd_dhcp_check.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj -MF CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj -MF CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj.d -o CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c > CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c > CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c -o CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/vfs_lwip.c -o CMakeFiles/__idf_lwip.dir/port/esp32xx/vfs_lwip.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c > CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c > CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c -o CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/ping/ping_sock.c -o CMakeFiles/__idf_lwip.dir/apps/ping/ping_sock.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/arc4.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/des.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/des.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md4.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md4.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/md5.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/md5.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj -MF CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj.d -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c > CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c -o CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/polarssl/sha1.c.s
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/flags.make
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj"
-	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c
+	cd /root/progarms/web/build/esp-idf/lwip && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj -MF CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj.d -o CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.i"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c > CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.i
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c > CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.i
 
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.s"
-	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c -o CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.s
+	cd /root/progarms/web/build/esp-idf/lwip && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/lwip/apps/dhcpserver/dhcpserver.c -o CMakeFiles/__idf_lwip.dir/apps/dhcpserver/dhcpserver.c.s
 
 # Object files for target __idf_lwip
 __idf_lwip_OBJECTS = \

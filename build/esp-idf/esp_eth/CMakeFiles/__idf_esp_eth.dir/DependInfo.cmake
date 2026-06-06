@@ -10,11 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_generic.c" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj" "gcc" "esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -44,6 +40,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/efuse/CMakeFiles/__idf_efuse.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
@@ -62,10 +59,12 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/DependInfo.cmake"

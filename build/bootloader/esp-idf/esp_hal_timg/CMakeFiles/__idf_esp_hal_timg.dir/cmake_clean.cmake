@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj.d"
   "libesp_hal_timg.a"

@@ -69,31 +69,32 @@ include CMakeFiles/web.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/web.elf.dir/flags.make
 
-CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/web.elf.dir/flags.make
-CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj: project_elf_src_esp32.c
-CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/web.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj"
-	ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj -MF CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj.d -o CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj -c /root/progarms/web/build/project_elf_src_esp32.c
+CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/web.elf.dir/flags.make
+CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj: project_elf_src_esp32s3.c
+CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/web.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj"
+	ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj -MF CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj.d -o CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj -c /root/progarms/web/build/project_elf_src_esp32s3.c
 
-CMakeFiles/web.elf.dir/project_elf_src_esp32.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/web.elf.dir/project_elf_src_esp32.c.i"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/build/project_elf_src_esp32.c > CMakeFiles/web.elf.dir/project_elf_src_esp32.c.i
+CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.i"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/build/project_elf_src_esp32s3.c > CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.i
 
-CMakeFiles/web.elf.dir/project_elf_src_esp32.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/web.elf.dir/project_elf_src_esp32.c.s"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/build/project_elf_src_esp32.c -o CMakeFiles/web.elf.dir/project_elf_src_esp32.c.s
+CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.s"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/build/project_elf_src_esp32s3.c -o CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.s
 
 # Object files for target web.elf
 web_elf_OBJECTS = \
-"CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj"
+"CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj"
 
 # External object files for target web.elf
 web_elf_EXTERNAL_OBJECTS =
 
-web.elf: CMakeFiles/web.elf.dir/project_elf_src_esp32.c.obj
+web.elf: CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj
 web.elf: CMakeFiles/web.elf.dir/build.make
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -112,7 +113,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -124,8 +124,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -140,6 +142,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -156,12 +159,12 @@ web.elf: esp-idf/esp_hal_twai/libesp_hal_twai.a
 web.elf: esp-idf/driver/libdriver.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
 web.elf: esp-idf/esp_blockdev_util/libesp_blockdev_util.a
+web.elf: esp-idf/esp_hal_cam/libesp_hal_cam.a
 web.elf: esp-idf/esp_driver_cam/libesp_driver_cam.a
-web.elf: esp-idf/esp_driver_dac/libesp_driver_dac.a
 web.elf: esp-idf/esp_driver_i2c/libesp_driver_i2c.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 web.elf: esp-idf/esp_driver_ledc/libesp_driver_ledc.a
 web.elf: esp-idf/esp_hal_mcpwm/libesp_hal_mcpwm.a
@@ -173,11 +176,11 @@ web.elf: esp-idf/esp_driver_rmt/libesp_driver_rmt.a
 web.elf: esp-idf/esp_hal_sd/libesp_hal_sd.a
 web.elf: esp-idf/sdmmc/libsdmmc.a
 web.elf: esp-idf/esp_driver_sd_intf/libesp_driver_sd_intf.a
-web.elf: esp-idf/esp_driver_sdio/libesp_driver_sdio.a
 web.elf: esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 web.elf: esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 web.elf: esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
 web.elf: esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a
+web.elf: esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 web.elf: esp-idf/esp_driver_twai/libesp_driver_twai.a
 web.elf: esp-idf/esp_eth/libesp_eth.a
 web.elf: esp-idf/esp_hal_lcd/libesp_hal_lcd.a
@@ -198,16 +201,19 @@ web.elf: esp-idf/rt/librt.a
 web.elf: esp-idf/spiffs/libspiffs.a
 web.elf: esp-idf/wifi/libwifi.a
 web.elf: esp-idf/web/libweb.a
+web.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a
 web.elf: esp-idf/led_ctrl/libled_ctrl.a
 web.elf: esp-idf/beep_ctrl/libbeep_ctrl.a
 web.elf: esp-idf/sr04_ctrl/libsr04_ctrl.a
 web.elf: esp-idf/task_manager/libtask_manager.a
 web.elf: esp-idf/main/libmain.a
 web.elf: esp-idf/unity/libunity.a
+web.elf: esp-idf/esp_hal_cam/libesp_hal_cam.a
 web.elf: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 web.elf: esp-idf/esp_hal_mcpwm/libesp_hal_mcpwm.a
 web.elf: esp-idf/esp_hal_pcnt/libesp_hal_pcnt.a
 web.elf: esp-idf/esp_hal_rmt/libesp_hal_rmt.a
+web.elf: esp-idf/esp_hal_twai/libesp_hal_twai.a
 web.elf: esp-idf/esp_driver_i2c/libesp_driver_i2c.a
 web.elf: esp-idf/esp_hal_lcd/libesp_hal_lcd.a
 web.elf: esp-idf/esp_https_server/libesp_https_server.a
@@ -224,13 +230,13 @@ web.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
 web.elf: esp-idf/web/libweb.a
 web.elf: esp-idf/wifi/libwifi.a
 web.elf: esp-idf/led_ctrl/libled_ctrl.a
+web.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a
 web.elf: esp-idf/beep_ctrl/libbeep_ctrl.a
 web.elf: esp-idf/sr04_ctrl/libsr04_ctrl.a
-web.elf: esp-idf/driver/libdriver.a
-web.elf: esp-idf/esp_hal_twai/libesp_hal_twai.a
 web.elf: esp-idf/task_manager/libtask_manager.a
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -249,7 +255,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -261,8 +266,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -276,6 +283,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -286,30 +294,31 @@ web.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 web.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -328,7 +337,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -340,8 +348,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -355,6 +365,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -365,30 +376,31 @@ web.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 web.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -407,7 +419,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -419,8 +430,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -434,6 +447,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -444,30 +458,31 @@ web.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 web.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -486,7 +501,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -498,8 +512,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -513,6 +529,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -523,30 +540,31 @@ web.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 web.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 web.elf: esp-idf/xtensa/libxtensa.a
 web.elf: esp-idf/esp_stdio/libesp_stdio.a
+web.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 web.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 web.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 web.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -565,7 +583,6 @@ web.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 web.elf: esp-idf/mbedtls/libmbedtls.a
 web.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 web.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 web.elf: esp-idf/bootloader_support/libbootloader_support.a
 web.elf: esp-idf/spi_flash/libspi_flash.a
@@ -577,8 +594,10 @@ web.elf: esp-idf/log/liblog.a
 web.elf: esp-idf/heap/libheap.a
 web.elf: esp-idf/soc/libsoc.a
 web.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+web.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 web.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 web.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+web.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 web.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 web.elf: esp-idf/freertos/libfreertos.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
@@ -592,6 +611,7 @@ web.elf: esp-idf/esp_event/libesp_event.a
 web.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 web.elf: esp-idf/nvs_flash/libnvs_flash.a
 web.elf: esp-idf/esp_phy/libesp_phy.a
+web.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 web.elf: esp-idf/vfs/libvfs.a
 web.elf: esp-idf/lwip/liblwip.a
 web.elf: esp-idf/esp_netif/libesp_netif.a
@@ -602,37 +622,46 @@ web.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 web.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 web.elf: esp-idf/http_parser/libhttp_parser.a
 web.elf: esp-idf/esp-tls/libesp-tls.a
-web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/esp_adc/libesp_adc.a
+web.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 web.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 web.elf: esp-idf/pthread/libpthread.a
 web.elf: esp-idf/esp_libc/libesp_libc.a
 web.elf: esp-idf/cxx/libcxx.a
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt/esp32s3/rom.wdt.ld
 web.elf: esp-idf/esp_system/ld/memory.ld
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.ld
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.api.ld
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
-web.elf: /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/ld/esp32.peripherals.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+web.elf: /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
 web.elf: esp-idf/esp_system/ld/sections.ld
 web.elf: CMakeFiles/web.elf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable web.elf"

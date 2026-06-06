@@ -175,29 +175,29 @@ __idf_esp_hal_pcnt/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build
 .PHONY : __idf_esp_hal_pcnt/fast
 
-esp32/pcnt_periph.obj: esp32/pcnt_periph.c.obj
-.PHONY : esp32/pcnt_periph.obj
+esp32s3/pcnt_periph.obj: esp32s3/pcnt_periph.c.obj
+.PHONY : esp32s3/pcnt_periph.obj
 
 # target to build an object file
-esp32/pcnt_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32/pcnt_periph.c.obj
-.PHONY : esp32/pcnt_periph.c.obj
+esp32s3/pcnt_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32s3/pcnt_periph.c.obj
+.PHONY : esp32s3/pcnt_periph.c.obj
 
-esp32/pcnt_periph.i: esp32/pcnt_periph.c.i
-.PHONY : esp32/pcnt_periph.i
+esp32s3/pcnt_periph.i: esp32s3/pcnt_periph.c.i
+.PHONY : esp32s3/pcnt_periph.i
 
 # target to preprocess a source file
-esp32/pcnt_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32/pcnt_periph.c.i
-.PHONY : esp32/pcnt_periph.c.i
+esp32s3/pcnt_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32s3/pcnt_periph.c.i
+.PHONY : esp32s3/pcnt_periph.c.i
 
-esp32/pcnt_periph.s: esp32/pcnt_periph.c.s
-.PHONY : esp32/pcnt_periph.s
+esp32s3/pcnt_periph.s: esp32s3/pcnt_periph.c.s
+.PHONY : esp32s3/pcnt_periph.s
 
 # target to generate assembly for a file
-esp32/pcnt_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32/pcnt_periph.c.s
-.PHONY : esp32/pcnt_periph.c.s
+esp32s3/pcnt_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/build.make esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/esp32s3/pcnt_periph.c.s
+.PHONY : esp32s3/pcnt_periph.c.s
 
 pcnt_hal.obj: pcnt_hal.c.obj
 .PHONY : pcnt_hal.obj
@@ -236,9 +236,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_pcnt"
-	@echo "... esp32/pcnt_periph.obj"
-	@echo "... esp32/pcnt_periph.i"
-	@echo "... esp32/pcnt_periph.s"
+	@echo "... esp32s3/pcnt_periph.obj"
+	@echo "... esp32s3/pcnt_periph.i"
+	@echo "... esp32s3/pcnt_periph.s"
 	@echo "... pcnt_hal.obj"
 	@echo "... pcnt_hal.i"
 	@echo "... pcnt_hal.s"

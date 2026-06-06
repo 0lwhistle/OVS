@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_wdt.dir/esp32/mwdt_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_wdt.dir/esp32/mwdt_periph.c.obj.d"
-  "CMakeFiles/__idf_esp_hal_wdt.dir/wdt_hal_iram.c.obj"
-  "CMakeFiles/__idf_esp_hal_wdt.dir/wdt_hal_iram.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.obj"
+  "CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.obj.d"
   "libesp_hal_wdt.a"
   "libesp_hal_wdt.pdb"
 )

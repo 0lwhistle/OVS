@@ -73,29 +73,29 @@ esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partiti
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj: esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj -MF CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj.d -o CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj -MF CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj.d -o CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c
 
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c > CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.i
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c > CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.i
 
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c -o CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.s
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/generic_partition.c -o CMakeFiles/__idf_esp_blockdev_util.dir/generic_partition.c.s
 
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj: esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/flags.make
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj: esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj -MF CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj.d -o CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj -MF CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj.d -o CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c
 
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c > CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.i
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c > CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.i
 
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c -o CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.s
+	cd /root/progarms/web/build/esp-idf/esp_blockdev_util && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util/memory.c -o CMakeFiles/__idf_esp_blockdev_util.dir/memory.c.s
 
 # Object files for target __idf_esp_blockdev_util
 __idf_esp_blockdev_util_OBJECTS = \

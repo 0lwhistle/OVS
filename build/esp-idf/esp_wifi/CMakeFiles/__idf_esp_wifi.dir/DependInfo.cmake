@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/esp32/esp_adapter.c" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32/esp_adapter.c.obj" "gcc" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32/esp_adapter.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/esp32s3/esp_adapter.c" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32s3/esp_adapter.c.obj" "gcc" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32s3/esp_adapter.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/regulatory/esp_wifi_regulatory.c" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/regulatory/esp_wifi_regulatory.c.obj" "gcc" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/regulatory/esp_wifi_regulatory.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/src/lib_printf.c" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/lib_printf.c.obj" "gcc" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/lib_printf.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/src/mesh_event.c" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/mesh_event.c.obj" "gcc" "esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/mesh_event.c.obj.d"
@@ -47,6 +47,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/efuse/CMakeFiles/__idf_efuse.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
@@ -65,10 +66,12 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/DependInfo.cmake"
+  "/root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/DependInfo.cmake"
   "/root/progarms/web/build/esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/DependInfo.cmake"

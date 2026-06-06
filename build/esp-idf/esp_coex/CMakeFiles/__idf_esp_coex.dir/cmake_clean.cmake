@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_coex.dir/esp32/esp_coex_adapter.c.obj"
-  "CMakeFiles/__idf_esp_coex.dir/esp32/esp_coex_adapter.c.obj.d"
+  "CMakeFiles/__idf_esp_coex.dir/esp32s3/esp_coex_adapter.c.obj"
+  "CMakeFiles/__idf_esp_coex.dir/esp32s3/esp_coex_adapter.c.obj.d"
   "CMakeFiles/__idf_esp_coex.dir/src/coexist_debug.c.obj"
   "CMakeFiles/__idf_esp_coex.dir/src/coexist_debug.c.obj.d"
   "CMakeFiles/__idf_esp_coex.dir/src/coexist_debug_diagram.c.obj"

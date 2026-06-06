@@ -73,15 +73,15 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: esp-idf/web/CMakeFiles/__idf_web
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj"
-	cd /root/progarms/web/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj -MF CMakeFiles/__idf_web.dir/web.c.obj.d -o CMakeFiles/__idf_web.dir/web.c.obj -c /root/progarms/web/modules/web/web.c
+	cd /root/progarms/web/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj -MF CMakeFiles/__idf_web.dir/web.c.obj.d -o CMakeFiles/__idf_web.dir/web.c.obj -c /root/progarms/web/modules/web/web.c
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/web.c.i"
-	cd /root/progarms/web/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/web/web.c > CMakeFiles/__idf_web.dir/web.c.i
+	cd /root/progarms/web/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/web/web.c > CMakeFiles/__idf_web.dir/web.c.i
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/web.c.s"
-	cd /root/progarms/web/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/web/web.c -o CMakeFiles/__idf_web.dir/web.c.s
+	cd /root/progarms/web/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/web/web.c -o CMakeFiles/__idf_web.dir/web.c.s
 
 # Object files for target __idf_web
 __idf_web_OBJECTS = \

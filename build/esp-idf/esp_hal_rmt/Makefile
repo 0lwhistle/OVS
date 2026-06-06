@@ -175,29 +175,29 @@ __idf_esp_hal_rmt/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build
 .PHONY : __idf_esp_hal_rmt/fast
 
-esp32/rmt_periph.obj: esp32/rmt_periph.c.obj
-.PHONY : esp32/rmt_periph.obj
+esp32s3/rmt_periph.obj: esp32s3/rmt_periph.c.obj
+.PHONY : esp32s3/rmt_periph.obj
 
 # target to build an object file
-esp32/rmt_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32/rmt_periph.c.obj
-.PHONY : esp32/rmt_periph.c.obj
+esp32s3/rmt_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32s3/rmt_periph.c.obj
+.PHONY : esp32s3/rmt_periph.c.obj
 
-esp32/rmt_periph.i: esp32/rmt_periph.c.i
-.PHONY : esp32/rmt_periph.i
+esp32s3/rmt_periph.i: esp32s3/rmt_periph.c.i
+.PHONY : esp32s3/rmt_periph.i
 
 # target to preprocess a source file
-esp32/rmt_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32/rmt_periph.c.i
-.PHONY : esp32/rmt_periph.c.i
+esp32s3/rmt_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32s3/rmt_periph.c.i
+.PHONY : esp32s3/rmt_periph.c.i
 
-esp32/rmt_periph.s: esp32/rmt_periph.c.s
-.PHONY : esp32/rmt_periph.s
+esp32s3/rmt_periph.s: esp32s3/rmt_periph.c.s
+.PHONY : esp32s3/rmt_periph.s
 
 # target to generate assembly for a file
-esp32/rmt_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32/rmt_periph.c.s
-.PHONY : esp32/rmt_periph.c.s
+esp32s3/rmt_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/build.make esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/esp32s3/rmt_periph.c.s
+.PHONY : esp32s3/rmt_periph.c.s
 
 rmt_hal.obj: rmt_hal.c.obj
 .PHONY : rmt_hal.obj
@@ -236,9 +236,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_rmt"
-	@echo "... esp32/rmt_periph.obj"
-	@echo "... esp32/rmt_periph.i"
-	@echo "... esp32/rmt_periph.s"
+	@echo "... esp32s3/rmt_periph.obj"
+	@echo "... esp32s3/rmt_periph.i"
+	@echo "... esp32s3/rmt_periph.s"
 	@echo "... rmt_hal.obj"
 	@echo "... rmt_hal.i"
 	@echo "... rmt_hal.s"

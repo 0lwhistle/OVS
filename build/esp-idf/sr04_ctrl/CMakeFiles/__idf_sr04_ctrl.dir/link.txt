@@ -1,2 +1,2 @@
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libsr04_ctrl.a CMakeFiles/__idf_sr04_ctrl.dir/sr04_ctrl.c.obj
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libsr04_ctrl.a
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc libsr04_ctrl.a CMakeFiles/__idf_sr04_ctrl.dir/sr04_ctrl.c.obj
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib libsr04_ctrl.a

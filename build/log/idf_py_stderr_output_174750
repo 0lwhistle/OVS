@@ -1,0 +1,16 @@
+Command: make -j 22 all
+Configuration Report               
+ ───────────────────────────────── 
+   Parser Version: 1               
+   Verbosity: default              
+   Defaults policy: sdkconfig      
+   Status: Finished successfully   
+                                   
+ ───────────────────────────────── 
+/root/progarms/web/modules/wifi/wifi.c: In function 'wifi_init':
+/root/progarms/web/modules/wifi/wifi.c:69:18: warning: unused variable 'ap_netif' [-Wunused-variable]
+   69 |     esp_netif_t *ap_netif  = esp_netif_create_default_wifi_ap();
+      |                  ^~~~~~~~
+/root/progarms/web/modules/wifi/wifi.c:68:18: warning: unused variable 'sta_netif' [-Wunused-variable]
+   68 |     esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
+      |                  ^~~~~~~~~

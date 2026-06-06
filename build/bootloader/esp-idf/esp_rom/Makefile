@@ -130,6 +130,38 @@ __idf_esp_rom/fast:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build
 .PHONY : __idf_esp_rom/fast
 
+patches/esp_rom_cache_esp32s2_esp32s3.obj: patches/esp_rom_cache_esp32s2_esp32s3.c.obj
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.obj
+
+# target to build an object file
+patches/esp_rom_cache_esp32s2_esp32s3.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.obj
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.c.obj
+
+patches/esp_rom_cache_esp32s2_esp32s3.i: patches/esp_rom_cache_esp32s2_esp32s3.c.i
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.i
+
+# target to preprocess a source file
+patches/esp_rom_cache_esp32s2_esp32s3.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.i
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.c.i
+
+patches/esp_rom_cache_esp32s2_esp32s3.s: patches/esp_rom_cache_esp32s2_esp32s3.c.s
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.s
+
+# target to generate assembly for a file
+patches/esp_rom_cache_esp32s2_esp32s3.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.s
+.PHONY : patches/esp_rom_cache_esp32s2_esp32s3.c.s
+
+patches/esp_rom_cache_writeback_esp32s3.obj: patches/esp_rom_cache_writeback_esp32s3.S.obj
+.PHONY : patches/esp_rom_cache_writeback_esp32s3.obj
+
+# target to build an object file
+patches/esp_rom_cache_writeback_esp32s3.S.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_writeback_esp32s3.S.obj
+.PHONY : patches/esp_rom_cache_writeback_esp32s3.S.obj
+
 patches/esp_rom_crc.obj: patches/esp_rom_crc.c.obj
 .PHONY : patches/esp_rom_crc.obj
 
@@ -306,6 +338,30 @@ patches/esp_rom_sys.c.s:
 	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_sys.c.s
 .PHONY : patches/esp_rom_sys.c.s
 
+patches/esp_rom_systimer.obj: patches/esp_rom_systimer.c.obj
+.PHONY : patches/esp_rom_systimer.obj
+
+# target to build an object file
+patches/esp_rom_systimer.c.obj:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.obj
+.PHONY : patches/esp_rom_systimer.c.obj
+
+patches/esp_rom_systimer.i: patches/esp_rom_systimer.c.i
+.PHONY : patches/esp_rom_systimer.i
+
+# target to preprocess a source file
+patches/esp_rom_systimer.c.i:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.i
+.PHONY : patches/esp_rom_systimer.c.i
+
+patches/esp_rom_systimer.s: patches/esp_rom_systimer.c.s
+.PHONY : patches/esp_rom_systimer.s
+
+# target to generate assembly for a file
+patches/esp_rom_systimer.c.s:
+	cd /root/progarms/web/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/build.make esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.s
+.PHONY : patches/esp_rom_systimer.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -315,6 +371,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_rom"
+	@echo "... patches/esp_rom_cache_esp32s2_esp32s3.obj"
+	@echo "... patches/esp_rom_cache_esp32s2_esp32s3.i"
+	@echo "... patches/esp_rom_cache_esp32s2_esp32s3.s"
+	@echo "... patches/esp_rom_cache_writeback_esp32s3.obj"
 	@echo "... patches/esp_rom_crc.obj"
 	@echo "... patches/esp_rom_crc.i"
 	@echo "... patches/esp_rom_crc.s"
@@ -337,6 +397,9 @@ help:
 	@echo "... patches/esp_rom_sys.obj"
 	@echo "... patches/esp_rom_sys.i"
 	@echo "... patches/esp_rom_sys.s"
+	@echo "... patches/esp_rom_systimer.obj"
+	@echo "... patches/esp_rom_systimer.i"
+	@echo "... patches/esp_rom_systimer.s"
 .PHONY : help
 
 

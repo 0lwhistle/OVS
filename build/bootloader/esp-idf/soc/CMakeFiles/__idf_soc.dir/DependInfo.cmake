@@ -9,12 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/esp-idf/esp-idf-v6.0.1/components/soc/dport_access_common.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/dport_access_common.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/dport_access_common.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/dport_access.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dport_access.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dport_access.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/emac_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/emac_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/emac_periph.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/gpio_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/gpio_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/gpio_periph.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/interrupts.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/mpi_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj.d"
-  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/power_supply_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/power_supply_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/power_supply_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/gpio_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/gpio_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/gpio_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/interrupts.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/interrupts.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/interrupts.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/mpi_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/mpi_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/mpi_periph.c.obj.d"
+  "/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/power_supply_periph.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/power_supply_periph.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/power_supply_periph.c.obj.d"
   "/root/esp-idf/esp-idf-v6.0.1/components/soc/lldesc.c" "esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj" "gcc" "esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj.d"
   )
 
@@ -31,6 +29,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
@@ -42,7 +41,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/web/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/web/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
-  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/root/progarms/web/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

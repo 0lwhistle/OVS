@@ -38,6 +38,42 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/heap_align_hw.c.obj: 
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/include/esp_private/esp_cache_private.h \
- /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/include/hal/gdma_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma/esp32s3/include/hal/gdma_channel.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/gdma_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/gdma_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_hal.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/efuse_ll.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/efuse_periph.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_reg.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/efuse_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/efuse_struct.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/efuse.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/efuse_hal.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/efuse/include/esp_efuse.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/include/esp_efuse_chip.h

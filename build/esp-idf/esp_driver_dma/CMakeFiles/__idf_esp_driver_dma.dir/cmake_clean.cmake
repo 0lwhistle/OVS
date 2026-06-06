@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.obj"
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.obj.d"
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.obj"
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.obj.d"
   "CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.obj"
   "CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.obj.d"
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.obj"
+  "CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.obj.d"
   "CMakeFiles/__idf_esp_driver_dma.dir/src/gdma_link.c.obj"
   "CMakeFiles/__idf_esp_driver_dma.dir/src/gdma_link.c.obj.d"
   "libesp_driver_dma.a"

@@ -175,6 +175,30 @@ __idf_esp_driver_gpio/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build
 .PHONY : __idf_esp_driver_gpio/fast
 
+src/dedic_gpio.obj: src/dedic_gpio.c.obj
+.PHONY : src/dedic_gpio.obj
+
+# target to build an object file
+src/dedic_gpio.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/dedic_gpio.c.obj
+.PHONY : src/dedic_gpio.c.obj
+
+src/dedic_gpio.i: src/dedic_gpio.c.i
+.PHONY : src/dedic_gpio.i
+
+# target to preprocess a source file
+src/dedic_gpio.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/dedic_gpio.c.i
+.PHONY : src/dedic_gpio.c.i
+
+src/dedic_gpio.s: src/dedic_gpio.c.s
+.PHONY : src/dedic_gpio.s
+
+# target to generate assembly for a file
+src/dedic_gpio.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/dedic_gpio.c.s
+.PHONY : src/dedic_gpio.c.s
+
 src/gpio.obj: src/gpio.c.obj
 .PHONY : src/gpio.obj
 
@@ -223,6 +247,30 @@ src/gpio_glitch_filter_ops.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio_glitch_filter_ops.c.s
 .PHONY : src/gpio_glitch_filter_ops.c.s
 
+src/gpio_pin_glitch_filter.obj: src/gpio_pin_glitch_filter.c.obj
+.PHONY : src/gpio_pin_glitch_filter.obj
+
+# target to build an object file
+src/gpio_pin_glitch_filter.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio_pin_glitch_filter.c.obj
+.PHONY : src/gpio_pin_glitch_filter.c.obj
+
+src/gpio_pin_glitch_filter.i: src/gpio_pin_glitch_filter.c.i
+.PHONY : src/gpio_pin_glitch_filter.i
+
+# target to preprocess a source file
+src/gpio_pin_glitch_filter.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio_pin_glitch_filter.c.i
+.PHONY : src/gpio_pin_glitch_filter.c.i
+
+src/gpio_pin_glitch_filter.s: src/gpio_pin_glitch_filter.c.s
+.PHONY : src/gpio_pin_glitch_filter.s
+
+# target to generate assembly for a file
+src/gpio_pin_glitch_filter.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/build.make esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio_pin_glitch_filter.c.s
+.PHONY : src/gpio_pin_glitch_filter.c.s
+
 src/rtc_io.obj: src/rtc_io.c.obj
 .PHONY : src/rtc_io.obj
 
@@ -260,12 +308,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_driver_gpio"
+	@echo "... src/dedic_gpio.obj"
+	@echo "... src/dedic_gpio.i"
+	@echo "... src/dedic_gpio.s"
 	@echo "... src/gpio.obj"
 	@echo "... src/gpio.i"
 	@echo "... src/gpio.s"
 	@echo "... src/gpio_glitch_filter_ops.obj"
 	@echo "... src/gpio_glitch_filter_ops.i"
 	@echo "... src/gpio_glitch_filter_ops.s"
+	@echo "... src/gpio_pin_glitch_filter.obj"
+	@echo "... src/gpio_pin_glitch_filter.i"
+	@echo "... src/gpio_pin_glitch_filter.s"
 	@echo "... src/rtc_io.obj"
 	@echo "... src/rtc_io.i"
 	@echo "... src/rtc_io.s"

@@ -175,29 +175,53 @@ __idf_esp_hal_lcd/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build
 .PHONY : __idf_esp_hal_lcd/fast
 
-esp32/lcd_periph.obj: esp32/lcd_periph.c.obj
-.PHONY : esp32/lcd_periph.obj
+esp32s3/lcd_periph.obj: esp32s3/lcd_periph.c.obj
+.PHONY : esp32s3/lcd_periph.obj
 
 # target to build an object file
-esp32/lcd_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32/lcd_periph.c.obj
-.PHONY : esp32/lcd_periph.c.obj
+esp32s3/lcd_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32s3/lcd_periph.c.obj
+.PHONY : esp32s3/lcd_periph.c.obj
 
-esp32/lcd_periph.i: esp32/lcd_periph.c.i
-.PHONY : esp32/lcd_periph.i
+esp32s3/lcd_periph.i: esp32s3/lcd_periph.c.i
+.PHONY : esp32s3/lcd_periph.i
 
 # target to preprocess a source file
-esp32/lcd_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32/lcd_periph.c.i
-.PHONY : esp32/lcd_periph.c.i
+esp32s3/lcd_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32s3/lcd_periph.c.i
+.PHONY : esp32s3/lcd_periph.c.i
 
-esp32/lcd_periph.s: esp32/lcd_periph.c.s
-.PHONY : esp32/lcd_periph.s
+esp32s3/lcd_periph.s: esp32s3/lcd_periph.c.s
+.PHONY : esp32s3/lcd_periph.s
 
 # target to generate assembly for a file
-esp32/lcd_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32/lcd_periph.c.s
-.PHONY : esp32/lcd_periph.c.s
+esp32s3/lcd_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/esp32s3/lcd_periph.c.s
+.PHONY : esp32s3/lcd_periph.c.s
+
+lcd_hal.obj: lcd_hal.c.obj
+.PHONY : lcd_hal.obj
+
+# target to build an object file
+lcd_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/lcd_hal.c.obj
+.PHONY : lcd_hal.c.obj
+
+lcd_hal.i: lcd_hal.c.i
+.PHONY : lcd_hal.i
+
+# target to preprocess a source file
+lcd_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/lcd_hal.c.i
+.PHONY : lcd_hal.c.i
+
+lcd_hal.s: lcd_hal.c.s
+.PHONY : lcd_hal.s
+
+# target to generate assembly for a file
+lcd_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/build.make esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/lcd_hal.c.s
+.PHONY : lcd_hal.c.s
 
 # Help Target
 help:
@@ -212,9 +236,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_lcd"
-	@echo "... esp32/lcd_periph.obj"
-	@echo "... esp32/lcd_periph.i"
-	@echo "... esp32/lcd_periph.s"
+	@echo "... esp32s3/lcd_periph.obj"
+	@echo "... esp32s3/lcd_periph.i"
+	@echo "... esp32s3/lcd_periph.s"
+	@echo "... lcd_hal.obj"
+	@echo "... lcd_hal.i"
+	@echo "... lcd_hal.s"
 .PHONY : help
 
 

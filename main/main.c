@@ -5,13 +5,13 @@
 #include "esp_netif.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "wifi.h"
+#include "led_ctrl.h"
 
 #define LED_CTRL_GPIO 4
 
 
-// ---------- Wi-Fi 配置 ----------
-#define WIFI_SSID       "816"
-#define WIFI_PASSWORD   "716717nb"
+
 
 // ---------- Mongoose 全局变量 ----------
 static struct mg_mgr mgr;          // 事件管理器
@@ -26,6 +26,8 @@ static void fn(struct mg_connection *c, int ev, void *ev_data) {
         if (mg_match(hm->uri, mg_str("/api/toggle"), NULL)) {
             // 切换LED状态
             s_blynk = !s_blynk;
+			if (led_ctrl_toggle(LED_CTRL_GPIO) < 0)
+				printf("toggle fail\n");
             mg_http_reply(c, 200, "Content-Type: application/json\r\n",
                           "{\"led\": %d}", s_blynk);
         } else if (mg_match(hm->uri, mg_str("/api/status"), NULL)) {
@@ -55,48 +57,6 @@ static void fn(struct mg_connection *c, int ev, void *ev_data) {
     }
 }
 
-// ---------- Wi-Fi 事件回调（IDF 方式） ----------
-static void wifi_event_handler(void *arg, esp_event_base_t event_base,
-                               int32_t event_id, void *event_data) {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        esp_wifi_connect();
-    } else if (event_base == WIFI_EVENT &&
-               event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        esp_wifi_connect();
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
-        printf("Got IP: " IPSTR "\n", IP2STR(&event->ip_info.ip));
-    }
-}
-
-// ---------- 初始化 Wi-Fi ----------
-static void wifi_init(void) {
-    // 初始化网络协议栈
-    esp_netif_init();
-    esp_event_loop_create_default();
-    esp_netif_create_default_wifi_sta();
-
-    // 初始化 Wi-Fi 驱动
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    esp_wifi_init(&cfg);
-
-    // 注册事件回调
-    esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID,
-                               &wifi_event_handler, NULL);
-    esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP,
-                               &wifi_event_handler, NULL);
-
-    // 配置 Wi-Fi SSID 和密码
-    wifi_config_t wifi_config = {
-        .sta = {
-            .ssid = WIFI_SSID,
-            .password = WIFI_PASSWORD,
-        },
-    };
-    esp_wifi_set_mode(WIFI_MODE_STA);
-    esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
-    esp_wifi_start();
-}
 
 // ---------- 主函数入口 ----------
 void app_main(void) {

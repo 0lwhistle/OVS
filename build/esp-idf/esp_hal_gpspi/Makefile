@@ -175,29 +175,29 @@ __idf_esp_hal_gpspi/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build
 .PHONY : __idf_esp_hal_gpspi/fast
 
-esp32/spi_periph.obj: esp32/spi_periph.c.obj
-.PHONY : esp32/spi_periph.obj
+esp32s3/spi_periph.obj: esp32s3/spi_periph.c.obj
+.PHONY : esp32s3/spi_periph.obj
 
 # target to build an object file
-esp32/spi_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32/spi_periph.c.obj
-.PHONY : esp32/spi_periph.c.obj
+esp32s3/spi_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32s3/spi_periph.c.obj
+.PHONY : esp32s3/spi_periph.c.obj
 
-esp32/spi_periph.i: esp32/spi_periph.c.i
-.PHONY : esp32/spi_periph.i
+esp32s3/spi_periph.i: esp32s3/spi_periph.c.i
+.PHONY : esp32s3/spi_periph.i
 
 # target to preprocess a source file
-esp32/spi_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32/spi_periph.c.i
-.PHONY : esp32/spi_periph.c.i
+esp32s3/spi_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32s3/spi_periph.c.i
+.PHONY : esp32s3/spi_periph.c.i
 
-esp32/spi_periph.s: esp32/spi_periph.c.s
-.PHONY : esp32/spi_periph.s
+esp32s3/spi_periph.s: esp32s3/spi_periph.c.s
+.PHONY : esp32s3/spi_periph.s
 
 # target to generate assembly for a file
-esp32/spi_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32/spi_periph.c.s
-.PHONY : esp32/spi_periph.c.s
+esp32s3/spi_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/esp32s3/spi_periph.c.s
+.PHONY : esp32s3/spi_periph.c.s
 
 spi_hal.obj: spi_hal.c.obj
 .PHONY : spi_hal.obj
@@ -295,6 +295,30 @@ spi_slave_hal_iram.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/spi_slave_hal_iram.c.s
 .PHONY : spi_slave_hal_iram.c.s
 
+spi_slave_hd_hal.obj: spi_slave_hd_hal.c.obj
+.PHONY : spi_slave_hd_hal.obj
+
+# target to build an object file
+spi_slave_hd_hal.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/spi_slave_hd_hal.c.obj
+.PHONY : spi_slave_hd_hal.c.obj
+
+spi_slave_hd_hal.i: spi_slave_hd_hal.c.i
+.PHONY : spi_slave_hd_hal.i
+
+# target to preprocess a source file
+spi_slave_hd_hal.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/spi_slave_hd_hal.c.i
+.PHONY : spi_slave_hd_hal.c.i
+
+spi_slave_hd_hal.s: spi_slave_hd_hal.c.s
+.PHONY : spi_slave_hd_hal.s
+
+# target to generate assembly for a file
+spi_slave_hd_hal.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/build.make esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/spi_slave_hd_hal.c.s
+.PHONY : spi_slave_hd_hal.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -308,9 +332,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_gpspi"
-	@echo "... esp32/spi_periph.obj"
-	@echo "... esp32/spi_periph.i"
-	@echo "... esp32/spi_periph.s"
+	@echo "... esp32s3/spi_periph.obj"
+	@echo "... esp32s3/spi_periph.i"
+	@echo "... esp32s3/spi_periph.s"
 	@echo "... spi_hal.obj"
 	@echo "... spi_hal.i"
 	@echo "... spi_hal.s"
@@ -323,6 +347,9 @@ help:
 	@echo "... spi_slave_hal_iram.obj"
 	@echo "... spi_slave_hal_iram.i"
 	@echo "... spi_slave_hal_iram.s"
+	@echo "... spi_slave_hd_hal.obj"
+	@echo "... spi_slave_hd_hal.i"
+	@echo "... spi_slave_hd_hal.s"
 .PHONY : help
 
 

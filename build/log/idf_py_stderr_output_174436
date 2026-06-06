@@ -1,0 +1,10 @@
+Command: cmake -G Unix Makefiles -B /root/progarms/web/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /root/progarms/web
+fatal: not a git repository: components/bt/controller/lib_esp32c6/esp32c6-bt-lib/../../../../../.git/modules/components/bt/controller/lib_esp32c6/esp32c6-bt-lib
+Configuration Report               
+ ───────────────────────────────── 
+   Parser Version: 1               
+   Verbosity: default              
+   Defaults policy: sdkconfig      
+   Status: Finished successfully   
+                                   
+ ───────────────────────────────── 

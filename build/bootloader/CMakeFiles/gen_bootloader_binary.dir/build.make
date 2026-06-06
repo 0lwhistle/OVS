@@ -70,7 +70,7 @@ CMakeFiles/gen_bootloader_binary: .bin_timestamp
 
 .bin_timestamp: bootloader.elf
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32 elf2image --flash-mode dio --flash-freq 40m --flash-size 2MB --min-rev-full 0 --max-rev-full 399 -o /root/progarms/web/build/bootloader/bootloader.bin /root/progarms/web/build/bootloader/bootloader.elf
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32s3 elf2image --flash-mode dio --flash-freq 80m --flash-size 2MB --min-rev-full 0 --max-rev-full 99 -o /root/progarms/web/build/bootloader/bootloader.bin /root/progarms/web/build/bootloader/bootloader.elf
 	/usr/bin/cmake -E echo "Generated /root/progarms/web/build/bootloader/bootloader.bin"
 	/usr/bin/cmake -E md5sum /root/progarms/web/build/bootloader/bootloader.bin > /root/progarms/web/build/bootloader/.bin_timestamp
 

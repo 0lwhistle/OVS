@@ -5,7 +5,7 @@ file(REMOVE_RECURSE
   "bootloader/bootloader.bin"
   "bootloader/bootloader.map"
   "web.map"
-  "project_elf_src_esp32.c"
+  "project_elf_src_esp32s3.c"
   "ldgen_libraries.in"
   "ldgen_libraries"
   "web.bin"

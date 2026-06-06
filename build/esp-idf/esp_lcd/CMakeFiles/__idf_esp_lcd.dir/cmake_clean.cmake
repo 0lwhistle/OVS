@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_lcd.dir/i2c/esp_lcd_panel_io_i2c.c.obj"
   "CMakeFiles/__idf_esp_lcd.dir/i2c/esp_lcd_panel_io_i2c.c.obj.d"
-  "CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i2s.c.obj"
-  "CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i2s.c.obj.d"
+  "CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i80.c.obj"
+  "CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i80.c.obj.d"
+  "CMakeFiles/__idf_esp_lcd.dir/rgb/esp_lcd_panel_rgb.c.obj"
+  "CMakeFiles/__idf_esp_lcd.dir/rgb/esp_lcd_panel_rgb.c.obj.d"
   "CMakeFiles/__idf_esp_lcd.dir/spi/esp_lcd_panel_io_spi.c.obj"
   "CMakeFiles/__idf_esp_lcd.dir/spi/esp_lcd_panel_io_spi.c.obj.d"
   "CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_common.c.obj"

@@ -67,7 +67,7 @@ include CMakeFiles/uf2.dir/compiler_depend.make
 include CMakeFiles/uf2.dir/progress.make
 
 CMakeFiles/uf2:
-	/usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "UF2_CMD=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;/root/esp-idf/esp-idf-v6.0.1/tools/mkuf2.py;write;--chip;esp32" -D "UF2_ARGS=--json;/root/progarms/web/build/flasher_args.json;-o;/root/progarms/web/build/uf2.bin" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_uf2_cmds.cmake
+	/usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "UF2_CMD=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;/root/esp-idf/esp-idf-v6.0.1/tools/mkuf2.py;write;--chip;esp32s3" -D "UF2_ARGS=--json;/root/progarms/web/build/flasher_args.json;-o;/root/progarms/web/build/uf2.bin" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_uf2_cmds.cmake
 
 uf2: CMakeFiles/uf2
 uf2: CMakeFiles/uf2.dir/build.make

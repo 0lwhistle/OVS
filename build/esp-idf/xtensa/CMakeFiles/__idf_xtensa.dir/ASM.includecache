@@ -58,47 +58,31 @@ sdkconfig.h
 xtensa_config.h
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/xtensa_config.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h
-stdint.h
--
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h
 stdint.h
 -
 esp_assert.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/esp_assert.h
-soc/soc_caps.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/soc_caps.h
-soc/interrupts.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/interrupts.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/esp_assert.h
 esp_bit_defs.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/esp_bit_defs.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/esp_bit_defs.h
 soc/reg_base.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/reg_base.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc/reg_base.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h
-soc/soc_caps_eval.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc/soc_caps_eval.h
-sdkconfig.h
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/include/soc/sdkconfig.h
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h
 xtensa/hal.h
 -
 xtensa/xtensa-versions.h
 -
-xtensa/hal.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xtensa/hal.h
-xtensa/xtensa-versions.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xtensa/xtensa-versions.h
+../hal.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/hal.h
+../xtensa-versions.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/xtensa-versions.h
 xtensa/config/core-isa.h
 -
 xtensa/config/core-matmap.h
@@ -106,23 +90,23 @@ xtensa/config/core-matmap.h
 xtensa/config/tie.h
 -
 core-isa.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h
 core-matmap.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h
 tie.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h
 xtensa/config/tie-asm.h
 -
 tie-asm.h
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h
 xtensa/corebits.h
 -
 

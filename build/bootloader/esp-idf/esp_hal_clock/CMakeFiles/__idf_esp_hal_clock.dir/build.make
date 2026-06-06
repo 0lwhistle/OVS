@@ -69,28 +69,28 @@ include esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/progress.make
 # Include the compile flags for this target's objects.
 include esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/flags.make
 
-esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/flags.make
-esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32/clk_tree_hal.c
-esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj"
-	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj -MF CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32/clk_tree_hal.c
+esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/flags.make
+esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/clk_tree_hal.c
+esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj"
+	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj -MF CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/clk_tree_hal.c
 
-esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.i"
-	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32/clk_tree_hal.c > CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.i
+esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.i"
+	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/clk_tree_hal.c > CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.i
 
-esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.s"
-	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32/clk_tree_hal.c -o CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.s
+esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.s"
+	cd /root/progarms/web/build/bootloader/esp-idf/esp_hal_clock && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/clk_tree_hal.c -o CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.s
 
 # Object files for target __idf_esp_hal_clock
 __idf_esp_hal_clock_OBJECTS = \
-"CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj"
+"CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj"
 
 # External object files for target __idf_esp_hal_clock
 __idf_esp_hal_clock_EXTERNAL_OBJECTS =
 
-esp-idf/esp_hal_clock/libesp_hal_clock.a: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj
+esp-idf/esp_hal_clock/libesp_hal_clock.a: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj
 esp-idf/esp_hal_clock/libesp_hal_clock.a: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make
 esp-idf/esp_hal_clock/libesp_hal_clock.a: esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libesp_hal_clock.a"

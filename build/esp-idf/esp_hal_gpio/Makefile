@@ -175,53 +175,77 @@ __idf_esp_hal_gpio/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build
 .PHONY : __idf_esp_hal_gpio/fast
 
-esp32/rtc_io_periph.obj: esp32/rtc_io_periph.c.obj
-.PHONY : esp32/rtc_io_periph.obj
+esp32s3/dedic_gpio_periph.obj: esp32s3/dedic_gpio_periph.c.obj
+.PHONY : esp32s3/dedic_gpio_periph.obj
 
 # target to build an object file
-esp32/rtc_io_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj
-.PHONY : esp32/rtc_io_periph.c.obj
+esp32s3/dedic_gpio_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj
+.PHONY : esp32s3/dedic_gpio_periph.c.obj
 
-esp32/rtc_io_periph.i: esp32/rtc_io_periph.c.i
-.PHONY : esp32/rtc_io_periph.i
+esp32s3/dedic_gpio_periph.i: esp32s3/dedic_gpio_periph.c.i
+.PHONY : esp32s3/dedic_gpio_periph.i
 
 # target to preprocess a source file
-esp32/rtc_io_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.i
-.PHONY : esp32/rtc_io_periph.c.i
+esp32s3/dedic_gpio_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.i
+.PHONY : esp32s3/dedic_gpio_periph.c.i
 
-esp32/rtc_io_periph.s: esp32/rtc_io_periph.c.s
-.PHONY : esp32/rtc_io_periph.s
+esp32s3/dedic_gpio_periph.s: esp32s3/dedic_gpio_periph.c.s
+.PHONY : esp32s3/dedic_gpio_periph.s
 
 # target to generate assembly for a file
-esp32/rtc_io_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.s
-.PHONY : esp32/rtc_io_periph.c.s
+esp32s3/dedic_gpio_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.s
+.PHONY : esp32s3/dedic_gpio_periph.c.s
 
-esp32/sdm_periph.obj: esp32/sdm_periph.c.obj
-.PHONY : esp32/sdm_periph.obj
+esp32s3/rtc_io_periph.obj: esp32s3/rtc_io_periph.c.obj
+.PHONY : esp32s3/rtc_io_periph.obj
 
 # target to build an object file
-esp32/sdm_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj
-.PHONY : esp32/sdm_periph.c.obj
+esp32s3/rtc_io_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj
+.PHONY : esp32s3/rtc_io_periph.c.obj
 
-esp32/sdm_periph.i: esp32/sdm_periph.c.i
-.PHONY : esp32/sdm_periph.i
+esp32s3/rtc_io_periph.i: esp32s3/rtc_io_periph.c.i
+.PHONY : esp32s3/rtc_io_periph.i
 
 # target to preprocess a source file
-esp32/sdm_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.i
-.PHONY : esp32/sdm_periph.c.i
+esp32s3/rtc_io_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.i
+.PHONY : esp32s3/rtc_io_periph.c.i
 
-esp32/sdm_periph.s: esp32/sdm_periph.c.s
-.PHONY : esp32/sdm_periph.s
+esp32s3/rtc_io_periph.s: esp32s3/rtc_io_periph.c.s
+.PHONY : esp32s3/rtc_io_periph.s
 
 # target to generate assembly for a file
-esp32/sdm_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.s
-.PHONY : esp32/sdm_periph.c.s
+esp32s3/rtc_io_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.s
+.PHONY : esp32s3/rtc_io_periph.c.s
+
+esp32s3/sdm_periph.obj: esp32s3/sdm_periph.c.obj
+.PHONY : esp32s3/sdm_periph.obj
+
+# target to build an object file
+esp32s3/sdm_periph.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj
+.PHONY : esp32s3/sdm_periph.c.obj
+
+esp32s3/sdm_periph.i: esp32s3/sdm_periph.c.i
+.PHONY : esp32s3/sdm_periph.i
+
+# target to preprocess a source file
+esp32s3/sdm_periph.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.i
+.PHONY : esp32s3/sdm_periph.c.i
+
+esp32s3/sdm_periph.s: esp32s3/sdm_periph.c.s
+.PHONY : esp32s3/sdm_periph.s
+
+# target to generate assembly for a file
+esp32s3/sdm_periph.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.s
+.PHONY : esp32s3/sdm_periph.c.s
 
 gpio_hal.obj: gpio_hal.c.obj
 .PHONY : gpio_hal.obj
@@ -308,12 +332,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_gpio"
-	@echo "... esp32/rtc_io_periph.obj"
-	@echo "... esp32/rtc_io_periph.i"
-	@echo "... esp32/rtc_io_periph.s"
-	@echo "... esp32/sdm_periph.obj"
-	@echo "... esp32/sdm_periph.i"
-	@echo "... esp32/sdm_periph.s"
+	@echo "... esp32s3/dedic_gpio_periph.obj"
+	@echo "... esp32s3/dedic_gpio_periph.i"
+	@echo "... esp32s3/dedic_gpio_periph.s"
+	@echo "... esp32s3/rtc_io_periph.obj"
+	@echo "... esp32s3/rtc_io_periph.i"
+	@echo "... esp32s3/rtc_io_periph.s"
+	@echo "... esp32s3/sdm_periph.obj"
+	@echo "... esp32s3/sdm_periph.i"
+	@echo "... esp32s3/sdm_periph.s"
 	@echo "... gpio_hal.obj"
 	@echo "... gpio_hal.i"
 	@echo "... gpio_hal.s"

@@ -91,7 +91,7 @@ bootloader-prefix/src/bootloader-stamp/bootloader-build: bootloader-prefix/src/b
 bootloader-prefix/src/bootloader-stamp/bootloader-configure: bootloader-prefix/tmp/bootloader-cfgcmd.txt
 bootloader-prefix/src/bootloader-stamp/bootloader-configure: bootloader-prefix/src/bootloader-stamp/bootloader-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'bootloader'"
-	cd /root/progarms/web/build/bootloader && /usr/bin/cmake -DSDKCONFIG=/root/progarms/web/sdkconfig -DIDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -DIDF_TARGET=esp32 -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -DEXTRA_COMPONENT_DIRS=/root/esp-idf/esp-idf-v6.0.1/components/bootloader -DPROJECT_SOURCE_DIR=/root/progarms/web -DIGNORE_EXTRA_COMPONENT= "-GUnix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+	cd /root/progarms/web/build/bootloader && /usr/bin/cmake -DSDKCONFIG=/root/progarms/web/sdkconfig -DIDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -DIDF_TARGET=esp32s3 -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -DEXTRA_COMPONENT_DIRS=/root/esp-idf/esp-idf-v6.0.1/components/bootloader -DPROJECT_SOURCE_DIR=/root/progarms/web -DIGNORE_EXTRA_COMPONENT= "-GUnix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 	cd /root/progarms/web/build/bootloader && /usr/bin/cmake -E touch /root/progarms/web/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure
 
 bootloader-prefix/src/bootloader-stamp/bootloader-download: bootloader-prefix/src/bootloader-stamp/bootloader-mkdir

@@ -73,109 +73,49 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj: esp-idf/esp_eth/
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c
+	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c > CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.i
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c > CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.i
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.s
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth.c -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.s
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c
+	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c > CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.i
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c > CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.i
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.s
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_802_3.c -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.s
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c
+	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c > CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.i
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c > CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.i
 
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.s
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp.c
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp.c
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp.c > CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.i
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp.c -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.s
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c > CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.i
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.s
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c > CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.i
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c -o CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.s
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/flags.make
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_generic.c
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_eth && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj -MF CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj.d -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_generic.c
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_generic.c > CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.i
-
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/phy/esp_eth_phy_generic.c -o CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.s
+	cd /root/progarms/web/build/esp-idf/esp_eth && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/src/esp_eth_netif_glue.c -o CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.s
 
 # Object files for target __idf_esp_eth
 __idf_esp_eth_OBJECTS = \
 "CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj" \
 "CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj" \
-"CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj" \
-"CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj" \
-"CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj" \
-"CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj" \
-"CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj"
+"CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj"
 
 # External object files for target __idf_esp_eth
 __idf_esp_eth_EXTERNAL_OBJECTS =
@@ -183,13 +123,9 @@ __idf_esp_eth_EXTERNAL_OBJECTS =
 esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj
 esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj
 esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj
-esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp.c.obj
-esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_dma.c.obj
-esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/mac/esp_eth_mac_esp_gpio.c.obj
-esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_generic.c.obj
 esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make
 esp-idf/esp_eth/libesp_eth.a: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C static library libesp_eth.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libesp_eth.a"
 	cd /root/progarms/web/build/esp-idf/esp_eth && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_eth.dir/cmake_clean_target.cmake
 	cd /root/progarms/web/build/esp-idf/esp_eth && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_eth.dir/link.txt --verbose=$(VERBOSE)
 

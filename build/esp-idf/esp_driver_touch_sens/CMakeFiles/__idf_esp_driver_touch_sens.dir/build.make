@@ -73,40 +73,40 @@ esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/
 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c
 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj -MF CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj.d -o CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj -MF CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj.d -o CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c
 
 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c > CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.i
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c > CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.i
 
 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c -o CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.s
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/common/touch_sens_common.c -o CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.s
 
-esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/flags.make
-esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver1/touch_version_specific.c
-esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj -MF CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj.d -o CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver1/touch_version_specific.c
+esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/flags.make
+esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver2/touch_version_specific.c
+esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj -MF CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj.d -o CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver2/touch_version_specific.c
 
-esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver1/touch_version_specific.c > CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.i
+esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver2/touch_version_specific.c > CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.i
 
-esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver1/touch_version_specific.c -o CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.s
+esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_driver_touch_sens && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens/hw_ver2/touch_version_specific.c -o CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.s
 
 # Object files for target __idf_esp_driver_touch_sens
 __idf_esp_driver_touch_sens_OBJECTS = \
 "CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj" \
-"CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj"
+"CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj"
 
 # External object files for target __idf_esp_driver_touch_sens
 __idf_esp_driver_touch_sens_EXTERNAL_OBJECTS =
 
 esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.obj
-esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj
+esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj
 esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make
 esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libesp_driver_touch_sens.a"

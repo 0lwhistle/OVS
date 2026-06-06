@@ -175,6 +175,54 @@ __idf_esp_driver_dma/fast:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build
 .PHONY : __idf_esp_driver_dma/fast
 
+src/async_memcpy_gdma.obj: src/async_memcpy_gdma.c.obj
+.PHONY : src/async_memcpy_gdma.obj
+
+# target to build an object file
+src/async_memcpy_gdma.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.obj
+.PHONY : src/async_memcpy_gdma.c.obj
+
+src/async_memcpy_gdma.i: src/async_memcpy_gdma.c.i
+.PHONY : src/async_memcpy_gdma.i
+
+# target to preprocess a source file
+src/async_memcpy_gdma.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.i
+.PHONY : src/async_memcpy_gdma.c.i
+
+src/async_memcpy_gdma.s: src/async_memcpy_gdma.c.s
+.PHONY : src/async_memcpy_gdma.s
+
+# target to generate assembly for a file
+src/async_memcpy_gdma.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.s
+.PHONY : src/async_memcpy_gdma.c.s
+
+src/esp_async_memcpy.obj: src/esp_async_memcpy.c.obj
+.PHONY : src/esp_async_memcpy.obj
+
+# target to build an object file
+src/esp_async_memcpy.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.obj
+.PHONY : src/esp_async_memcpy.c.obj
+
+src/esp_async_memcpy.i: src/esp_async_memcpy.c.i
+.PHONY : src/esp_async_memcpy.i
+
+# target to preprocess a source file
+src/esp_async_memcpy.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.i
+.PHONY : src/esp_async_memcpy.c.i
+
+src/esp_async_memcpy.s: src/esp_async_memcpy.c.s
+.PHONY : src/esp_async_memcpy.s
+
+# target to generate assembly for a file
+src/esp_async_memcpy.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.s
+.PHONY : src/esp_async_memcpy.c.s
+
 src/esp_dma_utils.obj: src/esp_dma_utils.c.obj
 .PHONY : src/esp_dma_utils.obj
 
@@ -198,6 +246,30 @@ src/esp_dma_utils.s: src/esp_dma_utils.c.s
 src/esp_dma_utils.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.s
 .PHONY : src/esp_dma_utils.c.s
+
+src/gdma.obj: src/gdma.c.obj
+.PHONY : src/gdma.obj
+
+# target to build an object file
+src/gdma.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.obj
+.PHONY : src/gdma.c.obj
+
+src/gdma.i: src/gdma.c.i
+.PHONY : src/gdma.i
+
+# target to preprocess a source file
+src/gdma.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.i
+.PHONY : src/gdma.c.i
+
+src/gdma.s: src/gdma.c.s
+.PHONY : src/gdma.s
+
+# target to generate assembly for a file
+src/gdma.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/build.make esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.s
+.PHONY : src/gdma.c.s
 
 src/gdma_link.obj: src/gdma_link.c.obj
 .PHONY : src/gdma_link.obj
@@ -236,9 +308,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_driver_dma"
+	@echo "... src/async_memcpy_gdma.obj"
+	@echo "... src/async_memcpy_gdma.i"
+	@echo "... src/async_memcpy_gdma.s"
+	@echo "... src/esp_async_memcpy.obj"
+	@echo "... src/esp_async_memcpy.i"
+	@echo "... src/esp_async_memcpy.s"
 	@echo "... src/esp_dma_utils.obj"
 	@echo "... src/esp_dma_utils.i"
 	@echo "... src/esp_dma_utils.s"
+	@echo "... src/gdma.obj"
+	@echo "... src/gdma.i"
+	@echo "... src/gdma.s"
 	@echo "... src/gdma_link.obj"
 	@echo "... src/gdma_link.i"
 	@echo "... src/gdma_link.s"

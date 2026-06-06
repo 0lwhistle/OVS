@@ -67,7 +67,7 @@ include CMakeFiles/monitor.dir/compiler_depend.make
 include CMakeFiles/monitor.dir/progress.make
 
 CMakeFiles/monitor:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_idf_monitor" -D "SERIAL_TOOL_ARGS=--toolchain-prefix;xtensa-esp32-elf-;;--target;esp32;;--revision;0;;/root/progarms/web/build/web.elf" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
+	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_idf_monitor" -D "SERIAL_TOOL_ARGS=--toolchain-prefix;xtensa-esp32s3-elf-;;--target;esp32s3;;--revision;0;;/root/progarms/web/build/web.elf" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
 
 monitor: CMakeFiles/monitor
 monitor: CMakeFiles/monitor.dir/build.make

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/_project_elf_src"
-  "project_elf_src_esp32.c"
+  "project_elf_src_esp32s3.c"
 )
 
 # Per-language clean rules from dependency scanning.

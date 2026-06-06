@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj"
-  "CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj"
+  "CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj.d"
   "libesp_hal_clock.a"
   "libesp_hal_clock.pdb"
 )
