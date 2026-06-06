@@ -194,6 +194,7 @@ web.elf: esp-idf/esp_lcd/libesp_lcd.a
 web.elf: esp-idf/protobuf-c/libprotobuf-c.a
 web.elf: esp-idf/protocomm/libprotocomm.a
 web.elf: esp-idf/esp_local_ctrl/libesp_local_ctrl.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: esp-idf/wear_levelling/libwear_levelling.a
 web.elf: esp-idf/fatfs/libfatfs.a
 web.elf: esp-idf/perfmon/libperfmon.a
@@ -300,6 +301,7 @@ web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
@@ -382,6 +384,7 @@ web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
@@ -464,6 +467,7 @@ web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
@@ -546,6 +550,7 @@ web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
@@ -628,6 +633,7 @@ web.elf: esp-idf/tcp_transport/libtcp_transport.a
 web.elf: esp-idf/esp_http_client/libesp_http_client.a
 web.elf: esp-idf/esp_http_server/libesp_http_server.a
 web.elf: esp-idf/esp_https_ota/libesp_https_ota.a
+web.elf: esp-idf/espcoredump/libespcoredump.a
 web.elf: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 web.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a

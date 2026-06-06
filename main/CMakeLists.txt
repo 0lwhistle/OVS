@@ -1,9 +1,11 @@
 idf_component_register(SRCS 
 	"main.c"
 	"../modules/mongoose/mongoose.c"
+	"../modules/vue_frontend/vue_frontend.c"   # ← 新增：Vue 前端文件
     INCLUDE_DIRS 
 	"."
 	"../modules/mongoose"
+	"../modules/vue_frontend"                   # ← 新增：Vue 头文件路径
 	REQUIRES wifi web led_ctrl beep_ctrl sr04_ctrl task_manager
 	app_update
 	esp_timer

@@ -199,6 +199,30 @@ __/modules/mongoose/mongoose.c.s:
 	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s
 .PHONY : __/modules/mongoose/mongoose.c.s
 
+__/modules/vue_frontend/vue_frontend.obj: __/modules/vue_frontend/vue_frontend.c.obj
+.PHONY : __/modules/vue_frontend/vue_frontend.obj
+
+# target to build an object file
+__/modules/vue_frontend/vue_frontend.c.obj:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj
+.PHONY : __/modules/vue_frontend/vue_frontend.c.obj
+
+__/modules/vue_frontend/vue_frontend.i: __/modules/vue_frontend/vue_frontend.c.i
+.PHONY : __/modules/vue_frontend/vue_frontend.i
+
+# target to preprocess a source file
+__/modules/vue_frontend/vue_frontend.c.i:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i
+.PHONY : __/modules/vue_frontend/vue_frontend.c.i
+
+__/modules/vue_frontend/vue_frontend.s: __/modules/vue_frontend/vue_frontend.c.s
+.PHONY : __/modules/vue_frontend/vue_frontend.s
+
+# target to generate assembly for a file
+__/modules/vue_frontend/vue_frontend.c.s:
+	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s
+.PHONY : __/modules/vue_frontend/vue_frontend.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo "... __/modules/mongoose/mongoose.obj"
 	@echo "... __/modules/mongoose/mongoose.i"
 	@echo "... __/modules/mongoose/mongoose.s"
+	@echo "... __/modules/vue_frontend/vue_frontend.obj"
+	@echo "... __/modules/vue_frontend/vue_frontend.i"
+	@echo "... __/modules/vue_frontend/vue_frontend.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"

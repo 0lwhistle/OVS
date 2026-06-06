@@ -210,4 +210,5 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
- /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.h
+ /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.h \
+ /root/progarms/web/modules/vue_frontend/vue_frontend.h

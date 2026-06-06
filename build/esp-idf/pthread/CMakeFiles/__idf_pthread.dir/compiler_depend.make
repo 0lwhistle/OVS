@@ -130,6 +130,7 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj: /root/esp-idf/esp-id
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/startup_internal.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/esp_private/freertos_idf_additions_priv.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/soc/soc_memory_layout.h \
   /root/esp-idf/esp-idf-v6.0.1/components/heap/include/heap_memory_layout.h \
   /root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread_internal.h \
@@ -748,6 +749,10 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_semaphore.c.obj: /root/esp-
 
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/esp_heap_caps.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread_internal.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/unistd.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timespec.h:
@@ -767,10 +772,6 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread_semaphore.c.obj: /root/esp-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/time.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/unistd.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread_internal.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/select.h:
 
@@ -919,6 +920,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/freertos/idf_additions.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/esp_private/freertos_idf_additions_priv.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h:
 

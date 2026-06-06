@@ -8,5 +8,5 @@ C_INCLUDES = -I/root/progarms/web/modules/wifi -I/root/progarms/web/modules/web 
 
 C_FLAGS = @"/root/progarms/web/build/toolchain/cflags" -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/root/progarms/web=. -fmacro-prefix-map=/root/esp-idf/esp-idf-v6.0.1=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce
 
-# Custom defines: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj_DEFINES = PROJECT_VER="1"; PROJECT_NAME="web"
+# Custom defines: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj_DEFINES = PROJECT_VER="2542664-dirty"; PROJECT_NAME="web"
 

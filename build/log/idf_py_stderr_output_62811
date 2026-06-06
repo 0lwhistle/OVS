@@ -1,0 +1,39 @@
+Command: make -j 22 all
+info: Default value for FREERTOS_ISR_STACKSIZE in sdkconfig is 2096 but it is 1536 according to Kconfig.
+Using default value from sdkconfig (2096).
+Configuration Report                                                        
+ ────────────────────────────────────────────────────────────────────────── 
+   Parser Version: 1                                                        
+   Verbosity: default                                                       
+   Defaults policy: sdkconfig                                               
+   Status: Finished with notifications                                      
+                                                                            
+  Default Value Mismatch                                                    
+   ──────────────────────────────────────────────────────────────────────   
+    Using sdkconfig default values                                          
+    Config symbols with different default value between sdkconfig and       
+    Kconfig                                                                 
+    FREERTOS_ISR_STACKSIZE: Kconfig default value: 1536, sdkconfig          
+    default value: 2096                                                     
+                                                                            
+    Choice symbols with different default selection between sdkconfig       
+    and Kconfig                                                             
+    ESPTOOLPY_FLASHSIZE: Kconfig default selection:                         
+    ESPTOOLPY_FLASHSIZE_2MB, sdkconfig default selection:                   
+    ESPTOOLPY_FLASHSIZE_16MB                                                
+   ──────────────────────────────────────────────────────────────────────   
+  Multiple Assignments                                                      
+   ──────────────────────────────────────────────────                       
+    Choice ESPTOOLPY_FLASHSIZE:                                             
+        ESPTOOLPY_FLASHSIZE_2MB (default selection)                         
+        ESPTOOLPY_FLASHSIZE_16MB (default selection)                        
+        -> using ESPTOOLPY_FLASHSIZE_16MB                                   
+   ──────────────────────────────────────────────────                       
+ ────────────────────────────────────────────────────────────────────────── 
+/root/progarms/web/modules/wifi/wifi.c: In function 'wifi_init':
+/root/progarms/web/modules/wifi/wifi.c:69:18: warning: unused variable 'ap_netif' [-Wunused-variable]
+   69 |     esp_netif_t *ap_netif  = esp_netif_create_default_wifi_ap();
+      |                  ^~~~~~~~
+/root/progarms/web/modules/wifi/wifi.c:68:18: warning: unused variable 'sta_netif' [-Wunused-variable]
+   68 |     esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
+      |                  ^~~~~~~~~

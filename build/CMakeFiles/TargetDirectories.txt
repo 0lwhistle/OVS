@@ -522,6 +522,18 @@
 /root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/install.dir
 /root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/install/local.dir
 /root/progarms/web/build/esp-idf/esp_psram/CMakeFiles/install/strip.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/edit_cache.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/rebuild_cache.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/list_install_components.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/install.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/install/local.dir
+/root/progarms/web/build/esp-idf/esp_psram/device/CMakeFiles/install/strip.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/edit_cache.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/rebuild_cache.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/list_install_components.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/install.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/install/local.dir
+/root/progarms/web/build/esp-idf/esp_psram/xip_impl/CMakeFiles/install/strip.dir
 /root/progarms/web/build/esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir
 /root/progarms/web/build/esp-idf/esp_driver_uart/CMakeFiles/edit_cache.dir
 /root/progarms/web/build/esp-idf/esp_driver_uart/CMakeFiles/rebuild_cache.dir
@@ -1036,6 +1048,7 @@
 /root/progarms/web/build/esp-idf/esp_trace/CMakeFiles/install.dir
 /root/progarms/web/build/esp-idf/esp_trace/CMakeFiles/install/local.dir
 /root/progarms/web/build/esp-idf/esp_trace/CMakeFiles/install/strip.dir
+/root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir
 /root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/edit_cache.dir
 /root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/rebuild_cache.dir
 /root/progarms/web/build/esp-idf/espcoredump/CMakeFiles/list_install_components.dir

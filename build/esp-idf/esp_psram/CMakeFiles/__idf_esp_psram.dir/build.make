@@ -83,17 +83,65 @@ esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.s"
 	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/system_layer/esp_psram_mspi.c -o CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.s
 
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/flags.make
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/system_layer/esp_psram.c
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_psram && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj -MF CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj.d -o CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/system_layer/esp_psram.c
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/system_layer/esp_psram.c > CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.i
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/system_layer/esp_psram.c -o CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.s
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/flags.make
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/esp32s3/esp_psram_impl_octal.c
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_psram && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj -MF CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj.d -o CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/esp32s3/esp_psram_impl_octal.c
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/esp32s3/esp_psram_impl_octal.c > CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.i
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/esp32s3/esp_psram_impl_octal.c -o CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.s
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/flags.make
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/mmu_psram_flash.c
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj"
+	cd /root/progarms/web/build/esp-idf/esp_psram && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj -MF CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj.d -o CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/mmu_psram_flash.c
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.i"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/mmu_psram_flash.c > CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.i
+
+esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.s"
+	cd /root/progarms/web/build/esp-idf/esp_psram && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/xip_impl/mmu_psram_flash.c -o CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.s
+
 # Object files for target __idf_esp_psram
 __idf_esp_psram_OBJECTS = \
-"CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.obj"
+"CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.obj" \
+"CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj" \
+"CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj" \
+"CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj"
 
 # External object files for target __idf_esp_psram
 __idf_esp_psram_EXTERNAL_OBJECTS =
 
 esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.obj
+esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj
+esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj
+esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj
 esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make
 esp-idf/esp_psram/libesp_psram.a: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libesp_psram.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libesp_psram.a"
 	cd /root/progarms/web/build/esp-idf/esp_psram && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_psram.dir/cmake_clean_target.cmake
 	cd /root/progarms/web/build/esp-idf/esp_psram && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_psram.dir/link.txt --verbose=$(VERBOSE)
 

@@ -183,7 +183,8 @@ esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32s3/esp_adapter.c.obj: /root/
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_coexist_adapter.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/ets_sys.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_modem_wrapper.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_modem_wrapper.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h
 
 esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/regulatory/esp_wifi_regulatory.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/regulatory/esp_wifi_regulatory.c \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
@@ -1132,7 +1133,8 @@ esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_init.c.obj: /root/esp-id
   /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/esp_coexist.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_coexist_adapter.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/include/esp_phy_init.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/include/esp_private/phy.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/include/esp_private/phy.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h
 
 esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_netif.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/src/wifi_netif.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
@@ -1536,6 +1538,8 @@ esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_netif.c.obj: /root/esp-i
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/include/esp_psram.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_pthreadtypes.h:
 

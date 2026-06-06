@@ -2190,6 +2190,19 @@ __idf_esp_local_ctrl/fast:
 .PHONY : __idf_esp_local_ctrl/fast
 
 #=============================================================================
+# Target rules for targets named __idf_espcoredump
+
+# Build rule for target.
+__idf_espcoredump: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espcoredump
+.PHONY : __idf_espcoredump
+
+# fast build rule for target.
+__idf_espcoredump/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build.make esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/build
+.PHONY : __idf_espcoredump/fast
+
+#=============================================================================
 # Target rules for targets named __idf_wear_levelling
 
 # Build rule for target.
@@ -2524,6 +2537,7 @@ help:
 	@echo "... __idf_esp_system"
 	@echo "... __idf_esp_timer"
 	@echo "... __idf_esp_wifi"
+	@echo "... __idf_espcoredump"
 	@echo "... __idf_fatfs"
 	@echo "... __idf_freertos"
 	@echo "... __idf_gpio_ctrl"

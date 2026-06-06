@@ -69,7 +69,7 @@ include esp-idf/partition_table/CMakeFiles/partition-table.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition-table:
 	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
-	cd /root/progarms/web/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 2MB -- /root/progarms/web/build/partition_table/partition-table.bin
+	cd /root/progarms/web/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/progarms/web/build/partition_table/partition-table.bin
 	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 
 partition-table: esp-idf/partition_table/CMakeFiles/partition-table
