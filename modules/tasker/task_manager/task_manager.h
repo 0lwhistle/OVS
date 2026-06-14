@@ -1,6 +1,19 @@
 #ifndef TASK_MANAGER
 #define TASK_MANAGER
 
+#include <stdlib.h>
+#include <stdio.h>
+
+#define LITTLE_TASK_QUEUE_SIZE 4
+#define MIDDEL_TASK_QUEUE_SIZE 8
+#define LOTS_TASK_QUEUE_SIZE 8
+
+#define LITTLE_TASK_STACK_SIZE 3072
+#define MIDDEL_TASK_STACK_SIZE 4096
+#define LOTS_TASK_STACK_SIZE 8192
+
+static const char *TAG = "[TASK_MANAGER]";
+
 static int mutex = 0; 
 
 enum task_t{
@@ -25,12 +38,11 @@ enum task_time_cost_level{
 	lots,
 };
 
-typedef task_t (*task_fn)(const int timeout, void* ctx);
+typedef enum task_t (*task_fn)(const int timeout, void* ctx);
 
 struct task_node{
-	int id;
 	int done;
-	task_priority pri;
+	enum task_priority pri;
 	task_fn fn;
 };
 
@@ -38,9 +50,11 @@ struct task_manager{
 	int running;
 	int is_full;
 	int is_empty;
-	struct task_node queue[64];
+	unsigned int size;
+	struct task_node* queue;
 };
 
+static struct task_manager* task_manager_init(const unsigned int size);
 
 static int get_mutex(struct task_node* node);
 static int put_mutex(struct task_node* node);
@@ -50,7 +64,7 @@ static int task_init(const int timeout, task_fn fn, void* ctx);
 
 static int task_is_done(struct task_node* node);
 
-static task_node* task_pop(struct task_manager* tkm);
+static struct task_node* task_pop(struct task_manager* tkm);
 
 
 
