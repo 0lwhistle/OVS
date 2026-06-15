@@ -21,3 +21,23 @@ static struct task_manager* task_manager_init(const unsigned int size){
 
 	return manager;
 }
+
+static inline void task_done(struct task_node* node){
+	node->done = 1;
+}
+
+static inline int task_is_done(struct task_node* node){
+	return node->done;
+}
+
+static inline void task_cancel(struct task_node* node){
+	node->cancel = 1;
+}
+
+static inline int task_is_cancel(struct task_node* node){
+	return node->cancel;
+}
+
+static inline int task_is_in_worker(struct task_node* node){
+	return node->in_worker;
+}

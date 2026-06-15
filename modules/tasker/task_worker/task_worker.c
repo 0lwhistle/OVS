@@ -114,18 +114,31 @@ static void worker_lots_handler(struct task_worker* worker){
 
 static void worker_handler(struct task_worker* worker){
 	int i = 0;
-	while(1){
-		if(!worker->stop && worker->worker_queue->is_empty)	{
+	int cnt = 0;
+	while(!worker->stop){
+		if(worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
-
-		i = 0
-		for (; i < worker->worker_queue->size; ++i){
+		
+		i = 0;
+		cnt = worker->worker_queue->size;
+		for (; i < cnt; ++i){
 			if (!worker->worker_queue->queue[i]->done){
-				worker->worker_queue->queue[i]->fn();
+				// 创建定时器时传入参数
+				const esp_timer_create_args_t oneshot_args = {
+					.callback = &timer_callback,
+					.arg = params,  // 关键：传递参数指针
+					.name = "worker_handler_timer"
+				};
+				
+				esp_timer_handle_t oneshot_timer;
+				ESP_ERROR_CHECK(esp_timer_create(&oneshot_args, &oneshot_timer));
+				ESP_ERROR_CHECK(esp_timer_start_once(oneshot_timer, worker->worker_queue->queue[i].timeout * 1000));
+				worker->worker_queue->queue[i].fn(worker->worker_queue->queue[i].ctx);
 				
 			}
 		}
+		
 
 	}
 }

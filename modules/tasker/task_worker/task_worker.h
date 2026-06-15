@@ -35,5 +35,11 @@ static void worker_middle_handler(void);
 static void worker_lots_handler(void);
 static void worker_handler(void);
 
+static void timer_callback(void* arg);
+
+static worker_task_enqueue(struct task_worker* worker, struct task_node* node);
+static worker_task_pop(struct task_worker* worker, struct task_node* node);
+
+
 
 #endif // __TASK_WORKER_H__
