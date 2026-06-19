@@ -5,12 +5,12 @@ static struct task_manager* task_manager_init(const unsigned int size){
 	int i = 0;
 	struct task_manager* manager = (struct task_manager*)malloc(sizeof(struct task_manager));
 	if (!manager){
-		ESP_LOGE(TAG, "manager malloc fail!");
+		ESP_LOGE(TASK_MANAGER_TAG, "manager malloc fail!");
 		return NULL;
 	}
 	struct task_node* queue = (struct task_node*)malloc(size * sizeof(struct task_node));
 	if (!queue){
-		ESP_LOGE(TAG, "queue malloc fail!");
+		ESP_LOGE(TASK_MANAGER_TAG, "queue malloc fail!");
 		return NULL;
 	}
 	manager->queue = queue;
@@ -21,6 +21,30 @@ static struct task_manager* task_manager_init(const unsigned int size){
 
 	return manager;
 }
+
+static int task_init(const int timeout, const enum task_priority pri, task_fn fn, void* ctx){
+
+	struct task_node* node = (struct task_node*)malloc(sizeof(struct task_node));
+	if (!node){
+		ESP_LOGE(TASK_MANAGER_TAG, "task node malloc fail!");
+		return TASK_MEM_ERR;
+	}
+	
+	if (!fn){
+		ESP_LOGE(TASK_MANAGER_TAG, "no task function.");
+		return TASK_FUNC_ERR;
+	}
+	node->fn = fn;
+	node->pri = pri;
+	node->timeout = timeout;
+	node->cancel = 0;
+	node->ctx = ctx;
+	node->done = 0;
+	node->in_worker = 0;
+
+	return 0;
+}
+
 
 static inline void task_done(struct task_node* node){
 	node->done = 1;
