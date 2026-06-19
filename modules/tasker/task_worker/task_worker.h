@@ -10,8 +10,9 @@
 
 #include "task_manager.h"
 
-static const char *TAG = "[TASK_WORKER]";
+static const char* TASK_WORKER_TAG = "[TASK_WORKER]";
 
+static struct task_worker 
 
 struct task_worker{
 	int is_working;
@@ -19,6 +20,7 @@ struct task_worker{
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
+	struct task_worker* src;
 	struct task_manager* worker_queue;
 };
 
@@ -35,10 +37,11 @@ static void worker_middle_handler(void);
 static void worker_lots_handler(void);
 static void worker_handler(void);
 
+static esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
 static void timer_callback(void* arg);
 
-static worker_task_enqueue(struct task_worker* worker, struct task_node* node);
-static worker_task_pop(struct task_worker* worker, struct task_node* node);
+static int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
+static void worker_task_pop(struct task_worker* worker, struct task_node* node);
 
 
 

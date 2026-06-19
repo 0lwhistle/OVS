@@ -16,7 +16,7 @@
 #define MIDDEL_TASK_default_timeout 1000
 #define LOTS_TASK_default_timeout 10000
 
-static const char *TAG = "[TASK_MANAGER]";
+static const char* TASK_MANAGER_TAG = "[TASK_MANAGER]";
 
 static int mutex = 0; 
 
@@ -68,7 +68,7 @@ static int get_mutex(struct task_node* node);
 static int put_mutex(struct task_node* node);
 
 static int task_notimeout_init(task_fn fn, void* ctx);
-static int task_init(const int timeout, task_fn fn, void* ctx);
+static int task_init(const int timeout, const enum task_priority pri, task_fn fn, void* ctx);
 
 static inline void task_done(struct task_node* node);
 static inline int task_is_done(struct task_node* node);
