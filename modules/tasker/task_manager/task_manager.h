@@ -7,14 +7,16 @@
 #define LITTLE_TASK_QUEUE_SIZE 4
 #define MIDDEL_TASK_QUEUE_SIZE 8
 #define LOTS_TASK_QUEUE_SIZE 8
+#define GLOBAL_TASK_QUEUE_SIZE 32
 
 #define LITTLE_TASK_STACK_SIZE 3072
 #define MIDDEL_TASK_STACK_SIZE 4096
 #define LOTS_TASK_STACK_SIZE 8192
+#define GLOBAL_TASK_QUEUE_STACK_SIZE 4096
 
-#define LITTLE_TASK_default_timeout 50
-#define MIDDEL_TASK_default_timeout 1000
-#define LOTS_TASK_default_timeout 10000
+#define LITTLE_TASK_default_timeout 50 // ms
+#define MIDDEL_TASK_default_timeout 1000 // ms
+#define LOTS_TASK_default_timeout 10000 // ms
 
 static const char* TASK_MANAGER_TAG = "[TASK_MANAGER]";
 
