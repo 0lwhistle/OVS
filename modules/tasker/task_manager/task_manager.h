@@ -48,6 +48,7 @@ struct task_node{
 	int in_worker;
 	int done;
 	int cancel;
+	int inturn;
 	unsigned int timeout;
 	enum task_priority pri;
 	task_fn fn;

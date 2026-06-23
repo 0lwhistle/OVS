@@ -6,7 +6,9 @@ static int worker_init(void){
 	struct task_worker middle_worker;
 	struct task_worker lots_worker;
 
-	s_worker_queue = task_manager_init(32);
+	s_worker_queue.worker_queue = task_manager_init(32);
+	s_worker_queue.src = NULL;
+	s_worker_queue.cond = 
 
 	if (!s_worker_queue){
 		ESP_LOGE(TAG, "s_worker_queue init fail!");
@@ -30,10 +32,11 @@ static int worker_little_init(struct task_worker* worker){
 	pthread_attr_t attr;
 	pthread_attr_init(&attr);
 	pthread_attr_setstacksize(&attr, LITTLE_TASK_STACK_SIZE);  // 设置栈大小
-	pthread_create(worker->pt, &attr, worker_little_handler, NULL);
+	ret = pthread_create(worker->pt, &attr, worker_little_handler, NULL);
 	pthread_attr_destroy(&attr);
 
 	worker->worker_queue = task_manager_init(4);
+	worker->src = s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -58,6 +61,7 @@ static int worker_middle_init(struct task_worker* worker){
 	pthread_attr_destroy(&attr);
 
 	worker->worker_queue = task_manager_init(8);
+	worker->src = s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -84,6 +88,7 @@ static int worker_lots_init(struct task_worker* worker){
 	pthread_attr_destroy(&attr);
 
 	worker->worker_queue = task_manager_init(16);
+	worker->src = s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -155,12 +160,21 @@ static void worker_handler(struct task_worker* worker){
 		cnt = worker->worker_queue->size;
 		for (; i < cnt; ++i){
 			if (!worker->worker_queue->queue[i].cancel && !worker->worker_queue->queue[i]->done){
+				// start a oneshot timer, than run the task
 				esp_timer_handle_t* timer = timeout_timer_init(worker->worker_queue->queue[i].timeout, &timeout_flag);
 				status = worker->worker_queue->queue[i].fn(worker->worker_queue->queue[i].ctx);
+
+				// delete the oneshot timer after taks
+			
 				ESP_ERROR_CHECK(esp_timer_delete(timer));
 				if (status == TASK_OK){
+					// set the done flag
 					worker->worker_queue->queue[i].done = 1;
+
+					// deal with the timeout case
 					if (!timeout_flag){
+						// if timeout and the task is not oneshot, 
+						// enqueue the task to the long time cost queue.
 
 					} else {
 
@@ -173,14 +187,13 @@ static void worker_handler(struct task_worker* worker){
 
 			}
 		}
-		
-
+		wakeup_s_worker_queue(worker->src)
 	}
 }
 
 
 static int worker_task_enqueue(struct task_worker* src, struct task_worker* des, struct task_node* node){
-	if (des->worker_queue->is_full){
+	while(des->worker_queue->is_full || src->worker_queue->is_empty){
 		pthread_cond_wait(src->cond, src->mtx);
 	}
 
@@ -190,4 +203,10 @@ static int worker_task_enqueue(struct task_worker* src, struct task_worker* des,
 static void worker_task_pop(struct task_worker* worker, struct task_node* node){
 
 
+}
+
+static inline void wakeup_s_worker_queue(struct task_worker* worker){
+		pthread_mutex_lock(src->mtx);
+		pthread_cond_broadcast(worker->src->cond);
+		pthread_mutex_unlock(src->mtx); 
 }
