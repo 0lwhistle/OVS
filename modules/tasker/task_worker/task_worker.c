@@ -2,31 +2,65 @@
 
 static int worker_init(void){
 
-	struct task_worker little_worker;
-	struct task_worker middle_worker;
-	struct task_worker lots_worker;
+	int ret = 0;
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_attr_setstacksize(&attr, GLOBAL_TASK_QUEUE_STACK_SIZE);  // 设置栈大小
+	ret = pthread_create(s_task_worker_ctx.s_task_worker_ctx.s_worker_queue, &attr, , NULL);
+	pthread_attr_destroy(&attr);
 
-	s_worker_queue.worker_queue = task_manager_init(32);
-	s_worker_queue.src = NULL;
-	s_worker_queue.cond = 
+	if (!worker->worker_queue){
+		ret = TASK_MEM_ERR
+		return ret;
+	}
 
-	if (!s_worker_queue){
-		ESP_LOGE(TAG, "s_worker_queue init fail!");
+	if (!worker->worker_queue){
+		ret = TASK_MEM_ERR;
+		return ret;
+	}
+
+	
+
+	// init global worker queue
+	s_task_worker_ctx.s_task_worker_ctx.s_worker_queue->worker_queue = task_manager_init(GLOBAL_TASK_QUEUE_SIZE);
+	s_task_worker_ctx.s_task_worker_ctx.s_worker_queue->src = NULL;
+	pthread_mutex_init(s_task_worker_ctx.s_task_worker_ctx.s_worker_queue->mtx, NULL);
+	pthread_cond_init(s_task_worker_ctx.s_task_worker_ctx.s_worker_queue->cond, NULL);
+	if (!s_task_worker_ctx.s_worker_queue){
+		ESP_LOGE(TASK_WORKER_TAG, "s_task_worker_ctx.s_worker_queue init fail!");
 		return TASK_MEM_ERR;
 	}
 
-	if(	worker_little_init(&little_worker) +
-		worker_middle_init(&middle_worker) +
-		worker_lots_init(&lots_worker) != 0){
-			ESP_LOGE(TAG, "task_worker init fail!");
+	if (ret < 0){
+		ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "global worker init fail!");
+		return TASK_INNER_ERR
+	}
+
+	// init the default workers
+	s_task_worker_ctx.little_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.middle_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.lots_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
+
+	if (!(s_task_worker_ctx.little_worker 
+		&& s_task_worker_ctx.middle_worker 
+		&& s_task_worker_ctx.lots_worker)){
+			ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "default workers init fail!");
+			return TASK_MEM_ERR;
+		}
+
+
+	if(	worker_little_init() +
+		worker_middle_init() +
+		worker_lots_init() != 0){
+			ESP_LOGE(TASK_WORKER_TAG, "task_worker init fail!");
 			return TASK_MEM_ERR;
 		}
 
 }
 
 
-
-static int worker_little_init(struct task_worker* worker){
+static int worker_little_init(void){
+	struct task_worker* work = s_task_worker_ctx.little_worker;
 	printf("little pthread init");
 	int ret = 0;
 	pthread_attr_t attr;
@@ -35,8 +69,8 @@ static int worker_little_init(struct task_worker* worker){
 	ret = pthread_create(worker->pt, &attr, worker_little_handler, NULL);
 	pthread_attr_destroy(&attr);
 
-	worker->worker_queue = task_manager_init(4);
-	worker->src = s_worker_queue;
+	worker->worker_queue = task_manager_init(LITTLE_TASK_QUEUE_SIZE);
+	worker->src = s_task_worker_ctx.s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -44,15 +78,17 @@ static int worker_little_init(struct task_worker* worker){
 	}
 
 	if (ret < 0){
-		ESP_LOGE(TAG, "little pthread init fail!");
+		ESP_LOGE(TASK_WORKER_TAG, "little pthread init fail!");
 		return TASK_INNER_ERR
 	}
 
 	return TASK_OK;
 }
 
-static int worker_middle_init(struct task_worker* worker){
+static int worker_middle_init(void){
 	printf("middle pthread init");
+	struct task_worker* work = s_task_worker_ctx.middle_worker;
+
 	int ret = 0;
 	pthread_attr_t attr;
 	pthread_attr_init(&attr);
@@ -60,8 +96,8 @@ static int worker_middle_init(struct task_worker* worker){
 	ret = pthread_create(worker->pt, &attr, worker_middle_handler, NULL);
 	pthread_attr_destroy(&attr);
 
-	worker->worker_queue = task_manager_init(8);
-	worker->src = s_worker_queue;
+	worker->worker_queue = task_manager_init(MIDDEL_TASK_QUEUE_SIZE);
+	worker->src = s_task_worker_ctx.s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -69,7 +105,7 @@ static int worker_middle_init(struct task_worker* worker){
 	}
 
 	if (ret < 0){
-		ESP_LOGE(TAG, "little pthread init fail!");
+		ESP_LOGE(TASK_WORKER_TAG, "little pthread init fail!");
 		return TASK_INNER_ERR
 	}
 
@@ -77,8 +113,9 @@ static int worker_middle_init(struct task_worker* worker){
 
 }
 
-static int worker_lots_init(struct task_worker* worker){
+static int worker_lots_init(void){
 	printf("lots pthread init");
+	struct task_worker* work = s_task_worker_ctx.lots_worker;
 	int ret = 0;
 	pthread_attr_t attr;
 	pthread_attr_init(&attr);
@@ -87,8 +124,8 @@ static int worker_lots_init(struct task_worker* worker){
 	ret = pthread_create(worker->pt, &attr, worker_lots_handler, NULL);
 	pthread_attr_destroy(&attr);
 
-	worker->worker_queue = task_manager_init(16);
-	worker->src = s_worker_queue;
+	worker->worker_queue = task_manager_init(LOTS_TASK_QUEUE_SIZE);
+	worker->src = s_task_worker_ctx.s_worker_queue;
 
 	if (!worker->worker_queue){
 		ret = TASK_MEM_ERR;
@@ -96,7 +133,7 @@ static int worker_lots_init(struct task_worker* worker){
 	}
 
 	if (ret < 0){
-		ESP_LOGE(TAG, "little pthread init fail!");
+		ESP_LOGE(TASK_WORKER_TAG, "little pthread init fail!");
 		return TASK_INNER_ERR
 	}
 
@@ -126,7 +163,7 @@ static void timer_callback(void* arg){
 static esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg){
 
 	if (!arg){
-		ESP_LOGE(TASK_WORKER_TAG, "timer arg is null!");
+		ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "timer arg is null!");
 		return NULL;
 	}
 
@@ -180,14 +217,14 @@ static void worker_handler(struct task_worker* worker){
 
 					}
 				} else {
-					ESP_LOGW(TASK_WORKER_TAG, "task node not done, cancel it.");
+					ESP_LOGW(TASK_WORKER_TASK_WORKER_TAG, "task node not done, cancel it.");
 					task_cancel(worker->worker_queue->queue[i]);
 				}
 
 
 			}
 		}
-		wakeup_s_worker_queue(worker->src)
+		wakeup_s_task_worker_ctx.s_worker_queue(worker->src)
 	}
 }
 
@@ -205,8 +242,14 @@ static void worker_task_pop(struct task_worker* worker, struct task_node* node){
 
 }
 
-static inline void wakeup_s_worker_queue(struct task_worker* worker){
+static inline void wakeup_s_task_worker_ctx.s_worker_queue(struct task_worker* worker){
 		pthread_mutex_lock(src->mtx);
 		pthread_cond_broadcast(worker->src->cond);
 		pthread_mutex_unlock(src->mtx); 
+}
+
+staitc void worker_delete(void){
+	
+
+
 }
