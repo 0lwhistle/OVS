@@ -1,5 +1,9 @@
 idf_component_register(
     SRCS "task_worker.c"
     INCLUDE_DIRS "."
-    REQUIRES freertos
+    REQUIRES 
+	freertos
+	task_manager
+	scheduler
+	manager_queue
 )
