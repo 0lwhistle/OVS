@@ -7,12 +7,14 @@
 #define LITTLE_TASK_QUEUE_SIZE 4
 #define MIDDEL_TASK_QUEUE_SIZE 8
 #define LOTS_TASK_QUEUE_SIZE 8
-#define GLOBAL_TASK_QUEUE_SIZE 32
+#define DISPATCHER_TASK_QUEUE_SIZE 32
+#define SCHED_TASK_QUEUE_SIZE 32
 
 #define LITTLE_TASK_STACK_SIZE 3072
 #define MIDDEL_TASK_STACK_SIZE 4096
 #define LOTS_TASK_STACK_SIZE 8192
-#define GLOBAL_TASK_QUEUE_STACK_SIZE 4096
+#define DISPATCHER_TASK_QUEUE_STACK_SIZE 4096
+#define SCHED_TASK_QUEUE_STACK_SIZE 4096
 
 #define LITTLE_TASK_default_timeout 50 // ms
 #define MIDDEL_TASK_default_timeout 1000 // ms
@@ -47,13 +49,14 @@ enum task_time_cost_level{
 typedef enum task_t (*task_fn)(void* ctx);
 
 struct task_node{
-	int in_worker;
 	int done;
 	int cancel;
-	int inturn;
-	unsigned int timeout;
+	int timeout;
+	int is_timeout;
 	enum task_priority pri;
+	enum task_time_cost_level level;
 	task_fn fn;
+	char* name;
 	void* ctx;
 };
 
@@ -67,11 +70,8 @@ struct task_manager{
 
 static struct task_manager* task_manager_init(const unsigned int size);
 
-static int get_mutex(struct task_node* node);
-static int put_mutex(struct task_node* node);
-
-static int task_notimeout_init(task_fn fn, void* ctx);
-static int task_init(const int timeout, const enum task_priority pri, task_fn fn, void* ctx);
+static struct task_node* task_notimeout_init(task_fn fn, void* ctx);
+static struct task_node* task_init(const int timeout, const enum task_priority pri, const enum task_time_cost_level level, const char* name, task_fn fn, void* ctx);
 
 static inline void task_done(struct task_node* node);
 static inline int task_is_done(struct task_node* node);
@@ -79,11 +79,11 @@ static inline int task_is_done(struct task_node* node);
 static inline void task_cancel(struct task_node* node);
 static inline int task_is_cancel(struct task_node* node);
 
-static inline int task_is_in_worker(struct task_node* node);
 
-static struct task_node* task_pop(struct task_manager* tkm);
-
-
+// Utils functions:
+static inline struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name);
+static inline void task_manager_pri_sort(struct task_manager* worker_queue);
+static inline void task_node_pri_up(struct task_node* node);
 
 
 #endif // TASK_MANAGER

@@ -16,50 +16,47 @@ struct task_worker_ctx{
 	struct task_worker* little_worker;
 	struct task_worker* middle_worker;
 	struct task_worker* lots_worker;
-	struct task_worker* s_worker_queue;
+	struct task_worker* s_dispatcher;
+	struct task_worker* s_sched_table;
 };
 
 static struct task_worker_ctx s_task_worker_ctx = {0};
 
-typedef void (*worker_handler)(struct task_worker*);
+typedef void (*worker_handler_fn)(struct task_worker*);
 
 struct task_worker{
-	int is_working;
 	int stop;
-	worker_handler handler; // what can worker do
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
-	struct task_worker* src; // activate the src, get more task
 	struct task_manager* worker_queue; // save and manage the tasks
 };
 
-// static int worker_init(void);
-// static int worker_little_init(struct task_worker* worker);
-// static int worker_middle_init(struct task_worker* worker);
-// static int worker_lots_init(struct task_worker* worker);
-
 static int worker_init(void);
+static void worker_delete(struct task_worker* worker);
+
 static int worker_little_init(void);
 static int worker_middle_init(void);
 static int worker_lots_init(void);
+static int worker_dispatcher_init(void);
+static int worker_sched_init(void);
 
-staitc void worker_delete(void);
+
 
 // the handler to be register for the workers
-static void worker_global_handler(struct task_worker* worker);
 static void worker_little_handler(struct task_worker* worker);
 static void worker_middle_handler(struct task_worker* worker);
 static void worker_lots_handler(struct task_worker* worker);
+static void worker_dispatcher_handler(struct task_worker* worker);
+static void worker_sched_handler(struct task_worker* worker);
 
 
 static esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
 static void timer_callback(void* arg);
 
 static int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
-static void worker_task_pop(struct task_worker* worker, struct task_node* node);
-
-static inline void wakeup_s_worker_queue(struct task_worker* worker);
+static void worker_task_done(struct task_worker* worker, struct task_node* node);
+static void worker_task_cancel(struct task_worker* worker, struct task_node* node);
 
 
 

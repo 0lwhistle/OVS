@@ -13,36 +13,50 @@ static struct task_manager* task_manager_init(const unsigned int size){
 		ESP_LOGE(TASK_MANAGER_TAG, "queue malloc fail!");
 		return NULL;
 	}
+
+	for (; i < size; ++i){
+		queue[i].fn = NULL;
+		queue[i].pri = last;
+		queue[i].timeout = 0;
+		queue[i].cancel = 1;
+		queue[i].ctx = NULL;
+		queue[i].done = 0;
+		queue[i].is_timeout = 0;
+		queue[i].level = little;
+		queue[i].name = "default";
+	}
 	manager->queue = queue;
 	manager->is_empty = 1;
 	manager->is_full = 0;
 	manager->size = size;
-
-
+	manager->running = 0;
 	return manager;
 }
 
-static int task_init(const int timeout, const enum task_priority pri, task_fn fn, void* ctx){
+static struct task_node* task_init(const int timeout, const enum task_priority pri, const enum task_time_cost_level level, const char* name, task_fn fn, void* ctx){
 
 	struct task_node* node = (struct task_node*)malloc(sizeof(struct task_node));
 	if (!node){
 		ESP_LOGE(TASK_MANAGER_TAG, "task node malloc fail!");
-		return TASK_MEM_ERR;
+		return NULL;
 	}
 	
 	if (!fn){
 		ESP_LOGE(TASK_MANAGER_TAG, "no task function.");
-		return TASK_FUNC_ERR;
+		return NULL;
 	}
+
 	node->fn = fn;
 	node->pri = pri;
 	node->timeout = timeout;
 	node->cancel = 0;
 	node->ctx = ctx;
 	node->done = 0;
-	node->in_worker = 0;
+	node->is_timeout = 0;
+	node->level = level;
+	node->name = name;
 
-	return 0;
+	return node;
 }
 
 
@@ -62,6 +76,51 @@ static inline int task_is_cancel(struct task_node* node){
 	return node->cancel;
 }
 
-static inline int task_is_in_worker(struct task_node* node){
-	return node->in_worker;
+
+// Utils functions:
+static inline struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name){
+	int size = worker_queue->size;
+	for (int i = 0; i < size; ++i){
+		if (!strcmp(worker_queue->queue[i].name, name)) return &(worker_queue->queue[i]);
+	}
+
+	ESP_LOGW(TASK_MANAGER_TAG, "Not found %s in worker_queue", name);
+	return NULL;
+
 }
+
+static inline void task_manager_pri_sort(struct task_manager* worker_queue){
+	if (worker_queue->size <=1 ) return;
+
+	int count[4] = {0};
+
+	for (int i = 0; i < worker_queue->size; ++i){
+		++count[worker_queue->queue->pri];
+	}
+
+	int start[4];
+	start[1] = 0;
+	start[2] = count[1];
+	start[3] = count[1] + count[2];
+
+	struct task_node* temp = (struct task_node*)malloc(worker_queue->size * sizeof(struct task_node));
+	if (!temp) {
+		printf("%s: worker queue sort fail", TASK_MANAGER_TAG);
+		return;
+	}
+
+	int pos[4] = {start[1], start[2], start[3]};
+	for (int i = 0; i < worker_queue->size; ++i){
+		int p = worker_queue->queue[i].pri;
+		temp[pos[p]++] = worker_queue->queue[i];
+	}
+
+	memcpy(worker_queue->queue, temp, worker_queue->size * sizeof(struct task_node));
+	free(temp);
+}
+
+
+static inline void task_node_pri_up(struct task_node* node){
+	if (node->pri != frist) --node->pri;
+}
+
