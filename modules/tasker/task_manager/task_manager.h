@@ -1,8 +1,15 @@
 #ifndef TASK_MANAGER
 #define TASK_MANAGER
 
+#include <pthread.h>
+#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+#include "esp_log.h"
+#include "esp_timer.h"
+#include "driver/gptimer.h"
 
 #define LITTLE_TASK_QUEUE_SIZE 4
 #define MIDDEL_TASK_QUEUE_SIZE 8
@@ -31,7 +38,8 @@ enum task_t{
 	TASK_PARA_ERR = -3,
 	TASK_FUNC_ERR = -4,
 	TASK_INNER_ERR = -5,
-
+	TASK_QUEUE_FULL = -6,
+	TASK_STOP = -7,
 };
 
 enum task_priority{
@@ -53,9 +61,14 @@ struct task_node{
 	int cancel;
 	int timeout;
 	int is_timeout;
+	union{
+	int period;
+	int run_cnt;
+	};
 	enum task_priority pri;
 	enum task_time_cost_level level;
 	task_fn fn;
+	uint64_t inject_time;
 	char* name;
 	void* ctx;
 };
@@ -71,7 +84,14 @@ struct task_manager{
 static struct task_manager* task_manager_init(const unsigned int size);
 
 static struct task_node* task_notimeout_init(task_fn fn, void* ctx);
-static struct task_node* task_init(const int timeout, const enum task_priority pri, const enum task_time_cost_level level, const char* name, task_fn fn, void* ctx);
+static struct task_node* task_init(const int timeout, 
+									const int period, 
+									const int run_cnt, 
+									const enum task_priority pri, 
+									const enum task_time_cost_level level, 
+									const char* name, 
+									task_fn fn, void* ctx
+								);
 
 static inline void task_done(struct task_node* node);
 static inline int task_is_done(struct task_node* node);

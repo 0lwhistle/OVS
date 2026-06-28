@@ -7,6 +7,7 @@
 
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "driver/gptimer.h"
 
 #include "task_manager.h"
 
