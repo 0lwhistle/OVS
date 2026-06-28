@@ -214,25 +214,29 @@ static void worker_lots_handler(struct task_worker* worker){
 }
 
 static void worker_dispatcher_handler(struct task_worker* worker){
-	int i = 0;
-	int size = 0;
-	int timeout_flag = 0;
+	int i;
+	int size;
+	int ret;
+	int need_sort;
 	enum task_t status;
-	worker->is_working = 1;
 	worker->stop = 0;
 	while(!worker->stop){
 		pthread_mutex_lock(&(worker->mtx));
-		while(worker->worker_queue->is_empty)	{
+		while(!worker->stop && worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
 		
 		i = 0;
+		ret = 0;
+		need_sort = 0;
 		size = worker->worker_queue->size;
 		struct task_manager* worker_queue = worker->worker_queue;
 		for (; i < size; ++i){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
 				// Have to use deep copy to dispatch the task, avoiding the memery error
 				struct task_node* node = task_init(worker_queue->queue[i].timeout,
+					worker_queue->queue[i].period,
+					worker_queue->queue[i].run_cnt,
 					worker_queue->queue[i].pri,
 					worker_queue->queue[i].level,
 					worker_queue->queue[i].name,
@@ -240,18 +244,70 @@ static void worker_dispatcher_handler(struct task_worker* worker){
 					worker_queue->queue[i].ctx
 				);
 					
-				enqueue_switcher(node);
+				ret = enqueue_switcher(node);
+				if (ret == TASK_QUEUE_FULL) {
+					need_sort = 1;
+					task_node_pri_up(node);
+					continue;
+				}
 				task_cancel(&(worker_queue->queue[i]));
+				s_task_worker_ctx.s_dispatcher->worker_queue->is_full = 0;
 			}
 			
 		}
-		task_manager_pri_sort(worker->worker_queue->queue);
+		if (need_sort)
+			task_manager_pri_sort(worker->worker_queue->queue);
+
 		pthread_mutex_unlock(&(worker->mtx));
 	}
 }
 
-static void worker_sched_handler(struct task_worker* worker){
+static inline uint64_t get_time_ms(void){
+	return esp_timer_get_time() / 1000;
+}
 
+static inline struct task_node* find_dispatcher_vacancy(void){
+	struct task_manager* worker_queue = s_task_worker_ctx.s_dispatcher->worker_queue;
+	int size = s_task_worker_ctx.s_dispatcher->worker_queue->size;
+	for(int i = 0; i < size; ++i){
+		if (worker_queue->queue[i].cancel || worker_queue->queue[i].done){
+			return &(worker_queue->queue[i]);
+		}
+	}
+
+	printf("%s dispatcher is full.", TASK_WORKER_TAG);
+	return NULL;
+}
+
+static void worker_sched_handler(struct task_worker* worker){
+	int i = 0;
+	int size = 0;
+	worker->stop = 0;
+	while(!worker->stop){
+		pthread_mutex_lock(&(worker->mtx));
+		while(!worker->stop && worker->worker_queue->is_empty)	{
+			pthread_cond_wait(&worker->cond, &worker->mtx);
+		}
+		
+		if (s_task_worker_ctx.s_dispatcher->worker_queue->is_full) continue;
+
+		i = 0;
+		size = worker->worker_queue->size;
+		struct task_manager* worker_queue = worker->worker_queue;
+		uint64_t cur = get_time_ms();
+		for (; i < size; ++i){
+			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
+				if (worker_queue->queue[i].period > 0 && 
+					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period){
+
+				} else {
+
+				}
+			}
+			
+		}
+		pthread_mutex_unlock(&(worker->mtx));
+	}
 }
 
 static void timer_callback(void* arg){
@@ -290,19 +346,20 @@ static void worker_do_handler(struct task_worker* worker){
 	int size = 0;
 	int timeout_flag = 0;
 	enum task_t status;
-	worker->is_working = 1;
 	worker->stop = 0;
 	while(!worker->stop){
 		pthread_mutex_lock(&(worker->mtx));
-		while(worker->worker_queue->is_empty)	{
+		while(!worker->stop && worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
 		
 		i = 0;
 		size = worker->worker_queue->size;
 		struct task_manager* worker_queue = worker->worker_queue;
+		worker_queue->is_empty = 1;
 		for (; i < size; ++i){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
+				worker_queue->is_empty = 0;
 				// start a oneshot timer, than run the task
 				esp_timer_handle_t* timer = timeout_timer_init(worker_queue->queue[i].timeout, &timeout_flag);
 				status = worker_queue->queue[i].fn(worker_queue->queue[i].ctx);
@@ -320,6 +377,8 @@ static void worker_do_handler(struct task_worker* worker){
 					ESP_LOGW(TASK_WORKER_TASK_WORKER_TAG, "task node not done, cancel it.");
 					task_cancel(&(worker_queue->queue[i]));
 				}
+
+				worker->worker_queue->is_full = 0;
 			}
 		}
 		pthread_mutex_unlock(&(worker->mtx));
@@ -330,12 +389,12 @@ static void worker_do_handler(struct task_worker* worker){
 static int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 	if (des->stop){
 		ESP_LOGW(TASK_WORKER_TAG, "worker is already stop.");
-		return -1;
+		return TASK_STOP;
 	}
 	if(des->worker_queue->is_full){
 		ESP_LOGW(TASK_WORKER_TAG, "worker is full now.");
 		task_node_pri_up(node);
-		return -1;
+		return TASK_QUEUE_FULL;
 	}
 
 	pthread_mutex_lock(&(des->mtx));
@@ -354,6 +413,11 @@ static int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 			worker_queue->queue[i].timeout = node->timeout;
 			worker_queue->queue[i].is_timeout = node->is_timeout;
 			worker_queue->queue[i].name = node->name;
+			worker_queue->queue[i].inject_time = node->inject_time;
+			if (node->period == 0)
+				worker_queue->queue[i].run_cnt = node->run_cnt;
+			else
+				worker_queue->queue[i].period = node->period;
 			ESP_LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", worker_queue->queue[i].name);
 
 			worker_queue->is_empty = 0;
@@ -375,21 +439,37 @@ static int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 static inline int enqueue_switcher(struct task_node* node){
 	switch (node->level){
 		case little:
-			worker_task_enqueue(s_task_worker_ctx.little_worker, node);
-			return TASK_OK;
+			return worker_task_enqueue(s_task_worker_ctx.little_worker, node);
 		
 		case middle:
-			worker_task_enqueue(s_task_worker_ctx.middle_worker, node);
-			return TASK_OK;
+			return worker_task_enqueue(s_task_worker_ctx.middle_worker, node);
 
 		case lots:
-			worker_task_enqueue(s_task_worker_ctx.lots_worker, node);
-			return TASK_OK;
+			return worker_task_enqueue(s_task_worker_ctx.lots_worker, node);
 
 		default:
 			printf("unknow level");
 			return TASK_INNER_ERR;
 	}
+}
+
+static inline void task_expire(struct task_node* des, struct task_node* src){
+	pthread_mutex_lock(&(s_task_worker_ctx.s_dispatcher->mtx));
+
+	des->cancel = src->cancel;
+	des->ctx = src->ctx;
+	des->done = src->done;
+	des->fn = src->fn;
+	des->is_timeout = src->is_timeout;
+	des->level = src->level;
+	des->name = src->name;
+	des->pri = src->pri;
+	des->timeout = src->timeout;
+
+	task_cancel(src);
+
+	pthread_cond_signal(&(s_task_worker_ctx.s_dispatcher->cond));
+	pthread_mutex_unlock(&(s_task_worker_ctx.s_dispatcher->mtx));
 }
 
 

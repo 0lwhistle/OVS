@@ -33,7 +33,13 @@ static struct task_manager* task_manager_init(const unsigned int size){
 	return manager;
 }
 
-static struct task_node* task_init(const int timeout, const enum task_priority pri, const enum task_time_cost_level level, const char* name, task_fn fn, void* ctx){
+static struct task_node* task_init(const int timeout, 
+									const int period, 
+									const int run_cnt, 
+									const enum task_priority pri, 
+									const enum task_time_cost_level level, 
+									const char* name, 
+									task_fn fn, void* ctx){
 
 	struct task_node* node = (struct task_node*)malloc(sizeof(struct task_node));
 	if (!node){
@@ -55,6 +61,10 @@ static struct task_node* task_init(const int timeout, const enum task_priority p
 	node->is_timeout = 0;
 	node->level = level;
 	node->name = name;
+	if (period == 0)
+		node->run_cnt = run_cnt;
+	else 
+		node->period = period;
 
 	return node;
 }

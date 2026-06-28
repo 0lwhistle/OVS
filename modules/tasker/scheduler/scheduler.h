@@ -6,6 +6,4 @@
 #define SCHED_TABLE_TAG  "[SCHED_TABLE_TAG]"
 
 
-
-
 #endif // __SCHEDULER_H__
