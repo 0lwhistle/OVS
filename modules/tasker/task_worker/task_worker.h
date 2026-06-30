@@ -24,12 +24,18 @@ struct task_worker_ctx{
 static struct task_worker_ctx s_task_worker_ctx = {0};
 
 typedef void (*worker_handler_fn)(struct task_worker*);
+typedef int (*enqueue_fn)(struct task_node*);
+typedef int (*dequeue_fn)(struct task_node*);
+typedef struct task_node* (*find_by_name_fn)(struct task_node*);
 
 struct task_worker{
 	int stop;
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
+	enqueue_fn enqueue;
+	dequeue_fn dequeue;
+
 	struct task_manager* worker_queue; // save and manage the tasks
 };
 

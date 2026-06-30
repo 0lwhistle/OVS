@@ -299,7 +299,7 @@ static void worker_sched_handler(struct task_worker* worker){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
 				if (worker_queue->queue[i].period > 0 && 
 					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period){
-
+					
 				} else {
 
 				}
@@ -320,7 +320,8 @@ static void timer_callback(void* arg){
 static esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg){
 
 	if (!arg){
-		ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "timer arg is null!");
+		printf("%s: timer arg is null!", TASK_WORKER_TAG);
+		// ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "timer arg is null!");
 		return NULL;
 	}
 
