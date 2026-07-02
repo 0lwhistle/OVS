@@ -10,6 +10,7 @@
 #include "driver/gptimer.h"
 
 #include "task_manager.h"
+#include "logger.h"
 
 static const char* TASK_WORKER_TAG = "[TASK_WORKER]";
 
@@ -21,7 +22,7 @@ struct task_worker_ctx{
 	struct task_worker* s_sched_table;
 };
 
-static struct task_worker_ctx s_task_worker_ctx = {0};
+extern struct task_worker_ctx s_task_worker_ctx;
 
 typedef void (*worker_handler_fn)(struct task_worker*);
 typedef int (*enqueue_fn)(struct task_node*);
@@ -33,37 +34,38 @@ struct task_worker{
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
-	enqueue_fn enqueue;
-	dequeue_fn dequeue;
+	//enqueue_fn enqueue;
+	//dequeue_fn dequeue;
 
 	struct task_manager* worker_queue; // save and manage the tasks
 };
 
-static int worker_init(void);
-static void worker_delete(struct task_worker* worker);
+int worker_init(void);
+void worker_delete(struct task_worker* worker);
 
-static int worker_little_init(void);
-static int worker_middle_init(void);
-static int worker_lots_init(void);
-static int worker_dispatcher_init(void);
-static int worker_sched_init(void);
+int worker_little_init(void);
+int worker_middle_init(void);
+int worker_lots_init(void);
+int worker_dispatcher_init(void);
+int worker_sched_init(void);
 
 
 
 // the handler to be register for the workers
-static void worker_little_handler(struct task_worker* worker);
-static void worker_middle_handler(struct task_worker* worker);
-static void worker_lots_handler(struct task_worker* worker);
-static void worker_dispatcher_handler(struct task_worker* worker);
-static void worker_sched_handler(struct task_worker* worker);
+void worker_little_handler(struct task_worker* worker);
+void worker_middle_handler(struct task_worker* worker);
+void worker_lots_handler(struct task_worker* worker);
+void worker_dispatcher_handler(struct task_worker* worker);
+void worker_sched_handler(struct task_worker* worker);
+void worker_do_handler(struct task_worker* worker);
 
 
-static esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
-static void timer_callback(void* arg);
+esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
+void timer_callback(void* arg);
 
-static int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
-static void worker_task_done(struct task_worker* worker, struct task_node* node);
-static void worker_task_cancel(struct task_worker* worker, struct task_node* node);
+int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
+void worker_task_done(struct task_worker* worker, struct task_node* node);
+void worker_task_cancel(struct task_worker* worker, struct task_node* node);
 
 
 
