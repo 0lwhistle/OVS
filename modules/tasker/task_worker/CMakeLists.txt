@@ -4,6 +4,4 @@ idf_component_register(
     REQUIRES 
 	freertos
 	task_manager
-	scheduler
-	manager_queue
 )

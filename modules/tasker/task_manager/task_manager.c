@@ -1,6 +1,6 @@
 #include "task_manager.h"
 
-static struct task_manager* task_manager_init(const unsigned int size){
+struct task_manager* task_manager_init(const unsigned int size){
 
 	int i = 0;
 	struct task_manager* manager = (struct task_manager*)malloc(sizeof(struct task_manager));
@@ -11,6 +11,7 @@ static struct task_manager* task_manager_init(const unsigned int size){
 	struct task_node* queue = (struct task_node*)malloc(size * sizeof(struct task_node));
 	if (!queue){
 		ESP_LOGE(TASK_MANAGER_TAG, "queue malloc fail!");
+		free(manager);
 		return NULL;
 	}
 
@@ -33,7 +34,8 @@ static struct task_manager* task_manager_init(const unsigned int size){
 	return manager;
 }
 
-static struct task_node* task_init(const int timeout, 
+struct task_node* task_init(const int timeout, 
+									const uint64_t inject_time,
 									const int period, 
 									const int run_cnt, 
 									const enum task_priority pri, 
@@ -52,6 +54,7 @@ static struct task_node* task_init(const int timeout,
 		return NULL;
 	}
 
+	node->inject_time = inject_time;
 	node->fn = fn;
 	node->pri = pri;
 	node->timeout = timeout;
@@ -61,10 +64,8 @@ static struct task_node* task_init(const int timeout,
 	node->is_timeout = 0;
 	node->level = level;
 	node->name = name;
-	if (period == 0)
-		node->run_cnt = run_cnt;
-	else 
-		node->period = period;
+	node->run_cnt = run_cnt;
+	node->period = period;
 
 	return node;
 }
@@ -105,7 +106,7 @@ static inline void task_manager_pri_sort(struct task_manager* worker_queue){
 	int count[4] = {0};
 
 	for (int i = 0; i < worker_queue->size; ++i){
-		++count[worker_queue->queue->pri];
+		++count[worker_queue->queue[i].pri];
 	}
 
 	int start[4];
@@ -131,6 +132,6 @@ static inline void task_manager_pri_sort(struct task_manager* worker_queue){
 
 
 static inline void task_node_pri_up(struct task_node* node){
-	if (node->pri != frist) --node->pri;
+	if (node->pri != first) --node->pri;
 }
 
