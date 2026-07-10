@@ -71,25 +71,34 @@ struct task_node* task_init(const int timeout,
 }
 
 
-static inline void task_done(struct task_node* node){
+void task_done(struct task_node* node){
 	node->done = 1;
 }
 
-static inline int task_is_done(struct task_node* node){
+int task_is_done(struct task_node* node){
 	return node->done;
 }
 
-static inline void task_cancel(struct task_node* node){
+void task_cancel(struct task_node* node){
 	node->cancel = 1;
 }
 
-static inline int task_is_cancel(struct task_node* node){
+int task_is_cancel(struct task_node* node){
 	return node->cancel;
 }
 
 
 // Utils functions:
-static inline struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name){
+
+void task_node_pri_up(struct task_node* node){
+	if (node->pri >= first) --node->pri;
+}
+
+void task_node_leve_up(struct task_node* node){
+	if (node->level <= lots) ++node->level;
+}
+
+struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name){
 	int size = worker_queue->size;
 	for (int i = 0; i < size; ++i){
 		if (!strcmp(worker_queue->queue[i].name, name)) return &(worker_queue->queue[i]);
@@ -100,7 +109,7 @@ static inline struct task_node* find_task_node_by_name(struct task_manager* work
 
 }
 
-static inline void task_manager_pri_sort(struct task_manager* worker_queue){
+void task_manager_pri_sort(struct task_manager* worker_queue){
 	if (worker_queue->size <=1 ) return;
 
 	int count[4] = {0};
@@ -131,7 +140,4 @@ static inline void task_manager_pri_sort(struct task_manager* worker_queue){
 }
 
 
-static inline void task_node_pri_up(struct task_node* node){
-	if (node->pri != first) --node->pri;
-}
 

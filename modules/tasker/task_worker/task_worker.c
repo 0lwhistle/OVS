@@ -255,17 +255,6 @@ void worker_dispatcher_handler(struct task_worker* worker){
 		struct task_manager* worker_queue = worker->worker_queue;
 		for (; i < size; ++i){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
-				// // Have to use deep copy to dispatch the task, avoiding the memory error
-				// struct task_node* node = task_init(worker_queue->queue[i].timeout,
-				// 	worker_queue->queue[i].inject_time,
-				// 	worker_queue->queue[i].period,
-				// 	worker_queue->queue[i].run_cnt,
-				// 	worker_queue->queue[i].pri,
-				// 	worker_queue->queue[i].level,
-				// 	worker_queue->queue[i].name,
-				// 	worker_queue->queue[i].fn,
-				// 	worker_queue->queue[i].ctx
-				// );
 					
 				ret = enqueue_switcher(&(worker_queue->queue[i]));
 
@@ -332,14 +321,28 @@ void worker_sched_handler(struct task_worker* worker){
 		uint64_t cur = get_time_ms();
 		for (; i < size; ++i){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
-				if ((worker_queue->queue[i].period == 1 || worker_queue->queue[i].run_cnt > 0)&& 
+
+				//多次数即时任务
+				if (worker_queue->queue[i].period == 0 && worker_queue->queue[i].run_cnt > 0){
+					worker_task_enqueue(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
+					--worker_queue->queue[i].run_cnt;
+				} 
+
+				// 多次数延迟调度任务
+				if ((worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt > 0)&& 
 					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period){
 					worker_task_enqueue(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
 					worker_queue->queue[i].inject_time = get_time_ms();
-					if (worker_queue->queue[i].period == 0) --worker_queue->queue[i].run_cnt;
-				} else {
+					--worker_queue->queue[i].run_cnt;
+				} 
+				
+				//周期任务
+				else if((worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt < 0)&& 
+					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period) {
 					worker_task_cancel(worker, &(worker->worker_queue->queue[i]));
+					worker_queue->queue[i].inject_time = get_time_ms();
 				}
+
 			}
 			
 		}
@@ -349,7 +352,7 @@ void worker_sched_handler(struct task_worker* worker){
 
 }
 
-void timer_callback(void* arg){
+static inline void timer_callback(void* arg){
 	int* timeout = (int*)arg;
 
 	*timeout = 1;
@@ -400,7 +403,6 @@ void worker_do_handler(struct task_worker* worker){
 		for (; i < size; ++i){
 			timeout_flag = 0;
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
-				worker_queue->is_empty = 0;
 				// start a oneshot timer, than run the task
 				esp_timer_handle_t* timer = timeout_timer_init(worker_queue->queue[i].timeout, &timeout_flag);
 				status = worker_queue->queue[i].fn(worker_queue->queue[i].ctx);
@@ -413,8 +415,9 @@ void worker_do_handler(struct task_worker* worker){
 
 					// log the timeout case
 					worker_queue->queue[i].is_timeout = timeout_flag;
-					if (timeout_flag && worker_queue->queue->level < 2){
-						++worker_queue->queue->level;
+					if (timeout_flag && worker_queue->queue[i].level < 2){
+						// ++worker_queue->queue->level;
+						task_node_leve_up(&(worker_queue->queue[i]));
 					}
 				} else {
 					LOGW(TASK_WORKER_TAG, "task node not done, cancel it.");
@@ -463,12 +466,11 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", worker_queue->queue[i].name);
 
 			worker_queue->is_empty = 0;
-			pthread_cond_signal(&(des->cond));
 
+			pthread_cond_signal(&(des->cond));
 			pthread_mutex_unlock(&(des->mtx));
 
 			task_cancel(node);
-
 			return TASK_OK;
 		}
 	}
@@ -551,3 +553,39 @@ void worker_delete(struct task_worker* worker){
 	free(worker);
 
 }
+
+// API
+int shched_enqueue(struct task_node* node){
+	if (!node) {
+		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is null");
+		return TASK_PARA_ERR;
+	}
+
+	if (node->cancel || node->done || node->period < 0 || !node->fn || !node->name || !strlen(node->name)){
+		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is invaild");
+		return TASK_PARA_ERR;
+	}
+
+	return worker_task_enqueue(s_task_worker_ctx.s_sched_table, node);
+}
+
+void shched_cancel_by_node(struct task_node* node){
+	shched_cancel_by_name(node->name);
+	return;
+}
+
+void shched_cancel_by_name(const char* name){
+	pthread_mutex_lock(&(s_task_worker_ctx.s_sched_table->mtx));
+	task_cancel(find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, name));
+	pthread_mutex_unlock(&(s_task_worker_ctx.s_sched_table->mtx));
+	return;
+}
+
+int shched_is_full(void){
+	return s_task_worker_ctx.s_sched_table->worker_queue->is_full;
+}
+
+int shched_is_empty(void){
+	return s_task_worker_ctx.s_sched_table->worker_queue->is_empty;
+}
+

@@ -89,5 +89,21 @@ struct task_node* task_init(const int timeout,
 									task_fn fn, void* ctx
 								);
 
+void task_node_pri_up(struct task_node* node);
+
+void task_node_leve_up(struct task_node* node);
+
+struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name);
+
+void task_manager_pri_sort(struct task_manager* worker_queue);
+
+void task_done(struct task_node* node);
+
+int task_is_done(struct task_node* node);
+
+void task_cancel(struct task_node* node);
+
+int task_is_cancel(struct task_node* node);
+
 
 #endif // TASK_MANAGER

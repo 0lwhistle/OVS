@@ -67,6 +67,37 @@ int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
 void worker_task_done(struct task_worker* worker, struct task_node* node);
 void worker_task_cancel(struct task_worker* worker, struct task_node* node);
 
+// API
+int shched_enqueue(struct task_node* node);
+void shched_cancel_by_node(struct task_node* node);
+void shched_cancel_by_name(const char* name);
+int shched_is_full(void);
+int shched_is_empty(void);
 
+struct task_node* shched_task_init_l(const int timeout, 
+									const int period, 
+									const int run_cnt, 
+									const char* name, 
+									task_fn fn, void* ctx
+								);
 
+struct task_node* shched_task_init_m(const int timeout, 
+									const uint64_t inject_time,
+									const int period, 
+									const int run_cnt, 
+									const enum task_priority pri, 
+									const enum task_time_cost_level level, 
+									const char* name, 
+									task_fn fn, void* ctx
+								);
+
+struct task_node* shched_task_init_lo(const int timeout, 
+									const uint64_t inject_time,
+									const int period, 
+									const int run_cnt, 
+									const enum task_priority pri, 
+									const enum task_time_cost_level level, 
+									const char* name, 
+									task_fn fn, void* ctx
+								);
 #endif // __TASK_WORKER_H__
