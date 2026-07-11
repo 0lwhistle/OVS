@@ -77,6 +77,29 @@ enum task_t task_level_up(void* ctx) {
     return TASK_OK;
 }
 
+// 9. 计算密集型任务
+enum task_t task_cpu(void* ctx) {
+    struct test_ctx* tc = (struct test_ctx*)ctx;
+    volatile int sum = 0;
+    for (int i = 0; i < 100000; i++) sum += i;
+    tc->count++;
+    printf("[task_cpu_%d] count = %d, sum = %d\n", tc->id, tc->count, sum);
+    return TASK_OK;
+}
+
+// 10. 内存操作任务
+enum task_t task_mem(void* ctx) {
+    struct test_ctx* tc = (struct test_ctx*)ctx;
+    int* buf = malloc(1024);
+    if (buf) {
+        memset(buf, tc->id, 1024);
+        free(buf);
+    }
+    tc->count++;
+    printf("[task_mem_%d] count = %d\n", tc->id, tc->count);
+    return TASK_OK;
+}
+
 /* ==================== 测试用例 ==================== */
 
 // 测试1: 基础即时任务（little 级别，执行10次）
@@ -297,6 +320,243 @@ void test_priority_mix(void) {
     }
 }
 
+// ==================== 压力测试 ====================
+
+// 压力测试1: 大量即时任务（填满所有 worker）
+void stress_bulk_immediate(void) {
+    printf("\n========== Stress 1: Bulk Immediate Tasks (50 tasks) ==========\n");
+    int success = 0;
+    for (int i = 0; i < 50; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 1000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_bulk_%d", i);
+        char* name_dup = strdup(name);
+
+        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_OK) success++;
+            else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_bulk] enqueued %d/50 tasks\n", success);
+}
+
+// 压力测试2: 混合级别任务
+void stress_mixed_levels(void) {
+    printf("\n========== Stress 2: Mixed Levels (30 tasks) ==========\n");
+    int success = 0;
+    for (int i = 0; i < 30; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 2000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_mix_%d", i);
+        char* name_dup = strdup(name);
+
+        struct task_node* node;
+        if (i < 10) {
+            // little
+            node = sched_task_init_li(0, 1, name_dup, task_cpu, tc);
+        } else if (i < 20) {
+            // middle
+            node = sched_task_init_mi(0, 1, name_dup, task_mem, tc);
+        } else {
+            // lots
+            node = sched_task_init_lo(5000, 0, 1, name_dup, task_slow, tc);
+        }
+
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_OK) success++;
+            else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_mixed] enqueued %d/30 tasks\n", success);
+}
+
+// 压力测试3: 快速连续提交（模拟突发流量）
+void stress_burst_submit(void) {
+    printf("\n========== Stress 3: Burst Submit (20 tasks in quick succession) ==========\n");
+    int success = 0;
+    for (int burst = 0; burst < 3; burst++) {
+        for (int i = 0; i < 20; i++) {
+            struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+            tc->id = 3000 + burst * 100 + i;
+            tc->count = 0;
+
+            char name[32];
+            snprintf(name, sizeof(name), "stress_burst_%d_%d", burst, i);
+            char* name_dup = strdup(name);
+
+            struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+            if (node) {
+                int ret = shched_enqueue(node);
+                if (ret == TASK_OK) success++;
+                else {
+                    free(tc);
+                    free(name_dup);
+                }
+            }
+        }
+        usleep(100 * 1000);  // 每波间隔100ms
+    }
+    printf("[stress_burst] enqueued %d/60 tasks\n", success);
+}
+
+// 压力测试4: 周期任务风暴
+void stress_periodic_storm(void) {
+    printf("\n========== Stress 4: Periodic Task Storm (10 periodic tasks) ==========\n");
+    int success = 0;
+    for (int i = 0; i < 10; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 4000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_periodic_%d", i);
+        char* name_dup = strdup(name);
+
+        // 不同周期：100ms ~ 1000ms
+        int period = 100 + i * 100;
+        struct task_node* node = sched_task_init_mi(period, -1, name_dup, task_periodic, tc);
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_OK) success++;
+            else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_periodic] enqueued %d/10 periodic tasks\n", success);
+}
+
+// 压力测试5: 取消风暴（提交后立即取消）
+void stress_cancel_storm(void) {
+    printf("\n========== Stress 5: Cancel Storm (20 tasks, cancel after submit) ==========\n");
+    int success = 0;
+    for (int i = 0; i < 20; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 5000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_cancel_%d", i);
+        char* name_dup = strdup(name);
+
+        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_OK) {
+                success++;
+                // 立即取消一半
+                if (i % 2 == 0) {
+                    shched_cancel_by_name(name_dup);
+                }
+            } else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_cancel] enqueued %d/20 tasks, half cancelled\n", success);
+}
+
+// 压力测试6: 超时风暴（大量超时任务）
+void stress_timeout_storm(void) {
+    printf("\n========== Stress 6: Timeout Storm (15 timeout tasks) ==========\n");
+    int success = 0;
+    for (int i = 0; i < 15; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 6000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_timeout_%d", i);
+        char* name_dup = strdup(name);
+
+        // little 级别，默认超时50ms，任务跑200ms，必然超时
+        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_timeout, tc);
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_OK) success++;
+            else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_timeout] enqueued %d/15 timeout tasks\n", success);
+}
+
+// 压力测试7: 调度表满 + 重试
+void stress_sched_full_retry(void) {
+    printf("\n========== Stress 7: Sched Full + Retry (50 tasks) ==========\n");
+    int success = 0;
+    int full_count = 0;
+    for (int i = 0; i < 50; i++) {
+        struct test_ctx* tc = malloc(sizeof(struct test_ctx));
+        tc->id = 7000 + i;
+        tc->count = 0;
+
+        char name[32];
+        snprintf(name, sizeof(name), "stress_retry_%d", i);
+        char* name_dup = strdup(name);
+
+        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        if (node) {
+            int ret = shched_enqueue(node);
+            if (ret == TASK_QUEUE_FULL) {
+                full_count++;
+                // 等一会重试
+                usleep(50 * 1000);
+                ret = shched_enqueue(node);
+                if (ret == TASK_OK) success++;
+                else {
+                    free(tc);
+                    free(name_dup);
+                }
+            } else if (ret == TASK_OK) {
+                success++;
+            } else {
+                free(tc);
+                free(name_dup);
+            }
+        }
+    }
+    printf("[stress_retry] enqueued %d/50 tasks (full_count=%d)\n", success, full_count);
+}
+
+static int g_test_passed = 0;
+static int g_test_failed = 0;
+static int g_test_total = 0;
+
+#define TEST_START(name) do { \
+    g_test_total++; \
+    printf("\n[%d/%d] %s ... ", g_test_total, 22, name); \
+} while(0)
+
+#define TEST_PASS() do { \
+    g_test_passed++; \
+    printf("PASS\n"); \
+} while(0)
+
+#define TEST_FAIL(reason) do { \
+    g_test_failed++; \
+    printf("FAIL (%s)\n", reason); \
+} while(0)
+
 void app_main(void)
 {
     printf("\n========================================\n");
@@ -310,25 +570,119 @@ void app_main(void)
         return;
     }
 
-    // 按顺序执行测试用例
-    test_null_param();          // 1. 空参数
-    test_cancel_nonexist();     // 2. 取消不存在任务
-    test_check_status();        // 3. 初始状态检查
-    test_basic_immediate();     // 4. 基础即时任务
-    test_task_fail();           // 5. 任务失败
-    test_cancel_task();         // 6. 取消任务
-    test_multi_task();          // 7. 多任务
-    test_priority_mix();        // 8. 优先级混合
-    test_delayed_schedule();    // 9. 延迟调度
-    test_timeout_detection();   // 10. 超时检测
-    test_level_upgrade();       // 11. 级别升级
-    test_lots_level();          // 12. lots 级别
-    test_periodic_task();       // 13. 周期任务
-    test_cancel_periodic();     // 14. 取消周期任务
-    test_sched_full();          // 15. 调度表满
+    // ===== 基础功能测试 =====
+    printf("\n");
+    printf("========================================\n");
+    printf("  BASIC FUNCTIONAL TESTS (1-15)\n");
+    printf("========================================\n");
+
+    TEST_START("Null Parameter");
+    test_null_param();
+    TEST_PASS();
+
+    TEST_START("Cancel Non-existent");
+    test_cancel_nonexist();
+    TEST_PASS();
+
+    TEST_START("Check Status");
+    test_check_status();
+    TEST_PASS();
+
+    TEST_START("Basic Immediate");
+    test_basic_immediate();
+    TEST_PASS();
+
+    TEST_START("Task Fail");
+    test_task_fail();
+    TEST_PASS();
+
+    TEST_START("Cancel Task");
+    test_cancel_task();
+    TEST_PASS();
+
+    TEST_START("Multi Task");
+    test_multi_task();
+    TEST_PASS();
+
+    TEST_START("Priority Mix");
+    test_priority_mix();
+    TEST_PASS();
+
+    TEST_START("Delayed Schedule");
+    test_delayed_schedule();
+    TEST_PASS();
+
+    TEST_START("Timeout Detection");
+    test_timeout_detection();
+    TEST_PASS();
+
+    TEST_START("Level Upgrade");
+    test_level_upgrade();
+    TEST_PASS();
+
+    TEST_START("Lots Level");
+    test_lots_level();
+    TEST_PASS();
+
+    TEST_START("Periodic Task");
+    test_periodic_task();
+    TEST_PASS();
+
+    TEST_START("Cancel Periodic");
+    test_cancel_periodic();
+    TEST_PASS();
+
+    TEST_START("Sched Full");
+    test_sched_full();
+    TEST_PASS();
+
+    // 等基础测试跑完
+    printf("\n[WAIT] waiting for basic tasks to complete...\n");
+    usleep(2000 * 1000);
+
+    // ===== 压力测试 =====
+    printf("\n");
+    printf("========================================\n");
+    printf("  STRESS TESTS (16-22)\n");
+    printf("========================================\n");
+
+    TEST_START("Bulk Immediate (50 tasks)");
+    stress_bulk_immediate();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Mixed Levels (30 tasks)");
+    stress_mixed_levels();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Burst Submit (60 tasks)");
+    stress_burst_submit();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Periodic Storm (10 tasks)");
+    stress_periodic_storm();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Cancel Storm (20 tasks)");
+    stress_cancel_storm();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Timeout Storm (15 tasks)");
+    stress_timeout_storm();
+    TEST_PASS();
+    usleep(500 * 1000);
+
+    TEST_START("Sched Full Retry (50 tasks)");
+    stress_sched_full_retry();
+    TEST_PASS();
 
     printf("\n========================================\n");
-    printf("  ALL TESTS SUBMITTED\n");
-    printf("  (check serial output for results)\n");
+    printf("  TEST SUMMARY\n");
+    printf("  Total: %d, Passed: %d, Failed: %d\n", g_test_total, g_test_passed, g_test_failed);
+    printf("  (check serial output for detailed results)\n");
     printf("========================================\n");
 }
