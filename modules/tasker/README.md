@@ -5,6 +5,12 @@
 - [1. 架构介绍](#1-架构介绍)
 - [2. API 使用文档](#2-api-使用文档)
 - [3. 测试文档](#3-测试文档)
+- [4. 使用指南](#4-使用指南)
+  - [4.1 适用场景](#41-适用场景)
+  - [4.2 使用步骤](#42-使用步骤)
+  - [4.3 使用注意事项](#43-使用注意事项)
+  - [4.4 最佳实践](#44-最佳实践)
+  - [4.5 常见问题](#45-常见问题)
 
 ---
 
@@ -47,10 +53,23 @@ Tasker 是一个基于 pthread 的多级任务调度系统，运行在 ESP32 的
 - 支持即时任务（period=0）、延迟任务（period>0）、周期任务（run_cnt=-1）
 - Sched Handler 线程定时扫描，将到期的任务提交给 Dispatcher
 
+**调度频率：** Sched Handler 每 `vTaskDelay(1)`（FreeRTOS 1 tick，ESP32 默认 `configTICK_RATE_HZ=100`，即 10ms）扫描一次调度表。
+
+注意：**即时任务（period=0）不受调度频率影响**——只要 `run_cnt > 0`，Sched Handler 会在下一轮扫描中立即提交到 Dispatcher，不需要等待完整的 period。只有延迟/周期任务（period>0）的精度受调度频率限制（10ms 级别）。
+
+**建议：** 注册延迟任务和周期任务时，`period` 尽量设置为 10ms 的倍数（如 10、20、50、100、500、1000ms），避免因 tick 对齐导致实际周期与预期有偏差。例如设置 `period=15ms`，实际可能是 10ms 或 20ms 触发一次。
+
+对于大多数 IoT 场景（传感器采集 100ms+、HTTP 请求秒级），10ms 精度完全够用。如果需要更高精度，可以在任务函数内部用 `esp_timer` 自行计时。
+
 #### Dispatcher（分发器）
 - 接收来自 Sched Table 的任务
 - 根据任务的 `level`（little/middle/lots）分发给对应的 Worker
-- 支持优先级排序（`task_manager_pri_sort`）
+- **优先级排序**：当 Worker 队列满时（`enqueue_switcher` 返回 `TASK_QUEUE_FULL`），Dispatcher 会：
+  1. 提升该任务的优先级（`task_node_pri_up`）
+  2. 设置 `need_sort = 1`
+  3. 遍历结束后调用 `task_manager_pri_sort` 对整个队列按优先级排序
+  4. 下次遍历时高优先级任务优先被分发
+- Dispatcher 每处理完一轮后 `vTaskDelay(1)` 让出 CPU
 
 #### Worker（三级工作者）
 - **Little Worker**：处理短任务（默认超时 50ms），队列大小 4
@@ -310,3 +329,276 @@ void app_main(void) {
 - 调度表满时任务优先级会被提升（`task_node_pri_up`），下次更容易被调度
 - 超时检测基于 esp_timer，精度受系统 tick 影响
 - 所有 Worker 线程在 FreeRTOS 中作为 pthread 运行，栈大小可配置
+
+---
+
+## 4. 使用指南
+
+### 4.1 适用场景
+
+Tasker 适合以下场景：
+
+| 场景 | 说明 | 示例 |
+|------|------|------|
+| **周期性数据采集** | 定时从传感器读取数据 | 每 100ms 读一次温度传感器 |
+| **异步事件处理** | 将事件处理与主逻辑解耦 | HTTP 请求处理、按键事件 |
+| **后台维护任务** | 定期执行系统维护 | 内存清理、日志刷新、WiFi 重连 |
+| **超时保护** | 检测任务是否卡死 | 看门狗替代方案 |
+| **任务编排** | 多个任务按优先级和时间调度 | 高优先级先处理，低优先级排队 |
+| **突发流量削峰** | 大量任务涌入时排队处理 | 批量数据上报、日志批量写入 |
+
+**不适合的场景：**
+- 硬实时任务（需要微秒级确定性）
+- 中断上下文（Tasker 运行在线程中）
+- 超短任务（执行时间 < 1ms 的任务，调度开销可能超过执行时间）
+
+### 4.2 使用步骤
+
+#### 第一步：选择任务级别
+
+根据任务的预期执行时间选择级别：
+
+| 级别 | 执行时间 | 默认超时 | 队列大小 | 适用场景 |
+|------|---------|---------|---------|---------|
+| `little` | < 50ms | 50ms | 4 | 传感器读取、状态更新、简单计算 |
+| `middle` | < 1000ms | 1000ms | 8 | HTTP 请求、文件操作、中等计算 |
+| `lots` | 自定义 | 自定义 | 8 | 大数据处理、复杂运算、批量操作 |
+
+**经验法则：** 不确定时先用 `little`，如果超时了系统会自动升级到 `middle`。
+
+#### 第二步：实现任务函数
+
+```c
+// 任务函数接收 void* ctx，返回 enum task_t
+enum task_t my_sensor_task(void* ctx) {
+    sensor_ctx_t* sctx = (sensor_ctx_t*)ctx;
+    
+    // 读取传感器
+    float temp = sctx->read();
+    
+    // 处理数据（快速操作）
+    sctx->buffer[sctx->index++] = temp;
+    
+    // 返回成功
+    return TASK_OK;
+}
+```
+
+**注意：** 任务函数中不要做耗时操作。如果确实需要，用 `sched_task_init_lo` 并设置合适的 timeout。
+
+#### 第三步：创建并提交任务
+
+```c
+// 1. 创建上下文（必须 malloc，不能是栈变量）
+sensor_ctx_t* ctx = malloc(sizeof(sensor_ctx_t));
+ctx->read = read_temperature;
+
+// 2. 创建任务节点
+struct task_node* node = sched_task_init_li(
+    100,           // 每 100ms 执行一次
+    -1,            // 无限循环
+    "temp_sensor", // 唯一名称
+    my_sensor_task,
+    ctx
+);
+
+// 3. 提交到调度表
+if (shched_enqueue(node) != TASK_OK) {
+    // 处理失败（调度表满）
+}
+```
+
+#### 第四步：取消任务（可选）
+
+```c
+// 按名称取消
+shched_cancel_by_name("temp_sensor");
+```
+
+### 4.3 使用注意事项
+
+#### ⚠️ 任务名称必须唯一
+
+```c
+// 错误：同名任务，后提交的会覆盖前面的
+sched_task_init_li(0, 1, "my_task", fn1, ctx1);
+sched_task_init_li(0, 1, "my_task", fn2, ctx2);  // 覆盖！
+
+// 正确：使用唯一名称
+sched_task_init_li(0, 1, "sensor_temp", fn1, ctx1);
+sched_task_init_li(0, 1, "sensor_humidity", fn2, ctx2);
+```
+
+#### ⚠️ 上下文必须 malloc，不能是栈变量
+
+```c
+// 错误：栈变量在函数返回后被销毁
+void bad_example(void) {
+    int ctx = 0;
+    struct task_node* node = sched_task_init_li(0, 1, "bad", fn, &ctx);
+    shched_enqueue(node);
+}  // ctx 被销毁，任务执行时访问野指针！
+
+// 正确：malloc 分配
+void good_example(void) {
+    int* ctx = malloc(sizeof(int));
+    *ctx = 0;
+    struct task_node* node = sched_task_init_li(0, 1, "good", fn, ctx);
+    shched_enqueue(node);
+}
+```
+
+#### ⚠️ 任务函数不要长时间持有锁
+
+```c
+// 错误：任务函数中 lock 一个全局锁，执行耗时操作
+enum task_t bad_task(void* ctx) {
+    pthread_mutex_lock(&global_lock);
+    usleep(200 * 1000);  // 200ms 耗时操作
+    pthread_mutex_unlock(&global_lock);
+    return TASK_OK;
+}
+
+// 正确：用 lots 级别，或把耗时操作拆分成多个小任务
+enum task_t good_task(void* ctx) {
+    pthread_mutex_lock(&global_lock);
+    // 快速操作，< 50ms
+    pthread_mutex_unlock(&global_lock);
+    return TASK_OK;
+}
+```
+
+#### ⚠️ 注意调度表容量
+
+调度表（Sched Table）最多 32 个任务。如果任务太多：
+- `shched_enqueue` 返回 `TASK_QUEUE_FULL`
+- 等待其他任务完成后再重试
+- 或者取消不需要的任务释放空间
+
+```c
+// 检查调度表状态
+if (shched_is_full()) {
+    printf("sched table is full, waiting...");
+    usleep(100 * 1000);
+    ret = shched_enqueue(node);  // 重试
+}
+```
+
+#### ⚠️ 周期任务的 run_cnt 语义
+
+```c
+// 执行 5 次后自动停止
+sched_task_init_li(100, 5, "run_5_times", fn, ctx);
+
+// 无限循环，直到手动取消
+sched_task_init_li(100, -1, "forever", fn, ctx);
+
+// 执行 1 次（即时任务）
+sched_task_init_li(0, 1, "once", fn, ctx);
+```
+
+#### ⚠️ 超时检测是软实时的
+
+超时检测基于 esp_timer，精度受 FreeRTOS tick 影响（通常 10ms）。如果任务执行时间刚好在超时边界附近，可能偶尔检测不到超时。
+
+### 4.4 最佳实践
+
+#### 1. 传感器数据采集
+
+```c
+// 每 50ms 采集一次温度，little 级别
+enum task_t read_temp(void* ctx) {
+    float* temp = (float*)ctx;
+    *temp = read_adc(ADC_CHANNEL_TEMP);
+    return TASK_OK;
+}
+
+void init_sensors(void) {
+    float* temp = malloc(sizeof(float));
+    struct task_node* node = sched_task_init_li(
+        50, -1, "read_temp", read_temp, temp
+    );
+    shched_enqueue(node);
+}
+```
+
+#### 2. 定时上报数据
+
+```c
+// 每 5 秒上报一次数据，middle 级别（HTTP 请求可能较慢）
+enum task_t upload_data(void* ctx) {
+    char* data = (char*)ctx;
+    http_post("https://server.com/api", data);
+    return TASK_OK;
+}
+
+void init_upload(void) {
+    char* data = malloc(1024);
+    snprintf(data, 1024, "sensor_data...");
+    struct task_node* node = sched_task_init_mi(
+        5000, -1, "upload", upload_data, data
+    );
+    shched_enqueue(node);
+}
+```
+
+#### 3. 超时保护 + 自动恢复
+
+```c
+// little 级别任务超时后自动升级到 middle
+// 如果 middle 也超时，任务会被取消
+enum task_t critical_op(void* ctx) {
+    // 这个操作如果超过 50ms（little 超时），
+    // 系统会自动升级到 middle（超时 1000ms）
+    do_something();
+    return TASK_OK;
+}
+
+// 创建时用 little，超时自动升级
+struct task_node* node = sched_task_init_li(
+    0, 1, "critical", critical_op, ctx
+);
+shched_enqueue(node);
+```
+
+#### 4. 动态调整任务参数
+
+```c
+// 提交后可以直接修改 node 字段（需确保 node 指针有效）
+struct task_node* node = sched_task_init_li(100, -1, "adjustable", fn, ctx);
+shched_enqueue(node);
+
+// 修改优先级
+node->pri = first;  // 下次调度时优先处理
+
+// 注意：修改 node 字段不是线程安全的
+// 如果需要在其他线程修改，需要用 shched_cancel_by_name 取消后重新提交
+```
+
+### 4.5 常见问题
+
+**Q: 任务提交后没有执行？**
+A: 检查以下几点：
+1. `shched_enqueue` 是否返回 `TASK_OK`
+2. 任务名称是否唯一（同名任务会覆盖）
+3. 调度表是否已满（`shched_is_full()`）
+4. 如果是延迟任务，`period` 是否设置正确
+5. 如果是有限次任务，`run_cnt` 是否 > 0
+
+**Q: 任务执行了但结果不对？**
+A: 检查上下文指针是否有效（是否用了栈变量）
+
+**Q: 如何调试任务执行情况？**
+A: 在任务函数中加 `printf` 或使用 ESP_LOG。Tasker 内部日志 tag 为 `[TASK_WORKER]`。
+
+**Q: 调度表满了怎么办？**
+A: 三种方案：
+1. 等待其他任务完成，自动释放 slot
+2. 取消不需要的任务：`shched_cancel_by_name("task_name")`
+3. 重试提交：`shched_enqueue(node)` 返回 `TASK_QUEUE_FULL` 时等一会再试
+
+**Q: 任务超时了会怎样？**
+A: little 级别任务超时后自动升级到 middle 级别（下次在 middle worker 中执行）。middle 和 lots 级别任务超时后只记录 `is_timeout` 标志，不会自动取消。
+
+**Q: 可以动态创建和销毁任务吗？**
+A: 可以。用 `sched_task_init_li/mi/lo` 创建，`shched_enqueue` 提交，`shched_cancel_by_name` 取消。任务执行完后自动标记为 done，slot 被回收。
