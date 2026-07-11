@@ -23,7 +23,12 @@ int worker_init(void){
 	s_task_worker_ctx.s_dispatcher = (struct task_worker*)malloc(sizeof(struct task_worker));
 	s_task_worker_ctx.s_sched_table = (struct task_worker*)malloc(sizeof(struct task_worker));
 
-
+	if (!s_task_worker_ctx.little_worker || !s_task_worker_ctx.middle_worker ||
+		!s_task_worker_ctx.lots_worker || !s_task_worker_ctx.s_dispatcher ||
+		!s_task_worker_ctx.s_sched_table) {
+		ESP_LOGE(TASK_WORKER_TAG, "task worker malloc fail!");
+		return TASK_MEM_ERR;
+	}
 
 	if(	worker_little_init() +
 		worker_middle_init() +
@@ -288,6 +293,7 @@ void* worker_dispatcher_handler(void* arg){
 			task_manager_pri_sort(worker->worker_queue);
 
 		pthread_mutex_unlock(&(worker->mtx));
+		vTaskDelay(1);
 	}
 	pthread_mutex_unlock(&(worker->mtx));
 	return NULL;
@@ -313,108 +319,86 @@ static inline struct task_node* find_dispatcher_vacancy(void){
 void* worker_sched_handler(void* arg){
 	struct task_worker* worker = (struct task_worker*)arg;
 	int ret = 0;
-	int i = 0;
-	int size = 0;
 	worker->stop = 0;
 	while(!worker->stop){
-		// 检查 dispatcher 是否已满，如果满了先解锁等下次再试
 		vTaskDelay(1);
-		if (s_task_worker_ctx.s_dispatcher->worker_queue->is_full) {
-			LOGW(TASK_WORKER_TAG, "dispatcher is full now");
-			continue;
-		}
 
-		i = 0;
-		size = worker->worker_queue->size;
+		pthread_mutex_lock(&(worker->mtx));
+
+		int size = worker->worker_queue->size;
 		struct task_manager* worker_queue = worker->worker_queue;
 		uint64_t cur = get_time_ms();
-		for (; i < size; ++i){
-			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
+		for (int i = 0; i < size; ++i){
+			struct task_node* node = &worker_queue->queue[i];
+			if (node->cancel || node->done) continue;
 
-				// 次数即时任务 (period == 0, run_cnt > 0)
-				if (worker_queue->queue[i].period == 0 && worker_queue->queue[i].run_cnt > 0){
-					
-					ret = worker_task_enqueue_nocancel(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
-					if (ret == TASK_QUEUE_FULL) break;
-					
-					if (worker_queue->queue[i].cancel || worker_queue->queue[i].done) continue;
-					--worker_queue->queue[i].run_cnt;
-				} 
-				// 次数延迟调度任务 (period > 0, run_cnt > 0)
-				else if (worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt > 0 && 
-					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period){
-					
-					ret = worker_task_enqueue_nocancel(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
-					if (ret == TASK_QUEUE_FULL) break;
-					
-					if (worker_queue->queue[i].cancel || worker_queue->queue[i].done) continue;
-					worker_queue->queue[i].inject_time = get_time_ms();
-					--worker_queue->queue[i].run_cnt;
-				} 
-				// 周期任务 (period > 0, run_cnt < 0)
-				else if (worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt < 0 && 
-					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period) {
-					// 重新提交到 dispatcher 执行
-					
-					ret = worker_task_enqueue_nocancel(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
-					if (ret == TASK_QUEUE_FULL) break;
-					
-					if (worker_queue->queue[i].cancel || worker_queue->queue[i].done) continue;
-					worker_queue->queue[i].inject_time = get_time_ms();
-				}
-
+			int need_sched = 0;
+			// 即时任务 (period == 0, run_cnt > 0)
+			if (node->period == 0 && node->run_cnt > 0) {
+				need_sched = 1;
 			}
-			
+			// 延迟/周期任务 (period > 0, 时间到了)
+			else if (node->period > 0 && node->run_cnt != 0 && 
+				cur - node->inject_time >= node->period) {
+				need_sched = 1;
+			}
+
+			if (!need_sched) continue;
+
+			// 先更新状态，再 unlock 去 enqueue
+			// 这样即使 enqueue 期间被其他线程修改，也不会重复调度
+			uint64_t now = get_time_ms();
+			node->inject_time = now;
+			if (node->run_cnt > 0) --node->run_cnt;
+
+			// 复制 node 到临时变量，然后 unlock 再 enqueue，避免死锁
+			struct task_node tmp = *node;
+			pthread_mutex_unlock(&(worker->mtx));
+
+			ret = worker_task_enqueue_nocancel(s_task_worker_ctx.s_dispatcher, &tmp);
+
+			// 重新 lock 继续遍历
+			pthread_mutex_lock(&(worker->mtx));
+
+			if (ret == TASK_QUEUE_FULL) {
+				// enqueue 失败，恢复状态
+				node->inject_time = cur;
+				if (node->run_cnt >= 0) ++node->run_cnt;
+				task_node_pri_up(node);
+			}
 		}
-		
+
+		pthread_mutex_unlock(&(worker->mtx));
 	}
-	pthread_mutex_unlock(&(worker->mtx));
 	return NULL;
 
 }
 
 static inline void timer_callback(void* arg){
-	int* timeout = (int*)arg;
-
-	*timeout = 1;
+	struct task_worker* worker = (struct task_worker*)arg;
+	worker->timeout_flag = 1;
 	return;
 }
 
-esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg){
-
-	if (!arg){
-		printf("%s: timer arg is null!", TASK_WORKER_TAG);
-		return NULL;
-	}
-
-	// timeout <= 0 表示不启用超时检测
-	if (timeout <= 0) {
-		return NULL;
-	}
-
-	// 创建定时器时传入参数
-	const esp_timer_create_args_t oneshot_args = {
+static inline void worker_timer_init(struct task_worker* worker){
+	const esp_timer_create_args_t timer_args = {
 		.callback = &timer_callback,
-		.arg = arg,  // 关键：传递参数指针
-		.name = "worker_handler_timer"
+		.arg = worker,
+		.name = "worker_timeout"
 	};
-	
-	esp_timer_handle_t* oneshot_timer = (esp_timer_handle_t*)malloc(sizeof(esp_timer_handle_t));
-	ESP_ERROR_CHECK(esp_timer_create(&oneshot_args, oneshot_timer));
-	ESP_ERROR_CHECK(esp_timer_start_once(*oneshot_timer, timeout * 1000));
-
-	return oneshot_timer;
+	ESP_ERROR_CHECK(esp_timer_create(&timer_args, &worker->timeout_timer));
 }
-
-
 
 void worker_do_handler(struct task_worker* worker){
 
-	int i = 0;
-	int size = 0;
-	int timeout_flag = 0;
 	enum task_t status;
 	worker->stop = 0;
+	worker->timeout_flag = 0;
+	worker->timeout_timer = NULL;
+
+	// 每个 worker 只创建一个 timer，后续复用
+	worker_timer_init(worker);
+
 	while(!worker->stop){
 		pthread_mutex_lock(&(worker->mtx));
 		while(!worker->stop && worker->worker_queue->is_empty)	{
@@ -425,46 +409,52 @@ void worker_do_handler(struct task_worker* worker){
 			break;
 		}
 
-		i = 0;
-		size = worker->worker_queue->size;
+		int size = worker->worker_queue->size;
 		struct task_manager* worker_queue = worker->worker_queue;
-		for (; i < size; ++i){
-			timeout_flag = 0;
-			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
-				// start a oneshot timer, than run the task
-				esp_timer_handle_t* timer = timeout_timer_init(worker_queue->queue[i].timeout, &timeout_flag);
-				status = worker_queue->queue[i].fn(worker_queue->queue[i].ctx);
+		for (int i = 0; i < size; ++i){
+			if (worker_queue->queue[i].cancel || worker_queue->queue[i].done) continue;
 
-				// delete the oneshot timer after task (解引用 timer 得到 esp_timer_handle_t)
-				if (timer) {
-					esp_err_t err = esp_timer_delete(*timer);
-					if (err != ESP_OK) {
-						ESP_LOGW(TASK_WORKER_TAG, "esp_timer_delete failed: %s", esp_err_to_name(err));
-					}
-					free(timer);
-				}
-				if (status == TASK_OK){
-					// set the done flag
-					task_done(&(worker_queue->queue[i]));
+			// 复制任务到临时变量，然后 unlock 执行，避免长时间持有锁阻塞 dispatcher
+			struct task_node task_copy = worker_queue->queue[i];
+			worker->timeout_flag = 0;
 
-					// log the timeout case
-					worker_queue->queue[i].is_timeout = timeout_flag;
-					if (timeout_flag && worker_queue->queue[i].level < level_middle){
-						struct task_node* tmp = find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, worker_queue->queue[i].name);
-						if (tmp){
-							task_node_leve_up(tmp);
-						}
-						// tmp 指向队列内元素，不能 free
-					}
-				} else {
-					LOGW(TASK_WORKER_TAG, "task node not done, cancel it.");
-					task_cancel(&(worker_queue->queue[i]));
-				}
+			pthread_mutex_unlock(&(worker->mtx));
 
-				worker->worker_queue->is_full = 0;
+			// 如果任务有超时设置，启动 timer
+			if (task_copy.timeout > 0) {
+				ESP_ERROR_CHECK(esp_timer_start_once(worker->timeout_timer, task_copy.timeout * 1000));
 			}
+			status = task_copy.fn(task_copy.ctx);
+
+			// 停止 timer（如果还在跑）
+			if (task_copy.timeout > 0) {
+				esp_timer_stop(worker->timeout_timer);
+			}
+
+			// 重新 lock 更新状态
+			pthread_mutex_lock(&(worker->mtx));
+
+			// 重新获取节点指针（可能在 unlock 期间被修改）
+			struct task_node* node = &worker_queue->queue[i];
+			if (node->cancel || node->done) continue;
+
+			if (status == TASK_OK){
+				task_done(node);
+				node->is_timeout = worker->timeout_flag;
+				if (worker->timeout_flag && node->level < level_middle){
+					struct task_node* tmp = find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, node->name);
+					if (tmp){
+						task_node_leve_up(tmp);
+					}
+				}
+			} else {
+				LOGW(TASK_WORKER_TAG, "task node not done, cancel it.");
+				task_cancel(node);
+			}
+
+			worker->worker_queue->is_full = 0;
 		}
-		// 遍历结束后检查队列是否真的为空，避免覆盖 dispatcher 在遍历期间设置的 is_empty=0
+		// 遍历结束后检查队列是否真的为空
 		{
 			int all_done = 1;
 			for (int j = 0; j < size; ++j) {
@@ -477,6 +467,8 @@ void worker_do_handler(struct task_worker* worker){
 		}
 		pthread_mutex_unlock(&(worker->mtx));
 	}
+	// 退出时清理 timer
+	esp_timer_delete(worker->timeout_timer);
 	pthread_mutex_unlock(&(worker->mtx));
 }
 
@@ -485,11 +477,6 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 	if (des->stop){
 		ESP_LOGW(TASK_WORKER_TAG, "worker is already stop.");
 		return TASK_STOP;
-	}
-	if(des->worker_queue->is_full){
-		ESP_LOGW(TASK_WORKER_TAG, "worker is full now.");
-		task_node_pri_up(node);
-		return TASK_QUEUE_FULL;
 	}
 
 	pthread_mutex_lock(&(des->mtx));
@@ -525,6 +512,7 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 	worker_queue->is_empty = 0;
 	worker_queue->is_full = 1;
 	pthread_mutex_unlock(&(des->mtx));
+	task_node_pri_up(node);
 
 	return TASK_QUEUE_FULL;
 }
@@ -533,11 +521,6 @@ static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_nod
 	if (des->stop){
 		ESP_LOGW(TASK_WORKER_TAG, "worker is already stop.");
 		return TASK_STOP;
-	}
-	if(des->worker_queue->is_full){
-		ESP_LOGW(TASK_WORKER_TAG, "worker is full now.");
-		task_node_pri_up(node);
-		return TASK_QUEUE_FULL;
 	}
 
 	pthread_mutex_lock(&(des->mtx));

@@ -1,0 +1,600 @@
+Command: /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --decode-coredumps info --target esp32s3 --revision 0 /root/progarms/ovs/build/ovs.elf /root/progarms/ovs/build/bootloader/bootloader.elf -m '/root/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/root/esp-idf/esp-idf-v6.0.1/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0;33m--- Received  11 kB...[0m[0;33m--- Received  12 kB...[0m[0;33m--- Received  13 kB...[0m[0;33m--- Received  14 kB...[0m[0;33m--- Received  15 kB...[0m[0;33m--- Received  16 kB...[0m[0;33m--- Received  17 kB...[0m[0;33m--- Received  18 kB...[0m[0;33m--- Received  19 kB...[0m[0;33m--- Received  20 kB...[0m[0;33m--- Received  21 kB...[0m[0;33m
+--- Core dump finished![0m
+[0m--- 0x42007fe7: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h[0m[0m:[1;31m434[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c48f: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200c48c: [0;33mtask_manager_pri_sort[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_manager/task_manager.c[0m[0m:[1;31m142[0m
+[0m--- 0x4200c049: [0;33mworker_dispatcher_handler[0m[0m at [0;32m/root/progarms/ovs/modules/tasker/task_worker/task_worker.c[0m[0m:[1;31m288[0m
+[0m--- 0x420073a0: [0;33mpthread_task_func[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c[0m[0m:[1;31m241[0m
+[0m--- 0x4201225e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- Initiating core dump![0m
+[0;33m--- Core dump started (further output muted)[0m
+[0;33m--- Received   1 kB...[0m[0;33m--- Received   2 kB...[0m[0;33m--- Received   3 kB...[0m[0;33m--- Received   4 kB...[0m[0;33m--- Received   5 kB...[0m[0;33m--- Received   6 kB...[0m[0;33m--- Received   7 kB...[0m[0;33m--- Received   8 kB...[0m[0;33m--- Received   9 kB...[0m[0;33m--- Received  10 kB...[0m[0m

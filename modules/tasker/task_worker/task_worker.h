@@ -35,6 +35,8 @@ typedef struct task_node* (*find_by_name_fn)(struct task_node*);
 
 struct task_worker{
 	int stop;
+	int timeout_flag;
+	esp_timer_handle_t timeout_timer;
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
@@ -94,4 +96,4 @@ struct task_node* sched_task_init_lo(
 									const char* name, 
 									task_fn fn, void* ctx
 								);
-#endif // __TASK_WORKER_H__
+#endif // TASK_WORKER

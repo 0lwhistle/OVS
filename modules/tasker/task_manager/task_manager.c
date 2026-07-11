@@ -125,7 +125,7 @@ void task_manager_pri_sort(struct task_manager* worker_queue){
 		}
 	}
 
-	int start[4];
+	int start[4] = {0};
 	start[1] = 0;
 	start[2] = count[1];
 	start[3] = count[1] + count[2];
@@ -136,9 +136,10 @@ void task_manager_pri_sort(struct task_manager* worker_queue){
 		return;
 	}
 
-	int pos[4] = {start[1], start[2], start[3]};
+	int pos[4] = {start[0], start[1], start[2], start[3]};
 	for (int i = 0; i < worker_queue->size; ++i){
 		int p = worker_queue->queue[i].pri;
+		if (p < 0 || p > 3) continue;
 		temp[pos[p]++] = worker_queue->queue[i];
 	}
 
