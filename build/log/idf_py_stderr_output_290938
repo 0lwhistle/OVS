@@ -1,0 +1,8 @@
+Command: make -j 22 all
+/root/progarms/ovs/main/main.c:6:20: warning: 'TAG' defined but not used [-Wunused-variable]
+    6 | static const char* TAG = "[MAIN_TEST]";
+      |                    ^~~
+In file included from /root/progarms/ovs/main/main.c:2:
+/root/progarms/ovs/modules/tasker/task_worker/task_worker.h:17:12: warning: 'worker_init_flag' defined but not used [-Wunused-variable]
+   17 | static int worker_init_flag = 0;
+      |            ^~~~~~~~~~~~~~~~

@@ -4,10 +4,13 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "driver/gptimer.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 #include "task_manager.h"
 #include "logger.h"
@@ -59,6 +62,7 @@ void worker_do_handler(struct task_worker* worker);
 esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
 
 int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
+static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_node* node);
 void worker_task_done(struct task_worker* worker, struct task_node* node);
 void worker_task_cancel(struct task_worker* worker, struct task_node* node);
 
