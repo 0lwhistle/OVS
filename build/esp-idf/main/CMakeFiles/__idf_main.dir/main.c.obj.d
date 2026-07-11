@@ -43,4 +43,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
  /root/progarms/ovs/modules/tasker/task_worker/task_worker.h \
- /root/progarms/ovs/modules/logger/logger.h
+ /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
+ /root/progarms/ovs/modules/logger/logger.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h
