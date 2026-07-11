@@ -3,7 +3,7 @@ esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/lwip/netif/esp_pbuf_ref.c.obj: 
  /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/mem.h \
  /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/opt.h \
  /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/include/lwipopts.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \

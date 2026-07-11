@@ -2,7 +2,7 @@ esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/poll.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/poll.c \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/reent.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/poll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/select.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \

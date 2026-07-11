@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for memory_ld_in_preprocess.
 
@@ -70,8 +70,8 @@ esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess: esp-idf/esp_system/ld/mem
 
 esp-idf/esp_system/ld/memory.ld: config/sdkconfig.h
 esp-idf/esp_system/ld/memory.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -> /root/progarms/web/build/esp-idf/esp_system/ld/memory.ld"
-	cd /root/progarms/web/build/esp-idf/esp_system && /usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -DTARGET=/root/progarms/web/build/esp-idf/esp_system/ld/memory.ld "-DCFLAGS=-I\"/root/progarms/web/build/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -> /root/progarms/ovs/build/esp-idf/esp_system/ld/memory.ld"
+	cd /root/progarms/ovs/build/esp-idf/esp_system && /usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in -DTARGET=/root/progarms/ovs/build/esp-idf/esp_system/ld/memory.ld "-DCFLAGS=-I\"/root/progarms/ovs/build/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
 
 memory_ld_in_preprocess: esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess
 memory_ld_in_preprocess: esp-idf/esp_system/ld/memory.ld
@@ -83,10 +83,10 @@ esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/build: memory_ld_in_pr
 .PHONY : esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/build
 
 esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/clean:
-	cd /root/progarms/web/build/esp-idf/esp_system && $(CMAKE_COMMAND) -P CMakeFiles/memory_ld_in_preprocess.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_system && $(CMAKE_COMMAND) -P CMakeFiles/memory_ld_in_preprocess.dir/cmake_clean.cmake
 .PHONY : esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/clean
 
 esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/esp_system /root/progarms/web/build /root/progarms/web/build/esp-idf/esp_system /root/progarms/web/build/esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/esp_system /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/esp_system /root/progarms/ovs/build/esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/depend
 

@@ -1,14 +1,17 @@
 #include "task_worker.h"
-#include <sched.h>
+
+const char* TASK_WORKER_TAG = "[TASK_WORKER]";
 
 struct task_worker_ctx s_task_worker_ctx = {0};
 
-static inline void worker_bind_cpu(pthread_t pt, int cpu_id){
-	cpu_set_t cpuset;
-	CPU_ZERO(&cpuset);
-	CPU_SET(cpu_id, &cpuset);
-	pthread_setaffinity_np(pt, sizeof(cpu_set_t), &cpuset);
+
+
+static inline uint64_t get_time_ms(void){
+	return esp_timer_get_time() / 1000;
 }
+
+// forward declarations for static functions used before definition
+static inline int enqueue_switcher(struct task_node* node);
 
 int worker_init(void){
 
@@ -30,6 +33,8 @@ int worker_init(void){
 			ESP_LOGE(TASK_WORKER_TAG, "task worker init fail!");
 			ret = TASK_INNER_ERR;
 		}
+
+	worker_init_flag = 1;
 
 	return ret;
 
@@ -68,7 +73,6 @@ int worker_little_init(void){
 	pthread_attr_setstacksize(&attr, LITTLE_TASK_STACK_SIZE);  // 设置栈大小
 	ret = pthread_create(&(worker->pt), &attr, worker_little_handler, worker);
 	pthread_attr_destroy(&attr);
-	worker_bind_cpu(worker->pt, 1);
 
 	return ret;
 }
@@ -105,7 +109,6 @@ int worker_middle_init(void){
 	pthread_attr_setstacksize(&attr, MIDDLE_TASK_STACK_SIZE);  // 设置栈大小
 	ret = pthread_create(&(worker->pt), &attr, worker_middle_handler, worker);
 	pthread_attr_destroy(&attr);
-	worker_bind_cpu(worker->pt, 1);
 
 
 	return ret;
@@ -143,7 +146,6 @@ int worker_lots_init(void){
 	pthread_attr_setstacksize(&attr, LOTS_TASK_STACK_SIZE);  // 设置栈大小
 	ret = pthread_create(&(worker->pt), &attr, worker_lots_handler, worker);
 	pthread_attr_destroy(&attr);
-	worker_bind_cpu(worker->pt, 1);
 
 	
 	return ret;
@@ -181,7 +183,6 @@ int worker_dispatcher_init(void){
 	pthread_attr_setstacksize(&attr, DISPATCHER_TASK_QUEUE_STACK_SIZE);  // 设置栈大小
 	ret = pthread_create(&(worker->pt), &attr, worker_dispatcher_handler, worker);
 	pthread_attr_destroy(&attr);
-	worker_bind_cpu(worker->pt, 0);
 
 	return ret;
 }
@@ -217,37 +218,46 @@ int worker_sched_init(void){
 	pthread_attr_setstacksize(&attr, SCHED_TASK_QUEUE_STACK_SIZE);  // 设置栈大小
 	ret = pthread_create(&(worker->pt), &attr, worker_sched_handler, worker);
 	pthread_attr_destroy(&attr);
-	worker_bind_cpu(worker->pt, 0);
 
 	return ret;
 }
 
 
-void worker_little_handler(struct task_worker* worker){	
+void* worker_little_handler(void* arg){
+	struct task_worker* worker = (struct task_worker*)arg;
 	worker_do_handler(worker);
+	return NULL;
 }
 
-void worker_middle_handler(struct task_worker* worker){
+void* worker_middle_handler(void* arg){
+	struct task_worker* worker = (struct task_worker*)arg;
 	worker_do_handler(worker);
+	return NULL;
 }
 
-void worker_lots_handler(struct task_worker* worker){
+void* worker_lots_handler(void* arg){
+	struct task_worker* worker = (struct task_worker*)arg;
 	worker_do_handler(worker);
+	return NULL;
 }
 
-void worker_dispatcher_handler(struct task_worker* worker){
+void* worker_dispatcher_handler(void* arg){
+	struct task_worker* worker = (struct task_worker*)arg;
 	int i;
 	int size;
 	int ret;
 	int need_sort;
-	enum task_t status;
 	worker->stop = 0;
 	while(!worker->stop){
 		pthread_mutex_lock(&(worker->mtx));
 		while(!worker->stop && worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
-		
+		if (worker->stop) {
+			pthread_mutex_unlock(&(worker->mtx));
+			break;
+		}
+
 		i = 0;
 		ret = 0;
 		need_sort = 0;
@@ -258,7 +268,10 @@ void worker_dispatcher_handler(struct task_worker* worker){
 					
 				ret = enqueue_switcher(&(worker_queue->queue[i]));
 
-				if (ret == TASK_STOP) break;
+				if (ret == TASK_STOP) {
+					pthread_mutex_unlock(&(worker->mtx));
+					return NULL;
+				}
 
 				if (ret == TASK_QUEUE_FULL) {
 					need_sort = 1;
@@ -267,7 +280,7 @@ void worker_dispatcher_handler(struct task_worker* worker){
 				}
 
 				task_cancel(&(worker_queue->queue[i]));
-				s_task_worker_ctx.s_dispatcher->worker_queue->is_full = 0;
+				worker->worker_queue->is_full = 0;
 			}
 			
 		}
@@ -277,10 +290,7 @@ void worker_dispatcher_handler(struct task_worker* worker){
 		pthread_mutex_unlock(&(worker->mtx));
 	}
 	pthread_mutex_unlock(&(worker->mtx));
-}
-
-static inline uint64_t get_time_ms(void){
-	return esp_timer_get_time() / 1000;
+	return NULL;
 }
 
 static inline struct task_node* find_dispatcher_vacancy(void){
@@ -300,7 +310,8 @@ static inline struct task_node* find_dispatcher_vacancy(void){
 	return NULL;
 }
 
-void worker_sched_handler(struct task_worker* worker){
+void* worker_sched_handler(void* arg){
+	struct task_worker* worker = (struct task_worker*)arg;
 	int i = 0;
 	int size = 0;
 	worker->stop = 0;
@@ -309,9 +320,15 @@ void worker_sched_handler(struct task_worker* worker){
 		while(!worker->stop && worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
-		
+		if (worker->stop) {
+			pthread_mutex_unlock(&(worker->mtx));
+			break;
+		}
+
+		// 检查 dispatcher 是否已满，如果满了先解锁等下次再试
 		if (s_task_worker_ctx.s_dispatcher->worker_queue->is_full) {
 			LOGW(TASK_WORKER_TAG, "dispatcher is full now");
+			pthread_mutex_unlock(&(worker->mtx));
 			continue;
 		}
 
@@ -322,24 +339,23 @@ void worker_sched_handler(struct task_worker* worker){
 		for (; i < size; ++i){
 			if (!worker_queue->queue[i].cancel && !worker_queue->queue[i].done){
 
-				//多次数即时任务
+				// 次数即时任务 (period == 0, run_cnt > 0)
 				if (worker_queue->queue[i].period == 0 && worker_queue->queue[i].run_cnt > 0){
 					worker_task_enqueue(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
 					--worker_queue->queue[i].run_cnt;
 				} 
-
-				// 多次数延迟调度任务
-				if ((worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt > 0)&& 
+				// 次数延迟调度任务 (period > 0, run_cnt > 0)
+				else if (worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt > 0 && 
 					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period){
 					worker_task_enqueue(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
 					worker_queue->queue[i].inject_time = get_time_ms();
 					--worker_queue->queue[i].run_cnt;
 				} 
-				
-				//周期任务
-				else if((worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt < 0)&& 
+				// 周期任务 (period > 0, run_cnt < 0)
+				else if (worker_queue->queue[i].period > 0 && worker_queue->queue[i].run_cnt < 0 && 
 					cur - worker_queue->queue[i].inject_time >= worker_queue->queue[i].period) {
-					worker_task_cancel(worker, &(worker->worker_queue->queue[i]));
+					// 重新提交到 dispatcher 执行
+					worker_task_enqueue(s_task_worker_ctx.s_dispatcher, &(worker_queue->queue[i]));
 					worker_queue->queue[i].inject_time = get_time_ms();
 				}
 
@@ -349,6 +365,7 @@ void worker_sched_handler(struct task_worker* worker){
 		pthread_mutex_unlock(&(worker->mtx));
 	}
 	pthread_mutex_unlock(&(worker->mtx));
+	return NULL;
 
 }
 
@@ -363,7 +380,11 @@ esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg){
 
 	if (!arg){
 		printf("%s: timer arg is null!", TASK_WORKER_TAG);
-		// ESP_LOGE(TASK_WORKER_TASK_WORKER_TAG, "timer arg is null!");
+		return NULL;
+	}
+
+	// timeout <= 0 表示不启用超时检测
+	if (timeout <= 0) {
 		return NULL;
 	}
 
@@ -395,7 +416,11 @@ void worker_do_handler(struct task_worker* worker){
 		while(!worker->stop && worker->worker_queue->is_empty)	{
 			pthread_cond_wait(&worker->cond, &worker->mtx);
 		}
-		
+		if (worker->stop) {
+			pthread_mutex_unlock(&(worker->mtx));
+			break;
+		}
+
 		i = 0;
 		size = worker->worker_queue->size;
 		struct task_manager* worker_queue = worker->worker_queue;
@@ -407,17 +432,26 @@ void worker_do_handler(struct task_worker* worker){
 				esp_timer_handle_t* timer = timeout_timer_init(worker_queue->queue[i].timeout, &timeout_flag);
 				status = worker_queue->queue[i].fn(worker_queue->queue[i].ctx);
 
-				// delete the oneshot timer after task
-				ESP_ERROR_CHECK(esp_timer_delete(timer));
+				// delete the oneshot timer after task (解引用 timer 得到 esp_timer_handle_t)
+				if (timer) {
+					esp_err_t err = esp_timer_delete(*timer);
+					if (err != ESP_OK) {
+						ESP_LOGW(TASK_WORKER_TAG, "esp_timer_delete failed: %s", esp_err_to_name(err));
+					}
+					free(timer);
+				}
 				if (status == TASK_OK){
 					// set the done flag
 					task_done(&(worker_queue->queue[i]));
 
 					// log the timeout case
 					worker_queue->queue[i].is_timeout = timeout_flag;
-					if (timeout_flag && worker_queue->queue[i].level < 2){
-						// ++worker_queue->queue->level;
-						task_node_leve_up(&(worker_queue->queue[i]));
+					if (timeout_flag && worker_queue->queue[i].level < level_middle){
+						struct task_node* tmp = find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, worker_queue->queue[i].name);
+						if (tmp){
+							task_node_leve_up(tmp);
+						}
+						// tmp 指向队列内元素，不能 free
 					}
 				} else {
 					LOGW(TASK_WORKER_TAG, "task node not done, cancel it.");
@@ -429,7 +463,7 @@ void worker_do_handler(struct task_worker* worker){
 		}
 		pthread_mutex_unlock(&(worker->mtx));
 	}
-	pthread_mutex_lock(&(worker->mtx));
+	pthread_mutex_unlock(&(worker->mtx));
 }
 
 
@@ -484,13 +518,13 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 
 static inline int enqueue_switcher(struct task_node* node){
 	switch (node->level){
-		case little:
+		case level_little:
 			return worker_task_enqueue(s_task_worker_ctx.little_worker, node);
 		
-		case middle:
+		case level_middle:
 			return worker_task_enqueue(s_task_worker_ctx.middle_worker, node);
 
-		case lots:
+		case level_lots:
 			return worker_task_enqueue(s_task_worker_ctx.lots_worker, node);
 
 		default:
@@ -529,14 +563,14 @@ static inline void task_expire(struct task_node* des, struct task_node* src){
 void worker_task_done(struct task_worker* worker, struct task_node* node){
 	pthread_mutex_lock(&(worker->mtx));
 	struct task_node* des = find_task_node_by_name(worker->worker_queue, node->name);
-	des->done = 1;
+	if (des) des->done = 1;
 	pthread_mutex_unlock(&(worker->mtx));
 }
 
 void worker_task_cancel(struct task_worker* worker, struct task_node* node){
 	pthread_mutex_lock(&(worker->mtx));
 	struct task_node* des = find_task_node_by_name(worker->worker_queue, node->name);
-	des->cancel = 1;
+	if (des) des->cancel = 1;
 	pthread_mutex_unlock(&(worker->mtx));
 }
 
@@ -566,6 +600,14 @@ int shched_enqueue(struct task_node* node){
 		return TASK_PARA_ERR;
 	}
 
+	if (!worker_init_flag){
+		int ret = worker_init();
+		if (ret != 0) {
+			printf("worker_init failed: %d\n", ret);
+			return TASK_INNER_ERR;
+		}
+	}
+
 	return worker_task_enqueue(s_task_worker_ctx.s_sched_table, node);
 }
 
@@ -576,7 +618,8 @@ void shched_cancel_by_node(struct task_node* node){
 
 void shched_cancel_by_name(const char* name){
 	pthread_mutex_lock(&(s_task_worker_ctx.s_sched_table->mtx));
-	task_cancel(find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, name));
+	struct task_node* node = find_task_node_by_name(s_task_worker_ctx.s_sched_table->worker_queue, name);
+	if (node) task_cancel(node);
 	pthread_mutex_unlock(&(s_task_worker_ctx.s_sched_table->mtx));
 	return;
 }
@@ -589,3 +632,71 @@ int shched_is_empty(void){
 	return s_task_worker_ctx.s_sched_table->worker_queue->is_empty;
 }
 
+struct task_node* sched_task_init_li( 
+									const int period, 
+									const int run_cnt, 
+									const char* name, 
+									task_fn fn, void* ctx
+								){
+
+	if (period < 0 || !fn || !name || !strlen(name)){
+		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is invaild");
+		return NULL;
+	}
+
+	if (!worker_init_flag){
+		int ret = worker_init();
+		if (ret != 0) {
+			printf("worker_init failed: %d\n", ret);
+			return NULL;
+		}
+	}
+	
+	return task_init(LITTLE_TASK_DEFAULT_TIMEOUT, get_time_ms(), period, run_cnt, last, level_little, name, fn, ctx);
+}
+
+struct task_node* sched_task_init_mi(
+									const int period, 
+									const int run_cnt, 
+									const char* name, 
+									task_fn fn, void* ctx
+								){
+
+	if (period < 0 || !fn || !name || !strlen(name)){
+		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is invaild");
+		return NULL;
+	}
+
+	if (!worker_init_flag){
+		int ret = worker_init();
+		if (ret != 0) {
+			printf("worker_init failed: %d\n", ret);
+			return NULL;
+		}
+	}
+
+	return task_init(MIDDLE_TASK_DEFAULT_TIMEOUT, get_time_ms(), period, run_cnt, last, level_middle, name, fn, ctx);
+}
+
+struct task_node* sched_task_init_lo(const int timeout, 
+									const int period, 
+									const int run_cnt, 
+									const char* name, 
+									task_fn fn, void* ctx
+								){
+
+	if (period < 0 || !fn || !name || !strlen(name)){
+		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is invaild");
+		return NULL;
+	}	
+	
+	if (!worker_init_flag){
+		int ret = worker_init();
+		if (ret != 0) {
+			printf("worker_init failed: %d\n", ret);
+			return NULL;
+		}
+	}
+
+	return task_init(timeout, get_time_ms(), period, run_cnt, last, level_lots, name, fn, ctx);
+}

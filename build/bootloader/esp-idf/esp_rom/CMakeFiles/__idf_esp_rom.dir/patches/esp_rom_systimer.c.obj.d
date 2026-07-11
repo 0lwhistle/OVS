@@ -1,6 +1,6 @@
 esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_systimer.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_systimer.c \
- /root/progarms/web/build/bootloader/config/sdkconfig.h \
+ /root/progarms/ovs/build/bootloader/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/esp_rom_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/include/hal/systimer_hal.h \

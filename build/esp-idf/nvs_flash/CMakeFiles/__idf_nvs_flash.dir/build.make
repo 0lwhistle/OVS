@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/depend.make
@@ -72,240 +72,240 @@ include esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_api.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_cxx_api.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_item_hash_list.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_page.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_pagemanager.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_storage.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_simple.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_handle_locked.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_lookup.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition_manager.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_types.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_platform.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader.c.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp > CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_encrypted_partition.cpp -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_aes.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_aes.c.s
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/flags.make
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj -MF CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj.d -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.i"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.i
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c > CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.i
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.s"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.s
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_bootloader_xts_aes.c -o CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.s
 
 # Object files for target __idf_nvs_flash
 __idf_nvs_flash_OBJECTS = \
@@ -349,19 +349,19 @@ esp-idf/nvs_flash/libnvs_flash.a: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.d
 esp-idf/nvs_flash/libnvs_flash.a: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_bootloader_xts_aes.c.obj
 esp-idf/nvs_flash/libnvs_flash.a: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build.make
 esp-idf/nvs_flash/libnvs_flash.a: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C static library libnvs_flash.a"
-	cd /root/progarms/web/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -P CMakeFiles/__idf_nvs_flash.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_nvs_flash.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C static library libnvs_flash.a"
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -P CMakeFiles/__idf_nvs_flash.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_nvs_flash.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build: esp-idf/nvs_flash/libnvs_flash.a
 .PHONY : esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/clean:
-	cd /root/progarms/web/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -P CMakeFiles/__idf_nvs_flash.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/nvs_flash && $(CMAKE_COMMAND) -P CMakeFiles/__idf_nvs_flash.dir/cmake_clean.cmake
 .PHONY : esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/clean
 
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash /root/progarms/web/build /root/progarms/web/build/esp-idf/nvs_flash /root/progarms/web/build/esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/nvs_flash /root/progarms/ovs/build/esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/depend
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -253,17 +253,17 @@ _project_elf_src/fast:
 .PHONY : _project_elf_src/fast
 
 #=============================================================================
-# Target rules for targets named web.elf
+# Target rules for targets named ovs.elf
 
 # Build rule for target.
-web.elf: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 web.elf
-.PHONY : web.elf
+ovs.elf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ovs.elf
+.PHONY : ovs.elf
 
 # fast build rule for target.
-web.elf/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/web.elf.dir/build.make CMakeFiles/web.elf.dir/build
-.PHONY : web.elf/fast
+ovs.elf/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/build
+.PHONY : ovs.elf/fast
 
 #=============================================================================
 # Target rules for targets named size
@@ -383,17 +383,17 @@ __ldgen_output_sections.ld/fast:
 .PHONY : __ldgen_output_sections.ld/fast
 
 #=============================================================================
-# Target rules for targets named gen_web_binary
+# Target rules for targets named gen_ovs_binary
 
 # Build rule for target.
-gen_web_binary: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gen_web_binary
-.PHONY : gen_web_binary
+gen_ovs_binary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gen_ovs_binary
+.PHONY : gen_ovs_binary
 
 # fast build rule for target.
-gen_web_binary/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_web_binary.dir/build.make CMakeFiles/gen_web_binary.dir/build
-.PHONY : gen_web_binary/fast
+gen_ovs_binary/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_ovs_binary.dir/build.make CMakeFiles/gen_ovs_binary.dir/build
+.PHONY : gen_ovs_binary/fast
 
 #=============================================================================
 # Target rules for targets named gen_project_binary
@@ -2359,6 +2359,32 @@ __idf_task_manager/fast:
 .PHONY : __idf_task_manager/fast
 
 #=============================================================================
+# Target rules for targets named __idf_logger
+
+# Build rule for target.
+__idf_logger: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_logger
+.PHONY : __idf_logger
+
+# fast build rule for target.
+__idf_logger/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/logger/CMakeFiles/__idf_logger.dir/build.make esp-idf/logger/CMakeFiles/__idf_logger.dir/build
+.PHONY : __idf_logger/fast
+
+#=============================================================================
+# Target rules for targets named __idf_task_worker
+
+# Build rule for target.
+__idf_task_worker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_worker
+.PHONY : __idf_task_worker
+
+# fast build rule for target.
+__idf_task_worker/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build
+.PHONY : __idf_task_worker/fast
+
+#=============================================================================
 # Target rules for targets named __idf_main
 
 # Build rule for target.
@@ -2376,7 +2402,7 @@ project_elf_src_esp32s3.obj: project_elf_src_esp32s3.c.obj
 
 # target to build an object file
 project_elf_src_esp32s3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/web.elf.dir/build.make CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj
 .PHONY : project_elf_src_esp32s3.c.obj
 
 project_elf_src_esp32s3.i: project_elf_src_esp32s3.c.i
@@ -2384,7 +2410,7 @@ project_elf_src_esp32s3.i: project_elf_src_esp32s3.c.i
 
 # target to preprocess a source file
 project_elf_src_esp32s3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/web.elf.dir/build.make CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.i
 .PHONY : project_elf_src_esp32s3.c.i
 
 project_elf_src_esp32s3.s: project_elf_src_esp32s3.c.s
@@ -2392,7 +2418,7 @@ project_elf_src_esp32s3.s: project_elf_src_esp32s3.c.s
 
 # target to generate assembly for a file
 project_elf_src_esp32s3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/web.elf.dir/build.make CMakeFiles/web.elf.dir/project_elf_src_esp32s3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.s
 .PHONY : project_elf_src_esp32s3.c.s
 
 # Help Target
@@ -2431,8 +2457,8 @@ help:
 	@echo "... encrypted-partition-table-flash"
 	@echo "... erase-flash"
 	@echo "... flash"
+	@echo "... gen_ovs_binary"
 	@echo "... gen_project_binary"
-	@echo "... gen_web_binary"
 	@echo "... lib"
 	@echo "... mbedtls-apidoc"
 	@echo "... memory_ld_in_preprocess"
@@ -2546,6 +2572,7 @@ help:
 	@echo "... __idf_http_parser"
 	@echo "... __idf_led_ctrl"
 	@echo "... __idf_log"
+	@echo "... __idf_logger"
 	@echo "... __idf_lwip"
 	@echo "... __idf_main"
 	@echo "... __idf_mbedtls"
@@ -2562,6 +2589,7 @@ help:
 	@echo "... __idf_spiffs"
 	@echo "... __idf_sr04_ctrl"
 	@echo "... __idf_task_manager"
+	@echo "... __idf_task_worker"
 	@echo "... __idf_tcp_transport"
 	@echo "... __idf_unity"
 	@echo "... __idf_vfs"
@@ -2574,9 +2602,9 @@ help:
 	@echo "... everest"
 	@echo "... mbedtls"
 	@echo "... mbedx509"
+	@echo "... ovs.elf"
 	@echo "... p256m"
 	@echo "... tfpsacrypto"
-	@echo "... web.elf"
 	@echo "... project_elf_src_esp32s3.obj"
 	@echo "... project_elf_src_esp32s3.i"
 	@echo "... project_elf_src_esp32s3.s"

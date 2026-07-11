@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for efuse-common-table.
 
@@ -67,7 +67,7 @@ include esp-idf/efuse/CMakeFiles/efuse-common-table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/efuse-common-table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/efuse-common-table:
-	cd /root/progarms/web/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.csv -t esp32s3 --max_blk_len 256
+	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.csv -t esp32s3 --max_blk_len 256
 
 efuse-common-table: esp-idf/efuse/CMakeFiles/efuse-common-table
 efuse-common-table: esp-idf/efuse/CMakeFiles/efuse-common-table.dir/build.make
@@ -78,10 +78,10 @@ esp-idf/efuse/CMakeFiles/efuse-common-table.dir/build: efuse-common-table
 .PHONY : esp-idf/efuse/CMakeFiles/efuse-common-table.dir/build
 
 esp-idf/efuse/CMakeFiles/efuse-common-table.dir/clean:
-	cd /root/progarms/web/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse-common-table.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse-common-table.dir/cmake_clean.cmake
 .PHONY : esp-idf/efuse/CMakeFiles/efuse-common-table.dir/clean
 
 esp-idf/efuse/CMakeFiles/efuse-common-table.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/esp-idf/efuse /root/progarms/web/build/bootloader/esp-idf/efuse/CMakeFiles/efuse-common-table.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/esp-idf/efuse /root/progarms/ovs/build/bootloader/esp-idf/efuse/CMakeFiles/efuse-common-table.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/efuse/CMakeFiles/efuse-common-table.dir/depend
 

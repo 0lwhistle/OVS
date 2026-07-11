@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/task_manager//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/task_manager//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/rule
 .PHONY : esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_task_manager: esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/rule
 
 # fast build rule for target.
 __idf_task_manager/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build
 .PHONY : __idf_task_manager/fast
 
 task_manager.obj: task_manager.c.obj
@@ -180,7 +180,7 @@ task_manager.obj: task_manager.c.obj
 
 # target to build an object file
 task_manager.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.obj
 .PHONY : task_manager.c.obj
 
 task_manager.i: task_manager.c.i
@@ -188,7 +188,7 @@ task_manager.i: task_manager.c.i
 
 # target to preprocess a source file
 task_manager.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.i
 .PHONY : task_manager.c.i
 
 task_manager.s: task_manager.c.s
@@ -196,7 +196,7 @@ task_manager.s: task_manager.c.s
 
 # target to generate assembly for a file
 task_manager.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/task_manager.c.s
 .PHONY : task_manager.c.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

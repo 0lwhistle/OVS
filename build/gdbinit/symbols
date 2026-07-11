@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /root/progarms/web/build/bootloader/bootloader.elf
+    add-symbol-file /root/progarms/ovs/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /root/progarms/web/build/web.elf
+file /root/progarms/ovs/build/ovs.elf

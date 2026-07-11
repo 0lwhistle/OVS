@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/esp_hal_mspi//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/esp_hal_mspi//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule
 .PHONY : esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_esp_hal_mspi: esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule
 
 # fast build rule for target.
 __idf_esp_hal_mspi/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build
 .PHONY : __idf_esp_hal_mspi/fast
 
 spi_flash_encrypt_hal_iram.obj: spi_flash_encrypt_hal_iram.c.obj
@@ -180,7 +180,7 @@ spi_flash_encrypt_hal_iram.obj: spi_flash_encrypt_hal_iram.c.obj
 
 # target to build an object file
 spi_flash_encrypt_hal_iram.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.obj
 .PHONY : spi_flash_encrypt_hal_iram.c.obj
 
 spi_flash_encrypt_hal_iram.i: spi_flash_encrypt_hal_iram.c.i
@@ -188,7 +188,7 @@ spi_flash_encrypt_hal_iram.i: spi_flash_encrypt_hal_iram.c.i
 
 # target to preprocess a source file
 spi_flash_encrypt_hal_iram.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.i
 .PHONY : spi_flash_encrypt_hal_iram.c.i
 
 spi_flash_encrypt_hal_iram.s: spi_flash_encrypt_hal_iram.c.s
@@ -196,7 +196,7 @@ spi_flash_encrypt_hal_iram.s: spi_flash_encrypt_hal_iram.c.s
 
 # target to generate assembly for a file
 spi_flash_encrypt_hal_iram.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_encrypt_hal_iram.c.s
 .PHONY : spi_flash_encrypt_hal_iram.c.s
 
 spi_flash_hal.obj: spi_flash_hal.c.obj
@@ -204,7 +204,7 @@ spi_flash_hal.obj: spi_flash_hal.c.obj
 
 # target to build an object file
 spi_flash_hal.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.obj
 .PHONY : spi_flash_hal.c.obj
 
 spi_flash_hal.i: spi_flash_hal.c.i
@@ -212,7 +212,7 @@ spi_flash_hal.i: spi_flash_hal.c.i
 
 # target to preprocess a source file
 spi_flash_hal.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.i
 .PHONY : spi_flash_hal.c.i
 
 spi_flash_hal.s: spi_flash_hal.c.s
@@ -220,7 +220,7 @@ spi_flash_hal.s: spi_flash_hal.c.s
 
 # target to generate assembly for a file
 spi_flash_hal.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal.c.s
 .PHONY : spi_flash_hal.c.s
 
 spi_flash_hal_gpspi.obj: spi_flash_hal_gpspi.c.obj
@@ -228,7 +228,7 @@ spi_flash_hal_gpspi.obj: spi_flash_hal_gpspi.c.obj
 
 # target to build an object file
 spi_flash_hal_gpspi.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.obj
 .PHONY : spi_flash_hal_gpspi.c.obj
 
 spi_flash_hal_gpspi.i: spi_flash_hal_gpspi.c.i
@@ -236,7 +236,7 @@ spi_flash_hal_gpspi.i: spi_flash_hal_gpspi.c.i
 
 # target to preprocess a source file
 spi_flash_hal_gpspi.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.i
 .PHONY : spi_flash_hal_gpspi.c.i
 
 spi_flash_hal_gpspi.s: spi_flash_hal_gpspi.c.s
@@ -244,7 +244,7 @@ spi_flash_hal_gpspi.s: spi_flash_hal_gpspi.c.s
 
 # target to generate assembly for a file
 spi_flash_hal_gpspi.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_gpspi.c.s
 .PHONY : spi_flash_hal_gpspi.c.s
 
 spi_flash_hal_iram.obj: spi_flash_hal_iram.c.obj
@@ -252,7 +252,7 @@ spi_flash_hal_iram.obj: spi_flash_hal_iram.c.obj
 
 # target to build an object file
 spi_flash_hal_iram.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.obj
 .PHONY : spi_flash_hal_iram.c.obj
 
 spi_flash_hal_iram.i: spi_flash_hal_iram.c.i
@@ -260,7 +260,7 @@ spi_flash_hal_iram.i: spi_flash_hal_iram.c.i
 
 # target to preprocess a source file
 spi_flash_hal_iram.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.i
 .PHONY : spi_flash_hal_iram.c.i
 
 spi_flash_hal_iram.s: spi_flash_hal_iram.c.s
@@ -268,7 +268,7 @@ spi_flash_hal_iram.s: spi_flash_hal_iram.c.s
 
 # target to generate assembly for a file
 spi_flash_hal_iram.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/build.make esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.s
 .PHONY : spi_flash_hal_iram.c.s
 
 # Help Target
@@ -307,6 +307,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

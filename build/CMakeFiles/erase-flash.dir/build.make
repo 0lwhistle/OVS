@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for erase-flash.
 
@@ -82,6 +82,6 @@ CMakeFiles/erase-flash.dir/clean:
 .PHONY : CMakeFiles/erase-flash.dir/clean
 
 CMakeFiles/erase-flash.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/erase-flash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/erase-flash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/erase-flash.dir/depend
 

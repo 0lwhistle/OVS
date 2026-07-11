@@ -1,7 +1,7 @@
 esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/src/coexist_debug.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/src/coexist_debug.c \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_coex/include/private/esp_coexist_debug.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \

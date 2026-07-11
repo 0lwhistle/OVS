@@ -1,7 +1,7 @@
 esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/eap_peer/eap_mschapv2.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/src/eap_peer/eap_mschapv2.c \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/src/rsn_supp/wpa.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/src/utils/common.h \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/port/include/os.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \

@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/modules/sr04_ctrl
+# Install script for directory: /root/progarms/ovs/modules/devices_ctrl/sr04_ctrl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

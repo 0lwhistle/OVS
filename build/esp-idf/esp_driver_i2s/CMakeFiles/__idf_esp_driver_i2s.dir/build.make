@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/depend.make
@@ -72,72 +72,72 @@ include esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.i
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_common.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.s
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.i
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_std.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.s
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.i
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_pdm.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_pdm.c.s
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.i
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_tdm.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.s
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/flags.make
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj -MF CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj.d -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c > CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.i
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/i2s_platform.c -o CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.s
 
 # Object files for target __idf_esp_driver_i2s
 __idf_esp_driver_i2s_OBJECTS = \
@@ -157,19 +157,19 @@ esp-idf/esp_driver_i2s/libesp_driver_i2s.a: esp-idf/esp_driver_i2s/CMakeFiles/__
 esp-idf/esp_driver_i2s/libesp_driver_i2s.a: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj
 esp-idf/esp_driver_i2s/libesp_driver_i2s.a: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/build.make
 esp-idf/esp_driver_i2s/libesp_driver_i2s.a: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libesp_driver_i2s.a"
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_i2s.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_i2s.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libesp_driver_i2s.a"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_i2s.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_i2s.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/build: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 .PHONY : esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/build
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/clean:
-	cd /root/progarms/web/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_i2s.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_i2s && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_i2s.dir/cmake_clean.cmake
 .PHONY : esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/clean
 
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s /root/progarms/web/build /root/progarms/web/build/esp-idf/esp_driver_i2s /root/progarms/web/build/esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/esp_driver_i2s /root/progarms/ovs/build/esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/depend
 

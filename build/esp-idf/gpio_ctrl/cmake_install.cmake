@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/modules/gpio_ctrl
+# Install script for directory: /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

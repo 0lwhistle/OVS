@@ -216,9 +216,14 @@ $<TARGET_FILE:__idf_gpio_ctrl>
 $<TARGET_FILE:idf::beep_ctrl>
 $<TARGET_FILE:idf::sr04_ctrl>
 $<TARGET_FILE:idf::task_manager>
+$<TARGET_FILE:__idf_esp_driver_gptimer>
+$<TARGET_FILE:idf::logger>
+$<TARGET_FILE:idf::task_worker>
+$<TARGET_FILE:__idf_task_manager>
+$<TARGET_FILE:__idf_logger>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_web>
 $<TARGET_FILE:__idf_led_ctrl>
 $<TARGET_FILE:__idf_beep_ctrl>
 $<TARGET_FILE:__idf_sr04_ctrl>
-$<TARGET_FILE:__idf_task_manager>
+$<TARGET_FILE:__idf_task_worker>

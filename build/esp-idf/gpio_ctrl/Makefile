@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/gpio_ctrl//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/gpio_ctrl//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/rule
 .PHONY : esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_gpio_ctrl: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/rule
 
 # fast build rule for target.
 __idf_gpio_ctrl/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build
 .PHONY : __idf_gpio_ctrl/fast
 
 gpio_ctrl.obj: gpio_ctrl.c.obj
@@ -180,7 +180,7 @@ gpio_ctrl.obj: gpio_ctrl.c.obj
 
 # target to build an object file
 gpio_ctrl.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj
 .PHONY : gpio_ctrl.c.obj
 
 gpio_ctrl.i: gpio_ctrl.c.i
@@ -188,7 +188,7 @@ gpio_ctrl.i: gpio_ctrl.c.i
 
 # target to preprocess a source file
 gpio_ctrl.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i
 .PHONY : gpio_ctrl.c.i
 
 gpio_ctrl.s: gpio_ctrl.c.s
@@ -196,7 +196,7 @@ gpio_ctrl.s: gpio_ctrl.c.s
 
 # target to generate assembly for a file
 gpio_ctrl.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s
 .PHONY : gpio_ctrl.c.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

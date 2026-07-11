@@ -1,6 +1,6 @@
 esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_gpio.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/patches/esp_rom_gpio.c \
- /root/progarms/web/build/bootloader/config/sdkconfig.h \
+ /root/progarms/ovs/build/bootloader/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \

@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for gen_bootloader_binary.
 
@@ -69,10 +69,10 @@ include CMakeFiles/gen_bootloader_binary.dir/progress.make
 CMakeFiles/gen_bootloader_binary: .bin_timestamp
 
 .bin_timestamp: bootloader.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32s3 elf2image --flash-mode dio --flash-freq 80m --flash-size 16MB --min-rev-full 0 --max-rev-full 99 -o /root/progarms/web/build/bootloader/bootloader.bin /root/progarms/web/build/bootloader/bootloader.elf
-	/usr/bin/cmake -E echo "Generated /root/progarms/web/build/bootloader/bootloader.bin"
-	/usr/bin/cmake -E md5sum /root/progarms/web/build/bootloader/bootloader.bin > /root/progarms/web/build/bootloader/.bin_timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32s3 elf2image --flash-mode dio --flash-freq 80m --flash-size 16MB --min-rev-full 0 --max-rev-full 99 -o /root/progarms/ovs/build/bootloader/bootloader.bin /root/progarms/ovs/build/bootloader/bootloader.elf
+	/usr/bin/cmake -E echo "Generated /root/progarms/ovs/build/bootloader/bootloader.bin"
+	/usr/bin/cmake -E md5sum /root/progarms/ovs/build/bootloader/bootloader.bin > /root/progarms/ovs/build/bootloader/.bin_timestamp
 
 gen_bootloader_binary: .bin_timestamp
 gen_bootloader_binary: CMakeFiles/gen_bootloader_binary
@@ -88,6 +88,6 @@ CMakeFiles/gen_bootloader_binary.dir/clean:
 .PHONY : CMakeFiles/gen_bootloader_binary.dir/clean
 
 CMakeFiles/gen_bootloader_binary.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/gen_bootloader_binary.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/gen_bootloader_binary.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gen_bootloader_binary.dir/depend
 

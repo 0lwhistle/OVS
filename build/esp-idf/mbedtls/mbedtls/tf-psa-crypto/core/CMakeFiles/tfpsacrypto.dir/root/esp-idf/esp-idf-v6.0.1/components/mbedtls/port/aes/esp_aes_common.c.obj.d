@@ -1,6 +1,6 @@
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes_common.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes_common.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/aes/include/esp_aes_internal.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/aes/esp_aes.h \

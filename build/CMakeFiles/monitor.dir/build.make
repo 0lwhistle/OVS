@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for monitor.
 
@@ -67,7 +67,7 @@ include CMakeFiles/monitor.dir/compiler_depend.make
 include CMakeFiles/monitor.dir/progress.make
 
 CMakeFiles/monitor:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_idf_monitor" -D "SERIAL_TOOL_ARGS=--toolchain-prefix;xtensa-esp32s3-elf-;;--decode-coredumps;info;;--target;esp32s3;;--revision;0;;/root/progarms/web/build/web.elf" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
+	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_idf_monitor" -D "SERIAL_TOOL_ARGS=--toolchain-prefix;xtensa-esp32s3-elf-;;--decode-coredumps;info;;--target;esp32s3;;--revision;0;;/root/progarms/ovs/build/ovs.elf" -D WORKING_DIRECTORY=/root/progarms/ovs/build -P run_serial_tool.cmake
 
 monitor: CMakeFiles/monitor
 monitor: CMakeFiles/monitor.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/monitor.dir/clean:
 .PHONY : CMakeFiles/monitor.dir/clean
 
 CMakeFiles/monitor.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/monitor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/monitor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/monitor.dir/depend
 

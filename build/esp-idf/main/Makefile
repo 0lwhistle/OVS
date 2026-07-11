@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/main//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/main//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/main/CMakeFiles/__idf_main.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/__idf_main.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/__idf_main.dir/rule
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/rule
 
 # Convenience name for target.
@@ -172,63 +172,54 @@ __idf_main: esp-idf/main/CMakeFiles/__idf_main.dir/rule
 
 # fast build rule for target.
 __idf_main/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
-__/modules/mongoose/mongoose.obj: __/modules/mongoose/mongoose.c.obj
-.PHONY : __/modules/mongoose/mongoose.obj
+__/modules/web/mongoose/mongoose.obj: __/modules/web/mongoose/mongoose.c.obj
+.PHONY : __/modules/web/mongoose/mongoose.obj
 
 # target to build an object file
-__/modules/mongoose/mongoose.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj
-.PHONY : __/modules/mongoose/mongoose.c.obj
+__/modules/web/mongoose/mongoose.c.obj:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj
+.PHONY : __/modules/web/mongoose/mongoose.c.obj
 
-__/modules/mongoose/mongoose.i: __/modules/mongoose/mongoose.c.i
-.PHONY : __/modules/mongoose/mongoose.i
+__/modules/web/mongoose/mongoose.i: __/modules/web/mongoose/mongoose.c.i
+.PHONY : __/modules/web/mongoose/mongoose.i
 
 # target to preprocess a source file
-__/modules/mongoose/mongoose.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.i
-.PHONY : __/modules/mongoose/mongoose.c.i
+__/modules/web/mongoose/mongoose.c.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.i
+.PHONY : __/modules/web/mongoose/mongoose.c.i
 
-__/modules/mongoose/mongoose.s: __/modules/mongoose/mongoose.c.s
-.PHONY : __/modules/mongoose/mongoose.s
+__/modules/web/mongoose/mongoose.s: __/modules/web/mongoose/mongoose.c.s
+.PHONY : __/modules/web/mongoose/mongoose.s
 
 # target to generate assembly for a file
-__/modules/mongoose/mongoose.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s
-.PHONY : __/modules/mongoose/mongoose.c.s
-
-__/modules/vue_frontend/vue_frontend.obj: __/modules/vue_frontend/vue_frontend.c.obj
-.PHONY : __/modules/vue_frontend/vue_frontend.obj
+__/modules/web/mongoose/mongoose.c.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s
+.PHONY : __/modules/web/mongoose/mongoose.c.s
 
 # target to build an object file
-__/modules/vue_frontend/vue_frontend.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj
-.PHONY : __/modules/vue_frontend/vue_frontend.c.obj
-
-__/modules/vue_frontend/vue_frontend.i: __/modules/vue_frontend/vue_frontend.c.i
-.PHONY : __/modules/vue_frontend/vue_frontend.i
+cmake_pch.h.gch:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
+.PHONY : cmake_pch.h.gch
 
 # target to preprocess a source file
-__/modules/vue_frontend/vue_frontend.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i
-.PHONY : __/modules/vue_frontend/vue_frontend.c.i
-
-__/modules/vue_frontend/vue_frontend.s: __/modules/vue_frontend/vue_frontend.c.s
-.PHONY : __/modules/vue_frontend/vue_frontend.s
+cmake_pch.h.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.i
+.PHONY : cmake_pch.h.i
 
 # target to generate assembly for a file
-__/modules/vue_frontend/vue_frontend.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s
-.PHONY : __/modules/vue_frontend/vue_frontend.c.s
+cmake_pch.h.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.s
+.PHONY : cmake_pch.h.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -236,7 +227,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -244,7 +235,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -260,12 +251,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
-	@echo "... __/modules/mongoose/mongoose.obj"
-	@echo "... __/modules/mongoose/mongoose.i"
-	@echo "... __/modules/mongoose/mongoose.s"
-	@echo "... __/modules/vue_frontend/vue_frontend.obj"
-	@echo "... __/modules/vue_frontend/vue_frontend.i"
-	@echo "... __/modules/vue_frontend/vue_frontend.s"
+	@echo "... __/modules/web/mongoose/mongoose.obj"
+	@echo "... __/modules/web/mongoose/mongoose.i"
+	@echo "... __/modules/web/mongoose/mongoose.s"
+	@echo "... cmake_pch.h.gch"
+	@echo "... cmake_pch.h.i"
+	@echo "... cmake_pch.h.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -280,6 +271,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

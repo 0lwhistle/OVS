@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/main/CMakeFiles/__idf_main.dir/depend.make
@@ -69,75 +69,79 @@ include esp-idf/main/CMakeFiles/__idf_main.dir/progress.make
 # Include the compile flags for this target's objects.
 include esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
 
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch"
+	cd /root/progarms/ovs/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -x c-header -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch -MF CMakeFiles/__idf_main.dir/cmake_pch.h.gch.d -o CMakeFiles/__idf_main.dir/cmake_pch.h.gch -c /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/cmake_pch.h.i"
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -x c-header -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -E /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c > CMakeFiles/__idf_main.dir/cmake_pch.h.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/cmake_pch.h.s"
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -x c-header -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -S /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c -o CMakeFiles/__idf_main.dir/cmake_pch.h.s
+
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: ../main/main.c
+esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h
+esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj"
-	cd /root/progarms/web/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF CMakeFiles/__idf_main.dir/main.c.obj.d -o CMakeFiles/__idf_main.dir/main.c.obj -c /root/progarms/web/main/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF CMakeFiles/__idf_main.dir/main.c.obj.d -o CMakeFiles/__idf_main.dir/main.c.obj -c /root/progarms/ovs/main/main.c
 
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/main.c.i"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/main/main.c > CMakeFiles/__idf_main.dir/main.c.i
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -E /root/progarms/ovs/main/main.c > CMakeFiles/__idf_main.dir/main.c.i
 
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/main.c.s"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/main/main.c -o CMakeFiles/__idf_main.dir/main.c.s
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -S /root/progarms/ovs/main/main.c -o CMakeFiles/__idf_main.dir/main.c.s
 
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj: ../modules/mongoose/mongoose.c
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj"
-	cd /root/progarms/web/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj -MF CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj.d -o CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj -c /root/progarms/web/modules/mongoose/mongoose.c
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: ../modules/web/mongoose/mongoose.c
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj -MF CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj.d -o CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj -c /root/progarms/ovs/modules/web/mongoose/mongoose.c
 
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.i"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/mongoose/mongoose.c > CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.i
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.i"
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -E /root/progarms/ovs/modules/web/mongoose/mongoose.c > CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.i
 
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/mongoose/mongoose.c -o CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.s
-
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: ../modules/vue_frontend/vue_frontend.c
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj"
-	cd /root/progarms/web/build/esp-idf/main && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj -MF CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj.d -o CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj -c /root/progarms/web/modules/vue_frontend/vue_frontend.c
-
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/vue_frontend/vue_frontend.c > CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.i
-
-esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s"
-	cd /root/progarms/web/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/vue_frontend/vue_frontend.c -o CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.s
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s"
+	cd /root/progarms/ovs/build/esp-idf/main && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h -S /root/progarms/ovs/modules/web/mongoose/mongoose.c -o CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s
 
 # Object files for target __idf_main
 __idf_main_OBJECTS = \
 "CMakeFiles/__idf_main.dir/main.c.obj" \
-"CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj" \
-"CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj"
+"CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj"
 
 # External object files for target __idf_main
 __idf_main_EXTERNAL_OBJECTS =
 
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
-esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/mongoose/mongoose.c.obj
-esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/vue_frontend/vue_frontend.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/build.make
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libmain.a"
-	cd /root/progarms/web/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libmain.a"
+	cd /root/progarms/ovs/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/main/CMakeFiles/__idf_main.dir/build: esp-idf/main/libmain.a
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/build
 
 esp-idf/main/CMakeFiles/__idf_main.dir/clean:
-	cd /root/progarms/web/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean.cmake
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/clean
 
 esp-idf/main/CMakeFiles/__idf_main.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web/main /root/progarms/web/build /root/progarms/web/build/esp-idf/main /root/progarms/web/build/esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs/main /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/main /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/depend
 

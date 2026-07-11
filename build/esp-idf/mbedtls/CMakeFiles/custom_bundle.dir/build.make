@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for custom_bundle.
 
@@ -74,10 +74,10 @@ esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/build: custom_bundle
 .PHONY : esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/build
 
 esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/clean:
-	cd /root/progarms/web/build/esp-idf/mbedtls && $(CMAKE_COMMAND) -P CMakeFiles/custom_bundle.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/mbedtls && $(CMAKE_COMMAND) -P CMakeFiles/custom_bundle.dir/cmake_clean.cmake
 .PHONY : esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/clean
 
 esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/mbedtls /root/progarms/web/build /root/progarms/web/build/esp-idf/mbedtls /root/progarms/web/build/esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/mbedtls /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/mbedtls /root/progarms/ovs/build/esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/depend
 

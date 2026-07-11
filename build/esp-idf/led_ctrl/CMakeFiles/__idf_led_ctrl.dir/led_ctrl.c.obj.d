@@ -1,9 +1,9 @@
 esp-idf/led_ctrl/CMakeFiles/__idf_led_ctrl.dir/led_ctrl.c.obj: \
- /root/progarms/web/modules/led_ctrl/led_ctrl.c \
- /root/progarms/web/modules/led_ctrl/led_ctrl.h \
+ /root/progarms/ovs/modules/devices_ctrl/led_ctrl/led_ctrl.c \
+ /root/progarms/ovs/modules/devices_ctrl/led_ctrl/led_ctrl.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/include/driver/gpio.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
@@ -64,4 +64,4 @@ esp-idf/led_ctrl/CMakeFiles/__idf_led_ctrl.dir/led_ctrl.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
- /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.h
+ /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl/gpio_ctrl.h

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for show-efuse-table.
 
@@ -67,7 +67,7 @@ include esp-idf/efuse/CMakeFiles/show-efuse-table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/show-efuse-table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/show-efuse-table:
-	cd /root/progarms/web/build/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.csv -t esp32s3 --max_blk_len 256 --info
+	cd /root/progarms/ovs/build/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.csv -t esp32s3 --max_blk_len 256 --info
 
 show-efuse-table: esp-idf/efuse/CMakeFiles/show-efuse-table
 show-efuse-table: esp-idf/efuse/CMakeFiles/show-efuse-table.dir/build.make
@@ -78,10 +78,10 @@ esp-idf/efuse/CMakeFiles/show-efuse-table.dir/build: show-efuse-table
 .PHONY : esp-idf/efuse/CMakeFiles/show-efuse-table.dir/build
 
 esp-idf/efuse/CMakeFiles/show-efuse-table.dir/clean:
-	cd /root/progarms/web/build/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/show-efuse-table.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/show-efuse-table.dir/cmake_clean.cmake
 .PHONY : esp-idf/efuse/CMakeFiles/show-efuse-table.dir/clean
 
 esp-idf/efuse/CMakeFiles/show-efuse-table.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/web/build /root/progarms/web/build/esp-idf/efuse /root/progarms/web/build/esp-idf/efuse/CMakeFiles/show-efuse-table.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/efuse /root/progarms/ovs/build/esp-idf/efuse/CMakeFiles/show-efuse-table.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/efuse/CMakeFiles/show-efuse-table.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for merge-bin.
 
@@ -67,7 +67,7 @@ include CMakeFiles/merge-bin.dir/compiler_depend.make
 include CMakeFiles/merge-bin.dir/progress.make
 
 CMakeFiles/merge-bin:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=merge-bin;-o;/root/progarms/web/build/merged-binary.bin;@/root/progarms/web/build/flash_args" -D WORKING_DIRECTORY=/root/progarms/web/build -P run_serial_tool.cmake
+	cd /root/esp-idf/esp-idf-v6.0.1/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "SERIAL_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esptool;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=merge-bin;-o;/root/progarms/ovs/build/merged-binary.bin;@/root/progarms/ovs/build/flash_args" -D WORKING_DIRECTORY=/root/progarms/ovs/build -P run_serial_tool.cmake
 
 merge-bin: CMakeFiles/merge-bin
 merge-bin: CMakeFiles/merge-bin.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/merge-bin.dir/clean:
 .PHONY : CMakeFiles/merge-bin.dir/clean
 
 CMakeFiles/merge-bin.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/merge-bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/merge-bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/merge-bin.dir/depend
 

@@ -43,7 +43,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/progarms/web/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/cmake_install.cmake")
+  include("/root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src/cmake_install.cmake")
 
 endif()
 

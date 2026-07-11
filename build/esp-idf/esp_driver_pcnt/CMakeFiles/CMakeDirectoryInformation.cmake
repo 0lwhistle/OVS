@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/root/esp-idf/esp-idf-v6.0.1")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/root/progarms/web/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/root/progarms/ovs/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for dfu-flash.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dfu-flash.dir/compiler_depend.make
 include CMakeFiles/dfu-flash.dir/progress.make
 
 CMakeFiles/dfu-flash:
-	/usr/bin/cmake -D ESP_DFU_BIN="/root/progarms/web/build/bootloader/dfu.bin" -D ESP_DFU_PID="9" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_dfu_util.cmake
+	/usr/bin/cmake -D ESP_DFU_BIN="/root/progarms/ovs/build/bootloader/dfu.bin" -D ESP_DFU_PID="9" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_dfu_util.cmake
 
 dfu-flash: CMakeFiles/dfu-flash
 dfu-flash: CMakeFiles/dfu-flash.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dfu-flash.dir/clean:
 .PHONY : CMakeFiles/dfu-flash.dir/clean
 
 CMakeFiles/dfu-flash.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/dfu-flash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/dfu-flash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dfu-flash.dir/depend
 

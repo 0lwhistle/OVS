@@ -1,6 +1,6 @@
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/esp32s3/phy_init_data.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/esp32s3/include/phy_init_data.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/include/esp_phy_init.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \

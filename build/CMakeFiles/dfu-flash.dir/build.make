@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for dfu-flash.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dfu-flash.dir/compiler_depend.make
 include CMakeFiles/dfu-flash.dir/progress.make
 
 CMakeFiles/dfu-flash:
-	/usr/bin/cmake -D ESP_DFU_BIN="/root/progarms/web/build/dfu.bin" -D ESP_DFU_PID="9" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_dfu_util.cmake
+	/usr/bin/cmake -D ESP_DFU_BIN="/root/progarms/ovs/build/dfu.bin" -D ESP_DFU_PID="9" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_dfu_util.cmake
 
 dfu-flash: CMakeFiles/dfu-flash
 dfu-flash: CMakeFiles/dfu-flash.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dfu-flash.dir/clean:
 .PHONY : CMakeFiles/dfu-flash.dir/clean
 
 CMakeFiles/dfu-flash.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/dfu-flash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/dfu-flash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dfu-flash.dir/depend
 

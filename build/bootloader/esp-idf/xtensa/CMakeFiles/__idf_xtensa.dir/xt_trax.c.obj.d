@@ -1,7 +1,7 @@
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h \
- /root/progarms/web/build/bootloader/config/sdkconfig.h \
+ /root/progarms/ovs/build/bootloader/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \

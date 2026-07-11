@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/modules/beep_ctrl
+# Install script for directory: /root/progarms/ovs/modules/devices_ctrl/beep_ctrl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

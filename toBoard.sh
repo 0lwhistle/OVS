@@ -1,3 +1,3 @@
 set -e
 ./mybuild.sh
-./myburn.sh
+./burn.sh
