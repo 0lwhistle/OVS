@@ -10,11 +10,11 @@
 #include "esp_timer.h"
 #include "driver/gptimer.h"
 
-#define LITTLE_TASK_QUEUE_SIZE 4
+#define LITTLE_TASK_QUEUE_SIZE 8
 #define MIDDLE_TASK_QUEUE_SIZE 8
 #define LOTS_TASK_QUEUE_SIZE 8
-#define DISPATCHER_TASK_QUEUE_SIZE 32
-#define SCHED_TASK_QUEUE_SIZE 32
+#define DISPATCHER_TASK_QUEUE_SIZE 64
+#define SCHED_TASK_QUEUE_SIZE 64
 
 #define LITTLE_TASK_STACK_SIZE 3072
 #define MIDDLE_TASK_STACK_SIZE 4096
@@ -64,7 +64,7 @@ struct task_node{
 	enum task_time_cost_level level;
 	task_fn fn;
 	uint64_t inject_time;
-	char* name;
+	char name[32];
 	void* ctx;
 };
 

@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ovs",
-    "project_version":    "366451ba-dirty",
+    "project_version":    "022e8074-dirty",
     "project_path":       "/root/progarms/ovs",
     "idf_path":           "/root/esp-idf/esp-idf-v6.0.1",
     "build_dir":          "/root/progarms/ovs/build",
