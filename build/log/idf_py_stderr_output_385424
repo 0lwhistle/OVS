@@ -1,0 +1,11 @@
+Command: make -j 22 all
+In file included from /root/progarms/ovs/main/main.c:2:
+/root/progarms/ovs/modules/tasker/task_worker/task_worker.h:67:12: warning: 'worker_task_enqueue_nocancel' declared 'static' but never defined [-Wunused-function]
+   67 | static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_node* node);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/progarms/ovs/main/main.c:6:20: warning: 'TAG' defined but not used [-Wunused-variable]
+    6 | static const char* TAG = "[MAIN_TEST]";
+      |                    ^~~
+/root/progarms/ovs/modules/tasker/task_worker/task_worker.h:19:12: warning: 'worker_init_flag' defined but not used [-Wunused-variable]
+   19 | static int worker_init_flag = 0;
+      |            ^~~~~~~~~~~~~~~~

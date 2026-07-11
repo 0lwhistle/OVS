@@ -27,7 +27,7 @@ struct task_manager* task_manager_init(const unsigned int size){
 		queue[i].done = 0;
 		queue[i].is_timeout = 0;
 		queue[i].level = level_little;
-		queue[i].name = "default";
+		queue[i].name[0] = '\0';
 	}
 	manager->queue = queue;
 	manager->is_empty = 1;
@@ -66,7 +66,8 @@ struct task_node* task_init(const int timeout,
 	node->done = 0;
 	node->is_timeout = 0;
 	node->level = level;
-	node->name = name;
+	strncpy(node->name, name, sizeof(node->name) - 1);
+	node->name[sizeof(node->name) - 1] = '\0';
 	node->run_cnt = run_cnt;
 	node->period = period;
 

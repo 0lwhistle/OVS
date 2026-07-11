@@ -494,7 +494,8 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 			worker_queue->queue[i].level = node->level;
 			worker_queue->queue[i].timeout = node->timeout;
 			worker_queue->queue[i].is_timeout = node->is_timeout;
-			worker_queue->queue[i].name = node->name;
+			strncpy(worker_queue->queue[i].name, node->name, sizeof(worker_queue->queue[i].name) - 1);
+			worker_queue->queue[i].name[sizeof(worker_queue->queue[i].name) - 1] = '\0';
 			worker_queue->queue[i].inject_time = node->inject_time;
 			worker_queue->queue[i].run_cnt = node->run_cnt;
 			worker_queue->queue[i].period = node->period;
@@ -538,7 +539,8 @@ static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_nod
 			worker_queue->queue[i].level = node->level;
 			worker_queue->queue[i].timeout = node->timeout;
 			worker_queue->queue[i].is_timeout = node->is_timeout;
-			worker_queue->queue[i].name = node->name;
+			strncpy(worker_queue->queue[i].name, node->name, sizeof(worker_queue->queue[i].name) - 1);
+			worker_queue->queue[i].name[sizeof(worker_queue->queue[i].name) - 1] = '\0';
 			worker_queue->queue[i].inject_time = node->inject_time;
 			worker_queue->queue[i].run_cnt = node->run_cnt;
 			worker_queue->queue[i].period = node->period;
@@ -586,7 +588,8 @@ static inline void task_expire(struct task_node* des, struct task_node* src){
 	des->fn = src->fn;
 	des->is_timeout = src->is_timeout;
 	des->level = src->level;
-	des->name = src->name;
+	strncpy(des->name, src->name, sizeof(des->name) - 1);
+	des->name[sizeof(des->name) - 1] = '\0';
 	des->pri = src->pri;
 	des->timeout = src->timeout;
 	des->inject_time = src->inject_time;
@@ -639,7 +642,7 @@ int shched_enqueue(struct task_node* node){
 		return TASK_PARA_ERR;
 	}
 
-	if (node->cancel || node->done || node->period < 0 || !node->fn || !node->name || !strlen(node->name)){
+	if (node->cancel || node->done || node->period < 0 || !node->fn || !strlen(node->name)){
 		LOGW(TASK_WORKER_TAG, "shched_enqueue fail, node is invaild");
 		return TASK_PARA_ERR;
 	}
