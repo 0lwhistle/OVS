@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for efuse_custom_table.
 
@@ -67,8 +67,8 @@ include esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/efuse_custom_table:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Warning: command \"efuse_custom_table\" is deprecated. Have you wanted to run \"efuse-custom-table\" instead?"
-	cd /root/progarms/web/build/bootloader/esp-idf/efuse && /usr/bin/cmake -E echo 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Warning: command \"efuse_custom_table\" is deprecated. Have you wanted to run \"efuse-custom-table\" instead?"
+	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && /usr/bin/cmake -E echo 
 
 efuse_custom_table: esp-idf/efuse/CMakeFiles/efuse_custom_table
 efuse_custom_table: esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/build.make
@@ -79,10 +79,10 @@ esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/build: efuse_custom_table
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/build
 
 esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/clean:
-	cd /root/progarms/web/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse_custom_table.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse_custom_table.dir/cmake_clean.cmake
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/clean
 
 esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/esp-idf/efuse /root/progarms/web/build/bootloader/esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/esp-idf/efuse /root/progarms/ovs/build/bootloader/esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_custom_table.dir/depend
 

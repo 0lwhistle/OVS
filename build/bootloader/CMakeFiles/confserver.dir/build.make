@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for confserver.
 
@@ -67,8 +67,8 @@ include CMakeFiles/confserver.dir/compiler_depend.make
 include CMakeFiles/confserver.dir/progress.make
 
 CMakeFiles/confserver:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/web/build/bootloader/config.env
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfserver --env-file /root/progarms/web/build/bootloader/config.env --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/web/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/ovs/build/bootloader/config.env
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfserver --env-file /root/progarms/ovs/build/bootloader/config.env --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
 
 confserver: CMakeFiles/confserver
 confserver: CMakeFiles/confserver.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/confserver.dir/clean:
 .PHONY : CMakeFiles/confserver.dir/clean
 
 CMakeFiles/confserver.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/confserver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/confserver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/confserver.dir/depend
 

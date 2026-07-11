@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for partition-table.
 
@@ -67,10 +67,10 @@ include esp-idf/partition_table/CMakeFiles/partition-table.dir/compiler_depend.m
 include esp-idf/partition_table/CMakeFiles/partition-table.dir/progress.make
 
 esp-idf/partition_table/CMakeFiles/partition-table:
-	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
-	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
-	cd /root/progarms/web/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/progarms/web/build/partition_table/partition-table.bin
-	cd /root/progarms/web/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
+	cd /root/progarms/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
+	cd /root/progarms/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
+	cd /root/progarms/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/progarms/ovs/build/partition_table/partition-table.bin
+	cd /root/progarms/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 
 partition-table: esp-idf/partition_table/CMakeFiles/partition-table
 partition-table: esp-idf/partition_table/CMakeFiles/partition-table.dir/build.make
@@ -81,10 +81,10 @@ esp-idf/partition_table/CMakeFiles/partition-table.dir/build: partition-table
 .PHONY : esp-idf/partition_table/CMakeFiles/partition-table.dir/build
 
 esp-idf/partition_table/CMakeFiles/partition-table.dir/clean:
-	cd /root/progarms/web/build/esp-idf/partition_table && $(CMAKE_COMMAND) -P CMakeFiles/partition-table.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/partition_table && $(CMAKE_COMMAND) -P CMakeFiles/partition-table.dir/cmake_clean.cmake
 .PHONY : esp-idf/partition_table/CMakeFiles/partition-table.dir/clean
 
 esp-idf/partition_table/CMakeFiles/partition-table.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/partition_table /root/progarms/web/build /root/progarms/web/build/esp-idf/partition_table /root/progarms/web/build/esp-idf/partition_table/CMakeFiles/partition-table.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/partition_table /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/partition_table /root/progarms/ovs/build/esp-idf/partition_table/CMakeFiles/partition-table.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/partition_table/CMakeFiles/partition-table.dir/depend
 

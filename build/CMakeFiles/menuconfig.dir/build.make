@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for menuconfig.
 
@@ -67,11 +67,11 @@ include CMakeFiles/menuconfig.dir/compiler_depend.make
 include CMakeFiles/menuconfig.dir/progress.make
 
 CMakeFiles/menuconfig:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/web/build/config.env
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/web/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/web/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --env KCONFIG_REPORT_VERBOSITY=quiet --dont-write-deprecated --output config /root/progarms/web/sdkconfig
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/ovs/build/config.env
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --env KCONFIG_REPORT_VERBOSITY=quiet --dont-write-deprecated --output config /root/progarms/ovs/sdkconfig
 	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/check_term.py
-	/usr/bin/cmake -E env COMPONENT_KCONFIGS_SOURCE_FILE=/root/progarms/web/build/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=/root/progarms/web/build/kconfigs_projbuild.in KCONFIG_CONFIG=/root/progarms/web/sdkconfig IDF_TARGET=esp32s3 IDF_TOOLCHAIN=gcc IDF_ENV_FPGA= IDF_INIT_VERSION=6.0.1 IDF_MINIMAL_BUILD=n /root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_menuconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/web/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/web/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output header /root/progarms/web/build/config/sdkconfig.h --output cmake /root/progarms/web/build/config/sdkconfig.cmake --output json /root/progarms/web/build/config/sdkconfig.json --output json_menus /root/progarms/web/build/config/kconfig_menus.json --output config /root/progarms/web/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
+	/usr/bin/cmake -E env COMPONENT_KCONFIGS_SOURCE_FILE=/root/progarms/ovs/build/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=/root/progarms/ovs/build/kconfigs_projbuild.in KCONFIG_CONFIG=/root/progarms/ovs/sdkconfig IDF_TARGET=esp32s3 IDF_TOOLCHAIN=gcc IDF_ENV_FPGA= IDF_INIT_VERSION=6.0.1 IDF_MINIMAL_BUILD=n /root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_menuconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output header /root/progarms/ovs/build/config/sdkconfig.h --output cmake /root/progarms/ovs/build/config/sdkconfig.cmake --output json /root/progarms/ovs/build/config/sdkconfig.json --output json_menus /root/progarms/ovs/build/config/kconfig_menus.json --output config /root/progarms/ovs/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
 
 menuconfig: CMakeFiles/menuconfig
 menuconfig: CMakeFiles/menuconfig.dir/build.make
@@ -86,6 +86,6 @@ CMakeFiles/menuconfig.dir/clean:
 .PHONY : CMakeFiles/menuconfig.dir/clean
 
 CMakeFiles/menuconfig.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/menuconfig.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/menuconfig.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/menuconfig.dir/depend
 

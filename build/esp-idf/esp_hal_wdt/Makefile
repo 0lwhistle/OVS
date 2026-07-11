@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/esp_hal_wdt//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/esp_hal_wdt//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule
 .PHONY : esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_esp_hal_wdt: esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule
 
 # fast build rule for target.
 __idf_esp_hal_wdt/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build
 .PHONY : __idf_esp_hal_wdt/fast
 
 esp32s3/mwdt_periph.obj: esp32s3/mwdt_periph.c.obj
@@ -180,7 +180,7 @@ esp32s3/mwdt_periph.obj: esp32s3/mwdt_periph.c.obj
 
 # target to build an object file
 esp32s3/mwdt_periph.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.obj
 .PHONY : esp32s3/mwdt_periph.c.obj
 
 esp32s3/mwdt_periph.i: esp32s3/mwdt_periph.c.i
@@ -188,7 +188,7 @@ esp32s3/mwdt_periph.i: esp32s3/mwdt_periph.c.i
 
 # target to preprocess a source file
 esp32s3/mwdt_periph.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.i
 .PHONY : esp32s3/mwdt_periph.c.i
 
 esp32s3/mwdt_periph.s: esp32s3/mwdt_periph.c.s
@@ -196,7 +196,7 @@ esp32s3/mwdt_periph.s: esp32s3/mwdt_periph.c.s
 
 # target to generate assembly for a file
 esp32s3/mwdt_periph.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.s
 .PHONY : esp32s3/mwdt_periph.c.s
 
 rom_patch.obj: rom_patch.c.obj
@@ -204,7 +204,7 @@ rom_patch.obj: rom_patch.c.obj
 
 # target to build an object file
 rom_patch.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj
 .PHONY : rom_patch.c.obj
 
 rom_patch.i: rom_patch.c.i
@@ -212,7 +212,7 @@ rom_patch.i: rom_patch.c.i
 
 # target to preprocess a source file
 rom_patch.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.i
 .PHONY : rom_patch.c.i
 
 rom_patch.s: rom_patch.c.s
@@ -220,7 +220,7 @@ rom_patch.s: rom_patch.c.s
 
 # target to generate assembly for a file
 rom_patch.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.s
 .PHONY : rom_patch.c.s
 
 xt_wdt_hal.obj: xt_wdt_hal.c.obj
@@ -228,7 +228,7 @@ xt_wdt_hal.obj: xt_wdt_hal.c.obj
 
 # target to build an object file
 xt_wdt_hal.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.obj
 .PHONY : xt_wdt_hal.c.obj
 
 xt_wdt_hal.i: xt_wdt_hal.c.i
@@ -236,7 +236,7 @@ xt_wdt_hal.i: xt_wdt_hal.c.i
 
 # target to preprocess a source file
 xt_wdt_hal.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.i
 .PHONY : xt_wdt_hal.c.i
 
 xt_wdt_hal.s: xt_wdt_hal.c.s
@@ -244,7 +244,7 @@ xt_wdt_hal.s: xt_wdt_hal.c.s
 
 # target to generate assembly for a file
 xt_wdt_hal.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.s
 .PHONY : xt_wdt_hal.c.s
 
 # Help Target
@@ -280,6 +280,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

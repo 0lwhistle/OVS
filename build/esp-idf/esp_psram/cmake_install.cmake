@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/progarms/web/build/esp-idf/esp_psram/device/cmake_install.cmake")
+  include("/root/progarms/ovs/build/esp-idf/esp_psram/device/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/root/progarms/web/build/esp-idf/esp_psram/xip_impl/cmake_install.cmake")
+  include("/root/progarms/ovs/build/esp-idf/esp_psram/xip_impl/cmake_install.cmake")
 endif()
 

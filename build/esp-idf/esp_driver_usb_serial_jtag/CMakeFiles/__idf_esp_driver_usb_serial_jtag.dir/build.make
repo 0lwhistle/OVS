@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/depend.make
@@ -72,44 +72,44 @@ include esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_seria
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/flags.make
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.i
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.s
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/flags.make
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.i
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.s
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/flags.make
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj -MF CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj.d -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c > CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.i
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c -o CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.s
 
 # Object files for target __idf_esp_driver_usb_serial_jtag
 __idf_esp_driver_usb_serial_jtag_OBJECTS = \
@@ -125,19 +125,19 @@ esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a: esp-idf/esp_
 esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj
 esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make
 esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libesp_driver_usb_serial_jtag.a"
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libesp_driver_usb_serial_jtag.a"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 .PHONY : esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/clean:
-	cd /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/cmake_clean.cmake
 .PHONY : esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/clean
 
 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag /root/progarms/web/build /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag /root/progarms/web/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag /root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/depend
 

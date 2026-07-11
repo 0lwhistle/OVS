@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for bootloader_ld_in_preprocess.
 
@@ -70,8 +70,8 @@ CMakeFiles/bootloader_ld_in_preprocess: ld/bootloader.ld
 
 ld/bootloader.ld: config/sdkconfig.h
 ld/bootloader.ld: /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld.in
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld.in -> /root/progarms/web/build/bootloader/ld/bootloader.ld"
-	/usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld.in -DTARGET=/root/progarms/web/build/bootloader/ld/bootloader.ld "-DCFLAGS=-I\"/root/progarms/web/build/bootloader/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing linker script /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld.in -> /root/progarms/ovs/build/bootloader/ld/bootloader.ld"
+	/usr/bin/cmake -DCC=/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DSOURCE=/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld/esp32s3/bootloader.ld.in -DTARGET=/root/progarms/ovs/build/bootloader/ld/bootloader.ld "-DCFLAGS=-I\"/root/progarms/ovs/build/bootloader/config\" -I\"/root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject/main/ld\"" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/linker_script_preprocessor.cmake
 
 bootloader_ld_in_preprocess: CMakeFiles/bootloader_ld_in_preprocess
 bootloader_ld_in_preprocess: ld/bootloader.ld
@@ -87,6 +87,6 @@ CMakeFiles/bootloader_ld_in_preprocess.dir/clean:
 .PHONY : CMakeFiles/bootloader_ld_in_preprocess.dir/clean
 
 CMakeFiles/bootloader_ld_in_preprocess.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/bootloader_ld_in_preprocess.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/bootloader_ld_in_preprocess.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bootloader_ld_in_preprocess.dir/depend
 

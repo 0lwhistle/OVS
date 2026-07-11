@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/depend.make
@@ -72,58 +72,58 @@ include esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s
 
 # Object files for target __idf_esp_driver_spi
 __idf_esp_driver_spi_OBJECTS = \
@@ -141,19 +141,19 @@ esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/build.make
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libesp_driver_spi.a"
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_spi.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_spi.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libesp_driver_spi.a"
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_spi.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_driver_spi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/build: esp-idf/esp_driver_spi/libesp_driver_spi.a
 .PHONY : esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/build
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/clean:
-	cd /root/progarms/web/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_spi.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/esp_driver_spi && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_driver_spi.dir/cmake_clean.cmake
 .PHONY : esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/clean
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi /root/progarms/web/build /root/progarms/web/build/esp-idf/esp_driver_spi /root/progarms/web/build/esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/esp_driver_spi /root/progarms/ovs/build/esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/depend
 

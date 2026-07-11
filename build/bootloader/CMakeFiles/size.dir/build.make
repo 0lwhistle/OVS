@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for size.
 
@@ -67,7 +67,7 @@ include CMakeFiles/size.dir/compiler_depend.make
 include CMakeFiles/size.dir/progress.make
 
 CMakeFiles/size: bootloader.map
-	/usr/bin/cmake -D "IDF_SIZE_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esp_idf_size" -D MAP_FILE=/root/progarms/web/build/bootloader/bootloader.map -D OUTPUT_JSON= -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_size_tool.cmake
+	/usr/bin/cmake -D "IDF_SIZE_TOOL=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;-m;esp_idf_size" -D MAP_FILE=/root/progarms/ovs/build/bootloader/bootloader.map -D OUTPUT_JSON= -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_size_tool.cmake
 
 size: CMakeFiles/size
 size: CMakeFiles/size.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/size.dir/clean:
 .PHONY : CMakeFiles/size.dir/clean
 
 CMakeFiles/size.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/size.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/size.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/size.dir/depend
 

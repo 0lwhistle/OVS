@@ -1,6 +1,6 @@
 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/port.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \

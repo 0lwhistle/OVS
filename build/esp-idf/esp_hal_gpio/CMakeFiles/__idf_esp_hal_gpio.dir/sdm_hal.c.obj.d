@@ -3,7 +3,7 @@ esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/hal/sdm_ll.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \

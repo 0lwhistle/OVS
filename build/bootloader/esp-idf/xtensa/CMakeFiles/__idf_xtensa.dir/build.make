@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Include any dependencies generated for this target.
 include esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/depend.make
@@ -72,30 +72,30 @@ include esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/flags.make
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/flags.make
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj -MF CMakeFiles/__idf_xtensa.dir/eri.c.obj.d -o CMakeFiles/__idf_xtensa.dir/eri.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj"
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj -MF CMakeFiles/__idf_xtensa.dir/eri.c.obj.d -o CMakeFiles/__idf_xtensa.dir/eri.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_xtensa.dir/eri.c.i"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c > CMakeFiles/__idf_xtensa.dir/eri.c.i
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c > CMakeFiles/__idf_xtensa.dir/eri.c.i
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_xtensa.dir/eri.c.s"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c -o CMakeFiles/__idf_xtensa.dir/eri.c.s
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/xtensa/eri.c -o CMakeFiles/__idf_xtensa.dir/eri.c.s
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/flags.make
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj -MF CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj.d -o CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj"
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj -MF CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj.d -o CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_xtensa.dir/xt_trax.c.i"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c > CMakeFiles/__idf_xtensa.dir/xt_trax.c.i
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c > CMakeFiles/__idf_xtensa.dir/xt_trax.c.i
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_xtensa.dir/xt_trax.c.s"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c -o CMakeFiles/__idf_xtensa.dir/xt_trax.c.s
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/xtensa/xt_trax.c -o CMakeFiles/__idf_xtensa.dir/xt_trax.c.s
 
 # Object files for target __idf_xtensa
 __idf_xtensa_OBJECTS = \
@@ -109,19 +109,19 @@ esp-idf/xtensa/libxtensa.a: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj
 esp-idf/xtensa/libxtensa.a: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj
 esp-idf/xtensa/libxtensa.a: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make
 esp-idf/xtensa/libxtensa.a: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libxtensa.a"
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -P CMakeFiles/__idf_xtensa.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_xtensa.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libxtensa.a"
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -P CMakeFiles/__idf_xtensa.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_xtensa.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build: esp-idf/xtensa/libxtensa.a
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/clean:
-	cd /root/progarms/web/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -P CMakeFiles/__idf_xtensa.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/bootloader/esp-idf/xtensa && $(CMAKE_COMMAND) -P CMakeFiles/__idf_xtensa.dir/cmake_clean.cmake
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/clean
 
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/xtensa /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/esp-idf/xtensa /root/progarms/web/build/bootloader/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/xtensa /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/esp-idf/xtensa /root/progarms/ovs/build/bootloader/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/depend
 

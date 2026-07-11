@@ -11,10 +11,9 @@ ${CMAKE_SOURCE_DIR}/modules/devices_ctrl/gpio_ctrl
 ${CMAKE_SOURCE_DIR}/modules/devices_ctrl/beep_ctrl
 ${CMAKE_SOURCE_DIR}/modules/devices_ctrl/sr04_ctrl
 ${CMAKE_SOURCE_DIR}/modules/devices_ctrl/wifi
-${CMAKE_SOURCE_DIR}/modules/tasker/payload
-${CMAKE_SOURCE_DIR}/modules/tasker/scheduler
 ${CMAKE_SOURCE_DIR}/modules/tasker/task_manager
 ${CMAKE_SOURCE_DIR}/modules/tasker/task_worker
+${CMAKE_SOURCE_DIR}/modules/logger
 ${CMAKE_SOURCE_DIR}/modules/web
 )
 

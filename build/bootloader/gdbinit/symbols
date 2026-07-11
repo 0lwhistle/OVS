@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /root/progarms/web/build/bootloader/bootloader.elf
+file /root/progarms/ovs/build/bootloader/bootloader.elf

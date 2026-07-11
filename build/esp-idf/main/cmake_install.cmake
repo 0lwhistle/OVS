@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/main
+# Install script for directory: /root/progarms/ovs/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

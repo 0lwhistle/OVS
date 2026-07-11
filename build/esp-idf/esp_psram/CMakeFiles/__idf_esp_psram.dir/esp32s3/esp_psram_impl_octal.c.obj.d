@@ -1,6 +1,6 @@
 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/esp32s3/esp_psram_impl_octal.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \

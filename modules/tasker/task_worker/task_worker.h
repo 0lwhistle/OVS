@@ -12,7 +12,8 @@
 #include "task_manager.h"
 #include "logger.h"
 
-static const char* TASK_WORKER_TAG = "[TASK_WORKER]";
+extern const char* TASK_WORKER_TAG;
+static int worker_init_flag = 0;
 
 struct task_worker_ctx{
 	struct task_worker* little_worker;
@@ -34,8 +35,6 @@ struct task_worker{
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
-	//enqueue_fn enqueue;
-	//dequeue_fn dequeue;
 
 	struct task_manager* worker_queue; // save and manage the tasks
 };
@@ -49,19 +48,15 @@ int worker_lots_init(void);
 int worker_dispatcher_init(void);
 int worker_sched_init(void);
 
-
-
-// the handler to be register for the workers
-void worker_little_handler(struct task_worker* worker);
-void worker_middle_handler(struct task_worker* worker);
-void worker_lots_handler(struct task_worker* worker);
-void worker_dispatcher_handler(struct task_worker* worker);
-void worker_sched_handler(struct task_worker* worker);
+// the handler to be register for the workers (pthread_create expects void* (*)(void*))
+void* worker_little_handler(void* arg);
+void* worker_middle_handler(void* arg);
+void* worker_lots_handler(void* arg);
+void* worker_dispatcher_handler(void* arg);
+void* worker_sched_handler(void* arg);
 void worker_do_handler(struct task_worker* worker);
 
-
 esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
-void timer_callback(void* arg);
 
 int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
 void worker_task_done(struct task_worker* worker, struct task_node* node);
@@ -74,29 +69,24 @@ void shched_cancel_by_name(const char* name);
 int shched_is_full(void);
 int shched_is_empty(void);
 
-struct task_node* shched_task_init_l(const int timeout, 
+struct task_node* sched_task_init_li(
 									const int period, 
 									const int run_cnt, 
 									const char* name, 
 									task_fn fn, void* ctx
 								);
 
-struct task_node* shched_task_init_m(const int timeout, 
-									const uint64_t inject_time,
+struct task_node* sched_task_init_mi( 
 									const int period, 
 									const int run_cnt, 
-									const enum task_priority pri, 
-									const enum task_time_cost_level level, 
 									const char* name, 
 									task_fn fn, void* ctx
 								);
 
-struct task_node* shched_task_init_lo(const int timeout, 
-									const uint64_t inject_time,
+struct task_node* sched_task_init_lo(
+									const int timeout,
 									const int period, 
 									const int run_cnt, 
-									const enum task_priority pri, 
-									const enum task_time_cost_level level, 
 									const char* name, 
 									task_fn fn, void* ctx
 								);

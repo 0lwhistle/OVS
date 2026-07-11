@@ -13,7 +13,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/p256-m
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h
- /root/progarms/web/build/config/sdkconfig.h
+ /root/progarms/ovs/build/config/sdkconfig.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h
@@ -114,7 +114,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/p256-m
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h
- /root/progarms/web/build/config/sdkconfig.h
+ /root/progarms/ovs/build/config/sdkconfig.h
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h

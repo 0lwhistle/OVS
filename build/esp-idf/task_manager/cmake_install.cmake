@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/modules/task_manager
+# Install script for directory: /root/progarms/ovs/modules/tasker/task_manager
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

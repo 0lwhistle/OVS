@@ -2,7 +2,7 @@ esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/wps/wps.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/src/wps/wps.c \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/src/utils/includes.h \
  /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/port/include/supplicant_opt.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_private/esp_wifi_private.h \
  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \

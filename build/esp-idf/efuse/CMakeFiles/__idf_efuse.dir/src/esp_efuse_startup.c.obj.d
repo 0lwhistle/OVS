@@ -1,6 +1,6 @@
 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_startup.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/efuse/src/esp_efuse_startup.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/chip_revision.h \

@@ -1,6 +1,6 @@
 esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/esp32s3/spi_flash_oct_flash_init.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \

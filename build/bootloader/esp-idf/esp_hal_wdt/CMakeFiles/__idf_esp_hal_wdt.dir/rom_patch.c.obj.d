@@ -2,7 +2,7 @@ esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt/rom_patch.c \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/config.h \
- /root/progarms/web/build/bootloader/config/sdkconfig.h \
+ /root/progarms/ovs/build/bootloader/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/chip_revision.h \

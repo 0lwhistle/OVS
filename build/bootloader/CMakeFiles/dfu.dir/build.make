@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build/bootloader
+CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
 
 # Utility rule file for dfu.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dfu.dir/compiler_depend.make
 include CMakeFiles/dfu.dir/progress.make
 
 CMakeFiles/dfu: bootloader
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/web/build/bootloader/dfu.bin --json /root/progarms/web/build/bootloader/flasher_args.json --pid 9 --flash-size 16MB
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/ovs/build/bootloader/dfu.bin --json /root/progarms/ovs/build/bootloader/flasher_args.json --pid 9 --flash-size 16MB
 
 dfu: CMakeFiles/dfu
 dfu: CMakeFiles/dfu.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dfu.dir/clean:
 .PHONY : CMakeFiles/dfu.dir/clean
 
 CMakeFiles/dfu.dir/depend:
-	cd /root/progarms/web/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader /root/progarms/web/build/bootloader/CMakeFiles/dfu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/dfu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dfu.dir/depend
 

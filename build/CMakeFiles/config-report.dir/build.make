@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for config-report.
 
@@ -67,8 +67,8 @@ include CMakeFiles/config-report.dir/compiler_depend.make
 include CMakeFiles/config-report.dir/progress.make
 
 CMakeFiles/config-report:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/web/build/config.env
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/web/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/web/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output report /root/progarms/web/build/config/kconfig_parse_report.json --env KCONFIG_REPORT_VERBOSITY=default
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/ovs/build/config.env
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output report /root/progarms/ovs/build/config/kconfig_parse_report.json --env KCONFIG_REPORT_VERBOSITY=default
 
 config-report: CMakeFiles/config-report
 config-report: CMakeFiles/config-report.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/config-report.dir/clean:
 .PHONY : CMakeFiles/config-report.dir/clean
 
 CMakeFiles/config-report.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/config-report.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/config-report.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/config-report.dir/depend
 

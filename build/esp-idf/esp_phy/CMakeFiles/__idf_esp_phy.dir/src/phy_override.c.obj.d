@@ -2,7 +2,7 @@ esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \

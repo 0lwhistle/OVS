@@ -2,9 +2,10 @@ idf_component_register(SRCS
 	"main.c"
 	"../modules/web/mongoose/mongoose.c"
     INCLUDE_DIRS 
+	"../modules/logger"
 	"."
-	"../modules/mongoose"
-	"../modules/vue_frontend"                   # ← 新增：Vue 头文件路径
+	"../modules/web/mongoose"
+	"../vue_web"                   # ← Vue 头文件路径
 	REQUIRES 
 	wifi web 
 	led_ctrl 
@@ -12,7 +13,6 @@ idf_component_register(SRCS
 	sr04_ctrl 
 	task_manager
 	task_worker
-	scheduler
 	app_update
 	esp_timer
 	)

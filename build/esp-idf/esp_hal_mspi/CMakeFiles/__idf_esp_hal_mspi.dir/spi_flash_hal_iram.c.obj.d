@@ -1,7 +1,7 @@
 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/spi_flash_hal_iram.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/spi_flash_hal_iram.c \
  /root/esp-idf/esp-idf-v6.0.1/components/hal/platform_port/include/hal/config.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/include/hal/spi_flash_hal.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32s3/include/hal/spi_flash_ll.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi/esp32s3/include/hal/gpspi_flash_ll.h \

@@ -22,11 +22,11 @@
 #define DISPATCHER_TASK_QUEUE_STACK_SIZE 4096
 #define SCHED_TASK_QUEUE_STACK_SIZE 4096
 
-#define LITTLE_TASK_default_timeout 50 // ms
-#define MIDDLE_TASK_default_timeout 1000 // ms
-#define LOTS_TASK_default_timeout 10000 // ms
+#define LITTLE_TASK_DEFAULT_TIMEOUT 50 // ms
+#define MIDDLE_TASK_DEFAULT_TIMEOUT 1000 // ms
+#define LOTS_TASK_DEFAULT_TIMEOUT 10000 // ms
 
-static const char* TASK_MANAGER_TAG = "[TASK_MANAGER]";
+extern const char* TASK_MANAGER_TAG;
 
 enum task_t{
 	TASK_OK = 0,
@@ -46,9 +46,9 @@ enum task_priority{
 };
 
 enum task_time_cost_level{
-	little = 1,
-	middle,
-	lots,
+	level_little = 1,
+	level_middle,
+	level_lots,
 };
 
 typedef enum task_t (*task_fn)(void* ctx);

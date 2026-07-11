@@ -1,6 +1,6 @@
 esp-idf/espcoredump/CMakeFiles/__idf_espcoredump.dir/src/core_dump_init.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/espcoredump/src/core_dump_init.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/startup_internal.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \

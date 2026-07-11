@@ -1,6 +1,6 @@
 esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/src/bootloader_console.c \
- /root/progarms/web/build/bootloader/config/sdkconfig.h \
+ /root/progarms/ovs/build/bootloader/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/private_include/bootloader_console.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \

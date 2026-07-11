@@ -1,6 +1,6 @@
 esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/pthread/pthread.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/time.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \

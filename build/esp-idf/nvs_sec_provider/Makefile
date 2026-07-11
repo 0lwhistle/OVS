@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles /root/progarms/web/build/esp-idf/nvs_sec_provider//CMakeFiles/progress.marks
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/web/build/CMakeFiles 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/nvs_sec_provider//CMakeFiles/progress.marks
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/clean
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/preinstall
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule
 .PHONY : esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_nvs_sec_provider: esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provid
 
 # fast build rule for target.
 __idf_nvs_sec_provider/fast:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build
 .PHONY : __idf_nvs_sec_provider/fast
 
 nvs_sec_provider.obj: nvs_sec_provider.c.obj
@@ -180,7 +180,7 @@ nvs_sec_provider.obj: nvs_sec_provider.c.obj
 
 # target to build an object file
 nvs_sec_provider.c.obj:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.obj
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.obj
 .PHONY : nvs_sec_provider.c.obj
 
 nvs_sec_provider.i: nvs_sec_provider.c.i
@@ -188,7 +188,7 @@ nvs_sec_provider.i: nvs_sec_provider.c.i
 
 # target to preprocess a source file
 nvs_sec_provider.c.i:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.i
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.i
 .PHONY : nvs_sec_provider.c.i
 
 nvs_sec_provider.s: nvs_sec_provider.c.s
@@ -196,7 +196,7 @@ nvs_sec_provider.s: nvs_sec_provider.c.s
 
 # target to generate assembly for a file
 nvs_sec_provider.c.s:
-	cd /root/progarms/web/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.s
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/nvs_sec_provider.c.s
 .PHONY : nvs_sec_provider.c.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

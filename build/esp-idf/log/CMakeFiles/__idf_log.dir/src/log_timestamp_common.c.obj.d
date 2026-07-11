@@ -1,7 +1,7 @@
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \

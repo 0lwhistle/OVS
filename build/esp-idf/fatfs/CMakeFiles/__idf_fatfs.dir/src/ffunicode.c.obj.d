@@ -2,7 +2,7 @@ esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/src/ffunicode.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffunicode.c \
  /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ff.h \
  /root/esp-idf/esp-idf-v6.0.1/components/fatfs/src/ffconf.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/param.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \

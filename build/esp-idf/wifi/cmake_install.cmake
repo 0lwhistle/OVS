@@ -1,4 +1,4 @@
-# Install script for directory: /root/progarms/web/modules/wifi
+# Install script for directory: /root/progarms/ovs/modules/devices_ctrl/wifi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

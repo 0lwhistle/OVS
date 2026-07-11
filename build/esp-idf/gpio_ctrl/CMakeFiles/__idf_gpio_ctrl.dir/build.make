@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/depend.make
@@ -70,18 +70,18 @@ include esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/progress.make
 include esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/flags.make
 
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/flags.make
-esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj: ../modules/gpio_ctrl/gpio_ctrl.c
+esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj: ../modules/devices_ctrl/gpio_ctrl/gpio_ctrl.c
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj"
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj -MF CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj.d -o CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj -c /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj -MF CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj.d -o CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj -c /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl/gpio_ctrl.c
 
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i"
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.c > CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl/gpio_ctrl.c > CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.i
 
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s"
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/web/modules/gpio_ctrl/gpio_ctrl.c -o CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl/gpio_ctrl.c -o CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.s
 
 # Object files for target __idf_gpio_ctrl
 __idf_gpio_ctrl_OBJECTS = \
@@ -93,19 +93,19 @@ __idf_gpio_ctrl_EXTERNAL_OBJECTS =
 esp-idf/gpio_ctrl/libgpio_ctrl.a: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/gpio_ctrl.c.obj
 esp-idf/gpio_ctrl/libgpio_ctrl.a: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build.make
 esp-idf/gpio_ctrl/libgpio_ctrl.a: esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/web/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libgpio_ctrl.a"
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -P CMakeFiles/__idf_gpio_ctrl.dir/cmake_clean_target.cmake
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_gpio_ctrl.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libgpio_ctrl.a"
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -P CMakeFiles/__idf_gpio_ctrl.dir/cmake_clean_target.cmake
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_gpio_ctrl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build: esp-idf/gpio_ctrl/libgpio_ctrl.a
 .PHONY : esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/build
 
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/clean:
-	cd /root/progarms/web/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -P CMakeFiles/__idf_gpio_ctrl.dir/cmake_clean.cmake
+	cd /root/progarms/ovs/build/esp-idf/gpio_ctrl && $(CMAKE_COMMAND) -P CMakeFiles/__idf_gpio_ctrl.dir/cmake_clean.cmake
 .PHONY : esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/clean
 
 esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web/modules/gpio_ctrl /root/progarms/web/build /root/progarms/web/build/esp-idf/gpio_ctrl /root/progarms/web/build/esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/gpio_ctrl /root/progarms/ovs/build/esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/depend
 

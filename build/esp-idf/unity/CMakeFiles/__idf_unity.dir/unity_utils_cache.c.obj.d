@@ -1,6 +1,6 @@
 esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_cache.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/unity/unity_utils_cache.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/unity/unity/src/unity.h \
  /root/esp-idf/esp-idf-v6.0.1/components/unity/unity/src/unity_internals.h \
  /root/esp-idf/esp-idf-v6.0.1/components/unity/include/unity_config.h \

@@ -1,6 +1,6 @@
 esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/memspi_host_driver.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/memspi_host_driver.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \

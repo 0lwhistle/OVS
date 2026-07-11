@@ -1,4 +1,7 @@
 #include "task_manager.h"
+#include <string.h>
+
+const char* TASK_MANAGER_TAG = "[TASK_MANAGER]";
 
 struct task_manager* task_manager_init(const unsigned int size){
 
@@ -23,7 +26,7 @@ struct task_manager* task_manager_init(const unsigned int size){
 		queue[i].ctx = NULL;
 		queue[i].done = 0;
 		queue[i].is_timeout = 0;
-		queue[i].level = little;
+		queue[i].level = level_little;
 		queue[i].name = "default";
 	}
 	manager->queue = queue;
@@ -95,7 +98,7 @@ void task_node_pri_up(struct task_node* node){
 }
 
 void task_node_leve_up(struct task_node* node){
-	if (node->level <= lots) ++node->level;
+	if (node->level <= level_lots) ++node->level;
 }
 
 struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name){
@@ -112,10 +115,14 @@ struct task_node* find_task_node_by_name(struct task_manager* worker_queue, cons
 void task_manager_pri_sort(struct task_manager* worker_queue){
 	if (worker_queue->size <=1 ) return;
 
+	// pri 枚举值: first=1, middle=2, last=3，用 count[1..3]
 	int count[4] = {0};
 
 	for (int i = 0; i < worker_queue->size; ++i){
-		++count[worker_queue->queue[i].pri];
+		int p = worker_queue->queue[i].pri;
+		if (p >= 1 && p <= 3) {
+			++count[p];
+		}
 	}
 
 	int start[4];

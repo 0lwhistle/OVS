@@ -136,7 +136,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "config/sdkconfig.cmake"
   "config/sdkconfig.h"
   "toolchain/toolchain-esp32s3.cmake"
-  "/root/progarms/web/sdkconfig"
+  "/root/progarms/ovs/sdkconfig"
   "/usr/share/cmake-3.22/Modules/CMakeASMCompiler.cmake.in"
   "/usr/share/cmake-3.22/Modules/CMakeASMInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in"

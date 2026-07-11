@@ -1,6 +1,6 @@
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/init.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/init.c \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/reent.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/startup_internal.h \

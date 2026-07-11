@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/web
+CMAKE_SOURCE_DIR = /root/progarms/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/web/build
+CMAKE_BINARY_DIR = /root/progarms/ovs/build
 
 # Utility rule file for dfu.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dfu.dir/compiler_depend.make
 include CMakeFiles/dfu.dir/progress.make
 
 CMakeFiles/dfu:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/web/build/dfu.bin --json /root/progarms/web/build/flasher_args.json --pid 9 --flash-size 16MB
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/mkdfu.py write -o /root/progarms/ovs/build/dfu.bin --json /root/progarms/ovs/build/flasher_args.json --pid 9 --flash-size 16MB
 
 dfu: CMakeFiles/dfu
 dfu: CMakeFiles/dfu.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dfu.dir/clean:
 .PHONY : CMakeFiles/dfu.dir/clean
 
 CMakeFiles/dfu.dir/depend:
-	cd /root/progarms/web/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/web /root/progarms/web /root/progarms/web/build /root/progarms/web/build /root/progarms/web/build/CMakeFiles/dfu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/dfu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dfu.dir/depend
 

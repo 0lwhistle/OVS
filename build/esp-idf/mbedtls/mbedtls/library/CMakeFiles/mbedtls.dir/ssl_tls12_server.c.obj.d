@@ -5,7 +5,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls12_server.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \

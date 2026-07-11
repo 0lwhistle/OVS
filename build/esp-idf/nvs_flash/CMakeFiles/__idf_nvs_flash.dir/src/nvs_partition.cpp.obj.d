@@ -1,7 +1,7 @@
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.cpp \
  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/nvs_partition.hpp \
- /root/progarms/web/build/config/sdkconfig.h \
+ /root/progarms/ovs/build/config/sdkconfig.h \
  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/src/partition.hpp \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
