@@ -210,6 +210,7 @@
 /root/progarms/ovs/build/esp-idf/wifi/libwifi.a
 /root/progarms/ovs/build/esp-idf/web/libweb.a
 /root/progarms/ovs/build/esp-idf/wifi/libwifi.a
+/root/progarms/ovs/build/esp-idf/spiffs/libspiffs.a
 /root/progarms/ovs/build/esp-idf/gpio_ctrl/libgpio_ctrl.a
 /root/progarms/ovs/build/esp-idf/led_ctrl/libled_ctrl.a
 /root/progarms/ovs/build/esp-idf/gpio_ctrl/libgpio_ctrl.a

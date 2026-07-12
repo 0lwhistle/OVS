@@ -1,0 +1,12 @@
+Command: make -j 22 all
+/root/progarms/ovs/modules/web/web.c: In function 'web_event_handler':
+/root/progarms/ovs/modules/web/web.c:268:69: error: 'struct mg_str' has no member named 'ptr'
+  268 |         snprintf(uri, sizeof(uri), "%.*s", (int)hm->uri.len, hm->uri.ptr);
+      |                                                                     ^
+/root/progarms/ovs/modules/web/web.c:269:81: error: 'struct mg_str' has no member named 'ptr'
+  269 |         snprintf(method, sizeof(method), "%.*s", (int)hm->method.len, hm->method.ptr);
+      |                                                                                 ^
+make[2]: *** [esp-idf/web/CMakeFiles/__idf_web.dir/build.make:76: esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7734: esp-idf/web/CMakeFiles/__idf_web.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:136: all] Error 2

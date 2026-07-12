@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ovs",
-    "project_version":    "c11bf2bc-dirty",
+    "project_version":    "a7fa3c2b-dirty",
     "project_path":       "/root/progarms/ovs",
     "idf_path":           "/root/esp-idf/esp-idf-v6.0.1",
     "build_dir":          "/root/progarms/ovs/build",
@@ -1820,13 +1820,13 @@
             "dir": "/root/progarms/ovs/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "wifi", "web", "led_ctrl", "beep_ctrl", "sr04_ctrl", "task_manager", "task_worker", "tasker", "app_update", "esp_timer" ],
+            "reqs": [ "wifi", "web", "led_ctrl", "beep_ctrl", "sr04_ctrl", "task_manager", "task_worker", "tasker", "app_update", "spiffs", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/root/progarms/ovs/build/esp-idf/main/libmain.a",
-            "sources": [ "/root/progarms/ovs/main/main.c", "/root/progarms/ovs/modules/web/mongoose/mongoose.c" ],
-            "include_dirs": [ "../modules/logger", ".", "../modules/web/mongoose", "../vue_web" ]
+            "sources": [ "/root/progarms/ovs/main/main.c", "/root/progarms/ovs/modules/web/mongoose/mongoose.c", "/root/progarms/ovs/modules/web/web_data/web_data.c" ],
+            "include_dirs": [ "../modules/logger", ".", "../modules/web/mongoose", "../modules/web/web_data", "../modules/devices_ctrl/wifi", "../API/tasker", "../modules/tasker/task_manager", "../modules/tasker/task_worker" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2180,13 +2180,13 @@
             "dir": "/root/progarms/ovs/modules/web",
             "type": "LIBRARY",
             "lib": "__idf_web",
-            "reqs": [ "wifi" ],
+            "reqs": [ "wifi", "spiffs", "app_update", "esp_timer", "freertos" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/root/progarms/ovs/build/esp-idf/web/libweb.a",
-            "sources": [ "/root/progarms/ovs/modules/web/web.c" ],
-            "include_dirs": [ "." ]
+            "sources": [ "/root/progarms/ovs/modules/web/web.c", "/root/progarms/ovs/modules/web/mongoose/mongoose.c", "/root/progarms/ovs/modules/web/web_data/web_data.c" ],
+            "include_dirs": [ ".", "web_data", "mongoose" ]
         },
         "wifi": {
             "alias": "idf::wifi",
@@ -4049,11 +4049,11 @@
             "dir": "/root/progarms/ovs/main",
             "source": "project_components",
             "lib": "__idf_main",
-            "reqs": [ "wifi", "web", "led_ctrl", "beep_ctrl", "sr04_ctrl", "task_manager", "task_worker", "tasker", "app_update", "esp_timer" ],
+            "reqs": [ "wifi", "web", "led_ctrl", "beep_ctrl", "sr04_ctrl", "task_manager", "task_worker", "tasker", "app_update", "spiffs", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "../modules/logger", ".", "../modules/web/mongoose", "../vue_web" ]
+            "include_dirs": [ "../modules/logger", ".", "../modules/web/mongoose", "../modules/web/web_data", "../modules/devices_ctrl/wifi", "../API/tasker", "../modules/tasker/task_manager", "../modules/tasker/task_worker" ]
         },
         "led_ctrl": {
             "alias": "idf::led_ctrl",
@@ -4166,11 +4166,11 @@
             "dir": "/root/progarms/ovs/modules/web",
             "source": "project_extra_components",
             "lib": "__idf_web",
-            "reqs": [ "wifi" ],
+            "reqs": [ "wifi", "spiffs", "app_update", "esp_timer", "freertos" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "." ]
+            "include_dirs": [ ".", "web_data", "mongoose" ]
         },
         "tasker": {
             "alias": "idf::tasker",

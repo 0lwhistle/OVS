@@ -210,6 +210,7 @@ $<TARGET_FILE:idf::spiffs>
 $<TARGET_FILE:idf::wifi>
 $<TARGET_FILE:idf::web>
 $<TARGET_FILE:__idf_wifi>
+$<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:idf::gpio_ctrl>
 $<TARGET_FILE:idf::led_ctrl>
 $<TARGET_FILE:__idf_gpio_ctrl>

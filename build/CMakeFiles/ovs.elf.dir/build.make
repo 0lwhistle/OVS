@@ -232,6 +232,7 @@ ovs.elf: esp-idf/esp_hal_sd/libesp_hal_sd.a
 ovs.elf: esp-idf/wear_levelling/libwear_levelling.a
 ovs.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
 ovs.elf: esp-idf/web/libweb.a
+ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/wifi/libwifi.a
 ovs.elf: esp-idf/led_ctrl/libled_ctrl.a
 ovs.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a

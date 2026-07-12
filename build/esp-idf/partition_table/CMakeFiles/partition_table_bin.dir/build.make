@@ -69,10 +69,10 @@ include esp-idf/partition_table/CMakeFiles/partition_table_bin.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 
-partition_table/partition-table.bin: /root/esp-idf/esp-idf-v6.0.1/components/partition_table/partitions_singleapp.csv
+partition_table/partition-table.bin: /root/progarms/ovs/partitions.csv
 partition_table/partition-table.bin: /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../partition_table/partition-table.bin"
-	cd /root/progarms/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/esp-idf/esp-idf-v6.0.1/components/partition_table/partitions_singleapp.csv /root/progarms/ovs/build/partition_table/partition-table.bin
+	cd /root/progarms/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/progarms/ovs/partitions.csv /root/progarms/ovs/build/partition_table/partition-table.bin
 	cd /root/progarms/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /root/progarms/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 	cd /root/progarms/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 16MB -- /root/progarms/ovs/build/partition_table/partition-table.bin

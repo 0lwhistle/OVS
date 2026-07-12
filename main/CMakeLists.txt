@@ -1,11 +1,16 @@
 idf_component_register(SRCS 
 	"main.c"
 	"../modules/web/mongoose/mongoose.c"
+	"../modules/web/web_data/web_data.c"
     INCLUDE_DIRS 
 	"../modules/logger"
 	"."
 	"../modules/web/mongoose"
-	"../vue_web"                   # ← Vue 头文件路径
+	"../modules/web/web_data"
+	"../modules/devices_ctrl/wifi"
+	"../API/tasker"
+	"../modules/tasker/task_manager"
+	"../modules/tasker/task_worker"
 	REQUIRES 
 	wifi web 
 	led_ctrl 
@@ -15,6 +20,7 @@ idf_component_register(SRCS
 	task_worker
 	tasker
 	app_update
+	spiffs
 	esp_timer
 	)
 

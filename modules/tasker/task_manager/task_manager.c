@@ -54,6 +54,7 @@ struct task_node* task_init(const int timeout,
 	
 	if (!fn){
 		ESP_LOGE(TASK_MANAGER_TAG, "no task function.");
+		free(node);
 		return NULL;
 	}
 

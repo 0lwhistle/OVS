@@ -1,8 +1,30 @@
 #include "tasker.h"
+#include "web.h"
+#include "wifi.h"
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include "nvs_flash.h"
 
 static const char* TAG = "[MAIN_TEST]";
+
+// Web 服务器任务函数
+static void web_server_task(void *arg) {
+    // 1. 初始化 SPIFFS 并解压 web 资源
+    if (web_spiffs_init() != 0) {
+        ESP_LOGE(TAG, "SPIFFS init failed, web server will not start");
+        vTaskDelete(NULL);
+        return;
+    }
+
+    // 2. 启动 Web 服务器（内部轮询循环，不会返回）
+    web_server_start();
+
+    vTaskDelete(NULL);
+}
 
 /* ==================== 测试辅助结构 ==================== */
 struct test_ctx {
@@ -210,7 +232,12 @@ void test_multi_task(void) {
 
         struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_pri, tc);
         if (node) {
-            tasker_enqueue(node);
+            int ret = tasker_enqueue(node);
+            if (ret != TASK_OK) {
+                free(node);
+                free(tc);
+                free(name_dup);
+            }
         }
     }
 }
@@ -233,6 +260,7 @@ void test_sched_full(void) {
             int ret = tasker_enqueue(node);
             if (ret == TASK_QUEUE_FULL) {
                 printf("[test_sched_full] queue full at %d\n", i);
+                free(node);
                 free(tc);
                 free(name_dup);
                 break;
@@ -339,6 +367,7 @@ void stress_bulk_immediate(void) {
             int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -376,6 +405,7 @@ void stress_mixed_levels(void) {
             int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -403,6 +433,7 @@ void stress_burst_submit(void) {
                 int ret = tasker_enqueue(node);
                 if (ret == TASK_OK) success++;
                 else {
+                    free(node);
                     free(tc);
                     free(name_dup);
                 }
@@ -433,6 +464,7 @@ void stress_periodic_storm(void) {
             int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -464,6 +496,7 @@ void stress_cancel_storm(void) {
                     tasker_cancel_by_name(name_dup);
                 }
             } else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -491,6 +524,7 @@ void stress_timeout_storm(void) {
             int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -523,12 +557,14 @@ void stress_sched_full_retry(void) {
                 ret = tasker_enqueue(node);
                 if (ret == TASK_OK) success++;
                 else {
+                    free(node);
                     free(tc);
                     free(name_dup);
                 }
             } else if (ret == TASK_OK) {
                 success++;
             } else {
+                free(node);
                 free(tc);
                 free(name_dup);
             }
@@ -559,8 +595,20 @@ static int g_test_total = 0;
 void app_main(void)
 {
     printf("\n========================================\n");
-    printf("  TASKER FULL TEST SUITE START\n");
+    printf("  ESP32-S3 SYSTEM START\n");
     printf("========================================\n");
+
+    // 初始化 NVS（Wi-Fi 驱动依赖 NVS 存储配置）
+    esp_err_t nvs_ret = nvs_flash_init();
+    if (nvs_ret == ESP_ERR_NVS_NO_FREE_PAGES || nvs_ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        nvs_ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(nvs_ret);
+    printf("NVS initialized\n");
+
+    // 初始化 Wi-Fi（AP+STA 共存模式）
+    wifi_init();
 
     // 初始化 tasker 系统
     int ret = tasker_init();
@@ -568,6 +616,28 @@ void app_main(void)
         printf("tasker_init failed: %d\n", ret);
         return;
     }
+
+    // 启动 Web 服务器任务（SPIFFS 初始化 + Mongoose）
+    // 注意：web_server_task 内部会轮询，不会返回，所以用独立任务运行
+    TaskHandle_t web_task_handle = NULL;
+    xTaskCreatePinnedToCore(
+        web_server_task,
+        "web_server",
+        8192,
+        NULL,
+        5,
+        &web_task_handle,
+        1  // 在 CPU1 上运行
+    );
+    if (web_task_handle == NULL) {
+        printf("Failed to create web server task\n");
+    } else {
+        printf("Web server task created on CPU1\n");
+    }
+
+    printf("\n========================================\n");
+    printf("  TASKER FULL TEST SUITE START\n");
+    printf("========================================\n");
 
     // ===== 基础功能测试 =====
     printf("\n");

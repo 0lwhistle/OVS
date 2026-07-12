@@ -100,6 +100,11 @@ esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj: e
   /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h
 
+esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h \
+  ../modules/web/web_data/web_data.c \
+  ../modules/web/web_data/web_data.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h
+
 esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h \
   esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
@@ -259,8 +264,40 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
-  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h
+  ../modules/web/web.h \
+  ../modules/devices_ctrl/wifi/wifi.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_default.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_partition/include/esp_partition.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev/include/esp_blockdev.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h
 
+
+/root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h:
 
@@ -362,6 +399,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/poll.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_default.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/include/arch/sys_arch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
@@ -375,6 +414,8 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/limits.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/select.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
 
@@ -398,6 +439,8 @@ config/sdkconfig.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/sockets.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/ioctl.h:
@@ -416,6 +459,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/include/netdb.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/app_update/include/esp_ota_ops.h:
@@ -423,6 +468,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_flash_partitions.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/limits.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/errno.h:
 
@@ -443,6 +490,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/include/lwipopts.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_sigset.h:
+
+../modules/web/web_data/web_data.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_time.h:
 
@@ -488,9 +537,17 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/ctype.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/dirent.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/mem.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
 
@@ -500,7 +557,11 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/sched.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/types.h:
 
@@ -515,6 +576,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/fcntl.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/fcntl.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h:
 
@@ -531,6 +594,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/debug.h:
 
@@ -600,6 +665,12 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h:
 
+../modules/web/web_data/web_data.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h:
+
+esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
@@ -616,6 +687,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/errno.h:
@@ -628,6 +701,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h:
 
+../modules/web/web.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/list.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev/include/esp_blockdev.h:
@@ -636,16 +711,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
+../modules/devices_ctrl/wifi/wifi.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
-
-esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:
-
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h:

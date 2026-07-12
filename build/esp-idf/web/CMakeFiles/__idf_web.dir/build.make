@@ -83,17 +83,49 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/web.c.s"
 	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/web.c -o CMakeFiles/__idf_web.dir/web.c.s
 
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: ../modules/web/mongoose/mongoose.c
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -MF CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj.d -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -c /root/progarms/ovs/modules/web/mongoose/mongoose.c
+
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i"
+	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/web/mongoose/mongoose.c > CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i
+
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s"
+	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/mongoose/mongoose.c -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s
+
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web_data/web_data.c
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -MF CMakeFiles/__idf_web.dir/web_data/web_data.c.obj.d -o CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -c /root/progarms/ovs/modules/web/web_data/web_data.c
+
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/web_data/web_data.c.i"
+	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/web/web_data/web_data.c > CMakeFiles/__idf_web.dir/web_data/web_data.c.i
+
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/web_data/web_data.c.s"
+	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/web_data/web_data.c -o CMakeFiles/__idf_web.dir/web_data/web_data.c.s
+
 # Object files for target __idf_web
 __idf_web_OBJECTS = \
-"CMakeFiles/__idf_web.dir/web.c.obj"
+"CMakeFiles/__idf_web.dir/web.c.obj" \
+"CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj" \
+"CMakeFiles/__idf_web.dir/web_data/web_data.c.obj"
 
 # External object files for target __idf_web
 __idf_web_EXTERNAL_OBJECTS =
 
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj
+esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj
+esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/build.make
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libweb.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libweb.a"
 	cd /root/progarms/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -P CMakeFiles/__idf_web.dir/cmake_clean_target.cmake
 	cd /root/progarms/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_web.dir/link.txt --verbose=$(VERBOSE)
 
