@@ -489,19 +489,8 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 	for (int i = 0; i < size; ++i){
 		if (worker_queue->queue[i].cancel || worker_queue->queue[i].done){
 
-			worker_queue->queue[i].cancel = node->cancel;
-			worker_queue->queue[i].ctx = node->ctx;
-			worker_queue->queue[i].done = node->done;
-			worker_queue->queue[i].fn = node->fn;
-			worker_queue->queue[i].pri = node->pri;
-			worker_queue->queue[i].level = node->level;
-			worker_queue->queue[i].timeout = node->timeout;
-			worker_queue->queue[i].is_timeout = node->is_timeout;
-			strncpy(worker_queue->queue[i].name, node->name, sizeof(worker_queue->queue[i].name) - 1);
-			worker_queue->queue[i].name[sizeof(worker_queue->queue[i].name) - 1] = '\0';
-			worker_queue->queue[i].inject_time = node->inject_time;
-			worker_queue->queue[i].run_cnt = node->run_cnt;
-			worker_queue->queue[i].period = node->period;
+			// 结构体浅拷贝（所有字段都是值类型，无动态指针，安全高效）
+			worker_queue->queue[i] = *node;
 			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", worker_queue->queue[i].name);
 
 			worker_queue->is_empty = 0;
@@ -534,19 +523,8 @@ static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_nod
 	for (int i = 0; i < size; ++i){
 		if (worker_queue->queue[i].cancel || worker_queue->queue[i].done){
 
-			worker_queue->queue[i].cancel = node->cancel;
-			worker_queue->queue[i].ctx = node->ctx;
-			worker_queue->queue[i].done = node->done;
-			worker_queue->queue[i].fn = node->fn;
-			worker_queue->queue[i].pri = node->pri;
-			worker_queue->queue[i].level = node->level;
-			worker_queue->queue[i].timeout = node->timeout;
-			worker_queue->queue[i].is_timeout = node->is_timeout;
-			strncpy(worker_queue->queue[i].name, node->name, sizeof(worker_queue->queue[i].name) - 1);
-			worker_queue->queue[i].name[sizeof(worker_queue->queue[i].name) - 1] = '\0';
-			worker_queue->queue[i].inject_time = node->inject_time;
-			worker_queue->queue[i].run_cnt = node->run_cnt;
-			worker_queue->queue[i].period = node->period;
+			// 结构体浅拷贝（所有字段都是值类型，无动态指针，安全高效）
+			worker_queue->queue[i] = *node;
 			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", worker_queue->queue[i].name);
 
 			worker_queue->is_empty = 0;
@@ -585,23 +563,8 @@ static inline int enqueue_switcher(struct task_node* node){
 static inline void task_expire(struct task_node* des, struct task_node* src){
 	pthread_mutex_lock(&(s_task_worker_ctx.s_dispatcher->mtx));
 
-	des->cancel = src->cancel;
-	des->ctx = src->ctx;
-	des->done = src->done;
-	des->fn = src->fn;
-	des->is_timeout = src->is_timeout;
-	des->level = src->level;
-	strncpy(des->name, src->name, sizeof(des->name) - 1);
-	des->name[sizeof(des->name) - 1] = '\0';
-	des->pri = src->pri;
-	des->timeout = src->timeout;
-	des->inject_time = src->inject_time;
-	if (src->period == 0)
-		des->run_cnt = src->run_cnt;
-	else
-		des->period = src->period;
-	
-
+	// 结构体浅拷贝（所有字段都是值类型，无动态指针，安全高效）
+	*des = *src;
 
 	task_cancel(src);
 

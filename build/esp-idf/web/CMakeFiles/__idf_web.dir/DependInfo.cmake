@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/progarms/ovs/modules/web/mongoose/mongoose.c" "esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj" "gcc" "esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj.d"
   "/root/progarms/ovs/modules/web/web.c" "esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj" "gcc" "esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj.d"
+  "/root/progarms/ovs/modules/web/web_data/web_data.c" "esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj" "gcc" "esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -27,6 +29,9 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/wifi/CMakeFiles/__idf_wifi.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"
@@ -40,7 +45,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/DependInfo.cmake"
-  "/root/progarms/ovs/build/esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/DependInfo.cmake"
@@ -52,7 +56,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/DependInfo.cmake"
-  "/root/progarms/ovs/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/DependInfo.cmake"
@@ -66,9 +69,9 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/DependInfo.cmake"
-  "/root/progarms/ovs/build/esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/DependInfo.cmake"

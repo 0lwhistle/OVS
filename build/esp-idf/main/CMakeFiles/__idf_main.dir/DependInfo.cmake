@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/progarms/ovs/modules/web/mongoose/mongoose.c" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj.d"
   "/root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj.d"
+  "/root/progarms/ovs/modules/web/web_data/web_data.c" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj.d"
+  "/root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj.d"
   "/root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.c" "esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch.d"
   "/root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h" "esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch.d"
   "/root/progarms/ovs/main/main.c" "esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d"
@@ -40,6 +42,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/DependInfo.cmake"

@@ -175,6 +175,30 @@ __idf_web/fast:
 	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/build
 .PHONY : __idf_web/fast
 
+mongoose/mongoose.obj: mongoose/mongoose.c.obj
+.PHONY : mongoose/mongoose.obj
+
+# target to build an object file
+mongoose/mongoose.c.obj:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj
+.PHONY : mongoose/mongoose.c.obj
+
+mongoose/mongoose.i: mongoose/mongoose.c.i
+.PHONY : mongoose/mongoose.i
+
+# target to preprocess a source file
+mongoose/mongoose.c.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i
+.PHONY : mongoose/mongoose.c.i
+
+mongoose/mongoose.s: mongoose/mongoose.c.s
+.PHONY : mongoose/mongoose.s
+
+# target to generate assembly for a file
+mongoose/mongoose.c.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s
+.PHONY : mongoose/mongoose.c.s
+
 web.obj: web.c.obj
 .PHONY : web.obj
 
@@ -199,6 +223,30 @@ web.c.s:
 	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/web.c.s
 .PHONY : web.c.s
 
+web_data/web_data.obj: web_data/web_data.c.obj
+.PHONY : web_data/web_data.obj
+
+# target to build an object file
+web_data/web_data.c.obj:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj
+.PHONY : web_data/web_data.c.obj
+
+web_data/web_data.i: web_data/web_data.c.i
+.PHONY : web_data/web_data.i
+
+# target to preprocess a source file
+web_data/web_data.c.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.i
+.PHONY : web_data/web_data.c.i
+
+web_data/web_data.s: web_data/web_data.c.s
+.PHONY : web_data/web_data.s
+
+# target to generate assembly for a file
+web_data/web_data.c.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.s
+.PHONY : web_data/web_data.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,9 +260,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_web"
+	@echo "... mongoose/mongoose.obj"
+	@echo "... mongoose/mongoose.i"
+	@echo "... mongoose/mongoose.s"
 	@echo "... web.obj"
 	@echo "... web.i"
 	@echo "... web.s"
+	@echo "... web_data/web_data.obj"
+	@echo "... web_data/web_data.i"
+	@echo "... web_data/web_data.s"
 .PHONY : help
 
 

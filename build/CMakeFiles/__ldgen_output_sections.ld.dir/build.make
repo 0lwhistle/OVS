@@ -345,6 +345,7 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/web/libweb.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/gpio_ctrl/libgpio_ctrl.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/led_ctrl/libled_ctrl.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/gpio_ctrl/libgpio_ctrl.a

@@ -65,8 +65,8 @@ void wifi_init(void) {
     esp_event_loop_create_default();
 
     // 2. 创建 STA 和 AP 网络接口
-    esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
-    esp_netif_t *ap_netif  = esp_netif_create_default_wifi_ap();
+    esp_netif_create_default_wifi_sta();
+    esp_netif_create_default_wifi_ap();
 
     // 3. 初始化 Wi-Fi 驱动
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();

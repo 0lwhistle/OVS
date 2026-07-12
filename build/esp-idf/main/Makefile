@@ -199,6 +199,30 @@ __/modules/web/mongoose/mongoose.c.s:
 	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s
 .PHONY : __/modules/web/mongoose/mongoose.c.s
 
+__/modules/web/web_data/web_data.obj: __/modules/web/web_data/web_data.c.obj
+.PHONY : __/modules/web/web_data/web_data.obj
+
+# target to build an object file
+__/modules/web/web_data/web_data.c.obj:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj
+.PHONY : __/modules/web/web_data/web_data.c.obj
+
+__/modules/web/web_data/web_data.i: __/modules/web/web_data/web_data.c.i
+.PHONY : __/modules/web/web_data/web_data.i
+
+# target to preprocess a source file
+__/modules/web/web_data/web_data.c.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.i
+.PHONY : __/modules/web/web_data/web_data.c.i
+
+__/modules/web/web_data/web_data.s: __/modules/web/web_data/web_data.c.s
+.PHONY : __/modules/web/web_data/web_data.s
+
+# target to generate assembly for a file
+__/modules/web/web_data/web_data.c.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.s
+.PHONY : __/modules/web/web_data/web_data.c.s
+
 # target to build an object file
 cmake_pch.h.gch:
 	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
@@ -254,6 +278,9 @@ help:
 	@echo "... __/modules/web/mongoose/mongoose.obj"
 	@echo "... __/modules/web/mongoose/mongoose.i"
 	@echo "... __/modules/web/mongoose/mongoose.s"
+	@echo "... __/modules/web/web_data/web_data.obj"
+	@echo "... __/modules/web/web_data/web_data.i"
+	@echo "... __/modules/web/web_data/web_data.s"
 	@echo "... cmake_pch.h.gch"
 	@echo "... cmake_pch.h.i"
 	@echo "... cmake_pch.h.s"
