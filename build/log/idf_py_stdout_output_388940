@@ -1101,4 +1101,158 @@ PASS
 [task_periodic] tick 191
 [32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
 [32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
-[task_periodic
+[task_periodic] tick 192
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 193
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 194
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 195
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 196
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 197
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 198
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 199
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 200
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 201
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 202
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 203
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 204
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 205
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 206
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 207
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 208
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 209
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 210
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 211
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 212
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 213
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 214
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 215
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 216
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 217
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 218
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 219
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 220
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 221
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 222
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 223
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 224
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 225
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 226
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 227
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 228
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 229
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 230
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 231
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 232
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 233
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 234
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 235
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 236
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 237
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 238
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 239
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 240
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 241
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 242
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[32m[TASK_WORKER]: task: test_periodic enqueue successfully.[0m
+[task_periodic] tick 243
+[32m[TASK_WORKER]: 

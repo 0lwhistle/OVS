@@ -130,6 +130,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/logger/CMakeFiles/__idf_logger.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/DependInfo.cmake"

@@ -221,9 +221,11 @@
 /root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a
 /root/progarms/ovs/build/esp-idf/task_manager/libtask_manager.a
 /root/progarms/ovs/build/esp-idf/logger/liblogger.a
+/root/progarms/ovs/build/esp-idf/tasker/libtasker.a
+/root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a
 /root/progarms/ovs/build/esp-idf/main/libmain.a
 /root/progarms/ovs/build/esp-idf/web/libweb.a
 /root/progarms/ovs/build/esp-idf/led_ctrl/libled_ctrl.a
 /root/progarms/ovs/build/esp-idf/beep_ctrl/libbeep_ctrl.a
 /root/progarms/ovs/build/esp-idf/sr04_ctrl/libsr04_ctrl.a
-/root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a
+/root/progarms/ovs/build/esp-idf/tasker/libtasker.a

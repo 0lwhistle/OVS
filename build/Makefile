@@ -2385,6 +2385,19 @@ __idf_task_worker/fast:
 .PHONY : __idf_task_worker/fast
 
 #=============================================================================
+# Target rules for targets named __idf_tasker
+
+# Build rule for target.
+__idf_tasker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_tasker
+.PHONY : __idf_tasker
+
+# fast build rule for target.
+__idf_tasker/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build.make esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build
+.PHONY : __idf_tasker/fast
+
+#=============================================================================
 # Target rules for targets named __idf_main
 
 # Build rule for target.
@@ -2590,6 +2603,7 @@ help:
 	@echo "... __idf_sr04_ctrl"
 	@echo "... __idf_task_manager"
 	@echo "... __idf_task_worker"
+	@echo "... __idf_tasker"
 	@echo "... __idf_tcp_transport"
 	@echo "... __idf_unity"
 	@echo "... __idf_vfs"

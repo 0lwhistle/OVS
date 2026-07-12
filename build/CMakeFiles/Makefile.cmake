@@ -253,6 +253,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/confgen.py"
   "/root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/config.env.in"
   "../.git/HEAD"
+  "../API/tasker/CMakeLists.txt"
   "../CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeASMCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
@@ -527,6 +528,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/task_manager/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/logger/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/task_worker/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/tasker/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/main/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -703,5 +705,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/DependInfo.cmake"
   "esp-idf/logger/CMakeFiles/__idf_logger.dir/DependInfo.cmake"
   "esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/DependInfo.cmake"
+  "esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
   )

@@ -13,6 +13,7 @@ idf_component_register(SRCS
 	sr04_ctrl 
 	task_manager
 	task_worker
+	tasker
 	app_update
 	esp_timer
 	)
