@@ -38,6 +38,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/sr04_ctrl/CMakeFiles/__idf_sr04_ctrl.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/DependInfo.cmake"

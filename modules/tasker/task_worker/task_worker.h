@@ -16,7 +16,7 @@
 #include "logger.h"
 
 extern const char* TASK_WORKER_TAG;
-static int worker_init_flag = 0;
+extern int worker_init_flag;
 
 struct task_worker_ctx{
 	struct task_worker* little_worker;
@@ -64,36 +64,8 @@ void worker_do_handler(struct task_worker* worker);
 esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
 
 int worker_task_enqueue(struct task_worker* worker, struct task_node* node);
-static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_node* node);
 void worker_task_done(struct task_worker* worker, struct task_node* node);
 void worker_task_cancel(struct task_worker* worker, struct task_node* node);
 
-// API
-int shched_enqueue(struct task_node* node);
-void shched_cancel_by_node(struct task_node* node);
-void shched_cancel_by_name(const char* name);
-int shched_is_full(void);
-int shched_is_empty(void);
 
-struct task_node* sched_task_init_li(
-									const int period, 
-									const int run_cnt, 
-									const char* name, 
-									task_fn fn, void* ctx
-								);
-
-struct task_node* sched_task_init_mi( 
-									const int period, 
-									const int run_cnt, 
-									const char* name, 
-									task_fn fn, void* ctx
-								);
-
-struct task_node* sched_task_init_lo(
-									const int timeout,
-									const int period, 
-									const int run_cnt, 
-									const char* name, 
-									task_fn fn, void* ctx
-								);
 #endif // TASK_WORKER

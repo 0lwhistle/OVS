@@ -3,5 +3,7 @@ idf_component_register(
     INCLUDE_DIRS "."
     REQUIRES 
 	freertos
-	tasker_worker
+	task_worker
+	task_manager
+	logger
 )

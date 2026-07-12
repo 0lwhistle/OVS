@@ -209,6 +209,7 @@ ovs.elf: esp-idf/sr04_ctrl/libsr04_ctrl.a
 ovs.elf: esp-idf/task_manager/libtask_manager.a
 ovs.elf: esp-idf/logger/liblogger.a
 ovs.elf: esp-idf/task_worker/libtask_worker.a
+ovs.elf: esp-idf/tasker/libtasker.a
 ovs.elf: esp-idf/main/libmain.a
 ovs.elf: esp-idf/unity/libunity.a
 ovs.elf: esp-idf/esp_hal_cam/libesp_hal_cam.a
@@ -236,6 +237,7 @@ ovs.elf: esp-idf/led_ctrl/libled_ctrl.a
 ovs.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a
 ovs.elf: esp-idf/beep_ctrl/libbeep_ctrl.a
 ovs.elf: esp-idf/sr04_ctrl/libsr04_ctrl.a
+ovs.elf: esp-idf/tasker/libtasker.a
 ovs.elf: esp-idf/task_worker/libtask_worker.a
 ovs.elf: esp-idf/task_manager/libtask_manager.a
 ovs.elf: esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a

@@ -1177,6 +1177,13 @@
 /root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/install.dir
 /root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/install/local.dir
 /root/progarms/ovs/build/esp-idf/task_worker/CMakeFiles/install/strip.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/edit_cache.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/rebuild_cache.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/list_install_components.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/install.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/install/local.dir
+/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/install/strip.dir
 /root/progarms/ovs/build/esp-idf/main/CMakeFiles/__idf_main.dir
 /root/progarms/ovs/build/esp-idf/main/CMakeFiles/edit_cache.dir
 /root/progarms/ovs/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

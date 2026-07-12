@@ -1,5 +1,4 @@
-#include "task_manager.h"
-#include "task_worker.h"
+#include "tasker.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -109,9 +108,9 @@ void test_basic_immediate(void) {
     tc->id = 1;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_li(0, 10, "test_immediate", task_count, tc);
+    struct task_node* node = tasker_task_init_li(0, 10, "test_immediate", task_count, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -122,9 +121,9 @@ void test_delayed_schedule(void) {
     tc->id = 2;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_mi(100, 5, "test_delayed", task_count, tc);
+    struct task_node* node = tasker_task_init_mi(100, 5, "test_delayed", task_count, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -135,9 +134,9 @@ void test_periodic_task(void) {
     tc->id = 3;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_mi(500, -1, "test_periodic", task_periodic, tc);
+    struct task_node* node = tasker_task_init_mi(500, -1, "test_periodic", task_periodic, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -148,9 +147,9 @@ void test_task_fail(void) {
     tc->id = 4;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_li(0, 1, "test_fail", task_fail, tc);
+    struct task_node* node = tasker_task_init_li(0, 1, "test_fail", task_fail, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -161,9 +160,9 @@ void test_timeout_detection(void) {
     tc->id = 5;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_li(0, 1, "test_timeout", task_timeout, tc);
+    struct task_node* node = tasker_task_init_li(0, 1, "test_timeout", task_timeout, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -174,9 +173,9 @@ void test_lots_level(void) {
     tc->id = 6;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_lo(5000, 0, 3, "test_lots", task_slow, tc);
+    struct task_node* node = tasker_task_init_lo(5000, 0, 3, "test_lots", task_slow, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
@@ -187,11 +186,11 @@ void test_cancel_task(void) {
     tc->id = 7;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_li(0, 10, "test_cancel", task_to_cancel, tc);
+    struct task_node* node = tasker_task_init_li(0, 10, "test_cancel", task_to_cancel, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
         // 立即取消
-        shched_cancel_by_name("test_cancel");
+        tasker_cancel_by_name("test_cancel");
         printf("[test_cancel] task cancelled\n");
     }
 }
@@ -209,9 +208,9 @@ void test_multi_task(void) {
         // 需要持久化 name，用 strdup
         char* name_dup = strdup(name);
 
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_pri, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_pri, tc);
         if (node) {
-            shched_enqueue(node);
+            tasker_enqueue(node);
         }
     }
 }
@@ -229,9 +228,9 @@ void test_sched_full(void) {
         snprintf(name, sizeof(name), "test_full_%d", i);
         char* name_dup = strdup(name);
 
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_pri, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_pri, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_QUEUE_FULL) {
                 printf("[test_sched_full] queue full at %d\n", i);
                 free(tc);
@@ -252,31 +251,31 @@ void test_level_upgrade(void) {
     tc->count = 0;
 
     // little 级别，默认超时50ms，任务跑200ms，会超时触发级别升级
-    struct task_node* node = sched_task_init_li(0, 3, "test_level_up", task_timeout, tc);
+    struct task_node* node = tasker_task_init_li(0, 3, "test_level_up", task_timeout, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
     }
 }
 
 // 测试11: 取消不存在的任务（边界测试）
 void test_cancel_nonexist(void) {
     printf("\n========== Test 11: Cancel Non-existent Task ==========\n");
-    shched_cancel_by_name("nonexistent_task");
+    tasker_cancel_by_name("nonexistent_task");
     printf("[test_cancel_nonexist] cancel non-existent task, no crash\n");
 }
 
 // 测试12: 空参数测试
 void test_null_param(void) {
     printf("\n========== Test 12: Null Parameter ==========\n");
-    int ret = shched_enqueue(NULL);
-    printf("[test_null_param] shched_enqueue(NULL) = %d\n", ret);
+    int ret = tasker_enqueue(NULL);
+    printf("[test_null_param] tasker_enqueue(NULL) = %d\n", ret);
 }
 
 // 测试13: 检查调度表状态
 void test_check_status(void) {
     printf("\n========== Test 13: Check Status ==========\n");
     printf("[test_check_status] is_full = %d, is_empty = %d\n", 
-           shched_is_full(), shched_is_empty());
+           tasker_is_full(), tasker_is_empty());
 }
 
 // 测试14: 周期任务取消
@@ -286,12 +285,12 @@ void test_cancel_periodic(void) {
     tc->id = 14;
     tc->count = 0;
 
-    struct task_node* node = sched_task_init_mi(200, -1, "test_cancel_periodic", task_periodic, tc);
+    struct task_node* node = tasker_task_init_mi(200, -1, "test_cancel_periodic", task_periodic, tc);
     if (node) {
-        shched_enqueue(node);
+        tasker_enqueue(node);
         // 等1秒后取消
         usleep(1000 * 1000);
-        shched_cancel_by_name("test_cancel_periodic");
+        tasker_cancel_by_name("test_cancel_periodic");
         printf("[test_cancel_periodic] periodic task cancelled after 1s, ran %d times\n", tc->count);
     }
 }
@@ -303,20 +302,20 @@ void test_priority_mix(void) {
     struct test_ctx* tc1 = malloc(sizeof(struct test_ctx));
     tc1->id = 301;
     tc1->count = 0;
-    struct task_node* node1 = sched_task_init_li(0, 1, "test_pri_low", task_pri, tc1);
+    struct task_node* node1 = tasker_task_init_li(0, 1, "test_pri_low", task_pri, tc1);
     if (node1) {
         node1->pri = last;
-        shched_enqueue(node1);
+        tasker_enqueue(node1);
     }
 
     // 再提交一个 first 优先级的
     struct test_ctx* tc2 = malloc(sizeof(struct test_ctx));
     tc2->id = 302;
     tc2->count = 0;
-    struct task_node* node2 = sched_task_init_li(0, 1, "test_pri_high", task_pri, tc2);
+    struct task_node* node2 = tasker_task_init_li(0, 1, "test_pri_high", task_pri, tc2);
     if (node2) {
         node2->pri = first;
-        shched_enqueue(node2);
+        tasker_enqueue(node2);
     }
 }
 
@@ -335,9 +334,9 @@ void stress_bulk_immediate(void) {
         snprintf(name, sizeof(name), "stress_bulk_%d", i);
         char* name_dup = strdup(name);
 
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_count, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
                 free(tc);
@@ -364,17 +363,17 @@ void stress_mixed_levels(void) {
         struct task_node* node;
         if (i < 10) {
             // little
-            node = sched_task_init_li(0, 1, name_dup, task_cpu, tc);
+            node = tasker_task_init_li(0, 1, name_dup, task_cpu, tc);
         } else if (i < 20) {
             // middle
-            node = sched_task_init_mi(0, 1, name_dup, task_mem, tc);
+            node = tasker_task_init_mi(0, 1, name_dup, task_mem, tc);
         } else {
             // lots
-            node = sched_task_init_lo(5000, 0, 1, name_dup, task_slow, tc);
+            node = tasker_task_init_lo(5000, 0, 1, name_dup, task_slow, tc);
         }
 
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
                 free(tc);
@@ -399,9 +398,9 @@ void stress_burst_submit(void) {
             snprintf(name, sizeof(name), "stress_burst_%d_%d", burst, i);
             char* name_dup = strdup(name);
 
-            struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+            struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_count, tc);
             if (node) {
-                int ret = shched_enqueue(node);
+                int ret = tasker_enqueue(node);
                 if (ret == TASK_OK) success++;
                 else {
                     free(tc);
@@ -429,9 +428,9 @@ void stress_periodic_storm(void) {
 
         // 不同周期：100ms ~ 1000ms
         int period = 100 + i * 100;
-        struct task_node* node = sched_task_init_mi(period, -1, name_dup, task_periodic, tc);
+        struct task_node* node = tasker_task_init_mi(period, -1, name_dup, task_periodic, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
                 free(tc);
@@ -455,14 +454,14 @@ void stress_cancel_storm(void) {
         snprintf(name, sizeof(name), "stress_cancel_%d", i);
         char* name_dup = strdup(name);
 
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_count, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_OK) {
                 success++;
                 // 立即取消一半
                 if (i % 2 == 0) {
-                    shched_cancel_by_name(name_dup);
+                    tasker_cancel_by_name(name_dup);
                 }
             } else {
                 free(tc);
@@ -487,9 +486,9 @@ void stress_timeout_storm(void) {
         char* name_dup = strdup(name);
 
         // little 级别，默认超时50ms，任务跑200ms，必然超时
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_timeout, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_timeout, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_OK) success++;
             else {
                 free(tc);
@@ -514,14 +513,14 @@ void stress_sched_full_retry(void) {
         snprintf(name, sizeof(name), "stress_retry_%d", i);
         char* name_dup = strdup(name);
 
-        struct task_node* node = sched_task_init_li(0, 1, name_dup, task_count, tc);
+        struct task_node* node = tasker_task_init_li(0, 1, name_dup, task_count, tc);
         if (node) {
-            int ret = shched_enqueue(node);
+            int ret = tasker_enqueue(node);
             if (ret == TASK_QUEUE_FULL) {
                 full_count++;
                 // 等一会重试
                 usleep(50 * 1000);
-                ret = shched_enqueue(node);
+                ret = tasker_enqueue(node);
                 if (ret == TASK_OK) success++;
                 else {
                     free(tc);
@@ -563,10 +562,10 @@ void app_main(void)
     printf("  TASKER FULL TEST SUITE START\n");
     printf("========================================\n");
 
-    // 初始化 worker 系统
-    int ret = worker_init();
+    // 初始化 tasker 系统
+    int ret = tasker_init();
     if (ret != 0) {
-        printf("worker_init failed: %d\n", ret);
+        printf("tasker_init failed: %d\n", ret);
         return;
     }
 

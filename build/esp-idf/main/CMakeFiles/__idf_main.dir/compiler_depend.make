@@ -216,6 +216,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch: esp-idf/main/CMakeFiles/
 
 esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h \
   ../main/main.c \
+  ../API/tasker/tasker.h \
   ../modules/tasker/task_manager/task_manager.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/pthread.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \
@@ -258,14 +259,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
-  ../modules/tasker/task_worker/task_worker.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
-  ../modules/logger/logger.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h
 
-
-../modules/tasker/task_worker/task_worker.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h:
 
@@ -278,6 +273,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/pthread.h:
 
 ../modules/tasker/task_manager/task_manager.h:
+
+../API/tasker/tasker.h:
 
 ../main/main.c:
 
@@ -322,8 +319,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h:
-
-../modules/logger/logger.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h:
 
