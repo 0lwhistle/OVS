@@ -115,8 +115,15 @@ esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj: ../modules/devices_ctrl/wifi/
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h
 
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h:
 
@@ -279,6 +286,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h:
 
