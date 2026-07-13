@@ -724,6 +724,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/root/progarms/ovs/build/esp-idf/ota/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/root/progarms/ovs/build/esp-idf/web/cmake_install.cmake")
 endif()
 

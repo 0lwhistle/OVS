@@ -358,6 +358,7 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
+  ../modules/ota/ota.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
@@ -369,7 +370,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web_data/web_data.c \
   ../modules/web/web_data/web_data.h \
@@ -377,6 +379,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 
 ../modules/web/web_data/web_data.c:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h:
 
@@ -517,6 +521,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_random.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/fcntl.h:
+
+../modules/ota/ota.h:
 
 ../modules/web/mongoose/mongoose.c:
 

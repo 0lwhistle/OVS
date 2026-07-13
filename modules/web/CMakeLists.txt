@@ -7,4 +7,6 @@ idf_component_register(
 	app_update 
 	esp_timer
 	freertos
+	ota
+
 )

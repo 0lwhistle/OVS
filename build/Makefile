@@ -2372,6 +2372,19 @@ __idf_wifi/fast:
 .PHONY : __idf_wifi/fast
 
 #=============================================================================
+# Target rules for targets named __idf_ota
+
+# Build rule for target.
+__idf_ota: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_ota
+.PHONY : __idf_ota
+
+# fast build rule for target.
+__idf_ota/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/build
+.PHONY : __idf_ota/fast
+
+#=============================================================================
 # Target rules for targets named __idf_web
 
 # Build rule for target.
@@ -2689,6 +2702,7 @@ help:
 	@echo "... __idf_mbedtls"
 	@echo "... __idf_nvs_flash"
 	@echo "... __idf_nvs_sec_provider"
+	@echo "... __idf_ota"
 	@echo "... __idf_perfmon"
 	@echo "... __idf_protobuf-c"
 	@echo "... __idf_protocomm"

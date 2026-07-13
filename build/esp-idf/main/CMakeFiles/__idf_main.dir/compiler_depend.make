@@ -282,6 +282,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
+  ../modules/ota/ota.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
   /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h \
   /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h \
@@ -568,6 +569,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h:
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/netdb.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h:
+
+../modules/ota/ota.h:
 
 ../modules/web/mongoose/mongoose.c:
 

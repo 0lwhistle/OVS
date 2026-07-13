@@ -1,6 +1,8 @@
 #include "web.h"
 #include "web_data.h"       // 由 tools/fs_to_c.py 生成
 #include "mongoose.h"
+#include "ota.h"
+
 
 #include <stdio.h>
 #include <string.h>
@@ -14,6 +16,8 @@
 #include "esp_log.h"
 #include "esp_err.h"
 #include "esp_timer.h"
+#include "esp_task_wdt.h"
+
 
 static const char *TAG = "[WEB]";
 
@@ -174,34 +178,25 @@ static void handle_api_call(struct mg_connection *c, const char *method,
                             const char *uri, struct mg_str body) {
     // 示例 API: GET /api/hello
     if (strcmp(uri, "/api/hello") == 0 && strcmp(method, "GET") == 0) {
-        mg_printf(c,
-                  "HTTP/1.1 200 OK\r\n"
-                  "Content-Type: application/json\r\n"
-                  "Connection: close\r\n"
-                  "\r\n"
-                  "{\"message\":\"Hello from ESP32!\",\"status\":\"ok\"}");
+        mg_http_reply(c, 200,
+                      "Content-Type: application/json\r\n",
+                      "{\"message\":\"Hello from ESP32!\",\"status\":\"ok\"}");
         return;
     }
 
     // 示例 API: GET /api/status
     if (strcmp(uri, "/api/status") == 0 && strcmp(method, "GET") == 0) {
-        mg_printf(c,
-                  "HTTP/1.1 200 OK\r\n"
-                  "Content-Type: application/json\r\n"
-                  "Connection: close\r\n"
-                  "\r\n"
-                  "{\"device\":\"ESP32-S3\",\"uptime_ms\":%" PRIu64 "}",
-                  (uint64_t)(esp_timer_get_time() / 1000));
+        mg_http_reply(c, 200,
+                      "Content-Type: application/json\r\n",
+                      "{\"device\":\"ESP32-S3\",\"uptime_ms\":%" PRIu64 "}",
+                      (uint64_t)(esp_timer_get_time() / 1000));
         return;
     }
 
     // 404
-    mg_printf(c,
-              "HTTP/1.1 404 Not Found\r\n"
-              "Content-Type: application/json\r\n"
-              "Connection: close\r\n"
-              "\r\n"
-              "{\"error\":\"not found\"}");
+    mg_http_reply(c, 404,
+                  "Content-Type: application/json\r\n",
+                  "{\"error\":\"not found\"}");
 }
 
 /**
@@ -220,12 +215,9 @@ static void serve_static_file(struct mg_connection *c, const char *uri) {
     FILE *fp = fopen(filepath, "rb");
     if (!fp) {
         // 404
-        mg_printf(c,
-                  "HTTP/1.1 404 Not Found\r\n"
-                  "Content-Type: text/plain\r\n"
-                  "Connection: close\r\n"
-                  "\r\n"
-                  "404 Not Found");
+        mg_http_reply(c, 404,
+                      "Content-Type: text/plain\r\n",
+                      "404 Not Found");
         return;
     }
 
@@ -256,20 +248,140 @@ static void serve_static_file(struct mg_connection *c, const char *uri) {
 }
 
 /**
+ * @brief 处理 OTA 固件上传（POST /ota/update）
+ * 
+ * 支持断点续传：
+ * - 首次上传：POST 完整固件
+ * - 续传：POST 剩余部分，通过 X-Offset 头指定偏移量
+ * 
+ * 客户端使用 curl -C - 会自动发送 Range 头，但这里用自定义 X-Offset 头更简单。
+ * 客户端脚本：
+ *   # 先查询进度
+ *   offset=$(curl -s http://esp32/ota/progress | jq '.written')
+ *   # 从断点处续传
+ *   curl -X POST --data-binary @firmware.bin \
+ *        -H "X-Offset: $offset" \
+ *        http://esp32/ota/update
+ */
+static void handle_ota_update(struct mg_connection *c, struct mg_http_message *hm) {
+    // 检查是否为 POST 方法
+    if (mg_strcmp(hm->method, mg_str("POST")) != 0) {
+        mg_http_reply(c, 405,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"method not allowed, use POST\"}");
+        return;
+    }
+
+    // 解析 X-Offset 头（断点续传偏移量）
+    size_t resume_offset = 0;
+    struct mg_str *x_offset = mg_http_get_header(hm, "X-Offset");
+    if (x_offset != NULL) {
+        char offset_str[32];
+        size_t copy_len = x_offset->len;
+        if (copy_len > sizeof(offset_str) - 1) copy_len = sizeof(offset_str) - 1;
+        memcpy(offset_str, x_offset->buf, copy_len);
+        offset_str[copy_len] = '\0';
+        resume_offset = (size_t)atoll(offset_str);
+    }
+
+
+    ESP_LOGI(TAG, "OTA update request received, body: %zu bytes, offset: %zu",
+             hm->body.len, resume_offset);
+
+    // 1. 开始 OTA（支持续传）
+    bool resume = (resume_offset > 0);
+    esp_err_t err = ota_start(hm->body.len + resume_offset, resume);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "ota_start failed: %s", esp_err_to_name(err));
+        mg_http_reply(c, 500,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"ota_start failed: %s\"}",
+                      esp_err_to_name(err));
+        return;
+    }
+
+    // 2. 将 body 按 OTA_CHUNK_SIZE 分块推送到队列
+    size_t offset = 0;
+    while (offset < hm->body.len) {
+        size_t chunk_len = hm->body.len - offset;
+        if (chunk_len > OTA_CHUNK_SIZE) {
+            chunk_len = OTA_CHUNK_SIZE;
+        }
+
+        err = ota_push_data(hm->body.buf + offset, chunk_len);
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "ota_push_data failed at offset %zu: %s",
+                     offset, esp_err_to_name(err));
+            ota_abort();
+            mg_http_reply(c, 500,
+                          "Content-Type: application/json\r\n",
+                          "{\"error\":\"ota_push_data failed at offset %zu\"}",
+                          offset);
+            return;
+        }
+
+        offset += chunk_len;
+
+        // 每处理一块数据喂一次狗，防止大文件上传时 watchdog 超时
+        esp_task_wdt_reset();
+    }
+
+    ESP_LOGI(TAG, "All data pushed to OTA queue, finishing...");
+
+    // 3. 结束 OTA（后台任务会完成校验并重启）
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "{\"status\":\"ok\",\"message\":\"OTA update success, rebooting...\"}");
+
+    ota_finish();
+}
+
+/**
+ * @brief 处理 OTA 进度查询（GET /ota/progress）
+ * 
+ * 返回当前 OTA 进度，用于断点续传查询偏移量。
+ */
+static void handle_ota_progress(struct mg_connection *c, struct mg_http_message *hm) {
+    size_t written = ota_get_progress();
+    size_t total = ota_get_total_size();
+
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "{\"written\":%u,\"total\":%u}",
+                  (unsigned int)written, (unsigned int)total);
+}
+
+
+
+
+/**
  * @brief Mongoose 事件处理函数
  */
 static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
     if (ev == MG_EV_HTTP_MSG) {
         struct mg_http_message *hm = (struct mg_http_message *)ev_data;
 
-        // 提取 URI 和方法
+        // 提取 URI
         char uri[256];
-        char method[16];
         snprintf(uri, sizeof(uri), "%.*s", (int)hm->uri.len, hm->uri.buf);
-        snprintf(method, sizeof(method), "%.*s", (int)hm->method.len, hm->method.buf);
+
+        // OTA 升级路由
+        if (strcmp(uri, "/ota/update") == 0) {
+            handle_ota_update(c, hm);
+            return;
+        }
+
+        // OTA 进度查询
+        if (strcmp(uri, "/ota/progress") == 0) {
+            handle_ota_progress(c, hm);
+            return;
+        }
 
         // API 路由
+
         if (strncmp(uri, "/api/", 5) == 0) {
+            char method[16];
+            snprintf(method, sizeof(method), "%.*s", (int)hm->method.len, hm->method.buf);
             handle_api_call(c, method, uri, hm->body);
             return;
         }
@@ -278,6 +390,7 @@ static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
         serve_static_file(c, uri);
     }
 }
+
 
 int web_server_start(void) {
     if (s_server_running) {
@@ -301,10 +414,21 @@ int web_server_start(void) {
     ESP_LOGI(TAG, "Web server started on port %d", WEB_PORT);
     s_server_running = 1;
 
+    // 将当前任务注册到 watchdog
+    esp_task_wdt_add(NULL);
+
     // 轮询循环（在单独的任务中运行）
     while (s_server_running) {
+        esp_task_wdt_reset();     // 喂狗，在 mg_mgr_poll 之前
         mg_mgr_poll(&s_mgr, 50);  // 50ms 超时
+        esp_task_wdt_reset();     // 喂狗，在 mg_mgr_poll 之后
     }
+
+
+
+
+
+
 
     mg_mgr_free(&s_mgr);
     return 0;

@@ -1,0 +1,12 @@
+Command: make -j 22 all
+CMake Error at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/build.cmake:380 (message):
+  Failed to resolve component 'esp_heap_caps' required by component 'ota':
+  unknown name.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/build.cmake:423 (__build_resolve_and_add_req)
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/build.cmake:753 (__build_expand_requirements)
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/project.cmake:773 (idf_build_process)
+  CMakeLists.txt:27 (project)
+
+
+make: *** [Makefile:2734: cmake_check_build_system] Error 1

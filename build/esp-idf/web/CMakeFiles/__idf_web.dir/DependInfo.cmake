@@ -32,6 +32,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/__idf_ota.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"

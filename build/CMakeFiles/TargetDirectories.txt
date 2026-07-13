@@ -1128,6 +1128,13 @@
 /root/progarms/ovs/build/esp-idf/wifi/CMakeFiles/install.dir
 /root/progarms/ovs/build/esp-idf/wifi/CMakeFiles/install/local.dir
 /root/progarms/ovs/build/esp-idf/wifi/CMakeFiles/install/strip.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/__idf_ota.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/edit_cache.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/rebuild_cache.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/list_install_components.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/install.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/install/local.dir
+/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/install/strip.dir
 /root/progarms/ovs/build/esp-idf/web/CMakeFiles/__idf_web.dir
 /root/progarms/ovs/build/esp-idf/web/CMakeFiles/edit_cache.dir
 /root/progarms/ovs/build/esp-idf/web/CMakeFiles/rebuild_cache.dir

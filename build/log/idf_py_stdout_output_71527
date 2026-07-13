@@ -1,0 +1,461 @@
+Command: /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --decode-coredumps info --target esp32s3 --revision 0 /root/progarms/ovs/build/ovs.elf /root/progarms/ovs/build/bootloader/bootloader.elf -m '/root/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/root/esp-idf/esp-idf-v6.0.1/tools/idf.py'
+[0;32mI (147) esp_image: segment 1: paddr=000520e0 vaddr=3fc99100 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403cd9fa
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f58
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jul 13 2026 16:05:43[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 00280000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 002a0000 00280000[0m
+[0;32mI (89) boot:  5 spiffs           Unknown data     01 82 00520000 00200000[0m
+[0;32mI (95) boot: End of partition table[0m
+[0;32mI (98) boot: No factory image, trying OTA 0[0m
+[0;32mI (102) esp_image: segment 0: paddr=00020020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (147) esp_image: segment 1: paddr=000520e0 vaddr=3fc99100 size=05a20h ( 23072) load[0m
+[0;32mI (152) esp_image: segment 2: paddr=00057b08 vaddr=40374000 size=08510h ( 34064) load[0m
+[0;32mI (160) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (272) esp_image: segment 4: paddr=000f9034 vaddr=4037c510 size=0caf0h ( 51952) load[0m
+[0;32mI (284) esp_image: segment 5: paddr=00105b2c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (294) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (324) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (324) boot: Disabling RNG early entropy source...[0m
+[0;32mI (333) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (333) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (334) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (336) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (340) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (344) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (348) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (353) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (358) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (363) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (368) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (372) MSPI Timing: Enter psram timing tuning[0m
+[0;32mI (377) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (380) esp_psram: Speed: 80MHz[0m
+[0;32mI (383) cpu_start: Multicore app[0m
+[0;32mI (818) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (827) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (828) cpu_start: Pro cpu start user code[0m
+[0;32mI (828) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (829) app_init: Application information:[0m
+[0;32mI (833) app_init: Project name:     ovs[0m
+[0;32mI (837) app_init: App version:      e2481e54-dirty[0m
+[0;32mI (841) app_init: Compile time:     Jul 13 2026 16:05:47[0m
+[0;32mI (846) app_init: ELF file SHA256:  d0d425a1b...[0m
+[0;32mI (850) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (854) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (858) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (862) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (866) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (872) heap_init: At 3FCA2D70 len 000469A0 (282 KiB): RAM[0m
+[0;32mI (877) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (882) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (888) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (893) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (900) spi_flash: detected chip: mxic[0m
+[0;32mI (903) spi_flash: flash io: dio[0m
+[0;32mI (907) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (912) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (919) esp_core_dump_uart: Init core dump to UART[0m
+[0;32mI (924) main_task: Started on CPU0[0m
+[0;32mI (934) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (934) main_task: Calling app_main()[0m
+
+========================================
+  ESP32-S3 SYSTEM START
+========================================
+NVS initialized
+[WiFi] MAC address: 00:00:00:00:00:00
+[0;32mI (974) pp: pp rom version: e7ae62f[0m
+[0;32mI (974) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (994) wifi:wifi driver task: 3fceecc4, prio:23, stack:6656, core=0[0m
+[0;32mI (1004) wifi:wifi firmware version: b37c951[0m
+[0;32mI (1004) wifi:wifi certification version: v7.0[0m
+[0;32mI (1004) wifi:config NVS flash: enabled[0m
+[0;32mI (1004) wifi:config nano formatting: disabled[0m
+[0;32mI (1014) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1014) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1014) wifi:Init management short buffer num: 32[0m
+[0;32mI (1024) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1024) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1034) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1034) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1044) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1044) wifi_init: rx ba win: 6[0m
+[0;32mI (1044) wifi_init: accept mbox: 6[0m
+[0;32mI (1054) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1054) wifi_init: udp mbox: 6[0m
+[0;32mI (1054) wifi_init: tcp mbox: 6[0m
+[0;32mI (1054) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1064) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1064) wifi_init: tcp mss: 1440[0m
+[0;32mI (1064) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1074) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1074) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1084) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (1124) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1184) wifi:mode : sta (ac:27:6e:a4:e7:a0)[0m
+[0;32mI (1184) wifi:enable tsf[0m
+Wi-Fi initialized in STA mode
+  STA: connecting to 816
+Wi-Fi STA started, connecting to AP...
+[0;32mI (1194) [OTA]: OTA initialized (queue depth=128, chunk=16KB)[0m
+[0;32mI (1194) [OTA]: OTA write task started[0m
+[0;32mI (1204) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1204) wifi:state: init -> auth (0xb0)[0m
+little pthread initmiddle pthread initlots pthread initdispatcher pthread initdispatcher pthread initWeb server task created on CPU1
+[0;32mI (1224) wifi:state: auth -> assoc (0x0)I (1214) [WEB]: Initializing SPIFFS...[0m
+
+[0;32mI (1224) main_task: Returned from app_main()[0m
+[0;32mI (1244) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1324) wifi:connected with 816, aid = 3, channel 1, BW20, bssid = d4:53:2a:d5:06:2e[0m
+[0;32mI (1324) wifi:security: WPA2-PSK, phy: bgn, rssi: -15, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1334) wifi:pm start, type: 1[0m
+
+[0;32mI (1334) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1334) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1344) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1364) [WEB]: SPIFFS already has data, skip decompress[0m
+[0;32mI (1364) [WEB]: Web server started on port 80[0m
+[0;32mI (1364) wifi:<ba-add>idx:0 (ifx:0, d4:53:2a:d5:06:2e), tid:6, ssn:2, winSize:64[0m
+[0;32mI (2384) esp_netif_handlers: sta ip: 192.168.2.154, mask: 255.255.255.0, gw: 192.168.2.1[0m
+Got IP: 192.168.2.154
+========== WiFi Network Info ==========
+  IP      : 192.168.2.154
+  Netmask : 255.255.255.0
+  Gateway : 192.168.2.1
+  MAC     : 00:00:00:00:00:00
+======================================
+[0;32mI (4414) wifi:<ba-add>idx:1 (ifx:0, d4:53:2a:d5:06:2e), tid:0, ssn:0, winSize:64[0m
+[0;32mI (12944) [WEB]: OTA update request received, body: 940968 bytes, offset: 0[0m
+[0;32mI (12944) [OTA]: Writing to partition: ota_1 (subtype=17, size=2621440)[0m
+[0;32mI (23564) [OTA]: OTA started, ready to receive firmware (total=940968 bytes)...[0m
+[0;32mI (23644) [WEB]: All data pushed to OTA queue, finishing...[0m
+[0;32mI (23644) [OTA]: Finishing OTA, waiting for queue to drain...[0m
+[OTA] Writing... 1% (16384/940968 bytes)[OTA] Writing... 3% (32768/940968 bytes)[OTA] Writing... 5% (49152/940968 bytes)[OTA] Writing... 6% (65536/940968 bytes)[OTA] Writing... 8% (81920/940968 bytes)[OTA] Writing... 10% (98304/940968 bytes)[OTA] Writing... 12% (114688/940968 bytes)[OTA] Writing... 13% (131072/940968 bytes)[OTA] Writing... 15% (147456/940968 bytes)[OTA] Writing... 17% (163840/940968 bytes)[OTA] Writing... 19% (180224/940968 bytes)[OTA] Writing... 20% (196608/940968 bytes)[OTA] Writing... 22% (212992/940968 bytes)[OTA] Writing... 24% (229376/940968 bytes)[OTA] Writing... 26% (245760/940968 bytes)[OTA] Writing... 27% (262144/940968 bytes)[OTA] Writing... 29% (278528/940968 bytes)[OTA] Writing... 31% (294912/940968 bytes)[OTA] Writing... 33% (311296/940968 bytes)[OTA] Writing... 34% (327680/940968 bytes)[OTA] Writing... 36% (344064/940968 bytes)[OTA] Writing... 38% (360448/940968 bytes)[OTA] Writing... 40% (376832/940968 bytes)[OTA] Writing... 41% (393216/940968 bytes)[OTA] Writing... 43% (409600/940968 bytes)[OTA] Writing... 45% (425984/940968 bytes)[OTA] Writing... 47% (442368/940968 bytes)[OTA] Writing... 48% (458752/940968 bytes)[OTA] Writing... 50% (475136/940968 bytes)[OTA] Writing... 52% (491520/940968 bytes)[OTA] Writing... 53% (507904/940968 bytes)[OTA] Writing... 55% (524288/940968 bytes)[OTA] Writing... 57% (540672/940968 bytes)[OTA] Writing... 59% (557056/940968 bytes)[OTA] Writing... 60% (573440/940968 bytes)[OTA] Writing... 62% (589824/940968 bytes)[OTA] Writing... 64% (606208/940968 bytes)[OTA] Writing... 66% (622592/940968 bytes)[OTA] Writing... 67% (638976/940968 bytes)[OTA] Writing... 69% (655360/940968 bytes)[OTA] Writing... 71% (671744/940968 bytes)[OTA] Writing... 73% (688128/940968 bytes)[OTA] Writing... 74% (704512/940968 bytes)[OTA] Writing... 76% (720896/940968 bytes)[OTA] Writing... 78% (737280/940968 bytes)[OTA] Writing... 80% (753664/940968 bytes)[OTA] Writing... 81% (770048/940968 bytes)[OTA] Writing... 83% (786432/940968 bytes)[OTA] Writing... 85% (802816/940968 bytes)[OTA] Writing... 87% (819200/940968 bytes)[OTA] Writing... 88% (835584/940968 bytes)[OTA] Writing... 90% (851968/940968 bytes)[OTA] Writing... 92% (868352/940968 bytes)[OTA] Writing... 94% (884736/940968 bytes)[OTA] Writing... 95% (901120/940968 bytes)[OTA] Writing... 97% (917504/940968 bytes)[OTA] Writing... 99% (933888/940968 bytes)[OTA] Writing... 100% (940968/940968 bytes)
+[0;32mI (31534) [OTA]: OTA write task: received finish signal[0m
+[0;32mI (31534) esp_image: segment 0: paddr=002a0020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (31564) esp_image: segment 1: paddr=002d20e0 vaddr=3fc99100 size=05a20h ( 23072) [0m
+[0;32mI (31574) esp_image: segment 2: paddr=002d7b08 vaddr=40374000 size=08510h ( 34064) [0m
+[0;32mI (31574) esp_image: segment 3: paddr=002e0020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (31664) esp_image: segment 4: paddr=00379034 vaddr=4037c510 size=0caf0h ( 51952) [0m
+[0;32mI (31664) esp_image: segment 5: paddr=00385b2c vaddr=50000000 size=00024h (    36) [0m
+
+========== OTA Verification ==========
+[OTA] Found verify footer at offset 940928
+[OTA] Firmware size: 940928 bytes
+[OTA] SHA256: 36bc566bd3cc80879be2f2f6c8ff8dcebebfd7a51e9eca3094cab15f5ccf0531
+[OTA] Magic: 0x4F56414F (expected: 0x4F56414F)
+[OTA] Magic VERIFIED OK!
+[OTA] Verification PASSED!
+========================================
+[0;32mI (31834) esp_image: segment 0: paddr=002a0020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (31864) esp_image: segment 1: paddr=002d20e0 vaddr=3fc99100 size=05a20h ( 23072) [0m
+[0;32mI (31864) esp_image: segment 2: paddr=002d7b08 vaddr=40374000 size=08510h ( 34064) [0m
+[0;32mI (31874) esp_image: segment 3: paddr=002e0020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (31954) esp_image: segment 4: paddr=00379034 vaddr=4037c510 size=0caf0h ( 51952) [0m
+[0;32mI (31964) esp_image: segment 5: paddr=00385b2c vaddr=50000000 size=00024h (    36) [0m
+
+========== OTA Update Success ==========
+  Partition: ota_1
+  Size:      940968 bytes
+  Verified:  YES (Magic + SHA256)
+  Rebooting in 1 second...
+========================================
+
+[0;32mI (33024) wifi:state: run -> init (0x0)[0m
+[0;32mI (33034) wifi:pm stop, total sleep time: 16394393 us / 31695872 us[0m
+
+[0;32mI (33034) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (33034) wifi:<ba-del>idx:0, tid:6[0m
+[0;32mI (33034) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+Wi-Fi STA disconnected, reconnecting...
+[0;32mI (33064) wifi:flush txq[0m
+[0;32mI (33064) wifi:stop sw txq[0m
+[0;32mI (33064) wifi:lmac stop hw txq[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b5c6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f58
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jul 13 2026 16:05:43[0m
+[0;32mI (24) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (34) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (68) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 00280000[0m
+[0;32mI (81) boot:  4 ota_1            OTA app          00 11 002a0000 00280000[0m
+[0;32mI (88) boot:  5 spiffs           Unknown data     01 82 00520000 00200000[0m
+[0;32mI (95) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=002a0020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (142) esp_image: segment 1: paddr=002d20e0 vaddr=3fc99100 size=05a20h ( 23072) load[0m
+[0;32mI (147) esp_image: segment 2: paddr=002d7b08 vaddr=40374000 size=08510h ( 34064) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=002e0020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (269) esp_image: segment 4: paddr=00379034 vaddr=4037c510 size=0caf0h ( 51952) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=00385b2c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x2a0000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (301) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (301) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (303) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (307) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (311) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (316) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (321) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (325) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (330) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (335) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (339) MSPI Timing: Enter psram timing tuning[0m
+[0;32mI (344) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (347) esp_psram: Speed: 80MHz[0m
+[0;32mI (350) cpu_start: Multicore app[0m
+[0;32mI (786) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (794) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (795) cpu_start: Pro cpu start user code[0m
+[0;32mI (795) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (797) app_init: Application information:[0m
+[0;32mI (800) app_init: Project name:     ovs[0m
+[0;32mI (804) app_init: App version:      e2481e54-dirty[0m
+[0;32mI (808) app_init: Compile time:     Jul 13 2026 16:05:47[0m
+[0;32mI (813) app_init: ELF file SHA256:  d0d425a1b...[0m
+[0;32mI (818) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (822) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (840) heap_init: At 3FCA2D70 len 000469A0 (282 KiB): RAM[0m
+[0;32mI (845) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (861) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (868) spi_flash: detected chip: mxic[0m
+[0;32mI (870) spi_flash: flash io: dio[0m
+[0;32mI (874) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (880) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (886) esp_core_dump_uart: Init core dump to UART[0m
+[0;32mI (891) main_task: Started on CPU0[0m
+[0;32mI (901) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (901) main_task: Calling app_main()[0m
+
+========================================
+  ESP32-S3 SYSTEM START
+========================================
+NVS initialized
+[WiFi] MAC address: 00:00:00:00:00:00
+[0;32mI (941) pp: pp rom version: e7ae62f[0m
+[0;32mI (951) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (961) wifi:wifi driver task: 3fceecc4, prio:23, stack:6656, core=0[0m
+[0;32mI (971) wifi:wifi firmware version: b37c951[0m
+[0;32mI (971) wifi:wifi certification version: v7.0[0m
+[0;32mI (971) wifi:config NVS flash: enabled[0m
+[0;32mI (971) wifi:config nano formatting: disabled[0m
+[0;32mI (981) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (981) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (981) wifi:Init management short buffer num: 32[0m
+[0;32mI (991) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (991) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1001) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1001) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1001) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1011) wifi_init: rx ba win: 6[0m
+[0;32mI (1011) wifi_init: accept mbox: 6[0m
+[0;32mI (1011) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1021) wifi_init: udp mbox: 6[0m
+[0;32mI (1021) wifi_init: tcp mbox: 6[0m
+[0;32mI (1021) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1031) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1031) wifi_init: tcp mss: 1440[0m
+[0;32mI (1031) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1041) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1041) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1051) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (1091) wifi:mode : sta (ac:27:6e:a4:e7:a0)[0m
+[0;32mI (1091) wifi:enable tsf[0m
+Wi-Fi initialized in STA mode
+  STA: connecting to 816
+Wi-Fi STA started, connecting to AP...
+[0;32mI (1101) [OTA]: OTA initialized (queue depth=128, chunk=16KB)[0m
+[0;32mI (1101) [OTA]: OTA write task started[0m
+[0;32mI (1111) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1111) wifi:state: init -> auth (0xb0)[0m
+little pthread initmiddle pthread initlots pthread initdispatcher pthread initdispatcher pthread initWeb server task created on CPU1
+[0;32mI (1121) [WEB]: Initializing SPIFFS...[0m
+[0;32mI (1131) main_task: Returned from app_main()[0m
+[0;32mI (1151) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1161) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1231) wifi:connected with 816, aid = 3, channel 1, BW20, bssid = d4:53:2a:d5:06:2e[0m
+[0;32mI (1231) wifi:security: WPA2-PSK, phy: bgn, rssi: -17, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1241) wifi:pm start, type: 1[0m
+
+[0;32mI (1241) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1251) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1261) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1261) [WEB]: SPIFFS already has data, skip decompress[0m
+[0;32mI (1271) [WEB]: Web server started on port 80[0m
+[0;32mI (1271) wifi:<ba-add>idx:0 (ifx:0, d4:53:2a:d5:06:2e), tid:6, ssn:2, winSize:64[0m
+[0;32mI (2291) esp_netif_handlers: sta ip: 192.168.2.154, mask: 255.255.255.0, gw: 192.168.2.1[0m
+Got IP: 192.168.2.154
+========== WiFi Network Info ==========
+  IP      : 192.168.2.154
+  Netmask : 255.255.255.0
+  Gateway : 192.168.2.1
+  MAC     : 00:00:00:00:00:00
+======================================
+[0;32mI (5551) wifi:<ba-add>idx:1 (ifx:0, d4:53:2a:d5:06:2e), tid:0, ssn:0, winSize:64[0m
+[0;32mI (12631) [WEB]: OTA update request received, body: 940968 bytes, offset: 0[0m
+[0;32mI (12631) [OTA]: Writing to partition: ota_0 (subtype=16, size=2621440)[0m
+[0;32mI (23531) [OTA]: OTA started, ready to receive firmware (total=940968 bytes)...[0m
+[0;32mI (23591) [WEB]: All data pushed to OTA queue, finishing...[0m
+[0;32mI (23591) [OTA]: Finishing OTA, waiting for queue to drain...[0m
+[OTA] Writing... 1% (16384/940968 bytes)[OTA] Writing... 3% (32768/940968 bytes)[OTA] Writing... 5% (49152/940968 bytes)[OTA] Writing... 6% (65536/940968 bytes)[OTA] Writing... 8% (81920/940968 bytes)[OTA] Writing... 10% (98304/940968 bytes)[OTA] Writing... 12% (114688/940968 bytes)[OTA] Writing... 13% (131072/940968 bytes)[OTA] Writing... 15% (147456/940968 bytes)[OTA] Writing... 17% (163840/940968 bytes)[OTA] Writing... 19% (180224/940968 bytes)[OTA] Writing... 20% (196608/940968 bytes)[OTA] Writing... 22% (212992/940968 bytes)[OTA] Writing... 24% (229376/940968 bytes)[OTA] Writing... 26% (245760/940968 bytes)[OTA] Writing... 27% (262144/940968 bytes)[OTA] Writing... 29% (278528/940968 bytes)[OTA] Writing... 31% (294912/940968 bytes)[OTA] Writing... 33% (311296/940968 bytes)[OTA] Writing... 34% (327680/940968 bytes)[OTA] Writing... 36% (344064/940968 bytes)[OTA] Writing... 38% (360448/940968 bytes)[OTA] Writing... 40% (376832/940968 bytes)[OTA] Writing... 41% (393216/940968 bytes)[OTA] Writing... 43% (409600/940968 bytes)[OTA] Writing... 45% (425984/940968 bytes)[OTA] Writing... 47% (442368/940968 bytes)[OTA] Writing... 48% (458752/940968 bytes)[OTA] Writing... 50% (475136/940968 bytes)[OTA] Writing... 52% (491520/940968 bytes)[OTA] Writing... 53% (507904/940968 bytes)[OTA] Writing... 55% (524288/940968 bytes)[OTA] Writing... 57% (540672/940968 bytes)[OTA] Writing... 59% (557056/940968 bytes)[OTA] Writing... 60% (573440/940968 bytes)[OTA] Writing... 62% (589824/940968 bytes)[OTA] Writing... 64% (606208/940968 bytes)[OTA] Writing... 66% (622592/940968 bytes)[OTA] Writing... 67% (638976/940968 bytes)[OTA] Writing... 69% (655360/940968 bytes)[OTA] Writing... 71% (671744/940968 bytes)[OTA] Writing... 73% (688128/940968 bytes)[OTA] Writing... 74% (704512/940968 bytes)[OTA] Writing... 76% (720896/940968 bytes)[OTA] Writing... 78% (737280/940968 bytes)[OTA] Writing... 80% (753664/940968 bytes)[OTA] Writing... 81% (770048/940968 bytes)[OTA] Writing... 83% (786432/940968 bytes)[OTA] Writing... 85% (802816/940968 bytes)[OTA] Writing... 87% (819200/940968 bytes)[OTA] Writing... 88% (835584/940968 bytes)[OTA] Writing... 90% (851968/940968 bytes)[OTA] Writing... 92% (868352/940968 bytes)[OTA] Writing... 94% (884736/940968 bytes)[OTA] Writing... 95% (901120/940968 bytes)[OTA] Writing... 97% (917504/940968 bytes)[OTA] Writing... 99% (933888/940968 bytes)[OTA] Writing... 100% (940968/940968 bytes)
+[0;32mI (31531) [OTA]: OTA write task: received finish signal[0m
+[0;32mI (31531) esp_image: segment 0: paddr=00020020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (31561) esp_image: segment 1: paddr=000520e0 vaddr=3fc99100 size=05a20h ( 23072) [0m
+[0;32mI (31561) esp_image: segment 2: paddr=00057b08 vaddr=40374000 size=08510h ( 34064) [0m
+[0;32mI (31571) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (31651) esp_image: segment 4: paddr=000f9034 vaddr=4037c510 size=0caf0h ( 51952) [0m
+[0;32mI (31661) esp_image: segment 5: paddr=00105b2c vaddr=50000000 size=00024h (    36) [0m
+
+========== OTA Verification ==========
+[OTA] Found verify footer at offset 940928
+[OTA] Firmware size: 940928 bytes
+[OTA] SHA256: 36bc566bd3cc80879be2f2f6c8ff8dcebebfd7a51e9eca3094cab15f5ccf0531
+[OTA] Magic: 0x4F56414F (expected: 0x4F56414F)
+[OTA] Magic VERIFIED OK!
+[OTA] Verification PASSED!
+========================================
+[0;32mI (31821) esp_image: segment 0: paddr=00020020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (31861) esp_image: segment 1: paddr=000520e0 vaddr=3fc99100 size=05a20h ( 23072) [0m
+[0;32mI (31861) esp_image: segment 2: paddr=00057b08 vaddr=40374000 size=08510h ( 34064) [0m
+[0;32mI (31871) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (31951) esp_image: segment 4: paddr=000f9034 vaddr=4037c510 size=0caf0h ( 51952) [0m
+[0;32mI (31961) esp_image: segment 5: paddr=00105b2c vaddr=50000000 size=00024h (    36) [0m
+
+========== OTA Update Success ==========
+  Partition: ota_0
+  Size:      940968 bytes
+  Verified:  YES (Magic + SHA256)
+  Rebooting in 1 second...
+========================================
+
+[0;32mI (33021) wifi:state: run -> init (0x0)[0m
+[0;32mI (33031) wifi:pm stop, total sleep time: 16723754 us / 31783117 us[0m
+
+[0;32mI (33031) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (33031) wifi:<ba-del>idx:0, tid:6[0m
+[0;32mI (33031) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+Wi-Fi STA disconnected, reconnecting...
+[0;32mI (33061) wifi:flush txq[0m
+[0;32mI (33061) wifi:stop sw txq[0m
+[0;32mI (33061) wifi:lmac stop hw txq[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b5c6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f58
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jul 13 2026 16:05:43[0m
+[0;32mI (24) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (34) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (68) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 00280000[0m
+[0;32mI (81) boot:  4 ota_1            OTA app          00 11 002a0000 00280000[0m
+[0;32mI (88) boot:  5 spiffs           Unknown data     01 82 00520000 00200000[0m
+[0;32mI (95) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0a0020 size=320b8h (204984) map[0m
+[0;32mI (142) esp_image: segment 1: paddr=000520e0 vaddr=3fc99100 size=05a20h ( 23072) load[0m
+[0;32mI (147) esp_image: segment 2: paddr=00057b08 vaddr=40374000 size=08510h ( 34064) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=9900ch (626700) map[0m
+[0;32mI (269) esp_image: segment 4: paddr=000f9034 vaddr=4037c510 size=0caf0h ( 51952) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=00105b2c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (301) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (301) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (303) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (307) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (311) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (315) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (320) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (325) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (330) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (335) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (339) MSPI Timing: Enter psram timing tuning[0m
+[0;32mI (344) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (347) esp_psram: Speed: 80MHz[0m
+[0;32mI (350) cpu_start: Multicore app[0m
+[0;32mI (786) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (794) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (795) cpu_start: Pro cpu start user code[0m
+[0;32mI (795) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (796) app_init: Application information:[0m
+[0;32mI (800) app_init: Project name:     ovs[0m
+[0;32mI (804) app_init: App version:      e2481e54-dirty[0m
+[0;32mI (808) app_init: Compile time:     Jul 13 2026 16:05:47[0m
+[0;32mI (813) app_init: ELF file SHA256:  d0d425a1b...[0m
+[0;32mI (818) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (822) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (829) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (833) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (840) heap_init: At 3FCA2D70 len 000469A0 (282 KiB): RAM[0m
+[0;32mI (845) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (850) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (855) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (861) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (867) spi_flash: detected chip: mxic[0m
+[0;32mI (870) spi_flash: flash io: dio[0m
+[0;32mI (874) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (880) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (886) esp_core_dump_uart: Init core dump to UART[0m
+[0;32mI (891) main_task: Started on CPU0[0m
+[0;32mI (901) esp_psram: Reserving pool of 32K of internal memo
