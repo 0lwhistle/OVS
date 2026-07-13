@@ -1,0 +1,148 @@
+Command: make -j 22 all
+Configuration Report                                                                                                                
+ ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+   Parser Version: 1                                                                                                                
+   Verbosity: default                                                                                                               
+   Defaults policy: sdkconfig                                                                                                       
+   Status: Finished with notifications                                                                                              
+                                                                                                                                    
+  Default Value Mismatch                                                                                                            
+   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────   
+    Using sdkconfig default values                                                                                                  
+    Choice symbols with different default selection between sdkconfig and Kconfig                                                   
+    ESPTOOLPY_FLASHSIZE: Kconfig default selection: ESPTOOLPY_FLASHSIZE_2MB, sdkconfig default selection:                           
+    ESPTOOLPY_FLASHSIZE_16MB                                                                                                        
+    SPIRAM_MODE: Kconfig default selection: SPIRAM_MODE_QUAD, sdkconfig default selection: SPIRAM_MODE_OCT                          
+    SPIRAM_SPEED: Kconfig default selection: SPIRAM_SPEED_40M, sdkconfig default selection: SPIRAM_SPEED_80M                        
+    PARTITION_TABLE_TYPE: Kconfig default selection: PARTITION_TABLE_SINGLE_APP, sdkconfig default selection:                       
+    PARTITION_TABLE_CUSTOM                                                                                                          
+   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────   
+  Multiple Assignments                                                                                                              
+   ────────────────────────────────────────────────────                                                                             
+    Choice ESPTOOLPY_FLASHSIZE:                                                                                                     
+        ESPTOOLPY_FLASHSIZE_2MB (default selection)                                                                                 
+        ESPTOOLPY_FLASHSIZE_16MB (default selection)                                                                                
+        -> using ESPTOOLPY_FLASHSIZE_16MB                                                                                           
+    Choice PARTITION_TABLE_TYPE:                                                                                                    
+        PARTITION_TABLE_SINGLE_APP (default selection)                                                                              
+        PARTITION_TABLE_CUSTOM (default selection)                                                                                  
+        -> using PARTITION_TABLE_CUSTOM                                                                                             
+    Choice SPIRAM_MODE:                                                                                                             
+        SPIRAM_MODE_QUAD (default selection)                                                                                        
+        SPIRAM_MODE_OCT (default selection)                                                                                         
+        -> using SPIRAM_MODE_OCT                                                                                                    
+   ────────────────────────────────────────────────────                                                                             
+ ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:65 (message):
+  Source file '/root/progarms/ovs/modules/web/mongoose/mongoose.c' belongs to
+  component web but is being built by component main.  It is recommended to
+  build source files by defining component dependencies for main via using
+  idf_component_register(REQUIRES web) or
+  idf_component_register(PRIV_REQUIRES web) in the CMakeLists.txt of main.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:146 (__component_validation_check_sources)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:65 (message):
+  Source file '/root/progarms/ovs/modules/web/web_data/web_data.c' belongs to
+  component web but is being built by component main.  It is recommended to
+  build source files by defining component dependencies for main via using
+  idf_component_register(REQUIRES web) or
+  idf_component_register(PRIV_REQUIRES web) in the CMakeLists.txt of main.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:146 (__component_validation_check_sources)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/logger' belongs to component
+  logger but is being used by component main.  It is recommended to define
+  the component dependency for 'main' on the component logger, i.e.
+  'idf_component_register(...  REQUIRES logger)' in the CMakeLists.txt of
+  main, and specify the included directory as idf_component_register(...
+  INCLUDE_DIRS <dir relative to component>) in the CMakeLists.txt of
+  component logger.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/web/mongoose' belongs to
+  component web but is being used by component main.  It is recommended to
+  define the component dependency for 'main' on the component web, i.e.
+  'idf_component_register(...  REQUIRES web)' in the CMakeLists.txt of main,
+  and specify the included directory as idf_component_register(...
+  INCLUDE_DIRS <dir relative to component>) in the CMakeLists.txt of
+  component web.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/web/web_data' belongs to
+  component web but is being used by component main.  It is recommended to
+  define the component dependency for 'main' on the component web, i.e.
+  'idf_component_register(...  REQUIRES web)' in the CMakeLists.txt of main,
+  and specify the included directory as idf_component_register(...
+  INCLUDE_DIRS <dir relative to component>) in the CMakeLists.txt of
+  component web.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/devices_ctrl/wifi' belongs to
+  component wifi but is being used by component main.  It is recommended to
+  define the component dependency for 'main' on the component wifi, i.e.
+  'idf_component_register(...  REQUIRES wifi)' in the CMakeLists.txt of main,
+  and specify the included directory as idf_component_register(...
+  INCLUDE_DIRS <dir relative to component>) in the CMakeLists.txt of
+  component wifi.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/API/tasker' belongs to component
+  tasker but is being used by component main.  It is recommended to define
+  the component dependency for 'main' on the component tasker, i.e.
+  'idf_component_register(...  REQUIRES tasker)' in the CMakeLists.txt of
+  main, and specify the included directory as idf_component_register(...
+  INCLUDE_DIRS <dir relative to component>) in the CMakeLists.txt of
+  component tasker.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/tasker/task_manager' belongs
+  to component task_manager but is being used by component main.  It is
+  recommended to define the component dependency for 'main' on the component
+  task_manager, i.e.  'idf_component_register(...  REQUIRES task_manager)' in
+  the CMakeLists.txt of main, and specify the included directory as
+  idf_component_register(...  INCLUDE_DIRS <dir relative to component>) in
+  the CMakeLists.txt of component task_manager.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
+CMake Warning at /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:98 (message):
+  Include directory '/root/progarms/ovs/modules/tasker/task_worker' belongs
+  to component task_worker but is being used by component main.  It is
+  recommended to define the component dependency for 'main' on the component
+  task_worker, i.e.  'idf_component_register(...  REQUIRES task_worker)' in
+  the CMakeLists.txt of main, and specify the included directory as
+  idf_component_register(...  INCLUDE_DIRS <dir relative to component>) in
+  the CMakeLists.txt of component task_worker.
+Call Stack (most recent call first):
+  /root/esp-idf/esp-idf-v6.0.1/tools/cmake/component_validation.cmake:147 (__component_validation_check_include_dirs)
+  /root/esp-idf/esp-idf-v6.0.1/CMakeLists.txt:349 (__component_validation_run_checks)
+
+
