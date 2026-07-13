@@ -1,6 +1,7 @@
 #include "tasker.h"
 #include "web.h"
 #include "wifi.h"
+#include "ota.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -8,6 +9,7 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include "nvs_flash.h"
+
 
 static const char* TAG = "[MAIN_TEST]";
 
@@ -41,10 +43,14 @@ void app_main(void)
     ESP_ERROR_CHECK(nvs_ret);
     printf("NVS initialized\n");
 
-    // 初始化 Wi-Fi（AP+STA 共存模式）
+    // 初始化 Wi-Fi（STA 模式）
     wifi_init();
 
+    // 初始化 OTA 模块（创建队列和后台写入任务）
+    ota_init();
+
     // 初始化 tasker 系统
+
     int ret = tasker_init();
     if (ret != 0) {
         printf("tasker_init failed: %d\n", ret);

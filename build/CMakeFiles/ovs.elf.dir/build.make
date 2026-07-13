@@ -201,6 +201,7 @@ ovs.elf: esp-idf/perfmon/libperfmon.a
 ovs.elf: esp-idf/rt/librt.a
 ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/wifi/libwifi.a
+ovs.elf: esp-idf/ota/libota.a
 ovs.elf: esp-idf/web/libweb.a
 ovs.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a
 ovs.elf: esp-idf/led_ctrl/libled_ctrl.a
@@ -234,6 +235,7 @@ ovs.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
 ovs.elf: esp-idf/web/libweb.a
 ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/wifi/libwifi.a
+ovs.elf: esp-idf/ota/libota.a
 ovs.elf: esp-idf/led_ctrl/libled_ctrl.a
 ovs.elf: esp-idf/gpio_ctrl/libgpio_ctrl.a
 ovs.elf: esp-idf/beep_ctrl/libbeep_ctrl.a

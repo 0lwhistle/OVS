@@ -122,6 +122,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/rt/CMakeFiles/__idf_rt.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/wifi/CMakeFiles/__idf_wifi.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/ota/CMakeFiles/__idf_ota.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/web/CMakeFiles/__idf_web.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/gpio_ctrl/CMakeFiles/__idf_gpio_ctrl.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/led_ctrl/CMakeFiles/__idf_led_ctrl.dir/DependInfo.cmake"

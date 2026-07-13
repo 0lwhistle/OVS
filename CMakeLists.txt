@@ -15,7 +15,9 @@ ${CMAKE_SOURCE_DIR}/modules/tasker/task_manager
 ${CMAKE_SOURCE_DIR}/modules/tasker/task_worker
 ${CMAKE_SOURCE_DIR}/modules/logger
 ${CMAKE_SOURCE_DIR}/modules/web
+${CMAKE_SOURCE_DIR}/modules/ota
 ${CMAKE_SOURCE_DIR}/API/tasker
+
 )
 
 

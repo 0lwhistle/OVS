@@ -178,6 +178,7 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
+ /root/progarms/ovs/modules/ota/ota.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
@@ -189,4 +190,5 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h
