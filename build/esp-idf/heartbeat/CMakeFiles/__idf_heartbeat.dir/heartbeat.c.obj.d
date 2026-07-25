@@ -156,4 +156,5 @@ esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
+ /root/progarms/ovs/modules/heartbeat/../logger/logger.h

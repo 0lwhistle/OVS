@@ -287,7 +287,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h
  /root/progarms/ovs/modules/ota/ota.h
- /root/progarms/ovs/main/heartbeat.h
+ /root/progarms/ovs/modules/heartbeat/heartbeat.h
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h
  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h
  /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h

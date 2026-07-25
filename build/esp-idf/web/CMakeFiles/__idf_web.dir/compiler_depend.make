@@ -359,7 +359,28 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   ../modules/ota/ota.h \
-  ../main/heartbeat.h \
+  ../modules/heartbeat/heartbeat.h \
+  ../API/tasker/tasker.h \
+  ../modules/tasker/task_manager/task_manager.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/pthread.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/pthread.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sched.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
   ../modules/devices_ctrl/wifi/wifi.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
@@ -376,17 +397,6 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web_data/web_data.c \
@@ -397,6 +407,18 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 ../modules/web/web_data/web_data.c:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h:
 
@@ -410,13 +432,13 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/pthread.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/pthread.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h:
+../modules/tasker/task_manager/task_manager.h:
 
-../main/heartbeat.h:
+../API/tasker/tasker.h:
 
 ../modules/web/web_data/web_data.h:
 
@@ -428,9 +450,9 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_flash_partitions.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/app_update/include/esp_ota_ops.h:
 
@@ -526,6 +548,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/time.h:
 
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sched.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_select.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/select.h:
@@ -562,9 +586,9 @@ config/sdkconfig.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
-
 ../modules/devices_ctrl/wifi/wifi.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
 
@@ -629,6 +653,8 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timespec.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/unistd.h:
+
+../modules/heartbeat/heartbeat.h:
 
 ../modules/web/web.c:
 
@@ -746,6 +772,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/spinlock.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_default_fcntl.h:
@@ -789,6 +817,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/heap/include/multi_heap.h:
 

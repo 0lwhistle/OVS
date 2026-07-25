@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 // Web 资源版本哈希（用于 OTA 后判断是否需要更新 SPIFFS）
-#define WEB_DATA_HASH "f45a8413b712449042724abe474e796332fb71559ab7c0457afc4035ea7c8967"
+#define WEB_DATA_HASH "97680e076473bb2e0a7667d0fc64dc4654a1a9be9a0dcb5b0824b5f4a8fb2a96"
 
 typedef struct {
     const char *path;       // 文件路径，如 "/index.html"
