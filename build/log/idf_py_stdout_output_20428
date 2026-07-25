@@ -1,0 +1,340 @@
+Command: make -j 22 all
+-- Component directory /root/esp-idf/esp-idf-v6.0.1/components/mqtt does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32s3
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5;esp32c61 SoCs
+-- KCONFIG_REPORT_VERBOSITY not set, using default
+-- Project sdkconfig file /root/progarms/ovs/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- App "ovs" version: 739c5984-dirty
+-- Setting up mbedtls configuration
+-- Linkage type is PUBLIC
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt/esp32s3/rom.wdt.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in
+--   -> Preprocessing .in script: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/memory.ld.in
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/sections.ld.in
+--   -> Preprocessing .in script: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/ld/esp32s3/sections.ld.in
+--   -> Applying ldgen processing: /root/progarms/ovs/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Component idf::esp_trace will be linked with -Wl,--whole-archive
+-- Components: app_trace app_update beep_ctrl bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_blockdev esp_blockdev_util esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_cam esp_driver_dac esp_driver_dma esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_i3c esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sd_intf esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hal_ana_cmpr esp_hal_ana_conv esp_hal_cam esp_hal_clock esp_hal_dma esp_hal_gpio esp_hal_gpspi esp_hal_i2c esp_hal_i2s esp_hal_ieee802154 esp_hal_jpeg esp_hal_lcd esp_hal_ledc esp_hal_mcpwm esp_hal_mspi esp_hal_parlio esp_hal_pcnt esp_hal_pmu esp_hal_ppa esp_hal_rmt esp_hal_rtc_timer esp_hal_sd esp_hal_security esp_hal_timg esp_hal_touch_sens esp_hal_twai esp_hal_uart esp_hal_usb esp_hal_wdt esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_libc esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_stdio esp_system esp_timer esp_trace esp_usb_cdc_rom_console esp_wifi espcoredump esptool_py fatfs freertos gpio_ctrl hal heap heartbeat http_parser idf_test ieee802154 led_ctrl log logger lwip main mbedtls nvs_flash nvs_sec_provider openthread ota partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs sr04_ctrl task_manager task_worker tasker tcp_transport ulp unity vfs wear_levelling web wifi wpa_supplicant xtensa
+-- Component paths: /root/esp-idf/esp-idf-v6.0.1/components/app_trace /root/esp-idf/esp-idf-v6.0.1/components/app_update /root/progarms/ovs/modules/devices_ctrl/beep_ctrl /root/esp-idf/esp-idf-v6.0.1/components/bootloader /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support /root/esp-idf/esp-idf-v6.0.1/components/bt /root/esp-idf/esp-idf-v6.0.1/components/cmock /root/esp-idf/esp-idf-v6.0.1/components/console /root/esp-idf/esp-idf-v6.0.1/components/cxx /root/esp-idf/esp-idf-v6.0.1/components/driver /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/esp-idf/esp-idf-v6.0.1/components/esp-tls /root/esp-idf/esp-idf-v6.0.1/components/esp_adc /root/esp-idf/esp-idf-v6.0.1/components/esp_app_format /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev /root/esp-idf/esp-idf-v6.0.1/components/esp_blockdev_util /root/esp-idf/esp-idf-v6.0.1/components/esp_bootloader_format /root/esp-idf/esp-idf-v6.0.1/components/esp_coex /root/esp-idf/esp-idf-v6.0.1/components/esp_common /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ana_cmpr /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_bitscrambler /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_cam /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dac /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i3c /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_isp /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_jpeg /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ledc /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_mcpwm /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_parlio /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_pcnt /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ppa /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sd_intf /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdio /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdm /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdmmc /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdspi /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_touch_sens /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_tsens /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_twai /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag /root/esp-idf/esp-idf-v6.0.1/components/esp_eth /root/esp-idf/esp-idf-v6.0.1/components/esp_event /root/esp-idf/esp-idf-v6.0.1/components/esp_gdbstub /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_cmpr /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ana_conv /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_cam /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_clock /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_dma /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpio /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_gpspi /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2c /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_i2s /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ieee802154 /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_jpeg /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_lcd /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ledc /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mcpwm /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_mspi /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_parlio /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pcnt /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_ppa /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rmt /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_rtc_timer /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_sd /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_security /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_touch_sens /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_twai /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_uart /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_usb /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt /root/esp-idf/esp-idf-v6.0.1/components/esp_hid /root/esp-idf/esp-idf-v6.0.1/components/esp_http_client /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server /root/esp-idf/esp-idf-v6.0.1/components/esp_https_ota /root/esp-idf/esp-idf-v6.0.1/components/esp_https_server /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support /root/esp-idf/esp-idf-v6.0.1/components/esp_lcd /root/esp-idf/esp-idf-v6.0.1/components/esp_libc /root/esp-idf/esp-idf-v6.0.1/components/esp_local_ctrl /root/esp-idf/esp-idf-v6.0.1/components/esp_mm /root/esp-idf/esp-idf-v6.0.1/components/esp_netif /root/esp-idf/esp-idf-v6.0.1/components/esp_netif_stack /root/esp-idf/esp-idf-v6.0.1/components/esp_partition /root/esp-idf/esp-idf-v6.0.1/components/esp_phy /root/esp-idf/esp-idf-v6.0.1/components/esp_pm /root/esp-idf/esp-idf-v6.0.1/components/esp_psram /root/esp-idf/esp-idf-v6.0.1/components/esp_ringbuf /root/esp-idf/esp-idf-v6.0.1/components/esp_rom /root/esp-idf/esp-idf-v6.0.1/components/esp_security /root/esp-idf/esp-idf-v6.0.1/components/esp_stdio /root/esp-idf/esp-idf-v6.0.1/components/esp_system /root/esp-idf/esp-idf-v6.0.1/components/esp_timer /root/esp-idf/esp-idf-v6.0.1/components/esp_trace /root/esp-idf/esp-idf-v6.0.1/components/esp_usb_cdc_rom_console /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi /root/esp-idf/esp-idf-v6.0.1/components/espcoredump /root/esp-idf/esp-idf-v6.0.1/components/esptool_py /root/esp-idf/esp-idf-v6.0.1/components/fatfs /root/esp-idf/esp-idf-v6.0.1/components/freertos /root/progarms/ovs/modules/devices_ctrl/gpio_ctrl /root/esp-idf/esp-idf-v6.0.1/components/hal /root/esp-idf/esp-idf-v6.0.1/components/heap /root/progarms/ovs/modules/heartbeat /root/esp-idf/esp-idf-v6.0.1/components/http_parser /root/esp-idf/esp-idf-v6.0.1/components/idf_test /root/esp-idf/esp-idf-v6.0.1/components/ieee802154 /root/progarms/ovs/modules/devices_ctrl/led_ctrl /root/esp-idf/esp-idf-v6.0.1/components/log /root/progarms/ovs/modules/logger /root/esp-idf/esp-idf-v6.0.1/components/lwip /root/progarms/ovs/main /root/esp-idf/esp-idf-v6.0.1/components/mbedtls /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash /root/esp-idf/esp-idf-v6.0.1/components/nvs_sec_provider /root/esp-idf/esp-idf-v6.0.1/components/openthread /root/progarms/ovs/modules/ota /root/esp-idf/esp-idf-v6.0.1/components/partition_table /root/esp-idf/esp-idf-v6.0.1/components/perfmon /root/esp-idf/esp-idf-v6.0.1/components/protobuf-c /root/esp-idf/esp-idf-v6.0.1/components/protocomm /root/esp-idf/esp-idf-v6.0.1/components/pthread /root/esp-idf/esp-idf-v6.0.1/components/rt /root/esp-idf/esp-idf-v6.0.1/components/sdmmc /root/esp-idf/esp-idf-v6.0.1/components/soc /root/esp-idf/esp-idf-v6.0.1/components/spi_flash /root/esp-idf/esp-idf-v6.0.1/components/spiffs /root/progarms/ovs/modules/devices_ctrl/sr04_ctrl /root/progarms/ovs/modules/tasker/task_manager /root/progarms/ovs/modules/tasker/task_worker /root/progarms/ovs/API/tasker /root/esp-idf/esp-idf-v6.0.1/components/tcp_transport /root/esp-idf/esp-idf-v6.0.1/components/ulp /root/esp-idf/esp-idf-v6.0.1/components/unity /root/esp-idf/esp-idf-v6.0.1/components/vfs /root/esp-idf/esp-idf-v6.0.1/components/wear_levelling /root/progarms/ovs/modules/web /root/progarms/ovs/modules/devices_ctrl/wifi /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant /root/esp-idf/esp-idf-v6.0.1/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/progarms/ovs/build
+[  0%] Built target memory_ld_in_preprocess
+[  0%] Built target _project_elf_src
+[  0%] Built target custom_bundle
+[  0%] Built target partition_table_bin
+[  0%] Built target sections_ld_in_preprocess
+[  0%] Built target blank_ota_data
+[  0%] Performing build step for 'bootloader'
+Scanning dependencies of target __idf_espcoredump
+Consolidate compiler generated dependencies of target __idf_espcoredump
+[  1%] Built target __idf_espcoredump
+Consolidate compiler generated dependencies of target __idf_esp_https_ota
+[  2%] Built target __idf_esp_https_ota
+[  7%] Built target __idf_log
+[  8%] Built target _project_elf_src
+[  9%] Built target bootloader_ld_in_preprocess
+Consolidate compiler generated dependencies of target __idf_esp_http_server
+[  2%] Built target __idf_esp_http_server
+[ 17%] Built target __idf_esp_rom
+Consolidate compiler generated dependencies of target __idf_esp_http_client
+[ 19%] Built target __idf_esp_common
+[  3%] Built target __idf_esp_http_client
+Consolidate compiler generated dependencies of target __idf_tcp_transport
+[ 26%] Built target __idf_esp_hw_support
+[  4%] Built target __idf_tcp_transport
+[ 28%] Built target __idf_esp_system
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2s
+[  5%] Built target __idf_esp_driver_i2s
+[ 34%] Built target __idf_efuse
+Consolidate compiler generated dependencies of target __idf_esp_adc
+[  6%] Built target __idf_esp_adc
+[ 50%] Built target __idf_bootloader_support
+Consolidate compiler generated dependencies of target __idf_esp-tls
+[ 52%] Built target __idf_esp_security
+[  7%] Built target __idf_esp-tls
+Consolidate compiler generated dependencies of target __idf_http_parser
+[ 53%] Built target __idf_esp_hal_security
+[  8%] Built target __idf_http_parser
+Consolidate compiler generated dependencies of target __idf_esp_hal_i2c
+[ 57%] Built target __idf_esp_hal_ana_conv
+[  8%] Built target __idf_esp_hal_i2c
+Scanning dependencies of target __idf_esp_gdbstub
+Consolidate compiler generated dependencies of target __idf_esp_gdbstub
+[ 61%] Built target __idf_esp_hal_uart
+[  9%] Built target __idf_esp_gdbstub
+[ 63%] Built target __idf_esp_hal_wdt
+Consolidate compiler generated dependencies of target __idf_esp_wifi
+[ 10%] Built target __idf_esp_wifi
+[ 65%] Built target __idf_esp_hal_timg
+Consolidate compiler generated dependencies of target __idf_esp_coex
+[ 67%] Built target __idf_micro-ecc
+[ 11%] Built target __idf_esp_coex
+[ 68%] Built target __idf_esp_bootloader_format
+[ 69%] Built target __idf_spi_flash
+[ 70%] Built target __idf_esp_hal_clock
+Consolidate compiler generated dependencies of target __idf_wpa_supplicant
+[ 74%] Built target __idf_esp_hal_gpspi
+[ 19%] Built target __idf_wpa_supplicant
+[ 77%] Built target __idf_esp_hal_dma
+Consolidate compiler generated dependencies of target __idf_esp_netif
+[ 79%] Built target __idf_esp_hal_pmu
+[ 20%] Built target __idf_esp_netif
+[ 82%] Built target __idf_esp_hal_usb
+[ 87%] Built target __idf_esp_hal_gpio
+[ 90%] Built target __idf_hal
+[ 94%] Built target __idf_soc
+Consolidate compiler generated dependencies of target __idf_lwip
+[ 96%] Built target __idf_xtensa
+[ 29%] Built target __idf_lwip
+[ 97%] Built target __idf_main
+Consolidate compiler generated dependencies of target __idf_vfs
+[ 98%] Built target bootloader.elf
+[ 30%] Built target __idf_vfs
+Consolidate compiler generated dependencies of target __idf_esp_driver_usb_serial_jtag
+[100%] Built target gen_bootloader_binary
+[ 31%] Built target __idf_esp_driver_usb_serial_jtag
+[100%] Built target gen_project_binary
+Consolidate compiler generated dependencies of target __idf_esp_phy
+[ 31%] Built target __idf_esp_phy
+Consolidate compiler generated dependencies of target __idf_nvs_flash
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[100%] Built target bootloader_check_size
+[ 32%] Built target __idf_nvs_flash
+Consolidate compiler generated dependencies of target __idf_nvs_sec_provider
+[100%] Built target app
+[ 32%] Built target __idf_nvs_sec_provider
+Consolidate compiler generated dependencies of target __idf_esp_event
+[ 32%] No install step for 'bootloader'
+[ 32%] Built target __idf_esp_event
+Consolidate compiler generated dependencies of target __idf_esp_driver_uart
+[ 32%] Completed 'bootloader'
+[ 32%] Built target __idf_esp_driver_uart
+Consolidate compiler generated dependencies of target __idf_esp_psram
+[ 33%] Built target bootloader
+[ 33%] Built target __idf_esp_psram
+Consolidate compiler generated dependencies of target __idf_esp_ringbuf
+[ 33%] Built target __idf_esp_ringbuf
+Consolidate compiler generated dependencies of target __idf_esp_timer
+[ 33%] Built target __idf_esp_timer
+Consolidate compiler generated dependencies of target __idf_cxx
+[ 33%] Built target __idf_cxx
+Consolidate compiler generated dependencies of target __idf_pthread
+[ 34%] Built target __idf_pthread
+Consolidate compiler generated dependencies of target __idf_esp_libc
+[ 37%] Built target __idf_esp_libc
+Scanning dependencies of target __idf_freertos
+Consolidate compiler generated dependencies of target __idf_freertos
+[ 39%] Built target __idf_freertos
+Consolidate compiler generated dependencies of target __idf_esp_hw_support
+[ 43%] Built target __idf_esp_hw_support
+Consolidate compiler generated dependencies of target __idf_esp_hal_i2s
+[ 43%] Built target __idf_esp_hal_i2s
+Consolidate compiler generated dependencies of target __idf_esp_hal_touch_sens
+[ 43%] Built target __idf_esp_hal_touch_sens
+Consolidate compiler generated dependencies of target __idf_esp_hal_pmu
+[ 43%] Built target __idf_esp_hal_pmu
+Consolidate compiler generated dependencies of target __idf_esp_hal_usb
+[ 43%] Built target __idf_esp_hal_usb
+Consolidate compiler generated dependencies of target __idf_esp_hal_gpio
+[ 43%] Built target __idf_esp_hal_gpio
+Consolidate compiler generated dependencies of target __idf_soc
+[ 43%] Built target __idf_soc
+Consolidate compiler generated dependencies of target __idf_heap
+[ 43%] Built target __idf_heap
+Consolidate compiler generated dependencies of target __idf_log
+[ 44%] Built target __idf_log
+Consolidate compiler generated dependencies of target __idf_hal
+[ 45%] Built target __idf_hal
+Scanning dependencies of target __idf_esp_rom
+Consolidate compiler generated dependencies of target __idf_esp_rom
+[ 46%] Built target __idf_esp_rom
+Consolidate compiler generated dependencies of target __idf_esp_common
+[ 46%] Built target __idf_esp_common
+Scanning dependencies of target __idf_esp_system
+Consolidate compiler generated dependencies of target __idf_esp_system
+[ 50%] Built target __idf_esp_system
+Consolidate compiler generated dependencies of target __idf_spi_flash
+[ 53%] Built target __idf_spi_flash
+Consolidate compiler generated dependencies of target __idf_bootloader_support
+[ 54%] Built target __idf_bootloader_support
+Consolidate compiler generated dependencies of target __idf_esp_hal_ana_conv
+[ 55%] Built target __idf_esp_hal_ana_conv
+Consolidate compiler generated dependencies of target __idf_esp_hal_wdt
+[ 56%] Built target __idf_esp_hal_wdt
+Consolidate compiler generated dependencies of target __idf_esp_hal_timg
+[ 56%] Built target __idf_esp_hal_timg
+Consolidate compiler generated dependencies of target tfpsacrypto
+[ 60%] Built target tfpsacrypto
+Consolidate compiler generated dependencies of target mbedtls
+[ 62%] Built target mbedtls
+Consolidate compiler generated dependencies of target mbedx509
+[ 63%] Built target mbedx509
+Consolidate compiler generated dependencies of target builtin
+[ 69%] Built target builtin
+Consolidate compiler generated dependencies of target p256m
+[ 70%] Built target p256m
+Consolidate compiler generated dependencies of target everest
+[ 70%] Built target everest
+Scanning dependencies of target __idf_mbedtls
+Consolidate compiler generated dependencies of target __idf_mbedtls
+[ 71%] Built target __idf_mbedtls
+Consolidate compiler generated dependencies of target __idf_esp_driver_dma
+[ 72%] Built target __idf_esp_driver_dma
+Consolidate compiler generated dependencies of target __idf_esp_mm
+[ 72%] Built target __idf_esp_mm
+Consolidate compiler generated dependencies of target __idf_esp_pm
+[ 73%] Built target __idf_esp_pm
+Consolidate compiler generated dependencies of target __idf_esp_hal_uart
+[ 73%] Built target __idf_esp_hal_uart
+Consolidate compiler generated dependencies of target __idf_esp_driver_gpio
+[ 73%] Built target __idf_esp_driver_gpio
+Consolidate compiler generated dependencies of target __idf_esp_security
+[ 74%] Built target __idf_esp_security
+Consolidate compiler generated dependencies of target __idf_efuse
+[ 75%] Built target __idf_efuse
+Consolidate compiler generated dependencies of target __idf_esp_partition
+[ 76%] Built target __idf_esp_partition
+Consolidate compiler generated dependencies of target __idf_app_update
+[ 76%] Built target __idf_app_update
+Consolidate compiler generated dependencies of target __idf_esp_bootloader_format
+[ 76%] Built target __idf_esp_bootloader_format
+Consolidate compiler generated dependencies of target __idf_esp_app_format
+[ 76%] Built target __idf_esp_app_format
+Consolidate compiler generated dependencies of target __idf_esp_hal_security
+[ 77%] Built target __idf_esp_hal_security
+Consolidate compiler generated dependencies of target __idf_esp_hal_mspi
+[ 78%] Built target __idf_esp_hal_mspi
+Consolidate compiler generated dependencies of target __idf_esp_hal_clock
+[ 78%] Built target __idf_esp_hal_clock
+Consolidate compiler generated dependencies of target __idf_esp_hal_gpspi
+[ 79%] Built target __idf_esp_hal_gpspi
+Consolidate compiler generated dependencies of target __idf_esp_hal_dma
+[ 80%] Built target __idf_esp_hal_dma
+Consolidate compiler generated dependencies of target __idf_esp_stdio
+[ 80%] Built target __idf_esp_stdio
+Scanning dependencies of target __idf_xtensa
+Consolidate compiler generated dependencies of target __idf_xtensa
+[ 81%] Built target __idf_xtensa
+Consolidate compiler generated dependencies of target __idf_logger
+Consolidate compiler generated dependencies of target __idf_wifi
+Consolidate compiler generated dependencies of target __idf_gpio_ctrl
+Consolidate compiler generated dependencies of target __idf_beep_ctrl
+Consolidate compiler generated dependencies of target __idf_spiffs
+Consolidate compiler generated dependencies of target __idf_esp_driver_gptimer
+Consolidate compiler generated dependencies of target __idf_ota
+Consolidate compiler generated dependencies of target __idf_sr04_ctrl
+Consolidate compiler generated dependencies of target __idf_esp_hal_ledc
+Consolidate compiler generated dependencies of target __idf_unity
+[ 81%] Built target __idf_gpio_ctrl
+Consolidate compiler generated dependencies of target __idf_esp_driver_spi
+Consolidate compiler generated dependencies of target __idf_esp_blockdev_util
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2c
+Consolidate compiler generated dependencies of target __idf_esp_hal_twai
+[ 81%] Built target __idf_beep_ctrl
+Consolidate compiler generated dependencies of target __idf_esp_hal_pcnt
+Consolidate compiler generated dependencies of target __idf_esp_hal_cam
+[ 81%] Built target __idf_wifi
+Consolidate compiler generated dependencies of target __idf_esp_hal_rmt
+Consolidate compiler generated dependencies of target __idf_console
+Consolidate compiler generated dependencies of target __idf_esp_hal_mcpwm
+[ 81%] Built target __idf_logger
+[ 81%] Built target __idf_sr04_ctrl
+[ 81%] Built target __idf_spiffs
+[ 82%] Built target __idf_esp_driver_gptimer
+[ 83%] Built target __idf_unity
+[ 83%] Built target __idf_ota
+[ 83%] Built target __idf_esp_driver_spi
+[ 83%] Built target __idf_esp_hal_ledc
+[ 83%] Built target __idf_esp_driver_i2c
+[ 83%] Built target __idf_esp_hal_mcpwm
+[ 84%] Built target __idf_esp_hal_twai
+[ 84%] Built target __idf_esp_blockdev_util
+[ 84%] Built target __idf_esp_hal_cam
+[ 86%] Built target __idf_console
+[ 87%] Built target __idf_esp_hal_pcnt
+[ 87%] Built target __idf_esp_hal_rmt
+Consolidate compiler generated dependencies of target __idf_esp_driver_tsens
+Consolidate compiler generated dependencies of target __idf_esp_driver_touch_sens
+Consolidate compiler generated dependencies of target __idf_esp_hal_lcd
+Consolidate compiler generated dependencies of target __idf_esp_hal_sd
+Consolidate compiler generated dependencies of target __idf_esp_https_server
+Consolidate compiler generated dependencies of target __idf_esp_hid
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdm
+Consolidate compiler generated dependencies of target __idf_perfmon
+Consolidate compiler generated dependencies of target __idf_protobuf-c
+Consolidate compiler generated dependencies of target __idf_cmock
+Consolidate compiler generated dependencies of target __idf_rt
+Consolidate compiler generated dependencies of target __idf_task_manager
+Consolidate compiler generated dependencies of target __idf_driver
+Consolidate compiler generated dependencies of target __idf_wear_levelling
+Consolidate compiler generated dependencies of target __idf_led_ctrl
+Consolidate compiler generated dependencies of target __idf_esp_driver_ledc
+Consolidate compiler generated dependencies of target __idf_esp_driver_cam
+[ 88%] Built target __idf_esp_driver_tsens
+[ 88%] Built target __idf_esp_driver_touch_sens
+[ 88%] Built target __idf_esp_hal_sd
+[ 88%] Building C object esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj
+[ 88%] Built target __idf_esp_driver_sdm
+[ 89%] Built target __idf_esp_hal_lcd
+[ 89%] Built target __idf_perfmon
+[ 89%] Built target __idf_esp_hid
+[ 89%] Built target __idf_protobuf-c
+[ 90%] Built target __idf_task_manager
+[ 90%] Built target __idf_esp_https_server
+Consolidate compiler generated dependencies of target __idf_esp_driver_mcpwm
+[ 91%] Built target __idf_cmock
+[ 91%] Built target __idf_driver
+[ 92%] Built target __idf_wear_levelling
+[ 92%] Built target __idf_led_ctrl
+[ 92%] Built target __idf_rt
+[ 92%] Built target __idf_esp_driver_ledc
+Consolidate compiler generated dependencies of target __idf_esp_driver_pcnt
+[ 92%] Built target __idf_esp_driver_cam
+Consolidate compiler generated dependencies of target __idf_esp_driver_twai
+Consolidate compiler generated dependencies of target __idf_esp_eth
+[ 93%] Built target __idf_esp_driver_mcpwm
+Consolidate compiler generated dependencies of target __idf_sdmmc
+Consolidate compiler generated dependencies of target __idf_task_worker
+Consolidate compiler generated dependencies of target __idf_protocomm
+[ 93%] Built target __idf_esp_driver_pcnt
+Consolidate compiler generated dependencies of target __idf_esp_driver_rmt
+Consolidate compiler generated dependencies of target __idf_esp_lcd
+[ 93%] Built target __idf_esp_driver_twai
+[ 94%] Built target __idf_sdmmc
+[ 94%] Built target __idf_esp_eth
+[ 95%] Built target __idf_protocomm
+[ 95%] Built target __idf_task_worker
+[ 96%] Built target __idf_esp_driver_rmt
+[ 97%] Built target __idf_esp_lcd
+Consolidate compiler generated dependencies of target __idf_esp_driver_sd_intf
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdspi
+Consolidate compiler generated dependencies of target __idf_tasker
+Consolidate compiler generated dependencies of target __idf_esp_local_ctrl
+[ 97%] Built target __idf_esp_driver_sd_intf
+[ 98%] Built target __idf_esp_driver_sdspi
+[ 98%] Built target __idf_tasker
+[ 98%] Built target __idf_esp_local_ctrl

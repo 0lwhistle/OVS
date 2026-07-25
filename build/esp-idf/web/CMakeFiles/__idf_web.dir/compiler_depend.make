@@ -359,6 +359,22 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_timer/include/esp_timer.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
   ../modules/ota/ota.h \
+  ../main/heartbeat.h \
+  ../modules/devices_ctrl/wifi/wifi.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_default.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
@@ -394,6 +410,14 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h:
+
+../main/heartbeat.h:
+
 ../modules/web/web_data/web_data.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h:
@@ -405,6 +429,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 /root/esp-idf/esp-idf-v6.0.1/components/bootloader_support/include/esp_flash_partitions.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/app_update/include/esp_ota_ops.h:
 
@@ -425,6 +451,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/inet.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/esp32xx/include/arch/cc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/debug.h:
 
@@ -449,6 +477,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/freertos/idf_additions.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/errno.h:
 
@@ -500,6 +530,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/select.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_default.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/port/freertos/include/arch/sys_arch.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
@@ -532,7 +564,11 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
 
+../modules/devices_ctrl/wifi/wifi.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_event/include/esp_event.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/lwip/lwip/src/include/lwip/sockets.h:
 
@@ -600,6 +636,8 @@ config/sdkconfig.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
 
 ../modules/web/web.h:
@@ -611,6 +649,8 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h:
 
@@ -636,11 +676,15 @@ config/sdkconfig.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/sched.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/types.h:
 
@@ -677,6 +721,8 @@ config/sdkconfig.h:
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:
 

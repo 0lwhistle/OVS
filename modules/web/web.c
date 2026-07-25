@@ -2,6 +2,8 @@
 #include "web_data.h"       // 由 tools/fs_to_c.py 生成
 #include "mongoose.h"
 #include "ota.h"
+#include "heartbeat.h"
+#include "../devices_ctrl/wifi/wifi.h"
 
 
 #include <stdio.h>
@@ -27,25 +29,6 @@ static int s_server_running = 0;
 
 // ========== SPIFFS 初始化 & Web 资源解压 ==========
 
-/**
- * @brief 检查 spiffs 分区是否为空（没有文件）
- */
-static int spiffs_is_empty(void) {
-    DIR *dir = opendir(WEB_SPIFFS_MOUNT);
-    if (!dir) return 1;  // 无法打开视为空
-
-    int empty = 1;
-    struct dirent *entry;
-    while ((entry = readdir(dir)) != NULL) {
-        // 跳过 . 和 ..
-        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
-            continue;
-        empty = 0;
-        break;
-    }
-    closedir(dir);
-    return empty;
-}
 
 /**
  * @brief 确保目录存在（递归创建）
@@ -109,10 +92,47 @@ int web_spiffs_init(void) {
         return -1;
     }
 
-    // 检查分区是否为空
-    if (!spiffs_is_empty()) {
-        ESP_LOGI(TAG, "SPIFFS already has data, skip decompress");
+    // 读取 SPIFFS 中的版本哈希文件
+    char spiffs_hash[65] = {0};  // SHA256 = 64 字符 hex + null
+    FILE *hf = fopen(WEB_SPIFFS_MOUNT "/.web_hash", "r");
+    bool hash_mismatch = true;  // 默认认为不匹配（需要重新部署）
+    if (hf) {
+        size_t nread = fread(spiffs_hash, 1, 64, hf);
+        spiffs_hash[nread] = '\0';
+        // 去掉换行符
+        size_t slen = strlen(spiffs_hash);
+        while (slen > 0 && (spiffs_hash[slen-1] == '\n' || spiffs_hash[slen-1] == '\r')) {
+            spiffs_hash[--slen] = '\0';
+        }
+        fclose(hf);
+
+        if (strcmp(spiffs_hash, WEB_DATA_HASH) == 0) {
+            hash_mismatch = false;  // 哈希匹配，无需更新
+            ESP_LOGI(TAG, "SPIFFS web resources up-to-date (hash=%s)", spiffs_hash);
+        } else {
+            ESP_LOGI(TAG, "SPIFFS hash mismatch: stored=%s, expected=%s",
+                     spiffs_hash, WEB_DATA_HASH);
+        }
+    } else {
+        ESP_LOGI(TAG, "No .web_hash file found in SPIFFS");
+    }
+
+    // 如果哈希匹配，跳过部署
+    if (!hash_mismatch) {
         return 0;
+    }
+
+    // 哈希不匹配：需要重新部署 web 资源
+    ESP_LOGI(TAG, "Re-deploying web resources (hash mismatch)");
+
+    // 先格式化 SPIFFS 分区（清空旧文件）
+    ESP_LOGI(TAG, "Formatting SPIFFS...");
+    esp_vfs_spiffs_unregister("spiffs");
+    esp_spiffs_format("spiffs");
+    ret = esp_vfs_spiffs_register(&conf);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "SPIFFS remount failed: %s", esp_err_to_name(ret));
+        return -1;
     }
 
     ESP_LOGI(TAG, "SPIFFS is empty, writing web resources...");
@@ -140,6 +160,16 @@ int web_spiffs_init(void) {
             ESP_LOGE(TAG, "Failed to write: %s", f->path);
             return -1;
         }
+    }
+
+    // 写入版本哈希文件（用于下次启动时判断是否需要重新部署）
+    hf = fopen(WEB_SPIFFS_MOUNT "/.web_hash", "w");
+    if (hf) {
+        fprintf(hf, "%s\n", WEB_DATA_HASH);
+        fclose(hf);
+        ESP_LOGI(TAG, "  Written: .web_hash (%s)", WEB_DATA_HASH);
+    } else {
+        ESP_LOGE(TAG, "Failed to write .web_hash");
     }
 
     ESP_LOGI(TAG, "All web resources written to SPIFFS");
@@ -174,8 +204,186 @@ static const char *get_mime_type(const char *path) {
 /**
  * @brief 处理 API 请求
  */
+
+// ---------- 简单 JSON 字符串解析（嵌入式，不依赖外部库） ----------
+// 从 JSON 字符串中提取 "key":"value"，返回 value 的 mg_str
+static struct mg_str json_get_str_val(struct mg_str json, const char *key) {
+    struct mg_str result = {NULL, 0};
+
+    // 构造搜索模式: "key":" 
+    char pattern[64];
+    int pat_len = snprintf(pattern, sizeof(pattern), "\"%s\":\"", key);
+    if (pat_len < 0 || pat_len >= (int)sizeof(pattern)) return result;
+
+    // 在 JSON 中搜索 pattern
+    const char *start = json.buf;
+    const char *end = json.buf + json.len;
+    const char *pos = start;
+
+    while (pos < end - pat_len) {
+        if (memcmp(pos, pattern, pat_len) == 0) {
+            // 找到值起始位置
+            const char *val_start = pos + pat_len;
+            const char *val_end = val_start;
+            while (val_end < end && *val_end != '"') val_end++;
+            if (val_end > val_start) {
+                result.buf = (char *)val_start;
+                result.len = val_end - val_start;
+            }
+            return result;
+        }
+        pos++;
+    }
+
+    return result;
+}
+
+/**
+ * @brief 处理 Wi-Fi 扫描请求（GET /api/wifi/scan）
+ */
+static void handle_wifi_scan(struct mg_connection *c) {
+    wifi_ap_info_t aps[20];
+    int count = wifi_scan_aps(aps, 20);
+
+    if (count <= 0) {
+        mg_http_reply(c, 200,
+                      "Content-Type: application/json\r\n",
+                      "{\"aps\":[],\"count\":0}");
+        return;
+    }
+
+    // 手动构造 JSON，用 mg_http_reply 一次性发送
+    // 预估: ["ssid":33+"rssi":6+"auth":1 ≈ 50 字符/项 + 头尾 ≈ 50*count + 50
+    int est_len = 50 * count + 100;
+    char *buf = malloc(est_len);
+    if (!buf) {
+        mg_http_reply(c, 500, "Content-Type: application/json\r\n",
+                      "{\"error\":\"OOM\"}");
+        return;
+    }
+
+    int off = snprintf(buf, est_len, "{\"aps\":[");
+    for (int i = 0; i < count; i++) {
+        if (i > 0) off += snprintf(buf + off, est_len - off, ",");
+        // 转义 SSID 中的特殊字符（简单处理：只处理双引号和反斜杠）
+        char escaped[70];
+        int e = 0;
+        for (int j = 0; j < 33 && aps[i].ssid[j]; j++) {
+            if (aps[i].ssid[j] == '"' || aps[i].ssid[j] == '\\') {
+                escaped[e++] = '\\';
+            }
+            escaped[e++] = aps[i].ssid[j];
+        }
+        escaped[e] = '\0';
+
+        off += snprintf(buf + off, est_len - off,
+                        "{\"ssid\":\"%s\",\"rssi\":%d,\"authmode\":%d}",
+                        escaped, aps[i].rssi, aps[i].authmode);
+    }
+    off += snprintf(buf + off, est_len - off, "],\"count\":%d}", count);
+
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "%.*s", off, buf);
+    free(buf);
+}
+
+/**
+ * @brief 处理 Wi-Fi 连接请求（POST /api/wifi/connect）
+ */
+static void handle_wifi_connect(struct mg_connection *c, struct mg_http_message *hm) {
+    if (mg_strcmp(hm->method, mg_str("POST")) != 0) {
+        mg_http_reply(c, 405,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"method not allowed, use POST\"}");
+        return;
+    }
+
+    // 解析 JSON body: {"ssid":"xxx","password":"xxx"}
+    struct mg_str ssid_val = json_get_str_val(hm->body, "ssid");
+    struct mg_str pass_val = json_get_str_val(hm->body, "password");
+
+    if (ssid_val.len == 0 || ssid_val.len > 32) {
+        mg_http_reply(c, 400,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"invalid ssid\"}");
+        return;
+    }
+    if (pass_val.len == 0 || pass_val.len > 64) {
+        mg_http_reply(c, 400,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"invalid password\"}");
+        return;
+    }
+
+    char ssid[33] = {0};
+    char password[65] = {0};
+    memcpy(ssid, ssid_val.buf, ssid_val.len);
+    memcpy(password, pass_val.buf, pass_val.len);
+
+    ESP_LOGI(TAG, "WiFi connect request: SSID=%s", ssid);
+
+    int ret = wifi_switch_ap(ssid, password);
+    if (ret != 0) {
+        mg_http_reply(c, 409,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"switch already in progress\"}");
+        return;
+    }
+
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "{\"status\":\"ok\",\"message\":\"switching\"}");
+}
+
+/**
+ * @brief 处理 Wi-Fi 状态查询（GET /api/wifi/status）
+ */
+static void handle_wifi_status(struct mg_connection *c) {
+    wifi_switch_status_t st;
+    wifi_get_switch_status(&st);
+
+    const char *state_str = "idle";
+    switch (st.state) {
+        case WIFI_STATE_IDLE:      state_str = "idle"; break;
+        case WIFI_STATE_SCANNING:  state_str = "scanning"; break;
+        case WIFI_STATE_SWITCHING: state_str = "switching"; break;
+        case WIFI_STATE_CONNECTED: state_str = "connected"; break;
+        case WIFI_STATE_FAILED:    state_str = "failed"; break;
+    }
+
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "{\"state\":\"%s\","
+                  "\"current_ssid\":\"%s\","
+                  "\"new_ssid\":\"%s\","
+                  "\"rssi\":%d,"
+                  "\"elapsed_sec\":%d,"
+                  "\"rollback_available\":%s}",
+                  state_str,
+                  st.current_ssid,
+                  st.new_ssid,
+                  st.rssi,
+                  st.elapsed_sec,
+                  st.rollback_available ? "true" : "false");
+}
+
 static void handle_api_call(struct mg_connection *c, const char *method,
                             const char *uri, struct mg_str body) {
+    // Wi-Fi 扫描 API
+    if (strcmp(uri, "/api/wifi/scan") == 0 && strcmp(method, "GET") == 0) {
+        handle_wifi_scan(c);
+        return;
+    }
+
+    // Wi-Fi 连接 API（POST 请求在 event_handler 中直接处理）
+
+    // Wi-Fi 状态查询 API
+    if (strcmp(uri, "/api/wifi/status") == 0 && strcmp(method, "GET") == 0) {
+        handle_wifi_status(c);
+        return;
+    }
+
     // 示例 API: GET /api/hello
     if (strcmp(uri, "/api/hello") == 0 && strcmp(method, "GET") == 0) {
         mg_http_reply(c, 200,
@@ -184,12 +392,14 @@ static void handle_api_call(struct mg_connection *c, const char *method,
         return;
     }
 
-    // 示例 API: GET /api/status
+    // 示例 API: GET /api/status（使用心跳缓存的运行时间）
     if (strcmp(uri, "/api/status") == 0 && strcmp(method, "GET") == 0) {
         mg_http_reply(c, 200,
                       "Content-Type: application/json\r\n",
-                      "{\"device\":\"ESP32-S3\",\"uptime_ms\":%" PRIu64 "}",
-                      (uint64_t)(esp_timer_get_time() / 1000));
+                      "{\"device\":\"ESP32-S3\",\"uptime_ms\":%" PRIu64 ","
+                      "\"rssi\":%d}",
+                      heartbeat_get_uptime_sec() * 1000,
+                      heartbeat_get_rssi());
         return;
     }
 
@@ -357,6 +567,185 @@ static void handle_ota_progress(struct mg_connection *c, struct mg_http_message 
 /**
  * @brief Mongoose 事件处理函数
  */
+
+// ===================== 网页 OTA（SPIFFS 更新） =====================
+
+/**
+ * @brief 最小 tar 解析器：从 tar 数据中提取文件到 SPIFFS
+ *
+ * tar 格式（USTAR）：
+ *   512 字节头 + 文件数据(padding 到 512B) + ... + 两个 512B 全零块结束
+ * @param data  tar 数据指针
+ * @param len   数据总长度
+ * @return 提取的文件数量，<0 表示失败
+ */
+static int tar_extract_to_spiffs(const unsigned char *data, size_t len) {
+    size_t offset = 0;
+    int files_extracted = 0;
+    int consecutive_zero_blocks = 0;
+
+    while (offset + 512 <= len) {
+        const unsigned char *header = data + offset;
+
+        // 检测是否全零块（tar 结束标记 = 两个连续 512B 全零块）
+        int is_zero = 1;
+        for (int i = 0; i < 512; i++) {
+            if (header[i] != 0) { is_zero = 0; break; }
+        }
+        if (is_zero) {
+            consecutive_zero_blocks++;
+            if (consecutive_zero_blocks >= 2) break;
+            offset += 512;
+            continue;
+        }
+        consecutive_zero_blocks = 0;
+
+        // 解析文件名（位置 0-99）
+        char filename[256];
+        memcpy(filename, header, 100);
+        filename[100] = '\0';
+        // 去除尾部空格
+        int fnlen = strlen(filename);
+        while (fnlen > 0 && filename[fnlen-1] == ' ') filename[--fnlen] = '\0';
+        if (fnlen == 0) { offset += 512; continue; }
+
+        // 跳过目录条目（以 / 结尾）
+        if (filename[fnlen-1] == '/') {
+            // 创建目录
+            char dirpath[256];
+            snprintf(dirpath, sizeof(dirpath), "%s%.*s",
+                     WEB_SPIFFS_MOUNT, fnlen, filename);
+            // 去掉末尾的 /
+            int dplen = strlen(dirpath);
+            if (dplen > 0 && dirpath[dplen-1] == '/') dirpath[dplen-1] = '\0';
+            mkdir(dirpath, 0755);
+            offset += 512;
+            continue;
+        }
+
+        // 解析文件大小（位置 124-135，八进制 ASCII）
+        char size_str[13];
+        memcpy(size_str, header + 124, 12);
+        size_str[12] = '\0';
+        size_t file_size = (size_t)strtoul(size_str, NULL, 8);
+
+        // 跳过 512 字节头
+        offset += 512;
+
+        if (offset + file_size > len) {
+            ESP_LOGE(TAG, "Tar: file %s exceeds data boundary", filename);
+            return -1;
+        }
+
+        // 写入文件到 SPIFFS
+        // 去除 tar 路径开头的 /（如 "/index.html" → "index.html"）
+        const char *clean_name = filename;
+        while (*clean_name == '/') clean_name++;
+        char filepath[512];
+        snprintf(filepath, sizeof(filepath), "%s/%s", WEB_SPIFFS_MOUNT, clean_name);
+
+        // 确保父目录存在
+        char parent[512];
+        snprintf(parent, sizeof(parent), "%s", filepath);
+        char *last_slash = strrchr(parent, '/');
+        if (last_slash) {
+            *last_slash = '\0';
+            mkdir(parent, 0755);
+        }
+
+        FILE *fp = fopen(filepath, "wb");
+        if (!fp) {
+            ESP_LOGE(TAG, "Tar: failed to create %s", filepath);
+            return -1;
+        }
+        size_t written = fwrite(data + offset, 1, file_size, fp);
+        fclose(fp);
+
+        if (written != file_size) {
+            ESP_LOGE(TAG, "Tar: write mismatch for %s (%zu/%zu)", filename, written, file_size);
+            return -1;
+        }
+
+        files_extracted++;
+        ESP_LOGI(TAG, "  Extracted: %s (%zu bytes)", clean_name, file_size);
+
+        // 跳过文件数据 + padding 到 512 字节边界
+        size_t padded = (file_size + 511) & ~511;
+        offset += padded;
+    }
+
+    return files_extracted;
+}
+
+/**
+ * @brief 处理网页 OTA 更新（POST /api/web/update）
+ *
+ * 接收 tar 格式的网页包，解压到 SPIFFS 分区。
+ * 处理完成后需刷新浏览器缓存才能看到新页面。
+ */
+static void handle_web_update(struct mg_connection *c, struct mg_http_message *hm) {
+    if (mg_strcmp(hm->method, mg_str("POST")) != 0) {
+        mg_http_reply(c, 405,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"method not allowed, use POST\"}");
+        return;
+    }
+
+    size_t body_len = hm->body.len;
+    if (body_len == 0) {
+        mg_http_reply(c, 400,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"empty body\"}");
+        return;
+    }
+
+    ESP_LOGI(TAG, "Web update: received %zu bytes", body_len);
+
+    // 先删除旧的网页文件（清空 SPIFFS）
+    ESP_LOGI(TAG, "Cleaning old web files...");
+    DIR *dir = opendir(WEB_SPIFFS_MOUNT);
+    if (dir) {
+        struct dirent *entry;
+        char fullpath[320];
+        while ((entry = readdir(dir)) != NULL) {
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+                continue;
+            snprintf(fullpath, sizeof(fullpath), "%s/%s", WEB_SPIFFS_MOUNT, entry->d_name);
+            // 删除文件或目录
+            struct stat st;
+            if (stat(fullpath, &st) == 0) {
+                if (S_ISDIR(st.st_mode)) {
+                    // 跳过目录清理（简单起见，只删顶层文件）
+                    ESP_LOGI(TAG, "  Skip dir: %s", entry->d_name);
+                } else {
+                    unlink(fullpath);
+                    ESP_LOGI(TAG, "  Deleted: %s", entry->d_name);
+                }
+            }
+        }
+        closedir(dir);
+    }
+
+    // 解析 tar 并提取文件
+    ESP_LOGI(TAG, "Extracting web files from tar...");
+    int count = tar_extract_to_spiffs((const unsigned char *)hm->body.buf, body_len);
+
+    if (count < 0) {
+        mg_http_reply(c, 500,
+                      "Content-Type: application/json\r\n",
+                      "{\"error\":\"tar extraction failed\"}");
+        return;
+    }
+
+    ESP_LOGI(TAG, "Web update complete: %d files extracted", count);
+
+    mg_http_reply(c, 200,
+                  "Content-Type: application/json\r\n",
+                  "{\"status\":\"ok\",\"files\":%d,"
+                  "\"message\":\"web updated successfully, please refresh\"}",
+                  count);
+}
+
 static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
     if (ev == MG_EV_HTTP_MSG) {
         struct mg_http_message *hm = (struct mg_http_message *)ev_data;
@@ -364,6 +753,18 @@ static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
         // 提取 URI
         char uri[256];
         snprintf(uri, sizeof(uri), "%.*s", (int)hm->uri.len, hm->uri.buf);
+
+        // 网页 OTA 升级
+        if (strcmp(uri, "/api/web/update") == 0) {
+            handle_web_update(c, hm);
+            return;
+        }
+
+        // Wi-Fi 连接 API（需要 POST body，在事件处理中直接处理）
+        if (strcmp(uri, "/api/wifi/connect") == 0) {
+            handle_wifi_connect(c, hm);
+            return;
+        }
 
         // OTA 升级路由
         if (strcmp(uri, "/ota/update") == 0) {

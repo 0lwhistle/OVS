@@ -1,5 +1,6 @@
 #include "wifi.h"
 #include <string.h>
+#include "../../logger/logger.h"
 
 // 保存用户设置的 STA 配置（运行时可修改）
 static wifi_config_t s_sta_config = {0};
@@ -8,7 +9,67 @@ static bool s_sta_config_valid = false;
 // 缓存 MAC 地址（初始化时获取，后续直接使用）
 static char s_mac_str[18] = {0};
 
-// ---------- Wi-Fi 事件回调（仅 STA 模式） ----------
+// ---------- AP 扫描相关 ----------
+static SemaphoreHandle_t s_scan_sem = NULL;
+static wifi_ap_info_t *s_scan_buf = NULL;
+static uint16_t s_scan_count = 0;
+static uint16_t s_scan_max = 0;
+
+// ---------- 热切换回退相关 ----------
+static wifi_config_t s_fallback_config = {0};
+static bool s_fallback_valid = false;
+static esp_timer_handle_t s_rollback_timer = NULL;
+static wifi_state_t s_wifi_state = WIFI_STATE_IDLE;
+static char s_current_ssid[33] = {0};
+static char s_target_ssid[33] = {0};
+static int64_t s_switch_start_us = 0;
+
+
+// ---------- 扫描完成回调 ----------
+static void wifi_scan_done_handler(void *arg, esp_event_base_t event_base,
+                                    int32_t event_id, void *event_data) {
+    uint16_t ap_count = 0;
+    esp_wifi_scan_get_ap_num(&ap_count);
+    if (ap_count == 0) {
+        s_scan_count = 0;
+        xSemaphoreGive(s_scan_sem);
+        return;
+    }
+
+    wifi_ap_record_t *raw = malloc(sizeof(wifi_ap_record_t) * ap_count);
+    if (!raw) {
+        s_scan_count = 0;
+        xSemaphoreGive(s_scan_sem);
+        return;
+    }
+
+    esp_wifi_scan_get_ap_records(&ap_count, raw);
+
+    // 按 RSSI 降序排序（冒泡，AP 数量不大）
+    for (int i = 0; i < (int)ap_count - 1; i++) {
+        for (int j = i + 1; j < (int)ap_count; j++) {
+            if (raw[j].rssi > raw[i].rssi) {
+                wifi_ap_record_t tmp = raw[i];
+                raw[i] = raw[j];
+                raw[j] = tmp;
+            }
+        }
+    }
+
+    uint16_t limit = (ap_count < s_scan_max) ? ap_count : s_scan_max;
+    for (uint16_t i = 0; i < limit; i++) {
+        memcpy(s_scan_buf[i].ssid, raw[i].ssid, sizeof(raw[i].ssid));
+        s_scan_buf[i].ssid[32] = '\0';
+        s_scan_buf[i].rssi = raw[i].rssi;
+        s_scan_buf[i].authmode = raw[i].authmode;
+    }
+    s_scan_count = limit;
+    free(raw);
+
+    xSemaphoreGive(s_scan_sem);
+}
+
+// ---------- Wi-Fi 事件回调 ----------
 void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
@@ -22,7 +83,6 @@ void wifi_event_handler(void *arg, esp_event_base_t event_base,
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
         printf("Got IP: " IPSTR "\n", IP2STR(&event->ip_info.ip));
 
-        // 直接从事件数据中获取 IP 信息打印（避免在回调中查询 netif）
         printf("========== WiFi Network Info ==========\n");
         printf("  IP      : " IPSTR "\n", IP2STR(&event->ip_info.ip));
         printf("  Netmask : " IPSTR "\n", IP2STR(&event->ip_info.netmask));
@@ -31,6 +91,26 @@ void wifi_event_handler(void *arg, esp_event_base_t event_base,
             printf("  MAC     : %s\n", s_mac_str);
         }
         printf("======================================\n");
+
+        // 热切换成功：取消回退定时器，清除回退配置
+        if (s_wifi_state == WIFI_STATE_SWITCHING) {
+            if (s_rollback_timer) {
+                esp_timer_stop(s_rollback_timer);
+                esp_timer_delete(s_rollback_timer);
+                s_rollback_timer = NULL;
+            }
+            s_fallback_valid = false;
+            s_wifi_state = WIFI_STATE_CONNECTED;
+            memcpy(s_current_ssid, s_target_ssid, sizeof(s_current_ssid));
+            LOGI("[WiFi]", "Hot-switch SUCCESS, now connected to %s", s_current_ssid);
+        } else {
+            // 正常连接：更新当前 SSID
+            wifi_config_t cur;
+            if (esp_wifi_get_config(WIFI_IF_STA, &cur) == ESP_OK) {
+                memcpy(s_current_ssid, cur.sta.ssid, sizeof(s_current_ssid));
+                s_wifi_state = WIFI_STATE_CONNECTED;
+            }
+        }
     }
 }
 
@@ -174,7 +254,164 @@ int wifi_get_net_info(wifi_net_info_t *info) {
     return 0;
 }
 
-// ---------- 初始化 Wi-Fi（仅 STA 模式） ----------
+
+// ---------- 回退定时器回调 ----------
+static void wifi_rollback_timer_cb(void *arg) {
+    LOGE("[WiFi]", "Switch timeout (30s), rolling back to previous AP");
+
+    if (s_fallback_valid) {
+        memcpy(&s_sta_config, &s_fallback_config, sizeof(s_sta_config));
+        s_sta_config_valid = true;
+        memcpy(s_current_ssid, s_fallback_config.sta.ssid, sizeof(s_current_ssid));
+    }
+
+    s_wifi_state = WIFI_STATE_FAILED;
+
+    if (s_rollback_timer) {
+        esp_timer_delete(s_rollback_timer);
+        s_rollback_timer = NULL;
+    }
+
+    wifi_restart_sta();
+    LOGI("[WiFi]", "Rollback complete, reconnected to %s", s_current_ssid);
+}
+
+// ---------- 扫描附近 Wi-Fi 热点 ----------
+int wifi_scan_aps(wifi_ap_info_t *aps, int max_ap) {
+    if (!aps || max_ap <= 0) return 0;
+
+    s_scan_sem = xSemaphoreCreateBinary();
+    if (!s_scan_sem) return 0;
+
+    s_scan_buf = aps;
+    s_scan_max = (uint16_t)max_ap;
+    s_scan_count = 0;
+
+    esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_SCAN_DONE,
+                               &wifi_scan_done_handler, NULL);
+
+    wifi_scan_config_t scan_cfg = {
+        .ssid = NULL,
+        .bssid = NULL,
+        .channel = 0,
+        .show_hidden = false,
+        .scan_type = WIFI_SCAN_TYPE_ACTIVE,
+        .scan_time = { .active = { .min = 100, .max = 300 } },
+    };
+
+    esp_err_t err = esp_wifi_scan_start(&scan_cfg, false);
+    if (err != ESP_OK) {
+        LOGE("[WiFi]", "esp_wifi_scan_start failed: %s", esp_err_to_name(err));
+        esp_event_handler_unregister(WIFI_EVENT, WIFI_EVENT_SCAN_DONE,
+                                     &wifi_scan_done_handler);
+        vSemaphoreDelete(s_scan_sem);
+        s_scan_sem = NULL;
+        return 0;
+    }
+
+    // 等待扫描完成（最多 5 秒）
+    if (xSemaphoreTake(s_scan_sem, pdMS_TO_TICKS(5000)) != pdTRUE) {
+        esp_wifi_scan_stop();
+        s_scan_count = 0;
+    }
+
+    esp_event_handler_unregister(WIFI_EVENT, WIFI_EVENT_SCAN_DONE,
+                                 &wifi_scan_done_handler);
+    vSemaphoreDelete(s_scan_sem);
+    s_scan_sem = NULL;
+
+    return (int)s_scan_count;
+}
+
+// ---------- 热切换到新 AP ----------
+int wifi_switch_ap(const char *ssid, const char *password) {
+    if (!ssid || !password) {
+        LOGE("[WiFi]", "wifi_switch_ap: invalid params");
+        return -1;
+    }
+
+    if (s_wifi_state == WIFI_STATE_SWITCHING) {
+        LOGE("[WiFi]", "wifi_switch_ap: already switching");
+        return -1;
+    }
+
+    // 1. 保存当前配置为回退
+    if (s_sta_config_valid) {
+        memcpy(&s_fallback_config, &s_sta_config, sizeof(s_fallback_config));
+        s_fallback_valid = true;
+        LOGI("[WiFi]", "Fallback config saved: SSID=%s",
+             s_fallback_config.sta.ssid);
+    } else {
+        // 读当前实际配置
+        wifi_config_t cur;
+        if (esp_wifi_get_config(WIFI_IF_STA, &cur) == ESP_OK) {
+            memcpy(&s_fallback_config, &cur, sizeof(cur));
+            s_fallback_valid = true;
+            LOGI("[WiFi]", "Fallback config saved (from active): SSID=%s",
+                 s_fallback_config.sta.ssid);
+        } else {
+            LOGE("[WiFi]", "No valid config to fallback to");
+            return -1;
+        }
+    }
+
+    // 2. 设置新配置
+    if (wifi_set_sta_config(ssid, password) != 0) {
+        s_fallback_valid = false;
+        return -1;
+    }
+
+    // 3. 记录目标 SSID 和切换开始时间
+    memcpy(s_target_ssid, ssid, 32);
+    s_target_ssid[32] = '\0';
+    s_switch_start_us = esp_timer_get_time();
+
+    // 4. 启动回退定时器（30 秒）
+    esp_timer_create_args_t timer_args = {
+        .callback = &wifi_rollback_timer_cb,
+        .name = "wifi_rollback",
+    };
+    esp_timer_create(&timer_args, &s_rollback_timer);
+    esp_timer_start_once(s_rollback_timer, 30 * 1000 * 1000);  // 30s
+
+    // 5. 标记状态为切换中
+    s_wifi_state = WIFI_STATE_SWITCHING;
+
+    // 6. 重启 Wi-Fi（连接新 AP）
+    wifi_restart_sta();
+
+    LOGI("[WiFi]", "Hot-switch initiated: %s -> %s (30s timeout)",
+         s_fallback_config.sta.ssid, ssid);
+
+    return 0;
+}
+
+// ---------- 获取热切换状态 ----------
+int wifi_get_switch_status(wifi_switch_status_t *status) {
+    if (!status) return -1;
+
+    memset(status, 0, sizeof(wifi_switch_status_t));
+    status->state = s_wifi_state;
+    status->rollback_available = s_fallback_valid;
+
+    memcpy(status->current_ssid, s_current_ssid, sizeof(status->current_ssid));
+
+    if (s_wifi_state == WIFI_STATE_SWITCHING) {
+        memcpy(status->new_ssid, s_target_ssid, sizeof(status->new_ssid));
+        int64_t now = esp_timer_get_time();
+        status->elapsed_sec = (int)((now - s_switch_start_us) / 1000000);
+    }
+
+    // 获取当前信号强度
+    wifi_ap_record_t ap_info;
+    if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK) {
+        status->rssi = ap_info.rssi;
+    }
+
+    return 0;
+}
+
+// ---------- 初始化 Wi-Fi ----------
 void wifi_init(void) {
     // 1. 初始化网络协议栈
     esp_netif_init();

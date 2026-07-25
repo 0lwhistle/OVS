@@ -8,5 +8,6 @@ idf_component_register(
 	esp_timer
 	freertos
 	ota
-
+    PRIV_REQUIRES
+	heartbeat
 )

@@ -9,6 +9,7 @@
 
 import os
 import sys
+import hashlib
 
 def generate_c_files(dist_dir, output_dir):
     """遍历 dist 目录，生成 C 文件（不压缩）"""
@@ -21,18 +22,31 @@ def generate_c_files(dist_dir, output_dir):
             relpath = os.path.relpath(filepath, dist_dir)
             files.append((relpath, filepath))
     
+    # 计算所有文件内容的哈希（用于版本检测）
+    hash_obj = hashlib.sha256()
+    # 按文件名排序以保证哈希稳定
+    for relpath, filepath in sorted(files, key=lambda x: x[0]):
+        with open(filepath, 'rb') as f:
+            data = f.read()
+        hash_obj.update(relpath.encode('utf-8'))
+        hash_obj.update(data)
+    web_hash = hash_obj.hexdigest()
+    
     # 生成 .h 文件
-    h_content = '''#ifndef WEB_DATA_H
+    h_content = f'''#ifndef WEB_DATA_H
 #define WEB_DATA_H
 
 #include <stddef.h>
 
-typedef struct {
+// Web 资源版本哈希（用于 OTA 后判断是否需要更新 SPIFFS）
+#define WEB_DATA_HASH "{web_hash}"
+
+typedef struct {{
     const char *path;       // 文件路径，如 "/index.html"
     const char *mime_type;  // MIME 类型
     const unsigned char *data;      // 文件数据
     size_t size;            // 文件大小
-} web_file_t;
+}} web_file_t;
 
 // 文件表
 extern const web_file_t web_files[];
@@ -105,6 +119,7 @@ extern const int web_files_count;
     
     print(f"✅ 成功生成 {len(files)} 个文件:")
     print(f"   总大小: {total_size} bytes")
+    print(f"   Web Hash: {web_hash}")
     for relpath, _ in files:
         print(f"   📄 /{relpath}")
 

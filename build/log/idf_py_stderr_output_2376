@@ -1,0 +1,9 @@
+Command: make -j 22 all
+In file included from /root/progarms/ovs/modules/devices_ctrl/wifi/wifi.c:1:
+/root/progarms/ovs/modules/devices_ctrl/wifi/wifi.h:10:10: fatal error: esp_timer.h: No such file or directory
+   10 | #include "esp_timer.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build.make:76: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/wifi.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7726: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
