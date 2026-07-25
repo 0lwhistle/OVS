@@ -22,6 +22,7 @@ idf_component_register(SRCS
 	app_update
 	spiffs
 	esp_timer
+	heartbeat
 	)
 
 

@@ -49,20 +49,22 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+  ../modules/logger/logger.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/unistd.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/unistd.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_pthreadtypes.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/sched.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timespec.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/types.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/select.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/select.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_sigset.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timeval.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_select.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/unistd.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_system.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h \
@@ -100,10 +102,13 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
+  /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/limits.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h \
@@ -123,27 +128,27 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
   /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h
 
 
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/list.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h:
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_private/crosscore_int.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/freertos/idf_additions.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h:
 
@@ -163,6 +168,8 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h:
@@ -175,23 +182,17 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/esp_additions/include/freertos/idf_additions.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h:
-
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/limits.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_idf_version.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h:
 
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/unistd.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h:
 
@@ -203,6 +204,8 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h:
 
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_sigset.h:
+
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h:
@@ -211,23 +214,19 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/lock.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h:
 
-../modules/ota/ota.c:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/endian.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h:
 
 ../modules/ota/ota.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_err.h:
 
@@ -237,19 +236,35 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_app_format/include/esp_app_desc.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/spinlock.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h:
 
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
+
+config/sdkconfig.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_pthreadtypes.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/unistd.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timespec.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:
 
@@ -259,7 +274,9 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_types.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h:
+/root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/sched.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h:
 
@@ -273,6 +290,10 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h:
 
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_select.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/select.h:
+
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/esp_newlib.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h:
@@ -282,6 +303,10 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h:
 
@@ -293,9 +318,9 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_timeval.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h:
 
@@ -303,19 +328,17 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_partition/include/esp_partition.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h:
-
 /root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_attr.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
+
+/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/stdio.h:
+
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/types.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/app_update/include/esp_ota_ops.h:
 
@@ -327,28 +350,20 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../modules/ota/ota.c \
 
 /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_memory_utils.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h:
+../modules/logger/logger.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/unistd.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h:
+../modules/ota/ota.c:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h:
 
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
-
-config/sdkconfig.h:
-
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h:
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h:
 
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h:
 
-/root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h:
+/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/select.h:

@@ -1,226 +1,113 @@
 <template>
-  <div class="container">
-    <header>
-      <h1>ESP32-S3 控制面板</h1>
-      <p class="status" :class="{ online: connected, offline: !connected }">
-        {{ connected ? '🟢 已连接' : '🔴 未连接' }}
-      </p>
-    </header>
-
-    <main>
-      <!-- 设备信息 -->
-      <section class="card">
-        <h2>设备信息</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="label">设备</span>
-            <span class="value">{{ deviceInfo.device }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">运行时间</span>
-            <span class="value">{{ formatUptime(deviceInfo.uptime_ms) }}</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- API 测试 -->
-      <section class="card">
-        <h2>API 测试</h2>
-        <div class="btn-group">
-          <button @click="fetchHello" :disabled="loading">
-            {{ loading ? '请求中...' : 'GET /api/hello' }}
-          </button>
-          <button @click="fetchStatus" :disabled="loading">
-            {{ loading ? '请求中...' : 'GET /api/status' }}
-          </button>
-        </div>
-        <pre v-if="apiResult" class="result">{{ apiResult }}</pre>
-      </section>
+  <div class="app-shell">
+    <!-- 主内容区 -->
+    <main class="page-content">
+      <Dashboard v-if="page === 'home'" />
+      <WifiConfig v-else-if="page === 'wifi'" />
+      <OtaUpdate v-else-if="page === 'ota'" />
     </main>
 
-    <footer>
-      <p>ESP32-S3 + Mongoose + Vue.js</p>
-    </footer>
+    <!-- 底部导航 -->
+    <nav class="bottom-nav">
+      <button class="nav-btn" :class="{ active: page === 'home' }" @click="page = 'home'">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+        </svg>
+        <span>仪表盘</span>
+      </button>
+      <button class="nav-btn" :class="{ active: page === 'wifi' }" @click="page = 'wifi'">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C17.93 4.04 6.07 4.04 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-6-6l2 2c2.76-2.76 7.24-2.76 10 0l2-2C13.14 7.14 5.86 7.14 3 11z"/>
+        </svg>
+        <span>Wi-Fi</span>
+      </button>
+      <button class="nav-btn" :class="{ active: page === 'ota' }" @click="page = 'ota'">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+        </svg>
+        <span>OTA</span>
+      </button>
+    </nav>
   </div>
 </template>
 
 <script>
+import Dashboard from './components/Dashboard.vue'
+import WifiConfig from './components/WifiConfig.vue'
+import OtaUpdate from './components/OtaUpdate.vue'
+
 export default {
+  components: { Dashboard, WifiConfig, OtaUpdate },
   data() {
     return {
-      connected: false,
-      loading: false,
-      apiResult: null,
-      deviceInfo: {
-        device: 'ESP32-S3',
-        uptime_ms: 0
-      }
+      page: 'home'
     }
-  },
-  methods: {
-    async fetchHello() {
-      this.loading = true
-      try {
-        const res = await fetch('/api/hello')
-        const data = await res.json()
-        this.apiResult = JSON.stringify(data, null, 2)
-        this.connected = true
-      } catch (e) {
-        this.apiResult = 'Error: ' + e.message
-        this.connected = false
-      }
-      this.loading = false
-    },
-    async fetchStatus() {
-      this.loading = true
-      try {
-        const res = await fetch('/api/status')
-        const data = await res.json()
-        this.deviceInfo = data
-        this.apiResult = JSON.stringify(data, null, 2)
-        this.connected = true
-      } catch (e) {
-        this.apiResult = 'Error: ' + e.message
-        this.connected = false
-      }
-      this.loading = false
-    },
-    formatUptime(ms) {
-      if (!ms) return '未知'
-      const seconds = Math.floor(ms / 1000)
-      const minutes = Math.floor(seconds / 60)
-      const hours = Math.floor(minutes / 60)
-      return `${hours}时 ${minutes % 60}分 ${seconds % 60}秒`
-    }
-  },
-  mounted() {
-    // 启动时自动获取状态
-    this.fetchStatus()
   }
 }
 </script>
 
 <style>
-* {
+/* 全局重置 */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f0f2f5;
-  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f7fa;
+  color: #212121;
+  -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  max-width: 600px;
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 20px;
+  overflow: hidden;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.status {
-  font-size: 14px;
-  padding: 4px 12px;
-  border-radius: 12px;
-  display: inline-block;
-}
-
-.status.online {
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-.status.offline {
-  background: #fbe9e7;
-  color: #c62828;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.card h2 {
-  font-size: 16px;
-  margin-bottom: 16px;
-  color: #666;
-}
-
-.info-grid {
-  display: grid;
-  gap: 12px;
-}
-
-.info-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.info-item .label {
-  color: #999;
-}
-
-.info-item .value {
-  font-weight: 500;
-}
-
-.btn-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-button {
+.page-content {
   flex: 1;
-  padding: 10px 16px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* 底部导航 — 始终固定在底部 */
+.bottom-nav {
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #e8eaed;
+  padding: 6px 0;
+  padding-bottom: max(6px, env(safe-area-inset-bottom));
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 0;
   border: none;
-  border-radius: 8px;
-  background: #1976d2;
-  color: white;
-  font-size: 14px;
+  background: none;
+  color: #9e9e9e;
+  font-size: 11px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: color 0.2s;
 }
 
-button:hover:not(:disabled) {
-  background: #1565c0;
+.nav-btn.active {
+  color: #1976d2;
 }
 
-button:disabled {
-  background: #90caf9;
-  cursor: not-allowed;
-}
-
-.result {
-  background: #f5f5f5;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-footer {
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  margin-top: 40px;
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 </style>

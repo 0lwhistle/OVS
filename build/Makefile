@@ -2385,6 +2385,71 @@ __idf_ota/fast:
 .PHONY : __idf_ota/fast
 
 #=============================================================================
+# Target rules for targets named __idf_task_manager
+
+# Build rule for target.
+__idf_task_manager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_manager
+.PHONY : __idf_task_manager
+
+# fast build rule for target.
+__idf_task_manager/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build
+.PHONY : __idf_task_manager/fast
+
+#=============================================================================
+# Target rules for targets named __idf_logger
+
+# Build rule for target.
+__idf_logger: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_logger
+.PHONY : __idf_logger
+
+# fast build rule for target.
+__idf_logger/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/logger/CMakeFiles/__idf_logger.dir/build.make esp-idf/logger/CMakeFiles/__idf_logger.dir/build
+.PHONY : __idf_logger/fast
+
+#=============================================================================
+# Target rules for targets named __idf_task_worker
+
+# Build rule for target.
+__idf_task_worker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_worker
+.PHONY : __idf_task_worker
+
+# fast build rule for target.
+__idf_task_worker/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build
+.PHONY : __idf_task_worker/fast
+
+#=============================================================================
+# Target rules for targets named __idf_tasker
+
+# Build rule for target.
+__idf_tasker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_tasker
+.PHONY : __idf_tasker
+
+# fast build rule for target.
+__idf_tasker/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build.make esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build
+.PHONY : __idf_tasker/fast
+
+#=============================================================================
+# Target rules for targets named __idf_heartbeat
+
+# Build rule for target.
+__idf_heartbeat: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_heartbeat
+.PHONY : __idf_heartbeat
+
+# fast build rule for target.
+__idf_heartbeat/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/build.make esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/build
+.PHONY : __idf_heartbeat/fast
+
+#=============================================================================
 # Target rules for targets named __idf_web
 
 # Build rule for target.
@@ -2448,58 +2513,6 @@ __idf_sr04_ctrl: cmake_check_build_system
 __idf_sr04_ctrl/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/sr04_ctrl/CMakeFiles/__idf_sr04_ctrl.dir/build.make esp-idf/sr04_ctrl/CMakeFiles/__idf_sr04_ctrl.dir/build
 .PHONY : __idf_sr04_ctrl/fast
-
-#=============================================================================
-# Target rules for targets named __idf_task_manager
-
-# Build rule for target.
-__idf_task_manager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_manager
-.PHONY : __idf_task_manager
-
-# fast build rule for target.
-__idf_task_manager/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build.make esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/build
-.PHONY : __idf_task_manager/fast
-
-#=============================================================================
-# Target rules for targets named __idf_logger
-
-# Build rule for target.
-__idf_logger: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_logger
-.PHONY : __idf_logger
-
-# fast build rule for target.
-__idf_logger/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/logger/CMakeFiles/__idf_logger.dir/build.make esp-idf/logger/CMakeFiles/__idf_logger.dir/build
-.PHONY : __idf_logger/fast
-
-#=============================================================================
-# Target rules for targets named __idf_task_worker
-
-# Build rule for target.
-__idf_task_worker: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_task_worker
-.PHONY : __idf_task_worker
-
-# fast build rule for target.
-__idf_task_worker/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build
-.PHONY : __idf_task_worker/fast
-
-#=============================================================================
-# Target rules for targets named __idf_tasker
-
-# Build rule for target.
-__idf_tasker: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_tasker
-.PHONY : __idf_tasker
-
-# fast build rule for target.
-__idf_tasker/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build.make esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build
-.PHONY : __idf_tasker/fast
 
 #=============================================================================
 # Target rules for targets named __idf_main
@@ -2693,6 +2706,7 @@ help:
 	@echo "... __idf_gpio_ctrl"
 	@echo "... __idf_hal"
 	@echo "... __idf_heap"
+	@echo "... __idf_heartbeat"
 	@echo "... __idf_http_parser"
 	@echo "... __idf_led_ctrl"
 	@echo "... __idf_log"

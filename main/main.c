@@ -2,6 +2,7 @@
 #include "web.h"
 #include "wifi.h"
 #include "ota.h"
+#include "heartbeat.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -48,6 +49,10 @@ void app_main(void)
 
     // 初始化 OTA 模块（创建队列和后台写入任务）
     ota_init();
+
+    // 初始化心跳任务（每秒缓存 WiFi 信号强度和运行时间）
+    heartbeat_init();
+    printf("Heartbeat initialized\n");
 
     // 初始化 tasker 系统
 
