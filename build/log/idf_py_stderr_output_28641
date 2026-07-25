@@ -1,0 +1,3 @@
+Command: make -j 22 all
+info: Default value for ESP_TASK_WDT_TIMEOUT_S in sdkconfig is 30 but it is 5 according to Kconfig.
+Using default value from sdkconfig (30).

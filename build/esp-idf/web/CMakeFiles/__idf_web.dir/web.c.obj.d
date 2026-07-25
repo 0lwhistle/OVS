@@ -180,6 +180,27 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/etm/include/esp_etm.h \
  /root/progarms/ovs/modules/ota/ota.h \
  /root/progarms/ovs/modules/heartbeat/heartbeat.h \
+ /root/progarms/ovs/API/tasker/tasker.h \
+ /root/progarms/ovs/modules/tasker/task_manager/task_manager.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/platform_include/pthread.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/pthread.h \
+ /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sched.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
  /root/progarms/ovs/modules/web/../devices_ctrl/wifi/wifi.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
@@ -196,15 +217,5 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
  /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
  /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_buffer.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_timestamp.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_write.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_format.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h
+ /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h \
+ /root/progarms/ovs/modules/web/../logger/logger.h

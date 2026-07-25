@@ -13,16 +13,20 @@
         <div class="info-grid">
           <div class="info-item">
             <span class="label">设备</span>
-            <span class="value">{{ deviceInfo.device }}</span>
+            <span class="value">ESP32-S3</span>
           </div>
           <div class="info-item">
             <span class="label">运行时间</span>
-            <span class="value">{{ formatUptime(deviceInfo.uptime_ms) }}</span>
+            <span class="value">{{ formatUptime(uptimeSec) }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">信号强度</span>
+            <span class="value">{{ rssi !== null ? rssi + ' dBm' : '--' }}</span>
           </div>
         </div>
       </section>
 
-      <section class="card">
+      <!-- <section class="card">
         <h2>API 测试</h2>
         <div class="btn-group">
           <button @click="fetchHello" :disabled="loading">
@@ -33,12 +37,12 @@
           </button>
         </div>
         <pre v-if="apiResult" class="result">{{ apiResult }}</pre>
-      </section>
+      </section> -->
     </main>
 
-    <footer class="dash-footer">
+    <!-- <footer class="dash-footer">
       <p>ESP32-S3 + Mongoose + Vue.js</p>
-    </footer>
+    </footer> -->
   </div>
 </template>
 
@@ -49,10 +53,10 @@ export default {
       connected: false,
       loading: false,
       apiResult: null,
-      deviceInfo: {
-        device: 'ESP32-S3',
-        uptime_ms: 0
-      }
+      uptimeSec: 0,
+      rssi: null,
+      ws: null,
+      pollTimer: null
     }
   },
   methods: {
@@ -70,29 +74,64 @@ export default {
       this.loading = false
     },
     async fetchStatus() {
-      this.loading = true
       try {
         const res = await fetch('/api/status')
         const data = await res.json()
-        this.deviceInfo = data
-        this.apiResult = JSON.stringify(data, null, 2)
+        this.uptimeSec = Math.floor(data.uptime_ms / 1000)
+        this.rssi = data.rssi
         this.connected = true
       } catch (e) {
-        this.apiResult = 'Error: ' + e.message
         this.connected = false
       }
-      this.loading = false
     },
-    formatUptime(ms) {
-      if (!ms) return '未知'
-      const seconds = Math.floor(ms / 1000)
-      const minutes = Math.floor(seconds / 60)
-      const hours = Math.floor(minutes / 60)
-      return `${hours}时 ${minutes % 60}分 ${seconds % 60}秒`
+    formatUptime(sec) {
+      if (sec === 0 && this.uptimeSec === 0) return '0秒'
+      const hours = Math.floor(sec / 3600)
+      const minutes = Math.floor((sec % 3600) / 60)
+      const seconds = sec % 60
+      return `${hours}时 ${minutes}分 ${seconds}秒`
+    },
+    connectWs() {
+      const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:'
+      const url = `${protocol}//${location.host}/ws`
+      this.ws = new WebSocket(url)
+      this.ws.onopen = () => {
+        console.log('[WS] connected')
+        this.connected = true
+      }
+      this.ws.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data)
+          console.log('[WS] received:', data)
+          if (data.type === 'status') {
+            this.uptimeSec = data.uptime_sec
+            this.rssi = data.rssi
+            this.connected = true
+          }
+        } catch (e) {
+          console.warn('[WS] parse error:', e)
+        }
+      }
+      this.ws.onclose = () => {
+        console.log('[WS] disconnected, reconnecting in 3s')
+        setTimeout(() => this.connectWs(), 3000)
+      }
+      this.ws.onerror = () => {
+        this.ws.close()
+      }
+    },
+    startPolling() {
+      this.pollTimer = setInterval(() => this.fetchStatus(), 1000)
     }
   },
   mounted() {
     this.fetchStatus()
+    this.connectWs()
+    this.startPolling()
+  },
+  beforeUnmount() {
+    if (this.ws) this.ws.close()
+    if (this.pollTimer) clearInterval(this.pollTimer)
   }
 }
 </script>

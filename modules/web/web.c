@@ -3,22 +3,26 @@
 #include "mongoose.h"
 #include "ota.h"
 #include "heartbeat.h"
+#include "tasker.h"
 #include "../devices_ctrl/wifi/wifi.h"
 
 
 #include <stdio.h>
 #include <string.h>
 #include <strings.h>
+#include <stdlib.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/queue.h"
 #include <inttypes.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <dirent.h>
 
 #include "esp_spiffs.h"
-#include "esp_log.h"
 #include "esp_err.h"
 #include "esp_timer.h"
 #include "esp_task_wdt.h"
+#include "../logger/logger.h"
 
 
 static const char *TAG = "[WEB]";
@@ -26,6 +30,16 @@ static const char *TAG = "[WEB]";
 static struct mg_mgr s_mgr;
 static struct mg_connection *s_listen_conn = NULL;
 static int s_server_running = 0;
+
+// ---------- WebSocket 订阅者列表 ----------
+struct ws_client {
+    struct mg_connection *c;
+    struct ws_client *next;
+};
+static struct ws_client *s_ws_clients = NULL;
+
+// 队列桥接：tasker 触发 → poll 循环执行 mg_ws_send（解决线程安全）
+static QueueHandle_t s_ws_push_queue = NULL;
 
 // ========== SPIFFS 初始化 & Web 资源解压 ==========
 
@@ -61,12 +75,12 @@ static int write_data_to_file(const char *filepath,
                                size_t size) {
     FILE *fp = fopen(filepath, "wb");
     if (!fp) {
-        ESP_LOGE(TAG, "fopen failed: %s", filepath);
+        LOGE(TAG, "fopen failed: %s", filepath);
         return -1;
     }
 
     if (size > 0 && fwrite(data, 1, size, fp) != size) {
-        ESP_LOGE(TAG, "fwrite failed for %s", filepath);
+        LOGE(TAG, "fwrite failed for %s", filepath);
         fclose(fp);
         return -1;
     }
@@ -76,7 +90,7 @@ static int write_data_to_file(const char *filepath,
 }
 
 int web_spiffs_init(void) {
-    ESP_LOGI(TAG, "Initializing SPIFFS...");
+    LOGI(TAG, "Initializing SPIFFS...");
 
     // 配置 SPIFFS
     esp_vfs_spiffs_conf_t conf = {
@@ -88,7 +102,7 @@ int web_spiffs_init(void) {
 
     esp_err_t ret = esp_vfs_spiffs_register(&conf);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "SPIFFS mount failed: %s", esp_err_to_name(ret));
+        LOGE(TAG, "SPIFFS mount failed: %s", esp_err_to_name(ret));
         return -1;
     }
 
@@ -108,13 +122,13 @@ int web_spiffs_init(void) {
 
         if (strcmp(spiffs_hash, WEB_DATA_HASH) == 0) {
             hash_mismatch = false;  // 哈希匹配，无需更新
-            ESP_LOGI(TAG, "SPIFFS web resources up-to-date (hash=%s)", spiffs_hash);
+            LOGI(TAG, "SPIFFS web resources up-to-date (hash=%s)", spiffs_hash);
         } else {
-            ESP_LOGI(TAG, "SPIFFS hash mismatch: stored=%s, expected=%s",
+            LOGI(TAG, "SPIFFS hash mismatch: stored=%s, expected=%s",
                      spiffs_hash, WEB_DATA_HASH);
         }
     } else {
-        ESP_LOGI(TAG, "No .web_hash file found in SPIFFS");
+        LOGI(TAG, "No .web_hash file found in SPIFFS");
     }
 
     // 如果哈希匹配，跳过部署
@@ -123,19 +137,19 @@ int web_spiffs_init(void) {
     }
 
     // 哈希不匹配：需要重新部署 web 资源
-    ESP_LOGI(TAG, "Re-deploying web resources (hash mismatch)");
+    LOGI(TAG, "Re-deploying web resources (hash mismatch)");
 
     // 先格式化 SPIFFS 分区（清空旧文件）
-    ESP_LOGI(TAG, "Formatting SPIFFS...");
+    LOGI(TAG, "Formatting SPIFFS...");
     esp_vfs_spiffs_unregister("spiffs");
     esp_spiffs_format("spiffs");
     ret = esp_vfs_spiffs_register(&conf);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "SPIFFS remount failed: %s", esp_err_to_name(ret));
+        LOGE(TAG, "SPIFFS remount failed: %s", esp_err_to_name(ret));
         return -1;
     }
 
-    ESP_LOGI(TAG, "SPIFFS is empty, writing web resources...");
+    LOGI(TAG, "SPIFFS is empty, writing web resources...");
 
     // 写入所有 web 资源到 spiffs
     for (int i = 0; i < web_files_count; i++) {
@@ -154,10 +168,10 @@ int web_spiffs_init(void) {
             ensure_dir(dirpath);
         }
 
-        ESP_LOGI(TAG, "  Writing: %s (%zu bytes)", f->path, f->size);
+        LOGI(TAG, "  Writing: %s (%zu bytes)", f->path, f->size);
 
         if (write_data_to_file(fullpath, f->data, f->size) != 0) {
-            ESP_LOGE(TAG, "Failed to write: %s", f->path);
+            LOGE(TAG, "Failed to write: %s", f->path);
             return -1;
         }
     }
@@ -167,12 +181,12 @@ int web_spiffs_init(void) {
     if (hf) {
         fprintf(hf, "%s\n", WEB_DATA_HASH);
         fclose(hf);
-        ESP_LOGI(TAG, "  Written: .web_hash (%s)", WEB_DATA_HASH);
+        LOGI(TAG, "  Written: .web_hash (%s)", WEB_DATA_HASH);
     } else {
-        ESP_LOGE(TAG, "Failed to write .web_hash");
+        LOGE(TAG, "Failed to write .web_hash");
     }
 
-    ESP_LOGI(TAG, "All web resources written to SPIFFS");
+    LOGI(TAG, "All web resources written to SPIFFS");
     return 0;
 }
 
@@ -321,7 +335,7 @@ static void handle_wifi_connect(struct mg_connection *c, struct mg_http_message 
     memcpy(ssid, ssid_val.buf, ssid_val.len);
     memcpy(password, pass_val.buf, pass_val.len);
 
-    ESP_LOGI(TAG, "WiFi connect request: SSID=%s", ssid);
+    LOGI(TAG, "WiFi connect request: SSID=%s", ssid);
 
     int ret = wifi_switch_ap(ssid, password);
     if (ret != 0) {
@@ -495,14 +509,14 @@ static void handle_ota_update(struct mg_connection *c, struct mg_http_message *h
     }
 
 
-    ESP_LOGI(TAG, "OTA update request received, body: %zu bytes, offset: %zu",
+    LOGI(TAG, "OTA update request received, body: %zu bytes, offset: %zu",
              hm->body.len, resume_offset);
 
     // 1. 开始 OTA（支持续传）
     bool resume = (resume_offset > 0);
     esp_err_t err = ota_start(hm->body.len + resume_offset, resume);
     if (err != ESP_OK) {
-        ESP_LOGE(TAG, "ota_start failed: %s", esp_err_to_name(err));
+        LOGE(TAG, "ota_start failed: %s", esp_err_to_name(err));
         mg_http_reply(c, 500,
                       "Content-Type: application/json\r\n",
                       "{\"error\":\"ota_start failed: %s\"}",
@@ -520,7 +534,7 @@ static void handle_ota_update(struct mg_connection *c, struct mg_http_message *h
 
         err = ota_push_data(hm->body.buf + offset, chunk_len);
         if (err != ESP_OK) {
-            ESP_LOGE(TAG, "ota_push_data failed at offset %zu: %s",
+            LOGE(TAG, "ota_push_data failed at offset %zu: %s",
                      offset, esp_err_to_name(err));
             ota_abort();
             mg_http_reply(c, 500,
@@ -536,7 +550,7 @@ static void handle_ota_update(struct mg_connection *c, struct mg_http_message *h
         esp_task_wdt_reset();
     }
 
-    ESP_LOGI(TAG, "All data pushed to OTA queue, finishing...");
+    LOGI(TAG, "All data pushed to OTA queue, finishing...");
 
     // 3. 结束 OTA（后台任务会完成校验并重启）
     mg_http_reply(c, 200,
@@ -633,7 +647,7 @@ static int tar_extract_to_spiffs(const unsigned char *data, size_t len) {
         offset += 512;
 
         if (offset + file_size > len) {
-            ESP_LOGE(TAG, "Tar: file %s exceeds data boundary", filename);
+            LOGE(TAG, "Tar: file %s exceeds data boundary", filename);
             return -1;
         }
 
@@ -655,19 +669,19 @@ static int tar_extract_to_spiffs(const unsigned char *data, size_t len) {
 
         FILE *fp = fopen(filepath, "wb");
         if (!fp) {
-            ESP_LOGE(TAG, "Tar: failed to create %s", filepath);
+            LOGE(TAG, "Tar: failed to create %s", filepath);
             return -1;
         }
         size_t written = fwrite(data + offset, 1, file_size, fp);
         fclose(fp);
 
         if (written != file_size) {
-            ESP_LOGE(TAG, "Tar: write mismatch for %s (%zu/%zu)", filename, written, file_size);
+            LOGE(TAG, "Tar: write mismatch for %s (%zu/%zu)", filename, written, file_size);
             return -1;
         }
 
         files_extracted++;
-        ESP_LOGI(TAG, "  Extracted: %s (%zu bytes)", clean_name, file_size);
+        LOGI(TAG, "  Extracted: %s (%zu bytes)", clean_name, file_size);
 
         // 跳过文件数据 + padding 到 512 字节边界
         size_t padded = (file_size + 511) & ~511;
@@ -699,10 +713,10 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
         return;
     }
 
-    ESP_LOGI(TAG, "Web update: received %zu bytes", body_len);
+    LOGI(TAG, "Web update: received %zu bytes", body_len);
 
     // 先删除旧的网页文件（清空 SPIFFS）
-    ESP_LOGI(TAG, "Cleaning old web files...");
+    LOGI(TAG, "Cleaning old web files...");
     DIR *dir = opendir(WEB_SPIFFS_MOUNT);
     if (dir) {
         struct dirent *entry;
@@ -716,10 +730,10 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
             if (stat(fullpath, &st) == 0) {
                 if (S_ISDIR(st.st_mode)) {
                     // 跳过目录清理（简单起见，只删顶层文件）
-                    ESP_LOGI(TAG, "  Skip dir: %s", entry->d_name);
+                    LOGI(TAG, "  Skip dir: %s", entry->d_name);
                 } else {
                     unlink(fullpath);
-                    ESP_LOGI(TAG, "  Deleted: %s", entry->d_name);
+                    LOGI(TAG, "  Deleted: %s", entry->d_name);
                 }
             }
         }
@@ -727,7 +741,7 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
     }
 
     // 解析 tar 并提取文件
-    ESP_LOGI(TAG, "Extracting web files from tar...");
+    LOGI(TAG, "Extracting web files from tar...");
     int count = tar_extract_to_spiffs((const unsigned char *)hm->body.buf, body_len);
 
     if (count < 0) {
@@ -737,7 +751,7 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
         return;
     }
 
-    ESP_LOGI(TAG, "Web update complete: %d files extracted", count);
+    LOGI(TAG, "Web update complete: %d files extracted", count);
 
     mg_http_reply(c, 200,
                   "Content-Type: application/json\r\n",
@@ -746,13 +760,82 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
                   count);
 }
 
+// ===================== WebSocket 主动推送 =====================
+
+/**
+ * @brief 向所有 WebSocket 客户端推送运行时间和信号强度
+ */
+static void ws_broadcast_status(void) {
+    if (!s_ws_clients) return;  // 没有订阅者
+
+    // 构造 JSON
+    char json[256];
+    int len = snprintf(json, sizeof(json),
+        "{"
+        "\"type\":\"status\","
+        "\"uptime_sec\":%llu,"
+        "\"rssi\":%d"
+        "}",
+        (unsigned long long)heartbeat_get_uptime_sec(),
+        heartbeat_get_rssi()
+    );
+    if (len <= 0 || len >= (int)sizeof(json)) return;
+
+    // 遍历推送，断开的客户端自动移除
+    struct ws_client **p = &s_ws_clients;
+    while (*p) {
+        struct ws_client *client = *p;
+        if (client->c == NULL || client->c->is_closing ||
+            client->c->is_resp == 0) {
+            *p = client->next;
+            free(client);
+        } else {
+            mg_ws_send(client->c, json, len, WEBSOCKET_OP_TEXT);
+            p = &client->next;
+        }
+    }
+}
+
+/**
+ * @brief 处理 WebSocket 升级请求（GET /ws）
+ */
+static void handle_ws_upgrade(struct mg_connection *c, struct mg_http_message *hm) {
+    struct mg_str *upgrade = mg_http_get_header(hm, "Upgrade");
+    if (upgrade == NULL || mg_strcasecmp(*upgrade, mg_str("websocket")) != 0) {
+        mg_http_reply(c, 400, "", "bad request");
+        return;
+    }
+
+    // 接受 WebSocket 连接
+    mg_ws_upgrade(c, hm, NULL);
+
+    // 加入订阅者列表
+    struct ws_client *client = (struct ws_client *)calloc(1, sizeof(struct ws_client));
+    if (client) {
+        client->c = c;
+        client->next = s_ws_clients;
+        s_ws_clients = client;
+        LOGI(TAG, "WebSocket client connected");
+    }
+
+    // 立即推送一次当前状态
+    ws_broadcast_status();
+}
+
 static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
+    // WebSocket 升级握手
     if (ev == MG_EV_HTTP_MSG) {
         struct mg_http_message *hm = (struct mg_http_message *)ev_data;
 
         // 提取 URI
         char uri[256];
         snprintf(uri, sizeof(uri), "%.*s", (int)hm->uri.len, hm->uri.buf);
+
+        // WebSocket 升级路径
+        if (strcmp(uri, "/ws") == 0) {
+            handle_ws_upgrade(c, hm);
+            return;
+        }
 
         // 网页 OTA 升级
         if (strcmp(uri, "/api/web/update") == 0) {
@@ -793,9 +876,22 @@ static void web_event_handler(struct mg_connection *c, int ev, void *ev_data) {
 }
 
 
+/**
+ * @brief tasker 回调：每秒触发一次，发送信号到队列
+ * mg_ws_send 在 poll 循环中执行，保证线程安全
+ */
+static enum task_t ws_push_task_fn(void *ctx) {
+    (void)ctx;
+    int trigger = 1;
+    if (s_ws_push_queue) {
+        xQueueSend(s_ws_push_queue, &trigger, 0);
+    }
+    return TASK_OK;
+}
+
 int web_server_start(void) {
     if (s_server_running) {
-        ESP_LOGW(TAG, "Web server already running");
+        LOGW(TAG, "Web server already running");
         return 0;
     }
 
@@ -807,21 +903,49 @@ int web_server_start(void) {
 
     s_listen_conn = mg_http_listen(&s_mgr, listen_addr, web_event_handler, NULL);
     if (!s_listen_conn) {
-        ESP_LOGE(TAG, "Failed to listen on port %d", WEB_PORT);
+        LOGE(TAG, "Failed to listen on port %d", WEB_PORT);
         mg_mgr_free(&s_mgr);
         return -1;
     }
 
-    ESP_LOGI(TAG, "Web server started on port %d", WEB_PORT);
+    LOGI(TAG, "Web server started on port %d", WEB_PORT);
     s_server_running = 1;
 
     // 将当前任务注册到 watchdog
     esp_task_wdt_add(NULL);
 
+    // 创建 WS 推送队列
+    s_ws_push_queue = xQueueCreate(4, sizeof(int));
+    if (!s_ws_push_queue) {
+        LOGE(TAG, "Failed to create ws_push queue");
+    }
+
+    // 注册 WebSocket 推送任务到 tasker（每秒一次，无限运行）
+    struct task_node *ws_node = tasker_task_init_mi(
+        1000,       // period = 1000ms
+        -1,         // run_cnt = -1 (无限)
+        "ws_push",
+        ws_push_task_fn,
+        NULL
+    );
+    if (!ws_node) {
+        LOGE(TAG, "Failed to register ws_push task");
+    } else {
+        LOGI(TAG, "ws_push task registered (period=1000ms)");
+    }
+
     // 轮询循环（在单独的任务中运行）
     while (s_server_running) {
         esp_task_wdt_reset();     // 喂狗，在 mg_mgr_poll 之前
+
+        // 从队列接收 tasker 推送信号，在本线程安全执行 mg_ws_send
+        int trigger;
+        while (s_ws_push_queue && xQueueReceive(s_ws_push_queue, &trigger, 0) == pdTRUE) {
+            ws_broadcast_status();
+        }
+
         mg_mgr_poll(&s_mgr, 50);  // 50ms 超时
+
         esp_task_wdt_reset();     // 喂狗，在 mg_mgr_poll 之后
     }
 
@@ -837,5 +961,5 @@ int web_server_start(void) {
 
 void web_server_stop(void) {
     s_server_running = 0;
-    ESP_LOGI(TAG, "Web server stopping...");
+    LOGI(TAG, "Web server stopping...");
 }

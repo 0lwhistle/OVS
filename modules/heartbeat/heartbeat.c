@@ -8,6 +8,7 @@
 #include "tasker.h"
 #include "esp_timer.h"
 #include "esp_wifi.h"
+#include "../logger/logger.h"
 
 static const char *TAG = "[HEARTBEAT]";
 
@@ -43,14 +44,14 @@ int heartbeat_init(void) {
     );
 
     if (!node) {
-        printf("[HEARTBEAT] Failed to register heartbeat task\n");
+        LOGE(TAG, "Failed to register heartbeat task");
         return -1;
     }
 
     // 立即执行一次，让缓存有初始值
     heartbeat_task_fn(NULL);
 
-    printf("[HEARTBEAT] Heartbeat task registered (period=1000ms)\n");
+    LOGI(TAG, "Heartbeat task registered (period=1000ms)");
     return 0;
 }
 

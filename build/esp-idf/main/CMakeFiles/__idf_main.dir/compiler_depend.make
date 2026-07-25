@@ -283,7 +283,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
   ../modules/ota/ota.h \
-  ../main/heartbeat.h \
+  ../modules/heartbeat/heartbeat.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
   /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h \
   /root/esp-idf/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h \
@@ -314,8 +314,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
 ../modules/tasker/task_manager/task_manager.h:
 
 ../API/tasker/tasker.h:
-
-../main/heartbeat.h:
 
 ../main/main.c:
 
@@ -348,6 +346,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: esp-idf/main/CMakeFiles/__idf
 /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/spinlock.h:
+
+../modules/heartbeat/heartbeat.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h:
 

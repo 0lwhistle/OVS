@@ -3,6 +3,8 @@
 
 #include "task_manager.h"
 
+#define TASK_CNT_INF -1
+
 #ifdef __cplusplus
 extern "C" {
 #endif
