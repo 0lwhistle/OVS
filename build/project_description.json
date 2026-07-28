@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ovs",
-    "project_version":    "1c6fb83a-dirty",
+    "project_version":    "372c9deb-dirty",
     "project_path":       "/root/progarms/ovs",
     "idf_path":           "/root/esp-idf/esp-idf-v6.0.1",
     "build_dir":          "/root/progarms/ovs/build",
@@ -2105,12 +2105,12 @@
             "dir": "/root/progarms/ovs/modules/tasker/task_worker",
             "type": "LIBRARY",
             "lib": "__idf_task_worker",
-            "reqs": [ "freertos", "task_manager", "logger" ],
+            "reqs": [ "freertos", "task_manager", "tasker", "logger" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a",
-            "sources": [ "/root/progarms/ovs/modules/tasker/task_worker/task_worker.c" ],
+            "sources": [ "/root/progarms/ovs/modules/tasker/task_worker/task_worker.c", "/root/progarms/ovs/modules/tasker/task_worker/tasker_test.c" ],
             "include_dirs": [ "." ]
         },
         "tasker": {
@@ -4170,7 +4170,7 @@
             "dir": "/root/progarms/ovs/modules/tasker/task_worker",
             "source": "project_extra_components",
             "lib": "__idf_task_worker",
-            "reqs": [ "freertos", "task_manager", "logger" ],
+            "reqs": [ "freertos", "task_manager", "tasker", "logger" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],

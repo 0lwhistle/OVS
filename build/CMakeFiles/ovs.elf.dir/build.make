@@ -238,8 +238,10 @@ ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/ota/libota.a
 ovs.elf: esp-idf/heartbeat/libheartbeat.a
 ovs.elf: esp-idf/wifi/libwifi.a
+ovs.elf: esp-idf/task_worker/libtask_worker.a
 ovs.elf: esp-idf/tasker/libtasker.a
 ovs.elf: esp-idf/task_worker/libtask_worker.a
+ovs.elf: esp-idf/tasker/libtasker.a
 ovs.elf: esp-idf/task_manager/libtask_manager.a
 ovs.elf: esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a
 ovs.elf: esp-idf/logger/liblogger.a

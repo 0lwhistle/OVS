@@ -53,10 +53,10 @@ esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: ../modules/hea
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log.h \
   /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
-  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
   /root/esp-idf/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
@@ -158,7 +158,8 @@ esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: ../modules/hea
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_ip_addr.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
+  ../modules/logger/logger.h
 
 
 /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h:
@@ -218,6 +219,8 @@ esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: ../modules/hea
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/log/include/esp_log_args.h:
+
+../modules/logger/logger.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h:
 

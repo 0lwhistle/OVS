@@ -349,12 +349,12 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_gptimer/libesp_driver_gpti
 esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/task_worker/libtask_worker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/task_manager/libtask_manager.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/task_worker/libtask_worker.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/web/libweb.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a

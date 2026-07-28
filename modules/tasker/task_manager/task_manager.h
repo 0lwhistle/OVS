@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "esp_log.h"
 #include "esp_timer.h"
@@ -69,25 +70,26 @@ struct task_node{
 };
 
 struct task_manager{
-	int running;
-	int is_full;
-	int is_empty;
 	unsigned int size;
 	struct task_node* queue;
 };
 
+// Runtime-computed helpers (no stale flags)
+bool task_manager_is_empty(const struct task_manager* mgr);
+bool task_manager_is_full(const struct task_manager* mgr);
+
 struct task_manager* task_manager_init(const unsigned int size);
 
-struct task_node* task_notimeout_init(task_fn fn, void* ctx);
-struct task_node* task_init(const int timeout, 
-									const uint64_t inject_time,
-									const int period, 
-									const int run_cnt, 
-									const enum task_priority pri, 
-									const enum task_time_cost_level level, 
-									const char* name, 
-									task_fn fn, void* ctx
-								);
+// In-place initialization (no heap allocation)
+void task_node_init(struct task_node* node,
+					const int timeout,
+					const uint64_t inject_time,
+					const int period, 
+					const int run_cnt, 
+					const enum task_priority pri, 
+					const enum task_time_cost_level level, 
+					const char* name, 
+					task_fn fn, void* ctx);
 
 void task_node_pri_up(struct task_node* node);
 

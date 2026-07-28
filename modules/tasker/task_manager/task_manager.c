@@ -5,7 +5,6 @@ const char* TASK_MANAGER_TAG = "[TASK_MANAGER]";
 
 struct task_manager* task_manager_init(const unsigned int size){
 
-	int i = 0;
 	struct task_manager* manager = (struct task_manager*)malloc(sizeof(struct task_manager));
 	if (!manager){
 		ESP_LOGE(TASK_MANAGER_TAG, "manager malloc fail!");
@@ -18,7 +17,7 @@ struct task_manager* task_manager_init(const unsigned int size){
 		return NULL;
 	}
 
-	for (; i < size; ++i){
+	for (int i = 0; i < size; ++i){
 		queue[i].fn = NULL;
 		queue[i].pri = last;
 		queue[i].timeout = 0;
@@ -30,34 +29,21 @@ struct task_manager* task_manager_init(const unsigned int size){
 		queue[i].name[0] = '\0';
 	}
 	manager->queue = queue;
-	manager->is_empty = 1;
-	manager->is_full = 0;
 	manager->size = size;
-	manager->running = 0;
 	return manager;
 }
 
-struct task_node* task_init(const int timeout, 
-									const uint64_t inject_time,
-									const int period, 
-									const int run_cnt, 
-									const enum task_priority pri, 
-									const enum task_time_cost_level level, 
-									const char* name, 
-									task_fn fn, void* ctx){
-
-	struct task_node* node = (struct task_node*)malloc(sizeof(struct task_node));
-	if (!node){
-		ESP_LOGE(TASK_MANAGER_TAG, "task node malloc fail!");
-		return NULL;
-	}
-	
-	if (!fn){
-		ESP_LOGE(TASK_MANAGER_TAG, "no task function.");
-		free(node);
-		return NULL;
-	}
-
+// In-place initialization on a caller-provided task_node (no heap allocation)
+void task_node_init(struct task_node* node,
+                    const int timeout,
+                    const uint64_t inject_time,
+                    const int period, 
+                    const int run_cnt, 
+                    const enum task_priority pri, 
+                    const enum task_time_cost_level level, 
+                    const char* name, 
+                    task_fn fn, void* ctx)
+{
 	node->inject_time = inject_time;
 	node->fn = fn;
 	node->pri = pri;
@@ -67,14 +53,30 @@ struct task_node* task_init(const int timeout,
 	node->done = 0;
 	node->is_timeout = 0;
 	node->level = level;
+	node->period = period;
+	node->run_cnt = run_cnt;
 	strncpy(node->name, name, sizeof(node->name) - 1);
 	node->name[sizeof(node->name) - 1] = '\0';
-	node->run_cnt = run_cnt;
-	node->period = period;
-
-	return node;
 }
 
+// Runtime-computed queue status (no stale flags)
+bool task_manager_is_empty(const struct task_manager* mgr){
+	for (int i = 0; i < mgr->size; ++i){
+		if (!mgr->queue[i].cancel && !mgr->queue[i].done){
+			return false;
+		}
+	}
+	return true;
+}
+
+bool task_manager_is_full(const struct task_manager* mgr){
+	for (int i = 0; i < mgr->size; ++i){
+		if (mgr->queue[i].cancel || mgr->queue[i].done){
+			return false;
+		}
+	}
+	return true;
+}
 
 void task_done(struct task_node* node){
 	node->done = 1;
@@ -96,58 +98,48 @@ int task_is_cancel(struct task_node* node){
 // Utils functions:
 
 void task_node_pri_up(struct task_node* node){
-	if (node->pri >= first) --node->pri;
+	if (node->pri > first) --node->pri;
 }
 
 void task_node_leve_up(struct task_node* node){
-	if (node->level <= level_lots) ++node->level;
+	if (node->level < level_lots) ++node->level;
 }
 
 struct task_node* find_task_node_by_name(struct task_manager* worker_queue, const char* name){
 	int size = worker_queue->size;
 	for (int i = 0; i < size; ++i){
-		if (!strcmp(worker_queue->queue[i].name, name)) return &(worker_queue->queue[i]);
-	}
-
-	ESP_LOGW(TASK_MANAGER_TAG, "Not found %s in worker_queue", name);
-	return NULL;
-
-}
-
-void task_manager_pri_sort(struct task_manager* worker_queue){
-	if (worker_queue->size <=1 ) return;
-
-	// pri 枚举值: first=1, middle=2, last=3，用 count[1..3]
-	int count[4] = {0};
-
-	for (int i = 0; i < worker_queue->size; ++i){
-		int p = worker_queue->queue[i].pri;
-		if (p >= 1 && p <= 3) {
-			++count[p];
+		if (!worker_queue->queue[i].cancel && 
+		    !worker_queue->queue[i].done &&
+		    !strcmp(worker_queue->queue[i].name, name)) {
+			return &(worker_queue->queue[i]);
 		}
 	}
+	return NULL;
+}
 
-	int start[4] = {0};
-	start[1] = 0;
-	start[2] = count[1];
-	start[3] = count[1] + count[2];
+// Counting sort by priority, using VLA on stack (no heap allocation)
+void task_manager_pri_sort(struct task_manager* worker_queue){
+	int size = worker_queue->size;
+	if (size <= 1) return;
 
-	struct task_node* temp = (struct task_node*)malloc(worker_queue->size * sizeof(struct task_node));
-	if (!temp) {
-		printf("%s: worker queue sort fail", TASK_MANAGER_TAG);
-		return;
+	// pri: first=1, middle=2, last=3
+	int count[4] = {0};
+	for (int i = 0; i < size; ++i){
+		int p = worker_queue->queue[i].pri;
+		if (p >= 1 && p <= 3) ++count[p];
 	}
 
+	int start[4] = {0, 0, count[1], count[1] + count[2]};
+
+	// VLA on stack — max size is SCHED_TASK_QUEUE_SIZE=64, ~5KB safe
+	struct task_node temp[size];
+
 	int pos[4] = {start[0], start[1], start[2], start[3]};
-	for (int i = 0; i < worker_queue->size; ++i){
+	for (int i = 0; i < size; ++i){
 		int p = worker_queue->queue[i].pri;
-		if (p < 0 || p > 3) continue;
+		if (p < 1 || p > 3) continue;
 		temp[pos[p]++] = worker_queue->queue[i];
 	}
 
-	memcpy(worker_queue->queue, temp, worker_queue->size * sizeof(struct task_node));
-	free(temp);
+	memcpy(worker_queue->queue, temp, size * sizeof(struct task_node));
 }
-
-
-

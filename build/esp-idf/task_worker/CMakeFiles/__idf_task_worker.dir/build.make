@@ -83,17 +83,33 @@ esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/task_worker.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_task_worker.dir/task_worker.c.s"
 	cd /root/progarms/ovs/build/esp-idf/task_worker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/tasker/task_worker/task_worker.c -o CMakeFiles/__idf_task_worker.dir/task_worker.c.s
 
+esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/flags.make
+esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj: ../modules/tasker/task_worker/tasker_test.c
+esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj"
+	cd /root/progarms/ovs/build/esp-idf/task_worker && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj -MF CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj.d -o CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj -c /root/progarms/ovs/modules/tasker/task_worker/tasker_test.c
+
+esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_task_worker.dir/tasker_test.c.i"
+	cd /root/progarms/ovs/build/esp-idf/task_worker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/tasker/task_worker/tasker_test.c > CMakeFiles/__idf_task_worker.dir/tasker_test.c.i
+
+esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_task_worker.dir/tasker_test.c.s"
+	cd /root/progarms/ovs/build/esp-idf/task_worker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/tasker/task_worker/tasker_test.c -o CMakeFiles/__idf_task_worker.dir/tasker_test.c.s
+
 # Object files for target __idf_task_worker
 __idf_task_worker_OBJECTS = \
-"CMakeFiles/__idf_task_worker.dir/task_worker.c.obj"
+"CMakeFiles/__idf_task_worker.dir/task_worker.c.obj" \
+"CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj"
 
 # External object files for target __idf_task_worker
 __idf_task_worker_EXTERNAL_OBJECTS =
 
 esp-idf/task_worker/libtask_worker.a: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/task_worker.c.obj
+esp-idf/task_worker/libtask_worker.a: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj
 esp-idf/task_worker/libtask_worker.a: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make
 esp-idf/task_worker/libtask_worker.a: esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libtask_worker.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libtask_worker.a"
 	cd /root/progarms/ovs/build/esp-idf/task_worker && $(CMAKE_COMMAND) -P CMakeFiles/__idf_task_worker.dir/cmake_clean_target.cmake
 	cd /root/progarms/ovs/build/esp-idf/task_worker && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_task_worker.dir/link.txt --verbose=$(VERBOSE)
 
