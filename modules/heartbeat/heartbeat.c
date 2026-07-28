@@ -35,21 +35,29 @@ int heartbeat_init(void) {
     s_start_time_us = esp_timer_get_time();
 
     // 注册到 tasker 系统：中等优先级，周期 1000ms，无限运行
-    struct task_node *node = tasker_task_init_mi(
+    struct task_node node;
+    int ret = tasker_task_init_mi(
+        &node,
         1000,       // period = 1000ms (1秒)
         -1,         // run_cnt = -1 (无限)
         "heartbeat",
         heartbeat_task_fn,
         NULL        // ctx = NULL
     );
-
-    if (!node) {
-        LOGE(TAG, "Failed to register heartbeat task");
+    if (ret != TASK_OK) {
+        LOGE(TAG, "Failed to init heartbeat task node");
         return -1;
     }
 
     // 立即执行一次，让缓存有初始值
     heartbeat_task_fn(NULL);
+
+    // 注册到 tasker 调度系统
+    ret = tasker_enqueue(&node);
+    if (ret != TASK_OK) {
+        LOGE(TAG, "Failed to enqueue heartbeat task");
+        return -1;
+    }
 
     LOGI(TAG, "Heartbeat task registered (period=1000ms)");
     return 0;

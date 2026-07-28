@@ -397,7 +397,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
   /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
   /root/esp-idf/esp-idf-v6.0.1/components/spiffs/include/esp_spiffs.h \
-  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h
+  /root/esp-idf/esp-idf-v6.0.1/components/esp_system/include/esp_task_wdt.h \
+  ../modules/logger/logger.h
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web_data/web_data.c \
   ../modules/web/web_data/web_data.h \
@@ -605,6 +606,8 @@ config/sdkconfig.h:
 /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/time.h:
 
 ../modules/web/mongoose/mongoose_config.h:
+
+../modules/logger/logger.h:
 
 /root/esp-idf/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h:
 

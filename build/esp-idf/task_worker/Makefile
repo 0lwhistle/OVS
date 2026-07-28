@@ -199,6 +199,30 @@ task_worker.c.s:
 	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/task_worker.c.s
 .PHONY : task_worker.c.s
 
+tasker_test.obj: tasker_test.c.obj
+.PHONY : tasker_test.obj
+
+# target to build an object file
+tasker_test.c.obj:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj
+.PHONY : tasker_test.c.obj
+
+tasker_test.i: tasker_test.c.i
+.PHONY : tasker_test.i
+
+# target to preprocess a source file
+tasker_test.c.i:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.i
+.PHONY : tasker_test.c.i
+
+tasker_test.s: tasker_test.c.s
+.PHONY : tasker_test.s
+
+# target to generate assembly for a file
+tasker_test.c.s:
+	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/build.make esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.s
+.PHONY : tasker_test.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -215,6 +239,9 @@ help:
 	@echo "... task_worker.obj"
 	@echo "... task_worker.i"
 	@echo "... task_worker.s"
+	@echo "... tasker_test.obj"
+	@echo "... tasker_test.i"
+	@echo "... tasker_test.s"
 .PHONY : help
 
 

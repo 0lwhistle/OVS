@@ -214,12 +214,12 @@
 /root/progarms/ovs/build/esp-idf/logger/liblogger.a
 /root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a
 /root/progarms/ovs/build/esp-idf/task_manager/libtask_manager.a
-/root/progarms/ovs/build/esp-idf/logger/liblogger.a
 /root/progarms/ovs/build/esp-idf/tasker/libtasker.a
 /root/progarms/ovs/build/esp-idf/task_worker/libtask_worker.a
+/root/progarms/ovs/build/esp-idf/logger/liblogger.a
+/root/progarms/ovs/build/esp-idf/tasker/libtasker.a
 /root/progarms/ovs/build/esp-idf/heartbeat/libheartbeat.a
 /root/progarms/ovs/build/esp-idf/wifi/libwifi.a
-/root/progarms/ovs/build/esp-idf/tasker/libtasker.a
 /root/progarms/ovs/build/esp-idf/web/libweb.a
 /root/progarms/ovs/build/esp-idf/spiffs/libspiffs.a
 /root/progarms/ovs/build/esp-idf/ota/libota.a

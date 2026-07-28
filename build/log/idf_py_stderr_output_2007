@@ -1,0 +1,42 @@
+Command: make -j 22 all
+/root/progarms/ovs/modules/tasker/task_worker/tasker_test.c:20:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   20 | static const char* TAG = "[TASKER_TEST]";
+      |                    ^~~
+/root/progarms/ovs/modules/web/web.c: In function 'web_server_start':
+/root/progarms/ovs/modules/web/web.c:925:9: error: passing argument 1 of 'tasker_task_init_mi' makes pointer from integer without a cast [-Wint-conversion]
+  925 |         1000,       // period = 1000ms
+      |         ^~~~
+      |         |
+      |         int
+In file included from /root/progarms/ovs/modules/web/web.c:6:
+/root/progarms/ovs/API/tasker/tasker.h:94:23: note: expected 'struct task_node *' but argument is of type 'int'
+   94 |     struct task_node* out,
+      |     ~~~~~~~~~~~~~~~~~~^~~
+/root/progarms/ovs/modules/web/web.c:927:9: error: passing argument 3 of 'tasker_task_init_mi' makes integer from pointer without a cast [-Wint-conversion]
+  927 |         "ws_push",
+      |         ^~~~~~~~~
+      |         |
+      |         char *
+/root/progarms/ovs/API/tasker/tasker.h:96:15: note: expected 'int' but argument is of type 'char *'
+   96 |     const int run_cnt,
+      |     ~~~~~~~~~~^~~~~~~
+/root/progarms/ovs/modules/web/web.c:928:9: error: passing argument 4 of 'tasker_task_init_mi' from incompatible pointer type [-Wincompatible-pointer-types]
+  928 |         ws_push_task_fn,
+      |         ^~~~~~~~~~~~~~~
+      |         |
+      |         enum task_t (*)(void *)
+/root/progarms/ovs/API/tasker/tasker.h:97:17: note: expected 'const char *' but argument is of type 'enum task_t (*)(void *)'
+   97 |     const char* name,
+      |     ~~~~~~~~~~~~^~~~
+/root/progarms/ovs/modules/web/web.c:883:20: note: 'ws_push_task_fn' declared here
+  883 | static enum task_t ws_push_task_fn(void *ctx) {
+      |                    ^~~~~~~~~~~~~~~
+/root/progarms/ovs/modules/web/web.c:924:33: error: too few arguments to function 'tasker_task_init_mi'; expected 6, have 5
+  924 |     struct task_node *ws_node = tasker_task_init_mi(
+      |                                 ^~~~~~~~~~~~~~~~~~~
+/root/progarms/ovs/API/tasker/tasker.h:93:5: note: declared here
+   93 | int tasker_task_init_mi(
+      |     ^~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/web/CMakeFiles/__idf_web.dir/build.make:76: esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7943: esp-idf/web/CMakeFiles/__idf_web.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

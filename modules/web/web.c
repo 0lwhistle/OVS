@@ -921,16 +921,19 @@ int web_server_start(void) {
     }
 
     // 注册 WebSocket 推送任务到 tasker（每秒一次，无限运行）
-    struct task_node *ws_node = tasker_task_init_mi(
+    struct task_node ws_node;
+    int ws_ret = tasker_task_init_mi(
+        &ws_node,   // out
         1000,       // period = 1000ms
         -1,         // run_cnt = -1 (无限)
         "ws_push",
         ws_push_task_fn,
         NULL
     );
-    if (!ws_node) {
-        LOGE(TAG, "Failed to register ws_push task");
+    if (ws_ret != TASK_OK) {
+        LOGE(TAG, "Failed to register ws_push task: %d", ws_ret);
     } else {
+        tasker_enqueue(&ws_node);
         LOGI(TAG, "ws_push task registered (period=1000ms)");
     }
 

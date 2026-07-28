@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/progarms/ovs/modules/tasker/task_worker/task_worker.c" "esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/task_worker.c.obj" "gcc" "esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/task_worker.c.obj.d"
+  "/root/progarms/ovs/modules/tasker/task_worker/tasker_test.c" "esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj" "gcc" "esp-idf/task_worker/CMakeFiles/__idf_task_worker.dir/tasker_test.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -27,6 +28,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/progarms/ovs/build/esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/task_manager/CMakeFiles/__idf_task_manager.dir/DependInfo.cmake"
+  "/root/progarms/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/logger/CMakeFiles/__idf_logger.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/DependInfo.cmake"
   "/root/progarms/ovs/build/esp-idf/pthread/CMakeFiles/__idf_pthread.dir/DependInfo.cmake"

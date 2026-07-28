@@ -1,6 +1,7 @@
 #include "tasker.h"
 #include "task_worker.h"
 #include "logger.h"
+#include <string.h>
 
 /* get current time in milliseconds */
 static inline uint64_t tasker_get_time_ms(void){
@@ -39,14 +40,19 @@ int tasker_enqueue(struct task_node* node){
     }
 
     if (node->cancel || node->done || node->period < 0 || !node->fn || !strlen(node->name)){
-        LOGW(TASK_WORKER_TAG, "tasker_enqueue fail, node is invaild");
+        LOGW(TASK_WORKER_TAG, "tasker_enqueue fail, node is invalid");
         return TASK_PARA_ERR;
     }
 
     int ret = tasker_auto_init();
     if (ret != TASK_OK) return ret;
 
-    return worker_task_enqueue(s_task_worker_ctx.s_sched_table, node);
+    ret = worker_task_enqueue(s_task_worker_ctx.s_sched_table, node);
+    // Move semantics: on success, invalidate the source so caller can't reuse
+    if (ret == TASK_OK) {
+        node->fn = NULL;
+    }
+    return ret;
 }
 
 void tasker_cancel_by_node(struct task_node* node){
@@ -64,48 +70,57 @@ void tasker_cancel_by_name(const char* name){
 }
 
 int tasker_is_full(void){
-    return s_task_worker_ctx.s_sched_table->worker_queue->is_full;
+    return task_manager_is_full(s_task_worker_ctx.s_sched_table->worker_queue) ? 1 : 0;
 }
 
 int tasker_is_empty(void){
-    return s_task_worker_ctx.s_sched_table->worker_queue->is_empty;
+    return task_manager_is_empty(s_task_worker_ctx.s_sched_table->worker_queue) ? 1 : 0;
 }
 
-struct task_node* tasker_task_init_li( 
+int tasker_task_init_li( 
+                                struct task_node* out,
                                 const int period, 
                                 const int run_cnt, 
                                 const char* name, 
                                 task_fn fn, void* ctx
                             ){
-    if (tasker_validate_params(period, fn, name) != TASK_OK) return NULL;
-    if (tasker_auto_init() != TASK_OK) return NULL;
+    if (!out) return TASK_PARA_ERR;
+    if (tasker_validate_params(period, fn, name) != TASK_OK) return TASK_PARA_ERR;
+    if (tasker_auto_init() != TASK_OK) return TASK_INNER_ERR;
 
-    return task_init(LITTLE_TASK_DEFAULT_TIMEOUT, tasker_get_time_ms(), 
-                     period, run_cnt, last, level_little, name, fn, ctx);
+    task_node_init(out, LITTLE_TASK_DEFAULT_TIMEOUT, tasker_get_time_ms(), 
+                   period, run_cnt, last, level_little, name, fn, ctx);
+    return TASK_OK;
 }
 
-struct task_node* tasker_task_init_mi(
+int tasker_task_init_mi(
+                                struct task_node* out,
                                 const int period, 
                                 const int run_cnt, 
                                 const char* name, 
                                 task_fn fn, void* ctx
                             ){
-    if (tasker_validate_params(period, fn, name) != TASK_OK) return NULL;
-    if (tasker_auto_init() != TASK_OK) return NULL;
+    if (!out) return TASK_PARA_ERR;
+    if (tasker_validate_params(period, fn, name) != TASK_OK) return TASK_PARA_ERR;
+    if (tasker_auto_init() != TASK_OK) return TASK_INNER_ERR;
 
-    return task_init(MIDDLE_TASK_DEFAULT_TIMEOUT, tasker_get_time_ms(), 
-                     period, run_cnt, last, level_middle, name, fn, ctx);
+    task_node_init(out, MIDDLE_TASK_DEFAULT_TIMEOUT, tasker_get_time_ms(), 
+                   period, run_cnt, last, level_middle, name, fn, ctx);
+    return TASK_OK;
 }
 
-struct task_node* tasker_task_init_lo(const int timeout, 
+int tasker_task_init_lo(struct task_node* out,
+                                const int timeout, 
                                 const int period, 
                                 const int run_cnt, 
                                 const char* name, 
                                 task_fn fn, void* ctx
                             ){
-    if (tasker_validate_params(period, fn, name) != TASK_OK) return NULL;
-    if (tasker_auto_init() != TASK_OK) return NULL;
+    if (!out) return TASK_PARA_ERR;
+    if (tasker_validate_params(period, fn, name) != TASK_OK) return TASK_PARA_ERR;
+    if (tasker_auto_init() != TASK_OK) return TASK_INNER_ERR;
 
-    return task_init(timeout, tasker_get_time_ms(), 
-                     period, run_cnt, last, level_lots, name, fn, ctx);
+    task_node_init(out, timeout, tasker_get_time_ms(), 
+                   period, run_cnt, last, level_lots, name, fn, ctx);
+    return TASK_OK;
 }
