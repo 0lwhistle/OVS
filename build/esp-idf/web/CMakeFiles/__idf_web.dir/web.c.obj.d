@@ -15,8 +15,8 @@ esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web_data/web_data.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/mongoose/mongoose.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/mongoose/mongoose_config.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/thirdparty/mongoose/mongoose.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/thirdparty/mongoose/mongoose_config.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/ctype.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/dirent.h \

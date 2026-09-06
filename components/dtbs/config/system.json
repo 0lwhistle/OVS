@@ -1,0 +1,31 @@
+{
+    "compatible": "ovs,esp32s3-smart-assistant",
+    "model": "OVS-SmartAssistant-v2",
+    "description": "ESP32-S3 智能助手系统配置",
+    
+    "mcu": {
+        "chip": "esp32s3",
+        "flash_size": "16MB",
+        "psram_size": "8MB",
+        "cpu_freq_mhz": 240
+    },
+    
+    "uart0": {
+        "compatible": "uart",
+        "description": "调试串口",
+        "tx_pin": 43,
+        "rx_pin": 44,
+        "baud_rate": 115200,
+        "data_bits": 8,
+        "stop_bits": 1,
+        "parity": "none"
+    },
+    
+    "led": {
+        "compatible": "gpio-led",
+        "description": "状态指示灯",
+        "pin": 4,
+        "active_level": "high",
+        "default_state": "off"
+    }
+}

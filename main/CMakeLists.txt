@@ -7,6 +7,7 @@ idf_component_register(
         tasker
         event_bus
         logger
+        dtbs
         wifi
         led
         beep
@@ -15,6 +16,7 @@ idf_component_register(
         ota
         web
         heartbeat
+        lvgl_ui
         nvs_flash
         esp_wifi
         esp_event

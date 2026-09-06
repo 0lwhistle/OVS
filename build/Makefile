@@ -2242,6 +2242,19 @@ __idf_eventbus_api/fast:
 .PHONY : __idf_eventbus_api/fast
 
 #=============================================================================
+# Target rules for targets named __idf_dtbs
+
+# Build rule for target.
+__idf_dtbs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_dtbs
+.PHONY : __idf_dtbs
+
+# fast build rule for target.
+__idf_dtbs/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/build.make esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/build
+.PHONY : __idf_dtbs/fast
+
+#=============================================================================
 # Target rules for targets named __idf_wifi
 
 # Build rule for target.
@@ -2445,6 +2458,7 @@ help:
 	@echo "... __idf_console"
 	@echo "... __idf_cxx"
 	@echo "... __idf_driver"
+	@echo "... __idf_dtbs"
 	@echo "... __idf_efuse"
 	@echo "... __idf_esp-tls"
 	@echo "... __idf_esp_adc"

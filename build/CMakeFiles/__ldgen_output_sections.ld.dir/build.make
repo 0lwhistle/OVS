@@ -341,6 +341,8 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/event_bus/libevent_bus.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/eventbus_api/libeventbus_api.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/event_bus/libevent_bus.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/dtbs/libdtbs.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/gpio/libgpio.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/led/libled.a
@@ -351,12 +353,12 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/tasker_api/libtasker_api.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/web/libweb.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/main/libmain.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/eventbus_api/libeventbus_api.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/dtbs/libdtbs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/led/libled.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/beep/libbeep.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/sr04/libsr04.a

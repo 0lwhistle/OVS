@@ -207,6 +207,8 @@ $<TARGET_FILE:__idf_tasker>
 $<TARGET_FILE:idf::event_bus>
 $<TARGET_FILE:idf::eventbus_api>
 $<TARGET_FILE:__idf_event_bus>
+$<TARGET_FILE:idf::dtbs>
+$<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:idf::wifi>
 $<TARGET_FILE:idf::gpio>
 $<TARGET_FILE:idf::led>
@@ -217,12 +219,12 @@ $<TARGET_FILE:idf::ota>
 $<TARGET_FILE:idf::heartbeat>
 $<TARGET_FILE:__idf_tasker_api>
 $<TARGET_FILE:idf::web>
-$<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:__idf_ota>
 $<TARGET_FILE:__idf_heartbeat>
 $<TARGET_FILE:__idf_wifi>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_eventbus_api>
+$<TARGET_FILE:__idf_dtbs>
 $<TARGET_FILE:__idf_led>
 $<TARGET_FILE:__idf_beep>
 $<TARGET_FILE:__idf_sr04>

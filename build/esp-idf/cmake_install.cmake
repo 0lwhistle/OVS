@@ -744,6 +744,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/dtbs/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/wifi/cmake_install.cmake")
 endif()
 

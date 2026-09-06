@@ -467,7 +467,8 @@ for (int addr = 0; addr < 128; addr++) {
 ### 项目文档
 - `hardware/wiring_diagram.md` - 硬件接线图
 - `logs/development_log.md` - 开发日志
-- `firmware/main/include/pin_config.h` - 引脚配置
+- `components/dtbs/config/*.json` - 设备树引脚配置
+- `include/dtree.h` - 设备树 API
 
 ---
 
