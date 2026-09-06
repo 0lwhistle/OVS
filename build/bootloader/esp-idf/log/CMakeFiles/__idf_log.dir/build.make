@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 # Include any dependencies generated for this target.
 include esp-idf/log/CMakeFiles/__idf_log.dir/depend.make
@@ -70,130 +70,130 @@ include esp-idf/log/CMakeFiles/__idf_log.dir/progress.make
 include esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c > CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c > CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c -o CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_timestamp.c -o CMakeFiles/__idf_log.dir/src/noos/log_timestamp.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj -MF CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj -MF CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c > CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c > CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c -o CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_timestamp_common.c -o CMakeFiles/__idf_log.dir/src/log_timestamp_common.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_lock.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_lock.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_lock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/log_lock.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_lock.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/noos/log_lock.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_lock.c > CMakeFiles/__idf_log.dir/src/noos/log_lock.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_lock.c > CMakeFiles/__idf_log.dir/src/noos/log_lock.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/log_lock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/noos/log_lock.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/log_lock.c -o CMakeFiles/__idf_log.dir/src/noos/log_lock.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/log_lock.c -o CMakeFiles/__idf_log.dir/src/noos/log_lock.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj -MF CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj.d -o CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj -MF CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj.d -o CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c > CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c > CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c -o CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/buffer/log_buffers.c -o CMakeFiles/__idf_log.dir/src/buffer/log_buffers.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/util.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/util.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/util.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/util.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/util.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.obj -MF CMakeFiles/__idf_log.dir/src/noos/util.c.obj.d -o CMakeFiles/__idf_log.dir/src/noos/util.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/util.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/noos/util.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/util.c > CMakeFiles/__idf_log.dir/src/noos/util.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/util.c > CMakeFiles/__idf_log.dir/src/noos/util.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/noos/util.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/noos/util.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/noos/util.c -o CMakeFiles/__idf_log.dir/src/noos/util.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/noos/util.c -o CMakeFiles/__idf_log.dir/src/noos/util.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/util.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/util.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj -MF CMakeFiles/__idf_log.dir/src/util.c.obj.d -o CMakeFiles/__idf_log.dir/src/util.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/util.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.obj -MF CMakeFiles/__idf_log.dir/src/util.c.obj.d -o CMakeFiles/__idf_log.dir/src/util.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/util.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/util.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/util.c > CMakeFiles/__idf_log.dir/src/util.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/util.c > CMakeFiles/__idf_log.dir/src/util.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/util.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/util.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/util.c -o CMakeFiles/__idf_log.dir/src/util.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/util.c -o CMakeFiles/__idf_log.dir/src/util.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_format_text.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_format_text.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj -MF CMakeFiles/__idf_log.dir/src/log_format_text.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_format_text.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_format_text.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.obj -MF CMakeFiles/__idf_log.dir/src/log_format_text.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_format_text.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_format_text.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/log_format_text.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_format_text.c > CMakeFiles/__idf_log.dir/src/log_format_text.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_format_text.c > CMakeFiles/__idf_log.dir/src/log_format_text.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_format_text.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/log_format_text.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_format_text.c -o CMakeFiles/__idf_log.dir/src/log_format_text.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_format_text.c -o CMakeFiles/__idf_log.dir/src/log_format_text.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_print.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_print.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj -MF CMakeFiles/__idf_log.dir/src/log_print.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_print.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_print.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj -MF CMakeFiles/__idf_log.dir/src/log_print.c.obj.d -o CMakeFiles/__idf_log.dir/src/log_print.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_print.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/log_print.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_print.c > CMakeFiles/__idf_log.dir/src/log_print.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_print.c > CMakeFiles/__idf_log.dir/src/log_print.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/log_print.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/log_print.c -o CMakeFiles/__idf_log.dir/src/log_print.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log_print.c -o CMakeFiles/__idf_log.dir/src/log_print.c.s
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/flags.make
-esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/log/src/log.c
+esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log.c
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj: esp-idf/log/CMakeFiles/__idf_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj -MF CMakeFiles/__idf_log.dir/src/log.c.obj.d -o CMakeFiles/__idf_log.dir/src/log.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/log/src/log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj -MF CMakeFiles/__idf_log.dir/src/log.c.obj.d -o CMakeFiles/__idf_log.dir/src/log.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log.c
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_log.dir/src/log.c.i"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/log/src/log.c > CMakeFiles/__idf_log.dir/src/log.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log.c > CMakeFiles/__idf_log.dir/src/log.c.i
 
 esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_log.dir/src/log.c.s"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/log/src/log.c -o CMakeFiles/__idf_log.dir/src/log.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/src/log.c -o CMakeFiles/__idf_log.dir/src/log.c.s
 
 # Object files for target __idf_log
 __idf_log_OBJECTS = \
@@ -221,19 +221,19 @@ esp-idf/log/liblog.a: esp-idf/log/CMakeFiles/__idf_log.dir/src/log_print.c.obj
 esp-idf/log/liblog.a: esp-idf/log/CMakeFiles/__idf_log.dir/src/log.c.obj
 esp-idf/log/liblog.a: esp-idf/log/CMakeFiles/__idf_log.dir/build.make
 esp-idf/log/liblog.a: esp-idf/log/CMakeFiles/__idf_log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C static library liblog.a"
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -P CMakeFiles/__idf_log.dir/cmake_clean_target.cmake
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_log.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C static library liblog.a"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -P CMakeFiles/__idf_log.dir/cmake_clean_target.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/log/CMakeFiles/__idf_log.dir/build: esp-idf/log/liblog.a
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/build
 
 esp-idf/log/CMakeFiles/__idf_log.dir/clean:
-	cd /root/progarms/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -P CMakeFiles/__idf_log.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log && $(CMAKE_COMMAND) -P CMakeFiles/__idf_log.dir/cmake_clean.cmake
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/clean
 
 esp-idf/log/CMakeFiles/__idf_log.dir/depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/log /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/esp-idf/log /root/progarms/ovs/build/bootloader/esp-idf/log/CMakeFiles/__idf_log.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/log/CMakeFiles/__idf_log.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/depend
 

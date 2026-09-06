@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for gen_ovs_binary.
 
@@ -69,10 +69,10 @@ include CMakeFiles/gen_ovs_binary.dir/progress.make
 CMakeFiles/gen_ovs_binary: .bin_timestamp
 
 .bin_timestamp: ovs.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32s3 elf2image --flash-mode dio --flash-freq 80m --flash-size 16MB --elf-sha256-offset 0xb0 --min-rev-full 0 --max-rev-full 99 -o /root/progarms/ovs/build/ovs.bin /root/progarms/ovs/build/ovs.elf
-	/usr/bin/cmake -E echo "Generated /root/progarms/ovs/build/ovs.bin"
-	/usr/bin/cmake -E md5sum /root/progarms/ovs/build/ovs.bin > /root/progarms/ovs/build/.bin_timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating binary image from built executable"
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esptool --chip esp32 elf2image --flash-mode dio --flash-freq 40m --flash-size 2MB --elf-sha256-offset 0xb0 --min-rev-full 0 --max-rev-full 399 -o /home/olwhistle/dockerNow/esp32/programs/ovs/build/ovs.bin /home/olwhistle/dockerNow/esp32/programs/ovs/build/ovs.elf
+	/usr/bin/cmake -E echo "Generated /home/olwhistle/dockerNow/esp32/programs/ovs/build/ovs.bin"
+	/usr/bin/cmake -E md5sum /home/olwhistle/dockerNow/esp32/programs/ovs/build/ovs.bin > /home/olwhistle/dockerNow/esp32/programs/ovs/build/.bin_timestamp
 
 gen_ovs_binary: .bin_timestamp
 gen_ovs_binary: CMakeFiles/gen_ovs_binary
@@ -88,6 +88,6 @@ CMakeFiles/gen_ovs_binary.dir/clean:
 .PHONY : CMakeFiles/gen_ovs_binary.dir/clean
 
 CMakeFiles/gen_ovs_binary.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/gen_ovs_binary.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/gen_ovs_binary.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gen_ovs_binary.dir/depend
 

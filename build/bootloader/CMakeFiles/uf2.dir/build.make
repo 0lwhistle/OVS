@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 # Utility rule file for uf2.
 
@@ -67,7 +67,7 @@ include CMakeFiles/uf2.dir/compiler_depend.make
 include CMakeFiles/uf2.dir/progress.make
 
 CMakeFiles/uf2:
-	/usr/bin/cmake -D IDF_PATH=/root/esp-idf/esp-idf-v6.0.1 -D "UF2_CMD=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;/root/esp-idf/esp-idf-v6.0.1/tools/mkuf2.py;write;--chip;esp32s3" -D "UF2_ARGS=--json;/root/progarms/ovs/build/bootloader/flasher_args.json;-o;/root/progarms/ovs/build/bootloader/uf2.bin" -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/run_uf2_cmds.cmake
+	/usr/bin/cmake -D IDF_PATH=/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1 -D "UF2_CMD=/root/.espressif/python_env/idf6.0_py3.10_env/bin/python;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/mkuf2.py;write;--chip;esp32" -D "UF2_ARGS=--json;/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/flasher_args.json;-o;/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/uf2.bin" -P /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/cmake/run_uf2_cmds.cmake
 
 uf2: CMakeFiles/uf2
 uf2: CMakeFiles/uf2.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/uf2.dir/clean:
 .PHONY : CMakeFiles/uf2.dir/clean
 
 CMakeFiles/uf2.dir/depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/uf2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles/uf2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uf2.dir/depend
 

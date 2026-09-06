@@ -1,30 +1,27 @@
-# The following five lines of boilerplate have to be in your project's
-# CMakeLists in this exact order for cmake to work correctly
+# ESP-IDF 项目 CMakeLists.txt
+# 项目名称: ovs (ESP32-S3 智能助手)
 cmake_minimum_required(VERSION 3.22)
-set(CMAKE_C_COMPILER_LAUNCHER ccache)
-set(CMAKE_CXX_COMPILER_LAUNCHER ccache)
 
-# 关键：告诉 ESP-IDF 去 module/ 下面找额外的组件
-set(EXTRA_COMPONENT_DIRS 
-${CMAKE_SOURCE_DIR}/modules/devices_ctrl/led_ctrl
-${CMAKE_SOURCE_DIR}/modules/devices_ctrl/gpio_ctrl
-${CMAKE_SOURCE_DIR}/modules/devices_ctrl/beep_ctrl
-${CMAKE_SOURCE_DIR}/modules/devices_ctrl/sr04_ctrl
-${CMAKE_SOURCE_DIR}/modules/devices_ctrl/wifi
-${CMAKE_SOURCE_DIR}/modules/tasker/task_manager
-${CMAKE_SOURCE_DIR}/modules/tasker/task_worker
-${CMAKE_SOURCE_DIR}/modules/logger
-${CMAKE_SOURCE_DIR}/modules/web
-${CMAKE_SOURCE_DIR}/modules/ota
-${CMAKE_SOURCE_DIR}/modules/heartbeat
-${CMAKE_SOURCE_DIR}/API/tasker
-
+# 组件目录
+set(EXTRA_COMPONENT_DIRS
+    ${CMAKE_SOURCE_DIR}/components/api/tasker_api
+    ${CMAKE_SOURCE_DIR}/components/api/eventbus_api
+    ${CMAKE_SOURCE_DIR}/components/core/tasker
+    ${CMAKE_SOURCE_DIR}/components/core/event_bus
+    ${CMAKE_SOURCE_DIR}/components/core/logger
+    ${CMAKE_SOURCE_DIR}/components/drivers/wifi
+    ${CMAKE_SOURCE_DIR}/components/drivers/led
+    ${CMAKE_SOURCE_DIR}/components/drivers/beep
+    ${CMAKE_SOURCE_DIR}/components/drivers/gpio
+    ${CMAKE_SOURCE_DIR}/components/drivers/sr04
+    ${CMAKE_SOURCE_DIR}/components/modules/ota
+    ${CMAKE_SOURCE_DIR}/components/modules/web
+    ${CMAKE_SOURCE_DIR}/components/modules/heartbeat
 )
-
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
-
 project(ovs)
 
-
+# 将 include/ 目录添加到所有组件的 include 路径
+idf_build_set_property(INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include" APPEND)

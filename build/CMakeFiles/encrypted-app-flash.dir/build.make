@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for encrypted-app-flash.
 
@@ -69,7 +69,7 @@ include CMakeFiles/encrypted-app-flash.dir/progress.make
 CMakeFiles/encrypted-app-flash:
 	/usr/bin/cmake -E echo "Error: The target encrypted-app-flash requires"
 	/usr/bin/cmake -E echo "CONFIG_SECURE_FLASH_ENCRYPTION_MODE_DEVELOPMENT to be enabled."
-	/usr/bin/cmake -E env "FAIL_MESSAGE=Failed executing target (see errors on lines above)" /usr/bin/cmake -P /root/esp-idf/esp-idf-v6.0.1/tools/cmake/scripts/fail.cmake
+	/usr/bin/cmake -E env "FAIL_MESSAGE=Failed executing target (see errors on lines above)" /usr/bin/cmake -P /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/cmake/scripts/fail.cmake
 
 encrypted-app-flash: CMakeFiles/encrypted-app-flash
 encrypted-app-flash: CMakeFiles/encrypted-app-flash.dir/build.make
@@ -84,6 +84,6 @@ CMakeFiles/encrypted-app-flash.dir/clean:
 .PHONY : CMakeFiles/encrypted-app-flash.dir/clean
 
 CMakeFiles/encrypted-app-flash.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/encrypted-app-flash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/encrypted-app-flash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/encrypted-app-flash.dir/depend
 

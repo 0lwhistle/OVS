@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 # Utility rule file for bootloader_check_size.
 
@@ -67,7 +67,7 @@ include CMakeFiles/bootloader_check_size.dir/compiler_depend.make
 include CMakeFiles/bootloader_check_size.dir/progress.make
 
 CMakeFiles/bootloader_check_size:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /root/progarms/ovs/build/bootloader/bootloader.bin
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/bootloader.bin
 
 bootloader_check_size: CMakeFiles/bootloader_check_size
 bootloader_check_size: CMakeFiles/bootloader_check_size.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/bootloader_check_size.dir/clean:
 .PHONY : CMakeFiles/bootloader_check_size.dir/clean
 
 CMakeFiles/bootloader_check_size.dir/depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/CMakeFiles/bootloader_check_size.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles/bootloader_check_size.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bootloader_check_size.dir/depend
 

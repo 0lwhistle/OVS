@@ -1,2 +1,2 @@
---flash-mode dio --flash-freq 80m --flash-size 16MB
-0x20000 ovs.bin
+--flash-mode dio --flash-freq 40m --flash-size 2MB
+0x10000 ovs.bin

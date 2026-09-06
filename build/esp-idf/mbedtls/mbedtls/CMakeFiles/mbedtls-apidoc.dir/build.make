@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for mbedtls-apidoc.
 
@@ -67,7 +67,7 @@ include esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/compiler_depend.ma
 include esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/progress.make
 
 esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/doxygen && doxygen mbedtls.doxyfile
+	cd /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/doxygen && doxygen mbedtls.doxyfile
 
 mbedtls-apidoc: esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc
 mbedtls-apidoc: esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/build.make
@@ -78,10 +78,10 @@ esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/build: mbedtls-apidoc
 .PHONY : esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/build
 
 esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/clean:
-	cd /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls && $(CMAKE_COMMAND) -P CMakeFiles/mbedtls-apidoc.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls && $(CMAKE_COMMAND) -P CMakeFiles/mbedtls-apidoc.dir/cmake_clean.cmake
 .PHONY : esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/clean
 
 esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/mbedtls/mbedtls/CMakeFiles/mbedtls-apidoc.dir/depend
 

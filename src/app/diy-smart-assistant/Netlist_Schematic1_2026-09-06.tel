@@ -1,0 +1,74 @@
+$PACKAGES
+C0805 ! C0805 ! 100nF ; C4 C6 C7 C11 C13 C15 C17 C18 C20 C22 
+C0805 ! C0805 ! 100uF ; C12 
+C0805 ! C0805 ! 10uF ; C3 C5 C10 C14 C16 C19 C21 
+,
+        HDR-TH_10P-P2.54-V-F-R2-C5-S2.54 ! HDR-TH_10P-P2.54-V-F-R2-C5-S2.54 ! '{Value}' ,
+        ; 1.8V 3v3 5V Dis 
+HDR-TH_22P-P2.54-V-F ! HDR-TH_22P-P2.54-V-F ! '{Value}' ; L R 
+HDR-TH_3P-P2.54-V-F ! HDR-TH_3P-P2.54-V-F ! '{Value}' ; H6 H7 
+HDR-TH_4P-P2.54-V-F ! HDR-TH_4P-P2.54-V-F ! '{Value}' ; ATH 
+HDR-TH_6P-P2.54-V-F ! HDR-TH_6P-P2.54-V-F ! '{Value}' ; fla 
+HDR-TH_6P-P2.54-V-F-R2-C3-S2.54 ! HDR-TH_6P-P2.54-V-F-R2-C3-S2.54 ! '{Value}' ,
+        ; Tou 
+HDR-TH_7P-P2.54-V-F ! HDR-TH_7P-P2.54-V-F ! '{Value}' ; LoR MAX 
+LED_0805 ! LED_0805 ! '{Value}' ; LED1 
+M3螺丝 ! M3螺丝 ! '{Value}' ; SCREW1 SCREW2 SCREW3 SCREW4 
+R0805 ! R0805 ! '4.7K' ; R4 R5 
+R0805 ! R0805 ! 10K ; R1 R6 
+R0805 ! R0805 ! 220 ; R3 
+,
+        SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0 ! SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0 ! '{Value}' ,
+        ; RESET 
+$A_PROPERTIES
+$NETS
+'$1N150' ; R1.2 RESET.1 
+'$1N207' ; LED1.2 R3.1 
+'RX(44)' ; R.3 
+'TX(43)' ; R.2 
+0 ; R.14 
+1 ; R.4 
+10 ; L.16 LoR.5 
+11 ; L.17 
+12 ; L.18 
+13 ; fla.2 L.19 R6.2 
+14 ; L.20 
+15 ; L.8 MAX.3 
+16 ; ATH.4 L.9 R4.2 Tou.3 
+17 ; ATH.3 L.10 R5.2 Tou.2 
+18 ; L.11 Tou.5 
+19 ; R.20 
+2 ; R.5 
+20 ; R.19 
+21 ; Dis.6 R.18 
+3 ; L.13 LoR.6 
+35 ; R.13 
+36 ; R.12 
+37 ; R.11 
+38 ; Dis.9 R.10 
+39 ; R.9 Tou.6 
+3V3 ; 3v3.1 3v3.3 3v3.5 3v3.7 3v3.9 ATH.1 C18.2 C19.2 C20.2 Tou.1 
+3V3ESP ; C3.2 C4.2 C10.2 C11.2 C14.2 C15.2 C16.2 C17.2 C21.2 C22.2 Dis.7 fla.1 ,
+        H6.2 L.2 LoR.2 MAX.5 R1.1 R4.1 R5.1 R6.1 
+4 ; L.4 R3.2 
+40 ; Dis.5 fla.6 R.8 
+41 ; fla.3 R.7 
+42 ; Dis.4 fla.5 R.6 
+45 ; R.15 
+46 ; L.14 LoR.3 
+47 ; Dis.2 R.17 
+48 ; Dis.3 R.16 
+5 ; H7.2 L.5 MAX.1 
+5VIN ; 5V.1 5V.3 5V.5 5V.7 5V.9 C5.2 C6.2 C12.2 C13.2 L.21 MAX.7 
+6 ; H7.1 L.6 MAX.2 
+7 ; H6.1 L.7 
+8 ; L.12 LoR.7 
+9 ; L.15 LoR.4 
+GND ; 1.8V.2 1.8V.4 1.8V.6 1.8V.8 1.8V.10 3v3.2 3v3.4 3v3.6 3v3.8 3v3.10 5V.2 ,
+        5V.4 5V.6 5V.8 5V.10 ATH.2 C3.1 C4.1 C5.1 C6.1 C7.2 C10.1 C11.1 C12.1 ,
+        C13.1 C14.1 C15.1 C16.1 C17.1 C18.1 C19.1 C20.1 C21.1 C22.1 Dis.1 ,
+        Dis.8 Dis.10 fla.4 H6.3 H7.3 L.22 LED1.1 LoR.1 MAX.4 MAX.6 R.1 R.21 ,
+        R.22 RESET.4 Tou.4 
+RST ; C7.1 L.3 RESET.2 
+$SCHEDULE
+$END

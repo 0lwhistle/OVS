@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/depend.make
@@ -70,102 +70,102 @@ include esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/progress.ma
 include esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_main.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_parse.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_sess.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_txrx.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_uri.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c > CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/httpd_ws.c -o CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.s
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/flags.make
-esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj: /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c
+esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj -c /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj -MF CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj.d -o CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.i"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c > CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c > CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.i
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.s"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c -o CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server/src/util/ctrl_sock.c -o CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.s
 
 # Object files for target __idf_esp_http_server
 __idf_esp_http_server_OBJECTS = \
@@ -189,19 +189,19 @@ esp-idf/esp_http_server/libesp_http_server.a: esp-idf/esp_http_server/CMakeFiles
 esp-idf/esp_http_server/libesp_http_server.a: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj
 esp-idf/esp_http_server/libesp_http_server.a: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/build.make
 esp-idf/esp_http_server/libesp_http_server.a: esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C static library libesp_http_server.a"
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_http_server.dir/cmake_clean_target.cmake
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_http_server.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C static library libesp_http_server.a"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_http_server.dir/cmake_clean_target.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_http_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/build: esp-idf/esp_http_server/libesp_http_server.a
 .PHONY : esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/build
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/clean:
-	cd /root/progarms/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_http_server.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_http_server.dir/cmake_clean.cmake
 .PHONY : esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/clean
 
 esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/esp_http_server /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/esp_http_server /root/progarms/ovs/build/esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_http_server /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/depend
 

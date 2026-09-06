@@ -1,0 +1,448 @@
+# 硬件注意事项（软件开发必读）
+
+## 重要提醒
+
+**每次开发软件前必须阅读本文档！**
+
+本文档从硬件角度出发，列出软件开发时必须注意的事项，避免因为不了解硬件而导致的bug。
+
+---
+
+## 一、总线共用说明
+
+### 1. SPI总线共用（显示屏 + W25Q128）
+
+**共用引脚**：
+- GPIO10: MOSI（主机输出）
+- GPIO11: MISO（主机输入）
+- GPIO12: SCLK（时钟）
+
+**独立引脚**：
+- GPIO21: CS_LCD（显示屏片选）
+- GPIO13: CS_W25Q128（Flash片选）
+- GPIO47: DC_LCD（显示屏数据/命令）
+- GPIO48: RST_LCD（显示屏复位）
+- GPIO4: BL_LCD（显示屏背光）
+
+**软件注意事项**：
+```c
+// 1. 同一时刻只能操作一个SPI设备
+// 2. 切换设备时需要先拉高前一个设备的CS，再拉低新设备的CS
+// 3. SPI时钟频率需要取两个设备的最小值
+
+// 示例：切换SPI设备
+void spi_select_device(spi_device_t device) {
+    // 先释放所有CS
+    gpio_set_level(GPIO_CS_LCD, 1);
+    gpio_set_level(GPIO_CS_W25Q128, 1);
+    
+    // 再选中目标设备
+    switch(device) {
+        case DEVICE_LCD:
+            gpio_set_level(GPIO_CS_LCD, 0);
+            break;
+        case DEVICE_W25Q128:
+            gpio_set_level(GPIO_CS_W25Q128, 0);
+            break;
+    }
+}
+```
+
+**常见错误**：
+- ❌ 同时操作两个SPI设备
+- ❌ 忘记释放前一个设备的CS
+- ❌ 使用不同时钟频率导致通信失败
+
+---
+
+### 2. I2S总线共用（麦克风 + 功放）
+
+**共用引脚**：
+- GPIO5: BCLK（位时钟）
+- GPIO6: WS（字选择）
+
+**独立引脚**：
+- GPIO7: DIN（麦克风数据输入）
+- GPIO15: DOUT（功放数据输出）
+
+**软件注意事项**：
+```c
+// 1. 麦克风和功放可以同时工作（全双工）
+// 2. 时钟配置需要同时满足两个设备的要求
+// 3. 数据格式（采样率、位宽）需要一致
+
+// I2S配置示例
+i2s_config_t i2s_config = {
+    .mode = I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_RX,
+    .sample_rate = 16000,        // 麦克风和功放都要支持这个采样率
+    .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
+    .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
+    .communication_format = I2S_COMM_FORMAT_STAND_I2S,
+    .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1,
+    .dma_buf_count = 8,
+    .dma_buf_len = 1024,
+    .use_apll = false,
+    .tx_desc_auto_clear = true,
+    .fixed_mclk = 0
+};
+```
+
+**常见错误**：
+- ❌ 麦克风和功放使用不同的采样率
+- ❌ 忘记配置DMA缓冲区导致音频卡顿
+- ❌ 时钟配置错误导致音频失真
+
+---
+
+### 3. I2C总线共用（触控 + ATH30）
+
+**共用引脚**：
+- GPIO16: SDA（数据线）
+- GPIO17: SCL（时钟线）
+
+**独立引脚**：
+- GPIO18: INT（触控中断）
+
+**设备地址**：
+- 触控屏：0x15（CST816S默认地址）
+- ATH30：0x38（ATH30默认地址）
+
+**软件注意事项**：
+```c
+// 1. I2C设备通过地址区分，不需要片选引脚
+// 2. 同一时刻只能有一个主机操作
+// 3. 需要处理总线仲裁和错误重试
+
+// I2C设备地址定义
+#define I2C_ADDR_TOUCH  0x15
+#define I2C_ADDR_ATH30  0x38
+
+// I2C读写示例
+esp_err_t i2c_read_device(uint8_t device_addr, uint8_t reg_addr, uint8_t *data, size_t len) {
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (device_addr << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_write_byte(cmd, reg_addr, true);
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (device_addr << 1) | I2C_MASTER_READ, true);
+    i2c_master_read(cmd, data, len, I2C_MASTER_LAST_NACK);
+    i2c_master_stop(cmd);
+    
+    esp_err_t ret = i2c_master_cmd_begin(I2C_NUM_0, cmd, pdMS_TO_TICKS(1000));
+    i2c_cmd_link_delete(cmd);
+    return ret;
+}
+```
+
+**常见错误**：
+- ❌ 设备地址错误导致通信失败
+- ❌ 忘记处理I2C总线错误（NACK、超时）
+- ❌ 多个任务同时操作I2C导致冲突
+
+---
+
+## 二、禁用USB/JTAG说明
+
+### 必须禁用的功能
+- USB Serial/JTAG
+- USB OTG
+
+### 受影响的引脚（共8个）
+| GPIO | 原功能 | 禁用后用途 |
+|------|--------|------------|
+| GPIO4 | JTAG MTDI | 显示屏背光 |
+| GPIO5 | JTAG MTCK | I2S BCLK |
+| GPIO6 | JTAG MTDO | I2S WS |
+| GPIO15 | USB JTAG D+ | I2S DOUT |
+| GPIO19 | USB OTG D- | UART1 TX |
+| GPIO20 | USB OTG D+ | UART1 RX |
+| GPIO47 | USB Serial D+ | 显示屏DC |
+| GPIO48 | USB Serial D- | 显示屏RST |
+
+### 软件配置（必须）
+
+#### 方法1：menuconfig配置
+```
+Component config → ESP System Settings → Channel for console output → Custom
+Component config → USB Serial JTAG → 禁用
+Component config → USB OTG → 禁用
+```
+
+#### 方法2：代码中添加
+```c
+// 在app_main()开头添加
+esp_efuse_disable_rom_download_mode();
+```
+
+### 影响
+- ✅ COM接口（UART0）正常工作（GPIO43/44）
+- ❌ USB接口无法使用
+- ✅ 串口烧录和监控不受影响
+
+---
+
+## 三、引脚分配总表
+
+### SPI总线（8个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO10 | MOSI | 显示屏/W25Q128 | 共用 |
+| GPIO11 | MISO | W25Q128 | 共用 |
+| GPIO12 | SCLK | 显示屏/W25Q128 | 共用 |
+| GPIO13 | CS | W25Q128 | 独立 |
+| GPIO21 | CS | 显示屏 | 独立 |
+| GPIO47 | DC | 显示屏 | 独立 |
+| GPIO48 | RST | 显示屏 | 独立 |
+| GPIO4 | BL | 显示屏 | 独立 |
+
+### I2S总线（4个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO5 | BCLK | 麦克风/功放 | 共用 |
+| GPIO6 | WS | 麦克风/功放 | 共用 |
+| GPIO7 | DIN | 麦克风 | 独立 |
+| GPIO15 | DOUT | 功放 | 独立 |
+
+### I2C总线（3个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO16 | SDA | 触控/ATH30 | 共用 |
+| GPIO17 | SCL | 触控/ATH30 | 共用 |
+| GPIO18 | INT | 触控 | 独立 |
+
+### UART1（2个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO19 | TX | LR22 LoRa | 独立 |
+| GPIO20 | RX | LR22 LoRa | 独立 |
+
+### LoRa控制（3个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO35 | M0 | LR22 | 模式选择 |
+| GPIO36 | M1 | LR22 | 模式选择 |
+| GPIO37 | AUX | LR22 | 状态指示 |
+
+### 其他功能（6个引脚）
+| GPIO | 功能 | 模块 | 说明 |
+|------|------|------|------|
+| GPIO1 | 空闲 | - | 未使用 |
+| GPIO2 | LED | 系统 | 状态指示灯 |
+| GPIO9 | DET | W25Q128 | 存储检测（可选） |
+| GPIO0 | BOOT | 系统 | 启动模式选择 |
+| GPIO43 | TX | 系统 | UART0调试串口 |
+| GPIO44 | RX | 系统 | UART0调试串口 |
+
+### 空闲引脚（10个）
+GPIO3, 14, 18, 38, 39, 40, 41, 42, 45, 46
+
+---
+
+## 四、电源注意事项
+
+### 供电分配
+- **3.3V**：屏幕、W25Q128、麦克风、LoRa、ATH30
+- **5V**：ESP32-S3（5VIN）、MAX98357A功放
+- **1.8V**：备用
+
+### 电流需求
+- **3.3V总需求**：~208mA
+- **5V总需求**：~740mA
+
+### 软件注意事项
+```c
+        // 关机保护
+        esp_deep_sleep_start();
+    } else if (voltage < BATTERY_LOW_VOLTAGE) {
+        // 显示低电量警告
+        ui_show_low_battery_warning();
+    }
+}
+```
+
+---
+
+## 五、模块通信协议
+
+### 1. 电容触控显示屏（SPI + I2C）
+
+**显示接口（SPI）**：
+- 分辨率：240x240
+- 颜色深度：16bit (RGB565)
+- 通信频率：最高40MHz
+
+**触控接口（I2C）**：
+- 设备地址：0x15
+- 中断引脚：GPIO18
+- 支持多点触控
+
+### 2. W25Q128 Flash（SPI）
+
+**参数**：
+- 容量：128MB
+- 页大小：256字节
+- 扇区大小：4KB
+- 块大小：64KB
+
+**软件注意事项**：
+```c
+// 擦除操作必须按扇区进行
+// 写入前必须先擦除
+// 读取可以任意地址任意长度
+```
+
+### 3. INMP441 麦克风（I2S）
+
+**参数**：
+- 采样率：最高44.1kHz
+- 位宽：24bit
+- 信噪比：61dB
+
+**L/R引脚配置**：
+- 接GND：左声道输出（当前配置）
+- 接VDD：右声道输出
+- 悬空：不确定，不推荐
+
+**软件处理**：
+```c
+// I2S立体声数据：buffer[0]=左声道, buffer[1]=右声道
+int16_t i2s_buffer[2];
+int16_t mic_data = i2s_buffer[0];  // 只使用左声道
+```
+
+
+**参数**：
+- 输出功率：3.2W
+- 供电电压：5V
+- 增益：默认15dB
+
+### 5. LR22 LoRa（UART）
+
+**参数**：
+- 工作频率：433MHz
+- 通信距离：3-5km
+- 串口波特率：9600（默认）
+
+**引脚定义（从左到右）**：
+- Pin1: GND - 电源地
+- Pin2: VCC - 电源正（3.3V）
+- Pin3: AUX - 状态指示（输入）
+- Pin4: TX - 串口发送
+- Pin5: RX - 串口接收
+- Pin6: M1 - 模式选择（高电平=1）
+- Pin7: M0 - 模式选择（高电平=1）
+
+**工作模式**：
+| M1 | M0 | 模式 |
+|----|----|----|
+| 0 | 0 | 高时效模式（默认） |
+| 0 | 1 | AT模式 |
+| 1 | 0 | 空中唤醒模式 |
+| 1 | 1 | 休眠模式 |
+
+**AUX引脚**：
+- 高电平：数据发送中/接收中/模式切换中
+- 低电平：数据发送完成/接收完成/模式切换完成
+
+
+**参数**：
+- 设备地址：0x38
+- 温度范围：-40~80°C
+- 湿度范围：0~100%RH
+- 精度：±0.3°C / ±2%RH
+
+---
+
+## 六、开发流程检查清单
+
+### 软件开发前
+- [ ] 阅读本文档
+- [ ] 确认禁用USB/JTAG配置
+- [ ] 确认I2C设备地址
+- [ ] 确认SPI设备片选引脚
+
+### 代码编写时
+- [ ] SPI设备切换时正确操作CS引脚
+- [ ] I2C通信添加错误处理和重试
+- [ ] I2S配置采样率一致
+
+
+### 测试验证时
+- [ ] 测试SPI设备切换是否正常
+- [ ] 测试I2C设备通信是否稳定
+- [ ] 测试音频录制和播放是否正常
+- [ ] 测试LoRa通信是否正常
+- [ ] 测试触控响应是否正常
+
+---
+
+## 七、常见问题排查
+
+### 1. SPI设备无响应
+**可能原因**：
+- CS引脚未正确拉低
+- 时钟频率过高
+- 设备未上电
+
+**排查方法**：
+```c
+// 检查CS引脚状态
+printf("CS_LCD: %d\n", gpio_get_level(GPIO_CS_LCD));
+printf("CS_W25Q128: %d\n", gpio_get_level(GPIO_CS_W25Q128));
+```
+
+### 2. I2C设备通信失败
+**可能原因**：
+- 设备地址错误
+- 上拉电阻缺失
+- 总线被占用
+
+**排查方法**：
+```c
+// 扫描I2C设备
+for (int addr = 0; addr < 128; addr++) {
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (addr << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_stop(cmd);
+    esp_err_t ret = i2c_master_cmd_begin(I2C_NUM_0, cmd, pdMS_TO_TICKS(100));
+    if (ret == ESP_OK) {
+        printf("Found device at address: 0x%02X\n", addr);
+    }
+    i2c_cmd_link_delete(cmd);
+}
+```
+
+### 3. 音频播放异常
+**可能原因**：
+- I2S配置错误
+- DMA缓冲区不足
+- 时钟配置错误
+
+**排查方法**：
+```c
+// 检查I2S状态
+i2s_status_t status;
+i2s_get_status(I2S_NUM_0, &status);
+printf("I2S status: %d\n", status);
+```
+
+---
+
+## 八、参考资料
+
+### 官方文档
+- ESP32-S3技术参考手册
+- ESP-IDF编程指南
+- 各模块数据手册
+
+### 项目文档
+- `hardware/wiring_diagram.md` - 硬件接线图
+- `logs/development_log.md` - 开发日志
+- `docs/` - 其他技术文档
+
+---
+
+**最后更新**：2026-09-03
+**维护者**：硬件团队
+**版本**：1.0

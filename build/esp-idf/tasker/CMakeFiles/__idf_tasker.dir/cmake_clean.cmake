@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_tasker.dir/tasker.c.obj"
-  "CMakeFiles/__idf_tasker.dir/tasker.c.obj.d"
+  "CMakeFiles/__idf_tasker.dir/task_manager.c.obj"
+  "CMakeFiles/__idf_tasker.dir/task_manager.c.obj.d"
+  "CMakeFiles/__idf_tasker.dir/task_worker.c.obj"
+  "CMakeFiles/__idf_tasker.dir/task_worker.c.obj.d"
+  "CMakeFiles/__idf_tasker.dir/tasker_test.c.obj"
+  "CMakeFiles/__idf_tasker.dir/tasker_test.c.obj.d"
   "libtasker.a"
   "libtasker.pdb"
 )

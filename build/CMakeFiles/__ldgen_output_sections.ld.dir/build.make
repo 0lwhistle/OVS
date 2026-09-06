@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for __ldgen_output_sections.ld.
 
@@ -69,70 +69,69 @@ include CMakeFiles/__ldgen_output_sections.ld.dir/progress.make
 CMakeFiles/__ldgen_output_sections.ld: esp-idf/esp_system/ld/sections.ld
 
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_system/ld/sections.ld.in
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_pm/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_mm/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/spi_flash/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_usb_cdc_rom_console/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_system/app.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_common/common.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_common/soc.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_rom/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/hal/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/log/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/heap/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/soc/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/ldo/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/freertos/linker_common.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/freertos/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/esp_libc.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/system_libs.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/libc.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_ringbuf/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_psram/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/app_trace/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_event/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_phy/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/vfs/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/lwip/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_netif/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_gdbstub/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/driver/twai/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_adc/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ana_cmpr/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_bitscrambler/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_isp/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dac/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2c/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i3c/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ledc/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_mcpwm/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_parlio/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_pcnt/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdm/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_driver_twai/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_eth/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_lcd/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_trace/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/espcoredump/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/ieee802154/linker.lf
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/openthread/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gpio/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_pm/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_mm/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_wdt/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/spi_flash/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_usb_cdc_rom_console/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_system/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_system/app.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/common.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/soc.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/heap/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/ldo/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/linker_common.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/esp_libc.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/system_libs.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/picolibc/libc.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_ringbuf/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_psram/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_uart/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gptimer/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/app_trace/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/lwip/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_netif/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/wpa_supplicant/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_gdbstub/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/driver/i2c/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/driver/twai/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i2s/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_ana_cmpr/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_bitscrambler/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_isp/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dac/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i2c/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i3c/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_ledc/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_mcpwm/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_parlio/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_pcnt/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_rmt/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_sdm/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_twai/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_eth/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_lcd/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_trace/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/ieee802154/linker.lf
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/openthread/linker.lf
 esp-idf/esp_system/ld/sections.ld: esp-idf/xtensa/libxtensa.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/cxx/libcxx.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_libc/libesp_libc.a
@@ -147,7 +146,7 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_common/libesp_common.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_system/libesp_system.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_stdio/libesp_stdio.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/xtensa/libxtensa.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/vfs/libvfs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_uart/libesp_driver_uart.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_uart/libesp_hal_uart.a
@@ -157,7 +156,6 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_timer/libesp_timer.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_timg/libesp_hal_timg.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_dma/libesp_driver_dma.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_dma/libesp_hal_dma.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_mm/libesp_mm.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spi_flash/libspi_flash.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -178,26 +176,20 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_security/libesp_security.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_mm/libesp_mm.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/nvs_flash/libnvs_flash.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/mbedtls/libmbedtls.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_dma/libesp_driver_dma.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_psram/libesp_psram.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/efuse/libefuse.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_ringbuf/libesp_ringbuf.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_psram/libesp_psram.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/vfs/libvfs.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_usb/libesp_hal_usb.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/espcoredump/libespcoredump.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_gdbstub/libesp_gdbstub.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_adc/libesp_adc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
@@ -212,17 +204,16 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_phy/libesp_phy.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_netif/libesp_netif.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wpa_supplicant/libwpa_supplicant.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_coex/libesp_coex.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
-esp-idf/esp_system/ld/sections.ld: /root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
+esp-idf/esp_system/ld/sections.ld: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_https_ota/libesp_https_ota.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/pthread/libpthread.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_stdio/libesp_stdio.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_dma/libesp_hal_dma.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_clock/libesp_hal_clock.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -231,11 +222,15 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_app_format/libesp_app_format.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_bootloader_format/libesp_bootloader_format.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/app_update/libapp_update.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_partition/libesp_partition.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/efuse/libefuse.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_gpio/libesp_driver_gpio.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_uart/libesp_hal_uart.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_pm/libesp_pm.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_mm/libesp_mm.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_dma/libesp_driver_dma.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_timg/libesp_hal_timg.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/bootloader_support/libbootloader_support.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spi_flash/libspi_flash.a
@@ -247,10 +242,8 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/log/liblog.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/heap/libheap.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/soc/libsoc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_usb/libesp_hal_usb.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hw_support/libesp_hw_support.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/freertos/libfreertos.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_libc/libesp_libc.a
@@ -265,7 +258,6 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_event/libesp_event.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/nvs_flash/libnvs_flash.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_phy/libesp_phy.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/lwip/liblwip.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_netif/libesp_netif.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wpa_supplicant/libwpa_supplicant.a
@@ -283,13 +275,12 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/driver/libdriver.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_twai/libesp_hal_twai.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/http_parser/libhttp_parser.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp-tls/libesp-tls.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_adc/libesp_adc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_blockdev_util/libesp_blockdev_util.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_cam/libesp_hal_cam.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_cam/libesp_hal_cam.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_cam/libesp_driver_cam.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_dac/libesp_driver_dac.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_i2c/libesp_driver_i2c.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_ledc/libesp_driver_ledc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
@@ -307,13 +298,13 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/sdmmc/libsdmmc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_sd/libesp_hal_sd.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sd_intf/libesp_driver_sd_intf.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/sdmmc/libsdmmc.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sdio/libesp_driver_sdio.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sd_intf/libesp_driver_sd_intf.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_spi/libesp_driver_spi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_twai/libesp_driver_twai.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_eth/libesp_eth.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_hal_lcd/libesp_hal_lcd.a
@@ -333,7 +324,6 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/console/libconsole.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_local_ctrl/libesp_local_ctrl.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/protocomm/libprotocomm.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_https_server/libesp_https_server.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/espcoredump/libespcoredump.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wear_levelling/libwear_levelling.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/fatfs/libfatfs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wear_levelling/libwear_levelling.a
@@ -342,36 +332,38 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_sdspi/libesp_driver_sdspi.
 esp-idf/esp_system/ld/sections.ld: esp-idf/perfmon/libperfmon.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/rt/librt.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/task_manager/libtask_manager.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/task_worker/libtask_worker.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/task_manager/libtask_manager.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/tasker_api/libtasker_api.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/task_worker/libtask_worker.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/logger/liblogger.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/tasker/libtasker.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/event_bus/libevent_bus.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/eventbus_api/libeventbus_api.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/event_bus/libevent_bus.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/gpio/libgpio.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/led/libled.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/gpio/libgpio.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/beep/libbeep.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/sr04/libsr04.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/tasker_api/libtasker_api.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/web/libweb.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/ota/libota.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/heartbeat/libheartbeat.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/gpio_ctrl/libgpio_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/led_ctrl/libled_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/gpio_ctrl/libgpio_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/beep_ctrl/libbeep_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/sr04_ctrl/libsr04_ctrl.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/wifi/libwifi.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/main/libmain.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/eventbus_api/libeventbus_api.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/led/libled.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/beep/libbeep.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/sr04/libsr04.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/web/libweb.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/led_ctrl/libled_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/beep_ctrl/libbeep_ctrl.a
-esp-idf/esp_system/ld/sections.ld: esp-idf/sr04_ctrl/libsr04_ctrl.a
 esp-idf/esp_system/ld/sections.ld: ../sdkconfig
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating esp-idf/esp_system/ld/sections.ld"
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/ldgen/ldgen.py --config /root/progarms/ovs/sdkconfig --fragments-list "/root/esp-idf/esp-idf-v6.0.1/components/xtensa/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gpio/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_pm/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_mm/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dma/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_wdt/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/spi_flash/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_usb_cdc_rom_console/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_system/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_system/app.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_common/common.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_common/soc.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_rom/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/hal/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/log/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/heap/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/soc/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_hal_pmu/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/ldo/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/freertos/linker_common.lf;/root/esp-idf/esp-idf-v6.0.1/components/freertos/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/esp_libc.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/system_libs.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/picolibc/libc.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_ringbuf/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_psram/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_uart/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_gptimer/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/app_trace/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_event/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_phy/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/vfs/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/lwip/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_netif/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/wpa_supplicant/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_wifi/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_spi/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_gdbstub/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/driver/i2c/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/driver/twai/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_adc/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ana_cmpr/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_bitscrambler/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_isp/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_dac/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2c/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i2s/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_i3c/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_ledc/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_mcpwm/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_parlio/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_pcnt/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_rmt/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_sdm/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_driver_twai/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_eth/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_lcd/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/esp_trace/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/espcoredump/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/ieee802154/linker.lf;/root/esp-idf/esp-idf-v6.0.1/components/openthread/linker.lf" --input /root/progarms/ovs/build/esp-idf/esp_system/ld/sections.ld.in --output /root/progarms/ovs/build/esp-idf/esp_system/ld/sections.ld --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --env-file /root/progarms/ovs/build/config.env --libraries-file /root/progarms/ovs/build/ldgen_libraries --objdump /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating esp-idf/esp_system/ld/sections.ld"
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/ldgen/ldgen.py --config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig --fragments-list "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gpio/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_pm/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_mm/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_wdt/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/spi_flash/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_usb_cdc_rom_console/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_system/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_system/app.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/common.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/soc.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/heap/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/ldo/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/mspi_timing_tuning/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/linker_common.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/esp_libc.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/system_libs.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/picolibc/libc.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_ringbuf/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_psram/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_uart/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gptimer/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/app_trace/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_usb_serial_jtag/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/lwip/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_netif/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/wpa_supplicant/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_gdbstub/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/driver/i2c/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/driver/twai/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i2s/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_ana_cmpr/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_bitscrambler/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_isp/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dac/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i2c/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_i3c/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_ledc/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_mcpwm/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_parlio/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_pcnt/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_rmt/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_sdm/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_twai/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_eth/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_lcd/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_trace/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/ieee802154/linker.lf;/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/openthread/linker.lf" --input /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_system/ld/sections.ld.in --output /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_system/ld/sections.ld --kconfig /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/Kconfig --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env --libraries-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/ldgen_libraries --objdump /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump
 
 __ldgen_output_sections.ld: CMakeFiles/__ldgen_output_sections.ld
 __ldgen_output_sections.ld: esp-idf/esp_system/ld/sections.ld
@@ -387,6 +379,6 @@ CMakeFiles/__ldgen_output_sections.ld.dir/clean:
 .PHONY : CMakeFiles/__ldgen_output_sections.ld.dir/clean
 
 CMakeFiles/__ldgen_output_sections.ld.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/__ldgen_output_sections.ld.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/__ldgen_output_sections.ld.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/__ldgen_output_sections.ld.dir/depend
 

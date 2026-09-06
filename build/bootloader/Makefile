@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles /root/progarms/ovs/build/bootloader//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -232,45 +232,6 @@ size-components: cmake_check_build_system
 size-components/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/size-components.dir/build.make CMakeFiles/size-components.dir/build
 .PHONY : size-components/fast
-
-#=============================================================================
-# Target rules for targets named dfu
-
-# Build rule for target.
-dfu: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dfu
-.PHONY : dfu
-
-# fast build rule for target.
-dfu/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dfu.dir/build.make CMakeFiles/dfu.dir/build
-.PHONY : dfu/fast
-
-#=============================================================================
-# Target rules for targets named dfu-list
-
-# Build rule for target.
-dfu-list: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dfu-list
-.PHONY : dfu-list
-
-# fast build rule for target.
-dfu-list/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dfu-list.dir/build.make CMakeFiles/dfu-list.dir/build
-.PHONY : dfu-list/fast
-
-#=============================================================================
-# Target rules for targets named dfu-flash
-
-# Build rule for target.
-dfu-flash: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dfu-flash
-.PHONY : dfu-flash
-
-# fast build rule for target.
-dfu-flash/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dfu-flash.dir/build.make CMakeFiles/dfu-flash.dir/build
-.PHONY : dfu-flash/fast
 
 #=============================================================================
 # Target rules for targets named uf2
@@ -416,19 +377,6 @@ __idf_esp_hal_gpio/fast:
 .PHONY : __idf_esp_hal_gpio/fast
 
 #=============================================================================
-# Target rules for targets named __idf_esp_hal_usb
-
-# Build rule for target.
-__idf_esp_hal_usb: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_hal_usb
-.PHONY : __idf_esp_hal_usb
-
-# fast build rule for target.
-__idf_esp_hal_usb/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build.make esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/build
-.PHONY : __idf_esp_hal_usb/fast
-
-#=============================================================================
 # Target rules for targets named __idf_esp_hal_pmu
 
 # Build rule for target.
@@ -440,19 +388,6 @@ __idf_esp_hal_pmu: cmake_check_build_system
 __idf_esp_hal_pmu/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build.make esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/build
 .PHONY : __idf_esp_hal_pmu/fast
-
-#=============================================================================
-# Target rules for targets named __idf_esp_hal_dma
-
-# Build rule for target.
-__idf_esp_hal_dma: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_hal_dma
-.PHONY : __idf_esp_hal_dma
-
-# fast build rule for target.
-__idf_esp_hal_dma/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build
-.PHONY : __idf_esp_hal_dma/fast
 
 #=============================================================================
 # Target rules for targets named __idf_esp_hal_gpspi
@@ -557,6 +492,19 @@ __idf_esp_hal_uart: cmake_check_build_system
 __idf_esp_hal_uart/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build
 .PHONY : __idf_esp_hal_uart/fast
+
+#=============================================================================
+# Target rules for targets named __idf_esp_hal_i2s
+
+# Build rule for target.
+__idf_esp_hal_i2s: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_hal_i2s
+.PHONY : __idf_esp_hal_i2s
+
+# fast build rule for target.
+__idf_esp_hal_i2s/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build
+.PHONY : __idf_esp_hal_i2s/fast
 
 #=============================================================================
 # Target rules for targets named __idf_esp_hal_ana_conv
@@ -792,29 +740,29 @@ __idf_main/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
-project_elf_src_esp32s3.obj: project_elf_src_esp32s3.c.obj
-.PHONY : project_elf_src_esp32s3.obj
+project_elf_src_esp32.obj: project_elf_src_esp32.c.obj
+.PHONY : project_elf_src_esp32.obj
 
 # target to build an object file
-project_elf_src_esp32s3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
-.PHONY : project_elf_src_esp32s3.c.obj
+project_elf_src_esp32.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj
+.PHONY : project_elf_src_esp32.c.obj
 
-project_elf_src_esp32s3.i: project_elf_src_esp32s3.c.i
-.PHONY : project_elf_src_esp32s3.i
+project_elf_src_esp32.i: project_elf_src_esp32.c.i
+.PHONY : project_elf_src_esp32.i
 
 # target to preprocess a source file
-project_elf_src_esp32s3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.i
-.PHONY : project_elf_src_esp32s3.c.i
+project_elf_src_esp32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.i
+.PHONY : project_elf_src_esp32.c.i
 
-project_elf_src_esp32s3.s: project_elf_src_esp32s3.c.s
-.PHONY : project_elf_src_esp32s3.s
+project_elf_src_esp32.s: project_elf_src_esp32.c.s
+.PHONY : project_elf_src_esp32.s
 
 # target to generate assembly for a file
-project_elf_src_esp32s3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.s
-.PHONY : project_elf_src_esp32s3.c.s
+project_elf_src_esp32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bootloader.elf.dir/build.make CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.s
+.PHONY : project_elf_src_esp32.c.s
 
 # Help Target
 help:
@@ -830,9 +778,6 @@ help:
 	@echo "... bootloader_ld_in_preprocess"
 	@echo "... config-report"
 	@echo "... confserver"
-	@echo "... dfu"
-	@echo "... dfu-flash"
-	@echo "... dfu-list"
 	@echo "... efuse-common-table"
 	@echo "... efuse-custom-table"
 	@echo "... efuse_common_table"
@@ -855,14 +800,13 @@ help:
 	@echo "... __idf_esp_common"
 	@echo "... __idf_esp_hal_ana_conv"
 	@echo "... __idf_esp_hal_clock"
-	@echo "... __idf_esp_hal_dma"
 	@echo "... __idf_esp_hal_gpio"
 	@echo "... __idf_esp_hal_gpspi"
+	@echo "... __idf_esp_hal_i2s"
 	@echo "... __idf_esp_hal_pmu"
 	@echo "... __idf_esp_hal_security"
 	@echo "... __idf_esp_hal_timg"
 	@echo "... __idf_esp_hal_uart"
-	@echo "... __idf_esp_hal_usb"
 	@echo "... __idf_esp_hal_wdt"
 	@echo "... __idf_esp_hw_support"
 	@echo "... __idf_esp_rom"
@@ -876,9 +820,9 @@ help:
 	@echo "... __idf_spi_flash"
 	@echo "... __idf_xtensa"
 	@echo "... bootloader.elf"
-	@echo "... project_elf_src_esp32s3.obj"
-	@echo "... project_elf_src_esp32s3.i"
-	@echo "... project_elf_src_esp32s3.s"
+	@echo "... project_elf_src_esp32.obj"
+	@echo "... project_elf_src_esp32.i"
+	@echo "... project_elf_src_esp32.s"
 .PHONY : help
 
 
