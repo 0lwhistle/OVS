@@ -207,6 +207,8 @@
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/event_bus/libevent_bus.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/eventbus_api/libeventbus_api.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/event_bus/libevent_bus.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/dtbs/libdtbs.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/spiffs/libspiffs.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/wifi/libwifi.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/gpio/libgpio.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/led/libled.a
@@ -217,12 +219,12 @@
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat/libheartbeat.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker_api/libtasker_api.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web/libweb.a
-/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/spiffs/libspiffs.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota/libota.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat/libheartbeat.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/wifi/libwifi.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/main/libmain.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/eventbus_api/libeventbus_api.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/dtbs/libdtbs.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/led/libled.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/beep/libbeep.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/sr04/libsr04.a

@@ -201,6 +201,7 @@ ovs.elf: esp-idf/tasker/libtasker.a
 ovs.elf: esp-idf/tasker_api/libtasker_api.a
 ovs.elf: esp-idf/event_bus/libevent_bus.a
 ovs.elf: esp-idf/eventbus_api/libeventbus_api.a
+ovs.elf: esp-idf/dtbs/libdtbs.a
 ovs.elf: esp-idf/wifi/libwifi.a
 ovs.elf: esp-idf/gpio/libgpio.a
 ovs.elf: esp-idf/led/libled.a
@@ -231,6 +232,7 @@ ovs.elf: esp-idf/wear_levelling/libwear_levelling.a
 ovs.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
 ovs.elf: esp-idf/eventbus_api/libeventbus_api.a
 ovs.elf: esp-idf/event_bus/libevent_bus.a
+ovs.elf: esp-idf/dtbs/libdtbs.a
 ovs.elf: esp-idf/led/libled.a
 ovs.elf: esp-idf/gpio/libgpio.a
 ovs.elf: esp-idf/beep/libbeep.a

@@ -9,6 +9,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/core/tasker
     ${CMAKE_SOURCE_DIR}/components/core/event_bus
     ${CMAKE_SOURCE_DIR}/components/core/logger
+    ${CMAKE_SOURCE_DIR}/components/dtbs
     ${CMAKE_SOURCE_DIR}/components/drivers/wifi
     ${CMAKE_SOURCE_DIR}/components/drivers/led
     ${CMAKE_SOURCE_DIR}/components/drivers/beep
@@ -17,6 +18,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/modules/ota
     ${CMAKE_SOURCE_DIR}/components/modules/web
     ${CMAKE_SOURCE_DIR}/components/modules/heartbeat
+    ${CMAKE_SOURCE_DIR}/src/lvgl
 )
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)

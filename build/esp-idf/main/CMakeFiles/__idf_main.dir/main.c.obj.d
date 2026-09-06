@@ -85,7 +85,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/include/web.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/drivers/wifi/wifi.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
@@ -160,8 +160,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_types.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_netif/include/esp_netif_defaults.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_mac.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/include/ota.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/include/heartbeat.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h \

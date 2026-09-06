@@ -31,6 +31,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker/CMakeFiles/__idf_tasker.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger/CMakeFiles/__idf_logger.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/wifi/CMakeFiles/__idf_wifi.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/led/CMakeFiles/__idf_led.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/beep/CMakeFiles/__idf_beep.dir/DependInfo.cmake"

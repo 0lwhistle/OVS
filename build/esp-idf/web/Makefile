@@ -175,29 +175,29 @@ __idf_web/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/build
 .PHONY : __idf_web/fast
 
-mongoose/mongoose.obj: mongoose/mongoose.c.obj
-.PHONY : mongoose/mongoose.obj
+__/__/__/thirdparty/mongoose/mongoose.obj: __/__/__/thirdparty/mongoose/mongoose.c.obj
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.obj
 
 # target to build an object file
-mongoose/mongoose.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj
-.PHONY : mongoose/mongoose.c.obj
+__/__/__/thirdparty/mongoose/mongoose.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/__/__/__/thirdparty/mongoose/mongoose.c.obj
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.c.obj
 
-mongoose/mongoose.i: mongoose/mongoose.c.i
-.PHONY : mongoose/mongoose.i
+__/__/__/thirdparty/mongoose/mongoose.i: __/__/__/thirdparty/mongoose/mongoose.c.i
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.i
 
 # target to preprocess a source file
-mongoose/mongoose.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i
-.PHONY : mongoose/mongoose.c.i
+__/__/__/thirdparty/mongoose/mongoose.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/__/__/__/thirdparty/mongoose/mongoose.c.i
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.c.i
 
-mongoose/mongoose.s: mongoose/mongoose.c.s
-.PHONY : mongoose/mongoose.s
+__/__/__/thirdparty/mongoose/mongoose.s: __/__/__/thirdparty/mongoose/mongoose.c.s
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.s
 
 # target to generate assembly for a file
-mongoose/mongoose.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s
-.PHONY : mongoose/mongoose.c.s
+__/__/__/thirdparty/mongoose/mongoose.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/web/CMakeFiles/__idf_web.dir/build.make esp-idf/web/CMakeFiles/__idf_web.dir/__/__/__/thirdparty/mongoose/mongoose.c.s
+.PHONY : __/__/__/thirdparty/mongoose/mongoose.c.s
 
 web.obj: web.c.obj
 .PHONY : web.obj
@@ -260,9 +260,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_web"
-	@echo "... mongoose/mongoose.obj"
-	@echo "... mongoose/mongoose.i"
-	@echo "... mongoose/mongoose.s"
+	@echo "... __/__/__/thirdparty/mongoose/mongoose.obj"
+	@echo "... __/__/__/thirdparty/mongoose/mongoose.i"
+	@echo "... __/__/__/thirdparty/mongoose/mongoose.s"
 	@echo "... web.obj"
 	@echo "... web.i"
 	@echo "... web.s"
