@@ -1,4 +1,5 @@
-"-specs=/root/progarms/ovs/build/bootloader/specs/picolibc.specs"
+"-specs=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/specs/picolibc.specs"
+-Wno-frame-address
 -mlongcalls
 -fno-builtin-memcpy
 -fno-builtin-memset

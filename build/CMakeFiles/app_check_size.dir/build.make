@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for app_check_size.
 
@@ -67,7 +67,7 @@ include CMakeFiles/app_check_size.dir/compiler_depend.make
 include CMakeFiles/app_check_size.dir/progress.make
 
 CMakeFiles/app_check_size:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /root/progarms/ovs/build/partition_table/partition-table.bin /root/progarms/ovs/build/ovs.bin
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/olwhistle/dockerNow/esp32/programs/ovs/build/partition_table/partition-table.bin /home/olwhistle/dockerNow/esp32/programs/ovs/build/ovs.bin
 
 app_check_size: CMakeFiles/app_check_size
 app_check_size: CMakeFiles/app_check_size.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/app_check_size.dir/clean:
 .PHONY : CMakeFiles/app_check_size.dir/clean
 
 CMakeFiles/app_check_size.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/app_check_size.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/app_check_size.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/app_check_size.dir/depend
 

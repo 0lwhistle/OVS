@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/main//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/main//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/main/CMakeFiles/__idf_main.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/__idf_main.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/__idf_main.dir/rule
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/rule
 
 # Convenience name for target.
@@ -172,78 +172,15 @@ __idf_main: esp-idf/main/CMakeFiles/__idf_main.dir/rule
 
 # fast build rule for target.
 __idf_main/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
-
-__/modules/web/mongoose/mongoose.obj: __/modules/web/mongoose/mongoose.c.obj
-.PHONY : __/modules/web/mongoose/mongoose.obj
-
-# target to build an object file
-__/modules/web/mongoose/mongoose.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj
-.PHONY : __/modules/web/mongoose/mongoose.c.obj
-
-__/modules/web/mongoose/mongoose.i: __/modules/web/mongoose/mongoose.c.i
-.PHONY : __/modules/web/mongoose/mongoose.i
-
-# target to preprocess a source file
-__/modules/web/mongoose/mongoose.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.i
-.PHONY : __/modules/web/mongoose/mongoose.c.i
-
-__/modules/web/mongoose/mongoose.s: __/modules/web/mongoose/mongoose.c.s
-.PHONY : __/modules/web/mongoose/mongoose.s
-
-# target to generate assembly for a file
-__/modules/web/mongoose/mongoose.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.s
-.PHONY : __/modules/web/mongoose/mongoose.c.s
-
-__/modules/web/web_data/web_data.obj: __/modules/web/web_data/web_data.c.obj
-.PHONY : __/modules/web/web_data/web_data.obj
-
-# target to build an object file
-__/modules/web/web_data/web_data.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj
-.PHONY : __/modules/web/web_data/web_data.c.obj
-
-__/modules/web/web_data/web_data.i: __/modules/web/web_data/web_data.c.i
-.PHONY : __/modules/web/web_data/web_data.i
-
-# target to preprocess a source file
-__/modules/web/web_data/web_data.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.i
-.PHONY : __/modules/web/web_data/web_data.c.i
-
-__/modules/web/web_data/web_data.s: __/modules/web/web_data/web_data.c.s
-.PHONY : __/modules/web/web_data/web_data.s
-
-# target to generate assembly for a file
-__/modules/web/web_data/web_data.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.s
-.PHONY : __/modules/web/web_data/web_data.c.s
-
-# target to build an object file
-cmake_pch.h.gch:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.gch
-.PHONY : cmake_pch.h.gch
-
-# target to preprocess a source file
-cmake_pch.h.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.i
-.PHONY : cmake_pch.h.i
-
-# target to generate assembly for a file
-cmake_pch.h.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/cmake_pch.h.s
-.PHONY : cmake_pch.h.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -251,7 +188,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -259,7 +196,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -275,15 +212,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
-	@echo "... __/modules/web/mongoose/mongoose.obj"
-	@echo "... __/modules/web/mongoose/mongoose.i"
-	@echo "... __/modules/web/mongoose/mongoose.s"
-	@echo "... __/modules/web/web_data/web_data.obj"
-	@echo "... __/modules/web/web_data/web_data.i"
-	@echo "... __/modules/web/web_data/web_data.s"
-	@echo "... cmake_pch.h.gch"
-	@echo "... cmake_pch.h.i"
-	@echo "... cmake_pch.h.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -298,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

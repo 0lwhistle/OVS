@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/ota//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/ota/CMakeFiles/__idf_ota.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/CMakeFiles/__idf_ota.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/ota/CMakeFiles/__idf_ota.dir/rule
 .PHONY : esp-idf/ota/CMakeFiles/__idf_ota.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ __idf_ota: esp-idf/ota/CMakeFiles/__idf_ota.dir/rule
 
 # fast build rule for target.
 __idf_ota/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/build
 .PHONY : __idf_ota/fast
 
 ota.obj: ota.c.obj
@@ -180,7 +180,7 @@ ota.obj: ota.c.obj
 
 # target to build an object file
 ota.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj
 .PHONY : ota.c.obj
 
 ota.i: ota.c.i
@@ -188,7 +188,7 @@ ota.i: ota.c.i
 
 # target to preprocess a source file
 ota.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.i
 .PHONY : ota.c.i
 
 ota.s: ota.c.s
@@ -196,7 +196,7 @@ ota.s: ota.c.s
 
 # target to generate assembly for a file
 ota.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/ota/CMakeFiles/__idf_ota.dir/build.make esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.s
 .PHONY : ota.c.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

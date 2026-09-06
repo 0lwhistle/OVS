@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for save-defconfig.
 
@@ -67,8 +67,8 @@ include CMakeFiles/save-defconfig.dir/compiler_depend.make
 include CMakeFiles/save-defconfig.dir/progress.make
 
 CMakeFiles/save-defconfig:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/ovs/build/config.env
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --dont-write-deprecated --output savedefconfig /root/progarms/ovs/sdkconfig.defaults --env KCONFIG_REPORT_VERBOSITY=default
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/sdkconfig.rename --config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env --dont-write-deprecated --output savedefconfig /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig.defaults --env KCONFIG_REPORT_VERBOSITY=default
 
 save-defconfig: CMakeFiles/save-defconfig
 save-defconfig: CMakeFiles/save-defconfig.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/save-defconfig.dir/clean:
 .PHONY : CMakeFiles/save-defconfig.dir/clean
 
 CMakeFiles/save-defconfig.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/save-defconfig.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/save-defconfig.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/save-defconfig.dir/depend
 

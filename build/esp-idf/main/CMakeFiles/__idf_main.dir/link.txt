@@ -1,2 +1,2 @@
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc libmain.a CMakeFiles/__idf_main.dir/main.c.obj CMakeFiles/__idf_main.dir/__/modules/web/mongoose/mongoose.c.obj CMakeFiles/__idf_main.dir/__/modules/web/web_data/web_data.c.obj
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib libmain.a
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libmain.a CMakeFiles/__idf_main.dir/main.c.obj
+/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libmain.a

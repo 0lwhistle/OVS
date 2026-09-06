@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for tfpsacrypto-apidoc.
 
@@ -67,7 +67,7 @@ include esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/
 include esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/progress.make
 
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc:
-	cd /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/doxygen && doxygen tfpsacrypto.doxyfile
+	cd /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/doxygen && doxygen tfpsacrypto.doxyfile
 
 tfpsacrypto-apidoc: esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc
 tfpsacrypto-apidoc: esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/build.make
@@ -78,10 +78,10 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/build: t
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/build
 
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/clean:
-	cd /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto && $(CMAKE_COMMAND) -P CMakeFiles/tfpsacrypto-apidoc.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto && $(CMAKE_COMMAND) -P CMakeFiles/tfpsacrypto-apidoc.dir/cmake_clean.cmake
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/clean
 
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto /root/progarms/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/CMakeFiles/tfpsacrypto-apidoc.dir/depend
 

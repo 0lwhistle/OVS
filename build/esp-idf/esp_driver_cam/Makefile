@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/esp_driver_cam//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_cam//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule
 .PHONY : esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule
 
 # Convenience name for target.
@@ -172,63 +172,15 @@ __idf_esp_driver_cam: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir
 
 # fast build rule for target.
 __idf_esp_driver_cam/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build
 .PHONY : __idf_esp_driver_cam/fast
-
-dvp/src/esp_cam_ctlr_dvp_cam.obj: dvp/src/esp_cam_ctlr_dvp_cam.c.obj
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.obj
-
-# target to build an object file
-dvp/src/esp_cam_ctlr_dvp_cam.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.obj
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.c.obj
-
-dvp/src/esp_cam_ctlr_dvp_cam.i: dvp/src/esp_cam_ctlr_dvp_cam.c.i
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.i
-
-# target to preprocess a source file
-dvp/src/esp_cam_ctlr_dvp_cam.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.i
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.c.i
-
-dvp/src/esp_cam_ctlr_dvp_cam.s: dvp/src/esp_cam_ctlr_dvp_cam.c.s
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.s
-
-# target to generate assembly for a file
-dvp/src/esp_cam_ctlr_dvp_cam.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_cam.c.s
-.PHONY : dvp/src/esp_cam_ctlr_dvp_cam.c.s
-
-dvp/src/esp_cam_ctlr_dvp_gdma.obj: dvp/src/esp_cam_ctlr_dvp_gdma.c.obj
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.obj
-
-# target to build an object file
-dvp/src/esp_cam_ctlr_dvp_gdma.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.obj
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.c.obj
-
-dvp/src/esp_cam_ctlr_dvp_gdma.i: dvp/src/esp_cam_ctlr_dvp_gdma.c.i
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.i
-
-# target to preprocess a source file
-dvp/src/esp_cam_ctlr_dvp_gdma.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.i
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.c.i
-
-dvp/src/esp_cam_ctlr_dvp_gdma.s: dvp/src/esp_cam_ctlr_dvp_gdma.c.s
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.s
-
-# target to generate assembly for a file
-dvp/src/esp_cam_ctlr_dvp_gdma.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp/src/esp_cam_ctlr_dvp_gdma.c.s
-.PHONY : dvp/src/esp_cam_ctlr_dvp_gdma.c.s
 
 dvp_share_ctrl.obj: dvp_share_ctrl.c.obj
 .PHONY : dvp_share_ctrl.obj
 
 # target to build an object file
 dvp_share_ctrl.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj
 .PHONY : dvp_share_ctrl.c.obj
 
 dvp_share_ctrl.i: dvp_share_ctrl.c.i
@@ -236,7 +188,7 @@ dvp_share_ctrl.i: dvp_share_ctrl.c.i
 
 # target to preprocess a source file
 dvp_share_ctrl.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.i
 .PHONY : dvp_share_ctrl.c.i
 
 dvp_share_ctrl.s: dvp_share_ctrl.c.s
@@ -244,7 +196,7 @@ dvp_share_ctrl.s: dvp_share_ctrl.c.s
 
 # target to generate assembly for a file
 dvp_share_ctrl.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.s
 .PHONY : dvp_share_ctrl.c.s
 
 esp_cam_ctlr.obj: esp_cam_ctlr.c.obj
@@ -252,7 +204,7 @@ esp_cam_ctlr.obj: esp_cam_ctlr.c.obj
 
 # target to build an object file
 esp_cam_ctlr.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj
 .PHONY : esp_cam_ctlr.c.obj
 
 esp_cam_ctlr.i: esp_cam_ctlr.c.i
@@ -260,7 +212,7 @@ esp_cam_ctlr.i: esp_cam_ctlr.c.i
 
 # target to preprocess a source file
 esp_cam_ctlr.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.i
 .PHONY : esp_cam_ctlr.c.i
 
 esp_cam_ctlr.s: esp_cam_ctlr.c.s
@@ -268,7 +220,7 @@ esp_cam_ctlr.s: esp_cam_ctlr.c.s
 
 # target to generate assembly for a file
 esp_cam_ctlr.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.s
 .PHONY : esp_cam_ctlr.c.s
 
 # Help Target
@@ -284,12 +236,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_driver_cam"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_cam.obj"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_cam.i"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_cam.s"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_gdma.obj"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_gdma.i"
-	@echo "... dvp/src/esp_cam_ctlr_dvp_gdma.s"
 	@echo "... dvp_share_ctrl.obj"
 	@echo "... dvp_share_ctrl.i"
 	@echo "... dvp_share_ctrl.s"
@@ -307,6 +253,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

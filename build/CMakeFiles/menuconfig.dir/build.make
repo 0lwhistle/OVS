@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Utility rule file for menuconfig.
 
@@ -67,11 +67,11 @@ include CMakeFiles/menuconfig.dir/compiler_depend.make
 include CMakeFiles/menuconfig.dir/progress.make
 
 CMakeFiles/menuconfig:
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /root/progarms/ovs/build/config.env
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --env KCONFIG_REPORT_VERBOSITY=quiet --dont-write-deprecated --output config /root/progarms/ovs/sdkconfig
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/tools/check_term.py
-	/usr/bin/cmake -E env COMPONENT_KCONFIGS_SOURCE_FILE=/root/progarms/ovs/build/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=/root/progarms/ovs/build/kconfigs_projbuild.in KCONFIG_CONFIG=/root/progarms/ovs/sdkconfig IDF_TARGET=esp32s3 IDF_TOOLCHAIN=gcc IDF_ENV_FPGA= IDF_INIT_VERSION=6.0.1 IDF_MINIMAL_BUILD=n /root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_menuconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig
-	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /root/esp-idf/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /root/esp-idf/esp-idf-v6.0.1/sdkconfig.rename --config /root/progarms/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /root/progarms/ovs/build/config.env --env IDF_TARGET=esp32s3 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output header /root/progarms/ovs/build/config/sdkconfig.h --output cmake /root/progarms/ovs/build/config/sdkconfig.cmake --output json /root/progarms/ovs/build/config/sdkconfig.json --output json_menus /root/progarms/ovs/build/config/kconfig_menus.json --output config /root/progarms/ovs/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/sdkconfig.rename --config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env --env IDF_TARGET=esp32 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --env KCONFIG_REPORT_VERBOSITY=quiet --dont-write-deprecated --output config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/tools/check_term.py
+	/usr/bin/cmake -E env COMPONENT_KCONFIGS_SOURCE_FILE=/home/olwhistle/dockerNow/esp32/programs/ovs/build/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=/home/olwhistle/dockerNow/esp32/programs/ovs/build/kconfigs_projbuild.in KCONFIG_CONFIG=/home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig IDF_TARGET=esp32 IDF_TOOLCHAIN=gcc IDF_ENV_FPGA= IDF_INIT_VERSION=6.0.1 IDF_MINIMAL_BUILD=n /root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m esp_menuconfig /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/Kconfig
+	/root/.espressif/python_env/idf6.0_py3.10_env/bin/python -m kconfgen --list-separator=semicolon --kconfig /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/Kconfig --sdkconfig-rename /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/sdkconfig.rename --config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig --env IDF_MINIMAL_BUILD=n --env-file /home/olwhistle/dockerNow/esp32/programs/ovs/build/config.env --env IDF_TARGET=esp32 --env IDF_TOOLCHAIN=gcc --env IDF_ENV_FPGA= --env IDF_INIT_VERSION=6.0.1 --output header /home/olwhistle/dockerNow/esp32/programs/ovs/build/config/sdkconfig.h --output cmake /home/olwhistle/dockerNow/esp32/programs/ovs/build/config/sdkconfig.cmake --output json /home/olwhistle/dockerNow/esp32/programs/ovs/build/config/sdkconfig.json --output json_menus /home/olwhistle/dockerNow/esp32/programs/ovs/build/config/kconfig_menus.json --output config /home/olwhistle/dockerNow/esp32/programs/ovs/sdkconfig --env KCONFIG_REPORT_VERBOSITY=default
 
 menuconfig: CMakeFiles/menuconfig
 menuconfig: CMakeFiles/menuconfig.dir/build.make
@@ -86,6 +86,6 @@ CMakeFiles/menuconfig.dir/clean:
 .PHONY : CMakeFiles/menuconfig.dir/clean
 
 CMakeFiles/menuconfig.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs /root/progarms/ovs/build /root/progarms/ovs/build /root/progarms/ovs/build/CMakeFiles/menuconfig.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles/menuconfig.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/menuconfig.dir/depend
 

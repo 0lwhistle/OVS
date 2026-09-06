@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/esp_psram//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_psram//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule
 .PHONY : esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule
 
 # Convenience name for target.
@@ -172,63 +172,15 @@ __idf_esp_psram: esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule
 
 # fast build rule for target.
 __idf_esp_psram/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build
 .PHONY : __idf_esp_psram/fast
-
-esp32s3/esp_psram_impl_octal.obj: esp32s3/esp_psram_impl_octal.c.obj
-.PHONY : esp32s3/esp_psram_impl_octal.obj
-
-# target to build an object file
-esp32s3/esp_psram_impl_octal.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.obj
-.PHONY : esp32s3/esp_psram_impl_octal.c.obj
-
-esp32s3/esp_psram_impl_octal.i: esp32s3/esp_psram_impl_octal.c.i
-.PHONY : esp32s3/esp_psram_impl_octal.i
-
-# target to preprocess a source file
-esp32s3/esp_psram_impl_octal.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.i
-.PHONY : esp32s3/esp_psram_impl_octal.c.i
-
-esp32s3/esp_psram_impl_octal.s: esp32s3/esp_psram_impl_octal.c.s
-.PHONY : esp32s3/esp_psram_impl_octal.s
-
-# target to generate assembly for a file
-esp32s3/esp_psram_impl_octal.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/esp32s3/esp_psram_impl_octal.c.s
-.PHONY : esp32s3/esp_psram_impl_octal.c.s
-
-system_layer/esp_psram.obj: system_layer/esp_psram.c.obj
-.PHONY : system_layer/esp_psram.obj
-
-# target to build an object file
-system_layer/esp_psram.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.obj
-.PHONY : system_layer/esp_psram.c.obj
-
-system_layer/esp_psram.i: system_layer/esp_psram.c.i
-.PHONY : system_layer/esp_psram.i
-
-# target to preprocess a source file
-system_layer/esp_psram.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.i
-.PHONY : system_layer/esp_psram.c.i
-
-system_layer/esp_psram.s: system_layer/esp_psram.c.s
-.PHONY : system_layer/esp_psram.s
-
-# target to generate assembly for a file
-system_layer/esp_psram.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram.c.s
-.PHONY : system_layer/esp_psram.c.s
 
 system_layer/esp_psram_mspi.obj: system_layer/esp_psram_mspi.c.obj
 .PHONY : system_layer/esp_psram_mspi.obj
 
 # target to build an object file
 system_layer/esp_psram_mspi.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.obj
 .PHONY : system_layer/esp_psram_mspi.c.obj
 
 system_layer/esp_psram_mspi.i: system_layer/esp_psram_mspi.c.i
@@ -236,7 +188,7 @@ system_layer/esp_psram_mspi.i: system_layer/esp_psram_mspi.c.i
 
 # target to preprocess a source file
 system_layer/esp_psram_mspi.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.i
 .PHONY : system_layer/esp_psram_mspi.c.i
 
 system_layer/esp_psram_mspi.s: system_layer/esp_psram_mspi.c.s
@@ -244,32 +196,8 @@ system_layer/esp_psram_mspi.s: system_layer/esp_psram_mspi.c.s
 
 # target to generate assembly for a file
 system_layer/esp_psram_mspi.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/system_layer/esp_psram_mspi.c.s
 .PHONY : system_layer/esp_psram_mspi.c.s
-
-xip_impl/mmu_psram_flash.obj: xip_impl/mmu_psram_flash.c.obj
-.PHONY : xip_impl/mmu_psram_flash.obj
-
-# target to build an object file
-xip_impl/mmu_psram_flash.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.obj
-.PHONY : xip_impl/mmu_psram_flash.c.obj
-
-xip_impl/mmu_psram_flash.i: xip_impl/mmu_psram_flash.c.i
-.PHONY : xip_impl/mmu_psram_flash.i
-
-# target to preprocess a source file
-xip_impl/mmu_psram_flash.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.i
-.PHONY : xip_impl/mmu_psram_flash.c.i
-
-xip_impl/mmu_psram_flash.s: xip_impl/mmu_psram_flash.c.s
-.PHONY : xip_impl/mmu_psram_flash.s
-
-# target to generate assembly for a file
-xip_impl/mmu_psram_flash.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/build.make esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/xip_impl/mmu_psram_flash.c.s
-.PHONY : xip_impl/mmu_psram_flash.c.s
 
 # Help Target
 help:
@@ -284,18 +212,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_psram"
-	@echo "... esp32s3/esp_psram_impl_octal.obj"
-	@echo "... esp32s3/esp_psram_impl_octal.i"
-	@echo "... esp32s3/esp_psram_impl_octal.s"
-	@echo "... system_layer/esp_psram.obj"
-	@echo "... system_layer/esp_psram.i"
-	@echo "... system_layer/esp_psram.s"
 	@echo "... system_layer/esp_psram_mspi.obj"
 	@echo "... system_layer/esp_psram_mspi.i"
 	@echo "... system_layer/esp_psram_mspi.s"
-	@echo "... xip_impl/mmu_psram_flash.obj"
-	@echo "... xip_impl/mmu_psram_flash.i"
-	@echo "... xip_impl/mmu_psram_flash.s"
 .PHONY : help
 
 
@@ -307,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles /root/progarms/ovs/build/esp-idf/app_update//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/app_update//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
 .PHONY : esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
 
 # Convenience name for target.
@@ -172,113 +172,15 @@ __idf_app_update: esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
 
 # fast build rule for target.
 __idf_app_update/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build
 .PHONY : __idf_app_update/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/blank_ota_data.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/blank_ota_data.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/blank_ota_data.dir/rule
-
-# Convenience name for target.
-blank_ota_data: esp-idf/app_update/CMakeFiles/blank_ota_data.dir/rule
-.PHONY : blank_ota_data
-
-# fast build rule for target.
-blank_ota_data/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/blank_ota_data.dir/build.make esp-idf/app_update/CMakeFiles/blank_ota_data.dir/build
-.PHONY : blank_ota_data/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/read-otadata.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/read-otadata.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/read-otadata.dir/rule
-
-# Convenience name for target.
-read-otadata: esp-idf/app_update/CMakeFiles/read-otadata.dir/rule
-.PHONY : read-otadata
-
-# fast build rule for target.
-read-otadata/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/read-otadata.dir/build.make esp-idf/app_update/CMakeFiles/read-otadata.dir/build
-.PHONY : read-otadata/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/read_otadata.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/read_otadata.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/read_otadata.dir/rule
-
-# Convenience name for target.
-read_otadata: esp-idf/app_update/CMakeFiles/read_otadata.dir/rule
-.PHONY : read_otadata
-
-# fast build rule for target.
-read_otadata/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/read_otadata.dir/build.make esp-idf/app_update/CMakeFiles/read_otadata.dir/build
-.PHONY : read_otadata/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/erase-otadata.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/erase-otadata.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/erase-otadata.dir/rule
-
-# Convenience name for target.
-erase-otadata: esp-idf/app_update/CMakeFiles/erase-otadata.dir/rule
-.PHONY : erase-otadata
-
-# fast build rule for target.
-erase-otadata/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/erase-otadata.dir/build.make esp-idf/app_update/CMakeFiles/erase-otadata.dir/build
-.PHONY : erase-otadata/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/erase_otadata.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/erase_otadata.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/erase_otadata.dir/rule
-
-# Convenience name for target.
-erase_otadata: esp-idf/app_update/CMakeFiles/erase_otadata.dir/rule
-.PHONY : erase_otadata
-
-# fast build rule for target.
-erase_otadata/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/erase_otadata.dir/build.make esp-idf/app_update/CMakeFiles/erase_otadata.dir/build
-.PHONY : erase_otadata/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/otadata-flash.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/otadata-flash.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/otadata-flash.dir/rule
-
-# Convenience name for target.
-otadata-flash: esp-idf/app_update/CMakeFiles/otadata-flash.dir/rule
-.PHONY : otadata-flash
-
-# fast build rule for target.
-otadata-flash/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/otadata-flash.dir/build.make esp-idf/app_update/CMakeFiles/otadata-flash.dir/build
-.PHONY : otadata-flash/fast
-
-# Convenience name for target.
-esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/rule:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/rule
-.PHONY : esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/rule
-
-# Convenience name for target.
-encrypted-otadata-flash: esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/rule
-.PHONY : encrypted-otadata-flash
-
-# fast build rule for target.
-encrypted-otadata-flash/fast:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/build.make esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir/build
-.PHONY : encrypted-otadata-flash/fast
 
 esp_ota_ops.obj: esp_ota_ops.c.obj
 .PHONY : esp_ota_ops.obj
 
 # target to build an object file
 esp_ota_ops.c.obj:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.obj
 .PHONY : esp_ota_ops.c.obj
 
 esp_ota_ops.i: esp_ota_ops.c.i
@@ -286,7 +188,7 @@ esp_ota_ops.i: esp_ota_ops.c.i
 
 # target to preprocess a source file
 esp_ota_ops.c.i:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.i
 .PHONY : esp_ota_ops.c.i
 
 esp_ota_ops.s: esp_ota_ops.c.s
@@ -294,7 +196,7 @@ esp_ota_ops.s: esp_ota_ops.c.s
 
 # target to generate assembly for a file
 esp_ota_ops.c.s:
-	cd /root/progarms/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/app_update/CMakeFiles/__idf_app_update.dir/build.make esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_ops.c.s
 .PHONY : esp_ota_ops.c.s
 
 # Help Target
@@ -309,13 +211,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... blank_ota_data"
-	@echo "... encrypted-otadata-flash"
-	@echo "... erase-otadata"
-	@echo "... erase_otadata"
-	@echo "... otadata-flash"
-	@echo "... read-otadata"
-	@echo "... read_otadata"
 	@echo "... __idf_app_update"
 	@echo "... esp_ota_ops.obj"
 	@echo "... esp_ota_ops.i"
@@ -331,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

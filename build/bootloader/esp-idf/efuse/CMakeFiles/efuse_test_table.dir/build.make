@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 # Utility rule file for efuse_test_table.
 
@@ -67,7 +67,7 @@ include esp-idf/efuse/CMakeFiles/efuse_test_table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/efuse_test_table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/efuse_test_table:
-	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /root/esp-idf/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /root/esp-idf/esp-idf-v6.0.1/components/efuse/test/esp_efuse_test_table.csv -t esp32s3 --max_blk_len 256
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/test/esp_efuse_test_table.csv -t esp32 --max_blk_len 192
 
 efuse_test_table: esp-idf/efuse/CMakeFiles/efuse_test_table
 efuse_test_table: esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build.make
@@ -78,10 +78,10 @@ esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build: efuse_test_table
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_test_table.dir/build
 
 esp-idf/efuse/CMakeFiles/efuse_test_table.dir/clean:
-	cd /root/progarms/ovs/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse_test_table.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/efuse && $(CMAKE_COMMAND) -P CMakeFiles/efuse_test_table.dir/cmake_clean.cmake
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_test_table.dir/clean
 
 esp-idf/efuse/CMakeFiles/efuse_test_table.dir/depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject /root/esp-idf/esp-idf-v6.0.1/components/efuse /root/progarms/ovs/build/bootloader /root/progarms/ovs/build/bootloader/esp-idf/efuse /root/progarms/ovs/build/bootloader/esp-idf/efuse/CMakeFiles/efuse_test_table.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/efuse /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/efuse/CMakeFiles/efuse_test_table.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_test_table.dir/depend
 

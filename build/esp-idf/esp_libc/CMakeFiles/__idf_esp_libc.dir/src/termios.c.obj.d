@@ -1,3 +1,3 @@
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/termios.c.obj: \
- /root/esp-idf/esp-idf-v6.0.1/components/esp_libc/src/termios.c \
- /root/progarms/ovs/build/config/sdkconfig.h
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/src/termios.c \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/build/config/sdkconfig.h

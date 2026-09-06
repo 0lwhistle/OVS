@@ -1,6 +1,6 @@
+-Wno-frame-address
 -mlongcalls
 -fno-builtin-memcpy
 -fno-builtin-memset
 -fno-builtin-bzero
--mdisable-hardware-atomics
-"-specs=/root/progarms/ovs/build/specs/picolibc.specs"
+"-specs=/home/olwhistle/dockerNow/esp32/programs/ovs/build/specs/picolibc.specs"

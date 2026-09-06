@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles /root/progarms/ovs/build/bootloader/esp-idf/xtensa//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/xtensa//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ __idf_xtensa: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule
 
 # fast build rule for target.
 __idf_xtensa/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build
 .PHONY : __idf_xtensa/fast
 
 eri.obj: eri.c.obj
@@ -135,7 +135,7 @@ eri.obj: eri.c.obj
 
 # target to build an object file
 eri.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj
 .PHONY : eri.c.obj
 
 eri.i: eri.c.i
@@ -143,7 +143,7 @@ eri.i: eri.c.i
 
 # target to preprocess a source file
 eri.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.i
 .PHONY : eri.c.i
 
 eri.s: eri.c.s
@@ -151,7 +151,7 @@ eri.s: eri.c.s
 
 # target to generate assembly for a file
 eri.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.s
 .PHONY : eri.c.s
 
 xt_trax.obj: xt_trax.c.obj
@@ -159,7 +159,7 @@ xt_trax.obj: xt_trax.c.obj
 
 # target to build an object file
 xt_trax.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj
 .PHONY : xt_trax.c.obj
 
 xt_trax.i: xt_trax.c.i
@@ -167,7 +167,7 @@ xt_trax.i: xt_trax.c.i
 
 # target to preprocess a source file
 xt_trax.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.i
 .PHONY : xt_trax.c.i
 
 xt_trax.s: xt_trax.c.s
@@ -175,7 +175,7 @@ xt_trax.s: xt_trax.c.s
 
 # target to generate assembly for a file
 xt_trax.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.s
 .PHONY : xt_trax.c.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

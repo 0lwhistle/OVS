@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles /root/progarms/ovs/build/bootloader/esp-idf/esp_hal_dma//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_dma//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,104 +103,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
-.PHONY : esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
-
-# Convenience name for target.
-__idf_esp_hal_dma: esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
-.PHONY : __idf_esp_hal_dma
-
-# fast build rule for target.
-__idf_esp_hal_dma/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build
-.PHONY : __idf_esp_hal_dma/fast
-
-esp32s3/gdma_periph.obj: esp32s3/gdma_periph.c.obj
-.PHONY : esp32s3/gdma_periph.obj
-
-# target to build an object file
-esp32s3/gdma_periph.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.obj
-.PHONY : esp32s3/gdma_periph.c.obj
-
-esp32s3/gdma_periph.i: esp32s3/gdma_periph.c.i
-.PHONY : esp32s3/gdma_periph.i
-
-# target to preprocess a source file
-esp32s3/gdma_periph.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.i
-.PHONY : esp32s3/gdma_periph.c.i
-
-esp32s3/gdma_periph.s: esp32s3/gdma_periph.c.s
-.PHONY : esp32s3/gdma_periph.s
-
-# target to generate assembly for a file
-esp32s3/gdma_periph.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.s
-.PHONY : esp32s3/gdma_periph.c.s
-
-gdma_hal_ahb_v1.obj: gdma_hal_ahb_v1.c.obj
-.PHONY : gdma_hal_ahb_v1.obj
-
-# target to build an object file
-gdma_hal_ahb_v1.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.obj
-.PHONY : gdma_hal_ahb_v1.c.obj
-
-gdma_hal_ahb_v1.i: gdma_hal_ahb_v1.c.i
-.PHONY : gdma_hal_ahb_v1.i
-
-# target to preprocess a source file
-gdma_hal_ahb_v1.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.i
-.PHONY : gdma_hal_ahb_v1.c.i
-
-gdma_hal_ahb_v1.s: gdma_hal_ahb_v1.c.s
-.PHONY : gdma_hal_ahb_v1.s
-
-# target to generate assembly for a file
-gdma_hal_ahb_v1.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.s
-.PHONY : gdma_hal_ahb_v1.c.s
-
-gdma_hal_top.obj: gdma_hal_top.c.obj
-.PHONY : gdma_hal_top.obj
-
-# target to build an object file
-gdma_hal_top.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.obj
-.PHONY : gdma_hal_top.c.obj
-
-gdma_hal_top.i: gdma_hal_top.c.i
-.PHONY : gdma_hal_top.i
-
-# target to preprocess a source file
-gdma_hal_top.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.i
-.PHONY : gdma_hal_top.c.i
-
-gdma_hal_top.s: gdma_hal_top.c.s
-.PHONY : gdma_hal_top.s
-
-# target to generate assembly for a file
-gdma_hal_top.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.s
-.PHONY : gdma_hal_top.c.s
 
 # Help Target
 help:
@@ -210,16 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... __idf_esp_hal_dma"
-	@echo "... esp32s3/gdma_periph.obj"
-	@echo "... esp32s3/gdma_periph.i"
-	@echo "... esp32s3/gdma_periph.s"
-	@echo "... gdma_hal_ahb_v1.obj"
-	@echo "... gdma_hal_ahb_v1.i"
-	@echo "... gdma_hal_ahb_v1.s"
-	@echo "... gdma_hal_top.obj"
-	@echo "... gdma_hal_top.i"
-	@echo "... gdma_hal_top.s"
 .PHONY : help
 
 
@@ -231,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

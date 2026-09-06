@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/progarms/ovs
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build
 
 # Include any dependencies generated for this target.
 include esp-idf/web/CMakeFiles/__idf_web.dir/depend.make
@@ -70,46 +70,46 @@ include esp-idf/web/CMakeFiles/__idf_web.dir/progress.make
 include esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
-esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../modules/web/web.c
+esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: ../components/modules/web/web.c
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj -MF CMakeFiles/__idf_web.dir/web.c.obj.d -o CMakeFiles/__idf_web.dir/web.c.obj -c /root/progarms/ovs/modules/web/web.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web.c.obj -MF CMakeFiles/__idf_web.dir/web.c.obj.d -o CMakeFiles/__idf_web.dir/web.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web.c
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/web.c.i"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/web/web.c > CMakeFiles/__idf_web.dir/web.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web.c > CMakeFiles/__idf_web.dir/web.c.i
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/web.c.s"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/web.c -o CMakeFiles/__idf_web.dir/web.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web.c -o CMakeFiles/__idf_web.dir/web.c.s
 
 esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
-esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: ../modules/web/mongoose/mongoose.c
+esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: ../components/modules/web/mongoose/mongoose.c
 esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -MF CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj.d -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -c /root/progarms/ovs/modules/web/mongoose/mongoose.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -MF CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj.d -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/mongoose/mongoose.c
 
 esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/web/mongoose/mongoose.c > CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/mongoose/mongoose.c > CMakeFiles/__idf_web.dir/mongoose/mongoose.c.i
 
 esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/mongoose/mongoose.c -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/mongoose/mongoose.c -o CMakeFiles/__idf_web.dir/mongoose/mongoose.c.s
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/flags.make
-esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../modules/web/web_data/web_data.c
+esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: ../components/modules/web/web_data/web_data.c
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj: esp-idf/web/CMakeFiles/__idf_web.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj"
-	cd /root/progarms/ovs/build/esp-idf/web && ccache /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -MF CMakeFiles/__idf_web.dir/web_data/web_data.c.obj.d -o CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -c /root/progarms/ovs/modules/web/web_data/web_data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -MF CMakeFiles/__idf_web.dir/web_data/web_data.c.obj.d -o CMakeFiles/__idf_web.dir/web_data/web_data.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web_data/web_data.c
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_web.dir/web_data/web_data.c.i"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/progarms/ovs/modules/web/web_data/web_data.c > CMakeFiles/__idf_web.dir/web_data/web_data.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web_data/web_data.c > CMakeFiles/__idf_web.dir/web_data/web_data.c.i
 
 esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_web.dir/web_data/web_data.c.s"
-	cd /root/progarms/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/progarms/ovs/modules/web/web_data/web_data.c -o CMakeFiles/__idf_web.dir/web_data/web_data.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web/web_data/web_data.c -o CMakeFiles/__idf_web.dir/web_data/web_data.c.s
 
 # Object files for target __idf_web
 __idf_web_OBJECTS = \
@@ -125,19 +125,19 @@ esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/mongoose/mongoose.c.o
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/web_data/web_data.c.obj
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/build.make
 esp-idf/web/libweb.a: esp-idf/web/CMakeFiles/__idf_web.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/progarms/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libweb.a"
-	cd /root/progarms/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -P CMakeFiles/__idf_web.dir/cmake_clean_target.cmake
-	cd /root/progarms/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_web.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libweb.a"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -P CMakeFiles/__idf_web.dir/cmake_clean_target.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_web.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 esp-idf/web/CMakeFiles/__idf_web.dir/build: esp-idf/web/libweb.a
 .PHONY : esp-idf/web/CMakeFiles/__idf_web.dir/build
 
 esp-idf/web/CMakeFiles/__idf_web.dir/clean:
-	cd /root/progarms/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -P CMakeFiles/__idf_web.dir/cmake_clean.cmake
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web && $(CMAKE_COMMAND) -P CMakeFiles/__idf_web.dir/cmake_clean.cmake
 .PHONY : esp-idf/web/CMakeFiles/__idf_web.dir/clean
 
 esp-idf/web/CMakeFiles/__idf_web.dir/depend:
-	cd /root/progarms/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/progarms/ovs /root/progarms/ovs/modules/web /root/progarms/ovs/build /root/progarms/ovs/build/esp-idf/web /root/progarms/ovs/build/esp-idf/web/CMakeFiles/__idf_web.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/olwhistle/dockerNow/esp32/programs/ovs /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/web /home/olwhistle/dockerNow/esp32/programs/ovs/build /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/web/CMakeFiles/__idf_web.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : esp-idf/web/CMakeFiles/__idf_web.dir/depend
 

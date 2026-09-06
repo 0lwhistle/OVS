@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/esp-idf/esp-idf-v6.0.1/components/bootloader/subproject
+CMAKE_SOURCE_DIR = /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/bootloader/subproject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/progarms/ovs/build/bootloader
+CMAKE_BINARY_DIR = /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles /root/progarms/ovs/build/bootloader/esp-idf/esp_hal_uart//CMakeFiles/progress.marks
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/progarms/ovs/build/bootloader/CMakeFiles 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_uart//CMakeFiles/progress.marks
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/clean
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/preinstall
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
 .PHONY : esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
 
 # Convenience name for target.
@@ -127,39 +127,39 @@ __idf_esp_hal_uart: esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
 
 # fast build rule for target.
 __idf_esp_hal_uart/fast:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build
 .PHONY : __idf_esp_hal_uart/fast
 
-esp32s3/uart_periph.obj: esp32s3/uart_periph.c.obj
-.PHONY : esp32s3/uart_periph.obj
+esp32/uart_periph.obj: esp32/uart_periph.c.obj
+.PHONY : esp32/uart_periph.obj
 
 # target to build an object file
-esp32s3/uart_periph.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32s3/uart_periph.c.obj
-.PHONY : esp32s3/uart_periph.c.obj
+esp32/uart_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32/uart_periph.c.obj
+.PHONY : esp32/uart_periph.c.obj
 
-esp32s3/uart_periph.i: esp32s3/uart_periph.c.i
-.PHONY : esp32s3/uart_periph.i
+esp32/uart_periph.i: esp32/uart_periph.c.i
+.PHONY : esp32/uart_periph.i
 
 # target to preprocess a source file
-esp32s3/uart_periph.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32s3/uart_periph.c.i
-.PHONY : esp32s3/uart_periph.c.i
+esp32/uart_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32/uart_periph.c.i
+.PHONY : esp32/uart_periph.c.i
 
-esp32s3/uart_periph.s: esp32s3/uart_periph.c.s
-.PHONY : esp32s3/uart_periph.s
+esp32/uart_periph.s: esp32/uart_periph.c.s
+.PHONY : esp32/uart_periph.s
 
 # target to generate assembly for a file
-esp32s3/uart_periph.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32s3/uart_periph.c.s
-.PHONY : esp32s3/uart_periph.c.s
+esp32/uart_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/esp32/uart_periph.c.s
+.PHONY : esp32/uart_periph.c.s
 
 uart_hal.obj: uart_hal.c.obj
 .PHONY : uart_hal.obj
 
 # target to build an object file
 uart_hal.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.obj
 .PHONY : uart_hal.c.obj
 
 uart_hal.i: uart_hal.c.i
@@ -167,7 +167,7 @@ uart_hal.i: uart_hal.c.i
 
 # target to preprocess a source file
 uart_hal.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.i
 .PHONY : uart_hal.c.i
 
 uart_hal.s: uart_hal.c.s
@@ -175,7 +175,7 @@ uart_hal.s: uart_hal.c.s
 
 # target to generate assembly for a file
 uart_hal.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal.c.s
 .PHONY : uart_hal.c.s
 
 uart_hal_iram.obj: uart_hal_iram.c.obj
@@ -183,7 +183,7 @@ uart_hal_iram.obj: uart_hal_iram.c.obj
 
 # target to build an object file
 uart_hal_iram.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.obj
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.obj
 .PHONY : uart_hal_iram.c.obj
 
 uart_hal_iram.i: uart_hal_iram.c.i
@@ -191,7 +191,7 @@ uart_hal_iram.i: uart_hal_iram.c.i
 
 # target to preprocess a source file
 uart_hal_iram.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.i
 .PHONY : uart_hal_iram.c.i
 
 uart_hal_iram.s: uart_hal_iram.c.s
@@ -199,32 +199,8 @@ uart_hal_iram.s: uart_hal_iram.c.s
 
 # target to generate assembly for a file
 uart_hal_iram.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uart_hal_iram.c.s
 .PHONY : uart_hal_iram.c.s
-
-uhci_hal.obj: uhci_hal.c.obj
-.PHONY : uhci_hal.obj
-
-# target to build an object file
-uhci_hal.c.obj:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uhci_hal.c.obj
-.PHONY : uhci_hal.c.obj
-
-uhci_hal.i: uhci_hal.c.i
-.PHONY : uhci_hal.i
-
-# target to preprocess a source file
-uhci_hal.c.i:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uhci_hal.c.i
-.PHONY : uhci_hal.c.i
-
-uhci_hal.s: uhci_hal.c.s
-.PHONY : uhci_hal.s
-
-# target to generate assembly for a file
-uhci_hal.c.s:
-	cd /root/progarms/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/build.make esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/uhci_hal.c.s
-.PHONY : uhci_hal.c.s
 
 # Help Target
 help:
@@ -235,18 +211,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_uart"
-	@echo "... esp32s3/uart_periph.obj"
-	@echo "... esp32s3/uart_periph.i"
-	@echo "... esp32s3/uart_periph.s"
+	@echo "... esp32/uart_periph.obj"
+	@echo "... esp32/uart_periph.i"
+	@echo "... esp32/uart_periph.s"
 	@echo "... uart_hal.obj"
 	@echo "... uart_hal.i"
 	@echo "... uart_hal.s"
 	@echo "... uart_hal_iram.obj"
 	@echo "... uart_hal_iram.i"
 	@echo "... uart_hal_iram.s"
-	@echo "... uhci_hal.obj"
-	@echo "... uhci_hal.i"
-	@echo "... uhci_hal.s"
 .PHONY : help
 
 
@@ -258,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/progarms/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

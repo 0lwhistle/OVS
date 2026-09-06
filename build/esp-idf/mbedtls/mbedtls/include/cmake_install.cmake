@@ -1,4 +1,4 @@
-# Install script for directory: /root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include
+# Install script for directory: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,36 +34,36 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump")
+  set(CMAKE_OBJDUMP "/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mbedtls" TYPE FILE PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ FILES
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/build_info.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/debug.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/error.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/oid.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/pkcs7.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_cache.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_cookie.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_ticket.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/timing.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/version.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_csr.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/build_info.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/debug.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/error.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/oid.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/pkcs7.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_cache.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_cookie.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/ssl_ticket.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/timing.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/version.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/x509_csr.h"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mbedtls/private" TYPE FILE PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ FILES
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_ssl.h"
-    "/root/esp-idf/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_x509.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_ssl.h"
+    "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/include/mbedtls/private/config_adjust_x509.h"
     )
 endif()
 
