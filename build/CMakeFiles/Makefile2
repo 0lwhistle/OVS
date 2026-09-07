@@ -251,12 +251,21 @@ esp-idf/all: esp-idf/dtbs/all
 esp-idf/all: esp-idf/wifi/all
 esp-idf/all: esp-idf/gpio/all
 esp-idf/all: esp-idf/led/all
-esp-idf/all: esp-idf/beep/all
-esp-idf/all: esp-idf/sr04/all
+esp-idf/all: esp-idf/i2s_drv/all
+esp-idf/all: esp-idf/i2c_drv/all
+esp-idf/all: esp-idf/spi_drv/all
+esp-idf/all: esp-idf/uart_drv/all
 esp-idf/all: esp-idf/ota/all
 esp-idf/all: esp-idf/heartbeat/all
 esp-idf/all: esp-idf/web/all
+esp-idf/all: esp-idf/audio_module/all
+esp-idf/all: esp-idf/st7789/all
+esp-idf/all: esp-idf/aht30/all
+esp-idf/all: esp-idf/cst816s/all
+esp-idf/all: esp-idf/lora/all
+esp-idf/all: esp-idf/w25q128/all
 esp-idf/all: esp-idf/main/all
+esp-idf/all: esp-idf/lvgl/all
 .PHONY : esp-idf/all
 
 # Recursive "preinstall" directory target.
@@ -405,12 +414,21 @@ esp-idf/preinstall: esp-idf/dtbs/preinstall
 esp-idf/preinstall: esp-idf/wifi/preinstall
 esp-idf/preinstall: esp-idf/gpio/preinstall
 esp-idf/preinstall: esp-idf/led/preinstall
-esp-idf/preinstall: esp-idf/beep/preinstall
-esp-idf/preinstall: esp-idf/sr04/preinstall
+esp-idf/preinstall: esp-idf/i2s_drv/preinstall
+esp-idf/preinstall: esp-idf/i2c_drv/preinstall
+esp-idf/preinstall: esp-idf/spi_drv/preinstall
+esp-idf/preinstall: esp-idf/uart_drv/preinstall
 esp-idf/preinstall: esp-idf/ota/preinstall
 esp-idf/preinstall: esp-idf/heartbeat/preinstall
 esp-idf/preinstall: esp-idf/web/preinstall
+esp-idf/preinstall: esp-idf/audio_module/preinstall
+esp-idf/preinstall: esp-idf/st7789/preinstall
+esp-idf/preinstall: esp-idf/aht30/preinstall
+esp-idf/preinstall: esp-idf/cst816s/preinstall
+esp-idf/preinstall: esp-idf/lora/preinstall
+esp-idf/preinstall: esp-idf/w25q128/preinstall
 esp-idf/preinstall: esp-idf/main/preinstall
+esp-idf/preinstall: esp-idf/lvgl/preinstall
 .PHONY : esp-idf/preinstall
 
 # Recursive "clean" directory target.
@@ -559,13 +577,37 @@ esp-idf/clean: esp-idf/dtbs/clean
 esp-idf/clean: esp-idf/wifi/clean
 esp-idf/clean: esp-idf/gpio/clean
 esp-idf/clean: esp-idf/led/clean
-esp-idf/clean: esp-idf/beep/clean
-esp-idf/clean: esp-idf/sr04/clean
+esp-idf/clean: esp-idf/i2s_drv/clean
+esp-idf/clean: esp-idf/i2c_drv/clean
+esp-idf/clean: esp-idf/spi_drv/clean
+esp-idf/clean: esp-idf/uart_drv/clean
 esp-idf/clean: esp-idf/ota/clean
 esp-idf/clean: esp-idf/heartbeat/clean
 esp-idf/clean: esp-idf/web/clean
+esp-idf/clean: esp-idf/audio_module/clean
+esp-idf/clean: esp-idf/st7789/clean
+esp-idf/clean: esp-idf/aht30/clean
+esp-idf/clean: esp-idf/cst816s/clean
+esp-idf/clean: esp-idf/lora/clean
+esp-idf/clean: esp-idf/w25q128/clean
 esp-idf/clean: esp-idf/main/clean
+esp-idf/clean: esp-idf/lvgl/clean
 .PHONY : esp-idf/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/aht30
+
+# Recursive "all" directory target.
+esp-idf/aht30/all: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+.PHONY : esp-idf/aht30/all
+
+# Recursive "preinstall" directory target.
+esp-idf/aht30/preinstall:
+.PHONY : esp-idf/aht30/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/aht30/clean: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/clean
+.PHONY : esp-idf/aht30/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/app_trace
@@ -598,19 +640,19 @@ esp-idf/app_update/clean: esp-idf/app_update/CMakeFiles/__idf_app_update.dir/cle
 .PHONY : esp-idf/app_update/clean
 
 #=============================================================================
-# Directory level rules for directory esp-idf/beep
+# Directory level rules for directory esp-idf/audio_module
 
 # Recursive "all" directory target.
-esp-idf/beep/all: esp-idf/beep/CMakeFiles/__idf_beep.dir/all
-.PHONY : esp-idf/beep/all
+esp-idf/audio_module/all: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+.PHONY : esp-idf/audio_module/all
 
 # Recursive "preinstall" directory target.
-esp-idf/beep/preinstall:
-.PHONY : esp-idf/beep/preinstall
+esp-idf/audio_module/preinstall:
+.PHONY : esp-idf/audio_module/preinstall
 
 # Recursive "clean" directory target.
-esp-idf/beep/clean: esp-idf/beep/CMakeFiles/__idf_beep.dir/clean
-.PHONY : esp-idf/beep/clean
+esp-idf/audio_module/clean: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/clean
+.PHONY : esp-idf/audio_module/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/bootloader
@@ -688,6 +730,21 @@ esp-idf/console/preinstall:
 # Recursive "clean" directory target.
 esp-idf/console/clean: esp-idf/console/CMakeFiles/__idf_console.dir/clean
 .PHONY : esp-idf/console/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/cst816s
+
+# Recursive "all" directory target.
+esp-idf/cst816s/all: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+.PHONY : esp-idf/cst816s/all
+
+# Recursive "preinstall" directory target.
+esp-idf/cst816s/preinstall:
+.PHONY : esp-idf/cst816s/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/cst816s/clean: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/clean
+.PHONY : esp-idf/cst816s/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/cxx
@@ -2418,6 +2475,36 @@ esp-idf/http_parser/clean: esp-idf/http_parser/CMakeFiles/__idf_http_parser.dir/
 .PHONY : esp-idf/http_parser/clean
 
 #=============================================================================
+# Directory level rules for directory esp-idf/i2c_drv
+
+# Recursive "all" directory target.
+esp-idf/i2c_drv/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+.PHONY : esp-idf/i2c_drv/all
+
+# Recursive "preinstall" directory target.
+esp-idf/i2c_drv/preinstall:
+.PHONY : esp-idf/i2c_drv/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/i2c_drv/clean: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/clean
+.PHONY : esp-idf/i2c_drv/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/i2s_drv
+
+# Recursive "all" directory target.
+esp-idf/i2s_drv/all: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
+.PHONY : esp-idf/i2s_drv/all
+
+# Recursive "preinstall" directory target.
+esp-idf/i2s_drv/preinstall:
+.PHONY : esp-idf/i2s_drv/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/i2s_drv/clean: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/clean
+.PHONY : esp-idf/i2s_drv/clean
+
+#=============================================================================
 # Directory level rules for directory esp-idf/idf_test
 
 # Recursive "all" directory target.
@@ -2491,6 +2578,36 @@ esp-idf/logger/preinstall:
 # Recursive "clean" directory target.
 esp-idf/logger/clean: esp-idf/logger/CMakeFiles/__idf_logger.dir/clean
 .PHONY : esp-idf/logger/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/lora
+
+# Recursive "all" directory target.
+esp-idf/lora/all: esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+.PHONY : esp-idf/lora/all
+
+# Recursive "preinstall" directory target.
+esp-idf/lora/preinstall:
+.PHONY : esp-idf/lora/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/lora/clean: esp-idf/lora/CMakeFiles/__idf_lora.dir/clean
+.PHONY : esp-idf/lora/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/lvgl
+
+# Recursive "all" directory target.
+esp-idf/lvgl/all: esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all
+.PHONY : esp-idf/lvgl/all
+
+# Recursive "preinstall" directory target.
+esp-idf/lvgl/preinstall:
+.PHONY : esp-idf/lvgl/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/lvgl/clean: esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/clean
+.PHONY : esp-idf/lvgl/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/lwip
@@ -2953,6 +3070,21 @@ esp-idf/soc/clean: esp-idf/soc/CMakeFiles/__idf_soc.dir/clean
 .PHONY : esp-idf/soc/clean
 
 #=============================================================================
+# Directory level rules for directory esp-idf/spi_drv
+
+# Recursive "all" directory target.
+esp-idf/spi_drv/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+.PHONY : esp-idf/spi_drv/all
+
+# Recursive "preinstall" directory target.
+esp-idf/spi_drv/preinstall:
+.PHONY : esp-idf/spi_drv/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/spi_drv/clean: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/clean
+.PHONY : esp-idf/spi_drv/clean
+
+#=============================================================================
 # Directory level rules for directory esp-idf/spi_flash
 
 # Recursive "all" directory target.
@@ -2983,19 +3115,19 @@ esp-idf/spiffs/clean: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/clean
 .PHONY : esp-idf/spiffs/clean
 
 #=============================================================================
-# Directory level rules for directory esp-idf/sr04
+# Directory level rules for directory esp-idf/st7789
 
 # Recursive "all" directory target.
-esp-idf/sr04/all: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
-.PHONY : esp-idf/sr04/all
+esp-idf/st7789/all: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+.PHONY : esp-idf/st7789/all
 
 # Recursive "preinstall" directory target.
-esp-idf/sr04/preinstall:
-.PHONY : esp-idf/sr04/preinstall
+esp-idf/st7789/preinstall:
+.PHONY : esp-idf/st7789/preinstall
 
 # Recursive "clean" directory target.
-esp-idf/sr04/clean: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/clean
-.PHONY : esp-idf/sr04/clean
+esp-idf/st7789/clean: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/clean
+.PHONY : esp-idf/st7789/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/tasker
@@ -3043,6 +3175,21 @@ esp-idf/tcp_transport/clean: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transpor
 .PHONY : esp-idf/tcp_transport/clean
 
 #=============================================================================
+# Directory level rules for directory esp-idf/uart_drv
+
+# Recursive "all" directory target.
+esp-idf/uart_drv/all: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
+.PHONY : esp-idf/uart_drv/all
+
+# Recursive "preinstall" directory target.
+esp-idf/uart_drv/preinstall:
+.PHONY : esp-idf/uart_drv/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/uart_drv/clean: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/clean
+.PHONY : esp-idf/uart_drv/clean
+
+#=============================================================================
 # Directory level rules for directory esp-idf/ulp
 
 # Recursive "all" directory target.
@@ -3086,6 +3233,21 @@ esp-idf/vfs/preinstall:
 # Recursive "clean" directory target.
 esp-idf/vfs/clean: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/clean
 .PHONY : esp-idf/vfs/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/w25q128
+
+# Recursive "all" directory target.
+esp-idf/w25q128/all: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
+.PHONY : esp-idf/w25q128/all
+
+# Recursive "preinstall" directory target.
+esp-idf/w25q128/preinstall:
+.PHONY : esp-idf/w25q128/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/w25q128/clean: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/clean
+.PHONY : esp-idf/w25q128/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/wear_levelling
@@ -3280,7 +3442,7 @@ CMakeFiles/flash.dir/all: esp-idf/partition_table/CMakeFiles/partition_table_bin
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 100
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 99
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/flash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/flash.dir/rule
@@ -3403,12 +3565,21 @@ CMakeFiles/ovs.elf.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/led/CMakeFiles/__idf_led.dir/all
-CMakeFiles/ovs.elf.dir/all: esp-idf/beep/CMakeFiles/__idf_beep.dir/all
-CMakeFiles/ovs.elf.dir/all: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/ota/CMakeFiles/__idf_ota.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/web/CMakeFiles/__idf_web.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
 CMakeFiles/ovs.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+CMakeFiles/ovs.elf.dir/all: esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ovs.elf.dir/build.make CMakeFiles/ovs.elf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target ovs.elf"
@@ -3416,7 +3587,7 @@ CMakeFiles/ovs.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ovs.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ovs.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/ovs.elf.dir/rule
@@ -3615,12 +3786,21 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtb
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/led/CMakeFiles/__idf_led.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/beep/CMakeFiles/__idf_beep.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/ota/CMakeFiles/__idf_ota.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/web/CMakeFiles/__idf_web.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __ldgen_output_sections.ld"
@@ -3628,7 +3808,7 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/main/CMakeFiles/__idf_mai
 
 # Build rule for subdir invocation for target.
 CMakeFiles/__ldgen_output_sections.ld.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/__ldgen_output_sections.ld.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/__ldgen_output_sections.ld.dir/rule
@@ -3654,7 +3834,7 @@ CMakeFiles/gen_ovs_binary.dir/all: CMakeFiles/ovs.elf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gen_ovs_binary.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gen_ovs_binary.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/gen_ovs_binary.dir/rule
@@ -3680,7 +3860,7 @@ CMakeFiles/gen_project_binary.dir/all: CMakeFiles/gen_ovs_binary.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gen_project_binary.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gen_project_binary.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/gen_project_binary.dir/rule
@@ -3707,7 +3887,7 @@ CMakeFiles/app.dir/all: CMakeFiles/app_check_size.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 99
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/app.dir/rule
@@ -3733,7 +3913,7 @@ CMakeFiles/app-flash.dir/all: CMakeFiles/app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/app-flash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 99
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/app-flash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/app-flash.dir/rule
@@ -3838,7 +4018,7 @@ CMakeFiles/merge-bin.dir/all: CMakeFiles/gen_project_binary.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/merge-bin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 100
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 99
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/merge-bin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/merge-bin.dir/rule
@@ -3864,7 +4044,7 @@ CMakeFiles/monitor.dir/all: CMakeFiles/ovs.elf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/monitor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/monitor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/monitor.dir/rule
@@ -3891,7 +4071,7 @@ CMakeFiles/app_check_size.dir/all: esp-idf/partition_table/CMakeFiles/partition_
 
 # Build rule for subdir invocation for target.
 CMakeFiles/app_check_size.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 99
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 98
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/app_check_size.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : CMakeFiles/app_check_size.dir/rule
@@ -3912,7 +4092,7 @@ CMakeFiles/app_check_size.dir/clean:
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all: esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build.make esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=84 "Built target __idf_xtensa"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_xtensa"
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3938,12 +4118,12 @@ esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/clean:
 esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all: esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/build.make esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/build.make esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_stdio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=40 "Built target __idf_esp_stdio"
 .PHONY : esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 71
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/rule
@@ -4276,7 +4456,7 @@ esp-idf/partition_table/CMakeFiles/partition_table-flash.dir/clean:
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/all: esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/build.make esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/build.make esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_app_format"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=8 "Built target __idf_esp_app_format"
 .PHONY : esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4307,7 +4487,7 @@ esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/all: es
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 68
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 67
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/rule
@@ -4333,7 +4513,7 @@ esp-idf/app_update/CMakeFiles/__idf_app_update.dir/all: esp-idf/esp_partition/CM
 
 # Build rule for subdir invocation for target.
 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 68
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 67
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
@@ -4354,12 +4534,12 @@ esp-idf/app_update/CMakeFiles/__idf_app_update.dir/clean:
 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/all: esp-idf/efuse/CMakeFiles/__idf_efuse.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/build.make esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/build.make esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_partition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=37 "Built target __idf_esp_partition"
 .PHONY : esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 68
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 67
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/rule
@@ -4385,7 +4565,7 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/all: esp-idf/esp_security/CMakeFiles/__
 
 # Build rule for subdir invocation for target.
 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 68
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 66
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/efuse/CMakeFiles/__idf_efuse.dir/rule
@@ -4432,12 +4612,12 @@ esp-idf/efuse/CMakeFiles/efuse-common-table.dir/clean:
 esp-idf/efuse/CMakeFiles/efuse_common_table.dir/all: esp-idf/efuse/CMakeFiles/efuse-common-table.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/efuse_common_table.dir/build.make esp-idf/efuse/CMakeFiles/efuse_common_table.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/efuse/CMakeFiles/efuse_common_table.dir/build.make esp-idf/efuse/CMakeFiles/efuse_common_table.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target efuse_common_table"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=92 "Built target efuse_common_table"
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_common_table.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/efuse/CMakeFiles/efuse_common_table.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/efuse/CMakeFiles/efuse_common_table.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/efuse/CMakeFiles/efuse_common_table.dir/rule
@@ -4588,12 +4768,12 @@ esp-idf/efuse/CMakeFiles/efuse_test_table.dir/clean:
 esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/all: esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=40 "Built target __idf_esp_security"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_security"
 .PHONY : esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 67
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 65
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/rule
@@ -4619,7 +4799,7 @@ esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 66
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 65
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/rule
@@ -4645,7 +4825,7 @@ esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/all: esp-idf/esp_pm/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 66
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 65
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
@@ -4666,12 +4846,12 @@ esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/clean:
 esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/all: esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/build.make esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/build.make esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_pm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=38 "Built target __idf_esp_pm"
 .PHONY : esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 65
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 64
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/rule
@@ -4692,12 +4872,12 @@ esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/clean:
 esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all: esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/build.make esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/build.make esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=36 "Built target __idf_esp_mm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_mm"
 .PHONY : esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 65
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 63
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/rule
@@ -4723,7 +4903,7 @@ esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/all: esp-idf/mbedtls/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 64
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 63
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/rule
@@ -4749,7 +4929,7 @@ esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/all: esp-idf/mbedtls/mbedtls/tf-psa
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 63
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 62
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/rule
@@ -4874,12 +5054,12 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/clean:
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/all: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=92 "Built target everest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target everest"
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 62
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 61
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/rule
@@ -4952,7 +5132,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/cle
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all: esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=95,96 "Built target mbedx509"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=96 "Built target mbedx509"
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4978,12 +5158,12 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/clean:
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=93,94 "Built target mbedtls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=93,94,95 "Built target mbedtls"
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 53
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 54
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule
@@ -5186,7 +5366,7 @@ esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/clean:
 esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/all: esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=41,42,43,44 "Built target __idf_esp_system"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=41,42,43 "Built target __idf_esp_system"
 .PHONY : esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5264,12 +5444,12 @@ esp-idf/esp_system/CMakeFiles/sections_ld_in_preprocess.dir/clean:
 esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all: esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/build.make esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/build.make esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=9 "Built target __idf_esp_common"
 .PHONY : esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 39
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 40
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/rule
@@ -5316,7 +5496,7 @@ esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/clean:
 esp-idf/hal/CMakeFiles/__idf_hal.dir/all: esp-idf/log/CMakeFiles/__idf_log.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make esp-idf/hal/CMakeFiles/__idf_hal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_hal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=49 "Built target __idf_hal"
 .PHONY : esp-idf/hal/CMakeFiles/__idf_hal.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5347,7 +5527,7 @@ esp-idf/log/CMakeFiles/__idf_log.dir/all: esp-idf/heap/CMakeFiles/__idf_heap.dir
 
 # Build rule for subdir invocation for target.
 esp-idf/log/CMakeFiles/__idf_log.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/log/CMakeFiles/__idf_log.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/rule
@@ -5373,7 +5553,7 @@ esp-idf/heap/CMakeFiles/__idf_heap.dir/all: esp-idf/soc/CMakeFiles/__idf_soc.dir
 
 # Build rule for subdir invocation for target.
 esp-idf/heap/CMakeFiles/__idf_heap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/heap/CMakeFiles/__idf_heap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/heap/CMakeFiles/__idf_heap.dir/rule
@@ -5399,7 +5579,7 @@ esp-idf/soc/CMakeFiles/__idf_soc.dir/all: esp-idf/esp_hal_gpio/CMakeFiles/__idf_
 
 # Build rule for subdir invocation for target.
 esp-idf/soc/CMakeFiles/__idf_soc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 36
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/soc/CMakeFiles/__idf_soc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/soc/CMakeFiles/__idf_soc.dir/rule
@@ -5425,7 +5605,7 @@ esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/all: esp-idf/esp_hal_pmu/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rule
@@ -5451,7 +5631,7 @@ esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/all: esp-idf/esp_hal_touch_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/rule
@@ -5477,7 +5657,7 @@ esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/all: esp-idf/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_touch_sens/CMakeFiles/__idf_esp_hal_touch_sens.dir/rule
@@ -5503,7 +5683,7 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/all: esp-idf/freertos
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rule
@@ -5524,12 +5704,12 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/clean:
 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/all: esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/freertos/CMakeFiles/__idf_freertos.dir/build.make esp-idf/freertos/CMakeFiles/__idf_freertos.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/freertos/CMakeFiles/__idf_freertos.dir/build.make esp-idf/freertos/CMakeFiles/__idf_freertos.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=48 "Built target __idf_freertos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=47,48 "Built target __idf_freertos"
 .PHONY : esp-idf/freertos/CMakeFiles/__idf_freertos.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/freertos/CMakeFiles/__idf_freertos.dir/rule
@@ -5550,12 +5730,12 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/clean:
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/all: esp-idf/pthread/CMakeFiles/__idf_pthread.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/build.make esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/build.make esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=33,34,35 "Built target __idf_esp_libc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=33,34 "Built target __idf_esp_libc"
 .PHONY : esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/rule
@@ -5581,7 +5761,7 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/all: esp-idf/cxx/CMakeFiles/__idf_c
 
 # Build rule for subdir invocation for target.
 esp-idf/pthread/CMakeFiles/__idf_pthread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/pthread/CMakeFiles/__idf_pthread.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/pthread/CMakeFiles/__idf_pthread.dir/rule
@@ -5607,7 +5787,7 @@ esp-idf/cxx/CMakeFiles/__idf_cxx.dir/all: esp-idf/esp_timer/CMakeFiles/__idf_esp
 
 # Build rule for subdir invocation for target.
 esp-idf/cxx/CMakeFiles/__idf_cxx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/cxx/CMakeFiles/__idf_cxx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/cxx/CMakeFiles/__idf_cxx.dir/rule
@@ -5628,12 +5808,12 @@ esp-idf/cxx/CMakeFiles/__idf_cxx.dir/clean:
 esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/all: esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/build.make esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/build.make esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_timer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=44 "Built target __idf_esp_timer"
 .PHONY : esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/rule
@@ -5659,7 +5839,7 @@ esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all: esp-idf/esp_psram/CMak
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/rule
@@ -5685,7 +5865,7 @@ esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/all: esp-idf/esp_driver_uart/CM
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir/rule
@@ -5711,7 +5891,7 @@ esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/all: esp-idf/esp_ev
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/rule
@@ -5763,7 +5943,7 @@ esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/all: esp-idf/nvs_sec_provider/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/rule
@@ -5784,12 +5964,12 @@ esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/clean:
 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/all: esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build.make esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=64 "Built target __idf_nvs_sec_provider"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_nvs_sec_provider"
 .PHONY : esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/rule
@@ -5810,12 +5990,12 @@ esp-idf/nvs_sec_provider/CMakeFiles/__idf_nvs_sec_provider.dir/clean:
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/all: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build.make esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build.make esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=63 "Built target __idf_nvs_flash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=63,64 "Built target __idf_nvs_flash"
 .PHONY : esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/rule
@@ -5836,12 +6016,12 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/clean:
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/all: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=38 "Built target __idf_esp_phy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_phy"
 .PHONY : esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/rule
@@ -5867,7 +6047,7 @@ esp-idf/vfs/CMakeFiles/__idf_vfs.dir/all: esp-idf/lwip/CMakeFiles/__idf_lwip.dir
 
 # Build rule for subdir invocation for target.
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/vfs/CMakeFiles/__idf_vfs.dir/rule
@@ -5888,12 +6068,12 @@ esp-idf/vfs/CMakeFiles/__idf_vfs.dir/clean:
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/all: esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/lwip/CMakeFiles/__idf_lwip.dir/build.make esp-idf/lwip/CMakeFiles/__idf_lwip.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/lwip/CMakeFiles/__idf_lwip.dir/build.make esp-idf/lwip/CMakeFiles/__idf_lwip.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=53,54,55,56,57,58,59,60,61 "Built target __idf_lwip"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=54,55,56,57,58,59,60,61 "Built target __idf_lwip"
 .PHONY : esp-idf/lwip/CMakeFiles/__idf_lwip.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/lwip/CMakeFiles/__idf_lwip.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/lwip/CMakeFiles/__idf_lwip.dir/rule
@@ -5914,7 +6094,7 @@ esp-idf/lwip/CMakeFiles/__idf_lwip.dir/clean:
 esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/all: esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/build.make esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/build.make esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=37 "Built target __idf_esp_netif"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=36 "Built target __idf_esp_netif"
 .PHONY : esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5940,7 +6120,7 @@ esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/clean:
 esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/all: esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=76,77,78,79,80,81,82,83 "Built target __idf_wpa_supplicant"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=77,78,79,80,81,82,83,84 "Built target __idf_wpa_supplicant"
 .PHONY : esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/all
 
 # Build rule for subdir invocation for target.
@@ -6070,12 +6250,12 @@ esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/clean:
 esp-idf/unity/CMakeFiles/__idf_unity.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/unity/CMakeFiles/__idf_unity.dir/build.make esp-idf/unity/CMakeFiles/__idf_unity.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/unity/CMakeFiles/__idf_unity.dir/build.make esp-idf/unity/CMakeFiles/__idf_unity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=73 "Built target __idf_unity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_unity"
 .PHONY : esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/unity/CMakeFiles/__idf_unity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/unity/CMakeFiles/__idf_unity.dir/rule
@@ -6102,7 +6282,7 @@ esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all: esp-idf/unity/CMakeFiles/__idf_uni
 
 # Build rule for subdir invocation for target.
 esp-idf/cmock/CMakeFiles/__idf_cmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/cmock/CMakeFiles/__idf_cmock.dir/rule
@@ -6254,7 +6434,7 @@ esp-idf/http_parser/CMakeFiles/__idf_http_parser.dir/clean:
 esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all: esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/build.make esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/build.make esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp-tls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=7 "Built target __idf_esp-tls"
 .PHONY : esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/all
 
 # Build rule for subdir invocation for target.
@@ -6285,7 +6465,7 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/all: esp-idf/esp_adc/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/rule
@@ -6306,12 +6486,12 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/clean:
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/all: esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=7 "Built target __idf_esp_adc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_adc"
 .PHONY : esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/rule
@@ -6332,12 +6512,12 @@ esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/clean:
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/build.make esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/build.make esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=8 "Built target __idf_esp_blockdev_util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_blockdev_util"
 .PHONY : esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/rule
@@ -6358,12 +6538,12 @@ esp-idf/esp_blockdev_util/CMakeFiles/__idf_esp_blockdev_util.dir/clean:
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build.make esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=9 "Built target __idf_esp_driver_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_cam"
 .PHONY : esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule
@@ -6730,12 +6910,12 @@ esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/xtensa
 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_sdio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=14 "Built target __idf_esp_driver_sdio"
 .PHONY : esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule
@@ -6756,12 +6936,12 @@ esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/clean:
 esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/build.make esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/build.make esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=14 "Built target __idf_esp_driver_sdm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_sdm"
 .PHONY : esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/rule
@@ -7133,12 +7313,12 @@ esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/clean:
 esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/build.make esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/build.make esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_protobuf-c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=65 "Built target __idf_protobuf-c"
 .PHONY : esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/rule
@@ -7161,7 +7341,7 @@ esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/console/CMakeFiles
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=65,66 "Built target __idf_protocomm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=66 "Built target __idf_protocomm"
 .PHONY : esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 
 # Build rule for subdir invocation for target.
@@ -7191,12 +7371,12 @@ esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_esp_local_ctrl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=35 "Built target __idf_esp_local_ctrl"
 .PHONY : esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 76
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 77
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/rule
@@ -7250,7 +7430,7 @@ esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_driver_sdspi/CMakeFile
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=47 "Built target __idf_fatfs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=46 "Built target __idf_fatfs"
 .PHONY : esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -7382,12 +7562,12 @@ esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all: esp-idf/esp_driver_gptimer/CMake
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build.make esp-idf/tasker/CMakeFiles/__idf_tasker.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build.make esp-idf/tasker/CMakeFiles/__idf_tasker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_tasker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=72 "Built target __idf_tasker"
 .PHONY : esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/tasker/CMakeFiles/__idf_tasker.dir/rule
@@ -7411,7 +7591,7 @@ esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/all: esp-idf/logger/CMakeFile
 esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/build.make esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/build.make esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=72 "Built target __idf_tasker_api"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_tasker_api"
 .PHONY : esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/all
 
 # Build rule for subdir invocation for target.
@@ -7435,6 +7615,7 @@ esp-idf/tasker_api/CMakeFiles/__idf_tasker_api.dir/clean:
 
 # All Build rule for target.
 esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/build.make esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/build.make esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_event_bus"
@@ -7461,15 +7642,16 @@ esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/clean:
 
 # All Build rule for target.
 esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
 esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/build.make esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/build.make esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=46 "Built target __idf_eventbus_api"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_eventbus_api"
 .PHONY : esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/eventbus_api/CMakeFiles/__idf_eventbus_api.dir/rule
@@ -7519,12 +7701,12 @@ esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xten
 esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build.make esp-idf/wifi/CMakeFiles/__idf_wifi.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build.make esp-idf/wifi/CMakeFiles/__idf_wifi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_wifi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=76 "Built target __idf_wifi"
 .PHONY : esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/wifi/CMakeFiles/__idf_wifi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/wifi/CMakeFiles/__idf_wifi.dir/rule
@@ -7545,12 +7727,12 @@ esp-idf/wifi/CMakeFiles/__idf_wifi.dir/clean:
 esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/gpio/CMakeFiles/__idf_gpio.dir/build.make esp-idf/gpio/CMakeFiles/__idf_gpio.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/gpio/CMakeFiles/__idf_gpio.dir/build.make esp-idf/gpio/CMakeFiles/__idf_gpio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=49 "Built target __idf_gpio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_gpio"
 .PHONY : esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/gpio/CMakeFiles/__idf_gpio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/gpio/CMakeFiles/__idf_gpio.dir/rule
@@ -7577,7 +7759,7 @@ esp-idf/led/CMakeFiles/__idf_led.dir/all: esp-idf/gpio/CMakeFiles/__idf_gpio.dir
 
 # Build rule for subdir invocation for target.
 esp-idf/led/CMakeFiles/__idf_led.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/led/CMakeFiles/__idf_led.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/led/CMakeFiles/__idf_led.dir/rule
@@ -7592,56 +7774,122 @@ esp-idf/led/CMakeFiles/__idf_led.dir/clean:
 .PHONY : esp-idf/led/CMakeFiles/__idf_led.dir/clean
 
 #=============================================================================
-# Target rules for target esp-idf/beep/CMakeFiles/__idf_beep.dir
+# Target rules for target esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir
 
 # All Build rule for target.
-esp-idf/beep/CMakeFiles/__idf_beep.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
-	$(MAKE) $(MAKESILENT) -f esp-idf/beep/CMakeFiles/__idf_beep.dir/build.make esp-idf/beep/CMakeFiles/__idf_beep.dir/depend
-	$(MAKE) $(MAKESILENT) -f esp-idf/beep/CMakeFiles/__idf_beep.dir/build.make esp-idf/beep/CMakeFiles/__idf_beep.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_beep"
-.PHONY : esp-idf/beep/CMakeFiles/__idf_beep.dir/all
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build.make esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build.make esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_i2s_drv"
+.PHONY : esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
 
 # Build rule for subdir invocation for target.
-esp-idf/beep/CMakeFiles/__idf_beep.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/beep/CMakeFiles/__idf_beep.dir/all
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
-.PHONY : esp-idf/beep/CMakeFiles/__idf_beep.dir/rule
+.PHONY : esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/rule
 
 # Convenience name for target.
-__idf_beep: esp-idf/beep/CMakeFiles/__idf_beep.dir/rule
-.PHONY : __idf_beep
+__idf_i2s_drv: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/rule
+.PHONY : __idf_i2s_drv
 
 # clean rule for target.
-esp-idf/beep/CMakeFiles/__idf_beep.dir/clean:
-	$(MAKE) $(MAKESILENT) -f esp-idf/beep/CMakeFiles/__idf_beep.dir/build.make esp-idf/beep/CMakeFiles/__idf_beep.dir/clean
-.PHONY : esp-idf/beep/CMakeFiles/__idf_beep.dir/clean
+esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build.make esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/clean
+.PHONY : esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/clean
 
 #=============================================================================
-# Target rules for target esp-idf/sr04/CMakeFiles/__idf_sr04.dir
+# Target rules for target esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir
 
 # All Build rule for target.
-esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
-	$(MAKE) $(MAKESILENT) -f esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build.make esp-idf/sr04/CMakeFiles/__idf_sr04.dir/depend
-	$(MAKE) $(MAKESILENT) -f esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build.make esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_sr04"
-.PHONY : esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build.make esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build.make esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_i2c_drv"
+.PHONY : esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
 
 # Build rule for subdir invocation for target.
-esp-idf/sr04/CMakeFiles/__idf_sr04.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 72
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
-.PHONY : esp-idf/sr04/CMakeFiles/__idf_sr04.dir/rule
+.PHONY : esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/rule
 
 # Convenience name for target.
-__idf_sr04: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/rule
-.PHONY : __idf_sr04
+__idf_i2c_drv: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/rule
+.PHONY : __idf_i2c_drv
 
 # clean rule for target.
-esp-idf/sr04/CMakeFiles/__idf_sr04.dir/clean:
-	$(MAKE) $(MAKESILENT) -f esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build.make esp-idf/sr04/CMakeFiles/__idf_sr04.dir/clean
-.PHONY : esp-idf/sr04/CMakeFiles/__idf_sr04.dir/clean
+esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build.make esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/clean
+.PHONY : esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir
+
+# All Build rule for target.
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build.make esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build.make esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_spi_drv"
+.PHONY : esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/rule
+
+# Convenience name for target.
+__idf_spi_drv: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/rule
+.PHONY : __idf_spi_drv
+
+# clean rule for target.
+esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build.make esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/clean
+.PHONY : esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir
+
+# All Build rule for target.
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build.make esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build.make esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=73 "Built target __idf_uart_drv"
+.PHONY : esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/rule
+
+# Convenience name for target.
+__idf_uart_drv: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/rule
+.PHONY : __idf_uart_drv
+
+# clean rule for target.
+esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build.make esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/clean
+.PHONY : esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/clean
 
 #=============================================================================
 # Target rules for target esp-idf/ota/CMakeFiles/__idf_ota.dir
@@ -7720,7 +7968,7 @@ esp-idf/web/CMakeFiles/__idf_web.dir/all: esp-idf/heartbeat/CMakeFiles/__idf_hea
 
 # Build rule for subdir invocation for target.
 esp-idf/web/CMakeFiles/__idf_web.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 75
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/web/CMakeFiles/__idf_web.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/web/CMakeFiles/__idf_web.dir/rule
@@ -7735,11 +7983,213 @@ esp-idf/web/CMakeFiles/__idf_web.dir/clean:
 .PHONY : esp-idf/web/CMakeFiles/__idf_web.dir/clean
 
 #=============================================================================
+# Target rules for target esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir
+
+# All Build rule for target.
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build.make esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build.make esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_audio_module"
+.PHONY : esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/rule
+
+# Convenience name for target.
+__idf_audio_module: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/rule
+.PHONY : __idf_audio_module
+
+# clean rule for target.
+esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build.make esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/clean
+.PHONY : esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/st7789/CMakeFiles/__idf_st7789.dir
+
+# All Build rule for target.
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build.make esp-idf/st7789/CMakeFiles/__idf_st7789.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build.make esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_st7789"
+.PHONY : esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 73
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/st7789/CMakeFiles/__idf_st7789.dir/rule
+
+# Convenience name for target.
+__idf_st7789: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/rule
+.PHONY : __idf_st7789
+
+# clean rule for target.
+esp-idf/st7789/CMakeFiles/__idf_st7789.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build.make esp-idf/st7789/CMakeFiles/__idf_st7789.dir/clean
+.PHONY : esp-idf/st7789/CMakeFiles/__idf_st7789.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/aht30/CMakeFiles/__idf_aht30.dir
+
+# All Build rule for target.
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build.make esp-idf/aht30/CMakeFiles/__idf_aht30.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build.make esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_aht30"
+.PHONY : esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 75
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/aht30/CMakeFiles/__idf_aht30.dir/rule
+
+# Convenience name for target.
+__idf_aht30: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/rule
+.PHONY : __idf_aht30
+
+# clean rule for target.
+esp-idf/aht30/CMakeFiles/__idf_aht30.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build.make esp-idf/aht30/CMakeFiles/__idf_aht30.dir/clean
+.PHONY : esp-idf/aht30/CMakeFiles/__idf_aht30.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir
+
+# All Build rule for target.
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build.make esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build.make esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_cst816s"
+.PHONY : esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 75
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/rule
+
+# Convenience name for target.
+__idf_cst816s: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/rule
+.PHONY : __idf_cst816s
+
+# clean rule for target.
+esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build.make esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/clean
+.PHONY : esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/lora/CMakeFiles/__idf_lora.dir
+
+# All Build rule for target.
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/lora/CMakeFiles/__idf_lora.dir/all: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/lora/CMakeFiles/__idf_lora.dir/build.make esp-idf/lora/CMakeFiles/__idf_lora.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/lora/CMakeFiles/__idf_lora.dir/build.make esp-idf/lora/CMakeFiles/__idf_lora.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_lora"
+.PHONY : esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/lora/CMakeFiles/__idf_lora.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 75
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/lora/CMakeFiles/__idf_lora.dir/rule
+
+# Convenience name for target.
+__idf_lora: esp-idf/lora/CMakeFiles/__idf_lora.dir/rule
+.PHONY : __idf_lora
+
+# clean rule for target.
+esp-idf/lora/CMakeFiles/__idf_lora.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/lora/CMakeFiles/__idf_lora.dir/build.make esp-idf/lora/CMakeFiles/__idf_lora.dir/clean
+.PHONY : esp-idf/lora/CMakeFiles/__idf_lora.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir
+
+# All Build rule for target.
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/event_bus/CMakeFiles/__idf_event_bus.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build.make esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build.make esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_w25q128"
+.PHONY : esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/rule
+
+# Convenience name for target.
+__idf_w25q128: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/rule
+.PHONY : __idf_w25q128
+
+# clean rule for target.
+esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build.make esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/clean
+.PHONY : esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/clean
+
+#=============================================================================
 # Target rules for target esp-idf/main/CMakeFiles/__idf_main.dir
 
 # All Build rule for target.
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/all
@@ -7750,11 +8200,19 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.d
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wifi/CMakeFiles/__idf_wifi.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/gpio/CMakeFiles/__idf_gpio.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/led/CMakeFiles/__idf_led.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/beep/CMakeFiles/__idf_beep.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/sr04/CMakeFiles/__idf_sr04.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/ota/CMakeFiles/__idf_ota.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/web/CMakeFiles/__idf_web.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/st7789/CMakeFiles/__idf_st7789.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/aht30/CMakeFiles/__idf_aht30.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/lora/CMakeFiles/__idf_lora.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num= "Built target __idf_main"
@@ -7762,7 +8220,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/web/CMakeFiles/__idf_web.dir
 
 # Build rule for subdir invocation for target.
 esp-idf/main/CMakeFiles/__idf_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 77
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 78
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/__idf_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/rule
@@ -7775,6 +8233,35 @@ __idf_main: esp-idf/main/CMakeFiles/__idf_main.dir/rule
 esp-idf/main/CMakeFiles/__idf_main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/clean
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir
+
+# All Build rule for target.
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all: esp-idf/logger/CMakeFiles/__idf_logger.dir/all
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all: esp-idf/dtbs/CMakeFiles/__idf_dtbs.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build.make esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build.make esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=53 "Built target __idf_lvgl"
+.PHONY : esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles 0
+.PHONY : esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/rule
+
+# Convenience name for target.
+__idf_lvgl: esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/rule
+.PHONY : __idf_lvgl
+
+# clean rule for target.
+esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build.make esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/clean
+.PHONY : esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

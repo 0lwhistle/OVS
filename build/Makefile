@@ -2294,30 +2294,56 @@ __idf_led/fast:
 .PHONY : __idf_led/fast
 
 #=============================================================================
-# Target rules for targets named __idf_beep
+# Target rules for targets named __idf_i2s_drv
 
 # Build rule for target.
-__idf_beep: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_beep
-.PHONY : __idf_beep
+__idf_i2s_drv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_i2s_drv
+.PHONY : __idf_i2s_drv
 
 # fast build rule for target.
-__idf_beep/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/beep/CMakeFiles/__idf_beep.dir/build.make esp-idf/beep/CMakeFiles/__idf_beep.dir/build
-.PHONY : __idf_beep/fast
+__idf_i2s_drv/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build.make esp-idf/i2s_drv/CMakeFiles/__idf_i2s_drv.dir/build
+.PHONY : __idf_i2s_drv/fast
 
 #=============================================================================
-# Target rules for targets named __idf_sr04
+# Target rules for targets named __idf_i2c_drv
 
 # Build rule for target.
-__idf_sr04: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_sr04
-.PHONY : __idf_sr04
+__idf_i2c_drv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_i2c_drv
+.PHONY : __idf_i2c_drv
 
 # fast build rule for target.
-__idf_sr04/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build.make esp-idf/sr04/CMakeFiles/__idf_sr04.dir/build
-.PHONY : __idf_sr04/fast
+__idf_i2c_drv/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build.make esp-idf/i2c_drv/CMakeFiles/__idf_i2c_drv.dir/build
+.PHONY : __idf_i2c_drv/fast
+
+#=============================================================================
+# Target rules for targets named __idf_spi_drv
+
+# Build rule for target.
+__idf_spi_drv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_spi_drv
+.PHONY : __idf_spi_drv
+
+# fast build rule for target.
+__idf_spi_drv/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build.make esp-idf/spi_drv/CMakeFiles/__idf_spi_drv.dir/build
+.PHONY : __idf_spi_drv/fast
+
+#=============================================================================
+# Target rules for targets named __idf_uart_drv
+
+# Build rule for target.
+__idf_uart_drv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_uart_drv
+.PHONY : __idf_uart_drv
+
+# fast build rule for target.
+__idf_uart_drv/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build.make esp-idf/uart_drv/CMakeFiles/__idf_uart_drv.dir/build
+.PHONY : __idf_uart_drv/fast
 
 #=============================================================================
 # Target rules for targets named __idf_ota
@@ -2359,6 +2385,84 @@ __idf_web/fast:
 .PHONY : __idf_web/fast
 
 #=============================================================================
+# Target rules for targets named __idf_audio_module
+
+# Build rule for target.
+__idf_audio_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_audio_module
+.PHONY : __idf_audio_module
+
+# fast build rule for target.
+__idf_audio_module/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build.make esp-idf/audio_module/CMakeFiles/__idf_audio_module.dir/build
+.PHONY : __idf_audio_module/fast
+
+#=============================================================================
+# Target rules for targets named __idf_st7789
+
+# Build rule for target.
+__idf_st7789: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_st7789
+.PHONY : __idf_st7789
+
+# fast build rule for target.
+__idf_st7789/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build.make esp-idf/st7789/CMakeFiles/__idf_st7789.dir/build
+.PHONY : __idf_st7789/fast
+
+#=============================================================================
+# Target rules for targets named __idf_aht30
+
+# Build rule for target.
+__idf_aht30: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_aht30
+.PHONY : __idf_aht30
+
+# fast build rule for target.
+__idf_aht30/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build.make esp-idf/aht30/CMakeFiles/__idf_aht30.dir/build
+.PHONY : __idf_aht30/fast
+
+#=============================================================================
+# Target rules for targets named __idf_cst816s
+
+# Build rule for target.
+__idf_cst816s: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_cst816s
+.PHONY : __idf_cst816s
+
+# fast build rule for target.
+__idf_cst816s/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build.make esp-idf/cst816s/CMakeFiles/__idf_cst816s.dir/build
+.PHONY : __idf_cst816s/fast
+
+#=============================================================================
+# Target rules for targets named __idf_lora
+
+# Build rule for target.
+__idf_lora: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_lora
+.PHONY : __idf_lora
+
+# fast build rule for target.
+__idf_lora/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/lora/CMakeFiles/__idf_lora.dir/build.make esp-idf/lora/CMakeFiles/__idf_lora.dir/build
+.PHONY : __idf_lora/fast
+
+#=============================================================================
+# Target rules for targets named __idf_w25q128
+
+# Build rule for target.
+__idf_w25q128: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_w25q128
+.PHONY : __idf_w25q128
+
+# fast build rule for target.
+__idf_w25q128/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build.make esp-idf/w25q128/CMakeFiles/__idf_w25q128.dir/build
+.PHONY : __idf_w25q128/fast
+
+#=============================================================================
 # Target rules for targets named __idf_main
 
 # Build rule for target.
@@ -2370,6 +2474,19 @@ __idf_main: cmake_check_build_system
 __idf_main/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
+
+#=============================================================================
+# Target rules for targets named __idf_lvgl
+
+# Build rule for target.
+__idf_lvgl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_lvgl
+.PHONY : __idf_lvgl
+
+# fast build rule for target.
+__idf_lvgl/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build.make esp-idf/lvgl/CMakeFiles/__idf_lvgl.dir/build
+.PHONY : __idf_lvgl/fast
 
 project_elf_src_esp32.obj: project_elf_src_esp32.c.obj
 .PHONY : project_elf_src_esp32.obj
@@ -2451,11 +2568,13 @@ help:
 	@echo "... tfpsacrypto-apidoc"
 	@echo "... uf2"
 	@echo "... uf2-app"
+	@echo "... __idf_aht30"
 	@echo "... __idf_app_update"
-	@echo "... __idf_beep"
+	@echo "... __idf_audio_module"
 	@echo "... __idf_bootloader_support"
 	@echo "... __idf_cmock"
 	@echo "... __idf_console"
+	@echo "... __idf_cst816s"
 	@echo "... __idf_cxx"
 	@echo "... __idf_driver"
 	@echo "... __idf_dtbs"
@@ -2541,9 +2660,13 @@ help:
 	@echo "... __idf_heap"
 	@echo "... __idf_heartbeat"
 	@echo "... __idf_http_parser"
+	@echo "... __idf_i2c_drv"
+	@echo "... __idf_i2s_drv"
 	@echo "... __idf_led"
 	@echo "... __idf_log"
 	@echo "... __idf_logger"
+	@echo "... __idf_lora"
+	@echo "... __idf_lvgl"
 	@echo "... __idf_lwip"
 	@echo "... __idf_main"
 	@echo "... __idf_mbedtls"
@@ -2557,14 +2680,17 @@ help:
 	@echo "... __idf_rt"
 	@echo "... __idf_sdmmc"
 	@echo "... __idf_soc"
+	@echo "... __idf_spi_drv"
 	@echo "... __idf_spi_flash"
 	@echo "... __idf_spiffs"
-	@echo "... __idf_sr04"
+	@echo "... __idf_st7789"
 	@echo "... __idf_tasker"
 	@echo "... __idf_tasker_api"
 	@echo "... __idf_tcp_transport"
+	@echo "... __idf_uart_drv"
 	@echo "... __idf_unity"
 	@echo "... __idf_vfs"
+	@echo "... __idf_w25q128"
 	@echo "... __idf_wear_levelling"
 	@echo "... __idf_web"
 	@echo "... __idf_wifi"
