@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-**项目名称**: OVS (Open Voice Assistant)  
+**项目名称**: OVS   
 **硬件平台**: ESP32-S3  
 **开发框架**: ESP-IDF v6.0.1  
 **编译工具**: CMake + Ninja  
