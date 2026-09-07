@@ -26,6 +26,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/modules/cst816s
     ${CMAKE_SOURCE_DIR}/components/modules/lora
     ${CMAKE_SOURCE_DIR}/components/modules/w25q128
+    ${CMAKE_SOURCE_DIR}/components/modules/holder
     ${CMAKE_SOURCE_DIR}/src/lvgl
 )
 
