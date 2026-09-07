@@ -175,29 +175,29 @@ __idf_esp_hal_i2c/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build
 .PHONY : __idf_esp_hal_i2c/fast
 
-esp32/i2c_periph.obj: esp32/i2c_periph.c.obj
-.PHONY : esp32/i2c_periph.obj
+esp32s3/i2c_periph.obj: esp32s3/i2c_periph.c.obj
+.PHONY : esp32s3/i2c_periph.obj
 
 # target to build an object file
-esp32/i2c_periph.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32/i2c_periph.c.obj
-.PHONY : esp32/i2c_periph.c.obj
+esp32s3/i2c_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32s3/i2c_periph.c.obj
+.PHONY : esp32s3/i2c_periph.c.obj
 
-esp32/i2c_periph.i: esp32/i2c_periph.c.i
-.PHONY : esp32/i2c_periph.i
+esp32s3/i2c_periph.i: esp32s3/i2c_periph.c.i
+.PHONY : esp32s3/i2c_periph.i
 
 # target to preprocess a source file
-esp32/i2c_periph.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32/i2c_periph.c.i
-.PHONY : esp32/i2c_periph.c.i
+esp32s3/i2c_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32s3/i2c_periph.c.i
+.PHONY : esp32s3/i2c_periph.c.i
 
-esp32/i2c_periph.s: esp32/i2c_periph.c.s
-.PHONY : esp32/i2c_periph.s
+esp32s3/i2c_periph.s: esp32s3/i2c_periph.c.s
+.PHONY : esp32s3/i2c_periph.s
 
 # target to generate assembly for a file
-esp32/i2c_periph.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32/i2c_periph.c.s
-.PHONY : esp32/i2c_periph.c.s
+esp32s3/i2c_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/build.make esp-idf/esp_hal_i2c/CMakeFiles/__idf_esp_hal_i2c.dir/esp32s3/i2c_periph.c.s
+.PHONY : esp32s3/i2c_periph.c.s
 
 i2c_hal.obj: i2c_hal.c.obj
 .PHONY : i2c_hal.obj
@@ -260,9 +260,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_i2c"
-	@echo "... esp32/i2c_periph.obj"
-	@echo "... esp32/i2c_periph.i"
-	@echo "... esp32/i2c_periph.s"
+	@echo "... esp32s3/i2c_periph.obj"
+	@echo "... esp32s3/i2c_periph.i"
+	@echo "... esp32s3/i2c_periph.s"
 	@echo "... i2c_hal.obj"
 	@echo "... i2c_hal.i"
 	@echo "... i2c_hal.s"

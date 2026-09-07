@@ -69,31 +69,32 @@ include CMakeFiles/ovs.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ovs.elf.dir/flags.make
 
-CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/ovs.elf.dir/flags.make
-CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj: project_elf_src_esp32.c
-CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/ovs.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj -MF CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj.d -o CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32.c
+CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/ovs.elf.dir/flags.make
+CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj: project_elf_src_esp32s3.c
+CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/ovs.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj -MF CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj.d -o CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32s3.c
 
-CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.i"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32.c > CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.i
+CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.i"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32s3.c > CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.i
 
-CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.s"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32.c -o CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.s
+CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.s"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/build/project_elf_src_esp32s3.c -o CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.s
 
 # Object files for target ovs.elf
 ovs_elf_OBJECTS = \
-"CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj"
+"CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj"
 
 # External object files for target ovs.elf
 ovs_elf_EXTERNAL_OBJECTS =
 
-ovs.elf: CMakeFiles/ovs.elf.dir/project_elf_src_esp32.c.obj
+ovs.elf: CMakeFiles/ovs.elf.dir/project_elf_src_esp32s3.c.obj
 ovs.elf: CMakeFiles/ovs.elf.dir/build.make
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -112,7 +113,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -124,8 +124,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -140,6 +142,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -156,12 +159,12 @@ ovs.elf: esp-idf/esp_hal_twai/libesp_hal_twai.a
 ovs.elf: esp-idf/driver/libdriver.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
 ovs.elf: esp-idf/esp_blockdev_util/libesp_blockdev_util.a
+ovs.elf: esp-idf/esp_hal_cam/libesp_hal_cam.a
 ovs.elf: esp-idf/esp_driver_cam/libesp_driver_cam.a
-ovs.elf: esp-idf/esp_driver_dac/libesp_driver_dac.a
 ovs.elf: esp-idf/esp_driver_i2c/libesp_driver_i2c.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 ovs.elf: esp-idf/esp_driver_ledc/libesp_driver_ledc.a
 ovs.elf: esp-idf/esp_hal_mcpwm/libesp_hal_mcpwm.a
@@ -173,11 +176,11 @@ ovs.elf: esp-idf/esp_driver_rmt/libesp_driver_rmt.a
 ovs.elf: esp-idf/esp_hal_sd/libesp_hal_sd.a
 ovs.elf: esp-idf/sdmmc/libsdmmc.a
 ovs.elf: esp-idf/esp_driver_sd_intf/libesp_driver_sd_intf.a
-ovs.elf: esp-idf/esp_driver_sdio/libesp_driver_sdio.a
 ovs.elf: esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 ovs.elf: esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 ovs.elf: esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
 ovs.elf: esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a
+ovs.elf: esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 ovs.elf: esp-idf/esp_driver_twai/libesp_driver_twai.a
 ovs.elf: esp-idf/esp_eth/libesp_eth.a
 ovs.elf: esp-idf/esp_hal_lcd/libesp_hal_lcd.a
@@ -218,9 +221,11 @@ ovs.elf: esp-idf/aht30/libaht30.a
 ovs.elf: esp-idf/cst816s/libcst816s.a
 ovs.elf: esp-idf/lora/liblora.a
 ovs.elf: esp-idf/w25q128/libw25q128.a
+ovs.elf: esp-idf/holder/libholder.a
 ovs.elf: esp-idf/main/libmain.a
 ovs.elf: esp-idf/lvgl/liblvgl.a
 ovs.elf: esp-idf/unity/libunity.a
+ovs.elf: esp-idf/esp_hal_cam/libesp_hal_cam.a
 ovs.elf: esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 ovs.elf: esp-idf/esp_hal_mcpwm/libesp_hal_mcpwm.a
 ovs.elf: esp-idf/esp_hal_pcnt/libesp_hal_pcnt.a
@@ -260,11 +265,13 @@ ovs.elf: esp-idf/esp_driver_gptimer/libesp_driver_gptimer.a
 ovs.elf: esp-idf/event_bus/libevent_bus.a
 ovs.elf: esp-idf/spi_drv/libspi_drv.a
 ovs.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
+ovs.elf: esp-idf/holder/libholder.a
 ovs.elf: esp-idf/dtbs/libdtbs.a
 ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/logger/liblogger.a
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -283,7 +290,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -295,8 +301,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -310,6 +318,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -320,30 +329,31 @@ ovs.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 ovs.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/tcp_transport/libtcp_transport.a
 ovs.elf: esp-idf/esp_http_client/libesp_http_client.a
 ovs.elf: esp-idf/esp_http_server/libesp_http_server.a
 ovs.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -362,7 +372,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -374,8 +383,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -389,6 +400,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -399,30 +411,31 @@ ovs.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 ovs.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/tcp_transport/libtcp_transport.a
 ovs.elf: esp-idf/esp_http_client/libesp_http_client.a
 ovs.elf: esp-idf/esp_http_server/libesp_http_server.a
 ovs.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -441,7 +454,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -453,8 +465,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -468,6 +482,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -478,30 +493,31 @@ ovs.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 ovs.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/tcp_transport/libtcp_transport.a
 ovs.elf: esp-idf/esp_http_client/libesp_http_client.a
 ovs.elf: esp-idf/esp_http_server/libesp_http_server.a
 ovs.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -520,7 +536,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -532,8 +547,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -547,6 +564,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -557,30 +575,31 @@ ovs.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 ovs.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/tcp_transport/libtcp_transport.a
 ovs.elf: esp-idf/esp_http_client/libesp_http_client.a
 ovs.elf: esp-idf/esp_http_server/libesp_http_server.a
 ovs.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 ovs.elf: esp-idf/xtensa/libxtensa.a
 ovs.elf: esp-idf/esp_stdio/libesp_stdio.a
+ovs.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 ovs.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 ovs.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 ovs.elf: esp-idf/esp_hal_mspi/libesp_hal_mspi.a
@@ -599,7 +618,6 @@ ovs.elf: esp-idf/esp_driver_dma/libesp_driver_dma.a
 ovs.elf: esp-idf/mbedtls/libmbedtls.a
 ovs.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 ovs.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
-ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 ovs.elf: esp-idf/bootloader_support/libbootloader_support.a
 ovs.elf: esp-idf/spi_flash/libspi_flash.a
@@ -611,8 +629,10 @@ ovs.elf: esp-idf/log/liblog.a
 ovs.elf: esp-idf/heap/libheap.a
 ovs.elf: esp-idf/soc/libsoc.a
 ovs.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+ovs.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 ovs.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 ovs.elf: esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
+ovs.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 ovs.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 ovs.elf: esp-idf/freertos/libfreertos.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
@@ -626,6 +646,7 @@ ovs.elf: esp-idf/esp_event/libesp_event.a
 ovs.elf: esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 ovs.elf: esp-idf/nvs_flash/libnvs_flash.a
 ovs.elf: esp-idf/esp_phy/libesp_phy.a
+ovs.elf: esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 ovs.elf: esp-idf/vfs/libvfs.a
 ovs.elf: esp-idf/lwip/liblwip.a
 ovs.elf: esp-idf/esp_netif/libesp_netif.a
@@ -636,37 +657,46 @@ ovs.elf: esp-idf/esp_gdbstub/libesp_gdbstub.a
 ovs.elf: esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 ovs.elf: esp-idf/http_parser/libhttp_parser.a
 ovs.elf: esp-idf/esp-tls/libesp-tls.a
-ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/esp_adc/libesp_adc.a
+ovs.elf: esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 ovs.elf: esp-idf/tcp_transport/libtcp_transport.a
 ovs.elf: esp-idf/esp_http_client/libesp_http_client.a
 ovs.elf: esp-idf/esp_http_server/libesp_http_server.a
 ovs.elf: esp-idf/esp_https_ota/libesp_https_ota.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 ovs.elf: esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/libmbed-builtin.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/libeverest.a
 ovs.elf: esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/libp256m.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/librtc.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32/libphy.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libcore.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libespnow.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libmesh.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libnet80211.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libpp.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libsmartconfig.a
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32/libwapi.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libbtbb.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/lib/esp32s3/libphy.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libcore.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libespnow.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libmesh.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libnet80211.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libpp.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libsmartconfig.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/lib/esp32s3/libwapi.a
 ovs.elf: esp-idf/pthread/libpthread.a
 ovs.elf: esp-idf/esp_libc/libesp_libc.a
 ovs.elf: esp-idf/cxx/libcxx.a
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_wdt/esp32s3/rom.wdt.ld
 ovs.elf: esp-idf/esp_system/ld/memory.ld
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.ld
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.api.ld
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
-ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/ld/esp32.peripherals.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+ovs.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
 ovs.elf: esp-idf/esp_system/ld/sections.ld
 ovs.elf: CMakeFiles/ovs.elf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ovs.elf"

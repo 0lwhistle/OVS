@@ -175,29 +175,29 @@ __idf_esp_coex/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build
 .PHONY : __idf_esp_coex/fast
 
-esp32/esp_coex_adapter.obj: esp32/esp_coex_adapter.c.obj
-.PHONY : esp32/esp_coex_adapter.obj
+esp32s3/esp_coex_adapter.obj: esp32s3/esp_coex_adapter.c.obj
+.PHONY : esp32s3/esp_coex_adapter.obj
 
 # target to build an object file
-esp32/esp_coex_adapter.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32/esp_coex_adapter.c.obj
-.PHONY : esp32/esp_coex_adapter.c.obj
+esp32s3/esp_coex_adapter.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32s3/esp_coex_adapter.c.obj
+.PHONY : esp32s3/esp_coex_adapter.c.obj
 
-esp32/esp_coex_adapter.i: esp32/esp_coex_adapter.c.i
-.PHONY : esp32/esp_coex_adapter.i
+esp32s3/esp_coex_adapter.i: esp32s3/esp_coex_adapter.c.i
+.PHONY : esp32s3/esp_coex_adapter.i
 
 # target to preprocess a source file
-esp32/esp_coex_adapter.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32/esp_coex_adapter.c.i
-.PHONY : esp32/esp_coex_adapter.c.i
+esp32s3/esp_coex_adapter.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32s3/esp_coex_adapter.c.i
+.PHONY : esp32s3/esp_coex_adapter.c.i
 
-esp32/esp_coex_adapter.s: esp32/esp_coex_adapter.c.s
-.PHONY : esp32/esp_coex_adapter.s
+esp32s3/esp_coex_adapter.s: esp32s3/esp_coex_adapter.c.s
+.PHONY : esp32s3/esp_coex_adapter.s
 
 # target to generate assembly for a file
-esp32/esp_coex_adapter.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32/esp_coex_adapter.c.s
-.PHONY : esp32/esp_coex_adapter.c.s
+esp32s3/esp_coex_adapter.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/build.make esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32s3/esp_coex_adapter.c.s
+.PHONY : esp32s3/esp_coex_adapter.c.s
 
 src/coexist_debug.obj: src/coexist_debug.c.obj
 .PHONY : src/coexist_debug.obj
@@ -260,9 +260,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_coex"
-	@echo "... esp32/esp_coex_adapter.obj"
-	@echo "... esp32/esp_coex_adapter.i"
-	@echo "... esp32/esp_coex_adapter.s"
+	@echo "... esp32s3/esp_coex_adapter.obj"
+	@echo "... esp32s3/esp_coex_adapter.i"
+	@echo "... esp32s3/esp_coex_adapter.s"
 	@echo "... src/coexist_debug.obj"
 	@echo "... src/coexist_debug.i"
 	@echo "... src/coexist_debug.s"

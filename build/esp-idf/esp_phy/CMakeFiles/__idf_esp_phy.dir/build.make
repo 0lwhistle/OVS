@@ -73,85 +73,85 @@ esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj: esp-idf/esp
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c > CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c > CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.i
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_override.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_override.c.s
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c > CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c > CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.i
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c -o CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/lib_printf.c -o CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.s
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c > CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c > CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.i
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_common.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.s
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c > CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c > CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.i
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/phy_init.c -o CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.s
 
-esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
-esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32/phy_init_data.c
-esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj -MF CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32/phy_init_data.c
+esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
+esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32s3/phy_init_data.c
+esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj -MF CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32s3/phy_init_data.c
 
-esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32/phy_init_data.c > CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.i
+esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32s3/phy_init_data.c > CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.i
 
-esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32/phy_init_data.c -o CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.s
+esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/esp32s3/phy_init_data.c -o CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.s
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/flags.make
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj -MF CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj.d -o CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c > CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c > CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.i
 
 esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c -o CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_phy && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_phy/src/btbb_init.c -o CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.s
 
 # Object files for target __idf_esp_phy
 __idf_esp_phy_OBJECTS = \
@@ -159,7 +159,7 @@ __idf_esp_phy_OBJECTS = \
 "CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj" \
 "CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj" \
 "CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj" \
-"CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj" \
+"CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj" \
 "CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj"
 
 # External object files for target __idf_esp_phy
@@ -169,7 +169,7 @@ esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/p
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/lib_printf.c.obj
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_common.c.obj
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/phy_init.c.obj
-esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj
+esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/src/btbb_init.c.obj
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make
 esp-idf/esp_phy/libesp_phy.a: esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/link.txt

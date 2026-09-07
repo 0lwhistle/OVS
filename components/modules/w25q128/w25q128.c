@@ -16,6 +16,7 @@
 #include "logger.h"
 
 #include "freertos/FreeRTOS.h"
+#include "dtree.h"
 #include "freertos/task.h"
 
 #include <stdlib.h>
@@ -54,6 +55,8 @@ static const char* TAG = "[W25Q128]";
 #define W25Q128_TOTAL_SIZE          (16 * 1024 * 1024)  /* 16MB */
 
 /* ========================================================================== */
+
+/* ========================================================================== */
 /*                              内部变量                                       */
 /* ========================================================================== */
 
@@ -74,6 +77,22 @@ static w25q128_info_t s_info = {0};
 /* ========================================================================== */
 
 /**
+ * @brief 读取状态寄存器1
+ */
+static w25q128_err_t w25q128_read_status(uint8_t* status) {
+    uint8_t tx_data[2] = {W25Q128_CMD_READ_STATUS1, 0x00};
+    uint8_t rx_data[2] = {0};
+    
+    spi_drv_err_t err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_data, rx_data, 2);
+    if (err != SPI_DRV_OK) {
+        return W25Q128_ERR_SPI;
+    }
+    
+    *status = rx_data[1];
+    return W25Q128_OK;
+}
+
+/**
  * @brief 等待Flash空闲
  */
 static w25q128_err_t w25q128_wait_busy(void) {
@@ -81,12 +100,10 @@ static w25q128_err_t w25q128_wait_busy(void) {
     uint32_t timeout = 0;
     
     do {
-        /* 发送读状态命令 */
-        uint8_t cmd = W25Q128_CMD_READ_STATUS1;
-        /* CS pin managed by SPI driver */
-        spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
-        spi_drv_read(s_spi_handle, s_spi_dev, &status, 1);
-        /* CS pin managed by SPI driver */
+        w25q128_err_t err = w25q128_read_status(&status);
+        if (err != W25Q128_OK) {
+            return err;
+        }
         
         if (!(status & W25Q128_STATUS_BUSY)) {
             return W25Q128_OK;
@@ -105,17 +122,20 @@ static w25q128_err_t w25q128_wait_busy(void) {
  */
 static w25q128_err_t w25q128_write_enable(void) {
     uint8_t cmd = W25Q128_CMD_WRITE_ENABLE;
-    spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
+    spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
+    if (spi_err != SPI_DRV_OK) {
+        return W25Q128_ERR_SPI;
+    }
     
     /* 等待WEL位置位 */
     uint8_t status;
     uint32_t timeout = 0;
+    w25q128_err_t err;
     do {
-        cmd = W25Q128_CMD_READ_STATUS1;
-        /* CS pin managed by SPI driver */
-        spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
-        spi_drv_read(s_spi_handle, s_spi_dev, &status, 1);
-        /* CS pin managed by SPI driver */
+        err = w25q128_read_status(&status);
+        if (err != W25Q128_OK) {
+            return err;
+        }
         
         if (status & W25Q128_STATUS_WEL) {
             return W25Q128_OK;
@@ -155,9 +175,12 @@ static w25q128_err_t w25q128_write_page(uint32_t addr, const void* data, size_t 
     memcpy(buf + 4, data, size);
     
     /* 发送数据 */
-    spi_drv_write(s_spi_handle, s_spi_dev, buf, 4 + size);
-    
+    spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, buf, 4 + size);
     free(buf);
+    
+    if (spi_err != SPI_DRV_OK) {
+        return W25Q128_ERR_SPI;
+    }
     
     /* 等待写入完成 */
     return w25q128_wait_busy();
@@ -175,13 +198,30 @@ w25q128_err_t w25q128_init(void) {
     
     LOGI(TAG, "Initializing W25Q128 Flash...");
     
-    /* 加载SPI配置 */
+    /* 从设备树读取SPI总线配置 */
     spi_drv_config_t spi_config;
     spi_drv_err_t spi_err = spi_drv_load_config(&spi_config);
     if (spi_err != SPI_DRV_OK) {
-        LOGE(TAG, "Failed to load SPI config: %d", spi_err);
+        LOGE(TAG, "Failed to load SPI config from device tree: %d", spi_err);
         return W25Q128_ERR_SPI;
     }
+    
+    /* 从设备树读取Flash特定配置 */
+    int32_t cs_pin = 13;      /* 默认值 */
+    int32_t flash_freq = 20;  /* 默认值 MHz */
+    
+    dtree_err_t dt_err;
+    dt_err = DTREE_INT("spi.flash", "cs_pin", &cs_pin);
+    if (dt_err != DTREE_OK) {
+        LOGW(TAG, "Failed to read cs_pin from dtree, using default: %d", cs_pin);
+    }
+    
+    dt_err = DTREE_INT("spi.flash", "spi_freq_mhz", &flash_freq);
+    if (dt_err != DTREE_OK) {
+        LOGW(TAG, "Failed to read spi_freq_mhz from dtree, using default: %d", flash_freq);
+    }
+    
+    LOGI(TAG, "Device tree config: CS=GPIO%d, Freq=%d MHz", (int)cs_pin, (int)flash_freq);
     
     /* 初始化SPI驱动（如果尚未初始化） */
     if (!s_spi_handle) {
@@ -193,30 +233,46 @@ w25q128_err_t w25q128_init(void) {
     }
     
     /* 添加Flash设备到SPI总线 */
-    int32_t cs_pin, spi_freq;
-    DTREE_INT("spi.flash", "cs_pin", &cs_pin);
-    DTREE_INT("spi.flash", "spi_freq_mhz", &spi_freq);
-    if (spi_freq == 0) spi_freq = 20;
-    
-    spi_err = spi_drv_add_device(s_spi_handle, (int)cs_pin, 
-                                  (int)(spi_freq * 1000000), 0, &s_spi_dev);
+    spi_err = spi_drv_add_device(s_spi_handle, 
+                                 (int)cs_pin, 
+                                 (int)(flash_freq * 1000000), 
+                                 spi_config.mode, 
+                                 &s_spi_dev);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to add SPI device: %d", spi_err);
         return W25Q128_ERR_SPI;
     }
     
-    /* 读取JEDEC ID */
-    uint8_t cmd = W25Q128_CMD_JEDEC_ID;
-    uint8_t id[3];
+    /* 发送释放掉电命令，确保W25Q128处于活动状态 */
+    uint8_t cmd = W25Q128_CMD_RELEASE_PD;
     
     spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
-    spi_drv_read(s_spi_handle, s_spi_dev, id, 3);
+    vTaskDelay(pdMS_TO_TICKS(50));  /* 等待芯片唤醒 */
+    /* 使用全双工传输读取JEDEC ID */
+    uint8_t tx_data[4] = {W25Q128_CMD_JEDEC_ID, 0x00, 0x00, 0x00};
+    uint8_t rx_data[4] = {0};
+    
+    LOGI(TAG, "Reading JEDEC ID with full-duplex transfer...");
+    spi_err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_data, rx_data, 4);
+    if (spi_err != SPI_DRV_OK) {
+        LOGE(TAG, "Failed to read JEDEC ID: %d", spi_err);
+        return W25Q128_ERR_SPI;
+    }
+    
+    /* 解析JEDEC ID (rx_data[1]是制造商ID，rx_data[2]是存储类型，rx_data[3]是容量) */
+    uint8_t id[3] = {rx_data[1], rx_data[2], rx_data[3]};
     
     LOGI(TAG, "JEDEC ID: 0x%02X 0x%02X 0x%02X", id[0], id[1], id[2]);
     
     /* 验证ID (Winbond W25Q128: EF 40 18) */
+    if (id[0] == 0xFF && id[1] == 0xFF && id[2] == 0xFF) {
+        LOGE(TAG, "JEDEC ID is 0xFF 0xFF 0xFF, SPI communication failed!");
+        return W25Q128_ERR_SPI;
+    }
+    
     if (id[0] != 0xEF || id[1] != 0x40 || id[2] != 0x18) {
-        LOGW(TAG, "Unexpected JEDEC ID, expected Winbond W25Q128");
+        LOGW(TAG, "Unexpected JEDEC ID: 0x%02X 0x%02X 0x%02X", id[0], id[1], id[2]);
+        LOGW(TAG, "Expected: 0xEF 0x40 0x18 (Winbond W25Q128)");
     }
     
     /* 保存信息 */
@@ -292,18 +348,41 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
         return W25Q128_ERR_PARAM;
     }
     
-    /* 构造读命令 */
-    uint8_t cmd[4];
-    cmd[0] = W25Q128_CMD_READ;
-    cmd[1] = (addr >> 16) & 0xFF;
-    cmd[2] = (addr >> 8) & 0xFF;
-    cmd[3] = addr & 0xFF;
+    /* 使用全双工传输：发送命令+地址，同时接收数据
+     * W25Q128 读取命令需要CS在整个序列中保持低电平：
+     * 发送: cmd(1) + addr(3) + dummy(N)
+     * 接收: ignore(4) + data(N)
+     */
+    size_t total = 4 + size;
+    uint8_t* tx_buf = (uint8_t*)malloc(total);
+    uint8_t* rx_buf = (uint8_t*)malloc(total);
+    if (!tx_buf || !rx_buf) {
+        free(tx_buf);
+        free(rx_buf);
+        return W25Q128_ERR_SPI;
+    }
     
-    /* 发送命令和地址 */
-    spi_drv_write(s_spi_handle, s_spi_dev, cmd, 4);
+    /* 构造发送缓冲区 */
+    tx_buf[0] = W25Q128_CMD_READ;
+    tx_buf[1] = (addr >> 16) & 0xFF;
+    tx_buf[2] = (addr >> 8) & 0xFF;
+    tx_buf[3] = addr & 0xFF;
+    memset(tx_buf + 4, 0xFF, size);  /* 发送0xFF作为dummy bytes */
     
-    /* 读取数据 */
-    spi_drv_read(s_spi_handle, s_spi_dev, buffer, size);
+    /* 全双工传输 */
+    spi_drv_err_t err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_buf, rx_buf, total);
+    
+    if (err != SPI_DRV_OK) {
+        free(tx_buf);
+        free(rx_buf);
+        return W25Q128_ERR_SPI;
+    }
+    
+    /* 复制接收到的数据（跳过前4个字节的命令阶段） */
+    memcpy(buffer, rx_buf + 4, size);
+    
+    free(tx_buf);
+    free(rx_buf);
     
     return W25Q128_OK;
 }
@@ -374,7 +453,10 @@ w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
     cmd[2] = (addr >> 8) & 0xFF;
     cmd[3] = addr & 0xFF;
     
-    spi_drv_write(s_spi_handle, s_spi_dev, cmd, 4);
+    spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, cmd, 4);
+    if (spi_err != SPI_DRV_OK) {
+        return W25Q128_ERR_SPI;
+    }
     
     /* 等待擦除完成 */
     return w25q128_wait_busy();
@@ -395,7 +477,10 @@ w25q128_err_t w25q128_erase_chip(void) {
     
     /* 发送整片擦除命令 */
     uint8_t cmd = W25Q128_CMD_CHIP_ERASE;
-    spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
+    spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
+    if (spi_err != SPI_DRV_OK) {
+        return W25Q128_ERR_SPI;
+    }
     
     /* 等待擦除完成（可能需要较长时间） */
     LOGI(TAG, "Waiting for chip erase to complete...");

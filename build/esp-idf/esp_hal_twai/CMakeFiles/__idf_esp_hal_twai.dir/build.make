@@ -69,43 +69,43 @@ include esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/progress.make
 # Include the compile flags for this target's objects.
 include esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/flags.make
 
-esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/flags.make
-esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32/twai_periph.c
-esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj -MF CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32/twai_periph.c
+esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/flags.make
+esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32s3/twai_periph.c
+esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj -MF CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32s3/twai_periph.c
 
-esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32/twai_periph.c > CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.i
+esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32s3/twai_periph.c > CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.i
 
-esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32/twai_periph.c -o CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.s
+esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/esp32s3/twai_periph.c -o CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.s
 
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/flags.make
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj -MF CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj.d -o CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj -MF CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj.d -o CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c
 
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c > CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c > CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.i
 
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c -o CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_twai && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_twai/twai_hal_v1.c -o CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.s
 
 # Object files for target __idf_esp_hal_twai
 __idf_esp_hal_twai_OBJECTS = \
-"CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj" \
+"CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj" \
 "CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj"
 
 # External object files for target __idf_esp_hal_twai
 __idf_esp_hal_twai_EXTERNAL_OBJECTS =
 
-esp-idf/esp_hal_twai/libesp_hal_twai.a: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj
+esp-idf/esp_hal_twai/libesp_hal_twai.a: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj
 esp-idf/esp_hal_twai/libesp_hal_twai.a: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj
 esp-idf/esp_hal_twai/libesp_hal_twai.a: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/build.make
 esp-idf/esp_hal_twai/libesp_hal_twai.a: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/link.txt

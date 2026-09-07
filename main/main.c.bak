@@ -1,0 +1,139 @@
+/**
+ * @file main.c
+ * @brief W25Q128 简单测试程序
+ * 
+ * 用于测试 W25Q128 Flash 模块
+ */
+
+#include "tasker.h"
+#include "event_bus.h"
+#include "logger.h"
+#include "holder.h"
+#include "w25q128.h"
+#include "dtree.h"
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include "nvs_flash.h"
+
+static const char* TAG = "[MAIN_TEST]";
+
+/**
+ * @brief W25Q128 测试函数
+ */
+static void test_w25q128(void) {
+    LOGI(TAG, "=== W25Q128 测试开始 ===");
+    
+    // 1. 测试初始化
+    w25q128_err_t ret = w25q128_init();
+    if (ret != W25Q128_OK) {
+        LOGE(TAG, "W25Q128 初始化失败: %d", ret);
+        return;
+    }
+    LOGI(TAG, "W25Q128 初始化成功");
+    
+    // 2. 获取信息
+    w25q128_info_t info;
+    ret = w25q128_get_info(&info);
+    if (ret == W25Q128_OK) {
+        LOGI(TAG, "制造商ID: 0x%02X", info.manufacturer_id);
+        LOGI(TAG, "存储类型: 0x%02X", info.memory_type);
+        LOGI(TAG, "容量ID: 0x%02X", info.capacity);
+        LOGI(TAG, "总容量: %lu MB", info.total_size / (1024 * 1024));
+        LOGI(TAG, "扇区大小: %lu 字节", info.sector_size);
+        LOGI(TAG, "页大小: %lu 字节", info.page_size);
+        LOGI(TAG, "扇区数量: %lu", info.sector_count);
+    } else {
+        LOGE(TAG, "获取W25Q128信息失败: %d", ret);
+    }
+    
+    // 3. 测试擦除扇区
+    LOGI(TAG, "擦除扇区 0...");
+    ret = w25q128_erase_sector(0);
+    if (ret == W25Q128_OK) {
+        LOGI(TAG, "扇区 0 擦除成功");
+    } else {
+        LOGE(TAG, "扇区 0 擦除失败: %d", ret);
+    }
+    
+    // 4. 测试写入数据
+    const char* test_data = "Hello, W25Q128! This is a test string.";
+    uint32_t test_addr = 0;
+    LOGI(TAG, "写入测试数据到地址 0x%06lX...", test_addr);
+    ret = w25q128_write(test_addr, test_data, strlen(test_data) + 1);
+    if (ret == W25Q128_OK) {
+        LOGI(TAG, "写入成功");
+    } else {
+        LOGE(TAG, "写入失败: %d", ret);
+    }
+    
+    // 5. 测试读取数据
+    char read_buffer[100] = {0};
+    LOGI(TAG, "从地址 0x%06lX 读取数据...", test_addr);
+    ret = w25q128_read(test_addr, read_buffer, strlen(test_data) + 1);
+    if (ret == W25Q128_OK) {
+        LOGI(TAG, "读取成功: %s", read_buffer);
+        if (strcmp(test_data, read_buffer) == 0) {
+            LOGI(TAG, "数据校验成功");
+        } else {
+            LOGE(TAG, "数据校验失败");
+        }
+    } else {
+        LOGE(TAG, "读取失败: %d", ret);
+    }
+    
+    // 6. 测试反初始化
+    ret = w25q128_deinit();
+    if (ret == W25Q128_OK) {
+        LOGI(TAG, "W25Q128 反初始化成功");
+    } else {
+        LOGE(TAG, "W25Q128 反初始化失败: %d", ret);
+    }
+    
+    LOGI(TAG, "=== W25Q128 测试结束 ===");
+}
+
+/**
+ * @brief 应用程序入口函数
+ */
+void app_main(void) {
+    LOGI(TAG, "========================================");
+    LOGI(TAG, "  W25Q128 测试程序");
+    LOGI(TAG, "========================================");
+
+    // 初始化 NVS
+    esp_err_t nvs_ret = nvs_flash_init();
+    if (nvs_ret == ESP_ERR_NVS_NO_FREE_PAGES || nvs_ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        nvs_ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(nvs_ret);
+    LOGI(TAG, "NVS 初始化完成");
+
+    // 初始化事件总线
+    event_bus_err_t eb_ret = event_bus_init();
+    if (eb_ret != EVENT_BUS_OK) {
+        LOGE(TAG, "事件总线初始化失败: %d", eb_ret);
+        return;
+    }
+    LOGI(TAG, "事件总线初始化完成");
+
+    // 初始化 tasker 系统
+    int ret = tasker_init();
+    if (ret != 0) {
+        LOGE(TAG, "tasker_init 失败: %d", ret);
+        return;
+    }
+    LOGI(TAG, "Tasker 初始化完成");
+
+    // 测试 W25Q128 模块
+    test_w25q128();
+    
+    LOGI(TAG, "========================================");
+    LOGI(TAG, "  测试完成");
+    LOGI(TAG, "========================================");
+}

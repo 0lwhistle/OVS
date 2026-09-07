@@ -199,6 +199,30 @@ cache_utils.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/cache_utils.c.s
 .PHONY : cache_utils.c.s
 
+esp32s3/spi_flash_oct_flash_init.obj: esp32s3/spi_flash_oct_flash_init.c.obj
+.PHONY : esp32s3/spi_flash_oct_flash_init.obj
+
+# target to build an object file
+esp32s3/spi_flash_oct_flash_init.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.obj
+.PHONY : esp32s3/spi_flash_oct_flash_init.c.obj
+
+esp32s3/spi_flash_oct_flash_init.i: esp32s3/spi_flash_oct_flash_init.c.i
+.PHONY : esp32s3/spi_flash_oct_flash_init.i
+
+# target to preprocess a source file
+esp32s3/spi_flash_oct_flash_init.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.i
+.PHONY : esp32s3/spi_flash_oct_flash_init.c.i
+
+esp32s3/spi_flash_oct_flash_init.s: esp32s3/spi_flash_oct_flash_init.c.s
+.PHONY : esp32s3/spi_flash_oct_flash_init.s
+
+# target to generate assembly for a file
+esp32s3/spi_flash_oct_flash_init.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.s
+.PHONY : esp32s3/spi_flash_oct_flash_init.c.s
+
 esp_flash_api.obj: esp_flash_api.c.obj
 .PHONY : esp_flash_api.obj
 
@@ -583,6 +607,30 @@ spi_flash_chip_winbond.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_winbond.c.s
 .PHONY : spi_flash_chip_winbond.c.s
 
+spi_flash_hpm_enable.obj: spi_flash_hpm_enable.c.obj
+.PHONY : spi_flash_hpm_enable.obj
+
+# target to build an object file
+spi_flash_hpm_enable.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_hpm_enable.c.obj
+.PHONY : spi_flash_hpm_enable.c.obj
+
+spi_flash_hpm_enable.i: spi_flash_hpm_enable.c.i
+.PHONY : spi_flash_hpm_enable.i
+
+# target to preprocess a source file
+spi_flash_hpm_enable.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_hpm_enable.c.i
+.PHONY : spi_flash_hpm_enable.c.i
+
+spi_flash_hpm_enable.s: spi_flash_hpm_enable.c.s
+.PHONY : spi_flash_hpm_enable.s
+
+# target to generate assembly for a file
+spi_flash_hpm_enable.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/build.make esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_hpm_enable.c.s
+.PHONY : spi_flash_hpm_enable.c.s
+
 spi_flash_os_func_app.obj: spi_flash_os_func_app.c.obj
 .PHONY : spi_flash_os_func_app.obj
 
@@ -671,6 +719,9 @@ help:
 	@echo "... cache_utils.obj"
 	@echo "... cache_utils.i"
 	@echo "... cache_utils.s"
+	@echo "... esp32s3/spi_flash_oct_flash_init.obj"
+	@echo "... esp32s3/spi_flash_oct_flash_init.i"
+	@echo "... esp32s3/spi_flash_oct_flash_init.s"
 	@echo "... esp_flash_api.obj"
 	@echo "... esp_flash_api.i"
 	@echo "... esp_flash_api.s"
@@ -719,6 +770,9 @@ help:
 	@echo "... spi_flash_chip_winbond.obj"
 	@echo "... spi_flash_chip_winbond.i"
 	@echo "... spi_flash_chip_winbond.s"
+	@echo "... spi_flash_hpm_enable.obj"
+	@echo "... spi_flash_hpm_enable.i"
+	@echo "... spi_flash_hpm_enable.s"
 	@echo "... spi_flash_os_func_app.obj"
 	@echo "... spi_flash_os_func_app.i"
 	@echo "... spi_flash_os_func_app.s"

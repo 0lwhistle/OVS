@@ -675,109 +675,133 @@ port/panic_handler.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/panic_handler.c.s
 .PHONY : port/panic_handler.c.s
 
-port/soc/esp32/cache_err_int.obj: port/soc/esp32/cache_err_int.c.obj
-.PHONY : port/soc/esp32/cache_err_int.obj
+port/soc/esp32s3/apb_backup_dma.obj: port/soc/esp32s3/apb_backup_dma.c.obj
+.PHONY : port/soc/esp32s3/apb_backup_dma.obj
 
 # target to build an object file
-port/soc/esp32/cache_err_int.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/cache_err_int.c.obj
-.PHONY : port/soc/esp32/cache_err_int.c.obj
+port/soc/esp32s3/apb_backup_dma.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/apb_backup_dma.c.obj
+.PHONY : port/soc/esp32s3/apb_backup_dma.c.obj
 
-port/soc/esp32/cache_err_int.i: port/soc/esp32/cache_err_int.c.i
-.PHONY : port/soc/esp32/cache_err_int.i
+port/soc/esp32s3/apb_backup_dma.i: port/soc/esp32s3/apb_backup_dma.c.i
+.PHONY : port/soc/esp32s3/apb_backup_dma.i
 
 # target to preprocess a source file
-port/soc/esp32/cache_err_int.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/cache_err_int.c.i
-.PHONY : port/soc/esp32/cache_err_int.c.i
+port/soc/esp32s3/apb_backup_dma.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/apb_backup_dma.c.i
+.PHONY : port/soc/esp32s3/apb_backup_dma.c.i
 
-port/soc/esp32/cache_err_int.s: port/soc/esp32/cache_err_int.c.s
-.PHONY : port/soc/esp32/cache_err_int.s
+port/soc/esp32s3/apb_backup_dma.s: port/soc/esp32s3/apb_backup_dma.c.s
+.PHONY : port/soc/esp32s3/apb_backup_dma.s
 
 # target to generate assembly for a file
-port/soc/esp32/cache_err_int.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/cache_err_int.c.s
-.PHONY : port/soc/esp32/cache_err_int.c.s
+port/soc/esp32s3/apb_backup_dma.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/apb_backup_dma.c.s
+.PHONY : port/soc/esp32s3/apb_backup_dma.c.s
 
-port/soc/esp32/clk.obj: port/soc/esp32/clk.c.obj
-.PHONY : port/soc/esp32/clk.obj
+port/soc/esp32s3/cache_err_int.obj: port/soc/esp32s3/cache_err_int.c.obj
+.PHONY : port/soc/esp32s3/cache_err_int.obj
 
 # target to build an object file
-port/soc/esp32/clk.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/clk.c.obj
-.PHONY : port/soc/esp32/clk.c.obj
+port/soc/esp32s3/cache_err_int.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/cache_err_int.c.obj
+.PHONY : port/soc/esp32s3/cache_err_int.c.obj
 
-port/soc/esp32/clk.i: port/soc/esp32/clk.c.i
-.PHONY : port/soc/esp32/clk.i
+port/soc/esp32s3/cache_err_int.i: port/soc/esp32s3/cache_err_int.c.i
+.PHONY : port/soc/esp32s3/cache_err_int.i
 
 # target to preprocess a source file
-port/soc/esp32/clk.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/clk.c.i
-.PHONY : port/soc/esp32/clk.c.i
+port/soc/esp32s3/cache_err_int.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/cache_err_int.c.i
+.PHONY : port/soc/esp32s3/cache_err_int.c.i
 
-port/soc/esp32/clk.s: port/soc/esp32/clk.c.s
-.PHONY : port/soc/esp32/clk.s
+port/soc/esp32s3/cache_err_int.s: port/soc/esp32s3/cache_err_int.c.s
+.PHONY : port/soc/esp32s3/cache_err_int.s
 
 # target to generate assembly for a file
-port/soc/esp32/clk.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/clk.c.s
-.PHONY : port/soc/esp32/clk.c.s
+port/soc/esp32s3/cache_err_int.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/cache_err_int.c.s
+.PHONY : port/soc/esp32s3/cache_err_int.c.s
 
-port/soc/esp32/highint_hdl.obj: port/soc/esp32/highint_hdl.S.obj
-.PHONY : port/soc/esp32/highint_hdl.obj
-
-# target to build an object file
-port/soc/esp32/highint_hdl.S.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/highint_hdl.S.obj
-.PHONY : port/soc/esp32/highint_hdl.S.obj
-
-port/soc/esp32/reset_reason.obj: port/soc/esp32/reset_reason.c.obj
-.PHONY : port/soc/esp32/reset_reason.obj
+port/soc/esp32s3/clk.obj: port/soc/esp32s3/clk.c.obj
+.PHONY : port/soc/esp32s3/clk.obj
 
 # target to build an object file
-port/soc/esp32/reset_reason.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/reset_reason.c.obj
-.PHONY : port/soc/esp32/reset_reason.c.obj
+port/soc/esp32s3/clk.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/clk.c.obj
+.PHONY : port/soc/esp32s3/clk.c.obj
 
-port/soc/esp32/reset_reason.i: port/soc/esp32/reset_reason.c.i
-.PHONY : port/soc/esp32/reset_reason.i
+port/soc/esp32s3/clk.i: port/soc/esp32s3/clk.c.i
+.PHONY : port/soc/esp32s3/clk.i
 
 # target to preprocess a source file
-port/soc/esp32/reset_reason.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/reset_reason.c.i
-.PHONY : port/soc/esp32/reset_reason.c.i
+port/soc/esp32s3/clk.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/clk.c.i
+.PHONY : port/soc/esp32s3/clk.c.i
 
-port/soc/esp32/reset_reason.s: port/soc/esp32/reset_reason.c.s
-.PHONY : port/soc/esp32/reset_reason.s
+port/soc/esp32s3/clk.s: port/soc/esp32s3/clk.c.s
+.PHONY : port/soc/esp32s3/clk.s
 
 # target to generate assembly for a file
-port/soc/esp32/reset_reason.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/reset_reason.c.s
-.PHONY : port/soc/esp32/reset_reason.c.s
+port/soc/esp32s3/clk.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/clk.c.s
+.PHONY : port/soc/esp32s3/clk.c.s
 
-port/soc/esp32/system_internal.obj: port/soc/esp32/system_internal.c.obj
-.PHONY : port/soc/esp32/system_internal.obj
+port/soc/esp32s3/highint_hdl.obj: port/soc/esp32s3/highint_hdl.S.obj
+.PHONY : port/soc/esp32s3/highint_hdl.obj
 
 # target to build an object file
-port/soc/esp32/system_internal.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/system_internal.c.obj
-.PHONY : port/soc/esp32/system_internal.c.obj
+port/soc/esp32s3/highint_hdl.S.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/highint_hdl.S.obj
+.PHONY : port/soc/esp32s3/highint_hdl.S.obj
 
-port/soc/esp32/system_internal.i: port/soc/esp32/system_internal.c.i
-.PHONY : port/soc/esp32/system_internal.i
+port/soc/esp32s3/reset_reason.obj: port/soc/esp32s3/reset_reason.c.obj
+.PHONY : port/soc/esp32s3/reset_reason.obj
+
+# target to build an object file
+port/soc/esp32s3/reset_reason.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/reset_reason.c.obj
+.PHONY : port/soc/esp32s3/reset_reason.c.obj
+
+port/soc/esp32s3/reset_reason.i: port/soc/esp32s3/reset_reason.c.i
+.PHONY : port/soc/esp32s3/reset_reason.i
 
 # target to preprocess a source file
-port/soc/esp32/system_internal.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/system_internal.c.i
-.PHONY : port/soc/esp32/system_internal.c.i
+port/soc/esp32s3/reset_reason.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/reset_reason.c.i
+.PHONY : port/soc/esp32s3/reset_reason.c.i
 
-port/soc/esp32/system_internal.s: port/soc/esp32/system_internal.c.s
-.PHONY : port/soc/esp32/system_internal.s
+port/soc/esp32s3/reset_reason.s: port/soc/esp32s3/reset_reason.c.s
+.PHONY : port/soc/esp32s3/reset_reason.s
 
 # target to generate assembly for a file
-port/soc/esp32/system_internal.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32/system_internal.c.s
-.PHONY : port/soc/esp32/system_internal.c.s
+port/soc/esp32s3/reset_reason.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/reset_reason.c.s
+.PHONY : port/soc/esp32s3/reset_reason.c.s
+
+port/soc/esp32s3/system_internal.obj: port/soc/esp32s3/system_internal.c.obj
+.PHONY : port/soc/esp32s3/system_internal.obj
+
+# target to build an object file
+port/soc/esp32s3/system_internal.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/system_internal.c.obj
+.PHONY : port/soc/esp32s3/system_internal.c.obj
+
+port/soc/esp32s3/system_internal.i: port/soc/esp32s3/system_internal.c.i
+.PHONY : port/soc/esp32s3/system_internal.i
+
+# target to preprocess a source file
+port/soc/esp32s3/system_internal.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/system_internal.c.i
+.PHONY : port/soc/esp32s3/system_internal.c.i
+
+port/soc/esp32s3/system_internal.s: port/soc/esp32s3/system_internal.c.s
+.PHONY : port/soc/esp32s3/system_internal.s
+
+# target to generate assembly for a file
+port/soc/esp32s3/system_internal.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/soc/esp32s3/system_internal.c.s
+.PHONY : port/soc/esp32s3/system_internal.c.s
 
 stack_check.obj: stack_check.c.obj
 .PHONY : stack_check.obj
@@ -1045,19 +1069,22 @@ help:
 	@echo "... port/panic_handler.obj"
 	@echo "... port/panic_handler.i"
 	@echo "... port/panic_handler.s"
-	@echo "... port/soc/esp32/cache_err_int.obj"
-	@echo "... port/soc/esp32/cache_err_int.i"
-	@echo "... port/soc/esp32/cache_err_int.s"
-	@echo "... port/soc/esp32/clk.obj"
-	@echo "... port/soc/esp32/clk.i"
-	@echo "... port/soc/esp32/clk.s"
-	@echo "... port/soc/esp32/highint_hdl.obj"
-	@echo "... port/soc/esp32/reset_reason.obj"
-	@echo "... port/soc/esp32/reset_reason.i"
-	@echo "... port/soc/esp32/reset_reason.s"
-	@echo "... port/soc/esp32/system_internal.obj"
-	@echo "... port/soc/esp32/system_internal.i"
-	@echo "... port/soc/esp32/system_internal.s"
+	@echo "... port/soc/esp32s3/apb_backup_dma.obj"
+	@echo "... port/soc/esp32s3/apb_backup_dma.i"
+	@echo "... port/soc/esp32s3/apb_backup_dma.s"
+	@echo "... port/soc/esp32s3/cache_err_int.obj"
+	@echo "... port/soc/esp32s3/cache_err_int.i"
+	@echo "... port/soc/esp32s3/cache_err_int.s"
+	@echo "... port/soc/esp32s3/clk.obj"
+	@echo "... port/soc/esp32s3/clk.i"
+	@echo "... port/soc/esp32s3/clk.s"
+	@echo "... port/soc/esp32s3/highint_hdl.obj"
+	@echo "... port/soc/esp32s3/reset_reason.obj"
+	@echo "... port/soc/esp32s3/reset_reason.i"
+	@echo "... port/soc/esp32s3/reset_reason.s"
+	@echo "... port/soc/esp32s3/system_internal.obj"
+	@echo "... port/soc/esp32s3/system_internal.i"
+	@echo "... port/soc/esp32s3/system_internal.s"
 	@echo "... stack_check.obj"
 	@echo "... stack_check.i"
 	@echo "... stack_check.s"

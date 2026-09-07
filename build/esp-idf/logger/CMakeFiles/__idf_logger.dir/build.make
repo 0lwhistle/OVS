@@ -73,15 +73,15 @@ esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj: esp-idf/logger/CMakeFil
 esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj: ../components/core/logger/logger.c
 esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj: esp-idf/logger/CMakeFiles/__idf_logger.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj -MF CMakeFiles/__idf_logger.dir/logger.c.obj.d -o CMakeFiles/__idf_logger.dir/logger.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.obj -MF CMakeFiles/__idf_logger.dir/logger.c.obj.d -o CMakeFiles/__idf_logger.dir/logger.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c
 
 esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_logger.dir/logger.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c > CMakeFiles/__idf_logger.dir/logger.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c > CMakeFiles/__idf_logger.dir/logger.c.i
 
 esp-idf/logger/CMakeFiles/__idf_logger.dir/logger.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_logger.dir/logger.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c -o CMakeFiles/__idf_logger.dir/logger.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/logger && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.c -o CMakeFiles/__idf_logger.dir/logger.c.s
 
 # Object files for target __idf_logger
 __idf_logger_OBJECTS = \

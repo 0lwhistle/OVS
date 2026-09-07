@@ -73,40 +73,40 @@ esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj: esp-idf/
 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c
 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj -MF CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj -MF CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c
 
 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c > CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c > CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.i
 
 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c -o CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/timer_hal.c -o CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.s
 
-esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/flags.make
-esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32/timer_periph.c
-esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj -MF CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32/timer_periph.c
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/flags.make
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32s3/timer_periph.c
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj -MF CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32s3/timer_periph.c
 
-esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32/timer_periph.c > CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.i
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32s3/timer_periph.c > CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.i
 
-esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32/timer_periph.c -o CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.s
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_timg && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/esp32s3/timer_periph.c -o CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.s
 
 # Object files for target __idf_esp_hal_timg
 __idf_esp_hal_timg_OBJECTS = \
 "CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj" \
-"CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj"
+"CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj"
 
 # External object files for target __idf_esp_hal_timg
 __idf_esp_hal_timg_EXTERNAL_OBJECTS =
 
 esp-idf/esp_hal_timg/libesp_hal_timg.a: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj
-esp-idf/esp_hal_timg/libesp_hal_timg.a: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj
+esp-idf/esp_hal_timg/libesp_hal_timg.a: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj
 esp-idf/esp_hal_timg/libesp_hal_timg.a: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make
 esp-idf/esp_hal_timg/libesp_hal_timg.a: esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libesp_hal_timg.a"

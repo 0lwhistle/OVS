@@ -199,29 +199,29 @@ common/touch_sens_common.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/common/touch_sens_common.c.s
 .PHONY : common/touch_sens_common.c.s
 
-hw_ver1/touch_version_specific.obj: hw_ver1/touch_version_specific.c.obj
-.PHONY : hw_ver1/touch_version_specific.obj
+hw_ver2/touch_version_specific.obj: hw_ver2/touch_version_specific.c.obj
+.PHONY : hw_ver2/touch_version_specific.obj
 
 # target to build an object file
-hw_ver1/touch_version_specific.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.obj
-.PHONY : hw_ver1/touch_version_specific.c.obj
+hw_ver2/touch_version_specific.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.obj
+.PHONY : hw_ver2/touch_version_specific.c.obj
 
-hw_ver1/touch_version_specific.i: hw_ver1/touch_version_specific.c.i
-.PHONY : hw_ver1/touch_version_specific.i
+hw_ver2/touch_version_specific.i: hw_ver2/touch_version_specific.c.i
+.PHONY : hw_ver2/touch_version_specific.i
 
 # target to preprocess a source file
-hw_ver1/touch_version_specific.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.i
-.PHONY : hw_ver1/touch_version_specific.c.i
+hw_ver2/touch_version_specific.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.i
+.PHONY : hw_ver2/touch_version_specific.c.i
 
-hw_ver1/touch_version_specific.s: hw_ver1/touch_version_specific.c.s
-.PHONY : hw_ver1/touch_version_specific.s
+hw_ver2/touch_version_specific.s: hw_ver2/touch_version_specific.c.s
+.PHONY : hw_ver2/touch_version_specific.s
 
 # target to generate assembly for a file
-hw_ver1/touch_version_specific.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver1/touch_version_specific.c.s
-.PHONY : hw_ver1/touch_version_specific.c.s
+hw_ver2/touch_version_specific.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/build.make esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/hw_ver2/touch_version_specific.c.s
+.PHONY : hw_ver2/touch_version_specific.c.s
 
 # Help Target
 help:
@@ -239,9 +239,9 @@ help:
 	@echo "... common/touch_sens_common.obj"
 	@echo "... common/touch_sens_common.i"
 	@echo "... common/touch_sens_common.s"
-	@echo "... hw_ver1/touch_version_specific.obj"
-	@echo "... hw_ver1/touch_version_specific.i"
-	@echo "... hw_ver1/touch_version_specific.s"
+	@echo "... hw_ver2/touch_version_specific.obj"
+	@echo "... hw_ver2/touch_version_specific.i"
+	@echo "... hw_ver2/touch_version_specific.s"
 .PHONY : help
 
 

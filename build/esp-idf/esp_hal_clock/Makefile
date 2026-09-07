@@ -175,29 +175,29 @@ __idf_esp_hal_clock/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build
 .PHONY : __idf_esp_hal_clock/fast
 
-esp32/clk_tree_hal.obj: esp32/clk_tree_hal.c.obj
-.PHONY : esp32/clk_tree_hal.obj
+esp32s3/clk_tree_hal.obj: esp32s3/clk_tree_hal.c.obj
+.PHONY : esp32s3/clk_tree_hal.obj
 
 # target to build an object file
-esp32/clk_tree_hal.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.obj
-.PHONY : esp32/clk_tree_hal.c.obj
+esp32s3/clk_tree_hal.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.obj
+.PHONY : esp32s3/clk_tree_hal.c.obj
 
-esp32/clk_tree_hal.i: esp32/clk_tree_hal.c.i
-.PHONY : esp32/clk_tree_hal.i
+esp32s3/clk_tree_hal.i: esp32s3/clk_tree_hal.c.i
+.PHONY : esp32s3/clk_tree_hal.i
 
 # target to preprocess a source file
-esp32/clk_tree_hal.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.i
-.PHONY : esp32/clk_tree_hal.c.i
+esp32s3/clk_tree_hal.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.i
+.PHONY : esp32s3/clk_tree_hal.c.i
 
-esp32/clk_tree_hal.s: esp32/clk_tree_hal.c.s
-.PHONY : esp32/clk_tree_hal.s
+esp32s3/clk_tree_hal.s: esp32s3/clk_tree_hal.c.s
+.PHONY : esp32s3/clk_tree_hal.s
 
 # target to generate assembly for a file
-esp32/clk_tree_hal.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32/clk_tree_hal.c.s
-.PHONY : esp32/clk_tree_hal.c.s
+esp32s3/clk_tree_hal.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/build.make esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/esp32s3/clk_tree_hal.c.s
+.PHONY : esp32s3/clk_tree_hal.c.s
 
 # Help Target
 help:
@@ -212,9 +212,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_clock"
-	@echo "... esp32/clk_tree_hal.obj"
-	@echo "... esp32/clk_tree_hal.i"
-	@echo "... esp32/clk_tree_hal.s"
+	@echo "... esp32s3/clk_tree_hal.obj"
+	@echo "... esp32s3/clk_tree_hal.i"
+	@echo "... esp32s3/clk_tree_hal.s"
 .PHONY : help
 
 

@@ -175,29 +175,29 @@ __idf_esp_phy/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build
 .PHONY : __idf_esp_phy/fast
 
-esp32/phy_init_data.obj: esp32/phy_init_data.c.obj
-.PHONY : esp32/phy_init_data.obj
+esp32s3/phy_init_data.obj: esp32s3/phy_init_data.c.obj
+.PHONY : esp32s3/phy_init_data.obj
 
 # target to build an object file
-esp32/phy_init_data.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.obj
-.PHONY : esp32/phy_init_data.c.obj
+esp32s3/phy_init_data.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.obj
+.PHONY : esp32s3/phy_init_data.c.obj
 
-esp32/phy_init_data.i: esp32/phy_init_data.c.i
-.PHONY : esp32/phy_init_data.i
+esp32s3/phy_init_data.i: esp32s3/phy_init_data.c.i
+.PHONY : esp32s3/phy_init_data.i
 
 # target to preprocess a source file
-esp32/phy_init_data.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.i
-.PHONY : esp32/phy_init_data.c.i
+esp32s3/phy_init_data.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.i
+.PHONY : esp32s3/phy_init_data.c.i
 
-esp32/phy_init_data.s: esp32/phy_init_data.c.s
-.PHONY : esp32/phy_init_data.s
+esp32s3/phy_init_data.s: esp32s3/phy_init_data.c.s
+.PHONY : esp32s3/phy_init_data.s
 
 # target to generate assembly for a file
-esp32/phy_init_data.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32/phy_init_data.c.s
-.PHONY : esp32/phy_init_data.c.s
+esp32s3/phy_init_data.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/build.make esp-idf/esp_phy/CMakeFiles/__idf_esp_phy.dir/esp32s3/phy_init_data.c.s
+.PHONY : esp32s3/phy_init_data.c.s
 
 src/btbb_init.obj: src/btbb_init.c.obj
 .PHONY : src/btbb_init.obj
@@ -332,9 +332,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_phy"
-	@echo "... esp32/phy_init_data.obj"
-	@echo "... esp32/phy_init_data.i"
-	@echo "... esp32/phy_init_data.s"
+	@echo "... esp32s3/phy_init_data.obj"
+	@echo "... esp32s3/phy_init_data.i"
+	@echo "... esp32s3/phy_init_data.s"
 	@echo "... src/btbb_init.obj"
 	@echo "... src/btbb_init.i"
 	@echo "... src/btbb_init.s"

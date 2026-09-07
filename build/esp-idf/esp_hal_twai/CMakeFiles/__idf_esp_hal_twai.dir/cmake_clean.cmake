@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_twai.dir/esp32/twai_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_twai.dir/esp32s3/twai_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj"
   "CMakeFiles/__idf_esp_hal_twai.dir/twai_hal_v1.c.obj.d"
   "libesp_hal_twai.a"

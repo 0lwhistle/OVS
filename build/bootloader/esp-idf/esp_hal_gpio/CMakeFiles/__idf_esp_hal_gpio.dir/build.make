@@ -73,91 +73,107 @@ esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj: esp-idf/e
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.i
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/gpio_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.s
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.i
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/rtc_io_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.s
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/rtc_io_periph.c
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/rtc_io_periph.c
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/rtc_io_periph.c
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/rtc_io_periph.c
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/rtc_io_periph.c > CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.i
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/rtc_io_periph.c > CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.i
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/rtc_io_periph.c -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.s
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/rtc_io_periph.c -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.s
+
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/dedic_gpio_periph.c
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/dedic_gpio_periph.c
+
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/dedic_gpio_periph.c > CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.i
+
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/dedic_gpio_periph.c -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.s
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c > CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.i
 
 esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/sdm_hal.c -o CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.s
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/sdm_periph.c
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/sdm_periph.c
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/flags.make
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/sdm_periph.c
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj -MF CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj.d -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/sdm_periph.c
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/sdm_periph.c > CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.i
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/sdm_periph.c > CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.i
 
-esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/sdm_periph.c -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.s
+esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/sdm_periph.c -o CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.s
 
 # Object files for target __idf_esp_hal_gpio
 __idf_esp_hal_gpio_OBJECTS = \
 "CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj" \
 "CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj" \
-"CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj" \
+"CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj" \
+"CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj" \
 "CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj" \
-"CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj"
+"CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj"
 
 # External object files for target __idf_esp_hal_gpio
 __idf_esp_hal_gpio_EXTERNAL_OBJECTS =
 
 esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/gpio_hal.c.obj
 esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/rtc_io_hal.c.obj
-esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/rtc_io_periph.c.obj
+esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/rtc_io_periph.c.obj
+esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/dedic_gpio_periph.c.obj
 esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/sdm_hal.c.obj
-esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32/sdm_periph.c.obj
+esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/esp32s3/sdm_periph.c.obj
 esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/build.make
 esp-idf/esp_hal_gpio/libesp_hal_gpio.a: esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libesp_hal_gpio.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library libesp_hal_gpio.a"
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_hal_gpio.dir/cmake_clean_target.cmake
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_hal_gpio.dir/link.txt --verbose=$(VERBOSE)
 

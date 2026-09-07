@@ -69,34 +69,36 @@ include CMakeFiles/bootloader.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bootloader.elf.dir/flags.make
 
-CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/bootloader.elf.dir/flags.make
-CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj: project_elf_src_esp32.c
-CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj: CMakeFiles/bootloader.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj -MF CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj.d -o CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32.c
+CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/bootloader.elf.dir/flags.make
+CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj: project_elf_src_esp32s3.c
+CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj: CMakeFiles/bootloader.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj -MF CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj.d -o CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32s3.c
 
-CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.i"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32.c > CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.i
+CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.i"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32s3.c > CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.i
 
-CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.s"
-	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32.c -o CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.s
+CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.s"
+	/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/project_elf_src_esp32s3.c -o CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.s
 
 # Object files for target bootloader.elf
 bootloader_elf_OBJECTS = \
-"CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj"
+"CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj"
 
 # External object files for target bootloader.elf
 bootloader_elf_EXTERNAL_OBJECTS =
 
-bootloader.elf: CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj
+bootloader.elf: CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
 bootloader.elf: CMakeFiles/bootloader.elf.dir/build.make
 bootloader.elf: esp-idf/xtensa/libxtensa.a
 bootloader.elf: esp-idf/soc/libsoc.a
 bootloader.elf: esp-idf/hal/libhal.a
 bootloader.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+bootloader.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 bootloader.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
+bootloader.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 bootloader.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 bootloader.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 bootloader.elf: esp-idf/spi_flash/libspi_flash.a
@@ -105,7 +107,6 @@ bootloader.elf: esp-idf/micro-ecc/libmicro-ecc.a
 bootloader.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 bootloader.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 bootloader.elf: esp-idf/esp_hal_uart/libesp_hal_uart.a
-bootloader.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 bootloader.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 bootloader.elf: esp-idf/esp_hal_security/libesp_hal_security.a
 bootloader.elf: esp-idf/esp_security/libesp_security.a
@@ -121,7 +122,9 @@ bootloader.elf: esp-idf/xtensa/libxtensa.a
 bootloader.elf: esp-idf/soc/libsoc.a
 bootloader.elf: esp-idf/hal/libhal.a
 bootloader.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+bootloader.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 bootloader.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
+bootloader.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 bootloader.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 bootloader.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 bootloader.elf: esp-idf/spi_flash/libspi_flash.a
@@ -130,7 +133,6 @@ bootloader.elf: esp-idf/micro-ecc/libmicro-ecc.a
 bootloader.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 bootloader.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 bootloader.elf: esp-idf/esp_hal_uart/libesp_hal_uart.a
-bootloader.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 bootloader.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 bootloader.elf: esp-idf/esp_hal_security/libesp_hal_security.a
 bootloader.elf: esp-idf/esp_security/libesp_security.a
@@ -141,12 +143,14 @@ bootloader.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 bootloader.elf: esp-idf/esp_common/libesp_common.a
 bootloader.elf: esp-idf/esp_rom/libesp_rom.a
 bootloader.elf: esp-idf/log/liblog.a
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 bootloader.elf: esp-idf/xtensa/libxtensa.a
 bootloader.elf: esp-idf/soc/libsoc.a
 bootloader.elf: esp-idf/hal/libhal.a
 bootloader.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+bootloader.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 bootloader.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
+bootloader.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 bootloader.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 bootloader.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 bootloader.elf: esp-idf/spi_flash/libspi_flash.a
@@ -155,7 +159,6 @@ bootloader.elf: esp-idf/micro-ecc/libmicro-ecc.a
 bootloader.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 bootloader.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 bootloader.elf: esp-idf/esp_hal_uart/libesp_hal_uart.a
-bootloader.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 bootloader.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 bootloader.elf: esp-idf/esp_hal_security/libesp_hal_security.a
 bootloader.elf: esp-idf/esp_security/libesp_security.a
@@ -166,12 +169,14 @@ bootloader.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 bootloader.elf: esp-idf/esp_common/libesp_common.a
 bootloader.elf: esp-idf/esp_rom/libesp_rom.a
 bootloader.elf: esp-idf/log/liblog.a
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 bootloader.elf: esp-idf/xtensa/libxtensa.a
 bootloader.elf: esp-idf/soc/libsoc.a
 bootloader.elf: esp-idf/hal/libhal.a
 bootloader.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+bootloader.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 bootloader.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
+bootloader.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 bootloader.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 bootloader.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 bootloader.elf: esp-idf/spi_flash/libspi_flash.a
@@ -180,7 +185,6 @@ bootloader.elf: esp-idf/micro-ecc/libmicro-ecc.a
 bootloader.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 bootloader.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 bootloader.elf: esp-idf/esp_hal_uart/libesp_hal_uart.a
-bootloader.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 bootloader.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 bootloader.elf: esp-idf/esp_hal_security/libesp_hal_security.a
 bootloader.elf: esp-idf/esp_security/libesp_security.a
@@ -191,12 +195,14 @@ bootloader.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 bootloader.elf: esp-idf/esp_common/libesp_common.a
 bootloader.elf: esp-idf/esp_rom/libesp_rom.a
 bootloader.elf: esp-idf/log/liblog.a
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
 bootloader.elf: esp-idf/xtensa/libxtensa.a
 bootloader.elf: esp-idf/soc/libsoc.a
 bootloader.elf: esp-idf/hal/libhal.a
 bootloader.elf: esp-idf/esp_hal_gpio/libesp_hal_gpio.a
+bootloader.elf: esp-idf/esp_hal_usb/libesp_hal_usb.a
 bootloader.elf: esp-idf/esp_hal_pmu/libesp_hal_pmu.a
+bootloader.elf: esp-idf/esp_hal_dma/libesp_hal_dma.a
 bootloader.elf: esp-idf/esp_hal_gpspi/libesp_hal_gpspi.a
 bootloader.elf: esp-idf/esp_hal_clock/libesp_hal_clock.a
 bootloader.elf: esp-idf/spi_flash/libspi_flash.a
@@ -205,7 +211,6 @@ bootloader.elf: esp-idf/micro-ecc/libmicro-ecc.a
 bootloader.elf: esp-idf/esp_hal_timg/libesp_hal_timg.a
 bootloader.elf: esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 bootloader.elf: esp-idf/esp_hal_uart/libesp_hal_uart.a
-bootloader.elf: esp-idf/esp_hal_i2s/libesp_hal_i2s.a
 bootloader.elf: esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 bootloader.elf: esp-idf/esp_hal_security/libesp_hal_security.a
 bootloader.elf: esp-idf/esp_security/libesp_security.a
@@ -216,12 +221,15 @@ bootloader.elf: esp-idf/esp_hw_support/libesp_hw_support.a
 bootloader.elf: esp-idf/esp_common/libesp_common.a
 bootloader.elf: esp-idf/esp_rom/libesp_rom.a
 bootloader.elf: esp-idf/log/liblog.a
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/libxt_hal.a
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/ld/esp32.peripherals.ld
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.ld
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.api.ld
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
-bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/libxt_hal.a
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_wdt/esp32s3/rom.wdt.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+bootloader.elf: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
 bootloader.elf: CMakeFiles/bootloader.elf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable bootloader.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bootloader.elf.dir/link.txt --verbose=$(VERBOSE)

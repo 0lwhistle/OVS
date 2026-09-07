@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_hal_security.dir/aes_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_security.dir/aes_hal.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.obj"
+  "CMakeFiles/__idf_esp_hal_security.dir/ds_hal.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.obj"
+  "CMakeFiles/__idf_esp_hal_security.dir/hmac_hal.c.obj.d"
   "CMakeFiles/__idf_esp_hal_security.dir/mpi_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_security.dir/mpi_hal.c.obj.d"
   "CMakeFiles/__idf_esp_hal_security.dir/mpu_hal.c.obj"

@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_sd.dir/esp32/sdio_slave_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_sd.dir/esp32/sdio_slave_periph.c.obj.d"
-  "CMakeFiles/__idf_esp_hal_sd.dir/esp32/sdmmc_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_sd.dir/esp32/sdmmc_periph.c.obj.d"
-  "CMakeFiles/__idf_esp_hal_sd.dir/sdio_slave_hal.c.obj"
-  "CMakeFiles/__idf_esp_hal_sd.dir/sdio_slave_hal.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_sd.dir/esp32s3/sdmmc_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_sd.dir/esp32s3/sdmmc_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_sd.dir/sdmmc_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_sd.dir/sdmmc_hal.c.obj.d"
   "libesp_hal_sd.a"

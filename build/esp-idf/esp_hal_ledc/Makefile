@@ -175,29 +175,29 @@ __idf_esp_hal_ledc/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build
 .PHONY : __idf_esp_hal_ledc/fast
 
-esp32/ledc_periph.obj: esp32/ledc_periph.c.obj
-.PHONY : esp32/ledc_periph.obj
+esp32s3/ledc_periph.obj: esp32s3/ledc_periph.c.obj
+.PHONY : esp32s3/ledc_periph.obj
 
 # target to build an object file
-esp32/ledc_periph.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32/ledc_periph.c.obj
-.PHONY : esp32/ledc_periph.c.obj
+esp32s3/ledc_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32s3/ledc_periph.c.obj
+.PHONY : esp32s3/ledc_periph.c.obj
 
-esp32/ledc_periph.i: esp32/ledc_periph.c.i
-.PHONY : esp32/ledc_periph.i
+esp32s3/ledc_periph.i: esp32s3/ledc_periph.c.i
+.PHONY : esp32s3/ledc_periph.i
 
 # target to preprocess a source file
-esp32/ledc_periph.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32/ledc_periph.c.i
-.PHONY : esp32/ledc_periph.c.i
+esp32s3/ledc_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32s3/ledc_periph.c.i
+.PHONY : esp32s3/ledc_periph.c.i
 
-esp32/ledc_periph.s: esp32/ledc_periph.c.s
-.PHONY : esp32/ledc_periph.s
+esp32s3/ledc_periph.s: esp32s3/ledc_periph.c.s
+.PHONY : esp32s3/ledc_periph.s
 
 # target to generate assembly for a file
-esp32/ledc_periph.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32/ledc_periph.c.s
-.PHONY : esp32/ledc_periph.c.s
+esp32s3/ledc_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/build.make esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/esp32s3/ledc_periph.c.s
+.PHONY : esp32s3/ledc_periph.c.s
 
 ledc_hal.obj: ledc_hal.c.obj
 .PHONY : ledc_hal.obj
@@ -260,9 +260,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_ledc"
-	@echo "... esp32/ledc_periph.obj"
-	@echo "... esp32/ledc_periph.i"
-	@echo "... esp32/ledc_periph.s"
+	@echo "... esp32s3/ledc_periph.obj"
+	@echo "... esp32s3/ledc_periph.i"
+	@echo "... esp32s3/ledc_periph.s"
 	@echo "... ledc_hal.obj"
 	@echo "... ledc_hal.i"
 	@echo "... ledc_hal.s"
