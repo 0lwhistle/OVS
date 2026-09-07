@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
-#
-# 烧录脚本：将固件烧录到 ESP32-S3
-#
-# 用法: bash ./scripts/burn.sh [串口]
-#   串口默认: /dev/ttyACM0
-#
 
 # 确保使用 bash 执行
 if [ -z "$BASH_VERSION" ]; then
@@ -51,5 +44,4 @@ echo ""
 echo "  Port: $SERIAL_PORT"
 echo ""
 
-idf.py -b 921600 -p "$SERIAL_PORT" flash
-idf.py -p "$SERIAL_PORT" flash 
+idf.py -p "$SERIAL_PORT" monitor
