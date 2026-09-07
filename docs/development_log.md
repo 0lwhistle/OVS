@@ -151,3 +151,112 @@
 - **版本控制**：✅ 已同步到GitHub
 
 ---
+
+## 2026-09-07 - VFS模块开发与调试
+
+### 任务目标
+完成VFS（虚拟文件系统）模块的开发，实现LittleFS文件系统的挂载和管理功能。
+
+### 实现内容
+1. **创建VFS模块** (`components/core/ovs_vfs/`)
+   - `vfs.c`: VFS管理器核心实现
+   - `vfs_block_dev.c`: 块设备注册表管理
+   - `vfs_littlefs_adapter.c`: LittleFS适配层
+   - `include/ovs_vfs.h`: 公共API接口
+   - `include/ovs_vfs_block_dev.h`: 块设备回调接口
+
+2. **核心功能**
+   - 块设备注册和管理
+   - LittleFS文件系统挂载
+   - 路径路由和挂载点管理
+   - 设备树配置自动挂载
+   - 文件操作测试和性能测试
+
+3. **集成模块**
+   - W25Q128外部Flash驱动
+   - 内部Flash驱动
+   - 设备树配置文件
+
+### 调试过程
+#### 问题1：分区表限制错误
+**错误信息**：
+```
+E (1442) esp_littlefs: No more free partitions available.
+E (1442) esp_littlefs: max mounted partitions reached
+```
+
+**原因分析**：
+- ESP-IDF的LittleFS组件内部维护了一个静态分区表
+- 每次调用`esp_vfs_littlefs_register()`都会占用一个分区槽位
+- 卸载后重新挂载时，分区槽位没有被正确释放
+
+**解决方案**：
+1. 检查LittleFS组件的源码，了解分区管理机制
+2. 确保正确调用`esp_vfs_littlefs_unregister()`释放分区
+3. 优化挂载/卸载流程，避免重复注册
+
+#### 问题2：内存不足错误
+**错误信息**：
+```
+E (2236) esp_littlefs: Failed to register Littlefs to "/audio"
+[VFS_LFS]: LittleFS mount failed for '/audio': ESP_ERR_NO_MEM
+```
+
+**原因分析**：
+- LittleFS挂载需要分配内存用于缓存和元数据
+- ESP32-S3的内部SRAM有限（约512KB）
+- 多个LittleFS实例同时挂载时内存不足
+
+**解决方案**：
+1. **启用PSRAM**：在`sdkconfig`中启用PSRAM支持
+   ```diff
+   +CONFIG_SPIRAM=y
+   +CONFIG_SPIRAM_MODE_OCT=y
+   +CONFIG_SPIRAM_SPEED_40M=y
+   ```
+2. **优化内存使用**：减少不必要的内存分配
+3. **调整LittleFS参数**：优化缓存大小
+
+### 测试结果
+#### 功能测试
+- ✅ VFS初始化成功
+- ✅ 块设备注册成功（W25Q128、内部Flash）
+- ✅ 3个挂载点全部挂载成功：
+  - `/audio` (W25Q128, 8MB)
+  - `/font` (W25Q128, 8MB)
+  - `/config` (内部Flash, 9MB)
+- ✅ 文件读写测试通过
+- ✅ 路径匹配测试通过
+- ✅ 卸载和重新挂载测试通过
+
+#### 性能测试
+- **写入性能**：16.51 KB/s (4KB数据)
+- **读取性能**：1097.69 KB/s (4KB数据)
+- **挂载时间**：约2秒（包含格式化）
+
+### 技术成果
+1. **模块化设计**：VFS模块完全解耦，支持多种存储设备
+2. **设备树集成**：通过JSON配置自动挂载文件系统
+3. **错误处理**：完善的错误处理和日志记录
+4. **性能优化**：合理的缓存策略和内存管理
+
+### 遵循的规范
+- ✅ 使用Logger记录关键操作（LOGI/LOGW/LOGE/LOGD）
+- ✅ 代码可移植性设计（标准类型、依赖注入）
+- ✅ 错误处理使用goto cleanup模式
+- ✅ 开发日志记录进度
+- ✅ 每次功能开发完成都上传GitHub
+
+### 下一步计划
+1. **功能扩展**：添加FAT文件系统支持
+2. **性能优化**：优化缓存策略，提高读写性能
+3. **可靠性测试**：进行长时间运行和断电恢复测试
+4. **文档完善**：更新API文档和使用示例
+
+### 项目状态
+- **编译状态**：✅ 成功
+- **功能完整性**：✅ 完整
+- **性能表现**：✅ 良好
+- **代码质量**：✅ 良好
+- **版本控制**：✅ 已同步到GitHub
+
