@@ -187,19 +187,19 @@ static st7789_err_t st7789_init_gpio(void) {
     int32_t dc_pin, rst_pin, bl_pin;
     
     err = DTREE_INT("spi.lcd_display", "dc_pin", &dc_pin);
-    if (DTREE_CHECK_ERROR("Read dc_pin", err)) {
+    DTREE_CHECK_ERROR("Read dc_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
     s_dc_pin = (int)dc_pin;
     
     err = DTREE_INT("spi.lcd_display", "rst_pin", &rst_pin);
-    if (DTREE_CHECK_ERROR("Read rst_pin", err)) {
+    DTREE_CHECK_ERROR("Read rst_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
     s_rst_pin = (int)rst_pin;
     
     err = DTREE_INT("spi.lcd_display", "bl_pin", &bl_pin);
-    if (DTREE_CHECK_ERROR("Read bl_pin", err)) {
+    DTREE_CHECK_ERROR("Read bl_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
     s_bl_pin = (int)bl_pin;
@@ -274,8 +274,14 @@ st7789_err_t st7789_init(void) {
     int32_t cs_pin;
     DTREE_INT("spi.lcd_display", "cs_pin", &cs_pin);
     
-    spi_err = spi_drv_add_device(s_spi_handle, (int)cs_pin, 
-                                  (int)(spi_freq * 1000000), 0, &s_spi_dev);
+    spi_dev_config_t dev_config = {
+        .cs_pin = (int)cs_pin,
+        .clock_speed_hz = (int)(spi_freq * 1000000),
+        .mode = 0,
+        .xfer_mode = SPI_XFER_MODE_DMA_SYNC,  // LCD使用DMA，帧缓冲大
+        .max_transfer_sz = 240 * 280 * 2 + 1024,  // 一帧 + 余量
+    };
+    spi_err = spi_drv_add_device(s_spi_handle, &dev_config, &s_spi_dev);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to add SPI device: %d", spi_err);
         spi_drv_deinit(s_spi_handle);

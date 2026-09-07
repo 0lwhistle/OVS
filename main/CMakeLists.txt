@@ -25,6 +25,10 @@ idf_component_register(
         lora
         w25q128
         holder
+        ovs_vfs
+        internal_flash
+        esp_littlefs
+        esp_blockdev
         nvs_flash
         esp_wifi
         esp_event

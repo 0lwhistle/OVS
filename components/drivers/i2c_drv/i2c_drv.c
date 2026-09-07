@@ -104,27 +104,27 @@ i2c_drv_err_t i2c_drv_load_config(i2c_drv_config_t* config) {
     dtree_err_t err;
     
     err = DTREE_INT("i2c.bus", "sda_pin", &config->sda_pin);
-    if (DTREE_CHECK_ERROR("Read sda_pin", err)) {
+    DTREE_CHECK_ERROR("Read sda_pin", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2c.bus", "scl_pin", &config->scl_pin);
-    if (DTREE_CHECK_ERROR("Read scl_pin", err)) {
+    DTREE_CHECK_ERROR("Read scl_pin", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2c.bus", "freq_hz", &config->freq_hz);
-    if (DTREE_CHECK_ERROR("Read freq_hz", err)) {
+    DTREE_CHECK_ERROR("Read freq_hz", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     
     err = DTREE_BOOL("i2c.bus", "pullup", &config->pullup);
-    if (DTREE_CHECK_ERROR("Read pullup", err)) {
+    DTREE_CHECK_ERROR("Read pullup", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2c.bus", "pullup_resistor_ohm", &config->pullup_resistor_ohm);
-    if (DTREE_CHECK_ERROR("Read pullup_resistor_ohm", err)) {
+    DTREE_CHECK_ERROR("Read pullup_resistor_ohm", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     

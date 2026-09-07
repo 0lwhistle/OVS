@@ -71,33 +71,33 @@ uart_drv_err_t uart_drv_load_config(const char* path, uart_drv_config_t* config)
     dtree_err_t err;
     
     err = DTREE_INT(path, "tx_pin", &config->tx_pin);
-    if (DTREE_CHECK_ERROR("Read tx_pin", err)) {
+    DTREE_CHECK_ERROR("Read tx_pin", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT(path, "rx_pin", &config->rx_pin);
-    if (DTREE_CHECK_ERROR("Read rx_pin", err)) {
+    DTREE_CHECK_ERROR("Read rx_pin", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT(path, "baud_rate", &config->baud_rate);
-    if (DTREE_CHECK_ERROR("Read baud_rate", err)) {
+    DTREE_CHECK_ERROR("Read baud_rate", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT(path, "data_bits", &config->data_bits);
-    if (DTREE_CHECK_ERROR("Read data_bits", err)) {
+    DTREE_CHECK_ERROR("Read data_bits", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT(path, "stop_bits", &config->stop_bits);
-    if (DTREE_CHECK_ERROR("Read stop_bits", err)) {
+    DTREE_CHECK_ERROR("Read stop_bits", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
     
     config->parity = NULL;
     err = DTREE_STR(path, "parity", &config->parity);
-    if (DTREE_CHECK_ERROR("Read parity", err)) {
+    DTREE_CHECK_ERROR("Read parity", err); if (err != DTREE_OK) {
         /* parity是可选的，默认为"none" */
         config->parity = "none";
     }

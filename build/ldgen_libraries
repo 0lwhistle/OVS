@@ -241,8 +241,13 @@
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/cst816s/libcst816s.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/lora/liblora.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/uart_drv/libuart_drv.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_littlefs/libesp_littlefs.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ovs_vfs/libovs_vfs.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_littlefs/libesp_littlefs.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/w25q128/libw25q128.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ovs_vfs/libovs_vfs.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/holder/libholder.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/internal_flash/libinternal_flash.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/main/libmain.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/eventbus_api/libeventbus_api.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/led/libled.a
@@ -254,4 +259,5 @@
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/lora/liblora.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/w25q128/libw25q128.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/holder/libholder.a
+/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/internal_flash/libinternal_flash.a
 /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/lvgl/liblvgl.a

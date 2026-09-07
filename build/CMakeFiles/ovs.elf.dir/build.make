@@ -220,8 +220,11 @@ ovs.elf: esp-idf/st7789/libst7789.a
 ovs.elf: esp-idf/aht30/libaht30.a
 ovs.elf: esp-idf/cst816s/libcst816s.a
 ovs.elf: esp-idf/lora/liblora.a
+ovs.elf: esp-idf/esp_littlefs/libesp_littlefs.a
+ovs.elf: esp-idf/ovs_vfs/libovs_vfs.a
 ovs.elf: esp-idf/w25q128/libw25q128.a
 ovs.elf: esp-idf/holder/libholder.a
+ovs.elf: esp-idf/internal_flash/libinternal_flash.a
 ovs.elf: esp-idf/main/libmain.a
 ovs.elf: esp-idf/lvgl/liblvgl.a
 ovs.elf: esp-idf/unity/libunity.a
@@ -239,8 +242,6 @@ ovs.elf: esp-idf/protobuf-c/libprotobuf-c.a
 ovs.elf: esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 ovs.elf: esp-idf/esp_driver_sd_intf/libesp_driver_sd_intf.a
 ovs.elf: esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
-ovs.elf: esp-idf/sdmmc/libsdmmc.a
-ovs.elf: esp-idf/esp_hal_sd/libesp_hal_sd.a
 ovs.elf: esp-idf/wear_levelling/libwear_levelling.a
 ovs.elf: esp-idf/eventbus_api/libeventbus_api.a
 ovs.elf: esp-idf/led/libled.a
@@ -266,6 +267,11 @@ ovs.elf: esp-idf/event_bus/libevent_bus.a
 ovs.elf: esp-idf/spi_drv/libspi_drv.a
 ovs.elf: esp-idf/esp_driver_spi/libesp_driver_spi.a
 ovs.elf: esp-idf/holder/libholder.a
+ovs.elf: esp-idf/internal_flash/libinternal_flash.a
+ovs.elf: esp-idf/ovs_vfs/libovs_vfs.a
+ovs.elf: esp-idf/esp_littlefs/libesp_littlefs.a
+ovs.elf: esp-idf/sdmmc/libsdmmc.a
+ovs.elf: esp-idf/esp_hal_sd/libesp_hal_sd.a
 ovs.elf: esp-idf/dtbs/libdtbs.a
 ovs.elf: esp-idf/spiffs/libspiffs.a
 ovs.elf: esp-idf/logger/liblogger.a

@@ -375,8 +375,13 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/i2c_drv/libi2c_drv.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/cst816s/libcst816s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/lora/liblora.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/uart_drv/libuart_drv.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_littlefs/libesp_littlefs.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/ovs_vfs/libovs_vfs.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp_littlefs/libesp_littlefs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/w25q128/libw25q128.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/ovs_vfs/libovs_vfs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/holder/libholder.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/internal_flash/libinternal_flash.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/main/libmain.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/eventbus_api/libeventbus_api.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/led/libled.a
@@ -388,6 +393,7 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/cst816s/libcst816s.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/lora/liblora.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/w25q128/libw25q128.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/holder/libholder.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/internal_flash/libinternal_flash.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/lvgl/liblvgl.a
 esp-idf/esp_system/ld/sections.ld: ../sdkconfig
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating esp-idf/esp_system/ld/sections.ld"

@@ -83,19 +83,19 @@ static lora_err_t lora_init_gpio(void) {
     int32_t m0_pin, m1_pin, aux_pin;
     
     err = DTREE_INT("lora.control", "m0_pin", &m0_pin);
-    if (DTREE_CHECK_ERROR("Read m0_pin", err)) {
+    DTREE_CHECK_ERROR("Read m0_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
     s_m0_pin = (int)m0_pin;
     
     err = DTREE_INT("lora.control", "m1_pin", &m1_pin);
-    if (DTREE_CHECK_ERROR("Read m1_pin", err)) {
+    DTREE_CHECK_ERROR("Read m1_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
     s_m1_pin = (int)m1_pin;
     
     err = DTREE_INT("lora.control", "aux_pin", &aux_pin);
-    if (DTREE_CHECK_ERROR("Read aux_pin", err)) {
+    DTREE_CHECK_ERROR("Read aux_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
     s_aux_pin = (int)aux_pin;

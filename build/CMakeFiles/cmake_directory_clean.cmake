@@ -1,9 +1,5 @@
 file(REMOVE_RECURSE
-  "config/sdkconfig.h"
-  "config/sdkconfig.cmake"
-  "bootloader/bootloader.elf"
-  "bootloader/bootloader.bin"
-  "bootloader/bootloader.map"
+  "littlefs_py_venv"
   "ovs.map"
   "project_elf_src_esp32s3.c"
   "ldgen_libraries.in"
@@ -13,4 +9,5 @@ file(REMOVE_RECURSE
   "flash_project_args"
   "flasher_args.json.in"
   "flasher_args.json"
+  "spiffs.bin"
 )

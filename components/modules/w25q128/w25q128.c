@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h>
+#include <inttypes.h>
 
 static const char* TAG = "[W25Q128]";
 
@@ -213,12 +214,12 @@ w25q128_err_t w25q128_init(void) {
     dtree_err_t dt_err;
     dt_err = DTREE_INT("spi.flash", "cs_pin", &cs_pin);
     if (dt_err != DTREE_OK) {
-        LOGW(TAG, "Failed to read cs_pin from dtree, using default: %d", cs_pin);
+        LOGW(TAG, "Failed to read cs_pin from dtree, using default: %" PRId32, cs_pin);
     }
     
     dt_err = DTREE_INT("spi.flash", "spi_freq_mhz", &flash_freq);
     if (dt_err != DTREE_OK) {
-        LOGW(TAG, "Failed to read spi_freq_mhz from dtree, using default: %d", flash_freq);
+        LOGW(TAG, "Failed to read spi_freq_mhz from dtree, using default: %" PRId32, flash_freq);
     }
     
     LOGI(TAG, "Device tree config: CS=GPIO%d, Freq=%d MHz", (int)cs_pin, (int)flash_freq);
@@ -233,11 +234,14 @@ w25q128_err_t w25q128_init(void) {
     }
     
     /* 添加Flash设备到SPI总线 */
-    spi_err = spi_drv_add_device(s_spi_handle, 
-                                 (int)cs_pin, 
-                                 (int)(flash_freq * 1000000), 
-                                 spi_config.mode, 
-                                 &s_spi_dev);
+    spi_dev_config_t dev_config = {
+        .cs_pin = (int)cs_pin,
+        .clock_speed_hz = (int)(flash_freq * 1000000),
+        .mode = spi_config.mode,
+        .xfer_mode = SPI_XFER_MODE_POLLING,  // Flash使用轮询，小数据量
+        .max_transfer_sz = 4096,
+    };
+    spi_err = spi_drv_add_device(s_spi_handle, &dev_config, &s_spi_dev);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to add SPI device: %d", spi_err);
         return W25Q128_ERR_SPI;
@@ -308,9 +312,12 @@ w25q128_err_t w25q128_deinit(void) {
     
     /* 反初始化SPI */
     if (s_spi_handle) {
+        if (s_spi_dev) {
+            spi_drv_remove_device(s_spi_handle, s_spi_dev);
+            s_spi_dev = NULL;
+        }
         spi_drv_deinit(s_spi_handle);
         s_spi_handle = NULL;
-        s_spi_dev = NULL;
     }
     
     s_initialized = false;

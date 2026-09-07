@@ -824,12 +824,27 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_littlefs/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ovs_vfs/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/w25q128/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/holder/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/internal_flash/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

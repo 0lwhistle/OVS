@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 #
-# 构建脚本：编译 Vue 前端 + 打包 Web 资源 + 编译固件 + 签名
+# 构建脚本：编译 Vue 前端 + 打包 Web 资源 + 编译固件 + 签名 + 烧录
 #
-# 用法: bash ./scripts/mybuild.sh [--clean]
+# 用法: bash ./scripts/mybuild.sh [--clean] [串口]
+#   --clean    清理 build 目录（默认开启）
+#   串口       烧录串口，默认 /dev/ttyACM0
+#
+# 示例:
+#   bash ./scripts/mybuild.sh
+#   bash ./scripts/mybuild.sh /dev/ttyUSB0
+#   bash ./scripts/mybuild.sh --clean /dev/ttyUSB0
 #
 
 # 确保使用 bash 执行
@@ -25,11 +32,15 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
 # 解析参数
-CLEAN_BUILD=false
+CLEAN_BUILD=true
+SERIAL_PORT=""
 for arg in "$@"; do
     case $arg in
         --clean)
             CLEAN_BUILD=true
+            ;;
+        /dev/*)
+            SERIAL_PORT="$arg"
             ;;
     esac
 done
@@ -103,12 +114,22 @@ echo -e "${YELLOW}[4/4] Signing firmware for OTA...${NC}"
 python3 "$PROJECT_ROOT/scripts/sign_firmware.py" "$PROJECT_ROOT/build/ovs.bin"
 echo ""
 
+# 5. 自动烧录
+echo -e "${YELLOW}[5/5] Flashing firmware...${NC}"
+FLASH_PORT="${SERIAL_PORT:-/dev/ttyACM0}"
+echo "  Port: $FLASH_PORT"
+echo ""
+
+# 烧录固件（包括 SPIFFS）
+idf.py -p "$FLASH_PORT" flash
+
+echo ""
 echo -e "${CYAN}========================================${NC}"
-echo -e "${GREEN}  Build complete!${NC}"
+echo -e "${GREEN}  Build & Flash complete!${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo ""
 echo "Firmware: build/ovs.bin"
 echo "Signed:   build/ovs_signed.bin"
 echo ""
-echo "Flash:    ./scripts/burn.sh"
+echo "Monitor:  idf.py -p $FLASH_PORT monitor"
 echo "OTA:      ./scripts/ota_update.sh <esp32-ip>"

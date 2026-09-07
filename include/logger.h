@@ -18,81 +18,57 @@
 extern "C" {
 #endif
 
-/* ========== 日志宏定义 ========== */
+/* ========== 日志宏定义（语句版） ========== */
 
 /**
- * @brief 信息级别日志 (绿色) - 语句版
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 信息级别日志 (绿色)
  */
 #define LOGI(tag, fmt, ...) \
     do { if (DEBUG) printf("\033[32m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 警告级别日志 (黄色) - 语句版
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 警告级别日志 (黄色)
  */
 #define LOGW(tag, fmt, ...) \
     do { if (DEBUG) printf("\033[33m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 错误级别日志 (红色) - 语句版
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 错误级别日志 (红色)
  */
 #define LOGE(tag, fmt, ...) \
     do { if (DEBUG) printf("\033[31m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 调试级别日志 (蓝色) - 语句版
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 调试级别日志 (蓝色)
  */
 #define LOGD(tag, fmt, ...) \
     do { printf("\033[34m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
-/* ========== 表达式版日志宏（用于三元运算符等表达式上下文） ========== */
+/* ========== 表达式版日志宏（用于三元运算符等） ========== */
 
 /**
- * @brief 信息级别日志 - 表达式版，返回1
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 信息级别日志 - 表达式版
  */
 #define LOGI_EXPR(tag, fmt, ...) \
-    (printf("\033[32m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__), 1)
+    do { if (DEBUG) printf("\033[32m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 警告级别日志 - 表达式版，返回1
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 警告级别日志 - 表达式版
  */
 #define LOGW_EXPR(tag, fmt, ...) \
-    (printf("\033[33m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__), 1)
+    do { if (DEBUG) printf("\033[33m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 错误级别日志 - 表达式版，返回1
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 错误级别日志 - 表达式版
  */
 #define LOGE_EXPR(tag, fmt, ...) \
-    (printf("\033[31m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__), 1)
+    do { if (DEBUG) printf("\033[31m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 /**
- * @brief 调试级别日志 - 表达式版，返回1
- * @param tag 日志标签
- * @param fmt 格式化字符串
- * @param ... 可变参数
+ * @brief 调试级别日志 - 表达式版
  */
 #define LOGD_EXPR(tag, fmt, ...) \
-    (printf("\033[34m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__), 1)
+    do { printf("\033[34m%s: " fmt "\033[0m\n", (tag), ##__VA_ARGS__); } while(0)
 
 #ifdef __cplusplus
 }

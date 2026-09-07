@@ -79,3 +79,4 @@ source "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/ulp/Kc
 source "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/unity/Kconfig"
 source "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/Kconfig"
 source "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/wear_levelling/Kconfig"
+source "/home/olwhistle/dockerNow/esp32/programs/ovs/components/esp_littlefs/Kconfig"

@@ -241,8 +241,13 @@ $<TARGET_FILE:__idf_i2c_drv>
 $<TARGET_FILE:idf::cst816s>
 $<TARGET_FILE:idf::lora>
 $<TARGET_FILE:__idf_uart_drv>
+$<TARGET_FILE:idf::esp_littlefs>
+$<TARGET_FILE:idf::ovs_vfs>
+$<TARGET_FILE:__idf_esp_littlefs>
 $<TARGET_FILE:idf::w25q128>
+$<TARGET_FILE:__idf_ovs_vfs>
 $<TARGET_FILE:idf::holder>
+$<TARGET_FILE:idf::internal_flash>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_eventbus_api>
 $<TARGET_FILE:__idf_led>
@@ -254,4 +259,5 @@ $<TARGET_FILE:__idf_cst816s>
 $<TARGET_FILE:__idf_lora>
 $<TARGET_FILE:__idf_w25q128>
 $<TARGET_FILE:__idf_holder>
+$<TARGET_FILE:__idf_internal_flash>
 $<TARGET_FILE:idf::lvgl>

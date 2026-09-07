@@ -49,39 +49,39 @@ i2s_drv_err_t i2s_drv_load_config(i2s_drv_config_t* config) {
     dtree_err_t err;
     
     err = DTREE_INT("i2s.bus", "bclk_pin", &config->bclk_pin);
-    if (DTREE_CHECK_ERROR("Read bclk_pin", err)) {
+    DTREE_CHECK_ERROR("Read bclk_pin", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2s.bus", "ws_pin", &config->ws_pin);
-    if (DTREE_CHECK_ERROR("Read ws_pin", err)) {
+    DTREE_CHECK_ERROR("Read ws_pin", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2s.microphone", "data_in_pin", &config->data_in_pin);
-    if (DTREE_CHECK_ERROR("Read data_in_pin", err)) {
+    DTREE_CHECK_ERROR("Read data_in_pin", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2s.amplifier", "data_out_pin", &config->data_out_pin);
-    if (DTREE_CHECK_ERROR("Read data_out_pin", err)) {
+    DTREE_CHECK_ERROR("Read data_out_pin", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2s.bus", "sample_rate_hz", &config->sample_rate);
-    if (DTREE_CHECK_ERROR("Read sample_rate_hz", err)) {
+    DTREE_CHECK_ERROR("Read sample_rate_hz", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     err = DTREE_INT("i2s.bus", "data_bits", &config->data_bits);
-    if (DTREE_CHECK_ERROR("Read data_bits", err)) {
+    DTREE_CHECK_ERROR("Read data_bits", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     
     /* 读取通道模式 */
     const char* channel_str = NULL;
     err = DTREE_STR("i2s.bus", "channel", &channel_str);
-    if (DTREE_CHECK_ERROR("Read channel", err)) {
+    DTREE_CHECK_ERROR("Read channel", err); if (err != DTREE_OK) {
         return I2S_DRV_ERR_CONFIG;
     }
     config->is_mono = (strcmp(channel_str, "mono") == 0);

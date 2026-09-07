@@ -1,0 +1,29 @@
+{
+    "compatible": "lora-module",
+    "description": "LoRa LR22 无线模块",
+    
+    "uart": {
+        "tx_pin": 9,
+        "rx_pin": 10,
+        "baud_rate": 9600,
+        "data_bits": 8,
+        "stop_bits": 1,
+        "parity": "none"
+    },
+    
+    "control": {
+        "m0_pin": 8,
+        "m1_pin": 3,
+        "aux_pin": 46,
+        "aux_active_level": "high"
+    },
+    
+    "default_config": {
+        "frequency_mhz": 433.0,
+        "spreading_factor": 12,
+        "bandwidth_khz": 125,
+        "coding_rate": "4/5",
+        "tx_power_dbm": 20,
+        "mode": "transparent"
+    }
+}

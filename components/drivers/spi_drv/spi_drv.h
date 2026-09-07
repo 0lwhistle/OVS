@@ -1,10 +1,16 @@
 /**
  * @file spi_drv.h
- * @brief SPI驱动接口
+ * @brief SPI驱动接口（支持DMA异步传输）
  * 
- * 提供SPI总线初始化、配置和数据传输功能。
- * 硬件参数从设备树读取，不在代码中硬编码。
- * 支持多个设备共享同一SPI总线。
+ * 功能特性：
+ * - 支持DMA异步传输，减少CPU占用
+ * - 支持多个设备共享同一SPI总线（如Flash + LCD）
+ * - 提供同步和异步两种API
+ * - 硬件参数从设备树读取
+ * 
+ * 传输模式：
+ * - 同步模式：阻塞等待传输完成，适合小数据量
+ * - 异步模式：DMA后台传输，适合大块数据（LCD帧、音频）
  * 
  * @author OVS Team
  * @date 2026-09-07
@@ -17,8 +23,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "dtree.h"
-
-/* 包含ESP-IDF SPI头文件以获取spi_device_handle_t */
 #include "driver/spi_master.h"
 
 #ifdef __cplusplus
@@ -32,82 +36,68 @@ typedef enum {
     SPI_DRV_ERR_CONFIG = -2,
     SPI_DRV_ERR_PARAM = -3,
     SPI_DRV_ERR_HW = -4,
+    SPI_DRV_ERR_TIMEOUT = -5,
+    SPI_DRV_ERR_DMA = -6,
 } spi_drv_err_t;
 
-/* ========== 类型定义 ========== */
+/* ========== 传输模式 ========== */
+typedef enum {
+    SPI_XFER_MODE_POLLING = 0,  /**< 轮询模式（同步，CPU等待） */
+    SPI_XFER_MODE_DMA_SYNC,    /**< DMA同步模式（DMA传输，阻塞等待） */
+    SPI_XFER_MODE_DMA_ASYNC,   /**< DMA异步模式（DMA传输，非阻塞） */
+} spi_xfer_mode_t;
+
+/* ========== 配置结构 ========== */
 
 /**
- * @brief SPI总线配置结构
- * 
- * 从设备树读取，包含总线引脚和时钟配置。
+ * @brief SPI总线配置（从设备树读取）
  */
 typedef struct spi_drv_config {
-    int32_t sclk_pin;        /**< SPI时钟引脚 */
-    int32_t miso_pin;        /**< MISO引脚 */
-    int32_t mosi_pin;        /**< MOSI引脚 */
-    int32_t max_freq_mhz;    /**< 最大频率(MHz) */
-    int32_t mode;            /**< SPI模式 (0-3) */
+    int32_t sclk_pin;
+    int32_t miso_pin;
+    int32_t mosi_pin;
+    int32_t max_freq_mhz;
+    int32_t mode;
 } spi_drv_config_t;
 
-/** SPI驱动句柄类型（不透明指针） */
+/**
+ * @brief SPI设备配置（添加设备时传入）
+ */
+typedef struct spi_dev_config {
+    int cs_pin;                  /**< 片选引脚 */
+    int clock_speed_hz;          /**< 时钟频率 */
+    int mode;                    /**< SPI模式 */
+    spi_xfer_mode_t xfer_mode;  /**< 默认传输模式 */
+    int max_transfer_sz;         /**< 单次最大传输大小 */
+} spi_dev_config_t;
+
+/** SPI驱动句柄（不透明指针） */
 typedef struct spi_drv_handle* spi_drv_handle_t;
 
-/* spi_device_handle_t 已在 spi_master.h 中定义 */
+/** DMA传输完成回调 */
+typedef void (*spi_dma_callback_t)(void* arg);
 
 /* ========== 公共 API ========== */
 
-/**
- * @brief 从设备树加载SPI配置
- * 
- * @param config 输出参数，存储配置信息
- * @return spi_drv_err_t 错误码
- */
+/* ---------- 初始化/反初始化 ---------- */
+
 spi_drv_err_t spi_drv_load_config(spi_drv_config_t* config);
-
-/**
- * @brief 初始化SPI总线驱动
- * 
- * 从设备树读取配置，初始化SPI主机总线。
- * 
- * @param config 配置信息
- * @param handle 输出参数，存储驱动句柄
- * @return spi_drv_err_t 错误码
- */
 spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* handle);
-
-/**
- * @brief 反初始化SPI总线驱动
- * 
- * @param handle 驱动句柄
- * @return spi_drv_err_t 错误码
- */
 spi_drv_err_t spi_drv_deinit(spi_drv_handle_t handle);
 
-/**
- * @brief 添加SPI设备到总线
- * 
- * @param handle 驱动句柄
- * @param cs_pin 片选引脚
- * @param clock_speed_hz 时钟频率(Hz)
- * @param mode SPI模式 (0-3)
- * @param dev_handle 输出参数，存储设备句柄
- * @return spi_drv_err_t 错误码
- */
+/* ---------- 设备管理 ---------- */
+
 spi_drv_err_t spi_drv_add_device(spi_drv_handle_t handle, 
-                                  int cs_pin, 
-                                  int clock_speed_hz, 
-                                  int mode,
+                                  const spi_dev_config_t* config,
                                   spi_device_handle_t* dev_handle);
 
+spi_drv_err_t spi_drv_remove_device(spi_drv_handle_t handle, 
+                                     spi_device_handle_t dev_handle);
+
+/* ---------- 同步传输（阻塞） ---------- */
+
 /**
- * @brief SPI数据传输（同时发送和接收）
- * 
- * @param handle 驱动句柄
- * @param dev_handle 设备句柄
- * @param tx_data 发送数据缓冲区
- * @param rx_data 接收数据缓冲区
- * @param size 数据大小（字节）
- * @return spi_drv_err_t 错误码
+ * @brief 全双工传输（同时发送和接收）
  */
 spi_drv_err_t spi_drv_transfer(spi_drv_handle_t handle, 
                                 spi_device_handle_t dev_handle,
@@ -115,46 +105,59 @@ spi_drv_err_t spi_drv_transfer(spi_drv_handle_t handle,
                                 void* rx_data, 
                                 size_t size);
 
-/**
- * @brief SPI写数据
- * 
- * @param handle 驱动句柄
- * @param dev_handle 设备句柄
- * @param data 数据缓冲区
- * @param size 数据大小（字节）
- * @return spi_drv_err_t 错误码
- */
 spi_drv_err_t spi_drv_write(spi_drv_handle_t handle, 
                              spi_device_handle_t dev_handle,
                              const void* data, 
                              size_t size);
 
-/**
- * @brief SPI读数据
- * 
- * @param handle 驱动句柄
- * @param dev_handle 设备句柄
- * @param buffer 接收缓冲区
- * @param size 缓冲区大小（字节）
- * @return spi_drv_err_t 错误码
- */
 spi_drv_err_t spi_drv_read(spi_drv_handle_t handle, 
                             spi_device_handle_t dev_handle,
                             void* buffer, 
                             size_t size);
 
+/* ---------- DMA 异步传输（非阻塞） ---------- */
+
 /**
- * @brief 发送命令+数据（用于LCD等设备）
+ * @brief DMA异步写入
  * 
- * 先发送命令字节（DC低），再发送数据（DC高）。
+ * 启动DMA传输后立即返回，通过回调或等待获取完成状态。
  * 
  * @param handle 驱动句柄
  * @param dev_handle 设备句柄
- * @param dc_pin DC引脚 (-1表示不使用)
+ * @param data 数据缓冲区（必须DMA安全，或内部会复制）
+ * @param size 数据大小
+ * @param callback 完成回调（可选，NULL则不回调）
+ * @param cb_arg 回调参数
+ * @return spi_drv_err_t 
+ */
+spi_drv_err_t spi_drv_write_async(spi_drv_handle_t handle, 
+                                    spi_device_handle_t dev_handle,
+                                    const void* data, 
+                                    size_t size,
+                                    spi_dma_callback_t callback,
+                                    void* cb_arg);
+
+/**
+ * @brief 等待DMA传输完成
+ * 
+ * @param handle 驱动句柄
+ * @param dev_handle 设备句柄
+ * @param timeout_ms 超时时间（毫秒），-1表示永久等待
+ * @return spi_drv_err_t 
+ */
+spi_drv_err_t spi_drv_wait_async(spi_drv_handle_t handle, 
+                                   spi_device_handle_t dev_handle,
+                                   int timeout_ms);
+
+/* ---------- 特殊传输（LCD等） ---------- */
+
+/**
+ * @brief 发送命令+数据（LCD常用）
+ * 
+ * @param dc_pin DC引脚（-1表示不使用）
  * @param cmd 命令字节
- * @param data 数据缓冲区
+ * @param data 数据（NULL表示只发命令）
  * @param data_len 数据长度
- * @return spi_drv_err_t 错误码
  */
 spi_drv_err_t spi_drv_write_cmd_data(spi_drv_handle_t handle,
                                        spi_device_handle_t dev_handle,
@@ -162,6 +165,18 @@ spi_drv_err_t spi_drv_write_cmd_data(spi_drv_handle_t handle,
                                        uint8_t cmd,
                                        const void* data,
                                        size_t data_len);
+
+/**
+ * @brief DMA异步发送命令+数据
+ */
+spi_drv_err_t spi_drv_write_cmd_data_async(spi_drv_handle_t handle,
+                                             spi_device_handle_t dev_handle,
+                                             int dc_pin,
+                                             uint8_t cmd,
+                                             const void* data,
+                                             size_t data_len,
+                                             spi_dma_callback_t callback,
+                                             void* cb_arg);
 
 #ifdef __cplusplus
 }
