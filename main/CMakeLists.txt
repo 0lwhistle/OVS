@@ -24,6 +24,7 @@ idf_component_register(
         cst816s
         lora
         w25q128
+        holder
         nvs_flash
         esp_wifi
         esp_event
