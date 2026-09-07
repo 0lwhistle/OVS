@@ -97,6 +97,7 @@ const char* compat = DTREE_STR("i2s.microphone", "compatible");
 - **WiFi**: STA 模式、热点扫描、自动切换
 - **OTA**: 分块传输、SHA256 校验、断点续传
 - **Web**: REST API、静态文件服务
+- **模块管理**: 全局硬件模块注册表，故障隔离，状态监控
 - **任务调度**: 优先级调度、超时控制
 
 ## 文档
