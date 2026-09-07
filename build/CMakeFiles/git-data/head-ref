@@ -1,1 +1,7 @@
-b80903b49eb9aab052faf420168d305c0cf53b7d
+853f52267cf8838839981fe914ff678ab264998f 723403bee54e60c5fca4d291e5ad733dcd1b5a6b root <root@0wlhistle> 1788745796 +0800	branch: Reset to HEAD
+723403bee54e60c5fca4d291e5ad733dcd1b5a6b 64ec1cfcb797eb4b48651c9e27f74e1dbdcc6278 root <root@0wlhistle> 1788750509 +0800	commit: 添加holder模块：全局硬件模块注册表管理器
+64ec1cfcb797eb4b48651c9e27f74e1dbdcc6278 f0fa626ffa985819c7c3debd067a4d0e2be8f400 root <root@0wlhistle> 1788750544 +0800	commit: 添加开发日志：记录holder模块开发过程
+f0fa626ffa985819c7c3debd067a4d0e2be8f400 696c6173d6d4161785a4fdca00895c842185995e root <root@0wlhistle> 1788750859 +0800	commit: 修复holder模块依赖问题，编译成功
+696c6173d6d4161785a4fdca00895c842185995e d97c4728b76a43c4094d2abf01a03dbb9cbb55de root <root@0wlhistle> 1788751363 +0800	commit: 更新项目文档，添加holder模块说明
+d97c4728b76a43c4094d2abf01a03dbb9cbb55de b80903b49eb9aab052faf420168d305c0cf53b7d root <root@0wlhistle> 1788752335 +0800	commit: 更新开发日志：2026-09-07工作总结
+b80903b49eb9aab052faf420168d305c0cf53b7d dbf1b9935b407bdd9b832ec760a0dee40ea0166a root <root@0wlhistle> 1788758792 +0800	commit: 初步完成w25q128的模块驱动编写

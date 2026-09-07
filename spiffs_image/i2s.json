@@ -1,0 +1,30 @@
+{
+    "compatible": "i2s-bus",
+    "description": "I2S 总线 (麦克风 + 功放)",
+    
+    "bus": {
+        "bclk_pin": 6,
+        "ws_pin": 5,
+        "mode": "philips",
+        "sample_rate_hz": 16000,
+        "data_bits": 16,
+        "channel": "mono"
+    },
+    
+    "microphone": {
+        "compatible": "i2s-microphone",
+        "description": "INMP441 数字麦克风",
+        "data_in_pin": 7,
+        "channel": "left",
+        "gain_db": 0
+    },
+    
+    "amplifier": {
+        "compatible": "i2s-amplifier",
+        "description": "MAX98357A 功放模块",
+        "data_out_pin": 15,
+        "channel": "both",
+        "gain_db": 15,
+        "sd_pin": -1
+    }
+}

@@ -16,7 +16,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <stdio.h>
 #include "logger.h"
 
 #ifdef __cplusplus
@@ -192,21 +191,58 @@ dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* val
     dtree_get_float(dtree_get_node(path), prop, value)
 
 /* ========== 设备树文件路径常量 ========== */
-#define DTREE_CONFIG_DIR    "/spiffs/dtbs"  /**< JSON 配置目录 */
+#define DTREE_CONFIG_DIR    "/spiffs"  /**< JSON 配置目录 */
 
-/* ========== 错误处理宏 ========== */
 
 /**
  * @brief 检查设备树操作结果并打印错误
  * @param op   操作描述
  * @param err  错误码
- * @return true 错误发生，false 无错误
+ * 
+ * 用法：
+ *   DTREE_CHECK_ERROR("Read bclk_pin", err);
+ *   if (err != DTREE_OK) { return ERROR; }
  */
 #define DTREE_CHECK_ERROR(op, err) \
-    (((err) != DTREE_OK) ? (LOGE_EXPR("[DTREE]", "%s failed: %d", (op), (err)), true) : false)
+    do { if ((err) != DTREE_OK) LOGE("[DTREE]", "%s failed: %d", (op), (err)); } while(0)
 
 #ifdef __cplusplus
 }
 #endif
 
+
 #endif /* DTREE_H */
+
+/* ========== 数组 API ========== */
+
+/**
+ * @brief 获取数组大小
+ * @param node 父节点
+ * @param property 数组属性名
+ * @return 数组大小，-1 表示错误
+ */
+int dtree_get_array_size(dtree_node_t* node, const char* property);
+
+/**
+ * @brief 获取数组元素（返回子节点）
+ * @param node 父节点
+ * @param property 数组属性名
+ * @param index 数组索引
+ * @return 子节点指针，NULL 表示不存在
+ */
+dtree_node_t* dtree_get_array_item(dtree_node_t* node, const char* property, int index);
+
+/**
+ * @brief 通过路径获取数组大小
+ * @param path 路径（如 "vfs.mounts"）
+ * @return 数组大小，-1 表示错误
+ */
+int dtree_array_size(const char* path);
+
+/**
+ * @brief 通过路径获取数组元素
+ * @param path 路径（如 "vfs.mounts"）
+ * @param index 数组索引
+ * @return 子节点指针，NULL 表示不存在
+ */
+dtree_node_t* dtree_array_item(const char* path, int index);

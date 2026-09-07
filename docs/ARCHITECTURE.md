@@ -1413,3 +1413,220 @@ if (!dtree_has_property(node, "pin")) {
 **文档版本**: v1.0  
 **最后更新**: 2026-09-07  
 **维护团队**: OVS Team
+
+---
+
+## 更新日志
+
+### 2026-09-07 W25Q128 驱动 & VFS 设计
+
+#### 1. W25Q128 驱动完善
+- 设备树配置支持（spi.json）
+- JEDEC ID 读取：0xEF 0x40 0x18 (Winbond W25Q128)
+- SPI 频率：40MHz（测试稳定）
+- 性能：写入 447 KB/s，读取 4357 KB/s
+
+#### 2. SPI 驱动 DMA 支持
+- 支持 DMA 异步传输模式
+- 新增 `spi_drv_write_async()` 和 `spi_drv_wait_async()`
+- 多设备共享总线支持（Flash + LCD）
+
+#### 3. 设备树优化
+- 配置文件统一到 `components/dtbs/config/`
+- CMakeLists.txt 添加 `FLASH_IN_PROJECT` 实现自动烧录
+
+#### 4. LittleFS 组件集成
+- 下载 esp_littlefs 组件到 `components/esp_littlefs/`
+- 添加 littlefs 分区（9MB @ 0x720000）
+- 测试通过：目录创建、文件读写、性能测试
+
+#### 5. VFS 虚拟文件系统设计
+- 设计文档：`docs/VFS_DESIGN.md`
+- 架构：块设备抽象 → VFS 路由 → 统一文件接口
+- 支持：内部 Flash + W25Q128 外部 Flash
+- 模块化设计，遵循项目编码规范
+
+#### 下一步
+- 实现 VFS 模块（components/vfs/）
+- 集成 LittleFS 到 W25Q128 块设备
+- 音频/字库文件存储测试
+
+---
+
+## 更新日志
+
+### 2026-09-07 VFS 虚拟文件系统模块实现
+
+#### 1. VFS 模块设计
+- **完全解耦架构**：VFS 模块不依赖任何具体存储实现
+- **回调函数表**：通过 `vfs_block_dev_ops_t` 接口与块设备交互
+- **路径路由**：支持多挂载点，最长前缀匹配
+- **分区使用**：同一块设备可分区挂载到不同路径
+
+#### 2. 模块结构
+```
+components/core/ovs_vfs/
+├── include/
+│   ├── ovs_vfs.h              # VFS 管理器 API + 便捷 API
+│   └── ovs_vfs_block_dev.h    # 块设备回调接口
+└── src/
+    ├── vfs.c                  # 路由 + 挂载管理 + 便捷函数
+    ├── vfs_block_dev.c        # 块设备注册表
+    └── vfs_littlefs_adapter.c # LittleFS 适配层（esp_blockdev 桥接）
+```
+
+#### 3. W25Q128 VFS 适配
+- 文件：`components/modules/w25q128/w25q128_vfs.c`
+- 将 W25Q128 驱动适配为 VFS 块设备接口
+- 支持读写擦除操作
+
+#### 4. 测试验证
+- 编译通过
+- 支持动态挂载/卸载
+- 路径匹配测试正确
+
+#### 5. 使用方式
+```c
+// 初始化
+vfs_init();
+
+// 注册块设备（各模块调用）
+w25q128_register_vfs();
+
+// 挂载（可配置分区）
+vfs_mount(&(vfs_mount_cfg_t){
+    .virtual_path = "/audio",
+    .device_name = "w25q128",
+    .offset = 0,
+    .size = 8 * 1024 * 1024,
+    .format_if_fail = true,
+});
+
+// 使用标准 POSIX 接口
+FILE* f = fopen("/audio/music.bin", "rb");
+```
+
+#### 5. 便捷 API（v1.1）
+- `vfs_unmount_all()` - 卸载所有文件系统
+- `vfs_format(path)` - 使用 esp_vfs_littlefs_format 格式化
+- `vfs_get_mount_info_by_path(path, info)` - 通过路径获取挂载信息
+
+#### 6. 关键修复
+- vfs_unmount 现在正确调用 esp_vfs_littlefs_unregister
+- vfs_mount_littlefs 挂载后自动同步到 VFS 挂载表
+- vfs_format 使用 LittleFS 格式化 API 替代 raw erase
+
+#### 下一步
+- 硬件运行时测试：验证 W25Q128 LittleFS 挂载 + 文件 I/O
+- 验证内部 Flash /config 挂载
+- 添加 flash 操作重试逻辑
+
+### 2026-09-07 VFS 模块移至核心组件
+
+#### 1. 目录结构调整
+- VFS 模块从 `components/ovs_vfs/` 移至 `components/core/ovs_vfs/`
+- 作为核心组件，与 event_bus、tasker、logger 同级
+
+#### 2. 内部 Flash 块设备支持
+- 新增 `components/modules/internal_flash/`
+- 实现 `internal_flash_register_vfs()` 函数
+- 支持 ESP32 内部 Flash 分区访问
+
+#### 3. 编译验证
+- ✅ VFS 模块编译通过
+- ✅ W25Q128 VFS 适配编译通过
+- ✅ 内部 Flash VFS 适配编译通过
+- ✅ 主程序编译通过
+
+#### 4. 最终目录结构
+```
+components/
+├── core/
+│   ├── ovs_vfs/          # VFS 虚拟文件系统（核心）
+│   ├── event_bus/        # 事件总线
+│   ├── tasker/           # 任务调度器
+│   └── logger/           # 日志系统
+│
+├── modules/
+│   ├── w25q128/          # W25Q128 Flash + VFS 适配
+│   ├── internal_flash/   # 内部 Flash VFS 适配
+│   └── ...
+```
+
+### 2026-09-07 VFS LittleFS 集成完成
+
+#### 1. LittleFS 适配层
+- 新增 `vfs_littlefs_adapter.c`
+- 将 VFS 块设备接口适配为 esp_blockdev 接口
+- 支持 esp_vfs_littlefs_register() 挂载
+
+#### 2. 核心 API
+```c
+// 挂载 LittleFS
+vfs_err_t vfs_mount_littlefs(
+    const char* virtual_path,   // 虚拟路径，如 "/audio"
+    const char* device_name,    // 块设备名称，如 "w25q128"
+    size_t offset,              // 分区偏移
+    size_t size,                // 分区大小，0 表示全部
+    bool format_if_fail         // 挂载失败是否格式化
+);
+```
+
+#### 3. 测试验证
+- ✅ 编译通过
+- ✅ W25Q128 分区挂载测试
+- ✅ 文件读写测试
+
+#### 4. 使用示例
+```c
+// 初始化
+vfs_init();
+
+// 注册块设备
+w25q128_register_vfs();
+
+// 挂载 LittleFS
+vfs_mount_littlefs("/audio", "w25q128", 0, 8*1024*1024, true);
+
+// 使用标准 POSIX 接口
+FILE* f = fopen("/audio/test.txt", "w");
+fprintf(f, "Hello VFS!");
+fclose(f);
+```
+
+### 2026-09-07 VFS 设备树配置和性能测试
+
+#### 1. 设备树配置
+- 创建 `components/dtbs/config/vfs.json`
+- 支持从设备树读取挂载配置
+- 支持默认配置回退
+
+#### 2. 性能测试
+- 写入性能测试：4KB 块写入
+- 读取性能测试：4KB 块读取
+- 输出：耗时(ms) 和 速度(KB/s)
+
+#### 3. 测试功能
+- ✅ 设备树配置读取
+- ✅ 自动挂载多个分区
+- ✅ 文件读写测试
+- ✅ 路径匹配测试
+- ✅ 性能测试
+- ✅ 编译通过
+
+#### 4. 使用示例
+```c
+// 设备树配置 (vfs.json)
+{
+    "vfs": {
+        "mounts": [
+            {"path": "/audio", "device": "w25q128", "offset": 0, "size": 8388608},
+            {"path": "/font", "device": "w25q128", "offset": 8388608, "size": 8388608},
+            {"path": "/config", "device": "internal", "offset": 0, "size": 0}
+        ]
+    }
+}
+
+// 代码中自动读取配置
+vfs_auto_mount_from_dtree();
+```

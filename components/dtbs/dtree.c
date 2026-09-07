@@ -197,6 +197,11 @@ dtree_node_t* dtree_get_root(void) {
     return &s_root_node;
 }
 
+/* 节点池 - 避免静态变量被覆盖 */
+#define DTREE_NODE_POOL_SIZE 16
+static dtree_node_t s_node_pool[DTREE_NODE_POOL_SIZE];
+static int s_pool_index = 0;
+
 dtree_node_t* dtree_get_child(dtree_node_t* parent, const char* name) {
     if (!parent || !parent->json || !name) {
         return NULL;
@@ -207,12 +212,13 @@ dtree_node_t* dtree_get_child(dtree_node_t* parent, const char* name) {
         return NULL;
     }
     
-    // 使用静态变量返回（单线程环境足够）
-    static dtree_node_t child_node;
-    child_node.json = child;
-    child_node.name = name;
+    /* 从节点池分配 */
+    dtree_node_t* node = &s_node_pool[s_pool_index % DTREE_NODE_POOL_SIZE];
+    s_pool_index++;
+    node->json = child;
+    node->name = name;
     
-    return &child_node;
+    return node;
 }
 
 dtree_node_t* dtree_get_node(const char* path) {
@@ -272,6 +278,12 @@ dtree_err_t dtree_get_int(dtree_node_t* node, const char* property, int32_t* val
     
     if (cJSON_IsNumber(item)) {
         *value = (int32_t)item->valueint;
+        return DTREE_OK;
+    }
+    
+    /* boolean: true→1, false→0 */
+    if (cJSON_IsBool(item)) {
+        *value = cJSON_IsTrue(item) ? 1 : 0;
         return DTREE_OK;
     }
     
@@ -394,4 +406,90 @@ dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* val
     
     LOGW(TAG, "Property '%s' type mismatch, expected float", property);
     return DTREE_ERR_TYPE;
+}
+
+/* ========== 数组 API 实现 ========== */
+
+int dtree_get_array_size(dtree_node_t* node, const char* property) {
+    if (!node || !node->json || !property) {
+        return -1;
+    }
+    
+    cJSON* array = cJSON_GetObjectItem(node->json, property);
+    if (!array || !cJSON_IsArray(array)) {
+        return -1;
+    }
+    
+    return cJSON_GetArraySize(array);
+}
+
+dtree_node_t* dtree_get_array_item(dtree_node_t* node, const char* property, int index) {
+    if (!node || !node->json || !property) {
+        return NULL;
+    }
+    
+    cJSON* array = cJSON_GetObjectItem(node->json, property);
+    if (!array || !cJSON_IsArray(array)) {
+        return NULL;
+    }
+    
+    cJSON* item = cJSON_GetArrayItem(array, index);
+    if (!item) {
+        return NULL;
+    }
+    
+    static dtree_node_t child_node;
+    child_node.json = item;
+    child_node.name = property;
+    
+    return &child_node;
+}
+
+int dtree_array_size(const char* path) {
+    if (!s_initialized || !path) {
+        return -1;
+    }
+    
+    dtree_node_t* node = dtree_get_node(path);
+    if (!node || !node->json) {
+        LOGW(TAG, "dtree_array_size: node not found for path '%s'", path);
+        return -1;
+    }
+    
+    /* 路径本身就是数组 */
+    if (cJSON_IsArray(node->json)) {
+        int size = cJSON_GetArraySize(node->json);
+        LOGI(TAG, "dtree_array_size: '%s' is array, size=%d", path, size);
+        return size;
+    }
+    
+    LOGW(TAG, "dtree_array_size: '%s' is NOT array (type=%d)", path, node->json->type);
+    return -1;
+}
+
+dtree_node_t* dtree_array_item(const char* path, int index) {
+    if (!s_initialized || !path) {
+        return NULL;
+    }
+    
+    dtree_node_t* node = dtree_get_node(path);
+    if (!node || !node->json) {
+        return NULL;
+    }
+    
+    /* 路径本身就是数组 */
+    if (cJSON_IsArray(node->json)) {
+        cJSON* item = cJSON_GetArrayItem(node->json, index);
+        if (!item) {
+            return NULL;
+        }
+        
+        static dtree_node_t child_node;
+        child_node.json = item;
+        child_node.name = path;
+        
+        return &child_node;
+    }
+    
+    return NULL;
 }
