@@ -54,5 +54,5 @@ idf_component_register(
         "bridge"
         "presenters"
         "themes"
-    REQUIRES lvgl logger dtbs
+    REQUIRES logger dtbs
 )

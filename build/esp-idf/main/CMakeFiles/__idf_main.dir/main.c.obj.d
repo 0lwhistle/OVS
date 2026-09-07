@@ -85,15 +85,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_timg/include/hal/timer_types.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_gptimer/include/driver/gptimer_etm.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/include/web.h \
- /home/olwhistle/dockerNow/esp32/programs/ovs/components/drivers/wifi/wifi.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/include/esp_event.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/event_bus/event_bus.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/event_bus/event_bus_types.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/event_bus/event_bus_internal.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
@@ -153,6 +147,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/include/web.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/drivers/wifi/wifi.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/include/esp_event_base.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/local/esp_wifi_types_native.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_types_generic.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_event/include/esp_event.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_crypto_types.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_wifi/include/esp_wifi_default.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_netif/include/esp_netif.h \
@@ -164,6 +167,14 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /home/olwhistle/dockerNow/esp32/programs/ovs/include/heartbeat.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/logger/logger.h \
  /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/st7789/st7789.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/w25q128/w25q128.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/lora/lora.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/audio_module/audio_module.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/drivers/i2s_drv/i2s_drv.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/include/dtree.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/aht30/aht30.h \
+ /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/cst816s/cst816s.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/nvs_flash/include/nvs_flash.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/nvs_flash/include/nvs.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_partition/include/esp_partition.h \

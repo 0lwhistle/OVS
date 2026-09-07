@@ -1278,3 +1278,175 @@ GPIO5和GPIO6的I2S功能对调：
 3. 焊接组装
 4. 开始软件开发
 
+
+## [2026-09-06] - 设备树实现完善与目录结构整理
+
+### 完成内容
+- [x] 重新设计设备树API，去掉默认值参数，改为返回错误码
+- [x] 添加错误处理机制：dtree_has_node()、dtree_has_property()、DTREE_CHECK_ERROR宏
+- [x] 修改dtree.h和dtree.c，实现新的API接口
+- [x] 整理驱动目录结构，移除无用驱动（beep、sr04）
+- [x] 创建新的驱动目录：i2s_drv、i2c_drv、spi_drv、uart_drv
+- [x] 创建新的模块目录：audio_module、display_module、sensor_module、touch_module、wireless_module、storage_module
+- [x] 为每个驱动和模块创建基本的头文件和源文件
+- [x] 更新CMakeLists.txt，添加新的组件依赖
+- [x] 修复编译错误：格式说明符问题（PRId32）、缺少头文件（string.h、inttypes.h）
+- [x] 整理设备树配置文件，确保所有硬件参数描述完整
+
+### 当前状态
+- 设备树API已优化，不再有默认值硬编码
+- 驱动和模块目录结构已整理
+- 编译基本通过，但LVGL组件缺失lvgl.h头文件
+- LVGL依赖问题需要进一步解决
+
+### 待解决问题
+- LVGL库缺失，需要添加LVGL依赖或禁用LVGL组件
+- 驱动和模块的具体实现仍为空（TODO）
+
+### 下一步
+1. 解决LVGL依赖问题
+2. 实现各驱动的具体功能
+3. 实现各模块的具体功能
+4. 集成测试
+
+## [2026-09-06] - 模块命名优化
+
+### 完成内容
+- [x] 按照文档中芯片型号重命名模块目录
+- [x] display_module → st7789
+- [x] sensor_module → aht30
+- [x] touch_module → cst816s
+- [x] wireless_module → lora
+- [x] storage_module → w25q128
+- [x] 更新所有CMakeLists.txt中的组件名
+- [x] 更新主CMakeLists.txt中的组件路径
+- [x] 更新main/CMakeLists.txt中的组件依赖
+
+### 当前状态
+- 模块命名现在与硬件芯片型号一致
+- 项目结构更加清晰，易于维护
+- 编译依赖关系已更新
+
+### 待解决问题
+- LVGL库缺失，需要添加LVGL依赖或禁用LVGL组件
+- 各驱动和模块的具体实现仍为空（TODO）
+
+### 下一步
+1. 解决LVGL依赖问题
+2. 实现各驱动的具体功能
+3. 实现各模块的具体功能
+4. 集成测试
+
+## [2026-09-06] - 编译成功与LVGL临时解决方案
+
+### 完成内容
+- [x] 解决了LVGL依赖问题：创建临时lvgl.h头文件占位
+- [x] 移除了main组件对lvgl的依赖
+- [x] 更新了src/lvgl/CMakeLists.txt，移除对lvgl库的依赖
+- [x] 项目编译成功，生成固件文件：ovs.bin (948.9 KB)
+- [x] 固件签名成功：ovs_signed.bin
+
+### 当前状态
+- 项目结构已按芯片名称命名：st7789、aht30、cst816s、lora、w25q128
+- 所有驱动和模块目录结构清晰
+- 编译通过，固件可烧录
+- LVGL功能暂时禁用，使用临时占位头文件
+
+### 待解决问题
+- LVGL库需要单独添加（当前使用临时占位头文件）
+- 各驱动和模块的具体实现仍为空（TODO）
+
+### 下一步
+1. 添加真正的LVGL库（从ESP-IDF组件库或手动添加）
+2. 实现各驱动的具体功能
+3. 实现各模块的具体功能
+4. 集成测试
+5. 烧录测试
+
+## [2026-09-07] - 实现事件总线模块 (event_bus)
+
+### 完成内容
+- [x] 设计事件总线架构方案
+- [x] 实现事件类型定义 (event_bus_types.h)
+  - 支持10个模块的事件类型 (系统、WiFi、传感器、触控、LoRa、UI、音频、存储、显示、Web)
+  - 定义事件数据结构 (WiFi连接、温湿度、触控、LoRa等)
+  - 类型安全宏 (EVENT_BUS_PUBLISH, EVENT_BUS_PUBLISH_EMPTY)
+- [x] 实现内部数据结构 (event_bus_internal.h)
+  - 订阅者结构、订阅句柄、队列节点、上下文
+- [x] 实现公共API接口 (event_bus.h)
+  - 初始化/反初始化
+  - 事件发布 (event_bus_publish)
+  - 事件订阅/取消订阅 (event_bus_subscribe, event_bus_unsubscribe)
+  - 状态查询 (event_bus_get_status, event_bus_get_stats)
+  - 调试辅助 (event_bus_print_status, event_bus_print_subscribers)
+- [x] 实现核心功能 (event_bus.c)
+  - 事件队列管理 (FreeRTOS队列)
+  - 订阅者表管理 (互斥锁保护)
+  - 事件处理任务 (独立任务，异步处理)
+  - 事件分发机制
+  - 统计信息收集
+- [x] 实现测试用例 (event_bus_test.c)
+  - 初始化/反初始化测试
+  - 事件发布测试
+  - 事件订阅/取消订阅测试
+  - 事件处理测试
+  - 多订阅者测试
+  - 统计信息测试
+  - 状态查询测试
+  - 调试函数测试
+- [x] 创建使用示例 (example_usage.c)
+  - WiFi模块示例 (发布事件)
+  - 传感器模块示例 (发布事件)
+  - Web模块示例 (订阅事件)
+  - UI模块示例 (订阅事件)
+  - 完整使用流程示例
+- [x] 编写详细文档 (README.md)
+  - 架构说明
+  - 快速开始指南
+  - 事件类型列表
+  - API参考
+  - 配置参数
+  - 内存使用说明
+  - 注意事项
+- [x] 更新构建配置 (CMakeLists.txt)
+
+### 技术特点
+1. **发布-订阅模式**: 模块间通过事件通信，无需直接依赖
+2. **线程安全**: 使用互斥锁保护订阅者表，支持多任务并发
+3. **异步处理**: 独立任务处理事件队列，不阻塞发布者
+4. **类型安全**: 强类型事件定义，编译期检查
+5. **资源高效**: 固定大小队列和订阅表，内存占用可预测
+6. **调试友好**: 事件类型有语义名称，便于日志追踪
+
+### 文件结构
+```
+components/core/event_bus/
+├── CMakeLists.txt           # 构建配置
+├── README.md                # 使用文档
+├── event_bus.c              # 核心实现
+├── event_bus.h              # 公共API
+├── event_bus_internal.h     # 内部数据结构
+├── event_bus_types.h        # 类型定义
+├── event_bus_test.c         # 测试用例
+├── event_bus_test.h         # 测试头文件
+├── example_usage.c          # 使用示例
+└── example_usage.h          # 示例头文件
+```
+
+### 配置参数
+- 事件队列大小: 32
+- 最大订阅者数量: 64
+- 最大事件数据大小: 256字节
+- 处理任务栈大小: 4096字节
+- 处理任务优先级: 5
+- 处理任务轮询间隔: 10ms
+
+### 待解决问题
+- 无
+
+### 下一步
+1. 将事件总线集成到现有模块 (WiFi、传感器、Web等)
+2. 实现各驱动的具体功能
+3. 实现各模块的具体功能
+4. 集成测试
+5. 烧录测试

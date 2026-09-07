@@ -3,6 +3,7 @@
  * @brief 设备树解析器实现
  * 
  * 使用 cJSON 解析 JSON 配置文件，为各驱动模块提供硬件配置读取。
+ * 设计原则：硬件参数完全由设备树描述，程序中不硬编码默认值。
  */
 
 #include "dtree.h"
@@ -184,6 +185,10 @@ dtree_err_t dtree_init(void) {
     return DTREE_OK;
 }
 
+bool dtree_is_initialized(void) {
+    return s_initialized && s_root != NULL;
+}
+
 dtree_node_t* dtree_get_root(void) {
     if (!s_initialized) {
         LOGW(TAG, "Not initialized");
@@ -232,113 +237,161 @@ dtree_node_t* dtree_get_node(const char* path) {
     return current;
 }
 
-const char* dtree_get_compatible(dtree_node_t* node) {
-    return dtree_get_string(node, "compatible");
+bool dtree_has_node(const char* path) {
+    return dtree_get_node(path) != NULL;
 }
 
-int32_t dtree_get_int(dtree_node_t* node, const char* property, int32_t default_val) {
+bool dtree_has_property(dtree_node_t* node, const char* property) {
     if (!node || !node->json || !property) {
-        return default_val;
+        return false;
+    }
+    
+    cJSON* item = cJSON_GetObjectItem(node->json, property);
+    return item != NULL;
+}
+
+const char* dtree_get_compatible(dtree_node_t* node) {
+    const char* value = NULL;
+    dtree_err_t err = dtree_get_string(node, "compatible", &value);
+    if (err != DTREE_OK) {
+        return NULL;
+    }
+    return value;
+}
+
+dtree_err_t dtree_get_int(dtree_node_t* node, const char* property, int32_t* value) {
+    if (!node || !node->json || !property || !value) {
+        return DTREE_ERR_PARAM;
     }
     
     cJSON* item = cJSON_GetObjectItem(node->json, property);
     if (!item) {
-        return default_val;
+        LOGW(TAG, "Property '%s' not found", property);
+        return DTREE_ERR_NOT_FOUND;
     }
     
     if (cJSON_IsNumber(item)) {
-        return (int32_t)item->valueint;
+        *value = (int32_t)item->valueint;
+        return DTREE_OK;
     }
     
     // 尝试解析十六进制字符串
     if (cJSON_IsString(item)) {
         const char* str = item->valuestring;
         if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X')) {
-            return (int32_t)strtol(str, NULL, 16);
+            *value = (int32_t)strtol(str, NULL, 16);
+            return DTREE_OK;
         }
-        return (int32_t)atoi(str);
+        *value = (int32_t)atoi(str);
+        return DTREE_OK;
     }
     
-    return default_val;
+    LOGW(TAG, "Property '%s' type mismatch, expected number", property);
+    return DTREE_ERR_TYPE;
 }
 
-uint32_t dtree_get_uint(dtree_node_t* node, const char* property, uint32_t default_val) {
-    if (!node || !node->json || !property) {
-        return default_val;
+dtree_err_t dtree_get_uint(dtree_node_t* node, const char* property, uint32_t* value) {
+    if (!node || !node->json || !property || !value) {
+        return DTREE_ERR_PARAM;
     }
     
     cJSON* item = cJSON_GetObjectItem(node->json, property);
     if (!item) {
-        return default_val;
+        LOGW(TAG, "Property '%s' not found", property);
+        return DTREE_ERR_NOT_FOUND;
     }
     
     if (cJSON_IsNumber(item)) {
-        return (uint32_t)item->valuedouble;
+        *value = (uint32_t)item->valuedouble;
+        return DTREE_OK;
     }
     
     if (cJSON_IsString(item)) {
         const char* str = item->valuestring;
         if (str[0] == '0' && (str[1] == 'x' || str[1] == 'X')) {
-            return (uint32_t)strtoul(str, NULL, 16);
+            *value = (uint32_t)strtoul(str, NULL, 16);
+            return DTREE_OK;
         }
-        return (uint32_t)strtoul(str, NULL, 10);
+        *value = (uint32_t)strtoul(str, NULL, 10);
+        return DTREE_OK;
     }
     
-    return default_val;
+    LOGW(TAG, "Property '%s' type mismatch, expected number", property);
+    return DTREE_ERR_TYPE;
 }
 
-const char* dtree_get_string(dtree_node_t* node, const char* property) {
-    if (!node || !node->json || !property) {
-        return NULL;
-    }
-    
-    cJSON* item = cJSON_GetObjectItem(node->json, property);
-    if (item && cJSON_IsString(item)) {
-        return item->valuestring;
-    }
-    
-    return NULL;
-}
-
-bool dtree_get_bool(dtree_node_t* node, const char* property, bool default_val) {
-    if (!node || !node->json || !property) {
-        return default_val;
+dtree_err_t dtree_get_string(dtree_node_t* node, const char* property, const char** value) {
+    if (!node || !node->json || !property || !value) {
+        return DTREE_ERR_PARAM;
     }
     
     cJSON* item = cJSON_GetObjectItem(node->json, property);
     if (!item) {
-        return default_val;
+        LOGW(TAG, "Property '%s' not found", property);
+        return DTREE_ERR_NOT_FOUND;
+    }
+    
+    if (cJSON_IsString(item)) {
+        *value = item->valuestring;
+        return DTREE_OK;
+    }
+    
+    LOGW(TAG, "Property '%s' type mismatch, expected string", property);
+    return DTREE_ERR_TYPE;
+}
+
+dtree_err_t dtree_get_bool(dtree_node_t* node, const char* property, bool* value) {
+    if (!node || !node->json || !property || !value) {
+        return DTREE_ERR_PARAM;
+    }
+    
+    cJSON* item = cJSON_GetObjectItem(node->json, property);
+    if (!item) {
+        LOGW(TAG, "Property '%s' not found", property);
+        return DTREE_ERR_NOT_FOUND;
     }
     
     if (cJSON_IsBool(item)) {
-        return cJSON_IsTrue(item);
+        *value = cJSON_IsTrue(item);
+        return DTREE_OK;
     }
     
     if (cJSON_IsString(item)) {
         const char* str = item->valuestring;
-        return (strcmp(str, "true") == 0 || strcmp(str, "yes") == 0 || strcmp(str, "1") == 0);
+        *value = (strcmp(str, "true") == 0 || strcmp(str, "yes") == 0 || strcmp(str, "1") == 0);
+        return DTREE_OK;
     }
     
     if (cJSON_IsNumber(item)) {
-        return item->valueint != 0;
+        *value = item->valueint != 0;
+        return DTREE_OK;
     }
     
-    return default_val;
+    LOGW(TAG, "Property '%s' type mismatch, expected boolean", property);
+    return DTREE_ERR_TYPE;
 }
 
-float dtree_get_float(dtree_node_t* node, const char* property, float default_val) {
-    if (!node || !node->json || !property) {
-        return default_val;
+dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* value) {
+    if (!node || !node->json || !property || !value) {
+        return DTREE_ERR_PARAM;
     }
     
     cJSON* item = cJSON_GetObjectItem(node->json, property);
-    if (item && cJSON_IsNumber(item)) {
-        return (float)item->valuedouble;
+    if (!item) {
+        LOGW(TAG, "Property '%s' not found", property);
+        return DTREE_ERR_NOT_FOUND;
     }
     
-    if (item && cJSON_IsString(item)) {
-        return (float)atof(item->valuestring);
+    if (cJSON_IsNumber(item)) {
+        *value = (float)item->valuedouble;
+        return DTREE_OK;
     }
     
-    return default_val;
+    if (cJSON_IsString(item)) {
+        *value = (float)atof(item->valuestring);
+        return DTREE_OK;
+    }
+    
+    LOGW(TAG, "Property '%s' type mismatch, expected float", property);
+    return DTREE_ERR_TYPE;
 }

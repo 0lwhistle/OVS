@@ -4,6 +4,11 @@
  * 
  * 模仿 Linux 设备树模型，使用 JSON 描述硬件配置。
  * 为各驱动模块提供统一的硬件配置读取接口。
+ * 
+ * 设计原则：
+ * 1. 硬件参数完全由设备树描述，程序中不硬编码默认值
+ * 2. 属性读取失败时返回错误码，调用者必须处理错误
+ * 3. 提供完整的错误处理机制
  */
 
 #ifndef DTREE_H
@@ -20,9 +25,11 @@ extern "C" {
 typedef enum {
     DTREE_OK = 0,               /**< 成功 */
     DTREE_ERR_NOT_INIT = -1,    /**< 未初始化 */
-    DTREE_ERR_NOT_FOUND = -2,   /**< 节点未找到 */
+    DTREE_ERR_NOT_FOUND = -2,   /**< 节点或属性未找到 */
     DTREE_ERR_TYPE = -3,        /**< 类型错误 */
     DTREE_ERR_PARAM = -4,       /**< 参数错误 */
+    DTREE_ERR_PARSE = -5,       /**< 解析错误 */
+    DTREE_ERR_IO = -6,          /**< IO错误 */
 } dtree_err_t;
 
 /* ========== 节点句柄 ========== */
@@ -39,6 +46,13 @@ typedef struct dtree_node dtree_node_t;
  * @return DTREE_OK 成功，其他值失败
  */
 dtree_err_t dtree_init(void);
+
+/**
+ * @brief 检查设备树是否已初始化
+ * 
+ * @return true 已初始化，false 未初始化
+ */
+bool dtree_is_initialized(void);
 
 /**
  * @brief 获取根节点
@@ -65,6 +79,23 @@ dtree_node_t* dtree_get_child(dtree_node_t* parent, const char* name);
 dtree_node_t* dtree_get_node(const char* path);
 
 /**
+ * @brief 检查节点是否存在
+ * 
+ * @param path 节点路径
+ * @return true 存在，false 不存在
+ */
+bool dtree_has_node(const char* path);
+
+/**
+ * @brief 检查属性是否存在
+ * 
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @return true 存在，false 不存在
+ */
+bool dtree_has_property(dtree_node_t* node, const char* property);
+
+/**
  * @brief 获取节点的 compatible 字符串
  * 
  * @param node 节点句柄
@@ -75,89 +106,102 @@ const char* dtree_get_compatible(dtree_node_t* node);
 /**
  * @brief 获取整数属性值
  * 
- * @param node       节点句柄
- * @param property   属性名称
- * @param default_val 默认值
- * @return 属性值，未找到返回默认值
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @param value    输出参数，存储读取到的值
+ * @return DTREE_OK 成功，其他值失败
  */
-int32_t dtree_get_int(dtree_node_t* node, const char* property, int32_t default_val);
+dtree_err_t dtree_get_int(dtree_node_t* node, const char* property, int32_t* value);
 
 /**
  * @brief 获取无符号整数属性值
  * 
- * @param node       节点句柄
- * @param property   属性名称
- * @param default_val 默认值
- * @return 属性值，未找到返回默认值
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @param value    输出参数，存储读取到的值
+ * @return DTREE_OK 成功，其他值失败
  */
-uint32_t dtree_get_uint(dtree_node_t* node, const char* property, uint32_t default_val);
+dtree_err_t dtree_get_uint(dtree_node_t* node, const char* property, uint32_t* value);
 
 /**
  * @brief 获取字符串属性值
  * 
- * @param node       节点句柄
- * @param property   属性名称
- * @return 字符串值，未找到返回 NULL
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @param value    输出参数，存储字符串指针（不要修改或释放）
+ * @return DTREE_OK 成功，其他值失败
  */
-const char* dtree_get_string(dtree_node_t* node, const char* property);
+dtree_err_t dtree_get_string(dtree_node_t* node, const char* property, const char** value);
 
 /**
  * @brief 获取布尔属性值
  * 
- * @param node       节点句柄
- * @param property   属性名称
- * @param default_val 默认值
- * @return 布尔值
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @param value    输出参数，存储布尔值
+ * @return DTREE_OK 成功，其他值失败
  */
-bool dtree_get_bool(dtree_node_t* node, const char* property, bool default_val);
+dtree_err_t dtree_get_bool(dtree_node_t* node, const char* property, bool* value);
 
 /**
  * @brief 获取浮点数属性值
  * 
- * @param node       节点句柄
- * @param property   属性名称
- * @param default_val 默认值
- * @return 浮点值
+ * @param node     节点句柄
+ * @param property 属性名称
+ * @param value    输出参数，存储浮点值
+ * @return DTREE_OK 成功，其他值失败
  */
-float dtree_get_float(dtree_node_t* node, const char* property, float default_val);
+dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* value);
 
 /* ========== 便捷宏：通过路径直接获取属性 ========== */
 
 /**
  * @brief 通过完整路径获取整数
- * @param path 节点路径
- * @param prop 属性名
- * @param def  默认值
+ * @param path  节点路径
+ * @param prop  属性名
+ * @param value 指向 int32_t 变量的指针
+ * @return dtree_err_t 错误码
  */
-#define DTREE_INT(path, prop, def) \
-    dtree_get_int(dtree_get_node(path), prop, def)
+#define DTREE_INT(path, prop, value) \
+    dtree_get_int(dtree_get_node(path), prop, value)
 
 /**
  * @brief 通过完整路径获取无符号整数
  */
-#define DTREE_UINT(path, prop, def) \
-    dtree_get_uint(dtree_get_node(path), prop, def)
+#define DTREE_UINT(path, prop, value) \
+    dtree_get_uint(dtree_get_node(path), prop, value)
 
 /**
  * @brief 通过完整路径获取字符串
  */
-#define DTREE_STR(path, prop) \
-    dtree_get_string(dtree_get_node(path), prop)
+#define DTREE_STR(path, prop, value) \
+    dtree_get_string(dtree_get_node(path), prop, value)
 
 /**
  * @brief 通过完整路径获取布尔值
  */
-#define DTREE_BOOL(path, prop, def) \
-    dtree_get_bool(dtree_get_node(path), prop, def)
+#define DTREE_BOOL(path, prop, value) \
+    dtree_get_bool(dtree_get_node(path), prop, value)
 
 /**
  * @brief 通过完整路径获取浮点数
  */
-#define DTREE_FLOAT(path, prop, def) \
-    dtree_get_float(dtree_get_node(path), prop, def)
+#define DTREE_FLOAT(path, prop, value) \
+    dtree_get_float(dtree_get_node(path), prop, value)
 
 /* ========== 设备树文件路径常量 ========== */
 #define DTREE_CONFIG_DIR    "/spiffs/dtbs"  /**< JSON 配置目录 */
+
+/* ========== 错误处理宏 ========== */
+
+/**
+ * @brief 检查设备树操作结果并打印错误
+ * @param op   操作描述
+ * @param err  错误码
+ * @return true 错误发生，false 无错误
+ */
+#define DTREE_CHECK_ERROR(op, err) \
+    ((err) != DTREE_OK ? (LOGE("[DTREE]", "%s failed: %d", op, err), true) : false)
 
 #ifdef __cplusplus
 }
