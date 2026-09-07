@@ -140,6 +140,12 @@ vfs_err_t vfs_mount_littlefs(const char* virtual_path, const char* device_name,
 vfs_err_t vfs_register_mount_point(const char* virtual_path, const char* device_name,
                                     size_t offset, size_t size, void* blockdev_handle);
 
+/**
+ * @brief 释放块设备适配器（内部使用，由卸载流程调用）
+ * @param handle esp_blockdev 句柄
+ */
+void vfs_release_blockdev_adapter(void* handle);
+
 /* ========== 便捷 API ========== */
 
 /**

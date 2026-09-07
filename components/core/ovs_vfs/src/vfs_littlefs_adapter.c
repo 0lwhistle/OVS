@@ -14,6 +14,8 @@
 #include "logger.h"
 #include "esp_blockdev.h"
 #include "esp_littlefs.h"
+#include "esp_heap_caps.h"
+#include "esp_system.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -204,12 +206,14 @@ esp_blockdev_handle_t vfs_create_blockdev_adapter(const vfs_block_dev_t* vfs_dev
     return handle;
 }
 
-void vfs_release_blockdev_adapter(esp_blockdev_handle_t handle) {
+void vfs_release_blockdev_adapter(void* handle) {
     if (!handle) return;
+    
+    esp_blockdev_handle_t bdl = (esp_blockdev_handle_t)handle;
     
     /* 查找对应的槽位 */
     for (int i = 0; i < MAX_BLOCKDEV_HANDLES; i++) {
-        if (&s_blockdev_pool[i] == handle) {
+        if (&s_blockdev_pool[i] == bdl) {
             s_blockdev_used[i] = false;
             LOGI(TAG, "Released block device adapter slot %d", i);
             return;
@@ -258,8 +262,15 @@ vfs_err_t vfs_mount_littlefs(const char* virtual_path, const char* device_name,
         .dont_mount = false,
     };
     
+    /* 诊断: 挂载前打印堆状态 */
+    LOGI(TAG, "Before register: free_heap=%lu, min_free=%lu",
+         (unsigned long)esp_get_free_heap_size(),
+         (unsigned long)esp_get_minimum_free_heap_size());
+    
     /* 挂载 LittleFS */
+    LOGI(TAG, "Calling esp_vfs_littlefs_register for '%s'", virtual_path);
     esp_err_t err = esp_vfs_littlefs_register(&conf);
+    LOGI(TAG, "esp_vfs_littlefs_register returned: %s (%d)", esp_err_to_name(err), err);
     if (err != ESP_OK) {
         LOGE(TAG, "LittleFS mount failed for '%s': %s", virtual_path, esp_err_to_name(err));
         vfs_release_blockdev_adapter(bdl);
