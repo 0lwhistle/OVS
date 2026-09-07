@@ -31,7 +31,7 @@
         "description": "W25Q128 NOR Flash",
         "cs_pin": 13,
         "size_mb": 16,
-        "spi_freq_mhz": 20,
+        "spi_freq_mhz": 40,
         "quad_enable": false
     }
 }

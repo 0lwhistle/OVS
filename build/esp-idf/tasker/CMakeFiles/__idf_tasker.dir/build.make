@@ -73,43 +73,43 @@ esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj: esp-idf/tasker/CM
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj: ../components/core/tasker/task_manager.c
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj -MF CMakeFiles/__idf_tasker.dir/task_manager.c.obj.d -o CMakeFiles/__idf_tasker.dir/task_manager.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.obj -MF CMakeFiles/__idf_tasker.dir/task_manager.c.obj.d -o CMakeFiles/__idf_tasker.dir/task_manager.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_tasker.dir/task_manager.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c > CMakeFiles/__idf_tasker.dir/task_manager.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c > CMakeFiles/__idf_tasker.dir/task_manager.c.i
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_tasker.dir/task_manager.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c -o CMakeFiles/__idf_tasker.dir/task_manager.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_manager.c -o CMakeFiles/__idf_tasker.dir/task_manager.c.s
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/flags.make
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj: ../components/core/tasker/task_worker.c
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj -MF CMakeFiles/__idf_tasker.dir/task_worker.c.obj.d -o CMakeFiles/__idf_tasker.dir/task_worker.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.obj -MF CMakeFiles/__idf_tasker.dir/task_worker.c.obj.d -o CMakeFiles/__idf_tasker.dir/task_worker.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_tasker.dir/task_worker.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c > CMakeFiles/__idf_tasker.dir/task_worker.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c > CMakeFiles/__idf_tasker.dir/task_worker.c.i
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/task_worker.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_tasker.dir/task_worker.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c -o CMakeFiles/__idf_tasker.dir/task_worker.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/task_worker.c -o CMakeFiles/__idf_tasker.dir/task_worker.c.s
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/flags.make
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj: ../components/core/tasker/tasker_test.c
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj: esp-idf/tasker/CMakeFiles/__idf_tasker.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj -MF CMakeFiles/__idf_tasker.dir/tasker_test.c.obj.d -o CMakeFiles/__idf_tasker.dir/tasker_test.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.obj -MF CMakeFiles/__idf_tasker.dir/tasker_test.c.obj.d -o CMakeFiles/__idf_tasker.dir/tasker_test.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_tasker.dir/tasker_test.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c > CMakeFiles/__idf_tasker.dir/tasker_test.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c > CMakeFiles/__idf_tasker.dir/tasker_test.c.i
 
 esp-idf/tasker/CMakeFiles/__idf_tasker.dir/tasker_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_tasker.dir/tasker_test.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c -o CMakeFiles/__idf_tasker.dir/tasker_test.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/tasker && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/core/tasker/tasker_test.c -o CMakeFiles/__idf_tasker.dir/tasker_test.c.s
 
 # Object files for target __idf_tasker
 __idf_tasker_OBJECTS = \

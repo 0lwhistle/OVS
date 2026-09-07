@@ -42,79 +42,66 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_wake_stub.c.obj
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/include/esp_compiler.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/gpio_types.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/include/esp_bit_defs.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_cpu.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa_api.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xt_utils.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/extreg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/extreg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-core-state.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xt_instr_macros.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_alloc.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_intr_types.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/include/esp_assert.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/port/esp32/include/soc/rtc.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/include/soc/rtc_periph.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/include/soc/rtc_cntl_periph.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_cntl_struct.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/clk_tree_defs.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_uart/esp32/include/hal/uart_ll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/port/esp32s3/include/soc/rtc.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/platform_port/include/hal/misc.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/uart_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/uart_struct.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/dport_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/dport_access.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_uart/include/hal/uart_types.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_clock/esp32/include/hal/clk_tree_ll.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_io_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/syscon_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/timer_group_struct.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/io_mux_reg.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_clock/esp32/include/hal/clkout_channel.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/gpio_sig_map.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/uart_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/uart_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/system_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/dport_access.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/include/hal/clk_tree_ll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rtc_cntl_reg.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/platform_port/include/hal/regi2c_ctrl.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/regi2c_ctrl.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_regi2c.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/periph_ctrl.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/periph_defs.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/include/hal/regi2c_ctrl_ll.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/regi2c_defs.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/periph_defs.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/interrupts.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32s3/include/hal/regi2c_ctrl_ll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/regi2c_defs.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_clk_tree_common.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_clk_tree.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/regi2c_bbpll.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/regi2c_apll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/regi2c_bbpll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/timer_group_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/io_mux_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_clock/esp32s3/include/hal/clkout_channel.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/gpio_sig_map.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/platform_port/include/hal/assert.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32/rom/rtc.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32/include/esp32/rom/ets_sys.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/reset_reasons.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/include/hal/rtc_hal.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/esp32/include/hal/rtc_cntl_ll.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32/include/hal/rtc_io_ll.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/rtc_io_struct.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/rtc_io_periph.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_rtc_timer/esp32/include/hal/rtc_timer_ll.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/platform_port/include/hal/log.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_log.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_sys.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/reset_reasons.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_log_config.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_log_level.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_log_color.h \
@@ -126,4 +113,17 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/sleep_wake_stub.c.obj
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_common/include/esp_macros.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_log_attr.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/log/include/esp_private/log_attr.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/esp32s3/include/esp32s3/rom/rtc.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/include/hal/rtc_hal.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/esp32s3/include/hal/rtc_cntl_ll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/syscon_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/esp32s3/include/hal/rtc_io_ll.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rtc_io_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/rtc_io_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_gpio/include/hal/rtc_io_periph.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/rtc_io_channel.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/usb_serial_jtag_reg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/usb_serial_jtag_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/sens_struct.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_rtc_timer/esp32s3/include/hal/rtc_timer_ll.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_rom/include/esp_rom_serial_output.h

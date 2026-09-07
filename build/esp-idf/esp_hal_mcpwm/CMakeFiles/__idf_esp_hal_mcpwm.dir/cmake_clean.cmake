@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_mcpwm.dir/esp32/mcpwm_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_mcpwm.dir/esp32/mcpwm_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_mcpwm.dir/esp32s3/mcpwm_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_mcpwm.dir/esp32s3/mcpwm_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_mcpwm.dir/mcpwm_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_mcpwm.dir/mcpwm_hal.c.obj.d"
   "libesp_hal_mcpwm.a"

@@ -130,29 +130,29 @@ __idf_esp_hal_timg/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build
 .PHONY : __idf_esp_hal_timg/fast
 
-esp32/timer_periph.obj: esp32/timer_periph.c.obj
-.PHONY : esp32/timer_periph.obj
+esp32s3/timer_periph.obj: esp32s3/timer_periph.c.obj
+.PHONY : esp32s3/timer_periph.obj
 
 # target to build an object file
-esp32/timer_periph.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.obj
-.PHONY : esp32/timer_periph.c.obj
+esp32s3/timer_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.obj
+.PHONY : esp32s3/timer_periph.c.obj
 
-esp32/timer_periph.i: esp32/timer_periph.c.i
-.PHONY : esp32/timer_periph.i
+esp32s3/timer_periph.i: esp32s3/timer_periph.c.i
+.PHONY : esp32s3/timer_periph.i
 
 # target to preprocess a source file
-esp32/timer_periph.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.i
-.PHONY : esp32/timer_periph.c.i
+esp32s3/timer_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.i
+.PHONY : esp32s3/timer_periph.c.i
 
-esp32/timer_periph.s: esp32/timer_periph.c.s
-.PHONY : esp32/timer_periph.s
+esp32s3/timer_periph.s: esp32s3/timer_periph.c.s
+.PHONY : esp32s3/timer_periph.s
 
 # target to generate assembly for a file
-esp32/timer_periph.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32/timer_periph.c.s
-.PHONY : esp32/timer_periph.c.s
+esp32s3/timer_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/build.make esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/esp32s3/timer_periph.c.s
+.PHONY : esp32s3/timer_periph.c.s
 
 timer_hal.obj: timer_hal.c.obj
 .PHONY : timer_hal.obj
@@ -187,9 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_timg"
-	@echo "... esp32/timer_periph.obj"
-	@echo "... esp32/timer_periph.i"
-	@echo "... esp32/timer_periph.s"
+	@echo "... esp32s3/timer_periph.obj"
+	@echo "... esp32s3/timer_periph.i"
+	@echo "... esp32s3/timer_periph.s"
 	@echo "... timer_hal.obj"
 	@echo "... timer_hal.i"
 	@echo "... timer_hal.s"

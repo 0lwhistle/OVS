@@ -7,13 +7,13 @@ esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_context.S.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xt_asm_utils.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/coreasm.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
@@ -30,13 +30,13 @@ esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_intr_asm.S.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/reent.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/coreasm.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
@@ -54,18 +54,15 @@ esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xtensa_vectors.S.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/interrupts.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/register/soc/reg_base.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/register/soc/reg_base.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie-asm.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/xt_specreg.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/esp_private/panic_reason.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xt_asm_utils.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/coreasm.h \

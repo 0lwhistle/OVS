@@ -130,53 +130,77 @@ __idf_esp_hal_wdt/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build
 .PHONY : __idf_esp_hal_wdt/fast
 
-esp32/mwdt_periph.obj: esp32/mwdt_periph.c.obj
-.PHONY : esp32/mwdt_periph.obj
+esp32s3/mwdt_periph.obj: esp32s3/mwdt_periph.c.obj
+.PHONY : esp32s3/mwdt_periph.obj
 
 # target to build an object file
-esp32/mwdt_periph.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32/mwdt_periph.c.obj
-.PHONY : esp32/mwdt_periph.c.obj
+esp32s3/mwdt_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.obj
+.PHONY : esp32s3/mwdt_periph.c.obj
 
-esp32/mwdt_periph.i: esp32/mwdt_periph.c.i
-.PHONY : esp32/mwdt_periph.i
+esp32s3/mwdt_periph.i: esp32s3/mwdt_periph.c.i
+.PHONY : esp32s3/mwdt_periph.i
 
 # target to preprocess a source file
-esp32/mwdt_periph.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32/mwdt_periph.c.i
-.PHONY : esp32/mwdt_periph.c.i
+esp32s3/mwdt_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.i
+.PHONY : esp32s3/mwdt_periph.c.i
 
-esp32/mwdt_periph.s: esp32/mwdt_periph.c.s
-.PHONY : esp32/mwdt_periph.s
+esp32s3/mwdt_periph.s: esp32s3/mwdt_periph.c.s
+.PHONY : esp32s3/mwdt_periph.s
 
 # target to generate assembly for a file
-esp32/mwdt_periph.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32/mwdt_periph.c.s
-.PHONY : esp32/mwdt_periph.c.s
+esp32s3/mwdt_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/esp32s3/mwdt_periph.c.s
+.PHONY : esp32s3/mwdt_periph.c.s
 
-wdt_hal_iram.obj: wdt_hal_iram.c.obj
-.PHONY : wdt_hal_iram.obj
+rom_patch.obj: rom_patch.c.obj
+.PHONY : rom_patch.obj
 
 # target to build an object file
-wdt_hal_iram.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/wdt_hal_iram.c.obj
-.PHONY : wdt_hal_iram.c.obj
+rom_patch.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.obj
+.PHONY : rom_patch.c.obj
 
-wdt_hal_iram.i: wdt_hal_iram.c.i
-.PHONY : wdt_hal_iram.i
+rom_patch.i: rom_patch.c.i
+.PHONY : rom_patch.i
 
 # target to preprocess a source file
-wdt_hal_iram.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/wdt_hal_iram.c.i
-.PHONY : wdt_hal_iram.c.i
+rom_patch.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.i
+.PHONY : rom_patch.c.i
 
-wdt_hal_iram.s: wdt_hal_iram.c.s
-.PHONY : wdt_hal_iram.s
+rom_patch.s: rom_patch.c.s
+.PHONY : rom_patch.s
 
 # target to generate assembly for a file
-wdt_hal_iram.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/wdt_hal_iram.c.s
-.PHONY : wdt_hal_iram.c.s
+rom_patch.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rom_patch.c.s
+.PHONY : rom_patch.c.s
+
+xt_wdt_hal.obj: xt_wdt_hal.c.obj
+.PHONY : xt_wdt_hal.obj
+
+# target to build an object file
+xt_wdt_hal.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.obj
+.PHONY : xt_wdt_hal.c.obj
+
+xt_wdt_hal.i: xt_wdt_hal.c.i
+.PHONY : xt_wdt_hal.i
+
+# target to preprocess a source file
+xt_wdt_hal.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.i
+.PHONY : xt_wdt_hal.c.i
+
+xt_wdt_hal.s: xt_wdt_hal.c.s
+.PHONY : xt_wdt_hal.s
+
+# target to generate assembly for a file
+xt_wdt_hal.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/build.make esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/xt_wdt_hal.c.s
+.PHONY : xt_wdt_hal.c.s
 
 # Help Target
 help:
@@ -187,12 +211,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_wdt"
-	@echo "... esp32/mwdt_periph.obj"
-	@echo "... esp32/mwdt_periph.i"
-	@echo "... esp32/mwdt_periph.s"
-	@echo "... wdt_hal_iram.obj"
-	@echo "... wdt_hal_iram.i"
-	@echo "... wdt_hal_iram.s"
+	@echo "... esp32s3/mwdt_periph.obj"
+	@echo "... esp32s3/mwdt_periph.i"
+	@echo "... esp32s3/mwdt_periph.s"
+	@echo "... rom_patch.obj"
+	@echo "... rom_patch.i"
+	@echo "... rom_patch.s"
+	@echo "... xt_wdt_hal.obj"
+	@echo "... xt_wdt_hal.i"
+	@echo "... xt_wdt_hal.s"
 .PHONY : help
 
 

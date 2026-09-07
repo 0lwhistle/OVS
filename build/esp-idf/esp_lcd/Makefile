@@ -199,29 +199,53 @@ i2c/esp_lcd_panel_io_i2c.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i2c/esp_lcd_panel_io_i2c.c.s
 .PHONY : i2c/esp_lcd_panel_io_i2c.c.s
 
-i80/esp_lcd_panel_io_i2s.obj: i80/esp_lcd_panel_io_i2s.c.obj
-.PHONY : i80/esp_lcd_panel_io_i2s.obj
+i80/esp_lcd_panel_io_i80.obj: i80/esp_lcd_panel_io_i80.c.obj
+.PHONY : i80/esp_lcd_panel_io_i80.obj
 
 # target to build an object file
-i80/esp_lcd_panel_io_i2s.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i2s.c.obj
-.PHONY : i80/esp_lcd_panel_io_i2s.c.obj
+i80/esp_lcd_panel_io_i80.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i80.c.obj
+.PHONY : i80/esp_lcd_panel_io_i80.c.obj
 
-i80/esp_lcd_panel_io_i2s.i: i80/esp_lcd_panel_io_i2s.c.i
-.PHONY : i80/esp_lcd_panel_io_i2s.i
+i80/esp_lcd_panel_io_i80.i: i80/esp_lcd_panel_io_i80.c.i
+.PHONY : i80/esp_lcd_panel_io_i80.i
 
 # target to preprocess a source file
-i80/esp_lcd_panel_io_i2s.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i2s.c.i
-.PHONY : i80/esp_lcd_panel_io_i2s.c.i
+i80/esp_lcd_panel_io_i80.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i80.c.i
+.PHONY : i80/esp_lcd_panel_io_i80.c.i
 
-i80/esp_lcd_panel_io_i2s.s: i80/esp_lcd_panel_io_i2s.c.s
-.PHONY : i80/esp_lcd_panel_io_i2s.s
+i80/esp_lcd_panel_io_i80.s: i80/esp_lcd_panel_io_i80.c.s
+.PHONY : i80/esp_lcd_panel_io_i80.s
 
 # target to generate assembly for a file
-i80/esp_lcd_panel_io_i2s.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i2s.c.s
-.PHONY : i80/esp_lcd_panel_io_i2s.c.s
+i80/esp_lcd_panel_io_i80.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i80/esp_lcd_panel_io_i80.c.s
+.PHONY : i80/esp_lcd_panel_io_i80.c.s
+
+rgb/esp_lcd_panel_rgb.obj: rgb/esp_lcd_panel_rgb.c.obj
+.PHONY : rgb/esp_lcd_panel_rgb.obj
+
+# target to build an object file
+rgb/esp_lcd_panel_rgb.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/rgb/esp_lcd_panel_rgb.c.obj
+.PHONY : rgb/esp_lcd_panel_rgb.c.obj
+
+rgb/esp_lcd_panel_rgb.i: rgb/esp_lcd_panel_rgb.c.i
+.PHONY : rgb/esp_lcd_panel_rgb.i
+
+# target to preprocess a source file
+rgb/esp_lcd_panel_rgb.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/rgb/esp_lcd_panel_rgb.c.i
+.PHONY : rgb/esp_lcd_panel_rgb.c.i
+
+rgb/esp_lcd_panel_rgb.s: rgb/esp_lcd_panel_rgb.c.s
+.PHONY : rgb/esp_lcd_panel_rgb.s
+
+# target to generate assembly for a file
+rgb/esp_lcd_panel_rgb.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/rgb/esp_lcd_panel_rgb.c.s
+.PHONY : rgb/esp_lcd_panel_rgb.c.s
 
 spi/esp_lcd_panel_io_spi.obj: spi/esp_lcd_panel_io_spi.c.obj
 .PHONY : spi/esp_lcd_panel_io_spi.obj
@@ -383,9 +407,12 @@ help:
 	@echo "... i2c/esp_lcd_panel_io_i2c.obj"
 	@echo "... i2c/esp_lcd_panel_io_i2c.i"
 	@echo "... i2c/esp_lcd_panel_io_i2c.s"
-	@echo "... i80/esp_lcd_panel_io_i2s.obj"
-	@echo "... i80/esp_lcd_panel_io_i2s.i"
-	@echo "... i80/esp_lcd_panel_io_i2s.s"
+	@echo "... i80/esp_lcd_panel_io_i80.obj"
+	@echo "... i80/esp_lcd_panel_io_i80.i"
+	@echo "... i80/esp_lcd_panel_io_i80.s"
+	@echo "... rgb/esp_lcd_panel_rgb.obj"
+	@echo "... rgb/esp_lcd_panel_rgb.i"
+	@echo "... rgb/esp_lcd_panel_rgb.s"
 	@echo "... spi/esp_lcd_panel_io_spi.obj"
 	@echo "... spi/esp_lcd_panel_io_spi.i"
 	@echo "... spi/esp_lcd_panel_io_spi.s"

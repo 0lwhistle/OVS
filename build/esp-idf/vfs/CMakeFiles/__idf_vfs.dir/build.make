@@ -73,71 +73,71 @@ esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_vfs.dir/vfs.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c > CMakeFiles/__idf_vfs.dir/vfs.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c > CMakeFiles/__idf_vfs.dir/vfs.c.i
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_vfs.dir/vfs.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c -o CMakeFiles/__idf_vfs.dir/vfs.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs.c -o CMakeFiles/__idf_vfs.dir/vfs.c.s
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/flags.make
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_calls.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_vfs.dir/vfs_calls.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c > CMakeFiles/__idf_vfs.dir/vfs_calls.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c > CMakeFiles/__idf_vfs.dir/vfs_calls.c.i
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_calls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_vfs.dir/vfs_calls.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c -o CMakeFiles/__idf_vfs.dir/vfs_calls.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_calls.c -o CMakeFiles/__idf_vfs.dir/vfs_calls.c.s
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/flags.make
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c > CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c > CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.i
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c -o CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_eventfd.c -o CMakeFiles/__idf_vfs.dir/vfs_eventfd.c.s
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/flags.make
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj -MF CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj.d -o CMakeFiles/__idf_vfs.dir/vfs_semihost.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_vfs.dir/vfs_semihost.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c > CMakeFiles/__idf_vfs.dir/vfs_semihost.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c > CMakeFiles/__idf_vfs.dir/vfs_semihost.c.i
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/vfs_semihost.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_vfs.dir/vfs_semihost.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c -o CMakeFiles/__idf_vfs.dir/vfs_semihost.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/vfs_semihost.c -o CMakeFiles/__idf_vfs.dir/vfs_semihost.c.s
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/flags.make
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj: esp-idf/vfs/CMakeFiles/__idf_vfs.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj -MF CMakeFiles/__idf_vfs.dir/nullfs.c.obj.d -o CMakeFiles/__idf_vfs.dir/nullfs.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.obj -MF CMakeFiles/__idf_vfs.dir/nullfs.c.obj.d -o CMakeFiles/__idf_vfs.dir/nullfs.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_vfs.dir/nullfs.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c > CMakeFiles/__idf_vfs.dir/nullfs.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c > CMakeFiles/__idf_vfs.dir/nullfs.c.i
 
 esp-idf/vfs/CMakeFiles/__idf_vfs.dir/nullfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_vfs.dir/nullfs.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c -o CMakeFiles/__idf_vfs.dir/nullfs.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/vfs/nullfs.c -o CMakeFiles/__idf_vfs.dir/nullfs.c.s
 
 # Object files for target __idf_vfs
 __idf_vfs_OBJECTS = \

@@ -73,88 +73,88 @@ esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj: esp-idf/hal/CMakeFiles/__i
 esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c
 esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj -MF CMakeFiles/__idf_hal.dir/hal_utils.c.obj.d -o CMakeFiles/__idf_hal.dir/hal_utils.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj -MF CMakeFiles/__idf_hal.dir/hal_utils.c.obj.d -o CMakeFiles/__idf_hal.dir/hal_utils.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/hal_utils.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c > CMakeFiles/__idf_hal.dir/hal_utils.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c > CMakeFiles/__idf_hal.dir/hal_utils.c.i
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/hal_utils.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c -o CMakeFiles/__idf_hal.dir/hal_utils.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/hal_utils.c -o CMakeFiles/__idf_hal.dir/hal_utils.c.s
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
 esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c
 esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj -MF CMakeFiles/__idf_hal.dir/efuse_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/efuse_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj -MF CMakeFiles/__idf_hal.dir/efuse_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/efuse_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/efuse_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c > CMakeFiles/__idf_hal.dir/efuse_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c > CMakeFiles/__idf_hal.dir/efuse_hal.c.i
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/efuse_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c -o CMakeFiles/__idf_hal.dir/efuse_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/efuse_hal.c -o CMakeFiles/__idf_hal.dir/efuse_hal.c.s
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/efuse_hal.c
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj -MF CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/efuse_hal.c
+esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
+esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32s3/efuse_hal.c
+esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj -MF CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32s3/efuse_hal.c
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/efuse_hal.c > CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.i
+esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32s3/efuse_hal.c > CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.i
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/efuse_hal.c -o CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.s
+esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32s3/efuse_hal.c -o CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.s
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
 esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c
 esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj -MF CMakeFiles/__idf_hal.dir/mmu_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/mmu_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj -MF CMakeFiles/__idf_hal.dir/mmu_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/mmu_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/mmu_hal.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c > CMakeFiles/__idf_hal.dir/mmu_hal.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c > CMakeFiles/__idf_hal.dir/mmu_hal.c.i
 
 esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/mmu_hal.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c -o CMakeFiles/__idf_hal.dir/mmu_hal.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/mmu_hal.c -o CMakeFiles/__idf_hal.dir/mmu_hal.c.s
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/cache_hal_esp32.c
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj -MF CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj.d -o CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/cache_hal_esp32.c
+esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/flags.make
+esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/cache_hal.c
+esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj: esp-idf/hal/CMakeFiles/__idf_hal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj -MF CMakeFiles/__idf_hal.dir/cache_hal.c.obj.d -o CMakeFiles/__idf_hal.dir/cache_hal.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/cache_hal.c
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/cache_hal_esp32.c > CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.i
+esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_hal.dir/cache_hal.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/cache_hal.c > CMakeFiles/__idf_hal.dir/cache_hal.c.i
 
-esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/esp32/cache_hal_esp32.c -o CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.s
+esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_hal.dir/cache_hal.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/hal/cache_hal.c -o CMakeFiles/__idf_hal.dir/cache_hal.c.s
 
 # Object files for target __idf_hal
 __idf_hal_OBJECTS = \
 "CMakeFiles/__idf_hal.dir/hal_utils.c.obj" \
 "CMakeFiles/__idf_hal.dir/efuse_hal.c.obj" \
-"CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj" \
+"CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj" \
 "CMakeFiles/__idf_hal.dir/mmu_hal.c.obj" \
-"CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj"
+"CMakeFiles/__idf_hal.dir/cache_hal.c.obj"
 
 # External object files for target __idf_hal
 __idf_hal_EXTERNAL_OBJECTS =
 
 esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj
 esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj
-esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj
+esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32s3/efuse_hal.c.obj
 esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj
-esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj
+esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/cache_hal.c.obj
 esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/build.make
 esp-idf/hal/libhal.a: esp-idf/hal/CMakeFiles/__idf_hal.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libhal.a"

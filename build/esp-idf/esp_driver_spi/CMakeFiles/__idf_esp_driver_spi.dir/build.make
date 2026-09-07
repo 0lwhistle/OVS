@@ -73,64 +73,64 @@ esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_common.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.s
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_master.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.s
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.i
 
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.s
 
-esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
-esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_dma.c
-esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_dma.c
+esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/flags.make
+esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c
+esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -MF CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj.d -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c
 
-esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_dma.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.i
+esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c > CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.i
 
-esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_dma.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.s
+esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_spi && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_spi/src/gpspi/spi_slave_hd.c -o CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.s
 
 # Object files for target __idf_esp_driver_spi
 __idf_esp_driver_spi_OBJECTS = \
 "CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj" \
 "CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj" \
 "CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj" \
-"CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj"
+"CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj"
 
 # External object files for target __idf_esp_driver_spi
 __idf_esp_driver_spi_EXTERNAL_OBJECTS =
@@ -138,7 +138,7 @@ __idf_esp_driver_spi_EXTERNAL_OBJECTS =
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_common.c.obj
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_master.c.obj
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave.c.obj
-esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_dma.c.obj
+esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/src/gpspi/spi_slave_hd.c.obj
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/build.make
 esp-idf/esp_driver_spi/libesp_driver_spi.a: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libesp_driver_spi.a"

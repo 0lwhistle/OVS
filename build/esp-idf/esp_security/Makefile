@@ -223,6 +223,54 @@ src/esp_crypto_periph_clk.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_crypto_periph_clk.c.s
 .PHONY : src/esp_crypto_periph_clk.c.s
 
+src/esp_ds.obj: src/esp_ds.c.obj
+.PHONY : src/esp_ds.obj
+
+# target to build an object file
+src/esp_ds.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_ds.c.obj
+.PHONY : src/esp_ds.c.obj
+
+src/esp_ds.i: src/esp_ds.c.i
+.PHONY : src/esp_ds.i
+
+# target to preprocess a source file
+src/esp_ds.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_ds.c.i
+.PHONY : src/esp_ds.c.i
+
+src/esp_ds.s: src/esp_ds.c.s
+.PHONY : src/esp_ds.s
+
+# target to generate assembly for a file
+src/esp_ds.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_ds.c.s
+.PHONY : src/esp_ds.c.s
+
+src/esp_hmac.obj: src/esp_hmac.c.obj
+.PHONY : src/esp_hmac.obj
+
+# target to build an object file
+src/esp_hmac.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_hmac.c.obj
+.PHONY : src/esp_hmac.c.obj
+
+src/esp_hmac.i: src/esp_hmac.c.i
+.PHONY : src/esp_hmac.i
+
+# target to preprocess a source file
+src/esp_hmac.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_hmac.c.i
+.PHONY : src/esp_hmac.c.i
+
+src/esp_hmac.s: src/esp_hmac.c.s
+.PHONY : src/esp_hmac.s
+
+# target to generate assembly for a file
+src/esp_hmac.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_hmac.c.s
+.PHONY : src/esp_hmac.c.s
+
 src/init.obj: src/init.c.obj
 .PHONY : src/init.obj
 
@@ -266,6 +314,12 @@ help:
 	@echo "... src/esp_crypto_periph_clk.obj"
 	@echo "... src/esp_crypto_periph_clk.i"
 	@echo "... src/esp_crypto_periph_clk.s"
+	@echo "... src/esp_ds.obj"
+	@echo "... src/esp_ds.i"
+	@echo "... src/esp_ds.s"
+	@echo "... src/esp_hmac.obj"
+	@echo "... src/esp_hmac.i"
+	@echo "... src/esp_hmac.s"
 	@echo "... src/init.obj"
 	@echo "... src/init.i"
 	@echo "... src/init.s"

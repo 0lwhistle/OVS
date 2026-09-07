@@ -10,13 +10,20 @@ idf_component_register(
         dtbs
         wifi
         led
-        beep
         gpio
-        sr04
+        i2s_drv
+        i2c_drv
+        spi_drv
+        uart_drv
         ota
         web
         heartbeat
-        lvgl_ui
+        audio_module
+        st7789
+        aht30
+        cst816s
+        lora
+        w25q128
         nvs_flash
         esp_wifi
         esp_event

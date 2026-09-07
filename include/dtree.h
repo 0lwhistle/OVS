@@ -16,6 +16,8 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include "logger.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -201,7 +203,7 @@ dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* val
  * @return true 错误发生，false 无错误
  */
 #define DTREE_CHECK_ERROR(op, err) \
-    ((err) != DTREE_OK ? (LOGE("[DTREE]", "%s failed: %d", op, err), true) : false)
+    (((err) != DTREE_OK) ? (LOGE_EXPR("[DTREE]", "%s failed: %d", (op), (err)), true) : false)
 
 #ifdef __cplusplus
 }

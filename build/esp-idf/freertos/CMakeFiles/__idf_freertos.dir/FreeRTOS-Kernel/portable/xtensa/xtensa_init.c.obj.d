@@ -1,7 +1,7 @@
 esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/xtensa_init.c.obj: \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_init.c \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/hal.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/cdefs.h \
@@ -17,11 +17,11 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/x
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtensa-versions.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-isa.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/core-matmap.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/tie.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/corebits.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32/include/xtensa/config/system.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/esp32s3/include/xtensa/config/system.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/platform_include/assert.h \
  /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
@@ -36,5 +36,4 @@ esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/portable/xtensa/x
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa/xtruntime-frames.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_libc/platform_include/sys/reent.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa_context.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/xtensa/include/xtensa_timer.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hw_support/include/esp_private/esp_clk.h

@@ -439,6 +439,30 @@ intr_alloc.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/intr_alloc.c.s
 .PHONY : intr_alloc.c.s
 
+lowpower/port/esp32s3/sleep_cpu.obj: lowpower/port/esp32s3/sleep_cpu.c.obj
+.PHONY : lowpower/port/esp32s3/sleep_cpu.obj
+
+# target to build an object file
+lowpower/port/esp32s3/sleep_cpu.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/lowpower/port/esp32s3/sleep_cpu.c.obj
+.PHONY : lowpower/port/esp32s3/sleep_cpu.c.obj
+
+lowpower/port/esp32s3/sleep_cpu.i: lowpower/port/esp32s3/sleep_cpu.c.i
+.PHONY : lowpower/port/esp32s3/sleep_cpu.i
+
+# target to preprocess a source file
+lowpower/port/esp32s3/sleep_cpu.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/lowpower/port/esp32s3/sleep_cpu.c.i
+.PHONY : lowpower/port/esp32s3/sleep_cpu.c.i
+
+lowpower/port/esp32s3/sleep_cpu.s: lowpower/port/esp32s3/sleep_cpu.c.s
+.PHONY : lowpower/port/esp32s3/sleep_cpu.s
+
+# target to generate assembly for a file
+lowpower/port/esp32s3/sleep_cpu.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/lowpower/port/esp32s3/sleep_cpu.c.s
+.PHONY : lowpower/port/esp32s3/sleep_cpu.c.s
+
 mac_addr.obj: mac_addr.c.obj
 .PHONY : mac_addr.obj
 
@@ -487,6 +511,54 @@ mspi_timing_tuning/mspi_timing_tuning.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/mspi_timing_tuning.c.s
 .PHONY : mspi_timing_tuning/mspi_timing_tuning.c.s
 
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.obj: mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.obj
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.obj
+
+# target to build an object file
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.obj
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.obj
+
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.i: mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.i
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.i
+
+# target to preprocess a source file
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.i
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.i
+
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.s: mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.s
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.s
+
+# target to generate assembly for a file
+mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.s
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.c.s
+
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.obj: mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.obj
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.obj
+
+# target to build an object file
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.obj
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.obj
+
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.i: mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.i
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.i
+
+# target to preprocess a source file
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.i
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.i
+
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.s: mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.s
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.s
+
+# target to generate assembly for a file
+mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.s
+.PHONY : mspi_timing_tuning/port/esp32s3/mspi_timing_config.c.s
+
 periph_ctrl.obj: periph_ctrl.c.obj
 .PHONY : periph_ctrl.obj
 
@@ -511,293 +583,317 @@ periph_ctrl.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/periph_ctrl.c.s
 .PHONY : periph_ctrl.c.s
 
-port/esp32/cache_sram_mmu.obj: port/esp32/cache_sram_mmu.c.obj
-.PHONY : port/esp32/cache_sram_mmu.obj
+port/esp32s3/chip_info.obj: port/esp32s3/chip_info.c.obj
+.PHONY : port/esp32s3/chip_info.obj
 
 # target to build an object file
-port/esp32/cache_sram_mmu.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.obj
-.PHONY : port/esp32/cache_sram_mmu.c.obj
+port/esp32s3/chip_info.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/chip_info.c.obj
+.PHONY : port/esp32s3/chip_info.c.obj
 
-port/esp32/cache_sram_mmu.i: port/esp32/cache_sram_mmu.c.i
-.PHONY : port/esp32/cache_sram_mmu.i
+port/esp32s3/chip_info.i: port/esp32s3/chip_info.c.i
+.PHONY : port/esp32s3/chip_info.i
 
 # target to preprocess a source file
-port/esp32/cache_sram_mmu.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.i
-.PHONY : port/esp32/cache_sram_mmu.c.i
+port/esp32s3/chip_info.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/chip_info.c.i
+.PHONY : port/esp32s3/chip_info.c.i
 
-port/esp32/cache_sram_mmu.s: port/esp32/cache_sram_mmu.c.s
-.PHONY : port/esp32/cache_sram_mmu.s
+port/esp32s3/chip_info.s: port/esp32s3/chip_info.c.s
+.PHONY : port/esp32s3/chip_info.s
 
 # target to generate assembly for a file
-port/esp32/cache_sram_mmu.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.s
-.PHONY : port/esp32/cache_sram_mmu.c.s
+port/esp32s3/chip_info.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/chip_info.c.s
+.PHONY : port/esp32s3/chip_info.c.s
 
-port/esp32/chip_info.obj: port/esp32/chip_info.c.obj
-.PHONY : port/esp32/chip_info.obj
+port/esp32s3/cpu_region_protect.obj: port/esp32s3/cpu_region_protect.c.obj
+.PHONY : port/esp32s3/cpu_region_protect.obj
 
 # target to build an object file
-port/esp32/chip_info.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.obj
-.PHONY : port/esp32/chip_info.c.obj
+port/esp32s3/cpu_region_protect.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/cpu_region_protect.c.obj
+.PHONY : port/esp32s3/cpu_region_protect.c.obj
 
-port/esp32/chip_info.i: port/esp32/chip_info.c.i
-.PHONY : port/esp32/chip_info.i
+port/esp32s3/cpu_region_protect.i: port/esp32s3/cpu_region_protect.c.i
+.PHONY : port/esp32s3/cpu_region_protect.i
 
 # target to preprocess a source file
-port/esp32/chip_info.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.i
-.PHONY : port/esp32/chip_info.c.i
+port/esp32s3/cpu_region_protect.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/cpu_region_protect.c.i
+.PHONY : port/esp32s3/cpu_region_protect.c.i
 
-port/esp32/chip_info.s: port/esp32/chip_info.c.s
-.PHONY : port/esp32/chip_info.s
+port/esp32s3/cpu_region_protect.s: port/esp32s3/cpu_region_protect.c.s
+.PHONY : port/esp32s3/cpu_region_protect.s
 
 # target to generate assembly for a file
-port/esp32/chip_info.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.s
-.PHONY : port/esp32/chip_info.c.s
+port/esp32s3/cpu_region_protect.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/cpu_region_protect.c.s
+.PHONY : port/esp32s3/cpu_region_protect.c.s
 
-port/esp32/cpu_region_protect.obj: port/esp32/cpu_region_protect.c.obj
-.PHONY : port/esp32/cpu_region_protect.obj
+port/esp32s3/esp_clk_tree.obj: port/esp32s3/esp_clk_tree.c.obj
+.PHONY : port/esp32s3/esp_clk_tree.obj
 
 # target to build an object file
-port/esp32/cpu_region_protect.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.obj
-.PHONY : port/esp32/cpu_region_protect.c.obj
+port/esp32s3/esp_clk_tree.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_clk_tree.c.obj
+.PHONY : port/esp32s3/esp_clk_tree.c.obj
 
-port/esp32/cpu_region_protect.i: port/esp32/cpu_region_protect.c.i
-.PHONY : port/esp32/cpu_region_protect.i
+port/esp32s3/esp_clk_tree.i: port/esp32s3/esp_clk_tree.c.i
+.PHONY : port/esp32s3/esp_clk_tree.i
 
 # target to preprocess a source file
-port/esp32/cpu_region_protect.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.i
-.PHONY : port/esp32/cpu_region_protect.c.i
+port/esp32s3/esp_clk_tree.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_clk_tree.c.i
+.PHONY : port/esp32s3/esp_clk_tree.c.i
 
-port/esp32/cpu_region_protect.s: port/esp32/cpu_region_protect.c.s
-.PHONY : port/esp32/cpu_region_protect.s
+port/esp32s3/esp_clk_tree.s: port/esp32s3/esp_clk_tree.c.s
+.PHONY : port/esp32s3/esp_clk_tree.s
 
 # target to generate assembly for a file
-port/esp32/cpu_region_protect.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.s
-.PHONY : port/esp32/cpu_region_protect.c.s
+port/esp32s3/esp_clk_tree.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_clk_tree.c.s
+.PHONY : port/esp32s3/esp_clk_tree.c.s
 
-port/esp32/esp_clk_tree.obj: port/esp32/esp_clk_tree.c.obj
-.PHONY : port/esp32/esp_clk_tree.obj
+port/esp32s3/esp_cpu_intr.obj: port/esp32s3/esp_cpu_intr.c.obj
+.PHONY : port/esp32s3/esp_cpu_intr.obj
 
 # target to build an object file
-port/esp32/esp_clk_tree.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_clk_tree.c.obj
-.PHONY : port/esp32/esp_clk_tree.c.obj
+port/esp32s3/esp_cpu_intr.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_cpu_intr.c.obj
+.PHONY : port/esp32s3/esp_cpu_intr.c.obj
 
-port/esp32/esp_clk_tree.i: port/esp32/esp_clk_tree.c.i
-.PHONY : port/esp32/esp_clk_tree.i
+port/esp32s3/esp_cpu_intr.i: port/esp32s3/esp_cpu_intr.c.i
+.PHONY : port/esp32s3/esp_cpu_intr.i
 
 # target to preprocess a source file
-port/esp32/esp_clk_tree.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_clk_tree.c.i
-.PHONY : port/esp32/esp_clk_tree.c.i
+port/esp32s3/esp_cpu_intr.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_cpu_intr.c.i
+.PHONY : port/esp32s3/esp_cpu_intr.c.i
 
-port/esp32/esp_clk_tree.s: port/esp32/esp_clk_tree.c.s
-.PHONY : port/esp32/esp_clk_tree.s
+port/esp32s3/esp_cpu_intr.s: port/esp32s3/esp_cpu_intr.c.s
+.PHONY : port/esp32s3/esp_cpu_intr.s
 
 # target to generate assembly for a file
-port/esp32/esp_clk_tree.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_clk_tree.c.s
-.PHONY : port/esp32/esp_clk_tree.c.s
+port/esp32s3/esp_cpu_intr.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_cpu_intr.c.s
+.PHONY : port/esp32s3/esp_cpu_intr.c.s
 
-port/esp32/esp_cpu_intr.obj: port/esp32/esp_cpu_intr.c.obj
-.PHONY : port/esp32/esp_cpu_intr.obj
+port/esp32s3/esp_memprot.obj: port/esp32s3/esp_memprot.c.obj
+.PHONY : port/esp32s3/esp_memprot.obj
 
 # target to build an object file
-port/esp32/esp_cpu_intr.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.obj
-.PHONY : port/esp32/esp_cpu_intr.c.obj
+port/esp32s3/esp_memprot.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_memprot.c.obj
+.PHONY : port/esp32s3/esp_memprot.c.obj
 
-port/esp32/esp_cpu_intr.i: port/esp32/esp_cpu_intr.c.i
-.PHONY : port/esp32/esp_cpu_intr.i
+port/esp32s3/esp_memprot.i: port/esp32s3/esp_memprot.c.i
+.PHONY : port/esp32s3/esp_memprot.i
 
 # target to preprocess a source file
-port/esp32/esp_cpu_intr.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.i
-.PHONY : port/esp32/esp_cpu_intr.c.i
+port/esp32s3/esp_memprot.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_memprot.c.i
+.PHONY : port/esp32s3/esp_memprot.c.i
 
-port/esp32/esp_cpu_intr.s: port/esp32/esp_cpu_intr.c.s
-.PHONY : port/esp32/esp_cpu_intr.s
+port/esp32s3/esp_memprot.s: port/esp32s3/esp_memprot.c.s
+.PHONY : port/esp32s3/esp_memprot.s
 
 # target to generate assembly for a file
-port/esp32/esp_cpu_intr.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.s
-.PHONY : port/esp32/esp_cpu_intr.c.s
+port/esp32s3/esp_memprot.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/esp_memprot.c.s
+.PHONY : port/esp32s3/esp_memprot.c.s
 
-port/esp32/io_mux.obj: port/esp32/io_mux.c.obj
-.PHONY : port/esp32/io_mux.obj
+port/esp32s3/io_mux.obj: port/esp32s3/io_mux.c.obj
+.PHONY : port/esp32s3/io_mux.obj
 
 # target to build an object file
-port/esp32/io_mux.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.obj
-.PHONY : port/esp32/io_mux.c.obj
+port/esp32s3/io_mux.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/io_mux.c.obj
+.PHONY : port/esp32s3/io_mux.c.obj
 
-port/esp32/io_mux.i: port/esp32/io_mux.c.i
-.PHONY : port/esp32/io_mux.i
+port/esp32s3/io_mux.i: port/esp32s3/io_mux.c.i
+.PHONY : port/esp32s3/io_mux.i
 
 # target to preprocess a source file
-port/esp32/io_mux.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.i
-.PHONY : port/esp32/io_mux.c.i
+port/esp32s3/io_mux.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/io_mux.c.i
+.PHONY : port/esp32s3/io_mux.c.i
 
-port/esp32/io_mux.s: port/esp32/io_mux.c.s
-.PHONY : port/esp32/io_mux.s
+port/esp32s3/io_mux.s: port/esp32s3/io_mux.c.s
+.PHONY : port/esp32s3/io_mux.s
 
 # target to generate assembly for a file
-port/esp32/io_mux.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.s
-.PHONY : port/esp32/io_mux.c.s
+port/esp32s3/io_mux.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/io_mux.c.s
+.PHONY : port/esp32s3/io_mux.c.s
 
-port/esp32/rtc_clk.obj: port/esp32/rtc_clk.c.obj
-.PHONY : port/esp32/rtc_clk.obj
+port/esp32s3/rtc_clk.obj: port/esp32s3/rtc_clk.c.obj
+.PHONY : port/esp32s3/rtc_clk.obj
 
 # target to build an object file
-port/esp32/rtc_clk.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj
-.PHONY : port/esp32/rtc_clk.c.obj
+port/esp32s3/rtc_clk.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk.c.obj
+.PHONY : port/esp32s3/rtc_clk.c.obj
 
-port/esp32/rtc_clk.i: port/esp32/rtc_clk.c.i
-.PHONY : port/esp32/rtc_clk.i
+port/esp32s3/rtc_clk.i: port/esp32s3/rtc_clk.c.i
+.PHONY : port/esp32s3/rtc_clk.i
 
 # target to preprocess a source file
-port/esp32/rtc_clk.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.i
-.PHONY : port/esp32/rtc_clk.c.i
+port/esp32s3/rtc_clk.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk.c.i
+.PHONY : port/esp32s3/rtc_clk.c.i
 
-port/esp32/rtc_clk.s: port/esp32/rtc_clk.c.s
-.PHONY : port/esp32/rtc_clk.s
+port/esp32s3/rtc_clk.s: port/esp32s3/rtc_clk.c.s
+.PHONY : port/esp32s3/rtc_clk.s
 
 # target to generate assembly for a file
-port/esp32/rtc_clk.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.s
-.PHONY : port/esp32/rtc_clk.c.s
+port/esp32s3/rtc_clk.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk.c.s
+.PHONY : port/esp32s3/rtc_clk.c.s
 
-port/esp32/rtc_clk_init.obj: port/esp32/rtc_clk_init.c.obj
-.PHONY : port/esp32/rtc_clk_init.obj
+port/esp32s3/rtc_clk_init.obj: port/esp32s3/rtc_clk_init.c.obj
+.PHONY : port/esp32s3/rtc_clk_init.obj
 
 # target to build an object file
-port/esp32/rtc_clk_init.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.obj
-.PHONY : port/esp32/rtc_clk_init.c.obj
+port/esp32s3/rtc_clk_init.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk_init.c.obj
+.PHONY : port/esp32s3/rtc_clk_init.c.obj
 
-port/esp32/rtc_clk_init.i: port/esp32/rtc_clk_init.c.i
-.PHONY : port/esp32/rtc_clk_init.i
+port/esp32s3/rtc_clk_init.i: port/esp32s3/rtc_clk_init.c.i
+.PHONY : port/esp32s3/rtc_clk_init.i
 
 # target to preprocess a source file
-port/esp32/rtc_clk_init.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.i
-.PHONY : port/esp32/rtc_clk_init.c.i
+port/esp32s3/rtc_clk_init.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk_init.c.i
+.PHONY : port/esp32s3/rtc_clk_init.c.i
 
-port/esp32/rtc_clk_init.s: port/esp32/rtc_clk_init.c.s
-.PHONY : port/esp32/rtc_clk_init.s
+port/esp32s3/rtc_clk_init.s: port/esp32s3/rtc_clk_init.c.s
+.PHONY : port/esp32s3/rtc_clk_init.s
 
 # target to generate assembly for a file
-port/esp32/rtc_clk_init.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.s
-.PHONY : port/esp32/rtc_clk_init.c.s
+port/esp32s3/rtc_clk_init.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk_init.c.s
+.PHONY : port/esp32s3/rtc_clk_init.c.s
 
-port/esp32/rtc_init.obj: port/esp32/rtc_init.c.obj
-.PHONY : port/esp32/rtc_init.obj
+port/esp32s3/rtc_init.obj: port/esp32s3/rtc_init.c.obj
+.PHONY : port/esp32s3/rtc_init.obj
 
 # target to build an object file
-port/esp32/rtc_init.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_init.c.obj
-.PHONY : port/esp32/rtc_init.c.obj
+port/esp32s3/rtc_init.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_init.c.obj
+.PHONY : port/esp32s3/rtc_init.c.obj
 
-port/esp32/rtc_init.i: port/esp32/rtc_init.c.i
-.PHONY : port/esp32/rtc_init.i
+port/esp32s3/rtc_init.i: port/esp32s3/rtc_init.c.i
+.PHONY : port/esp32s3/rtc_init.i
 
 # target to preprocess a source file
-port/esp32/rtc_init.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_init.c.i
-.PHONY : port/esp32/rtc_init.c.i
+port/esp32s3/rtc_init.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_init.c.i
+.PHONY : port/esp32s3/rtc_init.c.i
 
-port/esp32/rtc_init.s: port/esp32/rtc_init.c.s
-.PHONY : port/esp32/rtc_init.s
+port/esp32s3/rtc_init.s: port/esp32s3/rtc_init.c.s
+.PHONY : port/esp32s3/rtc_init.s
 
 # target to generate assembly for a file
-port/esp32/rtc_init.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_init.c.s
-.PHONY : port/esp32/rtc_init.c.s
+port/esp32s3/rtc_init.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_init.c.s
+.PHONY : port/esp32s3/rtc_init.c.s
 
-port/esp32/rtc_sleep.obj: port/esp32/rtc_sleep.c.obj
-.PHONY : port/esp32/rtc_sleep.obj
+port/esp32s3/rtc_sleep.obj: port/esp32s3/rtc_sleep.c.obj
+.PHONY : port/esp32s3/rtc_sleep.obj
 
 # target to build an object file
-port/esp32/rtc_sleep.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_sleep.c.obj
-.PHONY : port/esp32/rtc_sleep.c.obj
+port/esp32s3/rtc_sleep.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_sleep.c.obj
+.PHONY : port/esp32s3/rtc_sleep.c.obj
 
-port/esp32/rtc_sleep.i: port/esp32/rtc_sleep.c.i
-.PHONY : port/esp32/rtc_sleep.i
+port/esp32s3/rtc_sleep.i: port/esp32s3/rtc_sleep.c.i
+.PHONY : port/esp32s3/rtc_sleep.i
 
 # target to preprocess a source file
-port/esp32/rtc_sleep.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_sleep.c.i
-.PHONY : port/esp32/rtc_sleep.c.i
+port/esp32s3/rtc_sleep.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_sleep.c.i
+.PHONY : port/esp32s3/rtc_sleep.c.i
 
-port/esp32/rtc_sleep.s: port/esp32/rtc_sleep.c.s
-.PHONY : port/esp32/rtc_sleep.s
+port/esp32s3/rtc_sleep.s: port/esp32s3/rtc_sleep.c.s
+.PHONY : port/esp32s3/rtc_sleep.s
 
 # target to generate assembly for a file
-port/esp32/rtc_sleep.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_sleep.c.s
-.PHONY : port/esp32/rtc_sleep.c.s
+port/esp32s3/rtc_sleep.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_sleep.c.s
+.PHONY : port/esp32s3/rtc_sleep.c.s
 
-port/esp32/rtc_time.obj: port/esp32/rtc_time.c.obj
-.PHONY : port/esp32/rtc_time.obj
+port/esp32s3/rtc_time.obj: port/esp32s3/rtc_time.c.obj
+.PHONY : port/esp32s3/rtc_time.obj
 
 # target to build an object file
-port/esp32/rtc_time.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj
-.PHONY : port/esp32/rtc_time.c.obj
+port/esp32s3/rtc_time.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_time.c.obj
+.PHONY : port/esp32s3/rtc_time.c.obj
 
-port/esp32/rtc_time.i: port/esp32/rtc_time.c.i
-.PHONY : port/esp32/rtc_time.i
+port/esp32s3/rtc_time.i: port/esp32s3/rtc_time.c.i
+.PHONY : port/esp32s3/rtc_time.i
 
 # target to preprocess a source file
-port/esp32/rtc_time.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.i
-.PHONY : port/esp32/rtc_time.c.i
+port/esp32s3/rtc_time.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_time.c.i
+.PHONY : port/esp32s3/rtc_time.c.i
 
-port/esp32/rtc_time.s: port/esp32/rtc_time.c.s
-.PHONY : port/esp32/rtc_time.s
+port/esp32s3/rtc_time.s: port/esp32s3/rtc_time.c.s
+.PHONY : port/esp32s3/rtc_time.s
 
 # target to generate assembly for a file
-port/esp32/rtc_time.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.s
-.PHONY : port/esp32/rtc_time.c.s
+port/esp32s3/rtc_time.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_time.c.s
+.PHONY : port/esp32s3/rtc_time.c.s
 
-port/esp32/sar_periph_ctrl.obj: port/esp32/sar_periph_ctrl.c.obj
-.PHONY : port/esp32/sar_periph_ctrl.obj
+port/esp32s3/sar_periph_ctrl.obj: port/esp32s3/sar_periph_ctrl.c.obj
+.PHONY : port/esp32s3/sar_periph_ctrl.obj
 
 # target to build an object file
-port/esp32/sar_periph_ctrl.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj
-.PHONY : port/esp32/sar_periph_ctrl.c.obj
+port/esp32s3/sar_periph_ctrl.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/sar_periph_ctrl.c.obj
+.PHONY : port/esp32s3/sar_periph_ctrl.c.obj
 
-port/esp32/sar_periph_ctrl.i: port/esp32/sar_periph_ctrl.c.i
-.PHONY : port/esp32/sar_periph_ctrl.i
+port/esp32s3/sar_periph_ctrl.i: port/esp32s3/sar_periph_ctrl.c.i
+.PHONY : port/esp32s3/sar_periph_ctrl.i
 
 # target to preprocess a source file
-port/esp32/sar_periph_ctrl.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.i
-.PHONY : port/esp32/sar_periph_ctrl.c.i
+port/esp32s3/sar_periph_ctrl.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/sar_periph_ctrl.c.i
+.PHONY : port/esp32s3/sar_periph_ctrl.c.i
 
-port/esp32/sar_periph_ctrl.s: port/esp32/sar_periph_ctrl.c.s
-.PHONY : port/esp32/sar_periph_ctrl.s
+port/esp32s3/sar_periph_ctrl.s: port/esp32s3/sar_periph_ctrl.c.s
+.PHONY : port/esp32s3/sar_periph_ctrl.s
 
 # target to generate assembly for a file
-port/esp32/sar_periph_ctrl.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.s
-.PHONY : port/esp32/sar_periph_ctrl.c.s
+port/esp32s3/sar_periph_ctrl.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/sar_periph_ctrl.c.s
+.PHONY : port/esp32s3/sar_periph_ctrl.c.s
+
+port/esp32s3/systimer.obj: port/esp32s3/systimer.c.obj
+.PHONY : port/esp32s3/systimer.obj
+
+# target to build an object file
+port/esp32s3/systimer.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/systimer.c.obj
+.PHONY : port/esp32s3/systimer.c.obj
+
+port/esp32s3/systimer.i: port/esp32s3/systimer.c.i
+.PHONY : port/esp32s3/systimer.i
+
+# target to preprocess a source file
+port/esp32s3/systimer.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/systimer.c.i
+.PHONY : port/esp32s3/systimer.c.i
+
+port/esp32s3/systimer.s: port/esp32s3/systimer.c.s
+.PHONY : port/esp32s3/systimer.s
+
+# target to generate assembly for a file
+port/esp32s3/systimer.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/systimer.c.s
+.PHONY : port/esp32s3/systimer.c.s
 
 port/esp_clk_tree_common.obj: port/esp_clk_tree_common.c.obj
 .PHONY : port/esp_clk_tree_common.obj
@@ -822,6 +918,30 @@ port/esp_clk_tree_common.s: port/esp_clk_tree_common.c.s
 port/esp_clk_tree_common.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp_clk_tree_common.c.s
 .PHONY : port/esp_clk_tree_common.c.s
+
+port/esp_memprot_conv.obj: port/esp_memprot_conv.c.obj
+.PHONY : port/esp_memprot_conv.obj
+
+# target to build an object file
+port/esp_memprot_conv.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp_memprot_conv.c.obj
+.PHONY : port/esp_memprot_conv.c.obj
+
+port/esp_memprot_conv.i: port/esp_memprot_conv.c.i
+.PHONY : port/esp_memprot_conv.i
+
+# target to preprocess a source file
+port/esp_memprot_conv.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp_memprot_conv.c.i
+.PHONY : port/esp_memprot_conv.c.i
+
+port/esp_memprot_conv.s: port/esp_memprot_conv.c.s
+.PHONY : port/esp_memprot_conv.s
+
+# target to generate assembly for a file
+port/esp_memprot_conv.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp_memprot_conv.c.s
+.PHONY : port/esp_memprot_conv.c.s
 
 power_supply/brownout.obj: power_supply/brownout.c.obj
 .PHONY : power_supply/brownout.obj
@@ -918,30 +1038,6 @@ rtc_module.s: rtc_module.c.s
 rtc_module.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_module.c.s
 .PHONY : rtc_module.c.s
-
-rtc_wdt.obj: rtc_wdt.c.obj
-.PHONY : rtc_wdt.obj
-
-# target to build an object file
-rtc_wdt.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_wdt.c.obj
-.PHONY : rtc_wdt.c.obj
-
-rtc_wdt.i: rtc_wdt.c.i
-.PHONY : rtc_wdt.i
-
-# target to preprocess a source file
-rtc_wdt.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_wdt.c.i
-.PHONY : rtc_wdt.c.i
-
-rtc_wdt.s: rtc_wdt.c.s
-.PHONY : rtc_wdt.s
-
-# target to generate assembly for a file
-rtc_wdt.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/rtc_wdt.c.s
-.PHONY : rtc_wdt.c.s
 
 sar_tsens_ctrl.obj: sar_tsens_ctrl.c.obj
 .PHONY : sar_tsens_ctrl.obj
@@ -1231,6 +1327,30 @@ spi_share_hw_ctrl.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/spi_share_hw_ctrl.c.s
 .PHONY : spi_share_hw_ctrl.c.s
 
+usb_phy/usb_phy.obj: usb_phy/usb_phy.c.obj
+.PHONY : usb_phy/usb_phy.obj
+
+# target to build an object file
+usb_phy/usb_phy.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/usb_phy/usb_phy.c.obj
+.PHONY : usb_phy/usb_phy.c.obj
+
+usb_phy/usb_phy.i: usb_phy/usb_phy.c.i
+.PHONY : usb_phy/usb_phy.i
+
+# target to preprocess a source file
+usb_phy/usb_phy.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/usb_phy/usb_phy.c.i
+.PHONY : usb_phy/usb_phy.c.i
+
+usb_phy/usb_phy.s: usb_phy/usb_phy.c.s
+.PHONY : usb_phy/usb_phy.s
+
+# target to generate assembly for a file
+usb_phy/usb_phy.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/usb_phy/usb_phy.c.s
+.PHONY : usb_phy/usb_phy.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1277,54 +1397,69 @@ help:
 	@echo "... intr_alloc.obj"
 	@echo "... intr_alloc.i"
 	@echo "... intr_alloc.s"
+	@echo "... lowpower/port/esp32s3/sleep_cpu.obj"
+	@echo "... lowpower/port/esp32s3/sleep_cpu.i"
+	@echo "... lowpower/port/esp32s3/sleep_cpu.s"
 	@echo "... mac_addr.obj"
 	@echo "... mac_addr.i"
 	@echo "... mac_addr.s"
 	@echo "... mspi_timing_tuning/mspi_timing_tuning.obj"
 	@echo "... mspi_timing_tuning/mspi_timing_tuning.i"
 	@echo "... mspi_timing_tuning/mspi_timing_tuning.s"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.obj"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.i"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_by_mspi_delay.s"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_config.obj"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_config.i"
+	@echo "... mspi_timing_tuning/port/esp32s3/mspi_timing_config.s"
 	@echo "... periph_ctrl.obj"
 	@echo "... periph_ctrl.i"
 	@echo "... periph_ctrl.s"
-	@echo "... port/esp32/cache_sram_mmu.obj"
-	@echo "... port/esp32/cache_sram_mmu.i"
-	@echo "... port/esp32/cache_sram_mmu.s"
-	@echo "... port/esp32/chip_info.obj"
-	@echo "... port/esp32/chip_info.i"
-	@echo "... port/esp32/chip_info.s"
-	@echo "... port/esp32/cpu_region_protect.obj"
-	@echo "... port/esp32/cpu_region_protect.i"
-	@echo "... port/esp32/cpu_region_protect.s"
-	@echo "... port/esp32/esp_clk_tree.obj"
-	@echo "... port/esp32/esp_clk_tree.i"
-	@echo "... port/esp32/esp_clk_tree.s"
-	@echo "... port/esp32/esp_cpu_intr.obj"
-	@echo "... port/esp32/esp_cpu_intr.i"
-	@echo "... port/esp32/esp_cpu_intr.s"
-	@echo "... port/esp32/io_mux.obj"
-	@echo "... port/esp32/io_mux.i"
-	@echo "... port/esp32/io_mux.s"
-	@echo "... port/esp32/rtc_clk.obj"
-	@echo "... port/esp32/rtc_clk.i"
-	@echo "... port/esp32/rtc_clk.s"
-	@echo "... port/esp32/rtc_clk_init.obj"
-	@echo "... port/esp32/rtc_clk_init.i"
-	@echo "... port/esp32/rtc_clk_init.s"
-	@echo "... port/esp32/rtc_init.obj"
-	@echo "... port/esp32/rtc_init.i"
-	@echo "... port/esp32/rtc_init.s"
-	@echo "... port/esp32/rtc_sleep.obj"
-	@echo "... port/esp32/rtc_sleep.i"
-	@echo "... port/esp32/rtc_sleep.s"
-	@echo "... port/esp32/rtc_time.obj"
-	@echo "... port/esp32/rtc_time.i"
-	@echo "... port/esp32/rtc_time.s"
-	@echo "... port/esp32/sar_periph_ctrl.obj"
-	@echo "... port/esp32/sar_periph_ctrl.i"
-	@echo "... port/esp32/sar_periph_ctrl.s"
+	@echo "... port/esp32s3/chip_info.obj"
+	@echo "... port/esp32s3/chip_info.i"
+	@echo "... port/esp32s3/chip_info.s"
+	@echo "... port/esp32s3/cpu_region_protect.obj"
+	@echo "... port/esp32s3/cpu_region_protect.i"
+	@echo "... port/esp32s3/cpu_region_protect.s"
+	@echo "... port/esp32s3/esp_clk_tree.obj"
+	@echo "... port/esp32s3/esp_clk_tree.i"
+	@echo "... port/esp32s3/esp_clk_tree.s"
+	@echo "... port/esp32s3/esp_cpu_intr.obj"
+	@echo "... port/esp32s3/esp_cpu_intr.i"
+	@echo "... port/esp32s3/esp_cpu_intr.s"
+	@echo "... port/esp32s3/esp_memprot.obj"
+	@echo "... port/esp32s3/esp_memprot.i"
+	@echo "... port/esp32s3/esp_memprot.s"
+	@echo "... port/esp32s3/io_mux.obj"
+	@echo "... port/esp32s3/io_mux.i"
+	@echo "... port/esp32s3/io_mux.s"
+	@echo "... port/esp32s3/rtc_clk.obj"
+	@echo "... port/esp32s3/rtc_clk.i"
+	@echo "... port/esp32s3/rtc_clk.s"
+	@echo "... port/esp32s3/rtc_clk_init.obj"
+	@echo "... port/esp32s3/rtc_clk_init.i"
+	@echo "... port/esp32s3/rtc_clk_init.s"
+	@echo "... port/esp32s3/rtc_init.obj"
+	@echo "... port/esp32s3/rtc_init.i"
+	@echo "... port/esp32s3/rtc_init.s"
+	@echo "... port/esp32s3/rtc_sleep.obj"
+	@echo "... port/esp32s3/rtc_sleep.i"
+	@echo "... port/esp32s3/rtc_sleep.s"
+	@echo "... port/esp32s3/rtc_time.obj"
+	@echo "... port/esp32s3/rtc_time.i"
+	@echo "... port/esp32s3/rtc_time.s"
+	@echo "... port/esp32s3/sar_periph_ctrl.obj"
+	@echo "... port/esp32s3/sar_periph_ctrl.i"
+	@echo "... port/esp32s3/sar_periph_ctrl.s"
+	@echo "... port/esp32s3/systimer.obj"
+	@echo "... port/esp32s3/systimer.i"
+	@echo "... port/esp32s3/systimer.s"
 	@echo "... port/esp_clk_tree_common.obj"
 	@echo "... port/esp_clk_tree_common.i"
 	@echo "... port/esp_clk_tree_common.s"
+	@echo "... port/esp_memprot_conv.obj"
+	@echo "... port/esp_memprot_conv.i"
+	@echo "... port/esp_memprot_conv.s"
 	@echo "... power_supply/brownout.obj"
 	@echo "... power_supply/brownout.i"
 	@echo "... power_supply/brownout.s"
@@ -1337,9 +1472,6 @@ help:
 	@echo "... rtc_module.obj"
 	@echo "... rtc_module.i"
 	@echo "... rtc_module.s"
-	@echo "... rtc_wdt.obj"
-	@echo "... rtc_wdt.i"
-	@echo "... rtc_wdt.s"
 	@echo "... sar_tsens_ctrl.obj"
 	@echo "... sar_tsens_ctrl.i"
 	@echo "... sar_tsens_ctrl.s"
@@ -1376,6 +1508,9 @@ help:
 	@echo "... spi_share_hw_ctrl.obj"
 	@echo "... spi_share_hw_ctrl.i"
 	@echo "... spi_share_hw_ctrl.s"
+	@echo "... usb_phy/usb_phy.obj"
+	@echo "... usb_phy/usb_phy.i"
+	@echo "... usb_phy/usb_phy.s"
 .PHONY : help
 
 

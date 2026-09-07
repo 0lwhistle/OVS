@@ -161,6 +161,92 @@ depend:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/rule:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/rule
+.PHONY : esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/rule
+
+# Convenience name for target.
+__idf_esp_driver_usb_serial_jtag: esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/rule
+.PHONY : __idf_esp_driver_usb_serial_jtag
+
+# fast build rule for target.
+__idf_esp_driver_usb_serial_jtag/fast:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build
+.PHONY : __idf_esp_driver_usb_serial_jtag/fast
+
+src/usb_serial_jtag.obj: src/usb_serial_jtag.c.obj
+.PHONY : src/usb_serial_jtag.obj
+
+# target to build an object file
+src/usb_serial_jtag.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.obj
+.PHONY : src/usb_serial_jtag.c.obj
+
+src/usb_serial_jtag.i: src/usb_serial_jtag.c.i
+.PHONY : src/usb_serial_jtag.i
+
+# target to preprocess a source file
+src/usb_serial_jtag.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.i
+.PHONY : src/usb_serial_jtag.c.i
+
+src/usb_serial_jtag.s: src/usb_serial_jtag.c.s
+.PHONY : src/usb_serial_jtag.s
+
+# target to generate assembly for a file
+src/usb_serial_jtag.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag.c.s
+.PHONY : src/usb_serial_jtag.c.s
+
+src/usb_serial_jtag_connection_monitor.obj: src/usb_serial_jtag_connection_monitor.c.obj
+.PHONY : src/usb_serial_jtag_connection_monitor.obj
+
+# target to build an object file
+src/usb_serial_jtag_connection_monitor.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.obj
+.PHONY : src/usb_serial_jtag_connection_monitor.c.obj
+
+src/usb_serial_jtag_connection_monitor.i: src/usb_serial_jtag_connection_monitor.c.i
+.PHONY : src/usb_serial_jtag_connection_monitor.i
+
+# target to preprocess a source file
+src/usb_serial_jtag_connection_monitor.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.i
+.PHONY : src/usb_serial_jtag_connection_monitor.c.i
+
+src/usb_serial_jtag_connection_monitor.s: src/usb_serial_jtag_connection_monitor.c.s
+.PHONY : src/usb_serial_jtag_connection_monitor.s
+
+# target to generate assembly for a file
+src/usb_serial_jtag_connection_monitor.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_connection_monitor.c.s
+.PHONY : src/usb_serial_jtag_connection_monitor.c.s
+
+src/usb_serial_jtag_vfs.obj: src/usb_serial_jtag_vfs.c.obj
+.PHONY : src/usb_serial_jtag_vfs.obj
+
+# target to build an object file
+src/usb_serial_jtag_vfs.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.obj
+.PHONY : src/usb_serial_jtag_vfs.c.obj
+
+src/usb_serial_jtag_vfs.i: src/usb_serial_jtag_vfs.c.i
+.PHONY : src/usb_serial_jtag_vfs.i
+
+# target to preprocess a source file
+src/usb_serial_jtag_vfs.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.i
+.PHONY : src/usb_serial_jtag_vfs.c.i
+
+src/usb_serial_jtag_vfs.s: src/usb_serial_jtag_vfs.c.s
+.PHONY : src/usb_serial_jtag_vfs.s
+
+# target to generate assembly for a file
+src/usb_serial_jtag_vfs.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/build.make esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/src/usb_serial_jtag_vfs.c.s
+.PHONY : src/usb_serial_jtag_vfs.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,6 +259,16 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... __idf_esp_driver_usb_serial_jtag"
+	@echo "... src/usb_serial_jtag.obj"
+	@echo "... src/usb_serial_jtag.i"
+	@echo "... src/usb_serial_jtag.s"
+	@echo "... src/usb_serial_jtag_connection_monitor.obj"
+	@echo "... src/usb_serial_jtag_connection_monitor.i"
+	@echo "... src/usb_serial_jtag_connection_monitor.s"
+	@echo "... src/usb_serial_jtag_vfs.obj"
+	@echo "... src/usb_serial_jtag_vfs.i"
+	@echo "... src/usb_serial_jtag_vfs.s"
 .PHONY : help
 
 

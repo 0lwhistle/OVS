@@ -161,44 +161,6 @@ depend:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule
-.PHONY : esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule
-
-# Convenience name for target.
-__idf_esp_driver_sdio: esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule
-.PHONY : __idf_esp_driver_sdio
-
-# fast build rule for target.
-__idf_esp_driver_sdio/fast:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build
-.PHONY : __idf_esp_driver_sdio/fast
-
-src/sdio_slave.obj: src/sdio_slave.c.obj
-.PHONY : src/sdio_slave.obj
-
-# target to build an object file
-src/sdio_slave.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/src/sdio_slave.c.obj
-.PHONY : src/sdio_slave.c.obj
-
-src/sdio_slave.i: src/sdio_slave.c.i
-.PHONY : src/sdio_slave.i
-
-# target to preprocess a source file
-src/sdio_slave.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/src/sdio_slave.c.i
-.PHONY : src/sdio_slave.c.i
-
-src/sdio_slave.s: src/sdio_slave.c.s
-.PHONY : src/sdio_slave.s
-
-# target to generate assembly for a file
-src/sdio_slave.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/src/sdio_slave.c.s
-.PHONY : src/sdio_slave.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,10 +173,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... __idf_esp_driver_sdio"
-	@echo "... src/sdio_slave.obj"
-	@echo "... src/sdio_slave.i"
-	@echo "... src/sdio_slave.s"
 .PHONY : help
 
 

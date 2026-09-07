@@ -116,6 +116,92 @@ depend:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
+.PHONY : esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
+
+# Convenience name for target.
+__idf_esp_hal_dma: esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/rule
+.PHONY : __idf_esp_hal_dma
+
+# fast build rule for target.
+__idf_esp_hal_dma/fast:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build
+.PHONY : __idf_esp_hal_dma/fast
+
+esp32s3/gdma_periph.obj: esp32s3/gdma_periph.c.obj
+.PHONY : esp32s3/gdma_periph.obj
+
+# target to build an object file
+esp32s3/gdma_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.obj
+.PHONY : esp32s3/gdma_periph.c.obj
+
+esp32s3/gdma_periph.i: esp32s3/gdma_periph.c.i
+.PHONY : esp32s3/gdma_periph.i
+
+# target to preprocess a source file
+esp32s3/gdma_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.i
+.PHONY : esp32s3/gdma_periph.c.i
+
+esp32s3/gdma_periph.s: esp32s3/gdma_periph.c.s
+.PHONY : esp32s3/gdma_periph.s
+
+# target to generate assembly for a file
+esp32s3/gdma_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/esp32s3/gdma_periph.c.s
+.PHONY : esp32s3/gdma_periph.c.s
+
+gdma_hal_ahb_v1.obj: gdma_hal_ahb_v1.c.obj
+.PHONY : gdma_hal_ahb_v1.obj
+
+# target to build an object file
+gdma_hal_ahb_v1.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.obj
+.PHONY : gdma_hal_ahb_v1.c.obj
+
+gdma_hal_ahb_v1.i: gdma_hal_ahb_v1.c.i
+.PHONY : gdma_hal_ahb_v1.i
+
+# target to preprocess a source file
+gdma_hal_ahb_v1.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.i
+.PHONY : gdma_hal_ahb_v1.c.i
+
+gdma_hal_ahb_v1.s: gdma_hal_ahb_v1.c.s
+.PHONY : gdma_hal_ahb_v1.s
+
+# target to generate assembly for a file
+gdma_hal_ahb_v1.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_ahb_v1.c.s
+.PHONY : gdma_hal_ahb_v1.c.s
+
+gdma_hal_top.obj: gdma_hal_top.c.obj
+.PHONY : gdma_hal_top.obj
+
+# target to build an object file
+gdma_hal_top.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.obj
+.PHONY : gdma_hal_top.c.obj
+
+gdma_hal_top.i: gdma_hal_top.c.i
+.PHONY : gdma_hal_top.i
+
+# target to preprocess a source file
+gdma_hal_top.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.i
+.PHONY : gdma_hal_top.c.i
+
+gdma_hal_top.s: gdma_hal_top.c.s
+.PHONY : gdma_hal_top.s
+
+# target to generate assembly for a file
+gdma_hal_top.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/build.make esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/gdma_hal_top.c.s
+.PHONY : gdma_hal_top.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +210,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... __idf_esp_hal_dma"
+	@echo "... esp32s3/gdma_periph.obj"
+	@echo "... esp32s3/gdma_periph.i"
+	@echo "... esp32s3/gdma_periph.s"
+	@echo "... gdma_hal_ahb_v1.obj"
+	@echo "... gdma_hal_ahb_v1.i"
+	@echo "... gdma_hal_ahb_v1.s"
+	@echo "... gdma_hal_top.obj"
+	@echo "... gdma_hal_top.i"
+	@echo "... gdma_hal_top.s"
 .PHONY : help
 
 

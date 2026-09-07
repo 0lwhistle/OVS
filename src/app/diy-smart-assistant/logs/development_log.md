@@ -1450,3 +1450,136 @@ components/core/event_bus/
 3. 实现各模块的具体功能
 4. 集成测试
 5. 烧录测试
+
+## [2026-09-07] - W25Q128模块完善与Holder模块测试
+
+### 完成内容
+- [x] 修复W25Q128状态寄存器读取（改用全双工传输）
+- [x] 修复w25q128_write_enable枚举类型比较错误
+- [x] 修复W25Q128读取返回空数据问题（根因：CS在命令和数据间切换）
+- [x] W25Q128完整测试通过：JEDEC ID、擦除、写入、读取、数据校验
+- [x] Holder模块测试通过：模块注册、初始化、状态查询、错误处理
+- [x] 综合测试程序（main.c）：Holder + W25Q128 全部通过
+- [x] 编写W25Q128模块README.md文档
+
+### 问题修复详情
+
+#### 1. 枚举类型比较错误
+**问题**：`w25q128_write_enable()`中`err`声明为`spi_drv_err_t`，但与`W25Q128_OK`（`w25q128_err_t`类型）比较
+**修复**：将循环内的`err`改为`w25q128_err_t`类型，`spi_drv_write`结果用`spi_err`接收
+
+#### 2. W25Q128读取返回0xFF
+**问题**：使用分离的`spi_drv_write`+`spi_drv_read`两个SPI事务，CS在命令和数据之间被拉高，W25Q128退出读取模式
+**修复**：改用`spi_drv_transfer`全双工传输，一次性发送cmd(1)+addr(3)+dummy(N)并接收数据，保证CS持续低电平
+
+### 测试结果
+
+#### Holder模块
+```
+alpha ready: YES (必需模块, 0错误)
+beta  ready: YES (非必需模块, 0错误)
+gamma ready: NO  (非必需模块, 1错误 - 预期模拟失败)
+holder_print_status() 正确显示状态报告
+holder_destroy() 清理正常
+```
+
+#### W25Q128模块
+```
+JEDEC ID: 0xEF 0x40 0x18 (Winbond W25Q128)
+Flash: 16MB, 4096 sectors
+擦除成功 → 写入成功 → 读取成功 → 数据校验成功 ✅
+```
+
+### 当前状态
+- W25Q128模块功能完整，可正常使用
+- Holder模块功能完整，可正常使用
+- 串口烧录测试正常（/dev/ttyACM0）
+
+### 待解决问题
+- SPI反初始化警告："not all CSses freed"（不影响功能，后续可在spi_drv_deinit中添加设备移除）
+
+### 文件变更
+```
+修改：components/modules/w25q128/w25q128.c  # 修复读取、状态寄存器、枚举比较
+新增：components/modules/w25q128/README.md  # 模块文档
+修改：main/main.c                           # 综合测试程序
+```
+
+### 下一步
+1. 等待用户下一步需求
+2. 可选：实现其他硬件模块驱动（ST7789、CST816S、AHT30、LoRa等）
+3. 可选：完善spi_drv_deinit以消除CS警告
+
+## [2026-09-07] - W25Q128改为使用设备树配置
+
+### 完成内容
+- [x] W25Q128模块改为从设备树读取配置（不再硬编码引脚）
+- [x] 从 `spi.bus` 读取总线配置（SCLK/MISO/MOSI/频率/模式）
+- [x] 从 `spi.flash` 读取Flash特定配置（CS引脚、工作频率）
+- [x] main.c 添加 dtree_init() 调用
+- [x] 更新README.md：添加设备树配置说明和性能参数文档
+
+### 变更详情
+
+#### w25q128.c 修改
+```c
+// 旧代码（硬编码）
+#define W25Q128_SPI_SCLK_PIN       42
+#define W25Q128_SPI_CS_PIN         13
+// ...
+
+// 新代码（设备树）
+spi_drv_config_t spi_config;
+spi_drv_load_config(&spi_config);  // 从 spi.bus 读取
+
+int32_t cs_pin, flash_freq;
+DTREE_INT("spi.flash", "cs_pin", &cs_pin);
+DTREE_INT("spi.flash", "spi_freq_mhz", &flash_freq);
+```
+
+#### main.c 修改
+```c
+#include "dtree.h"
+
+// 在 w25q128_init() 之前调用
+dtree_init();
+```
+
+### 设备树配置文件
+`components/dtbs/config/spi.json`
+```json
+{
+    "bus": {
+        "sclk_pin": 42,
+        "miso_pin": 41,
+        "mosi_pin": 40,
+        "max_freq_mhz": 40,
+        "mode": 0
+    },
+    "flash": {
+        "cs_pin": 13,
+        "spi_freq_mhz": 20,
+        "size_mb": 16
+    }
+}
+```
+
+### 性能参数
+| 操作 | 当前速度(20MHz) | 提升后(40MHz) | 提升后(80MHz) |
+|------|-----------------|---------------|---------------|
+| 顺序读取 | ~2.5 MB/s | ~5 MB/s | ~10 MB/s |
+| 页写入 | ~365 KB/s | ~365 KB/s | ~365 KB/s |
+| 扇区擦除 | ~89 KB/s | ~89 KB/s | ~89 KB/s |
+
+**注意**：写入和擦除速度受Flash硬件限制，提升SPI频率主要改善读取速度。
+
+### 文件变更
+```
+修改：components/modules/w25q128/w25q128.c  # 使用设备树
+修改：components/modules/w25q128/README.md  # 添加设备树和性能文档
+修改：main/main.c                           # 添加dtree_init()
+```
+
+### 下一步
+1. 编译测试设备树配置是否正常工作
+2. 可选：修改 spi.json 提升Flash频率到40MHz测试

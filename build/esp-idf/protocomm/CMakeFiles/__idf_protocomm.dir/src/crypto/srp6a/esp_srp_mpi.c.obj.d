@@ -34,7 +34,7 @@ esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp_mpi.c.
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/tf-psa-crypto/build_info.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/include/psa/crypto_config.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/include/mbedtls/esp_config.h \
- /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32/include/soc/soc_caps.h \
+ /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/esp32s3/include/soc/soc_caps.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/soc/include/soc/soc_caps_eval.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/include/esp_mem.h \
  /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include/mbedtls/private/config_psa.h \

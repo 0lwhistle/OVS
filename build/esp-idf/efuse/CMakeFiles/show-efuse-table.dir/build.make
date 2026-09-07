@@ -67,7 +67,7 @@ include esp-idf/efuse/CMakeFiles/show-efuse-table.dir/compiler_depend.make
 include esp-idf/efuse/CMakeFiles/show-efuse-table.dir/progress.make
 
 esp-idf/efuse/CMakeFiles/show-efuse-table:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32/esp_efuse_table.csv -t esp32 --max_blk_len 192 --info
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/efuse && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/efuse_table_gen.py /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.csv -t esp32s3 --max_blk_len 256 --info
 
 show-efuse-table: esp-idf/efuse/CMakeFiles/show-efuse-table
 show-efuse-table: esp-idf/efuse/CMakeFiles/show-efuse-table.dir/build.make

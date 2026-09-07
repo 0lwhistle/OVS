@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/brownout_hal.c" "esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/brownout_hal.c.obj" "gcc" "esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/brownout_hal.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_hal_pmu/esp32s3/rtc_cntl_hal.c" "esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/esp32s3/rtc_cntl_hal.c.obj" "gcc" "esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/esp32s3/rtc_cntl_hal.c.obj.d"
   )
 
 # Targets to which this target links.
@@ -25,6 +26,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/DependInfo.cmake"
@@ -35,7 +37,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
-  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -8,7 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/src/async_memcpy_gdma.c" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.obj" "gcc" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/async_memcpy_gdma.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/src/esp_async_memcpy.c" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.obj" "gcc" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_async_memcpy.c.obj.d"
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/src/esp_dma_utils.c" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.obj" "gcc" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/esp_dma_utils.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/src/gdma.c" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.obj" "gcc" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma.c.obj.d"
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_driver_dma/src/gdma_link.c" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma_link.c.obj" "gcc" "esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/src/gdma_link.c.obj.d"
   )
 
@@ -27,6 +30,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/efuse/CMakeFiles/__idf_efuse.dir/DependInfo.cmake"
@@ -34,6 +38,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/lwip/CMakeFiles/__idf_lwip.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/DependInfo.cmake"
@@ -59,6 +64,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/vfs/CMakeFiles/__idf_vfs.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_uart/CMakeFiles/__idf_esp_driver_uart.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_driver_usb_serial_jtag/CMakeFiles/__idf_esp_driver_usb_serial_jtag.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/DependInfo.cmake"

@@ -73,99 +73,127 @@ esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj: esp-idf/esp_adc/
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c > CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c > CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.i
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c -o CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_oneshot.c -o CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.s
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_common.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c > CMakeFiles/__idf_esp_adc.dir/adc_common.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c > CMakeFiles/__idf_esp_adc.dir/adc_common.c.i
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_common.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c -o CMakeFiles/__idf_esp_adc.dir/adc_common.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_common.c -o CMakeFiles/__idf_esp_adc.dir/adc_common.c.s
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_cali.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c > CMakeFiles/__idf_esp_adc.dir/adc_cali.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c > CMakeFiles/__idf_esp_adc.dir/adc_cali.c.i
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_cali.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c -o CMakeFiles/__idf_esp_adc.dir/adc_cali.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali.c -o CMakeFiles/__idf_esp_adc.dir/adc_cali.c.s
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c > CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c > CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.i
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c -o CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_cali_curve_fitting.c -o CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.s
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c > CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c > CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.i
 
 esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c -o CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_continuous.c -o CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.s
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_dma.c
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj -MF CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_dma.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_monitor.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_monitor.c
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_dma.c > CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.i
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_monitor.c > CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.i
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_dma.c -o CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.s
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_monitor.c -o CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.s
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_cali_line_fitting.c
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj -MF CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_cali_line_fitting.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/gdma/adc_dma.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj -MF CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/gdma/adc_dma.c
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_cali_line_fitting.c > CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.i
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/gdma/adc_dma.c > CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.i
 
-esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32/adc_cali_line_fitting.c -o CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.s
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/gdma/adc_dma.c -o CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.s
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_filter.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj -MF CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_filter.c
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/adc_filter.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_filter.c > CMakeFiles/__idf_esp_adc.dir/adc_filter.c.i
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/adc_filter.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/adc_filter.c -o CMakeFiles/__idf_esp_adc.dir/adc_filter.c.s
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/flags.make
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj: /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32s3/curve_fitting_coefficients.c
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj -MF CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj.d -o CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj -c /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32s3/curve_fitting_coefficients.c
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.i"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32s3/curve_fitting_coefficients.c > CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.i
+
+esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.s"
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/esp_adc/esp32s3/curve_fitting_coefficients.c -o CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.s
 
 # Object files for target __idf_esp_adc
 __idf_esp_adc_OBJECTS = \
@@ -174,8 +202,10 @@ __idf_esp_adc_OBJECTS = \
 "CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj" \
 "CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj" \
 "CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj" \
-"CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj" \
-"CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj"
+"CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj" \
+"CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj" \
+"CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj" \
+"CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj"
 
 # External object files for target __idf_esp_adc
 __idf_esp_adc_EXTERNAL_OBJECTS =
@@ -185,11 +215,13 @@ esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_c
 esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj
 esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj
 esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj
-esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_dma.c.obj
-esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32/adc_cali_line_fitting.c.obj
+esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj
+esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/gdma/adc_dma.c.obj
+esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj
+esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s3/curve_fitting_coefficients.c.obj
 esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/build.make
 esp-idf/esp_adc/libesp_adc.a: esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C static library libesp_adc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C static library libesp_adc.a"
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_adc.dir/cmake_clean_target.cmake
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/esp_adc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_adc.dir/link.txt --verbose=$(VERBOSE)
 

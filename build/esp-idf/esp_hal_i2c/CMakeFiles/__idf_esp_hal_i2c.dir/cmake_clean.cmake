@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_i2c.dir/esp32/i2c_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_i2c.dir/esp32/i2c_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_i2c.dir/esp32s3/i2c_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_i2c.dir/esp32s3/i2c_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal.c.obj.d"
   "CMakeFiles/__idf_esp_hal_i2c.dir/i2c_hal_iram.c.obj"

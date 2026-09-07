@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/__idf_spi_flash.dir/cache_utils.c.obj"
   "CMakeFiles/__idf_spi_flash.dir/cache_utils.c.obj.d"
+  "CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.obj"
+  "CMakeFiles/__idf_spi_flash.dir/esp32s3/spi_flash_oct_flash_init.c.obj.d"
   "CMakeFiles/__idf_spi_flash.dir/esp_flash_api.c.obj"
   "CMakeFiles/__idf_spi_flash.dir/esp_flash_api.c.obj.d"
   "CMakeFiles/__idf_spi_flash.dir/esp_flash_spi_init.c.obj"
@@ -33,6 +35,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_th.c.obj.d"
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_winbond.c.obj"
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_winbond.c.obj.d"
+  "CMakeFiles/__idf_spi_flash.dir/spi_flash_hpm_enable.c.obj"
+  "CMakeFiles/__idf_spi_flash.dir/spi_flash_hpm_enable.c.obj.d"
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_os_func_app.c.obj"
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_os_func_app.c.obj.d"
   "CMakeFiles/__idf_spi_flash.dir/spi_flash_os_func_noos.c.obj"

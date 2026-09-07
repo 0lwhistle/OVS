@@ -199,29 +199,29 @@ i2c/i2c.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c.c.s
 .PHONY : i2c/i2c.c.s
 
-touch_sensor/esp32/touch_sensor.obj: touch_sensor/esp32/touch_sensor.c.obj
-.PHONY : touch_sensor/esp32/touch_sensor.obj
+touch_sensor/esp32s3/touch_sensor.obj: touch_sensor/esp32s3/touch_sensor.c.obj
+.PHONY : touch_sensor/esp32s3/touch_sensor.obj
 
 # target to build an object file
-touch_sensor/esp32/touch_sensor.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.obj
-.PHONY : touch_sensor/esp32/touch_sensor.c.obj
+touch_sensor/esp32s3/touch_sensor.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.obj
+.PHONY : touch_sensor/esp32s3/touch_sensor.c.obj
 
-touch_sensor/esp32/touch_sensor.i: touch_sensor/esp32/touch_sensor.c.i
-.PHONY : touch_sensor/esp32/touch_sensor.i
+touch_sensor/esp32s3/touch_sensor.i: touch_sensor/esp32s3/touch_sensor.c.i
+.PHONY : touch_sensor/esp32s3/touch_sensor.i
 
 # target to preprocess a source file
-touch_sensor/esp32/touch_sensor.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.i
-.PHONY : touch_sensor/esp32/touch_sensor.c.i
+touch_sensor/esp32s3/touch_sensor.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.i
+.PHONY : touch_sensor/esp32s3/touch_sensor.c.i
 
-touch_sensor/esp32/touch_sensor.s: touch_sensor/esp32/touch_sensor.c.s
-.PHONY : touch_sensor/esp32/touch_sensor.s
+touch_sensor/esp32s3/touch_sensor.s: touch_sensor/esp32s3/touch_sensor.c.s
+.PHONY : touch_sensor/esp32s3/touch_sensor.s
 
 # target to generate assembly for a file
-touch_sensor/esp32/touch_sensor.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32/touch_sensor.c.s
-.PHONY : touch_sensor/esp32/touch_sensor.c.s
+touch_sensor/esp32s3/touch_sensor.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/touch_sensor/esp32s3/touch_sensor.c.s
+.PHONY : touch_sensor/esp32s3/touch_sensor.c.s
 
 touch_sensor/touch_sensor_common.obj: touch_sensor/touch_sensor_common.c.obj
 .PHONY : touch_sensor/touch_sensor_common.obj
@@ -287,9 +287,9 @@ help:
 	@echo "... i2c/i2c.obj"
 	@echo "... i2c/i2c.i"
 	@echo "... i2c/i2c.s"
-	@echo "... touch_sensor/esp32/touch_sensor.obj"
-	@echo "... touch_sensor/esp32/touch_sensor.i"
-	@echo "... touch_sensor/esp32/touch_sensor.s"
+	@echo "... touch_sensor/esp32s3/touch_sensor.obj"
+	@echo "... touch_sensor/esp32s3/touch_sensor.i"
+	@echo "... touch_sensor/esp32s3/touch_sensor.s"
 	@echo "... touch_sensor/touch_sensor_common.obj"
 	@echo "... touch_sensor/touch_sensor_common.i"
 	@echo "... touch_sensor/touch_sensor_common.s"

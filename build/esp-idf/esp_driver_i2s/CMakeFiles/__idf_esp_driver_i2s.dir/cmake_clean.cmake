@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_driver_i2s.dir/i2s_platform.c.obj.d"
   "CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj"
   "CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj.d"
+  "CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj"
+  "CMakeFiles/__idf_esp_driver_i2s.dir/i2s_tdm.c.obj.d"
   "libesp_driver_i2s.a"
   "libesp_driver_i2s.pdb"
 )

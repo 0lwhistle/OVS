@@ -175,6 +175,54 @@ tfpsacrypto/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build
 .PHONY : tfpsacrypto/fast
 
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.c.s
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.c.s
+
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.obj
 
@@ -319,6 +367,30 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bi
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bignum/esp_bignum.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bignum/esp_bignum.c.s
 
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.c.s
+
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.obj
 
@@ -342,6 +414,30 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/es
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.c.s
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.c.s
 
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.obj
@@ -463,6 +559,30 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/ps
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_cmac.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_cmac.c.s
 
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.c.s
+
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.obj
 
@@ -511,77 +631,125 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/ps
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_md/psa_crypto_driver_esp_md5.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_md/psa_crypto_driver_esp_md5.c.s
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.obj
 
 # target to build an object file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.obj
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.i
 
 # target to preprocess a source file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.i
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.s
 
 # target to generate assembly for a file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.c.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.c.s
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.obj
 
 # target to build an object file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.obj
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.i
 
 # target to preprocess a source file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.i
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.s
 
 # target to generate assembly for a file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.c.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.c.s
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.obj
 
 # target to build an object file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.obj
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.obj
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.i
 
 # target to preprocess a source file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.i
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.i
 
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.s
 
 # target to generate assembly for a file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.c.s
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.c.s
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.c.s
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.c.s
 
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.obj
@@ -607,6 +775,54 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/ps
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.c.s
 
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.c.s
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.obj
+
+# target to build an object file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.obj
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.obj
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.i
+
+# target to preprocess a source file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.i
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.i
+
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.s
+
+# target to generate assembly for a file
+home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.s
+.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.c.s
+
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.c.obj
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.obj
 
@@ -630,30 +846,6 @@ home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sh
 home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.c.s
 .PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.c.s
-
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.obj: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.obj
-
-# target to build an object file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.obj
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.obj
-
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.i: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.i
-
-# target to preprocess a source file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.i
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.i
-
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.s: home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.s
-
-# target to generate assembly for a file
-home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/build.make esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.s
-.PHONY : home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.c.s
 
 psa_crypto.obj: psa_crypto.c.obj
 .PHONY : psa_crypto.obj
@@ -860,6 +1052,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... tfpsacrypto"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_dma_core.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/dma/esp_aes_gdma_impl.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/aes/esp_aes.s"
@@ -878,9 +1076,15 @@ help:
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bignum/esp_bignum.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bignum/esp_bignum.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/bignum/esp_bignum.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/crypto_shared_gdma/esp_crypto_shared_gdma.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hardware.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_hmac_pbkdf2.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/esp_mem.s"
@@ -896,30 +1100,42 @@ help:
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_cmac.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_cmac.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_cmac.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_opaque.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_mac/psa_crypto_driver_esp_hmac_transparent.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_md/psa_crypto_driver_esp_md5.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_md/psa_crypto_driver_esp_md5.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_md/psa_crypto_driver_esp_md5.s"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.obj"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.i"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha1.s"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.obj"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.i"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha256.s"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.obj"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.i"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/parallel_engine/psa_crypto_driver_esp_sha512.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_rsa_ds/psa_crypto_driver_esp_rsa_ds_utilities.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha1.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha256.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/core/psa_crypto_driver_esp_sha512.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/psa_driver/esp_sha/psa_crypto_driver_esp_sha.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/esp_sha_gdma_impl.s"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.obj"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.i"
+	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/core/sha.s"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.obj"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.i"
 	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/esp_sha.s"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.obj"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.i"
-	@echo "... home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/mbedtls/port/sha/parallel_engine/sha.s"
 	@echo "... psa_crypto.obj"
 	@echo "... psa_crypto.i"
 	@echo "... psa_crypto.s"

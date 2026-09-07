@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32/esp_efuse_fields.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj.d"
-  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32/esp_efuse_table.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj.d"
-  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32/esp_efuse_utility.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_utility.c.obj.d"
-  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_fields.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_rtc_calib.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_rtc_calib.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_rtc_calib.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_table.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_table.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_table.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/esp32s3/esp_efuse_utility.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.obj.d"
+  "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c.obj.d"
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/src/esp_efuse_api.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_api.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_api.c.obj.d"
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/src/esp_efuse_fields.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_fields.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_fields.c.obj.d"
   "/home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/efuse/src/esp_efuse_utility.c" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj" "gcc" "esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj.d"
@@ -31,6 +32,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/hal/CMakeFiles/__idf_hal.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/DependInfo.cmake"
@@ -41,7 +43,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/DependInfo.cmake"
   "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/DependInfo.cmake"
-  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/DependInfo.cmake"
+  "/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

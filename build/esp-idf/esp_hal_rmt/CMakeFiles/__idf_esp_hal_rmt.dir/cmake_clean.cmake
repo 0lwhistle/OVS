@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_rmt.dir/esp32/rmt_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_rmt.dir/esp32/rmt_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_rmt.dir/esp32s3/rmt_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_rmt.dir/esp32s3/rmt_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_rmt.dir/rmt_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_rmt.dir/rmt_hal.c.obj.d"
   "libesp_hal_rmt.a"

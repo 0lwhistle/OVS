@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/__idf_esp_hal_ledc.dir/esp32/ledc_periph.c.obj"
-  "CMakeFiles/__idf_esp_hal_ledc.dir/esp32/ledc_periph.c.obj.d"
+  "CMakeFiles/__idf_esp_hal_ledc.dir/esp32s3/ledc_periph.c.obj"
+  "CMakeFiles/__idf_esp_hal_ledc.dir/esp32s3/ledc_periph.c.obj.d"
   "CMakeFiles/__idf_esp_hal_ledc.dir/ledc_hal.c.obj"
   "CMakeFiles/__idf_esp_hal_ledc.dir/ledc_hal.c.obj.d"
   "CMakeFiles/__idf_esp_hal_ledc.dir/ledc_hal_iram.c.obj"

@@ -175,29 +175,29 @@ __idf_esp_hal_i2s/fast:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build
 .PHONY : __idf_esp_hal_i2s/fast
 
-esp32/i2s_periph.obj: esp32/i2s_periph.c.obj
-.PHONY : esp32/i2s_periph.obj
+esp32s3/i2s_periph.obj: esp32s3/i2s_periph.c.obj
+.PHONY : esp32s3/i2s_periph.obj
 
 # target to build an object file
-esp32/i2s_periph.c.obj:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32/i2s_periph.c.obj
-.PHONY : esp32/i2s_periph.c.obj
+esp32s3/i2s_periph.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32s3/i2s_periph.c.obj
+.PHONY : esp32s3/i2s_periph.c.obj
 
-esp32/i2s_periph.i: esp32/i2s_periph.c.i
-.PHONY : esp32/i2s_periph.i
+esp32s3/i2s_periph.i: esp32s3/i2s_periph.c.i
+.PHONY : esp32s3/i2s_periph.i
 
 # target to preprocess a source file
-esp32/i2s_periph.c.i:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32/i2s_periph.c.i
-.PHONY : esp32/i2s_periph.c.i
+esp32s3/i2s_periph.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32s3/i2s_periph.c.i
+.PHONY : esp32s3/i2s_periph.c.i
 
-esp32/i2s_periph.s: esp32/i2s_periph.c.s
-.PHONY : esp32/i2s_periph.s
+esp32s3/i2s_periph.s: esp32s3/i2s_periph.c.s
+.PHONY : esp32s3/i2s_periph.s
 
 # target to generate assembly for a file
-esp32/i2s_periph.c.s:
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32/i2s_periph.c.s
-.PHONY : esp32/i2s_periph.c.s
+esp32s3/i2s_periph.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/build.make esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/esp32s3/i2s_periph.c.s
+.PHONY : esp32s3/i2s_periph.c.s
 
 i2s_hal.obj: i2s_hal.c.obj
 .PHONY : i2s_hal.obj
@@ -236,9 +236,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_esp_hal_i2s"
-	@echo "... esp32/i2s_periph.obj"
-	@echo "... esp32/i2s_periph.i"
-	@echo "... esp32/i2s_periph.s"
+	@echo "... esp32s3/i2s_periph.obj"
+	@echo "... esp32s3/i2s_periph.i"
+	@echo "... esp32s3/i2s_periph.s"
 	@echo "... i2s_hal.obj"
 	@echo "... i2s_hal.i"
 	@echo "... i2s_hal.s"

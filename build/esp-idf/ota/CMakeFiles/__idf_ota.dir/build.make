@@ -73,15 +73,15 @@ esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: esp-idf/ota/CMakeFiles/__idf_ota
 esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: ../components/modules/ota/ota.c
 esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj: esp-idf/ota/CMakeFiles/__idf_ota.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj -MF CMakeFiles/__idf_ota.dir/ota.c.obj.d -o CMakeFiles/__idf_ota.dir/ota.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.obj -MF CMakeFiles/__idf_ota.dir/ota.c.obj.d -o CMakeFiles/__idf_ota.dir/ota.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c
 
 esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_ota.dir/ota.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c > CMakeFiles/__idf_ota.dir/ota.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c > CMakeFiles/__idf_ota.dir/ota.c.i
 
 esp-idf/ota/CMakeFiles/__idf_ota.dir/ota.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_ota.dir/ota.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c -o CMakeFiles/__idf_ota.dir/ota.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/ota && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/ota/ota.c -o CMakeFiles/__idf_ota.dir/ota.c.s
 
 # Object files for target __idf_ota
 __idf_ota_OBJECTS = \

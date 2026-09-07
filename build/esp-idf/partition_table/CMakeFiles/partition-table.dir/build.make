@@ -69,7 +69,7 @@ include esp-idf/partition_table/CMakeFiles/partition-table.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition-table:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 2MB -- /home/olwhistle/dockerNow/esp32/programs/ovs/build/partition_table/partition-table.bin
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/partition_table && /root/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x0 --flash-size 2MB -- /home/olwhistle/dockerNow/esp32/programs/ovs/build/partition_table/partition-table.bin
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 
 partition-table: esp-idf/partition_table/CMakeFiles/partition-table

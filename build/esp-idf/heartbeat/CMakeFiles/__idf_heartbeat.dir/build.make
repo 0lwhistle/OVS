@@ -73,15 +73,15 @@ esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: esp-idf/heartb
 esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: ../components/modules/heartbeat/heartbeat.c
 esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj: esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/olwhistle/dockerNow/esp32/programs/ovs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj -MF CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj.d -o CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj -MF CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj.d -o CMakeFiles/__idf_heartbeat.dir/heartbeat.c.obj -c /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c
 
 esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/__idf_heartbeat.dir/heartbeat.c.i"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c > CMakeFiles/__idf_heartbeat.dir/heartbeat.c.i
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c > CMakeFiles/__idf_heartbeat.dir/heartbeat.c.i
 
 esp-idf/heartbeat/CMakeFiles/__idf_heartbeat.dir/heartbeat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/__idf_heartbeat.dir/heartbeat.c.s"
-	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c -o CMakeFiles/__idf_heartbeat.dir/heartbeat.c.s
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build/esp-idf/heartbeat && /root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/olwhistle/dockerNow/esp32/programs/ovs/components/modules/heartbeat/heartbeat.c -o CMakeFiles/__idf_heartbeat.dir/heartbeat.c.s
 
 # Object files for target __idf_heartbeat
 __idf_heartbeat_OBJECTS = \

@@ -295,6 +295,30 @@ esp_supplicant/src/crypto/fastpbkdf2.c.s:
 	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/fastpbkdf2.c.s
 .PHONY : esp_supplicant/src/crypto/fastpbkdf2.c.s
 
+esp_supplicant/src/crypto/fastpsk.obj: esp_supplicant/src/crypto/fastpsk.c.obj
+.PHONY : esp_supplicant/src/crypto/fastpsk.obj
+
+# target to build an object file
+esp_supplicant/src/crypto/fastpsk.c.obj:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/fastpsk.c.obj
+.PHONY : esp_supplicant/src/crypto/fastpsk.c.obj
+
+esp_supplicant/src/crypto/fastpsk.i: esp_supplicant/src/crypto/fastpsk.c.i
+.PHONY : esp_supplicant/src/crypto/fastpsk.i
+
+# target to preprocess a source file
+esp_supplicant/src/crypto/fastpsk.c.i:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/fastpsk.c.i
+.PHONY : esp_supplicant/src/crypto/fastpsk.c.i
+
+esp_supplicant/src/crypto/fastpsk.s: esp_supplicant/src/crypto/fastpsk.c.s
+.PHONY : esp_supplicant/src/crypto/fastpsk.s
+
+# target to generate assembly for a file
+esp_supplicant/src/crypto/fastpsk.c.s:
+	cd /home/olwhistle/dockerNow/esp32/programs/ovs/build && $(MAKE) $(MAKESILENT) -f esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/build.make esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/fastpsk.c.s
+.PHONY : esp_supplicant/src/crypto/fastpsk.c.s
+
 esp_supplicant/src/crypto/tls_mbedtls.obj: esp_supplicant/src/crypto/tls_mbedtls.c.obj
 .PHONY : esp_supplicant/src/crypto/tls_mbedtls.obj
 
@@ -2195,6 +2219,9 @@ help:
 	@echo "... esp_supplicant/src/crypto/fastpbkdf2.obj"
 	@echo "... esp_supplicant/src/crypto/fastpbkdf2.i"
 	@echo "... esp_supplicant/src/crypto/fastpbkdf2.s"
+	@echo "... esp_supplicant/src/crypto/fastpsk.obj"
+	@echo "... esp_supplicant/src/crypto/fastpsk.i"
+	@echo "... esp_supplicant/src/crypto/fastpsk.s"
 	@echo "... esp_supplicant/src/crypto/tls_mbedtls.obj"
 	@echo "... esp_supplicant/src/crypto/tls_mbedtls.i"
 	@echo "... esp_supplicant/src/crypto/tls_mbedtls.s"
