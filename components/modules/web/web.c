@@ -562,6 +562,51 @@ static void handle_web_update(struct mg_connection *c, struct mg_http_message *h
                   "\"message\":\"web updated, please refresh\"}", count);
 }
 
+// POST /api/net/mode — 网络模式热切换（{"mode":"sta"|"ap"|"off"}，免重启）
+static bool body_contains(struct mg_http_message *hm,
+                          const char *needle, size_t nlen) {
+    const char *p = hm->body.buf;
+    size_t n = hm->body.len;
+    if (n < nlen) return false;
+    for (size_t i = 0; i + nlen <= n; i++) {
+        if (memcmp(p + i, needle, nlen) == 0) return true;
+    }
+    return false;
+}
+
+static void handle_net_mode(struct mg_connection *c, struct mg_http_message *hm) {
+    net_mode_t target;
+    if (body_contains(hm, "\"ap\"", 4)) {
+        target = NET_MODE_AP;
+    } else if (body_contains(hm, "\"sta\"", 5)) {
+        target = NET_MODE_STA;
+    } else if (body_contains(hm, "\"off\"", 5)) {
+        target = NET_MODE_OFF;
+    } else {
+        mg_http_reply(c, 400, "Content-Type: application/json\r\n",
+                      "{\"error\":\"need \\\"mode\\\": \\\"sta\\\"|\\\"ap\\\"|\\\"off\\\"\"}");
+        return;
+    }
+
+    net_mode_t prev = NET_MODE_OFF;
+    net_err_t err = net_mgr_switch_mode(target, &prev);
+    if (err != NET_OK) {
+        mg_http_reply(c, 500, "Content-Type: application/json\r\n",
+                      "{\"error\":\"%s\"}", net_err_to_str(err));
+        return;
+    }
+
+    net_status_t st = {0};
+    net_mgr_get_status(&st);
+    LOGI(TAG, "Net mode switch request: %s -> %s",
+         net_mode_to_str(prev), net_mode_to_str(target));
+    mg_http_reply(c, 200, "Content-Type: application/json\r\n",
+                  "{\"status\":\"ok\",\"previous\":\"%s\",\"mode\":\"%s\","
+                  "\"state\":\"%s\",\"ssid\":\"%s\",\"ip\":\"%s\"}",
+                  net_mode_to_str(prev), net_mode_to_str(st.mode),
+                  net_state_to_str(st.state), st.ssid, st.ip);
+}
+
 static void register_builtin_routes(void) {
     web_route_t r;
 
@@ -570,6 +615,8 @@ static void register_builtin_routes(void) {
     r = (web_route_t){"GET", "/api/wifi/status", handle_wifi_status};
     web_register_route(&r);
     r = (web_route_t){"POST", "/api/wifi/connect", handle_wifi_connect};
+    web_register_route(&r);
+    r = (web_route_t){"POST", "/api/net/mode", handle_net_mode};
     web_register_route(&r);
     r = (web_route_t){"GET", "/api/status", handle_device_status};
     web_register_route(&r);

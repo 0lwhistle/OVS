@@ -76,6 +76,20 @@ net_err_t net_mgr_init(const net_config_t *cfg);
 net_err_t net_mgr_start(net_mode_t mode);
 
 /**
+ * @brief 运行时热切换网络模式（免重启）
+ *
+ * 与 net_mgr_start 的区别：封装了模式切换语义——成功切换（模式确实变化）时
+ * 发布 EVENT_WIFI_MODE_CHANGED 事件并输出上一模式，供 UI/日志等订阅。
+ * 底层为 esp_wifi stop→set_mode→start，STA 凭据与 AP 参数沿用内部配置
+ * （STA 来自 NVS/设备树，AP 来自设备树/兜底 OVS-xxxx）。
+ *
+ * @param mode      目标模式（NET_MODE_STA/NET_MODE_AP/NET_MODE_OFF）
+ * @param prev_mode 非 NULL 时输出切换前模式
+ * @return NET_OK 成功；同模式重复切换也返回 NET_OK（不发布事件）
+ */
+net_err_t net_mgr_switch_mode(net_mode_t mode, net_mode_t *prev_mode);
+
+/**
  * @brief 停止网络（射频关闭，协议栈保留）
  */
 net_err_t net_mgr_stop(void);

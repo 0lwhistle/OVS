@@ -604,6 +604,34 @@ net_err_t net_mgr_stop(void) {
     return NET_OK;
 }
 
+net_err_t net_mgr_switch_mode(net_mode_t mode, net_mode_t *prev_mode) {
+    if (!s_initialized) return NET_ERR_NOT_INITIALIZED;
+
+    net_lock();
+    net_mode_t prev = s_mode;
+    net_unlock();
+    if (prev_mode) *prev_mode = prev;
+
+    if (mode == prev) {
+        return NET_OK;  // 同模式，无需切换也不发事件
+    }
+
+    net_err_t err = net_mgr_start(mode);
+    if (err != NET_OK) {
+        LOGE(TAG, "Mode switch failed: %s -> %s (%s)",
+             net_mode_to_str(prev), net_mode_to_str(mode), net_err_to_str(err));
+        return err;
+    }
+
+    LOGI(TAG, "Mode switched: %s -> %s", net_mode_to_str(prev),
+         net_mode_to_str(mode));
+    event_wifi_mode_changed_t ev = {
+        .old_mode = (uint8_t)prev, .new_mode = (uint8_t)mode,
+    };
+    EVENT_BUS_PUBLISH(EVENT_WIFI_MODE_CHANGED, &ev);
+    return NET_OK;
+}
+
 net_err_t net_mgr_get_status(net_status_t *out) {
     if (!out) return NET_ERR_INVALID_PARAM;
     if (!s_initialized) return NET_ERR_NOT_INITIALIZED;
@@ -630,7 +658,7 @@ net_err_t net_mgr_get_status(net_status_t *out) {
         }
         out->rssi = wifi_get_rssi();
     } else if (s_mode == NET_MODE_AP) {
-        esp_netif_t *netif = esp_netif_get_handle_from_ifkey("AP_DEF");
+        esp_netif_t *netif = esp_netif_get_handle_from_ifkey("WIFI_AP_DEF");
         if (netif) {
             esp_netif_ip_info_t ip_info;
             if (esp_netif_get_ip_info(netif, &ip_info) == ESP_OK) {

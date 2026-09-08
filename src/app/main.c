@@ -33,6 +33,9 @@ static const char* TAG = "[MAIN]";
 /* 应用级测试开关：1 = 启动时跑 VFS 功能测试 + 压力测试（约 13 分钟） */
 #define OVS_RUN_APP_TESTS  0
 
+/* 网络模式热切换自测：1 = STA 稳定后自动 STA→AP→STA 一个来回（免重启验证） */
+#define OVS_NET_HOTSWAP_TEST  0
+
 /* 分区重排过渡开关：W25Q128 分区布局变更后置 1 烧录一次（挂载失败自动格式化），
  * 完成过渡后必须置回 0，避免日后每次启动静默清空已存媒体文件 */
 #define OVS_MEDIA_FORMAT_ON_FIRST_BOOT  0
@@ -76,6 +79,66 @@ static void net_stack_init(void) {
 }
 #endif
 /* ======================== OTA/网络 保护区结束 ============================ */
+
+#if OVS_ENABLE_NET && OVS_NET_HOTSWAP_TEST
+/* ============================================================ */
+/*     网络模式热切换自测（OVS_NET_HOTSWAP_TEST=1 时编译）        */
+/*  流程：STA 稳定 → 切 AP(20s) → 切回 STA → 打印 PASS/FAIL      */
+/*  关键日志只看 [TEST] 行；全程免重启，期间 Web 一直在跑。        */
+/* ============================================================ */
+static void net_hotswap_log_status(const char *step) {
+    net_status_t st = {0};
+    net_mgr_get_status(&st);
+    LOGI("[TEST]", "%s: mode=%s state=%s ssid=%s ip=%s",
+         step, net_mode_to_str(st.mode), net_state_to_str(st.state),
+         st.ssid, st.ip);
+}
+
+static void net_hotswap_test_task(void *arg) {
+    (void)arg;
+    net_mode_t prev = NET_MODE_OFF;
+
+    /* 等 STA 连接稳定 */
+    for (int i = 0; i < 30; i++) {
+        net_status_t st = {0};
+        net_mgr_get_status(&st);
+        if (st.state == NET_STATE_CONNECTED) break;
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    net_hotswap_log_status("baseline(sta)");
+
+    /* 1. STA -> AP */
+    net_err_t e1 = net_mgr_switch_mode(NET_MODE_AP, &prev);
+    LOGI("[TEST]", "step1 sta->ap rc=%d prev=%s", e1, net_mode_to_str(prev));
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    net_hotswap_log_status("in-ap");
+    vTaskDelay(pdMS_TO_TICKS(15000));   /* AP 保持 20s */
+
+    /* 2. AP -> STA */
+    net_err_t e2 = net_mgr_switch_mode(NET_MODE_STA, &prev);
+    LOGI("[TEST]", "step2 ap->sta rc=%d prev=%s", e2, net_mode_to_str(prev));
+
+    /* 等重连（最多 25s） */
+    bool reconnected = false;
+    for (int i = 0; i < 25; i++) {
+        net_status_t st = {0};
+        net_mgr_get_status(&st);
+        if (st.state == NET_STATE_CONNECTED) {
+            reconnected = true;
+            break;
+        }
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+    net_hotswap_log_status("back-to-sta");
+
+    LOGI("[TEST]", "RESULT: %s (rc1=%d rc2=%d)",
+         (e1 == NET_OK && e2 == NET_OK && reconnected) ? "PASS" : "FAIL",
+         e1, e2);
+    LOGI("[TEST]", "hot-switch test DONE");
+    vTaskDelete(NULL);
+}
+#endif
 
 /* ============================================================ */
 /*                    VFS 栈与挂载                                */
@@ -290,6 +353,11 @@ void app_main(void) {
      * 依赖顺序：必须在 dtree_init() 之后（net_mgr 从设备树读 WiFi 配置），
      * 依赖 NVS/event_bus/tasker/SPIFFS 已就绪 */
     net_stack_init();
+#endif
+
+#if OVS_ENABLE_NET && OVS_NET_HOTSWAP_TEST
+    xTaskCreate(net_hotswap_test_task, "net_hs_test", 4096, NULL,
+                tskIDLE_PRIORITY + 1, NULL);
 #endif
 
     /* W25Q128 外部 Flash + VFS 挂载 */
