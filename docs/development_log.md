@@ -1,5 +1,49 @@
 # OVS项目开发日志
 
+## 2026-09-08 - WiFi AP/STA 免重启热切换：接口封装 + 真机双向验证
+
+### 结论
+esp_wifi 支持 STA/AP 运行时切换（stop→set_mode→start），**无需重启**。
+在此之上封装了策略层接口并真机验证双向切换。
+
+### 实现内容
+- **net_mgr_switch_mode(mode, &prev)**（net_mgr.h/.c）：热切换统一入口。
+  同模式幂等（不发事件）；模式确实变化时发布新事件
+  EVENT_WIFI_MODE_CHANGED（event_wifi_mode_changed_t，old/new uint8）。
+  STA 凭据沿用 NVS/设备树配置，AP 参数沿用设备树/兜底（OVS-xxxx）。
+- **Web 端点**：POST /api/net/mode（body: {"mode":"sta"|"ap"|"off"}），
+  返回 previous/mode/state/ssid/ip；前端/LVGL 可直接调。
+- **main.c 自测**：OVS_NET_HOTSWAP_TEST 开关（默认 0）。开时启动自测任务：
+  STA 稳定 → 切 AP（保持 20s，日志打 mode/state/ssid/ip）→ 切回 STA
+  （最长等 25s 重连）→ 打印 PASS/FAIL，关键日志只有 [TEST] 行。
+- **顺带修复**：net_mgr_get_status AP 分支 ifkey "AP_DEF" → "WIFI_AP_DEF"
+  （与此前 STA 的 "STA_DEF"→"WIFI_STA_DEF" 同族问题），AP 模式 IP 可正常显示。
+
+### 实测（OTA 推送 + 串口 [TEST] 日志）
+```
+baseline(sta): mode=sta state=connected ssid=wifi2.4g ip=192.168.2.111
+step1 sta->ap rc=0 prev=sta
+in-ap: mode=ap state=ap_running ssid=OVS-E7A0 ip=192.168.4.1
+step2 ap->sta rc=0 prev=ap
+back-to-sta: mode=sta state=connected ssid=wifi2.4g ip=192.168.2.111
+RESULT: PASS (rc1=0 rc2=0)
+```
+双向切换均 rc=0，AP 期 Web 服务持续运行，回 STA 后原 IP 不变，全程免重启。
+API 幂等与参数校验亦验证（bogus→400，同模式→ok 不切换）。
+
+### 使用方式（其他模块）
+```c
+net_mode_t prev;
+net_mgr_switch_mode(NET_MODE_AP, &prev);   // C API
+// 或 HTTP: POST /api/net/mode  {"mode":"ap"}
+// 订阅 EVENT_WIFI_MODE_CHANGED 获得切换通知
+```
+
+### 注意
+- 切到 AP 后 STA 断网属预期（互斥模式）；WSL2 无法连 AP，远程切 AP 后
+  需在 AP 侧操作或依靠应用层自动回切，谨慎远程调用。
+- 自测开关 OVS_NET_HOTSWAP_TEST 已关闭，需要时置 1 烧录。
+
 ## 2026-09-08 - 设备树 A/B 分区 OTA 落地 + main.c 整理（实测闭环）
 
 ### 任务目标

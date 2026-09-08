@@ -134,6 +134,9 @@ typedef enum {
     
     /** SoftAP已停止 */
     EVENT_WIFI_AP_STOPPED           = (MODULE_ID_WIFI << 16) | 0x0009,
+
+    /** 网络模式切换完成（STA/AP/OFF 互斥切换，net_mgr_switch_mode 触发） */
+    EVENT_WIFI_MODE_CHANGED         = (MODULE_ID_WIFI << 16) | 0x000A,
     
     /* ====================================================================== */
     /* 传感器事件 (MODULE_ID_SENSOR = 0x0003)                                  */
@@ -309,6 +312,14 @@ typedef struct {
     bool success;               /**< 切换是否成功 */
     int elapsed_ms;             /**< 切换耗时 (ms) */
 } event_wifi_switch_t;
+
+/**
+ * @brief 网络模式切换事件数据（值取 net_mode_t，避免反向依赖 net_mgr）
+ */
+typedef struct {
+    uint8_t old_mode;           /**< 切换前模式 (net_mode_t) */
+    uint8_t new_mode;           /**< 切换后模式 (net_mode_t) */
+} event_wifi_mode_changed_t;
 
 /**
  * @brief 温湿度传感器事件数据
