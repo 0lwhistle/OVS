@@ -39,6 +39,7 @@ typedef enum {
  * 从设备树读取，包含引脚和通信参数。
  */
 typedef struct uart_drv_config {
+    int32_t port;           /**< UART 控制器编号：设备树 "uart0"→0、"uart1"→1、"uart2"→2 */
     int32_t tx_pin;          /**< TX引脚 */
     int32_t rx_pin;          /**< RX引脚 */
     int32_t baud_rate;       /**< 波特率 */
@@ -53,27 +54,30 @@ typedef struct uart_drv_handle* uart_drv_handle_t;
 /* ========== 公共 API ========== */
 
 /**
- * @brief 从设备树加载UART配置
- * 
- * @param path 设备树路径，如 "lora.uart" 或 "system.uart0"
+ * @brief 从设备树总线节点加载UART配置
+ *
+ * @param bus_node 总线节点（节点名形如 "uart1"，设备节点的父节点）
  * @param config 输出参数，存储配置信息
  * @return uart_drv_err_t 错误码
  */
-uart_drv_err_t uart_drv_load_config(const char* path, uart_drv_config_t* config);
+uart_drv_err_t uart_drv_load_config(dtree_node_t* bus_node, uart_drv_config_t* config);
 
 /**
  * @brief 初始化UART驱动
  * 
- * 从设备树读取配置，初始化UART端口。
+ * Linux 式共享计数模型：相同 UART 端口/引脚只初始化一次，
+ * 多个模块获取同一个句柄并增加引用计数。
  * 
  * @param config 配置信息
- * @param handle 输出参数，存储驱动句柄
+ * @param handle 输出参数，存储共享的驱动句柄
  * @return uart_drv_err_t 错误码
  */
 uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t* handle);
 
 /**
  * @brief 反初始化UART驱动
+ *
+ * 只释放一个引用；引用计数归零时才真正删除 UART 驱动。
  * 
  * @param handle 驱动句柄
  * @return uart_drv_err_t 错误码

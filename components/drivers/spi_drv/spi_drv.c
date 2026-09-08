@@ -15,6 +15,7 @@
 #include "driver/spi_master.h"
 #include "esp_memory_utils.h"
 #include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "freertos/task.h"
 #include "esp_err.h"
 #include "driver/gpio.h"
@@ -53,10 +54,121 @@ typedef struct spi_dev_ctx {
 struct spi_drv_handle {
     spi_host_device_t host;          /**< SPI主机设备 */
     spi_bus_config_t bus_config;      /**< 总线配置 */
+    spi_drv_config_t drv_config;      /**< 用户配置（共享一致性校验） */
     bool initialized;                 /**< 初始化标志 */
     int device_count;                 /**< 设备数量 */
     spi_dev_ctx_t devices[4];        /**< 设备上下文数组（最多4个） */
+    uint32_t ref_count;               /**< 引用计数（共享总线模型） */
 };
+
+/* ========================================================================== */
+/*                    共享总线注册表（引用计数模型）                            */
+/* ========================================================================== */
+
+/**
+ * Linux 式共享计数设计：
+ * - 同一 SPI 总线底层硬件只初始化一次；
+ * - 多个设备模块（ST7789、W25Q128 等）调用 spi_drv_init() 获取同一个
+ *   总线句柄，引用计数 +1；
+ * - spi_drv_deinit() 只释放自己的引用，引用计数归零时才真正销毁总线。
+ *
+ * 设备树通过 bus.host 显式指定控制器（spi2 / spi3），
+ * 本文件维护两张表项：host=2 → SPI2_HOST，host=3 → SPI3_HOST。
+ */
+#define SPI_DRV_MAX_HOSTS 2
+static spi_drv_handle_t s_spi_buses[SPI_DRV_MAX_HOSTS] = { NULL };
+static SemaphoreHandle_t s_spi_bus_lock = NULL;
+
+static int spi_host_to_slot(int32_t host_id) {
+    if (host_id == 2) return 0;
+    if (host_id == 3) return 1;
+    return -1;
+}
+
+static spi_host_device_t spi_host_to_hw(int32_t host_id, bool* ok) {
+    if (host_id == 2) { *ok = true; return SPI2_HOST; }
+    if (host_id == 3) { *ok = true; return SPI3_HOST; }
+    *ok = false;
+    return SPI2_HOST;
+}
+
+static bool spi_bus_lock_take(void) {
+    if (!s_spi_bus_lock) {
+        s_spi_bus_lock = xSemaphoreCreateMutex();
+    }
+    if (!s_spi_bus_lock) {
+        LOGE(TAG, "Failed to create SPI bus lock");
+        return false;
+    }
+    xSemaphoreTake(s_spi_bus_lock, portMAX_DELAY);
+    return true;
+}
+
+static void spi_bus_lock_give(void) {
+    if (s_spi_bus_lock) {
+        xSemaphoreGive(s_spi_bus_lock);
+    }
+}
+
+static bool spi_drv_config_equal(const spi_drv_config_t* a, const spi_drv_config_t* b) {
+    return a && b
+        && a->host == b->host
+        && a->sclk_pin == b->sclk_pin
+        && a->miso_pin == b->miso_pin
+        && a->mosi_pin == b->mosi_pin
+        && a->max_freq_mhz == b->max_freq_mhz
+        && a->mode == b->mode;
+}
+
+/**
+ * @brief 真正销毁 SPI 总线（引用计数归零时调用）
+ */
+static spi_drv_err_t spi_bus_destroy(int slot) {
+    if (slot < 0 || slot >= SPI_DRV_MAX_HOSTS) {
+        return SPI_DRV_ERR_PARAM;
+    }
+
+    spi_drv_handle_t h = s_spi_buses[slot];
+    if (!h) {
+        return SPI_DRV_OK;
+    }
+
+    /* 删除仍然挂在总线上的设备，避免 spi_bus_free 返回 INVALID_STATE */
+    for (int i = 0; i < 4; i++) {
+        if (h->devices[i].handle) {
+            /* 先等待尚未完成的异步传输，再释放其结构，防止队列悬垂引用 */
+            if (h->devices[i].async_busy) {
+                spi_transaction_t* result = NULL;
+                spi_device_get_trans_result(h->devices[i].handle, &result, portMAX_DELAY);
+            }
+            if (h->devices[i].pending_xfer) {
+                void* tx_buf = (void*)h->devices[i].pending_xfer->tx_buffer;
+                if (tx_buf) {
+                    free(tx_buf);
+                }
+                free(h->devices[i].pending_xfer);
+                h->devices[i].pending_xfer = NULL;
+            }
+            h->devices[i].async_busy = false;
+
+            esp_err_t err = spi_bus_remove_device(h->devices[i].handle);
+            if (err != ESP_OK) {
+                LOGW(TAG, "Remove device slot %d failed: %s", i, esp_err_to_name(err));
+            }
+            h->devices[i].handle = NULL;
+        }
+    }
+
+    esp_err_t err = spi_bus_free(h->host);
+    if (err != ESP_OK) {
+        LOGE(TAG, "SPI bus free failed: %s", esp_err_to_name(err));
+        return SPI_DRV_ERR_HW;
+    }
+
+    free(h);
+    s_spi_buses[slot] = NULL;
+    return SPI_DRV_OK;
+}
 
 /* ========================================================================== */
 /*                              内部辅助函数                                   */
@@ -104,46 +216,65 @@ static const void* ensure_dma_safe(const void* data, size_t size, void** out_cop
 
 /* ---------- 初始化/反初始化 ---------- */
 
-spi_drv_err_t spi_drv_load_config(spi_drv_config_t* config) {
-    if (!config) {
+spi_drv_err_t spi_drv_load_config(dtree_node_t* bus_node, spi_drv_config_t* config) {
+    if (!bus_node || !config) {
         return SPI_DRV_ERR_PARAM;
     }
-    
+
+    /* 总线节点 compatible 校验，防止把错误的节点当总线 */
+    const char* compat = dtree_get_compatible(bus_node);
+    if (!compat || strcmp(compat, "esp32s3-spi") != 0) {
+        LOGE(TAG, "Bus node compatible '%s' is not 'esp32s3-spi'",
+             compat ? compat : "null");
+        return SPI_DRV_ERR_CONFIG;
+    }
+
     dtree_err_t err;
-    
-    err = DTREE_INT("spi.bus", "sclk_pin", &config->sclk_pin);
+
+    /* 控制器编号来自节点名，例如 "spi2"、"spi3" */
+    err = dtree_get_host_id(bus_node, "spi", &config->host);
+    if (err != DTREE_OK) {
+        LOGE(TAG, "Read spi host id failed: %d", err);
+        return SPI_DRV_ERR_CONFIG;
+    }
+    if (spi_host_to_slot(config->host) < 0) {
+        LOGE(TAG, "Unsupported SPI host id: %" PRId32, config->host);
+        return SPI_DRV_ERR_CONFIG;
+    }
+
+    err = dtree_get_int(bus_node, "sclk_pin", &config->sclk_pin);
     if (err != DTREE_OK) {
         LOGE(TAG, "Read sclk_pin failed: %d", err);
         return SPI_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("spi.bus", "miso_pin", &config->miso_pin);
+
+    err = dtree_get_int(bus_node, "miso_pin", &config->miso_pin);
     if (err != DTREE_OK) {
         LOGE(TAG, "Read miso_pin failed: %d", err);
         return SPI_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("spi.bus", "mosi_pin", &config->mosi_pin);
+
+    err = dtree_get_int(bus_node, "mosi_pin", &config->mosi_pin);
     if (err != DTREE_OK) {
         LOGE(TAG, "Read mosi_pin failed: %d", err);
         return SPI_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("spi.bus", "max_freq_mhz", &config->max_freq_mhz);
+
+    err = dtree_get_int(bus_node, "max_freq_mhz", &config->max_freq_mhz);
     if (err != DTREE_OK) {
         LOGE(TAG, "Read max_freq_mhz failed: %d", err);
         return SPI_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("spi.bus", "mode", &config->mode);
+
+    err = dtree_get_int(bus_node, "mode", &config->mode);
     if (err != DTREE_OK) {
         LOGE(TAG, "Read mode failed: %d", err);
         return SPI_DRV_ERR_CONFIG;
     }
     
-    LOGI(TAG, "SPI config: sclk=%" PRId32 ", miso=%" PRId32 ", mosi=%" PRId32 
-         ", freq=%" PRId32 "MHz, mode=%" PRId32,
-         config->sclk_pin, config->miso_pin, config->mosi_pin, 
+    LOGI(TAG, "SPI config: host=spi%" PRId32 ", sclk=%" PRId32 ", miso=%" PRId32
+         ", mosi=%" PRId32 ", freq=%" PRId32 "MHz, mode=%" PRId32,
+         config->host, config->sclk_pin, config->miso_pin, config->mosi_pin,
          config->max_freq_mhz, config->mode);
     
     return SPI_DRV_OK;
@@ -153,44 +284,83 @@ spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* han
     if (!config || !handle) {
         return SPI_DRV_ERR_PARAM;
     }
-    
-    LOGI(TAG, "Initializing SPI driver...");
-    
-    // 分配句柄
+
+    if (!spi_bus_lock_take()) {
+        return SPI_DRV_ERR_HW;
+    }
+
+    int slot = spi_host_to_slot(config->host);
+    if (slot < 0) {
+        LOGE(TAG, "Unsupported SPI host id: %" PRId32, config->host);
+        spi_bus_lock_give();
+        return SPI_DRV_ERR_CONFIG;
+    }
+
+    /* 对应 host 的总线已存在：校验配置一致性后共享句柄（引用计数 +1） */
+    spi_drv_handle_t existing = s_spi_buses[slot];
+    if (existing) {
+        if (!spi_drv_config_equal(config, &existing->drv_config)) {
+            LOGE(TAG, "SPI host spi%" PRId32 " already initialized with different config",
+                 config->host);
+            spi_bus_lock_give();
+            return SPI_DRV_ERR_CONFIG;
+        }
+
+        existing->ref_count++;
+        *handle = existing;
+        LOGI(TAG, "SPI host spi%" PRId32 " shared: ref=%" PRIu32,
+             config->host, existing->ref_count);
+        spi_bus_lock_give();
+        return SPI_DRV_OK;
+    }
+
+    /* 首次获取：真正初始化硬件 */
     struct spi_drv_handle* h = calloc(1, sizeof(struct spi_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
+        spi_bus_lock_give();
         return SPI_DRV_ERR_HW;
     }
-    
-    // 配置SPI总线
+
     spi_bus_config_t bus_config = {
         .mosi_io_num = (int)config->mosi_pin,
         .miso_io_num = (int)config->miso_pin,
         .sclk_io_num = (int)config->sclk_pin,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
-        .max_transfer_sz = 4096,  // 默认最大传输
+        .max_transfer_sz = 4096,
     };
-    
-    spi_host_device_t host = SPI2_HOST;
-    
-    // 初始化SPI总线（启用DMA）
+
+    bool host_ok = false;
+    spi_host_device_t host = spi_host_to_hw(config->host, &host_ok);
+    if (!host_ok) {
+        LOGE(TAG, "Unsupported SPI host id: %" PRId32, config->host);
+        free(h);
+        spi_bus_lock_give();
+        return SPI_DRV_ERR_CONFIG;
+    }
+
     esp_err_t ret = spi_bus_initialize(host, &bus_config, SPI_DMA_CH_AUTO);
     if (ret != ESP_OK) {
         LOGE(TAG, "SPI bus init failed: %s", esp_err_to_name(ret));
         free(h);
+        spi_bus_lock_give();
         return SPI_DRV_ERR_HW;
     }
-    
+
     h->host = host;
     h->bus_config = bus_config;
+    h->drv_config = *config;
     h->initialized = true;
     h->device_count = 0;
-    
+    h->ref_count = 1;
+
+    s_spi_buses[slot] = h;
     *handle = h;
-    
-    LOGI(TAG, "SPI driver initialized (host=%d, DMA enabled)", host);
+
+    LOGI(TAG, "SPI host spi%" PRId32 " initialized (host=%d, DMA enabled, ref=1)",
+         config->host, (int)host);
+    spi_bus_lock_give();
     return SPI_DRV_OK;
 }
 
@@ -202,26 +372,43 @@ spi_drv_err_t spi_drv_deinit(spi_drv_handle_t handle) {
     if (!handle->initialized) {
         return SPI_DRV_ERR_NOT_INIT;
     }
-    
-    LOGI(TAG, "Deinitializing SPI driver...");
-    
-    // 释放所有挂起的异步传输
-    for (int i = 0; i < 4; i++) {
-        if (handle->devices[i].pending_xfer) {
-            free(handle->devices[i].pending_xfer);
+
+    if (!spi_bus_lock_take()) {
+        return SPI_DRV_ERR_HW;
+    }
+
+    int slot = -1;
+    for (int i = 0; i < SPI_DRV_MAX_HOSTS; i++) {
+        if (s_spi_buses[i] == handle) {
+            slot = i;
+            break;
         }
     }
-    
-    esp_err_t ret = spi_bus_free(handle->host);
-    if (ret != ESP_OK) {
-        LOGE(TAG, "SPI bus free failed: %s", esp_err_to_name(ret));
+    if (slot < 0) {
+        LOGE(TAG, "Handle is not owned by SPI driver registry");
+        spi_bus_lock_give();
+        return SPI_DRV_ERR_PARAM;
     }
-    
-    handle->initialized = false;
-    free(handle);
-    
-    LOGI(TAG, "SPI driver deinitialized");
-    return SPI_DRV_OK;
+
+    if (handle->ref_count == 0) {
+        LOGW(TAG, "SPI bus already fully released");
+        spi_bus_lock_give();
+        return SPI_DRV_OK;
+    }
+
+    /* 还有其他使用者：只释放自己的引用 */
+    if (handle->ref_count > 1) {
+        handle->ref_count--;
+        LOGI(TAG, "SPI driver released one reference (remaining=%" PRIu32 ")",
+             handle->ref_count);
+        spi_bus_lock_give();
+        return SPI_DRV_OK;
+    }
+
+    LOGI(TAG, "Deinitializing SPI driver (last reference)...");
+    spi_drv_err_t err = spi_bus_destroy(slot);
+    spi_bus_lock_give();
+    return err;
 }
 
 /* ---------- 设备管理 ---------- */
@@ -360,8 +547,9 @@ spi_drv_err_t spi_drv_transfer(spi_drv_handle_t handle,
         .rx_buffer = rx_safe,
     };
     
-    // 执行传输
-    esp_err_t ret = spi_device_polling_transmit(dev_handle, &trans);
+    // 执行传输（队列+等待：传输期间调用任务休眠而非自旋占用 CPU；
+    // 总线由 IDF 按事务粒度仲裁，共享总线上的其他设备事务可在事务间插空）
+    esp_err_t ret = spi_device_transmit(dev_handle, &trans);
     
     // 复制接收数据
     if (rx_data && rx_safe) {

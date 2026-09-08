@@ -52,4 +52,4 @@ echo "  Port: $SERIAL_PORT"
 echo ""
 
 idf.py -b 921600 -p "$SERIAL_PORT" flash
-idf.py -p "$SERIAL_PORT" flash 
+idf.py -p "$SERIAL_PORT" monitor 

@@ -24,6 +24,17 @@
 - **接口**: SPI
 - **功能**: 16MB NOR Flash读写、擦除
 - **事件**: `EVENT_STORAGE_READY`
+- **健康状态机**: `READY` / `FAULT`
+  - 每次公开读写/擦除前先做 JEDEC ID 探测；
+  - 连续 3 次失败进入 `FAULT`，之后操作立即返回
+    `W25Q128_ERR_OFFLINE`；
+  - `FAULT` 状态下每隔至少 1s 惰性探测，成功自动恢复 `READY`
+    并发布 `EVENT_STORAGE_READY`；
+  - 提供 `w25q128_health_check()` / `w25q128_is_ready()`。
+- **忙等策略**: 页/扇区 5s、整片擦除 60s；轮询间隔 10ms
+  （适配 FreeRTOS 100Hz，避免 `pdMS_TO_TICKS(1)=0` 空转）
+- **格式化策略**: `vfs.json` 关闭 `format_if_fail`，
+  仅显式调用 `vfs_format()` 才格式化，防止拔盘误清数据
 
 ### 3. LoRa 无线通信模块
 - **路径**: `components/modules/lora/`
@@ -56,6 +67,7 @@
 ### SPI驱动 (`components/drivers/spi_drv/`)
 - 支持设备链表，多个设备共享总线
 - 从设备树读取配置
+- 提供同步/异步/DMA接口
 
 ### UART驱动 (`components/drivers/uart_drv/`)
 - 使用事件队列接收数据
@@ -68,6 +80,41 @@
 ### I2C驱动 (`components/drivers/i2c_drv/`)
 - 自动添加设备到总线
 - 缓存设备句柄
+
+### SPI总线共享分析（2026-09-08）
+
+**当前总线拓扑**（见 `components/dtbs/config/spi.json`）：
+- 总线控制器：`bus.host = "spi2"`（SPI2_HOST）
+- ST7789 显示屏（2.8寸，SPI部分）：CS=GPIO48，DC=GPIO47
+- W25Q128 Flash：CS=GPIO13
+- 共用 SCLK=GPIO42、MOSI=GPIO40、MISO=GPIO41
+- CST816S 触摸屏走 I2C，不在 SPI 总线上
+
+**结论**：
+1. 电气上可以共享：CS 独立即可安全分时访问，不会互相“打架”；
+2. 已修复软件共享问题：SPI/I2C/I2S/UART 驱动已改为 Linux 式共享计数，
+   同一总线只初始化一次，模块通过引用计数共享句柄；
+3. 性能上是串行分时：全帧刷新约 27ms @40MHz，若 Flash 读写与刷屏抢总线，
+   会造成画面卡顿；Flash 擦除等待本身不占用总线，可异步化。
+
+**建议**：
+- ✅ `spi_drv` 总线单例重构已完成，模块按“init→add_device→remove_device→
+  deinit”顺序使用；
+- 显示和 Flash 有并发高吞吐需求时，拆分到 `SPI2_HOST` / `SPI3_HOST`
+  两条独立总线；
+- 维持共享总线时，LCD 用 DMA+双缓冲，Flash 大操作放后台任务，
+  静态字体文件上电后缓存到 RAM。
+
+**host/port 声明约定**（所有总线节点必填）：
+| 总线 | host 格式 | 示例 |
+|------|-----------|------|
+| SPI | `spi<2/3>` | `"spi2"` |
+| I2C | `i2c<0/1>` | `"i2c0"` |
+| I2S | `i2s<0/1>` | `"i2s0"` |
+| UART | `uart<0/1/2>` | `"uart1"` |
+
+dtree 通过 `DTREE_HOST(path, "spi"/"i2c"/"i2s"/"uart", &id)` 解析；
+驱动按 host/port 维护多实例共享注册表。
 
 ---
 

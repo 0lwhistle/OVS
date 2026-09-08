@@ -252,22 +252,18 @@ vfs_err_t vfs_unmount(const char* virtual_path) {
     /* 从 ESP VFS 注销 LittleFS */
     esp_err_t err;
     if (mp->blockdev_handle) {
-        /* blockdev 模式：必须用 unregister_blockdev，按 bdl_handle 查找 */
+        /*
+         * blockdev 模式：必须用 unregister_blockdev，按 bdl_handle 查找。
+         * 该接口内部会依次完成：
+         *   1) esp_vfs_unregister() 注销 ESP VFS 条目；
+         *   2) esp_littlefs_free() 释放 LittleFS 上下文（触发 adapter_release）。
+         * 因此这里不能再次调用 esp_vfs_unregister()（会返回 INVALID_STATE），
+         * 也不要用"注册/注销 dummy VFS"的方式尝试递减内部计数——ESP-IDF 的
+         * s_vfs_count 是单调递增的“历史峰值”，注册/注销不会让它回退。
+         */
         LOGI(TAG, "Calling unregister_blockdev for '%s' (handle=%p)", virtual_path, mp->blockdev_handle);
         err = esp_vfs_littlefs_unregister_blockdev((esp_blockdev_handle_t)mp->blockdev_handle);
         LOGI(TAG, "unregister_blockdev returned: %s", esp_err_to_name(err));
-        /* Also explicitly unregister VFS entry */
-        esp_err_t err2 = esp_vfs_unregister(virtual_path);
-        LOGI(TAG, "esp_vfs_unregister for '%s' returned: %s", virtual_path, esp_err_to_name(err2));
-        /* Try to cycle a dummy VFS registration to decrement s_vfs_count if needed */
-        esp_vfs_t dummy_vfs = {0};
-        esp_err_t err3 = esp_vfs_register("/dummy", &dummy_vfs, NULL);
-        if (err3 == ESP_OK) {
-            esp_vfs_unregister("/dummy");
-            LOGI(TAG, "Dummy VFS register/unregister cycled to decrement s_vfs_count");
-        } else {
-            LOGI(TAG, "Dummy VFS register failed: %s", esp_err_to_name(err3));
-        }
     } else {
         /* partition 模式：按 partition_label 查找 */
         LOGI(TAG, "Calling unregister by label for '%s'", virtual_path);

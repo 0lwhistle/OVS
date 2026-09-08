@@ -27,6 +27,9 @@
 
 static const char* TAG = "[LORA]";
 
+/* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
+#define LORA_DT_COMPAT   "lora-module"
+
 /* ========================================================================== */
 /*                              常量定义                                       */
 /* ========================================================================== */
@@ -78,23 +81,23 @@ static bool s_periodic_running = false;
 /**
  * @brief 初始化GPIO控制引脚
  */
-static lora_err_t lora_init_gpio(void) {
+static lora_err_t lora_init_gpio(dtree_node_t* dev_node) {
     dtree_err_t err;
     int32_t m0_pin, m1_pin, aux_pin;
-    
-    err = DTREE_INT("lora.control", "m0_pin", &m0_pin);
+
+    err = dtree_get_int(dev_node, "m0_pin", &m0_pin);
     DTREE_CHECK_ERROR("Read m0_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
     s_m0_pin = (int)m0_pin;
-    
-    err = DTREE_INT("lora.control", "m1_pin", &m1_pin);
+
+    err = dtree_get_int(dev_node, "m1_pin", &m1_pin);
     DTREE_CHECK_ERROR("Read m1_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
     s_m1_pin = (int)m1_pin;
-    
-    err = DTREE_INT("lora.control", "aux_pin", &aux_pin);
+
+    err = dtree_get_int(dev_node, "aux_pin", &aux_pin);
     DTREE_CHECK_ERROR("Read aux_pin", err); if (err != DTREE_OK) {
         return LORA_ERR_UART;
     }
@@ -184,17 +187,29 @@ lora_err_t lora_init(void) {
     }
     
     LOGI(TAG, "Initializing LoRa module...");
-    
-    /* 初始化GPIO */
-    lora_err_t err = lora_init_gpio();
+
+    /* 按 compatible 定位自己的设备节点，父节点即所属 UART 总线 */
+    dtree_node_t* dev_node = dtree_find_by_compatible(LORA_DT_COMPAT);
+    if (!dev_node) {
+        LOGE(TAG, "Device node '%s' not found in device tree", LORA_DT_COMPAT);
+        return LORA_ERR_UART;
+    }
+    dtree_node_t* bus_node = dtree_get_parent(dev_node);
+    if (!bus_node) {
+        LOGE(TAG, "Device node '%s' has no parent bus node", LORA_DT_COMPAT);
+        return LORA_ERR_UART;
+    }
+
+    /* 初始化GPIO（控制引脚从设备节点读取） */
+    lora_err_t err = lora_init_gpio(dev_node);
     if (err != LORA_OK) {
         LOGE(TAG, "GPIO init failed");
         return err;
     }
-    
-    /* 加载UART配置 */
+
+    /* 加载UART总线配置（从父总线节点） */
     uart_drv_config_t uart_config;
-    uart_drv_err_t uart_err = uart_drv_load_config("lora.uart", &uart_config);
+    uart_drv_err_t uart_err = uart_drv_load_config(bus_node, &uart_config);
     if (uart_err != UART_DRV_OK) {
         LOGE(TAG, "Failed to load UART config: %d", uart_err);
         return LORA_ERR_UART;

@@ -1,0 +1,189 @@
+{
+    "compatible": "ovs,esp32s3-smart-assistant",
+    "model": "OVS-SmartAssistant-v2",
+    "description": "ESP32-S3 智能助手设备树（单棵树）",
+
+    "mcu": {
+        "chip": "esp32s3",
+        "flash_size": "16MB",
+        "psram_size": "8MB",
+        "cpu_freq_mhz": 240
+    },
+
+    "buses": {
+        "spi2": {
+            "compatible": "esp32s3-spi",
+            "description": "SPI 总线 (显示屏 + Flash)",
+            "sclk_pin": 42,
+            "miso_pin": 41,
+            "mosi_pin": 40,
+            "max_freq_mhz": 40,
+            "mode": 0,
+
+            "lcd_display": {
+                "compatible": "st7789-lcd",
+                "description": "ST7789 TFT 显示屏",
+                "cs_pin": 48,
+                "dc_pin": 47,
+                "rst_pin": 21,
+                "bl_pin": 38,
+                "bl_active_level": "high",
+                "width": 240,
+                "height": 280,
+                "pixel_format": "rgb565",
+                "spi_freq_mhz": 40,
+                "invert_color": true,
+                "rotation": 0
+            },
+
+            "flash": {
+                "compatible": "w25q128-flash",
+                "description": "W25Q128 NOR Flash",
+                "cs_pin": 13,
+                "size_mb": 16,
+                "spi_freq_mhz": 40,
+                "quad_enable": false
+            }
+        },
+
+        "i2c0": {
+            "compatible": "esp32s3-i2c",
+            "description": "I2C 总线 (触控 + 温湿度)",
+            "sda_pin": 16,
+            "scl_pin": 17,
+            "freq_hz": 400000,
+            "pullup": true,
+            "pullup_resistor_ohm": 4700,
+
+            "touchscreen": {
+                "compatible": "cst816s-touch",
+                "description": "CST816S 电容触控",
+                "address": "0x15",
+                "int_pin": 18,
+                "rst_pin": 39,
+                "gesture_support": true,
+                "max_x": 240,
+                "max_y": 280
+            },
+
+            "temperature_sensor": {
+                "compatible": "aht30-sensor",
+                "description": "AHT30 温湿度传感器",
+                "address": "0x38",
+                "measure_interval_ms": 1000,
+                "precision": {
+                    "temperature": 0.3,
+                    "humidity": 2
+                }
+            }
+        },
+
+        "i2s0": {
+            "compatible": "esp32s3-i2s",
+            "description": "I2S 总线 (麦克风 + 功放)",
+            "bclk_pin": 6,
+            "ws_pin": 5,
+            "sample_rate_hz": 16000,
+            "data_bits": 16,
+            "channel": "mono",
+
+            "microphone": {
+                "compatible": "i2s-microphone",
+                "description": "INMP441 数字麦克风",
+                "data_in_pin": 7,
+                "channel": "left",
+                "gain_db": 0
+            },
+
+            "amplifier": {
+                "compatible": "i2s-amplifier",
+                "description": "MAX98357A 功放模块",
+                "data_out_pin": 15,
+                "channel": "both",
+                "gain_db": 15,
+                "sd_pin": -1
+            }
+        },
+
+        "uart0": {
+            "compatible": "esp32s3-uart",
+            "description": "调试串口",
+            "tx_pin": 43,
+            "rx_pin": 44,
+            "baud_rate": 115200,
+            "data_bits": 8,
+            "stop_bits": 1,
+            "parity": "none"
+        },
+
+        "uart1": {
+            "compatible": "esp32s3-uart",
+            "description": "LoRa 模块串口",
+            "tx_pin": 9,
+            "rx_pin": 10,
+            "baud_rate": 9600,
+            "data_bits": 8,
+            "stop_bits": 1,
+            "parity": "none",
+
+            "lora": {
+                "compatible": "lora-module",
+                "description": "LoRa LR22 无线模块",
+                "m0_pin": 8,
+                "m1_pin": 3,
+                "aux_pin": 46,
+                "aux_active_level": "high",
+
+                "default_config": {
+                    "frequency_mhz": 433.0,
+                    "spreading_factor": 12,
+                    "bandwidth_khz": 125,
+                    "coding_rate": "4/5",
+                    "tx_power_dbm": 20,
+                    "mode": "transparent"
+                }
+            }
+        }
+    },
+
+    "leds": {
+        "status": {
+            "compatible": "gpio-led",
+            "description": "状态指示灯",
+            "pin": 4,
+            "active_level": "high",
+            "default_state": "off"
+        }
+    },
+
+    "vfs": {
+        "compatible": "ovs-vfs",
+        "description": "VFS 虚拟文件系统挂载配置",
+        "mounts": [
+            {
+                "path": "/audio",
+                "device": "w25q128",
+                "offset": 0,
+                "size": 8388608,
+                "format_if_fail": false,
+                "read_only": false
+            },
+            {
+                "path": "/font",
+                "device": "w25q128",
+                "offset": 8388608,
+                "size": 8388608,
+                "format_if_fail": false,
+                "read_only": false
+            },
+            {
+                "path": "/config",
+                "device": "internal",
+                "offset": 0,
+                "size": 0,
+                "format_if_fail": false,
+                "read_only": false
+            }
+        ]
+    }
+}

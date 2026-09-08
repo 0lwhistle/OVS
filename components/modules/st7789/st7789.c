@@ -16,6 +16,7 @@
 
 #include "driver/gpio.h"
 #include "esp_err.h"
+#include "esp_heap_caps.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -24,6 +25,9 @@
 #include <inttypes.h>
 
 static const char* TAG = "[ST7789]";
+
+/* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
+#define ST7789_DT_COMPAT   "st7789-lcd"
 
 /* ========================================================================== */
 /*                              常量定义                                       */
@@ -80,6 +84,13 @@ static bool s_initialized = false;
 
 /** 显示缓冲区（可选，用于双缓冲） */
 static uint16_t* s_framebuffer = NULL;
+
+/** 刷屏分片行数：分片间总线空闲，共享总线上的其他设备（如 W25Q128）可插空 */
+#define ST7789_FLUSH_SLICE_LINES   24
+
+/** 分片暂存缓冲（内部 DMA RAM，常驻），替代逐帧大块 DMA 安全拷贝 */
+static uint8_t* s_slice_buf = NULL;
+#define ST7789_SLICE_BYTES  ((size_t)s_width * ST7789_FLUSH_SLICE_LINES * 2)
 
 /* ========================================================================== */
 /*                              内部函数                                       */
@@ -181,24 +192,24 @@ static st7789_err_t st7789_hw_init(void) {
 /**
  * @brief 初始化GPIO
  */
-static st7789_err_t st7789_init_gpio(void) {
-    /* 从设备树读取引脚配置 */
+static st7789_err_t st7789_init_gpio(dtree_node_t* dev_node) {
+    /* 从设备节点读取引脚配置 */
     dtree_err_t err;
     int32_t dc_pin, rst_pin, bl_pin;
-    
-    err = DTREE_INT("spi.lcd_display", "dc_pin", &dc_pin);
+
+    err = dtree_get_int(dev_node, "dc_pin", &dc_pin);
     DTREE_CHECK_ERROR("Read dc_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
     s_dc_pin = (int)dc_pin;
-    
-    err = DTREE_INT("spi.lcd_display", "rst_pin", &rst_pin);
+
+    err = dtree_get_int(dev_node, "rst_pin", &rst_pin);
     DTREE_CHECK_ERROR("Read rst_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
     s_rst_pin = (int)rst_pin;
-    
-    err = DTREE_INT("spi.lcd_display", "bl_pin", &bl_pin);
+
+    err = dtree_get_int(dev_node, "bl_pin", &bl_pin);
     DTREE_CHECK_ERROR("Read bl_pin", err); if (err != DTREE_OK) {
         return ST7789_ERR_SPI;
     }
@@ -243,43 +254,63 @@ st7789_err_t st7789_init(void) {
     }
     
     LOGI(TAG, "Initializing ST7789 display...");
-    
+
+    /* 按 compatible 定位自己的设备节点，父节点即所属 SPI 总线 */
+    dtree_node_t* dev_node = dtree_find_by_compatible(ST7789_DT_COMPAT);
+    if (!dev_node) {
+        LOGE(TAG, "Device node '%s' not found in device tree", ST7789_DT_COMPAT);
+        return ST7789_ERR_PARAM;
+    }
+    dtree_node_t* bus_node = dtree_get_parent(dev_node);
+    if (!bus_node) {
+        LOGE(TAG, "Device node '%s' has no parent bus node", ST7789_DT_COMPAT);
+        return ST7789_ERR_PARAM;
+    }
+
     /* 初始化GPIO */
-    st7789_err_t err = st7789_init_gpio();
+    st7789_err_t err = st7789_init_gpio(dev_node);
     if (err != ST7789_OK) {
         LOGE(TAG, "GPIO init failed");
         return err;
     }
-    
-    /* 加载SPI配置 */
+
+    /* 加载SPI总线配置（从父总线节点） */
     spi_drv_config_t spi_config;
-    spi_drv_err_t spi_err = spi_drv_load_config(&spi_config);
+    spi_drv_err_t spi_err = spi_drv_load_config(bus_node, &spi_config);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to load SPI config: %d", spi_err);
         return ST7789_ERR_SPI;
     }
-    
+
     /* 初始化SPI驱动 */
     spi_err = spi_drv_init(&spi_config, &s_spi_handle);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to init SPI: %d", spi_err);
         return ST7789_ERR_SPI;
     }
-    
-    /* 添加LCD设备到SPI总线 */
+
+    /* 添加LCD设备到SPI总线（设备属性从自己的节点读取） */
     int32_t spi_freq;
-    DTREE_INT("spi.lcd_display", "spi_freq_mhz", &spi_freq);
+    dtree_get_int(dev_node, "spi_freq_mhz", &spi_freq);
     if (spi_freq == 0) spi_freq = 40;
-    
+
     int32_t cs_pin;
-    DTREE_INT("spi.lcd_display", "cs_pin", &cs_pin);
-    
+    dtree_get_int(dev_node, "cs_pin", &cs_pin);
+
+    /* 刷屏分片暂存缓冲：常驻内部 DMA RAM，一次分配整个运行期复用 */
+    s_slice_buf = heap_caps_malloc(ST7789_SLICE_BYTES, MALLOC_CAP_DMA);
+    if (!s_slice_buf) {
+        LOGW(TAG, "Slice buffer alloc failed (%u bytes), flush falls back to whole-frame",
+             (unsigned)ST7789_SLICE_BYTES);
+    }
+
     spi_dev_config_t dev_config = {
         .cs_pin = (int)cs_pin,
         .clock_speed_hz = (int)(spi_freq * 1000000),
         .mode = 0,
         .xfer_mode = SPI_XFER_MODE_DMA_SYNC,  // LCD使用DMA，帧缓冲大
-        .max_transfer_sz = 240 * 280 * 2 + 1024,  // 一帧 + 余量
+        .max_transfer_sz = (int)(s_slice_buf ? ST7789_SLICE_BYTES
+                                             : (size_t)s_width * s_height * 2 + 1024),
     };
     spi_err = spi_drv_add_device(s_spi_handle, &dev_config, &s_spi_dev);
     if (spi_err != SPI_DRV_OK) {
@@ -293,6 +324,10 @@ st7789_err_t st7789_init(void) {
     err = st7789_hw_init();
     if (err != ST7789_OK) {
         LOGE(TAG, "HW init failed");
+        if (s_spi_dev) {
+            spi_drv_remove_device(s_spi_handle, s_spi_dev);
+            s_spi_dev = NULL;
+        }
         spi_drv_deinit(s_spi_handle);
         s_spi_handle = NULL;
         return err;
@@ -332,12 +367,21 @@ st7789_err_t st7789_deinit(void) {
         free(s_framebuffer);
         s_framebuffer = NULL;
     }
+
+    /* 释放刷屏分片暂存缓冲 */
+    if (s_slice_buf) {
+        heap_caps_free(s_slice_buf);
+        s_slice_buf = NULL;
+    }
     
     /* 反初始化SPI */
     if (s_spi_handle) {
+        if (s_spi_dev) {
+            spi_drv_remove_device(s_spi_handle, s_spi_dev);
+            s_spi_dev = NULL;
+        }
         spi_drv_deinit(s_spi_handle);
         s_spi_handle = NULL;
-        s_spi_dev = NULL;
     }
     
     s_initialized = false;
@@ -484,17 +528,45 @@ st7789_err_t st7789_flush(void) {
     if (!s_initialized || !s_framebuffer) {
         return ST7789_ERR_NOT_INIT;
     }
-    
+
     /* 设置整个屏幕窗口 */
     st7789_set_window(0, 0, s_width - 1, s_height - 1);
-    
+
     /* 发送帧缓冲数据 */
     st7789_write_cmd(ST7789_CMD_RAMWR);
-    
-    /* 需要字节交换 */
+
+    /* 需要字节交换（帧缓冲内为已交换的大端像素，直接发送） */
     gpio_set_level(s_dc_pin, 1);
-    spi_drv_write(s_spi_handle, s_spi_dev, s_framebuffer, s_width * s_height * 2);
-    
+
+    size_t frame_bytes = (size_t)s_width * s_height * 2;
+    spi_drv_err_t spi_err;
+
+    if (s_slice_buf) {
+        /* 分片发送：片与片之间总线空闲，其他 SPI 设备事务可插空，
+         * 共享总线时 flash 操作的尾延迟从整帧(约40ms)降为单片(约3ms) */
+        size_t offset = 0;
+        while (offset < frame_bytes) {
+            size_t chunk = frame_bytes - offset;
+            if (chunk > ST7789_SLICE_BYTES) {
+                chunk = ST7789_SLICE_BYTES;
+            }
+            memcpy(s_slice_buf, (const uint8_t*)s_framebuffer + offset, chunk);
+            spi_err = spi_drv_write(s_spi_handle, s_spi_dev, s_slice_buf, chunk);
+            if (spi_err != SPI_DRV_OK) {
+                LOGE(TAG, "Flush slice failed at %u/%u: %d",
+                     (unsigned)offset, (unsigned)frame_bytes, spi_err);
+                return ST7789_ERR_SPI;
+            }
+            offset += chunk;
+        }
+    } else {
+        /* 暂存缓冲不可用：退回整帧发送（spi_drv 内部做 DMA 安全拷贝） */
+        spi_err = spi_drv_write(s_spi_handle, s_spi_dev, s_framebuffer, frame_bytes);
+        if (spi_err != SPI_DRV_OK) {
+            return ST7789_ERR_SPI;
+        }
+    }
+
     return ST7789_OK;
 }
 

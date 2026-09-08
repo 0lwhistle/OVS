@@ -26,6 +26,9 @@
 
 static const char* TAG = "[CST816S]";
 
+/* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
+#define CST816S_DT_COMPAT   "cst816s-touch"
+
 /* ========================================================================== */
 /*                              常量定义                                       */
 /* ========================================================================== */
@@ -253,15 +256,27 @@ cst816s_err_t cst816s_init(void) {
     }
     
     LOGI(TAG, "Initializing CST816S...");
-    
-    /* 加载I2C配置 */
+
+    /* 按 compatible 定位自己的设备节点，父节点即所属 I2C 总线 */
+    dtree_node_t* dev_node = dtree_find_by_compatible(CST816S_DT_COMPAT);
+    if (!dev_node) {
+        LOGE(TAG, "Device node '%s' not found in device tree", CST816S_DT_COMPAT);
+        return CST816S_ERR_I2C;
+    }
+    dtree_node_t* bus_node = dtree_get_parent(dev_node);
+    if (!bus_node) {
+        LOGE(TAG, "Device node '%s' has no parent bus node", CST816S_DT_COMPAT);
+        return CST816S_ERR_I2C;
+    }
+
+    /* 加载I2C总线配置（从父总线节点） */
     i2c_drv_config_t i2c_config;
-    i2c_drv_err_t ret = i2c_drv_load_config(&i2c_config);
+    i2c_drv_err_t ret = i2c_drv_load_config(bus_node, &i2c_config);
     if (ret != I2C_DRV_OK) {
         LOGE(TAG, "Failed to load I2C config: %d", ret);
         return CST816S_ERR_I2C;
     }
-    
+
     /* 初始化I2C驱动 (如果AHT30已经初始化，会复用同一个I2C总线) */
     if (!s_i2c_handle) {
         ret = i2c_drv_init(&i2c_config, &s_i2c_handle);
@@ -270,18 +285,18 @@ cst816s_err_t cst816s_init(void) {
             return CST816S_ERR_I2C;
         }
     }
-    
-    /* 从设备树读取INT和RST引脚 */
+
+    /* 从设备节点读取INT和RST引脚 */
     dtree_err_t dret;
     int32_t int_pin, rst_pin;
-    
-    dret = DTREE_INT("i2c.touchscreen", "int_pin", &int_pin);
+
+    dret = dtree_get_int(dev_node, "int_pin", &int_pin);
     if (dret == DTREE_OK) {
         s_int_pin = (int)int_pin;
         LOGI(TAG, "  INT pin: %d", s_int_pin);
     }
-    
-    dret = DTREE_INT("i2c.touchscreen", "rst_pin", &rst_pin);
+
+    dret = dtree_get_int(dev_node, "rst_pin", &rst_pin);
     if (dret == DTREE_OK) {
         s_rst_pin = (int)rst_pin;
         LOGI(TAG, "  RST pin: %d", s_rst_pin);
@@ -295,6 +310,10 @@ cst816s_err_t cst816s_init(void) {
     cst816s_err_t err = cst816s_read_reg(CST816S_REG_CHIP_ID, &chip_id, 1);
     if (err != CST816S_OK) {
         LOGE(TAG, "Failed to read chip ID: %d", err);
+        if (s_i2c_handle) {
+            i2c_drv_deinit(s_i2c_handle);
+            s_i2c_handle = NULL;
+        }
         return err;
     }
     
@@ -318,8 +337,11 @@ cst816s_err_t cst816s_deinit(void) {
     /* 停止周期任务 */
     cst816s_stop_periodic_read();
     
-    /* 注意: 不反初始化I2C，因为可能与其他模块共享 */
-    s_i2c_handle = NULL;
+    /* 释放本模块持有的 I2C 总线引用（共享计数，归零才真正销毁） */
+    if (s_i2c_handle) {
+        i2c_drv_deinit(s_i2c_handle);
+        s_i2c_handle = NULL;
+    }
     
     s_initialized = false;
     

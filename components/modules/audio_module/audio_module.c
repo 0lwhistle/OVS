@@ -125,14 +125,37 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     }
     memset(h, 0, sizeof(struct audio_module_handle));
     
-    /* 加载I2S配置 */
+    /* 按 compatible 定位麦克风和功放设备节点 */
+    dtree_node_t* mic_node = dtree_find_by_compatible("i2s-microphone");
+    dtree_node_t* amp_node = dtree_find_by_compatible("i2s-amplifier");
+    if (!mic_node || !amp_node) {
+        LOGE(TAG, "I2S device nodes not found (mic=%p, amp=%p)",
+             (void*)mic_node, (void*)amp_node);
+        free(h);
+        return AUDIO_MODULE_ERR_HW;
+    }
+
+    /* 麦克风所在总线即 I2S 总线 */
+    dtree_node_t* bus_node = dtree_get_parent(mic_node);
+    if (!bus_node) {
+        LOGE(TAG, "I2S microphone node has no parent bus node");
+        free(h);
+        return AUDIO_MODULE_ERR_HW;
+    }
+
+    /* 加载I2S总线配置，再从设备节点填充 DIN/DOUT 引脚 */
     i2s_drv_config_t i2s_config;
-    i2s_drv_err_t i2s_err = i2s_drv_load_config(&i2s_config);
+    i2s_drv_err_t i2s_err = i2s_drv_load_config(bus_node, &i2s_config);
     if (i2s_err != I2S_DRV_OK) {
         LOGE(TAG, "Failed to load I2S config: %d", i2s_err);
         free(h);
         return AUDIO_MODULE_ERR_HW;
     }
+
+    dtree_get_int(mic_node, "data_in_pin", &i2s_config.data_in_pin);
+    dtree_get_int(amp_node, "data_out_pin", &i2s_config.data_out_pin);
+    LOGI(TAG, "Audio devices: din=%" PRId32 " (mic), dout=%" PRId32 " (amp)",
+         i2s_config.data_in_pin, i2s_config.data_out_pin);
     
     /* 初始化I2S驱动 */
     i2s_err = i2s_drv_init(&i2s_config, &h->i2s_handle);

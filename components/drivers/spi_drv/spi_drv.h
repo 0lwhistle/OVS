@@ -53,6 +53,7 @@ typedef enum {
  * @brief SPI总线配置（从设备树读取）
  */
 typedef struct spi_drv_config {
+    int32_t host;                   /**< 控制器编号：设备树 "spi2"→2、"spi3"→3 */
     int32_t sclk_pin;
     int32_t miso_pin;
     int32_t mosi_pin;
@@ -81,8 +82,22 @@ typedef void (*spi_dma_callback_t)(void* arg);
 
 /* ---------- 初始化/反初始化 ---------- */
 
-spi_drv_err_t spi_drv_load_config(spi_drv_config_t* config);
+spi_drv_err_t spi_drv_load_config(dtree_node_t* bus_node, spi_drv_config_t* config);
+
+/**
+ * @brief 获取共享的 SPI 总线句柄（Linux 式引用计数）
+ *
+ * 同一 SPI 总线只初始化一次；多个设备模块调用本接口会得到同一个句柄，
+ * 引用计数 +1。若请求配置与已存在总线不一致，返回 SPI_DRV_ERR_CONFIG。
+ */
 spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* handle);
+
+/**
+ * @brief 释放一个 SPI 总线引用
+ *
+ * 只递减引用计数；归零时才真正销毁总线。释放设备前应先调用
+ * spi_drv_remove_device()。
+ */
 spi_drv_err_t spi_drv_deinit(spi_drv_handle_t handle);
 
 /* ---------- 设备管理 ---------- */

@@ -13,8 +13,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <dirent.h>
-#include <sys/stat.h>
 
 static const char* TAG = "[DTREE]";
 
@@ -69,80 +67,25 @@ static cJSON* load_json_file(const char* filepath) {
 }
 
 /**
- * @brief 合并 JSON 对象
+ * @brief 加载设备树 JSON 文件（单棵树）
  */
-static void merge_json_objects(cJSON* dest, cJSON* src) {
-    if (!dest || !src || !cJSON_IsObject(dest) || !cJSON_IsObject(src)) {
-        return;
-    }
-    
-    cJSON* item = NULL;
-    cJSON_ArrayForEach(item, src) {
-        cJSON* existing = cJSON_GetObjectItem(dest, item->string);
-        if (existing) {
-            // 如果两边都是对象，递归合并
-            if (cJSON_IsObject(existing) && cJSON_IsObject(item)) {
-                merge_json_objects(existing, item);
-            }
-        } else {
-            // 复制并添加到目标
-            cJSON* copy = cJSON_Duplicate(item, 1);
-            if (copy) {
-                cJSON_AddItemToObject(dest, item->string, copy);
-            }
-        }
-    }
-}
+static cJSON* load_device_tree(const char* dirpath, const char* filename) {
+    char filepath[512];
+    snprintf(filepath, sizeof(filepath), "%s/%s", dirpath, filename);
 
-/**
- * @brief 加载目录下所有 JSON 文件
- */
-static cJSON* load_all_json_files(const char* dirpath) {
-    cJSON* root = cJSON_CreateObject();
+    cJSON* root = load_json_file(filepath);
     if (!root) {
-        LOGE(TAG, "Failed to create root JSON object");
+        LOGE(TAG, "Device tree file not found or invalid: %s", filepath);
         return NULL;
     }
-    
-    DIR* dir = opendir(dirpath);
-    if (!dir) {
-        LOGW(TAG, "Config directory not found: %s", dirpath);
-        LOGI(TAG, "Using built-in default configs");
-        return root;
+
+    if (!cJSON_IsObject(root)) {
+        LOGE(TAG, "Device tree root is not a JSON object: %s", filepath);
+        cJSON_Delete(root);
+        return NULL;
     }
-    
-    struct dirent* entry;
-    int file_count = 0;
-    
-    while ((entry = readdir(dir)) != NULL) {
-        // 只处理 .json 文件
-        char* ext = strrchr(entry->d_name, '.');
-        if (!ext || strcmp(ext, ".json") != 0) {
-            continue;
-        }
-        
-        // 构造完整路径
-        char filepath[512];
-        snprintf(filepath, sizeof(filepath), "%s/%s", dirpath, entry->d_name);
-        
-        // 加载 JSON
-        cJSON* file_json = load_json_file(filepath);
-        if (file_json) {
-            // 使用文件名（不含扩展名）作为键
-            char key[64];
-            strncpy(key, entry->d_name, sizeof(key) - 1);
-            ext = strrchr(key, '.');
-            if (ext) *ext = '\0';
-            
-            cJSON_AddItemToObject(root, key, file_json);
-            file_count++;
-            LOGI(TAG, "Loaded: %s", entry->d_name);
-        }
-    }
-    
-    closedir(dir);
-    LOGI(TAG, "Loaded %d config files from %s", file_count, dirpath);
-    
+
+    LOGI(TAG, "Loaded device tree: %s", filepath);
     return root;
 }
 
@@ -155,12 +98,12 @@ dtree_err_t dtree_init(void) {
     }
     
     LOGI(TAG, "Initializing device tree...");
-    
-    // 加载所有 JSON 配置文件
-    s_root = load_all_json_files(DTREE_CONFIG_DIR);
+
+    // 加载设备树文件（单棵树）
+    s_root = load_device_tree(DTREE_CONFIG_DIR, DTREE_CONFIG_FILE);
     if (!s_root) {
-        LOGE(TAG, "Failed to load config files");
-        return DTREE_ERR_NOT_INIT;
+        LOGE(TAG, "Failed to load device tree file");
+        return DTREE_ERR_IO;
     }
     
     // 初始化根节点
@@ -202,23 +145,31 @@ dtree_node_t* dtree_get_root(void) {
 static dtree_node_t s_node_pool[DTREE_NODE_POOL_SIZE];
 static int s_pool_index = 0;
 
+/**
+ * @brief 从节点池分配一个包装 cJSON 的节点
+ *
+ * name 取自 cJSON 的键（指向树内字符串，生命周期与设备树相同），
+ * 避免引用调用方栈上的临时路径片段。
+ */
+static dtree_node_t* node_pool_alloc(cJSON* json, const char* fallback_name) {
+    dtree_node_t* node = &s_node_pool[s_pool_index % DTREE_NODE_POOL_SIZE];
+    s_pool_index++;
+    node->json = json;
+    node->name = (json && json->string) ? json->string : fallback_name;
+    return node;
+}
+
 dtree_node_t* dtree_get_child(dtree_node_t* parent, const char* name) {
     if (!parent || !parent->json || !name) {
         return NULL;
     }
-    
+
     cJSON* child = cJSON_GetObjectItem(parent->json, name);
     if (!child) {
         return NULL;
     }
-    
-    /* 从节点池分配 */
-    dtree_node_t* node = &s_node_pool[s_pool_index % DTREE_NODE_POOL_SIZE];
-    s_pool_index++;
-    node->json = child;
-    node->name = name;
-    
-    return node;
+
+    return node_pool_alloc(child, name);
 }
 
 dtree_node_t* dtree_get_node(const char* path) {
@@ -406,6 +357,123 @@ dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* val
     
     LOGW(TAG, "Property '%s' type mismatch, expected float", property);
     return DTREE_ERR_TYPE;
+}
+
+/* ========== 节点遍历（compatible / 父节点）实现 ========== */
+
+/**
+ * @brief 在对象子树中深度优先查找带指定 compatible 的节点
+ */
+static cJSON* find_compatible_json(cJSON* root, const char* compatible) {
+    if (!cJSON_IsObject(root)) {
+        return NULL;
+    }
+
+    cJSON* compat = cJSON_GetObjectItem(root, "compatible");
+    if (compat && cJSON_IsString(compat) &&
+        strcmp(compat->valuestring, compatible) == 0) {
+        return root;
+    }
+
+    cJSON* item = NULL;
+    cJSON_ArrayForEach(item, root) {
+        if (cJSON_IsObject(item)) {
+            cJSON* hit = find_compatible_json(item, compatible);
+            if (hit) {
+                return hit;
+            }
+        }
+    }
+
+    return NULL;
+}
+
+/**
+ * @brief 查找包含 target 作为直接成员的最近对象祖先
+ */
+static cJSON* find_parent_json(cJSON* root, const cJSON* target) {
+    if (!cJSON_IsObject(root)) {
+        return NULL;
+    }
+
+    cJSON* item = NULL;
+    cJSON_ArrayForEach(item, root) {
+        if (item == target) {
+            return root;
+        }
+        if (cJSON_IsObject(item)) {
+            cJSON* hit = find_parent_json(item, target);
+            if (hit) {
+                return hit;
+            }
+        }
+    }
+
+    return NULL;
+}
+
+dtree_node_t* dtree_find_by_compatible(const char* compatible) {
+    if (!s_initialized || !compatible) {
+        return NULL;
+    }
+
+    cJSON* hit = find_compatible_json(s_root, compatible);
+    if (!hit) {
+        LOGW(TAG, "No node with compatible '%s'", compatible);
+        return NULL;
+    }
+
+    return node_pool_alloc(hit, compatible);
+}
+
+dtree_node_t* dtree_get_parent(dtree_node_t* node) {
+    if (!s_initialized || !node || !node->json) {
+        return NULL;
+    }
+
+    if (node->json == s_root) {
+        return NULL;    /* 根节点没有父节点 */
+    }
+
+    cJSON* parent = find_parent_json(s_root, node->json);
+    if (!parent) {
+        return NULL;
+    }
+
+    return node_pool_alloc(parent, "root");
+}
+
+const char* dtree_get_node_name(dtree_node_t* node) {
+    return (node && node->name) ? node->name : NULL;
+}
+
+dtree_err_t dtree_get_host_id(dtree_node_t* node, const char* prefix, int32_t* id) {
+    if (!node || !node->name || !prefix || !id) {
+        return DTREE_ERR_PARAM;
+    }
+
+    const char* value = node->name;
+    size_t prefix_len = strlen(prefix);
+    if (strncmp(value, prefix, prefix_len) != 0) {
+        LOGE(TAG, "Node name '%s' does not match prefix '%s'", value, prefix);
+        return DTREE_ERR_TYPE;
+    }
+
+    const char* num = value + prefix_len;
+    if (*num == '\0') {
+        LOGE(TAG, "Node name '%s' has no numeric id", value);
+        return DTREE_ERR_TYPE;
+    }
+
+    for (const char* p = num; *p != '\0'; p++) {
+        if (*p < '0' || *p > '9') {
+            LOGE(TAG, "Node name '%s' is not '<prefix><number>'", value);
+            return DTREE_ERR_TYPE;
+        }
+    }
+
+    *id = (int32_t)atoi(num);
+    return DTREE_OK;
 }
 
 /* ========== 数组 API 实现 ========== */

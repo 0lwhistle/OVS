@@ -44,6 +44,7 @@ typedef enum {
     HOLDER_ERR_NO_MEMORY,               /**< 内存不足 */
     HOLDER_ERR_MUTEX,                   /**< 互斥锁错误 */
     HOLDER_ERR_INIT_FAILED,             /**< 初始化失败 */
+    HOLDER_ERR_DEPENDENCY,              /**< 依赖未满足或存在循环依赖 */
     HOLDER_ERR_MAX
 } holder_err_t;
 
@@ -65,6 +66,8 @@ typedef struct {
     const char* last_error;             /**< 最后错误信息 */
     bool required;                      /**< 是否必需模块 */
     void* user_data;                    /**< 用户数据 */
+    const char* const* dependencies;    /**< 依赖模块名数组（可为NULL） */
+    int dependency_count;               /**< 依赖数量 */
 } holder_module_info_t;
 
 /**
@@ -89,6 +92,27 @@ holder_err_t holder_register_module(const char* name,
                                    holder_module_init_fn init_fn,
                                    bool required,
                                    void* user_data);
+
+/**
+ * @brief 注册模块并声明依赖（Linux 式总线/设备分层）
+ *
+ * dependencies 中的模块必须先于本模块初始化。holder_init_all() 会自动
+ * 按依赖分批初始化；缺失依赖或循环依赖将把模块置为 ERROR 状态。
+ *
+ * @param name         模块名称（唯一标识）
+ * @param init_fn      模块初始化函数
+ * @param required     是否为必需模块
+ * @param dependencies 依赖模块名数组（可为 NULL）
+ * @param dependency_count 依赖数量
+ * @param user_data    用户数据（可选）
+ * @return HOLDER_OK 成功，其他值失败
+ */
+holder_err_t holder_register_module_ex(const char* name,
+                                       holder_module_init_fn init_fn,
+                                       bool required,
+                                       const char* const* dependencies,
+                                       int dependency_count,
+                                       void* user_data);
 
 /**
  * @brief 注销模块

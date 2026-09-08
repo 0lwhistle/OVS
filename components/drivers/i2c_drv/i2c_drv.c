@@ -15,6 +15,8 @@
 
 #include "driver/i2c_master.h"
 #include "esp_err.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -43,7 +45,81 @@ struct i2c_drv_handle {
     i2c_drv_config_t config;             /**< 配置信息 */
     bool initialized;                    /**< 初始化标志 */
     i2c_dev_node_t* dev_list;            /**< 设备链表 */
+    uint32_t ref_count;                  /**< 引用计数（共享总线模型） */
 };
+
+/* ========================================================================== */
+/*                    共享总线注册表（引用计数模型）                            */
+/* ========================================================================== */
+
+#define I2C_DRV_MAX_PORTS 2
+static struct i2c_drv_handle* s_i2c_buses[I2C_DRV_MAX_PORTS] = { NULL };
+static SemaphoreHandle_t s_i2c_bus_lock = NULL;
+
+static int i2c_port_to_slot(int32_t port) {
+    if (port == 0 || port == 1) {
+        return (int)port;
+    }
+    return -1;
+}
+
+static bool i2c_bus_lock_take(void) {
+    if (!s_i2c_bus_lock) {
+        s_i2c_bus_lock = xSemaphoreCreateMutex();
+    }
+    if (!s_i2c_bus_lock) {
+        LOGE(TAG, "Failed to create I2C bus lock");
+        return false;
+    }
+    xSemaphoreTake(s_i2c_bus_lock, portMAX_DELAY);
+    return true;
+}
+
+static void i2c_bus_lock_give(void) {
+    if (s_i2c_bus_lock) {
+        xSemaphoreGive(s_i2c_bus_lock);
+    }
+}
+
+static bool i2c_drv_config_equal(const i2c_drv_config_t* a, const i2c_drv_config_t* b) {
+    return a && b
+        && a->port == b->port
+        && a->sda_pin == b->sda_pin
+        && a->scl_pin == b->scl_pin
+        && a->freq_hz == b->freq_hz
+        && a->pullup == b->pullup
+        && a->pullup_resistor_ohm == b->pullup_resistor_ohm;
+}
+
+static i2c_drv_err_t i2c_bus_destroy(int slot) {
+    if (slot < 0 || slot >= I2C_DRV_MAX_PORTS) {
+        return I2C_DRV_ERR_PARAM;
+    }
+
+    struct i2c_drv_handle* h = s_i2c_buses[slot];
+    if (!h) {
+        return I2C_DRV_OK;
+    }
+
+    /* 释放设备链表 */
+    i2c_dev_node_t* node = h->dev_list;
+    while (node) {
+        i2c_dev_node_t* next = node->next;
+        i2c_master_bus_rm_device(node->dev_handle);
+        free(node);
+        node = next;
+    }
+    h->dev_list = NULL;
+
+    if (h->bus_handle) {
+        i2c_del_master_bus(h->bus_handle);
+        h->bus_handle = NULL;
+    }
+
+    free(h);
+    s_i2c_buses[slot] = NULL;
+    return I2C_DRV_OK;
+}
 
 /* ========================================================================== */
 /*                              内部函数                                       */
@@ -96,41 +172,60 @@ static i2c_master_dev_handle_t get_or_create_dev(struct i2c_drv_handle* h, uint8
 /*                              公共API实现                                    */
 /* ========================================================================== */
 
-i2c_drv_err_t i2c_drv_load_config(i2c_drv_config_t* config) {
-    if (!config) {
+i2c_drv_err_t i2c_drv_load_config(dtree_node_t* bus_node, i2c_drv_config_t* config) {
+    if (!bus_node || !config) {
         return I2C_DRV_ERR_PARAM;
     }
-    
+
+    /* 总线节点 compatible 校验，防止把错误的节点当总线 */
+    const char* compat = dtree_get_compatible(bus_node);
+    if (!compat || strcmp(compat, "esp32s3-i2c") != 0) {
+        LOGE(TAG, "Bus node compatible '%s' is not 'esp32s3-i2c'",
+             compat ? compat : "null");
+        return I2C_DRV_ERR_CONFIG;
+    }
+
     dtree_err_t err;
-    
-    err = DTREE_INT("i2c.bus", "sda_pin", &config->sda_pin);
+
+    /* 控制器编号来自节点名，例如 "i2c0"、"i2c1" */
+    err = dtree_get_host_id(bus_node, "i2c", &config->port);
+    if (err != DTREE_OK) {
+        LOGE(TAG, "Read i2c host id failed: %d", err);
+        return I2C_DRV_ERR_CONFIG;
+    }
+    if (i2c_port_to_slot(config->port) < 0) {
+        LOGE(TAG, "Unsupported I2C port id: %" PRId32, config->port);
+        return I2C_DRV_ERR_CONFIG;
+    }
+
+    err = dtree_get_int(bus_node, "sda_pin", &config->sda_pin);
     DTREE_CHECK_ERROR("Read sda_pin", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("i2c.bus", "scl_pin", &config->scl_pin);
+
+    err = dtree_get_int(bus_node, "scl_pin", &config->scl_pin);
     DTREE_CHECK_ERROR("Read scl_pin", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("i2c.bus", "freq_hz", &config->freq_hz);
+
+    err = dtree_get_int(bus_node, "freq_hz", &config->freq_hz);
     DTREE_CHECK_ERROR("Read freq_hz", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_BOOL("i2c.bus", "pullup", &config->pullup);
+
+    err = dtree_get_bool(bus_node, "pullup", &config->pullup);
     DTREE_CHECK_ERROR("Read pullup", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT("i2c.bus", "pullup_resistor_ohm", &config->pullup_resistor_ohm);
+
+    err = dtree_get_int(bus_node, "pullup_resistor_ohm", &config->pullup_resistor_ohm);
     DTREE_CHECK_ERROR("Read pullup_resistor_ohm", err); if (err != DTREE_OK) {
         return I2C_DRV_ERR_CONFIG;
     }
     
-    LOGI(TAG, "I2C config loaded: sda=%" PRId32 ", scl=%" PRId32 
-         ", freq=%" PRId32 ", pullup=%d, resistor=%" PRId32,
-         config->sda_pin, config->scl_pin, config->freq_hz, 
+    LOGI(TAG, "I2C config loaded: port=i2c%" PRId32 ", sda=%" PRId32
+         ", scl=%" PRId32 ", freq=%" PRId32 ", pullup=%d, resistor=%" PRId32,
+         config->port, config->sda_pin, config->scl_pin, config->freq_hz,
          config->pullup, config->pullup_resistor_ohm);
     
     return I2C_DRV_OK;
@@ -140,24 +235,52 @@ i2c_drv_err_t i2c_drv_init(const i2c_drv_config_t* config, i2c_drv_handle_t* han
     if (!config || !handle) {
         return I2C_DRV_ERR_PARAM;
     }
-    
-    LOGI(TAG, "Initializing I2C driver...");
+
+    if (!i2c_bus_lock_take()) {
+        return I2C_DRV_ERR_HW;
+    }
+
+    int slot = i2c_port_to_slot(config->port);
+    if (slot < 0) {
+        LOGE(TAG, "Unsupported I2C port id: %" PRId32, config->port);
+        i2c_bus_lock_give();
+        return I2C_DRV_ERR_CONFIG;
+    }
+
+    /* 对应 port 的总线已存在：校验配置一致性后共享句柄（引用计数 +1） */
+    struct i2c_drv_handle* existing = s_i2c_buses[slot];
+    if (existing) {
+        if (!i2c_drv_config_equal(config, &existing->config)) {
+            LOGE(TAG, "I2C port i2c%" PRId32 " already initialized with different config",
+                 config->port);
+            i2c_bus_lock_give();
+            return I2C_DRV_ERR_CONFIG;
+        }
+
+        existing->ref_count++;
+        *handle = existing;
+        LOGI(TAG, "I2C port i2c%" PRId32 " shared: ref=%" PRIu32,
+             config->port, existing->ref_count);
+        i2c_bus_lock_give();
+        return I2C_DRV_OK;
+    }
+
+    LOGI(TAG, "Initializing I2C driver (port i2c%" PRId32 ", first user)...", config->port);
     LOGI(TAG, "  SDA pin: %" PRId32, config->sda_pin);
     LOGI(TAG, "  SCL pin: %" PRId32, config->scl_pin);
     LOGI(TAG, "  Freq: %" PRId32 " Hz", config->freq_hz);
-    
-    /* 分配句柄 */
-    struct i2c_drv_handle* h = (struct i2c_drv_handle*)malloc(sizeof(struct i2c_drv_handle));
+
+    struct i2c_drv_handle* h = calloc(1, sizeof(struct i2c_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
+        i2c_bus_lock_give();
         return I2C_DRV_ERR_HW;
     }
-    memset(h, 0, sizeof(struct i2c_drv_handle));
-    
+
     /* 配置I2C主机总线 */
     i2c_master_bus_config_t bus_config = {
         .clk_source = I2C_CLK_SRC_DEFAULT,
-        .i2c_port = I2C_NUM_0,
+        .i2c_port = (i2c_port_t)config->port,
         .scl_io_num = (int)config->scl_pin,
         .sda_io_num = (int)config->sda_pin,
         .glitch_ignore_cnt = 7,
@@ -168,18 +291,22 @@ i2c_drv_err_t i2c_drv_init(const i2c_drv_config_t* config, i2c_drv_handle_t* han
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to create I2C master bus: %s", esp_err_to_name(ret));
         free(h);
+        i2c_bus_lock_give();
         return I2C_DRV_ERR_HW;
     }
-    
+
     /* 保存配置 */
     h->config = *config;
     h->initialized = true;
     h->dev_list = NULL;
-    
+    h->ref_count = 1;
+
+    s_i2c_buses[slot] = h;
     *handle = h;
-    
-    LOGI(TAG, "I2C driver initialized successfully");
-    
+
+    LOGI(TAG, "I2C driver initialized successfully (port=i2c%" PRId32 ", ref=1)",
+         config->port);
+    i2c_bus_lock_give();
     return I2C_DRV_OK;
 }
 
@@ -191,30 +318,43 @@ i2c_drv_err_t i2c_drv_deinit(i2c_drv_handle_t handle) {
     if (!handle->initialized) {
         return I2C_DRV_ERR_NOT_INIT;
     }
-    
-    LOGI(TAG, "Deinitializing I2C driver...");
-    
-    /* 释放设备链表 */
-    i2c_dev_node_t* node = handle->dev_list;
-    while (node) {
-        i2c_dev_node_t* next = node->next;
-        i2c_master_bus_rm_device(node->dev_handle);
-        free(node);
-        node = next;
+
+    if (!i2c_bus_lock_take()) {
+        return I2C_DRV_ERR_HW;
     }
-    
-    /* 删除I2C主机总线 */
-    if (handle->bus_handle) {
-        i2c_del_master_bus(handle->bus_handle);
-        handle->bus_handle = NULL;
+
+    int slot = -1;
+    for (int i = 0; i < I2C_DRV_MAX_PORTS; i++) {
+        if (s_i2c_buses[i] == handle) {
+            slot = i;
+            break;
+        }
     }
-    
-    handle->initialized = false;
-    free(handle);
-    
-    LOGI(TAG, "I2C driver deinitialized");
-    
-    return I2C_DRV_OK;
+    if (slot < 0) {
+        LOGE(TAG, "Handle is not owned by I2C driver registry");
+        i2c_bus_lock_give();
+        return I2C_DRV_ERR_PARAM;
+    }
+
+    if (handle->ref_count == 0) {
+        LOGW(TAG, "I2C bus already fully released");
+        i2c_bus_lock_give();
+        return I2C_DRV_OK;
+    }
+
+    /* 还有其他使用者：只释放自己的引用 */
+    if (handle->ref_count > 1) {
+        handle->ref_count--;
+        LOGI(TAG, "I2C driver released one reference (remaining=%" PRIu32 ")",
+             handle->ref_count);
+        i2c_bus_lock_give();
+        return I2C_DRV_OK;
+    }
+
+    LOGI(TAG, "Deinitializing I2C driver (last reference)...");
+    i2c_drv_err_t err = i2c_bus_destroy(slot);
+    i2c_bus_lock_give();
+    return err;
 }
 
 i2c_drv_err_t i2c_drv_write(i2c_drv_handle_t handle, uint8_t device_addr, 

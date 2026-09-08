@@ -260,129 +260,123 @@ tasker_cancel_by_name("task_name");
 
 ---
 
-### 2.3 Device Tree - JSON设备树配置系统
+### 2.3 Device Tree - JSON 设备树（单棵树 + compatible 绑定）
 
 #### 设计理念
 
-借鉴Linux设备树思想，使用**JSON文件描述硬件配置**，实现硬件参数与代码完全分离。
+借鉴 Linux 设备树思想，使用**单个 JSON 文件描述一棵完整的硬件树**：
+
+1. **嵌套表达挂载**：设备节点物理嵌套在总线节点之下，父子关系即挂载关系；
+2. **节点名即控制器地址**：总线节点名为 `spi2`/`i2c0`/`uart1` 等控制器编号
+   （Linux unit address 思想），不再使用 `host` 属性；
+3. **compatible 绑定**：驱动/模块以自己服务的 `compatible` 字符串查询定位节点，
+   代码中不出现任何硬编码节点路径。
 
 #### 架构特点
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Device Tree 设备树系统                        │
-│                                                                 │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                 JSON 配置文件层                           │   │
-│  │  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌─────────┐ │   │
-│  │  │ spi.json  │ │ i2c.json  │ │ i2s.json  │ │uart.json│ │   │
-│  │  └───────────┘ └───────────┘ └───────────┘ └─────────┘ │   │
-│  │  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌─────────┐ │   │
-│  │  │lora.json  │ │audio.json │ │display.json│ │ ...    │ │   │
-│  │  └───────────┘ └───────────┘ └───────────┘ └─────────┘ │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│                           │                                     │
-│                           ▼                                     │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                 解析器层 (dtree)                          │   │
-│  │  ┌───────────────────────────────────────────────────┐  │   │
-│  │  │  JSON Parser → 内存树结构 → 属性查询API            │  │   │
-│  │  └───────────────────────────────────────────────────┘  │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│                           │                                     │
-│                           ▼                                     │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                 驱动层读取配置                            │   │
-│  │                                                         │   │
-│  │  // 示例: SPI驱动从设备树读取配置                         │   │
-│  │  spi_drv_config_t config;                               │   │
-│  │  DTREE_INT("spi.bus", "sclk_pin", &config.sclk_pin);   │   │
-│  │  DTREE_INT("spi.bus", "miso_pin", &config.miso_pin);   │   │
-│  │  DTREE_INT("spi.bus", "mosi_pin", &config.mosi_pin);   │   │
-│  │  DTREE_INT("spi.bus", "max_freq_mhz", &config.freq);   │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
++-------------------------------------------------------------------+
+|                    Device Tree 设备树系统                          |
+|                                                                   |
+|  +-------------------------------------------------------------+ |
+|  |          单棵树配置 (config/ovs.dtb.json)                    | |
+|  |  buses.spi2  -- lcd_display (compatible: st7789-lcd)        | |
+|  |             -- flash       (compatible: w25q128-flash)      | |
+|  |  buses.i2c0  -- touchscreen / temperature_sensor            | |
+|  |  buses.uart1 -- lora                                        | |
+|  |  leds.status / vfs.mounts / mcu                             | |
+|  +-------------------------------------------------------------+ |
+|                           |                                       |
+|                           v                                       |
+|  +-------------------------------------------------------------+ |
+|  |                 解析器层 (dtree)                              | |
+|  |  JSON Parser -> 内存树 -> compatible查询/父节点/属性API       | |
+|  +-------------------------------------------------------------+ |
+|                           |                                       |
+|                           v                                       |
+|  +-------------------------------------------------------------+ |
+|  |              驱动/模块按 compatible 绑定                      | |
+|  |                                                             | |
+|  |  // 模块定位自己的设备节点，父节点即所属总线                  | |
+|  |  dev = dtree_find_by_compatible("st7789-lcd");              | |
+|  |  bus = dtree_get_parent(dev);                               | |
+|  |                                                             | |
+|  |  // 总线驱动从总线节点读配置，节点名解析控制器编号            | |
+|  |  spi_drv_load_config(bus, &cfg);   // "spi2" -> host 2      | |
+|  |  dtree_get_int(dev, "cs_pin", &cs_pin);                     | |
+|  +-------------------------------------------------------------+ |
++-------------------------------------------------------------------+
 ```
 
-#### JSON配置文件示例
+#### JSON 配置示例（ovs.dtb.json 节选）
 
-**spi.json** - SPI总线配置
 ```json
 {
-    "bus": {
-        "compatible": "esp32s3-spi",
-        "sclk_pin": 42,
-        "miso_pin": 41,
-        "mosi_pin": 40,
-        "max_freq_mhz": 40,
-        "mode": 0
+    "compatible": "ovs,esp32s3-smart-assistant",
+    "buses": {
+        "spi2": {
+            "compatible": "esp32s3-spi",
+            "sclk_pin": 42, "miso_pin": 41, "mosi_pin": 40,
+            "max_freq_mhz": 40, "mode": 0,
+
+            "lcd_display": {
+                "compatible": "st7789-lcd",
+                "cs_pin": 48, "dc_pin": 47, "rst_pin": 21, "bl_pin": 38,
+                "width": 240, "height": 280, "spi_freq_mhz": 40
+            },
+            "flash": {
+                "compatible": "w25q128-flash",
+                "cs_pin": 13, "size_mb": 16, "spi_freq_mhz": 40
+            }
+        },
+        "uart1": {
+            "compatible": "esp32s3-uart",
+            "tx_pin": 9, "rx_pin": 10, "baud_rate": 9600,
+            "lora": {
+                "compatible": "lora-module",
+                "m0_pin": 8, "m1_pin": 3, "aux_pin": 46
+            }
+        }
     },
-    "lcd_display": {
-        "compatible": "st7789",
-        "cs_pin": 48,
-        "dc_pin": 47,
-        "rst_pin": 21,
-        "bl_pin": 38,
-        "width": 240,
-        "height": 280,
-        "max_freq_mhz": 80
-    },
-    "flash": {
-        "compatible": "w25q128",
-        "cs_pin": 13,
-        "max_freq_mhz": 20
-    }
+    "leds":  { "status": { "compatible": "gpio-led", "pin": 4 } },
+    "vfs":   { "mounts": [ ... ] }
 }
 ```
 
-**i2s.json** - I2S音频配置
-```json
-{
-    "bus": {
-        "compatible": "esp32s3-i2s",
-        "bclk_pin": 6,
-        "ws_pin": 5,
-        "sample_rate_hz": 16000,
-        "bits_per_sample": 16
-    },
-    "microphone": {
-        "compatible": "inmp441",
-        "din_pin": 7
-    },
-    "amplifier": {
-        "compatible": "max98357",
-        "dout_pin": 15
-    }
-}
-```
+> 未来拆分 SPI2/SPI3 双总线时，只需在 `buses` 下并列新增 `spi3` 节点
+> 并把 `flash` 移入——纯配置改动，无需改代码。
 
 #### 核心API
 
 ```c
-// 初始化设备树
+// 初始化（加载 /spiffs/ovs.dtb.json 单文件，缺失返回 DTREE_ERR_IO）
 dtree_init();
 
-// 获取节点
-dtree_node_t* node = dtree_get_node("spi.lcd_display");
+// 按 compatible 定位设备节点（全树深度优先，返回第一个匹配）
+dtree_node_t* dev = dtree_find_by_compatible("w25q128-flash");
 
-// 读取属性
-int32_t pin;
-dtree_err_t ret = DTREE_INT("spi.lcd_display", "cs_pin", &pin);
+// 取父节点（总线节点）
+dtree_node_t* bus = dtree_get_parent(dev);
 
-// 检查节点/属性是否存在
-bool exists = dtree_has_node("i2c.sensor");
-bool has_prop = dtree_has_property(node, "address");
+// 从总线节点名解析控制器编号（"spi2" -> 2）
+int32_t host;
+dtree_get_host_id(bus, "spi", &host);
+
+// 节点属性读取（路径API保留，任意深度，如 "buses.spi2.flash"、"vfs.mounts"）
+DTREE_INT("buses.spi2.flash", "cs_pin", &pin);
+dtree_get_int(dev, "cs_pin", &pin);
 ```
 
 #### 技术优势
 
 | 特性 | 说明 |
 |------|------|
+| **挂载关系结构化** | 设备嵌套在总线之下，父子关系即挂载关系，不靠代码约定 |
+| **零硬编码路径** | 模块按 compatible 定位自己，挪设备/换总线只改 JSON |
+| **多总线表达** | 同一文件可并列 spi2/spi3、i2c0/i2c1 等多条总线 |
 | **配置与代码分离** | 修改硬件配置无需改代码 |
-| **统一接口** | 所有驱动使用相同的API读取配置 |
 | **类型安全** | 编译时检查属性类型 |
-| **错误处理** | 完整的错误码体系 |
-| **易于扩展** | 添加新设备只需添加JSON配置 |
+| **易于扩展** | 添加新设备只需在对应总线节点下加一个带 compatible 的节点 |
 
 ---
 
@@ -660,15 +654,18 @@ if (holder_is_module_ready("st7789")) {
 │                                                                             │
 │  ┌───────────────────────────────────────────────────────────────────────┐  │
 │  │                    Device Tree (设备树)                                │  │
+│  │             ovs.dtb.json 单棵树（设备嵌套于总线之下）                   │  │
 │  │                                                                       │  │
-│  │   ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌───────────┐        │  │
-│  │   │ spi.json  │  │ i2c.json  │  │ i2s.json  │  │ uart.json │        │  │
-│  │   └─────┬─────┘  └─────┬─────┘  └─────┬─────┘  └─────┬─────┘        │  │
-│  │         │              │              │              │               │  │
-│  │         ▼              ▼              ▼              ▼               │  │
+│  │   buses.spi2     buses.i2c0     buses.i2s0     buses.uart1            │  │
+│  │    │  │              │              │              │                  │  │
+│  │    │  └─flash        │              │           lora│                  │  │
+│  │    └─lcd_display     │              │              │                  │  │
+│  │         │              │              │              │                  │  │
+│  │         ▼              ▼              ▼              ▼                  │  │
 │  │   ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐          │  │
 │  │   │ SPI驱动 │    │ I2C驱动 │    │ I2S驱动 │    │UART驱动 │          │  │
 │  │   └─────────┘    └─────────┘    └─────────┘    └─────────┘          │  │
+│  │      （模块按 compatible 定位设备节点，父节点即所属总线）               │  │
 │  └───────────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -769,7 +766,6 @@ if (holder_is_module_ready("st7789")) {
 
 ```
 ovs/
-├── ARCHITECTURE.md              # 本文档
 ├── CMakeLists.txt               # 项目CMake配置
 ├── sdkconfig                    # ESP-IDF配置
 ├── partitions.csv               # 分区表
@@ -813,16 +809,9 @@ ovs/
 │   │   └── web/                 #   Web服务器
 │   │
 │   └── dtbs/                    # 设备树层
-│       ├── dtree.h              #   公共API
-│       ├── dtree.c              #   解析器实现
-│       └── config/              #   JSON配置文件
-│           ├── spi.json
-│           ├── i2c.json
-│           ├── i2s.json
-│           ├── uart.json
-│           ├── lora.json
-│           ├── audio.json
-│           └── display.json
+│       ├── dtree.c              #   解析器实现（公共API在 include/dtree.h）
+│       └── config/
+│           └── ovs.dtb.json     #   单棵树设备树配置（SPIFFS镜像源）
 │
 ├── src/                         # 源代码
 │   └── lvgl/                    # LVGL UI模块
@@ -850,8 +839,11 @@ ovs/
 │   └── ota_update.sh            #   OTA更新脚本
 │
 └── docs/                        # 文档
-    ├── peripheral_drivers_summary.md
-    └── ...
+    ├── ARCHITECTURE.md          #   架构文档（本文档）
+    ├── PROJECT_STRUCTURE.md     #   目录结构权威说明
+    ├── development_log.md       #   开发日志（新条目追加在末尾）
+    ├── handoff_summary.md       #   跨会话交接摘要
+    └── peripheral_drivers_summary.md
 ```
 
 ---
@@ -1184,34 +1176,46 @@ tasker_cancel_by_name("periodic");
 
 ### 5.5 使用设备树
 
-#### 5.5.1 添加JSON配置文件
+#### 5.5.1 添加新设备
 
-在 `components/dtbs/config/` 目录下创建 `my_device.json`:
+在 `components/dtbs/config/ovs.dtb.json` 中，把设备节点嵌套到对应总线节点下，
+并写明 `compatible`：
 
 ```json
 {
-    "sensor": {
-        "compatible": "my-sensor",
-        "i2c_address": "0x50",
-        "data_pin": 7,
-        "sample_rate_hz": 100
+    "buses": {
+        "i2c0": {
+            "compatible": "esp32s3-i2c",
+            "sda_pin": 16, "scl_pin": 17,
+
+            "my_sensor": {
+                "compatible": "my-sensor",
+                "address": "0x50",
+                "sample_rate_hz": 100
+            }
+        }
     }
 }
 ```
 
-#### 5.5.2 在驱动中读取配置
+#### 5.5.2 在模块中按 compatible 绑定
 
 ```c
 #include "dtree.h"
 
-int32_t pin;
-int32_t addr;
-int32_t rate;
+// 模块以宏声明自己服务的 compatible
+#define MY_SENSOR_DT_COMPAT   "my-sensor"
 
-// 读取配置
-DTREE_INT("my_device.sensor", "data_pin", &pin);
-DTREE_INT("my_device.sensor", "i2c_address", &addr);
-DTREE_INT("my_device.sensor", "sample_rate_hz", &rate);
+// 定位自己的设备节点，父节点即所属总线
+dtree_node_t* dev = dtree_find_by_compatible(MY_SENSOR_DT_COMPAT);
+dtree_node_t* bus = dtree_get_parent(dev);
+
+// 总线驱动从总线节点读取配置
+i2c_drv_load_config(bus, &i2c_config);
+
+// 设备属性从自己的节点读取
+int32_t rate;
+dtree_get_int(dev, "sample_rate_hz", &rate);
 ```
 
 ---
@@ -1410,8 +1414,8 @@ if (!dtree_has_property(node, "pin")) {
 
 ---
 
-**文档版本**: v1.0  
-**最后更新**: 2026-09-07  
+**文档版本**: v1.1  
+**最后更新**: 2026-09-08  
 **维护团队**: OVS Team
 
 ---
@@ -1630,3 +1634,80 @@ fclose(f);
 // 代码中自动读取配置
 vfs_auto_mount_from_dtree();
 ```
+
+---
+
+## 更新日志
+
+### 2026-09-08 SPI 总线共享分析与 VFS 修复
+
+#### 1. SPI 总线共享设计结论
+- **允许共享**：ST7789（SPI部分）与 W25Q128 共用
+  SCLK/MOSI/MISO，CS 独立（GPIO48 / GPIO13）；
+  CST816S 触摸走 I2C，不影响 SPI 总线；
+- **共享计数已实现**：SPI/I2C/I2S/UART 驱动改为 Linux 式引用计数，
+  总线只初始化一次；`spi_drv_init()` 获取共享句柄，释放到零才销毁；
+- **host 已显式化**：`spi.json`/`i2c.json`/`i2s.json`/`lora.json`
+  中 bus/uart 节点新增 `host` 属性；dtree 提供 `DTREE_HOST()`
+  解析 `"spi2"/"i2c0"/"i2s0"/"uart1"` 形式；驱动按 host/port 建立
+  多实例注册表，为 SPI2/SPI3 拆分预留支持；
+- **性能建议**：同一条 SPI 总线严格串行。高并发场景优先把显示与 Flash
+  拆分到 `SPI2_HOST` / `SPI3_HOST`；共享总线时 LCD 采用 DMA+双缓冲，
+  Flash 擦写放后台任务、擦除等待期间释放总线。
+
+#### Holder 依赖顺序
+- `holder_register_module_ex()` 支持声明依赖；
+- 总线控制器先注册，外设模块声明依赖后由 `holder_init_all()`
+  按拓扑分批初始化；
+- 缺失依赖或循环依赖自动标记为 ERROR。
+
+#### 2. VFS 卸载后重挂载失败修复（详见开发日志）
+- 根因：ESP-IDF `s_vfs_count` 为只增不减的历史峰值，
+  `CONFIG_VFS_MAX_COUNT=8` 时卸载后重挂载直接返回
+  `ESP_ERR_NO_MEM`；
+- 修复：`CONFIG_VFS_MAX_COUNT` 提高到 16；
+  清理 `vfs.c` 中重复的 `esp_vfs_unregister()` 和无效的
+  dummy-VFS 循环；
+- 验证：`idf.py build` 通过。
+- 详细日志见 `docs/development_log.md` 2026-09-08。
+
+#### 3. W25Q128 产品级可靠性（详见开发日志）
+- 新增 `READY`/`FAULT` 健康状态机；
+- 每次读写/擦除前 JEDEC 探测，离线不再静默返回全 `0xFF`；
+- 连续 3 次失败进入 FAULT，恢复探测成功后自动回 READY；
+- busy 等待轮询改为真实 10ms 间隔（修复 100Hz 下 1ms 取整为 0 tick）；
+- `vfs.json` 关闭 `format_if_fail`，拔盘/坏盘不再自动格式化；
+- 文件同步调用保持现状，不引入异步队列。
+
+### 2026-09-08 设备树重构（嵌套单棵树 + compatible 绑定）
+
+#### 1. 配置格式
+- 原 6 个分总线 JSON 合并为单棵树 `components/dtbs/config/ovs.dtb.json`
+  （构建用此目录生成 SPIFFS 镜像，需重新烧录 SPIFFS 分区）；
+- 设备节点嵌套在总线节点下；总线节点名即控制器编号（`spi2`/`i2c0`/`uart1`），
+  删除 `host` 属性；lora 设备挂到 uart1 下。
+
+#### 2. dtree API
+- 新增 `dtree_find_by_compatible()`（全树 DFS）、`dtree_get_parent()`、
+  `dtree_get_host_id()`（节点名解析编号）、`dtree_get_node_name()`；
+- 删除 `dtree_get_host()` / `DTREE_HOST()`；
+- 加载改为单文件，缺失返回 `DTREE_ERR_IO`；
+- 修复节点池 name 悬垂隐患（统一取 cJSON 键）。
+
+#### 3. 驱动与模块
+- 四个总线驱动 `*_drv_load_config()` 统一为 `(bus_node, config)` 签名，
+  并校验总线节点 compatible 防呆；
+- st7789/w25q128/cst816s/aht30/lora/audio_module 全部改为
+  "find_by_compatible → get_parent → 总线驱动 → 自身节点读属性" 模式；
+- i2s_drv 与设备解耦（din/dout 由 audio_module 从 mic/amp 节点读取）。
+
+#### 4. SPI 共总线性能优化（PCB 已定型，LCD+Flash 共用 SPI2）
+- `spi_drv_transfer` 改用 `spi_device_transmit`：传输期间 CPU 休眠
+  （原 polling 模式刷屏自旋 27-40ms/帧）；
+- `st7789_flush` 分片发送（24 行/片 ≈ 11.5KB，整帧 12 片）：片间总线空闲，
+  flash 事务可插空，flash 尾延迟 ≤40ms → ≤3ms；
+- 常驻约 12KB 内部 DMA 暂存缓冲，替代每帧 malloc/free 135KB 的 DMA 安全拷贝。
+
+#### 待硬件验证
+- 设备树加载、W25Q128 读写/拔插恢复、三个挂载点、LCD 分片刷屏显示正确、
+  刷屏与 flash 并发无报错。

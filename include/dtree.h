@@ -74,7 +74,7 @@ dtree_node_t* dtree_get_child(dtree_node_t* parent, const char* name);
 /**
  * @brief 通过路径获取节点
  * 
- * @param path 节点路径，如 "i2s.microphone" 或 "spi.lcd_display"
+ * @param path 节点路径，如 "buses.spi2.lcd_display" 或 "vfs.mounts"
  * @return 节点句柄，未找到返回 NULL
  */
 dtree_node_t* dtree_get_node(const char* path);
@@ -154,6 +154,48 @@ dtree_err_t dtree_get_bool(dtree_node_t* node, const char* property, bool* value
  */
 dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* value);
 
+/**
+ * @brief 通过 compatible 字符串查找节点（全树深度优先）
+ *
+ * 驱动/模块以自己服务的 compatible 定位设备节点，
+ * 不再硬编码节点路径。目前每种 compatible 只应出现一个节点，
+ * 返回第一个匹配；同 compatible 多实例的迭代器留作扩展点。
+ *
+ * @param compatible compatible 字符串，如 "st7789-lcd"
+ * @return 第一个匹配的节点句柄，未找到返回 NULL
+ */
+dtree_node_t* dtree_find_by_compatible(const char* compatible);
+
+/**
+ * @brief 获取父节点（总线节点）
+ *
+ * 设备节点嵌套在总线节点之下，父子关系即挂载关系。
+ * @param node 子节点句柄
+ * @return 父节点句柄，node 为根节点或无父时返回 NULL
+ */
+dtree_node_t* dtree_get_parent(dtree_node_t* node);
+
+/**
+ * @brief 获取节点名称（总线节点名即控制器地址，如 "spi2"）
+ *
+ * @param node 节点句柄
+ * @return 节点名字符串（指向树内存储，勿修改释放），失败返回 NULL
+ */
+const char* dtree_get_node_name(dtree_node_t* node);
+
+/**
+ * @brief 从节点名解析控制器（host/port）编号
+ *
+ * 总线节点名即控制器地址（Linux unit address 思想），例如：
+ *   "spi2" → 2、"i2c0" → 0、"i2s0" → 0、"uart1" → 1
+ *
+ * @param node   总线节点句柄
+ * @param prefix 控制器类型前缀，如 "spi"、"i2c"、"i2s"、"uart"
+ * @param id     输出参数，数字编号
+ * @return DTREE_OK 成功，其他值失败
+ */
+dtree_err_t dtree_get_host_id(dtree_node_t* node, const char* prefix, int32_t* id);
+
 /* ========== 便捷宏：通过路径直接获取属性 ========== */
 
 /**
@@ -191,7 +233,8 @@ dtree_err_t dtree_get_float(dtree_node_t* node, const char* property, float* val
     dtree_get_float(dtree_get_node(path), prop, value)
 
 /* ========== 设备树文件路径常量 ========== */
-#define DTREE_CONFIG_DIR    "/spiffs"  /**< JSON 配置目录 */
+#define DTREE_CONFIG_DIR    "/spiffs"       /**< JSON 配置目录 */
+#define DTREE_CONFIG_FILE   "ovs.dtb.json"  /**< 设备树文件（单棵树） */
 
 
 /**

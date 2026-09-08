@@ -1,5 +1,0 @@
-"-specs=/home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/specs/picolibc.specs"
--mlongcalls
--fno-builtin-memcpy
--fno-builtin-memset
--fno-builtin-bzero

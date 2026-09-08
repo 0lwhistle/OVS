@@ -28,6 +28,7 @@ typedef enum {
 
 /* ========== 类型定义 ========== */
 typedef struct i2s_drv_config {
+    int32_t port;              /**< I2S 控制器编号：设备树 "i2s0"→0、"i2s1"→1 */
     int32_t bclk_pin;
     int32_t ws_pin;
     int32_t data_in_pin;   // 麦克风数据引脚
@@ -42,24 +43,33 @@ typedef struct i2s_drv_handle* i2s_drv_handle_t;
 /* ========== 公共 API ========== */
 
 /**
- * @brief 从设备树加载I2S配置
- * 
+ * @brief 从设备树总线节点加载I2S总线配置
+ *
+ * 只读总线属性；DIN/DOUT 设备引脚置为 -1，由调用方
+ * 按 compatible 查设备节点后填充。
+ *
+ * @param bus_node 总线节点（节点名形如 "i2s0"，设备节点的父节点）
  * @param config 输出参数，存储配置信息
  * @return i2s_drv_err_t 错误码
  */
-i2s_drv_err_t i2s_drv_load_config(i2s_drv_config_t* config);
+i2s_drv_err_t i2s_drv_load_config(dtree_node_t* bus_node, i2s_drv_config_t* config);
 
 /**
  * @brief 初始化I2S驱动
+ *
+ * Linux 式共享计数模型：I2S 硬件只初始化一次，多个模块获取同一个句柄
+ * 并增加引用计数；配置不一致返回 I2S_DRV_ERR_CONFIG。
  * 
  * @param config 配置信息
- * @param handle 输出参数，存储驱动句柄
+ * @param handle 输出参数，存储共享的驱动句柄
  * @return i2s_drv_err_t 错误码
  */
 i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* handle);
 
 /**
  * @brief 反初始化I2S驱动
+ *
+ * 只释放一个引用，引用计数归零时才真正关闭并删除 I2S 通道。
  * 
  * @param handle 驱动句柄
  * @return i2s_drv_err_t 错误码

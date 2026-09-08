@@ -1,2 +1,0 @@
-source /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/gdbinit/symbols
-source /home/olwhistle/dockerNow/esp32/programs/ovs/build/bootloader/gdbinit/connect
