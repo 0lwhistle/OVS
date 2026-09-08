@@ -50,8 +50,10 @@ idf.py -p /dev/ttyACM0 monitor
 ## 三、日常迭代流程（免串口）
 
 ```bash
-idf.py build                # 或 ./scripts/mybuild.sh（会多构建 Vue 前端）
-./scripts/ota_push.sh       # 默认推 build/ovs.bin 到 ovs.local
+source scripts/env.sh       # 一次性环境初始化（脚本与 idf 命令免路径）
+idf.py build                # 或 mybuild.sh（会多构建 Vue 前端）或 ovs_release
+ota_push.sh                 # 默认推 build/ovs.bin 到 ovs.local（OVS_HOST 可改默认目标）
+# 或一条龙：ovs_release --ota 192.168.2.111  （完整构建+推送）
 ```
 
 **脚本反馈（WSL2 适配）**：

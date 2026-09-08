@@ -833,10 +833,13 @@ ovs/
 │   ├── tasker.h                 #   任务调度器API
 │   └── logger.h                 #   日志API
 │
-├── scripts/                     # 构建脚本
-│   ├── mybuild.sh               #   构建脚本
+├── scripts/                     # 构建/发布脚本（source env.sh 后可免路径调用）
+│   ├── env.sh                   #   开发环境初始化（IDF + scripts/ 入 PATH）
+│   ├── mybuild.sh               #   完整构建（--no-flash 只构建）
+│   ├── ovs_release              #   发布：构建 / --ota [IP] 构建后推送
+│   ├── ota_push.sh              #   OTA 推送
 │   ├── burn.sh                  #   烧录脚本
-│   └── ota_update.sh            #   OTA更新脚本
+│   └── monitor.sh               #   串口监控
 │
 └── docs/                        # 文档
     ├── ARCHITECTURE.md          #   架构文档（本文档）
@@ -872,14 +875,19 @@ source export.sh
 # 进入项目目录
 cd /home/olwhistle/dockerNow/esp32/programs/ovs
 
-# 设置ESP-IDF环境
-source /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/export.sh
+# 设置ESP-IDF环境（推荐：env.sh 额外把 scripts/ 加入 PATH，脚本免路径）
+source scripts/env.sh
+# 或手动: source /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/export.sh
 
 # 编译
 idf.py build
 
-# 或使用构建脚本
+# 完整构建脚本（Vue 前端 + Web 打包 + 固件 + 串口烧录；--no-flash 只构建）
 ./scripts/mybuild.sh
+
+# 发布：只构建 / 构建后 OTA 推送
+./scripts/ovs_release
+./scripts/ovs_release --ota 192.168.2.111
 ```
 
 #### 5.1.3 烧录与监控

@@ -1,5 +1,51 @@
 # OVS项目开发日志
 
+## 2026-09-08 - VFS 全链路修复：设备树分区重烧 + littlefs 分区数上限
+
+### 任务目标
+修复 VFS 全链路失败：W25Q128 报 "Device node 'w25q128-flash' not found"、
+vfs 节点找不到走默认配置、/media /audio /font 挂载失败、文件操作与压力测试全挂。
+
+### 根因（三个独立问题叠加）
+1. **设备 spiffs 分区中的设备树是旧版**（主因）：设备树 JSON 经
+   `spiffs_create_partition_image` 打包进 spiffs 分区（0x520000），
+   **OTA 只更新 app 槽不更新 spiffs 分区**，迭代期间设备树 JSON 已多次变更
+   （新增 vfs 挂载节点、嵌套单棵树重构），设备上始终是旧数据。
+   代码侧 dtree 解析/find_by_compatible/vfs 挂载链路均无缺陷。
+2. **main/ 目录在工作区被误删**（未提交的删除）：idf.py 增量链接报
+   `undefined reference to app_main`；恢复后仍报错，因 build 缓存的组件列表
+   是 main/ 缺失时生成的，需 `idf.py reconfigure` 强制重建。
+3. **CONFIG_LITTLEFS_MAX_PARTITIONS=3 不够用**：/font /audio /media 挂满 3 个后，
+   /config 报 `esp_littlefs: max mounted partitions reached` →
+   ESP_ERR_INVALID_STATE(259)。旧固件只挂 /config 一个所以从未触发。
+
+### 修复内容
+- 串口重烧 app + spiffs 分区（`idf.py flash` 含 FLASH_IN_PROJECT 镜像），设备树更新；
+- `git restore main/` 恢复被误删的 main 组件垫片（内容与 HEAD 一致，无代码变更）；
+- sdkconfig：`CONFIG_LITTLEFS_MAX_PARTITIONS` 3 → 8（与 VFS max_mounts=8 对齐）。
+
+### 验证（串口 /dev/ttyACM0，115200）
+- VFS 快速测试全绿：4/4 挂载成功（/font /audio /media→w25q128，/config→internal）、
+  /audio 与 /media 写读 ✅、路径匹配 5/5、性能测试、vfs_get_mount_info_by_path、
+  vfs_unmount_all + 设备树重挂载 ✅；
+- **压力测试两轮 54/54 全部通过**（一轮 681s，修复后含 /config 再跑 775s：
+  A 数据完整性 29、B 目录管理 12、C 容量碎片 6、D 并发 4，0 失败；
+  顺序写 ~55KB/s，读 ~1290KB/s，最低堆 8088KB）。
+
+### 经验记录
+- **串口抓启动日志的正确姿势**：esptool 硬复位会让 USB-Serial-JTAG 重新枚举，
+  先行打开的 cat 句柄失效（只收到 26 字节 ROM 信息）；`idf.py monitor` 默认跟随
+  `-b 921600` 导致启动日志乱码。正确流程：`idf.py flash` 结束后立即以 115200
+  打开端口（一条命令内衔接），或 monitor 单独指定波特率。
+- OTA 迭代模式下设备树变更对设备不可见，需串口烧录；后续可考虑 dtree 分区
+  OTA/或 web 上传设备树机制。
+
+### 下一步
+- W25Q128 每页写/扇区擦日志为 LOGD，logger 新分级下 INFO 级全打印导致刷屏，
+  串口监控建议 grep 过滤或运行期 `logger_set_level()`；
+- app_main 每次开机无条件跑 VFS+压力测试（~13 分钟），产品化前需加编译/运行开关；
+- `wifi_scan_aps` AP 模式限制、OTA 后版本号差异化（沿用上条待办）。
+
 ## 2026-09-08 - 开发环境脚本完善（env.sh / ovs_release）
 
 ### 任务目标

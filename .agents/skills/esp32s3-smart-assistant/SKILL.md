@@ -288,6 +288,14 @@ LOGE(TAG, "Error message: %s", err_str);   // 红色
 LOGD(TAG, "Debug message");                 // 灰色/蓝色
 ```
 
+**分级过滤**（logger.h）：低于全局等级的日志不打印——
+`ERROR` 只打印 LOGE；`WARNING` 打印 LOGE/LOGW；`INFO` 全打印（默认）。
+编译期 `LOGGER_DEFAULT_LEVEL` 定默认，运行期调整：
+
+```c
+logger_set_level(LOG_LEVEL_WARN);   // 运行期切换，越界自动钳位
+```
+
 ---
 
 ## 七、可移植性编程要求 ⭐
@@ -434,29 +442,37 @@ typedef struct file_ops {
 ## 八、构建命令
 
 ```bash
-# 设置ESP-IDF环境
+# 一次性初始化开发环境（推荐，会话开始时 source 一次）
+source scripts/env.sh
+# 之后任意目录下可直接使用：
+#   idf.py build/flash/monitor     ESP-IDF 全套命令
+#   mybuild.sh                     完整构建（Vue前端+打包+固件）+串口烧录
+#   mybuild.sh --no-flash          只构建不烧录
+#   ota_push.sh [ovs.local|IP]     OTA 推送（免串口日常迭代）
+#   ovs_release [--ota [IP]]       只构建 / 构建后OTA推送
+#   monitor.sh / burn.sh           串口监控 / 烧录
+# 自动 cd 到项目根，并导出 OVS_PROJECT_ROOT/OVS_SERIAL_PORT/OVS_HOST
+
+# 完整构建（手动方式）
 source /home/olwhistle/dockerNow/esp32/ESP-IDF/esp-idf-v6.0.1/export.sh
-
-# 完整构建
 idf.py build
-
-# 或使用构建脚本
-./scripts/mybuild.sh
 
 # 清理后重新构建
 idf.py fullclean && idf.py build
 
 # 烧录
-idf.py -p /dev/ttyUSB0 flash
+idf.py -p /dev/ttyACM0 flash
 
 # 监控
-idf.py -p /dev/ttyUSB0 monitor
+idf.py -p /dev/ttyACM0 monitor
 
 # 烧录并监控
-idf.py -p /dev/ttyUSB0 flash monitor
+idf.py -p /dev/ttyACM0 flash monitor
 
-# OTA 推送（日常免串口迭代）
-./scripts/ota_push.sh [ovs.local|IP]
+# 日常迭代两板斧（推荐）
+idf.py build && ota_push.sh 192.168.2.111
+# 或一条龙（完整构建+推送）
+ovs_release --ota 192.168.2.111
 ```
 
 ---
@@ -568,6 +584,6 @@ if (!dtree_has_node("my_device.sensor")) {
 
 ---
 
-**技能版本**: v2.2 (2026-09-08 网络架构更新: net_mgr/OTA流式/src/app/设备树WiFi)  
+**技能版本**: v2.3 (2026-09-08 开发环境: env.sh免路径脚本/ovs_release --ota/Logger分级)  
 **最后更新**: 2026-09-08  
 **维护团队**: OVS Team
