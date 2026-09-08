@@ -1,419 +1,296 @@
+/**
+ * @file ota.c
+ * @brief OTA 固件升级模块实现（esp_ota_ops 隔离层）
+ */
+
 #include "ota.h"
-#include <stdio.h>
+
 #include <string.h>
-#include <stdlib.h>
-#include <inttypes.h>
+#include <stdio.h>
 
 #include "esp_ota_ops.h"
 #include "esp_partition.h"
-#include "logger.h"
 #include "esp_system.h"
-#include "esp_heap_caps.h"
+#include "esp_app_desc.h"
+#include "esp_timer.h"
+#include "ota_sha256.h"
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "freertos/queue.h"
+
+#include "logger.h"
 
 static const char *TAG = "[OTA]";
 
-// ---------- OTA 队列 ----------
-// 队列项：每块数据从 PSRAM 动态分配
-typedef struct {
-    char *data;     // PSRAM 分配的缓冲区
-    size_t len;     // 数据长度
-    bool is_last;   // 是否为最后一块（结束标记）
-} ota_queue_item_t;
+/* 启动稳定判定窗口：此后仍未确认则下次重启 bootloader 回退旧槽 */
+#define OTA_CONFIRM_DELAY_US  (15ULL * 1000ULL * 1000ULL)
 
-// 队列句柄
-static QueueHandle_t s_ota_queue = NULL;
+// ---------- 模块状态 ----------
+static bool s_initialized = false;
+static volatile ota_state_t s_state = OTA_STATE_IDLE;
 
-// OTA 写入状态
-static esp_ota_handle_t s_ota_handle = 0;
-static const esp_partition_t *s_update_partition = NULL;
-static bool s_ota_in_progress = false;
+static esp_ota_handle_t s_handle = 0;
+static const esp_partition_t *s_target_partition = NULL;
+static ota_sha256_ctx_t s_sha_ctx;
+static bool s_sha_started = false;
 
-// 后台写入任务句柄
-static TaskHandle_t s_ota_task = NULL;
+static size_t s_received = 0;
+static size_t s_expected = 0;
+static uint8_t s_sha_digest[32];      /* 最近的完整摘要（DONE 态有效） */
+static bool s_digest_valid = false;
 
-// 进度相关
-static size_t s_total_size = 0;       // 固件总大小
-static size_t s_written_size = 0;     // 已写入大小
-static bool s_progress_enabled = false;
+static char s_version[OTA_VERSION_STR_MAX] = {0};
+static char s_project[OTA_PROJECT_STR_MAX] = {0};
 
-// ---------- 后台 OTA 写入任务 ----------
-static void ota_write_task(void *arg) {
-    ota_queue_item_t item;
-    esp_err_t err;
+static esp_timer_handle_t s_confirm_timer = NULL;
 
-    LOGI(TAG, "OTA write task started");
-
-    while (1) {
-        // 从队列接收数据（阻塞等待）
-        if (xQueueReceive(s_ota_queue, &item, portMAX_DELAY) != pdTRUE) {
-            continue;
-        }
-
-        // 检查是否为结束标记
-        if (item.is_last) {
-            LOGI(TAG, "OTA write task: received finish signal");
-
-            // 结束 OTA 写入
-            err = esp_ota_end(s_ota_handle);
-            s_ota_in_progress = false;
-
-            if (err != ESP_OK) {
-                LOGE(TAG, "esp_ota_end failed: %s", esp_err_to_name(err));
-                printf("\n[OTA] ERROR: esp_ota_end failed: %s\n", esp_err_to_name(err));
-                s_update_partition = NULL;
-                continue;
-            }
-
-            // ====== 固件校验（魔术数验证） ======
-            printf("\n========== OTA Verification ==========\n");
-
-            // 只读取已写入的固件末尾进行校验（最多 1MB）
-            uint32_t verify_size = (s_written_size < 1024 * 1024) ? s_written_size : 1024 * 1024;
-            char *verify_buf = (char *)heap_caps_malloc(verify_size, MALLOC_CAP_SPIRAM);
-            if (!verify_buf) {
-                LOGE(TAG, "Failed to allocate %" PRIu32 " bytes for verification", verify_size);
-                printf("[OTA] ERROR: OOM for verification buffer\n");
-                s_update_partition = NULL;
-                continue;
-            }
-
-            // 从分区读取已写入的数据（从末尾开始读，校验信息在末尾）
-            uint32_t read_offset = (s_written_size > verify_size) ? (s_written_size - verify_size) : 0;
-            err = esp_partition_read(s_update_partition, read_offset, verify_buf, verify_size);
-            if (err != ESP_OK) {
-                LOGE(TAG, "Failed to read partition for verification: %s", esp_err_to_name(err));
-                printf("[OTA] ERROR: Read partition failed: %s\n", esp_err_to_name(err));
-                free(verify_buf);
-                s_update_partition = NULL;
-                continue;
-            }
-
-            // 在读取的缓冲区末尾搜索魔术数
-            ota_verify_t *verify_info = NULL;
-            int verify_offset = -1;
-
-            for (int i = verify_size - (int)sizeof(ota_verify_t); i >= 0; i--) {
-                ota_verify_t *vt = (ota_verify_t *)(verify_buf + i);
-                if (vt->magic == OTA_MAGIC) {
-                    verify_info = vt;
-                    verify_offset = read_offset + i;
-                    break;
-                }
-            }
-
-            bool verify_ok = false;
-
-            if (verify_info) {
-                uint32_t fw_size = verify_info->firmware_size;
-                printf("[OTA] Found verify footer at offset %d\n", verify_offset);
-                printf("[OTA] Firmware size: %" PRIu32 " bytes\n", fw_size);
-                printf("[OTA] SHA256: ");
-                for (int i = 0; i < 32; i++) printf("%02x", verify_info->sha256[i]);
-                printf("\n");
-                printf("[OTA] Magic: 0x%08X (expected: 0x%08X)\n",
-                       (unsigned int)verify_info->magic, (unsigned int)OTA_MAGIC);
-
-                // 验证魔术数
-                if (verify_info->magic == OTA_MAGIC) {
-                    verify_ok = true;
-                    printf("[OTA] Magic VERIFIED OK!\n");
-                } else {
-                    printf("[OTA] Magic MISMATCH!\n");
-                }
-            } else {
-                printf("[OTA] No verify footer found (magic not found)\n");
-                printf("[OTA] Skipping verification (compatible with old firmware)\n");
-                // 没有校验信息也允许通过（兼容旧固件）
-                verify_ok = true;
-            }
-
-            free(verify_buf);
-
-            if (!verify_ok) {
-                printf("[OTA] VERIFICATION FAILED! Aborting OTA.\n");
-                printf("========================================\n");
-                esp_ota_abort(s_ota_handle);
-                s_update_partition = NULL;
-                continue;
-            }
-
-            printf("[OTA] Verification PASSED!\n");
-            printf("========================================\n");
-
-            // 设置为启动分区
-            err = esp_ota_set_boot_partition(s_update_partition);
-            if (err != ESP_OK) {
-                LOGE(TAG, "esp_ota_set_boot_partition failed: %s",
-                         esp_err_to_name(err));
-                printf("[OTA] ERROR: Set boot partition failed: %s\n", esp_err_to_name(err));
-                s_update_partition = NULL;
-                continue;
-            }
-
-            printf("\n========== OTA Update Success ==========\n");
-            printf("  Partition: %s\n", s_update_partition->label);
-            printf("  Size:      %zu bytes\n", s_written_size);
-            printf("  Verified:  YES (Magic + SHA256)\n");
-            printf("  Rebooting in 1 second...\n");
-            printf("========================================\n\n");
-
-            s_update_partition = NULL;
-
-            // 延迟后重启
-            vTaskDelay(pdMS_TO_TICKS(1000));
-            esp_restart();
-            continue;
-        }
-
-        // 写入数据块到 OTA 分区
-        if (s_ota_in_progress && item.data && item.len > 0) {
-            err = esp_ota_write(s_ota_handle, item.data, item.len);
-            if (err != ESP_OK) {
-                LOGE(TAG, "esp_ota_write failed: %s", esp_err_to_name(err));
-                esp_ota_abort(s_ota_handle);
-                s_ota_in_progress = false;
-                s_update_partition = NULL;
-            }
-
-            // 更新进度
-            s_written_size += item.len;
-            if (s_progress_enabled && s_total_size > 0) {
-                int progress = (int)(s_written_size * 100 / s_total_size);
-                static int last_progress = -1;
-                if (progress != last_progress) {
-                    last_progress = progress;
-                    printf("\r[OTA] Writing... %d%% (%zu/%zu bytes)",
-                           progress, s_written_size, s_total_size);
-                    fflush(stdout);
-                    if (progress == 100) printf("\n");
-                }
-            }
-        }
-
-        // 释放 PSRAM 缓冲区
-        if (item.data) {
-            free(item.data);
-            item.data = NULL;
-        }
-    }
-}
-
-// ---------- 初始化 OTA 模块 ----------
-void ota_init(void) {
-    if (s_ota_queue) {
-        LOGW(TAG, "OTA already initialized");
-        return;
-    }
-
-    // 创建队列（深度 128，每项为 ota_queue_item_t）
-    s_ota_queue = xQueueCreate(OTA_QUEUE_DEPTH, sizeof(ota_queue_item_t));
-    if (!s_ota_queue) {
-        LOGE(TAG, "Failed to create OTA queue");
-        return;
-    }
-
-    // 创建后台写入任务（栈大小 8192，优先级 5）
-    BaseType_t ret = xTaskCreatePinnedToCore(
-        ota_write_task,
-        "ota_write",
-        8192,
-        NULL,
-        5,
-        &s_ota_task,
-        1  // CPU1
-    );
-    if (ret != pdPASS) {
-        LOGE(TAG, "Failed to create OTA write task");
-        vQueueDelete(s_ota_queue);
-        s_ota_queue = NULL;
-        return;
-    }
-
-    LOGI(TAG, "OTA initialized (queue depth=%d, chunk=%dKB)",
-             OTA_QUEUE_DEPTH, OTA_CHUNK_SIZE / 1024);
-}
-
-// ---------- 开始 OTA 升级 ----------
-esp_err_t ota_start(size_t total_size, bool resume) {
-    if (!s_ota_queue) {
-        LOGE(TAG, "OTA not initialized");
-        return ESP_FAIL;
-    }
-
-    // 如果已有 OTA 在进行中
-    if (s_ota_in_progress) {
-        if (resume) {
-            // 续传模式：保留当前状态，只更新总大小
-            LOGI(TAG, "Resuming OTA, current progress: %zu bytes", s_written_size);
-            if (total_size > s_total_size) {
-                s_total_size = total_size;
-            }
-            s_progress_enabled = (s_total_size > 0);
-            return ESP_OK;
-        } else {
-            // 非续传模式：中止之前的，重新开始
-            LOGW(TAG, "OTA already in progress, aborting previous...");
-            esp_ota_abort(s_ota_handle);
-            s_ota_in_progress = false;
-        }
-    }
-
-    // 获取备用分区
-    s_update_partition = esp_ota_get_next_update_partition(NULL);
-    if (!s_update_partition) {
-        LOGE(TAG, "No OTA partition found");
-        return ESP_FAIL;
-    }
-
-    LOGI(TAG, "Writing to partition: %s (subtype=%d, size=%" PRIu32 ")",
-             s_update_partition->label, s_update_partition->subtype,
-             s_update_partition->size);
-
-    // 开始 OTA 写入
-    esp_err_t err = esp_ota_begin(s_update_partition, OTA_SIZE_UNKNOWN, &s_ota_handle);
-    if (err != ESP_OK) {
-        LOGE(TAG, "esp_ota_begin failed: %s", esp_err_to_name(err));
-        s_update_partition = NULL;
-        return err;
-    }
-
-    // 重置进度状态
-    s_total_size = total_size;
-    s_written_size = 0;
-    s_progress_enabled = (total_size > 0);
-
-    s_ota_in_progress = true;
-    LOGI(TAG, "OTA started, ready to receive firmware (total=%zu bytes)...",
-             total_size);
-    return ESP_OK;
-}
-
-// ---------- 推送一块数据到队列 ----------
-esp_err_t ota_push_data(const char *data, size_t len) {
-    if (!s_ota_queue) {
-        LOGE(TAG, "OTA not initialized");
-        return ESP_FAIL;
-    }
-
-    if (!s_ota_in_progress) {
-        LOGE(TAG, "OTA not started, call ota_start() first");
-        return ESP_FAIL;
-    }
-
-    if (len > OTA_CHUNK_SIZE) {
-        LOGE(TAG, "Data chunk too large: %zu > %d", len, OTA_CHUNK_SIZE);
-        return ESP_ERR_INVALID_SIZE;
-    }
-
-    if (len == 0) {
-        return ESP_OK;  // 空数据跳过
-    }
-
-    // 从 PSRAM 动态分配缓冲区
-    char *buf = (char *)heap_caps_malloc(len, MALLOC_CAP_SPIRAM);
-    if (!buf) {
-        LOGE(TAG, "Failed to allocate %zu bytes from PSRAM", len);
-        return ESP_ERR_NO_MEM;
-    }
-
-    memcpy(buf, data, len);
-
-    // 构造队列项
-    ota_queue_item_t item = {
-        .data = buf,
-        .len = len,
-        .is_last = false,
-    };
-
-    // 放入队列（阻塞等待直到队列有空位）
-    // TCP 背压：队列满时 HTTP handler 线程在此阻塞，
-    // 不再从 socket 读取数据，TCP 接收窗口自然缩小，
-    // 对端发送速率自动降低。
-    if (xQueueSend(s_ota_queue, &item, portMAX_DELAY) != pdTRUE) {
-        LOGE(TAG, "Failed to push data to OTA queue");
-        free(buf);
-        return ESP_FAIL;
-    }
-    return ESP_OK;
-}
-
-// ---------- 结束 OTA 升级 ----------
-void ota_finish(void) {
-    if (!s_ota_queue || !s_ota_in_progress) {
-        LOGE(TAG, "No OTA in progress");
-        return;
-    }
-
-    LOGI(TAG, "Finishing OTA, waiting for queue to drain...");
-
-    // 发送结束标记到队列
-    ota_queue_item_t item = {
-        .data = NULL,
-        .len = 0,
-        .is_last = true,
-    };
-
-    // 等待队列清空 + 结束标记被处理（超时 60 秒）
-    BaseType_t ret = xQueueSend(s_ota_queue, &item, pdMS_TO_TICKS(60000));
-    if (ret != pdTRUE) {
-        LOGE(TAG, "Failed to send finish signal to OTA queue");
-        esp_ota_abort(s_ota_handle);
-        s_ota_in_progress = false;
-        s_update_partition = NULL;
-    }
-    // 注意：后台任务收到结束标记后会执行校验 + 设置启动分区 + 重启
-    // 所以 ota_finish() 调用后设备即将重启
-}
-
-// ---------- 取消 OTA 升级 ----------
-void ota_abort(void) {
-    if (!s_ota_in_progress) {
-        return;
-    }
-
-    LOGW(TAG, "Aborting OTA...");
-
-    // 清空队列
-    ota_queue_item_t item;
-    while (xQueueReceive(s_ota_queue, &item, 0) == pdTRUE) {
-        if (item.data) {
-            free(item.data);
-        }
-    }
-
-    // 终止 OTA 写入
-    esp_ota_abort(s_ota_handle);
-    s_ota_in_progress = false;
-    s_update_partition = NULL;
-
-    LOGI(TAG, "OTA aborted");
-}
-
-// ---------- 获取进度 ----------
-size_t ota_get_progress(void) {
-    return s_written_size;
-}
-
-size_t ota_get_total_size(void) {
-    return s_total_size;
-}
-
-// ---------- 获取当前/备用 OTA 分区 ----------
-int ota_get_current_slot(void) {
-    const esp_partition_t *running = esp_ota_get_running_partition();
-    if (!running) return -1;
-
-    if (running->subtype == ESP_PARTITION_SUBTYPE_APP_OTA_0) return 0;
-    if (running->subtype == ESP_PARTITION_SUBTYPE_APP_OTA_1) return 1;
-
+// ---------- 槽位辅助 ----------
+static int partition_to_slot(const esp_partition_t *p) {
+    if (!p) return -1;
+    if (p->subtype == ESP_PARTITION_SUBTYPE_APP_OTA_0) return 0;
+    if (p->subtype == ESP_PARTITION_SUBTYPE_APP_OTA_1) return 1;
     return -1;
 }
 
-int ota_get_next_slot(void) {
-    int current = ota_get_current_slot();
-    if (current < 0) return -1;
-    return (current == 0) ? 1 : 0;
+// ---------- 回滚确认 ----------
+void ota_confirm_running(void) {
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    esp_ota_img_states_t st;
+    if (!running) return;
+
+    if (esp_ota_get_state_partition(running, &st) == ESP_OK &&
+        st == ESP_OTA_IMG_PENDING_VERIFY) {
+        esp_err_t err = esp_ota_mark_app_valid_cancel_rollback();
+        if (err == ESP_OK) {
+            LOGI(TAG, "Running firmware confirmed valid (slot %d)",
+                 partition_to_slot(running));
+        } else {
+            LOGE(TAG, "mark_app_valid failed: %s", esp_err_to_name(err));
+        }
+    }
+}
+
+static void confirm_timer_cb(void *arg) {
+    (void)arg;
+    ota_confirm_running();
+}
+
+const char *ota_err_to_str(ota_err_t err) {
+    switch (err) {
+        case OTA_OK:                return "ok";
+        case OTA_ERR_NOT_INIT:      return "not initialized";
+        case OTA_ERR_INVALID_PARAM: return "invalid param";
+        case OTA_ERR_INVALID_STATE: return "invalid state";
+        case OTA_ERR_NO_MEMORY:     return "no memory";
+        case OTA_ERR_FLASH:         return "flash error";
+        case OTA_ERR_IMAGE_INVALID: return "image invalid";
+        case OTA_ERR_NOT_FOUND:     return "ota partition not found";
+        default:                    return "unknown";
+    }
+}
+
+const char *ota_state_to_str(ota_state_t state) {
+    switch (state) {
+        case OTA_STATE_RECEIVING: return "receiving";
+        case OTA_STATE_VERIFYING: return "verifying";
+        case OTA_STATE_DONE:      return "done";
+        case OTA_STATE_FAILED:    return "failed";
+        default:                  return "idle";
+    }
+}
+
+// ---------- 初始化 ----------
+ota_err_t ota_init(void) {
+    if (s_initialized) return OTA_OK;
+
+    const esp_app_desc_t *app = esp_app_get_description();
+    if (app) {
+        snprintf(s_version, sizeof(s_version), "%s", app->version);
+        snprintf(s_project, sizeof(s_project), "%s", app->project_name);
+    }
+
+    // 回滚保护确认定时器：启动 15s 后认为固件稳定
+    esp_timer_create_args_t args = {
+        .callback = confirm_timer_cb,
+        .name = "ota_confirm",
+    };
+    if (esp_timer_create(&args, &s_confirm_timer) == ESP_OK) {
+        esp_timer_start_once(s_confirm_timer, OTA_CONFIRM_DELAY_US);
+    } else {
+        LOGW(TAG, "confirm timer create failed (rollback confirm manual only)");
+    }
+
+    s_initialized = true;
+    LOGI(TAG, "OTA initialized (firmware v%s, slot %d, rollback-confirm 15s)",
+         s_version,
+         partition_to_slot(esp_ota_get_running_partition()));
+    return OTA_OK;
+}
+
+// ---------- 开始 ----------
+ota_err_t ota_begin(size_t expected_size) {
+    if (!s_initialized) return OTA_ERR_NOT_INIT;
+    if (s_state == OTA_STATE_RECEIVING || s_state == OTA_STATE_VERIFYING) {
+        return OTA_ERR_INVALID_STATE;
+    }
+
+    s_target_partition = esp_ota_get_next_update_partition(NULL);
+    if (!s_target_partition) {
+        LOGE(TAG, "No OTA update partition");
+        return OTA_ERR_NOT_FOUND;
+    }
+
+    esp_err_t err = esp_ota_begin(s_target_partition,
+                                  expected_size > 0 ? expected_size
+                                                    : OTA_SIZE_UNKNOWN,
+                                  &s_handle);
+    if (err != ESP_OK) {
+        LOGE(TAG, "esp_ota_begin failed: %s", esp_err_to_name(err));
+        s_target_partition = NULL;
+        s_state = OTA_STATE_FAILED;
+        return OTA_ERR_FLASH;
+    }
+
+    ota_sha256_init(&s_sha_ctx);
+    s_sha_started = true;
+
+    s_received = 0;
+    s_expected = expected_size;
+    s_digest_valid = false;
+    s_state = OTA_STATE_RECEIVING;
+
+    LOGI(TAG, "OTA begin -> slot %d (expected %u bytes)",
+         partition_to_slot(s_target_partition), (unsigned)expected_size);
+    return OTA_OK;
+}
+
+// ---------- 写入 ----------
+ota_err_t ota_write(const void *data, size_t len) {
+    if (!s_initialized) return OTA_ERR_NOT_INIT;
+    if (!data || len == 0) return OTA_ERR_INVALID_PARAM;
+    if (s_state != OTA_STATE_RECEIVING) return OTA_ERR_INVALID_STATE;
+
+    esp_err_t err = esp_ota_write(s_handle, data, len);
+    if (err != ESP_OK) {
+        LOGE(TAG, "esp_ota_write failed at %u: %s",
+             (unsigned)s_received, esp_err_to_name(err));
+        s_state = OTA_STATE_FAILED;
+        return OTA_ERR_FLASH;
+    }
+
+    ota_sha256_update(&s_sha_ctx, data, len);
+
+    s_received += len;
+    return OTA_OK;
+}
+
+// ---------- 结束校验 ----------
+ota_err_t ota_end(void) {
+    if (!s_initialized) return OTA_ERR_NOT_INIT;
+    if (s_state != OTA_STATE_RECEIVING) return OTA_ERR_INVALID_STATE;
+
+    s_state = OTA_STATE_VERIFYING;
+
+    uint8_t digest[32];
+    if (!s_sha_started) {
+        s_state = OTA_STATE_FAILED;
+        return OTA_ERR_IMAGE_INVALID;
+    }
+    ota_sha256_final(&s_sha_ctx, digest);
+
+    esp_err_t err = esp_ota_end(s_handle);
+    if (err != ESP_OK) {
+        LOGE(TAG, "esp_ota_end failed: %s (%u bytes received)",
+             esp_err_to_name(err), (unsigned)s_received);
+        s_state = OTA_STATE_FAILED;
+        return (err == ESP_ERR_OTA_VALIDATE_FAILED) ? OTA_ERR_IMAGE_INVALID
+                                                    : OTA_ERR_FLASH;
+    }
+
+    err = esp_ota_set_boot_partition(s_target_partition);
+    if (err != ESP_OK) {
+        LOGE(TAG, "set_boot_partition failed: %s", esp_err_to_name(err));
+        s_state = OTA_STATE_FAILED;
+        return OTA_ERR_FLASH;
+    }
+
+    // 校验通过才暴露最终 SHA256
+    memcpy(s_sha_digest, digest, 32);
+    s_digest_valid = true;
+    s_state = OTA_STATE_DONE;
+    LOGI(TAG, "OTA done: slot %d, %u bytes verified (rollback pending until confirm)",
+         partition_to_slot(s_target_partition), (unsigned)s_received);
+    return OTA_OK;
+}
+
+// ---------- 中止 ----------
+ota_err_t ota_abort(void) {
+    if (!s_initialized) return OTA_ERR_NOT_INIT;
+    if (s_state != OTA_STATE_RECEIVING && s_state != OTA_STATE_FAILED) {
+        // DONE 之后不允许 abort（重启已在路上）
+        if (s_state != OTA_STATE_DONE) return OTA_ERR_INVALID_STATE;
+        return OTA_OK;
+    }
+
+    esp_ota_abort(s_handle);
+    s_target_partition = NULL;
+    s_received = 0;
+    s_expected = 0;
+    s_sha_started = false;
+    s_digest_valid = false;
+    s_state = OTA_STATE_IDLE;
+    LOGW(TAG, "OTA aborted");
+    return OTA_OK;
+}
+
+// ---------- 状态 ----------
+ota_err_t ota_get_status(ota_status_t *out) {
+    if (!out) return OTA_ERR_INVALID_PARAM;
+    if (!s_initialized) return OTA_ERR_NOT_INIT;
+
+    memset(out, 0, sizeof(*out));
+    out->state = s_state;
+    out->received = s_received;
+    out->expected = s_expected;
+    out->current_slot = partition_to_slot(esp_ota_get_running_partition());
+    out->target_slot = partition_to_slot(s_target_partition);
+
+    // DONE 态给出最终摘要；RECEIVING 态调用方可自行按需查询中间值，
+    // 这里置零避免误导
+    if (s_digest_valid && s_state == OTA_STATE_DONE) {
+        memcpy(out->sha256, s_sha_digest, 32);
+    }
+
+    esp_ota_img_states_t img_state;
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    out->pending_verify =
+        (running &&
+         esp_ota_get_state_partition(running, &img_state) == ESP_OK &&
+         img_state == ESP_OTA_IMG_PENDING_VERIFY);
+
+    snprintf(out->version, sizeof(out->version), "%s", s_version);
+    snprintf(out->project, sizeof(out->project), "%s", s_project);
+    return OTA_OK;
+}
+
+// ---------- 重启 ----------
+/* 延迟重启必须用 esp_timer（不能阻塞 web 事件循环，
+ * 否则 HTTP 200 响应来不及 flush，推送端只见连接重置/挂起） */
+static void ota_reboot_timer_cb(void *arg) {
+    (void)arg;
+    esp_restart();
+}
+
+void ota_reboot(void) {
+    LOGW(TAG, "Rebooting into new firmware in 500ms...");
+    esp_timer_handle_t t = NULL;
+    esp_timer_create_args_t args = {
+        .callback = ota_reboot_timer_cb,
+        .name = "ota_reboot",
+    };
+    if (esp_timer_create(&args, &t) == ESP_OK) {
+        esp_timer_start_once(t, 500 * 1000ULL);
+    } else {
+        esp_restart();
+    }
 }

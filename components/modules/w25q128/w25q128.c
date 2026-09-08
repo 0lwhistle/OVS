@@ -17,8 +17,10 @@
 
 #include "freertos/FreeRTOS.h"
 #include "esp_timer.h"
+#include "esp_rom_sys.h"
 #include "dtree.h"
 #include "freertos/task.h"
+#include "freertos/semphr.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -29,6 +31,10 @@ static const char* TAG = "[W25Q128]";
 
 /* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
 #define W25Q128_DT_COMPAT   "w25q128-flash"
+
+/** 设备级互斥锁：串行化多任务对同一 SPI 设备的并发访问
+ * （ESP-IDF SPI 驱动不允许两个任务对同一设备句柄并发做事务） */
+static SemaphoreHandle_t s_dev_mutex = NULL;
 
 /* ========================================================================== */
 /*                              常量定义                                       */
@@ -238,26 +244,45 @@ static w25q128_err_t w25q128_read_status(uint8_t* status) {
  */
 static w25q128_err_t w25q128_wait_busy_ms(uint32_t timeout_ms) {
     uint8_t status;
-    uint32_t elapsed_ms = 0;
-    TickType_t poll_ticks = pdMS_TO_TICKS(W25Q128_POLL_DELAY_MS);
-    if (poll_ticks == 0) {
-        poll_ticks = 1;
+    int64_t start_us = esp_timer_get_time();
+
+    /* 阶段1：立即查询——典型页编程 tPP<1ms，多数情况一次即完成，
+     * 消除固定 10ms 轮询粒度造成的写入吞吐上限 */
+    w25q128_err_t err = w25q128_read_status(&status);
+    if (err != W25Q128_OK) {
+        return err;
+    }
+    if (!(status & W25Q128_STATUS_BUSY)) {
+        return W25Q128_OK;
     }
 
-    do {
-        w25q128_err_t err = w25q128_read_status(&status);
+    /* 阶段2：前 2ms 短自旋细粒度轮询（覆盖页编程窗口，不切换任务） */
+    while ((esp_timer_get_time() - start_us) < 2000) {
+        esp_rom_delay_us(100);
+        err = w25q128_read_status(&status);
         if (err != W25Q128_OK) {
             return err;
         }
-        
         if (!(status & W25Q128_STATUS_BUSY)) {
             return W25Q128_OK;
         }
-        
-        vTaskDelay(poll_ticks);
-        elapsed_ms += W25Q128_POLL_DELAY_MS;
-    } while (elapsed_ms < timeout_ms);
-    
+    }
+
+    /* 阶段3：长等待（扇区/整片擦除），按 tick 让出 CPU 轮询 */
+    while (true) {
+        vTaskDelay(1);
+        err = w25q128_read_status(&status);
+        if (err != W25Q128_OK) {
+            return err;
+        }
+        if (!(status & W25Q128_STATUS_BUSY)) {
+            return W25Q128_OK;
+        }
+        if ((esp_timer_get_time() - start_us) >= (int64_t)timeout_ms * 1000) {
+            break;
+        }
+    }
+
     LOGE(TAG, "Timeout waiting for Flash");
     return W25Q128_ERR_TIMEOUT;
 }
@@ -350,6 +375,14 @@ w25q128_err_t w25q128_init(void) {
     }
     
     LOGI(TAG, "Initializing W25Q128 Flash...");
+
+    if (!s_dev_mutex) {
+        s_dev_mutex = xSemaphoreCreateMutex();
+        if (!s_dev_mutex) {
+            LOGE(TAG, "Create device mutex failed");
+            return W25Q128_ERR_SPI;
+        }
+    }
 
     /* 按 compatible 定位自己的设备节点，父节点即所属 SPI 总线 */
     dtree_node_t* dev_node = dtree_find_by_compatible(W25Q128_DT_COMPAT);
@@ -527,7 +560,7 @@ w25q128_err_t w25q128_get_info(w25q128_info_t* info) {
     return W25Q128_OK;
 }
 
-w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
+static w25q128_err_t w25q128_read_locked(uint32_t addr, void* buffer, size_t size) {
     if (!buffer) {
         return W25Q128_ERR_PARAM;
     }
@@ -581,7 +614,7 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
     return w25q128_on_operation_result(W25Q128_OK);
 }
 
-w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
+static w25q128_err_t w25q128_write_locked(uint32_t addr, const void* data, size_t size) {
     if (!data) {
         return W25Q128_ERR_PARAM;
     }
@@ -628,7 +661,7 @@ w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
     return w25q128_on_operation_result(W25Q128_OK);
 }
 
-w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
+static w25q128_err_t w25q128_erase_sector_locked(uint32_t sector_index) {
     w25q128_err_t err = w25q128_begin_operation();
     if (err != W25Q128_OK) {
         return err;
@@ -665,7 +698,7 @@ w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
     return w25q128_on_operation_result(w25q128_wait_busy());
 }
 
-w25q128_err_t w25q128_erase_chip(void) {
+static w25q128_err_t w25q128_erase_chip_locked(void) {
     w25q128_err_t err = w25q128_begin_operation();
     if (err != W25Q128_OK) {
         return err;
@@ -700,7 +733,7 @@ bool w25q128_is_ready(void) {
     return s_initialized && s_state == W25Q128_STATE_READY;
 }
 
-w25q128_err_t w25q128_health_check(void) {
+static w25q128_err_t w25q128_health_check_locked(void) {
     if (!s_initialized) {
         return W25Q128_ERR_NOT_INIT;
     }
@@ -711,4 +744,52 @@ w25q128_err_t w25q128_health_check(void) {
     }
 
     return w25q128_on_operation_result(W25Q128_ERR_OFFLINE);
+}
+
+/* ========== 设备级串行化包装（多任务安全） ========== */
+/* 同一 SPI 设备句柄不允许跨任务并发事务，VFS 块设备回调可能来自
+ * 不同任务（不同挂载点的文件操作），在此统一串行化 */
+
+#define W25Q128_DEV_LOCK() do { \
+        if (!s_dev_mutex) { \
+            return W25Q128_ERR_NOT_INIT; \
+        } \
+        xSemaphoreTake(s_dev_mutex, portMAX_DELAY); \
+    } while (0)
+
+#define W25Q128_DEV_UNLOCK() do { xSemaphoreGive(s_dev_mutex); } while (0)
+
+w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
+    W25Q128_DEV_LOCK();
+    w25q128_err_t err = w25q128_read_locked(addr, buffer, size);
+    W25Q128_DEV_UNLOCK();
+    return err;
+}
+
+w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
+    W25Q128_DEV_LOCK();
+    w25q128_err_t err = w25q128_write_locked(addr, data, size);
+    W25Q128_DEV_UNLOCK();
+    return err;
+}
+
+w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
+    W25Q128_DEV_LOCK();
+    w25q128_err_t err = w25q128_erase_sector_locked(sector_index);
+    W25Q128_DEV_UNLOCK();
+    return err;
+}
+
+w25q128_err_t w25q128_erase_chip(void) {
+    W25Q128_DEV_LOCK();
+    w25q128_err_t err = w25q128_erase_chip_locked();
+    W25Q128_DEV_UNLOCK();
+    return err;
+}
+
+w25q128_err_t w25q128_health_check(void) {
+    W25Q128_DEV_LOCK();
+    w25q128_err_t err = w25q128_health_check_locked();
+    W25Q128_DEV_UNLOCK();
+    return err;
 }

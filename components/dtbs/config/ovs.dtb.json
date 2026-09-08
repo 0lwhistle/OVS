@@ -156,20 +156,48 @@
         }
     },
 
+    "wifi": {
+        "compatible": "esp32s3-wifi",
+        "description": "WiFi 网络配置（net_mgr 读取；NVS 已有用户配网凭据时优先于 sta）",
+        "default_mode": "sta",
+
+        "sta": {
+            "description": "STA 模式默认凭据（首次启动播种 NVS）",
+            "ssid": "wifi2.4g",
+            "password": "150107nb"
+        },
+
+        "ap": {
+            "description": "SoftAP 模式参数",
+            "ssid_prefix": "OVS-",
+            "password": "",
+            "channel": 6,
+            "max_connection": 4
+        }
+    },
+
     "vfs": {
         "compatible": "ovs-vfs",
         "description": "VFS 虚拟文件系统挂载配置",
         "mounts": [
             {
-                "path": "/audio",
+                "path": "/font",
                 "device": "w25q128",
                 "offset": 0,
-                "size": 8388608,
+                "size": 2097152,
                 "format_if_fail": false,
                 "read_only": false
             },
             {
-                "path": "/font",
+                "path": "/audio",
+                "device": "w25q128",
+                "offset": 2097152,
+                "size": 6291456,
+                "format_if_fail": false,
+                "read_only": false
+            },
+            {
+                "path": "/media",
                 "device": "w25q128",
                 "offset": 8388608,
                 "size": 8388608,

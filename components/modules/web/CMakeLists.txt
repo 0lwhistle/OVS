@@ -1,9 +1,10 @@
 idf_component_register(
-    SRCS "web.c" 
-         "${CMAKE_SOURCE_DIR}/thirdparty/mongoose/mongoose.c" 
+    SRCS "web.c"
+         "web_ota.c"
+         "${CMAKE_SOURCE_DIR}/thirdparty/mongoose/mongoose.c"
          "web_data/web_data.c"
-    INCLUDE_DIRS "." 
+    INCLUDE_DIRS "."
                  "${CMAKE_SOURCE_DIR}/thirdparty/mongoose"
                  "web_data"
-    REQUIRES spiffs esp_http_server freertos ota heartbeat tasker wifi logger
+    REQUIRES spiffs freertos ota net_mgr wifi heartbeat tasker logger esp_timer
 )

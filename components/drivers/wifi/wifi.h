@@ -1,3 +1,18 @@
+/**
+ * @file wifi.h
+ * @brief WiFi 驱动（esp_wifi 纯封装层）
+ *
+ * 职责边界（驱动只做硬件操作，策略在 modules/net_mgr）：
+ *   - 协议栈/netif/事件回调的初始化（wifi_init，不启动射频）
+ *   - STA/AP 的配置、启动、停止（含 AP 参数校验）
+ *   - 硬件查询：IP/网关/子网掩码/MAC(wifi_get_net_info)、RSSI、
+ *     附近 AP 扫描、当前模式
+ *   - 断线自动重连（驱动级保底行为）
+ *
+ * 不属于驱动的（在 net_mgr）：凭据持久化、配网、热切换回退策略、
+ * 模式状态机、事件语义化发布。凭据来源见 net_mgr（设备树/NVS）。
+ */
+
 #ifndef WIFI_H
 #define WIFI_H
 
@@ -9,10 +24,6 @@
 #include "freertos/task.h"
 #include "esp_timer.h"
 #include <stdbool.h>
-
-// ---------- Wi-Fi STA 默认配置 ----------
-#define WIFI_SSID       "816"
-#define WIFI_PASSWORD   "716717nb"
 
 // ---------- Wi-Fi 网络信息结构体 ----------
 typedef struct {
@@ -31,51 +42,65 @@ typedef struct {
                         //           6=WPA3_PSK, 7=WPA2_WPA3_PSK
 } wifi_ap_info_t;
 
-// ---------- Wi-Fi 热切换状态 ----------
-typedef enum {
-    WIFI_STATE_IDLE,          // 空闲
-    WIFI_STATE_SCANNING,      // 正在扫描
-    WIFI_STATE_SWITCHING,     // 正在切换到新 AP
-    WIFI_STATE_CONNECTED,     // 已连接
-    WIFI_STATE_FAILED,        // 切换失败（已回退）
-} wifi_state_t;
-
-// ---------- Wi-Fi 热切换状态详情 ----------
-typedef struct {
-    wifi_state_t state;         // 当前状态
-    char current_ssid[33];      // 当前连接的 SSID
-    char new_ssid[33];          // 目标 SSID（SWITCHING 时有值）
-    int rssi;                   // 当前信号强度 (dBm)
-    int elapsed_sec;            // 切换已用时间（秒）
-    bool rollback_available;    // 是否有回退配置
-} wifi_switch_status_t;
-
-// ---------- Wi-Fi 事件回调（IDF 方式） ----------
-void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data);
-
-// ---------- 初始化 Wi-Fi（仅 STA 模式） ----------
+/**
+ * @brief 初始化 Wi-Fi 协议栈（不启动、不连接）
+ *
+ * 完成 netif/event loop/驱动初始化并注册事件回调，
+ * STA/AP 网络接口均创建。启动由 net_mgr 通过
+ * wifi_start_sta()/wifi_start_ap() 控制。
+ */
 void wifi_init(void);
 
 /**
- * @brief 设置 STA 的 SSID 和密码（仅修改内存中的配置，不立即生效）
- * @param ssid    目标 SSID（最长 32 字节）
- * @param password 目标密码（最长 64 字节）
+ * @brief 设置 STA 的 SSID 和密码（存内存，由 wifi_start_sta 应用）
  * @return 0 成功，-1 参数无效
  */
 int wifi_set_sta_config(const char *ssid, const char *password);
 
 /**
- * @brief 完全重启 Wi-Fi STA 网络
- * 
- * 执行完整的清理和刷新流程：
- *   1. 断开当前连接
- *   2. 停止 Wi-Fi 驱动
- *   3. 清理并释放 netif 和 event loop
- *   4. 重新初始化 netif、event loop、Wi-Fi 驱动
- *   5. 应用最新的 STA 配置
- *   6. 重新启动 Wi-Fi 并连接
+ * @brief 应用当前 STA 配置并启动连接（STA_START 事件自动 esp_wifi_connect）
+ * @return 0 成功，-1 失败（无有效配置/驱动错误）
  */
-void wifi_restart_sta(void);
+int wifi_start_sta(void);
+
+/**
+ * @brief 启动 SoftAP 模式（会先停止当前 STA）
+ *
+ * @param ssid     AP 名称（1~32 字节）
+ * @param password 密码（8~64 字节，NULL/空 = 开放网络）
+ * @param channel  信道（0 = 默认 6）
+ * @param max_conn 最大站点数（0 = 默认 4）
+ * @return 0 成功，-1 失败
+ */
+int wifi_start_ap(const char *ssid, const char *password,
+                  uint8_t channel, uint8_t max_conn);
+
+/**
+ * @brief 停止 Wi-Fi 射频（netif 与驱动保持初始化状态）
+ * @return 0 成功，-1 失败
+ */
+int wifi_stop(void);
+
+/**
+ * @brief 获取当前 Wi-Fi 模式
+ * @return WIFI_MODE_NULL/WIFI_MODE_STA/WIFI_MODE_AP，失败返回 WIFI_MODE_NULL
+ */
+wifi_mode_t wifi_get_mode(void);
+
+/**
+ * @brief 获取当前 STA 信号强度
+ * @return RSSI (dBm，负值)；未连接/失败返回 0
+ */
+int wifi_get_rssi(void);
+
+/**
+ * @brief 扫描附近 Wi-Fi 热点（同步阻塞，最长 5 秒）
+ *
+ * @param aps    输出数组，结果按信号强度降序排列
+ * @param max_ap 最多返回数量
+ * @return 实际扫描到的 AP 数量，失败返回 0
+ */
+int wifi_scan_aps(wifi_ap_info_t *aps, int max_ap);
 
 /**
  * @brief 获取当前 Wi-Fi STA 的网络信息（IP、子网掩码、网关、MAC）
@@ -84,31 +109,25 @@ void wifi_restart_sta(void);
  */
 int wifi_get_net_info(wifi_net_info_t *info);
 
+/**
+ * @brief 获取当前 STA 的 IP 地址
+ * @param buf 输出缓冲区（建议 ≥16 字节）
+ * @return 0 成功，-1 失败（未连接/未初始化）
+ */
+int wifi_get_ip(char *buf, int len);
 
 /**
- * @brief 扫描附近 Wi-Fi 热点（同步阻塞，最长 5 秒）
- * 
- * @param aps    输出数组，结果按信号强度降序排列
- * @param max_ap 最多返回数量
- * @return 实际扫描到的 AP 数量，失败返回 0
+ * @brief 获取当前 STA 的网关地址
+ * @param buf 输出缓冲区（建议 ≥16 字节）
+ * @return 0 成功，-1 失败
  */
-int wifi_scan_aps(wifi_ap_info_t *aps, int max_ap);
+int wifi_get_gateway(char *buf, int len);
 
 /**
- * @brief 热切换到新 AP（30 秒超时自动回退）
- * 
- * 保存当前配置为回退 → 断开并连接新 AP →
- *   成功（30s 内获取 IP）→ 清除回退，持久化新配置
- *   失败（30s 超时）    → 自动恢复旧配置
- * 
- * @return 0 发起成功，-1 已有切换在进行中
+ * @brief 获取当前 STA 的子网掩码
+ * @param buf 输出缓冲区（建议 ≥16 字节）
+ * @return 0 成功，-1 失败
  */
-int wifi_switch_ap(const char *ssid, const char *password);
-
-/**
- * @brief 获取当前热切换状态（用于前端轮询）
- * @return 0 成功
- */
-int wifi_get_switch_status(wifi_switch_status_t *status);
+int wifi_get_netmask(char *buf, int len);
 
 #endif // WIFI_H
