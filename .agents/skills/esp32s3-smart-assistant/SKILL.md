@@ -150,10 +150,14 @@ net_provision_submit(ssid, pass);  // 凭据统一入口: 持久化+切换+30s�
 **流式直写**: `ota_begin(expected) → ota_write(chunk) → ota_end()`，无整包缓冲；
 回滚保护: 启动15s后自动确认有效，崩溃则bootloader回退旧槽。
 开发期推送: `./scripts/ota_push.sh`（详见 docs/ota_guide.md）。
+**app+设备树容器**: build/dtb.bin 存在时脚本自动拼 `OVSO` 容器
+（96B头+app+dtb）一次上传；dtb 写非活动槽、app 15s 确认时翻转
+（app回滚则树也回旧版）；无魔数=旧式纯app流，兼容。
+独立设备树更新: `POST /api/dtb/firmware`（body=dtb.bin）。
 
 ### 2.5 Device Tree - 设备树
 
-**作用**: JSON配置硬件参数，代码与配置分离
+**作用**: JSON配置硬件参数，代码与配置分离；支持 A/B 分区 OTA
 
 ```c
 #include "dtree.h"
@@ -162,6 +166,12 @@ net_provision_submit(ssid, pass);  // 凭据统一入口: 持久化+切换+30s�
 int32_t pin;
 DTREE_INT("spi.lcd_display", "cs_pin", &pin);
 ```
+
+**A/B 槽机制**（components/dtbs/dtb_ab.{h,c}）：dtb_0/dtb_1 裸分区(64KB×2)，
+NVS 指针(active/trial)事务性切换；启动选树：app 待确认窗口→trial 槽，
+否则 active 槽，校验失败自动试另一槽，双槽全废→回退 /spiffs/ovs.dtb.json。
+设备树内容变更 OTA 即生效；语义正确性靠人工，A/B 只防过程损坏。
+槽容器由 scripts/pack_dtb.py 生成（build 时自动 build/dtb.bin）。
 
 ### 2.6 LVGL - 六层UI架构
 
@@ -584,6 +594,6 @@ if (!dtree_has_node("my_device.sensor")) {
 
 ---
 
-**技能版本**: v2.3 (2026-09-08 开发环境: env.sh免路径脚本/ovs_release --ota/Logger分级)  
+**技能版本**: v2.4 (2026-09-08 设备树AB分区OTA: dtb_ab/OVSO容器/独立dtb通道)  
 **最后更新**: 2026-09-08  
 **维护团队**: OVS Team

@@ -1,5 +1,43 @@
 # OVS项目开发日志
 
+## 2026-09-08 - 设备树 A/B 分区 OTA 落地 + main.c 整理（实测闭环）
+
+### 任务目标
+落地已评审的设备树 A/B 方案：设备树随固件 OTA 升级，仅在 OTA 过程失败
+（网络中断/断电）时回退；顺带整理 main.c 测试代码。
+
+### 实现
+- **分区表**：+dtb_0/dtb_1（data, 0xA0, 64KB×2 裸分区），littlefs 缩 128KB
+  挪至 0x740000；0x90 与 ESP-TEE otadata 冲突故用 0xA0。
+- **dtb_ab 模块**（components/dtbs/dtb_ab.{h,c}）：槽格式 `DTBI`
+  （魔数+版本+json_len+sha256+JSON）；启动选树：app PENDING_VERIFY→trial 槽，
+  否则 active 槽；校验失败自动试另一槽；双槽全废→回退 /spiffs/ovs.dtb.json
+  （首次串口烧录零成本）。SHA 仅保证写入完整性，不做语义校验（按需求）。
+- **配对回滚**：OTA 只写非活动槽+登记 trial（NVS，掉电安全）；app 15s
+  确认(ota_confirm_running)时才翻转 active——app 崩溃回滚则树保持旧版。
+- **上传协议**：96B `OVSO` 容器（flags.bit0=含dtb+双SHA256），无魔数=旧式纯
+  app 流，向后兼容（web_ota.c + scripts/ovs_pack_payload.py）。
+- **独立通道**：POST /api/dtb/firmware 单独更新设备树（写非活动槽+直接翻转）；
+  /api/ota/status 增 dtb_slot 字段。
+- **构建链**：build 自动产出 build/dtb.bin（dtb_bin 目标）；ota_push.sh 检测后
+  自动拼包 build/ota_payload.bin；ota_sha256 提升为共享组件 thirdparty/sha256。
+- **main.c 整理**：改产品化启动编排（NVS→核心→SPIFFS→设备树→网/OTA→W25Q128→
+  VFS 挂载）；VFS 功能/压力测试收进 OVS_RUN_APP_TESTS 开关（默认关），
+  挂载逻辑保留为 vfs_stack_start()（设备树 vfs 节点驱动）。
+
+### 实测验证（串口烧录引导后）
+1. 首次启动 dtb 槽空 → 回退 /spiffs 加载成功（WiFi 连上即证明 dtree OK）；
+2. OVSO 容器 OTA：app 槽 0→1，dtb_slot 0→1（pending 期用 trial，15s 确认翻转）；
+3. 独立通道：POST dtb.bin → 写槽 0 并翻转 active，响应 "takes effect after reboot"；
+4. 上传中断模拟（40KB/s 限速推 8s 后 kill）：state 回 idle、app/dtb 指针均未动、
+   WiFi 保持连接——核心承诺达成；
+5. 中断后再推完整 OTA：11s 上传、确认翻转，状态一致（app 1→0, dtb 0→1）。
+
+### 注意事项
+- littlefs 分区挪位清空原 /config 数据（已确认可重建）；
+- 设备树语义变更（如新增必需节点）仍需人工保证，A/B 只防"过程损坏"；
+- partition table 变更永远需要串口烧录，设备树内容变更从此 OTA 即可。
+
 ## 2026-09-08 - VFS 全链路修复：设备树分区重烧 + littlefs 分区数上限
 
 ### 任务目标

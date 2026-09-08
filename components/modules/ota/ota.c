@@ -13,7 +13,8 @@
 #include "esp_system.h"
 #include "esp_app_desc.h"
 #include "esp_timer.h"
-#include "ota_sha256.h"
+#include "sha256.h"
+#include "dtb_ab.h"
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -31,7 +32,7 @@ static volatile ota_state_t s_state = OTA_STATE_IDLE;
 
 static esp_ota_handle_t s_handle = 0;
 static const esp_partition_t *s_target_partition = NULL;
-static ota_sha256_ctx_t s_sha_ctx;
+static sha256_ctx_t s_sha_ctx;
 static bool s_sha_started = false;
 
 static size_t s_received = 0;
@@ -64,6 +65,8 @@ void ota_confirm_running(void) {
         if (err == ESP_OK) {
             LOGI(TAG, "Running firmware confirmed valid (slot %d)",
                  partition_to_slot(running));
+            /* app+设备树配对试运行通过：正式切换活动设备树槽 */
+            dtb_ab_confirm_trial();
         } else {
             LOGE(TAG, "mark_app_valid failed: %s", esp_err_to_name(err));
         }
@@ -151,7 +154,7 @@ ota_err_t ota_begin(size_t expected_size) {
         return OTA_ERR_FLASH;
     }
 
-    ota_sha256_init(&s_sha_ctx);
+    sha256_init(&s_sha_ctx);
     s_sha_started = true;
 
     s_received = 0;
@@ -178,7 +181,7 @@ ota_err_t ota_write(const void *data, size_t len) {
         return OTA_ERR_FLASH;
     }
 
-    ota_sha256_update(&s_sha_ctx, data, len);
+    sha256_update(&s_sha_ctx, data, len);
 
     s_received += len;
     return OTA_OK;
@@ -196,7 +199,7 @@ ota_err_t ota_end(void) {
         s_state = OTA_STATE_FAILED;
         return OTA_ERR_IMAGE_INVALID;
     }
-    ota_sha256_final(&s_sha_ctx, digest);
+    sha256_final(&s_sha_ctx, digest);
 
     esp_err_t err = esp_ota_end(s_handle);
     if (err != ESP_OK) {

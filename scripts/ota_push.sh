@@ -37,8 +37,22 @@ die() { echo -e "${RED}❌ $*${NC}"; exit 1; }
 
 # ---- 检查固件 ----
 [ -f "$FIRMWARE" ] || die "固件不存在: $FIRMWARE\n   先构建: idf.py build  或  ./scripts/mybuild.sh"
-FW_SIZE=$(stat -c%s "$FIRMWARE")
-LOCAL_SHA=$(sha256sum "$FIRMWARE" | cut -d' ' -f1)
+
+# 设备树容器存在 → 打包为 OVSO 容器（app+dtb 一次上传，A/B 保护）
+UPLOAD_FILE="$FIRMWARE"
+DTB_NOTE=""
+if [ -f "build/dtb.bin" ]; then
+    PAYLOAD="build/ota_payload.bin"
+    if python3 scripts/ovs_pack_payload.py "$FIRMWARE" build/dtb.bin -o "$PAYLOAD" >/dev/null; then
+        UPLOAD_FILE="$PAYLOAD"
+        DTB_NOTE=" (OVSO: app+dtb)"
+    else
+        die "打包 OVSO 容器失败（scripts/ovs_pack_payload.py）"
+    fi
+fi
+
+FW_SIZE=$(stat -c%s "$UPLOAD_FILE")
+LOCAL_SHA=$(sha256sum "$UPLOAD_FILE" | cut -d' ' -f1)
 
 # ---- 主机解析 ----
 resolve_host() {
@@ -78,7 +92,7 @@ echo -e "${CYAN}========================================${NC}"
 echo -e "${CYAN}  OVS OTA 固件推送${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo -e "  目标:   ${GREEN}$BASE_URL${NC}${RESOLVED_NOTE}"
-echo -e "  固件:   ${YELLOW}$FIRMWARE ($FW_SIZE bytes)${NC}"
+echo -e "  固件:   ${YELLOW}$UPLOAD_FILE$DTB_NOTE ($FW_SIZE bytes)${NC}"
 echo -e "  SHA256: ${YELLOW}${LOCAL_SHA:0:16}...${NC}"
 echo ""
 
@@ -103,7 +117,7 @@ T0=$(date +%s)
 HTTP_CODE=$(curl -s -o "$RESP_FILE" -w "%{http_code}" \
     --progress-bar -m 300 \
     -X POST \
-    --data-binary @"$FIRMWARE" \
+    --data-binary @"$UPLOAD_FILE" \
     -H "Content-Type: application/octet-stream" \
     -H "Expect: " \
     "$BASE_URL/api/ota/firmware" 2>&1)

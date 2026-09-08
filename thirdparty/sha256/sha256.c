@@ -1,9 +1,9 @@
 /**
- * @file ota_sha256.c
+ * @file sha256.c
  * @brief 自包含 SHA-256 实现（FIPS 180-4，公有领域）
  */
 
-#include "ota_sha256.h"
+#include "sha256.h"
 
 #include <string.h>
 
@@ -34,7 +34,7 @@ static const uint32_t k[64] = {
     0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
 };
 
-static void sha256_transform(ota_sha256_ctx_t *ctx, const uint8_t data[64]) {
+static void sha256_transform(sha256_ctx_t *ctx, const uint8_t data[64]) {
     uint32_t m[64];
     uint32_t a, b, c, d, e, f, g, h, t1, t2;
 
@@ -60,7 +60,7 @@ static void sha256_transform(ota_sha256_ctx_t *ctx, const uint8_t data[64]) {
     ctx->state[4] += e; ctx->state[5] += f; ctx->state[6] += g; ctx->state[7] += h;
 }
 
-void ota_sha256_init(ota_sha256_ctx_t *ctx) {
+void sha256_init(sha256_ctx_t *ctx) {
     ctx->block_len = 0;
     ctx->bitlen = 0;
     ctx->state[0] = 0x6a09e667; ctx->state[1] = 0xbb67ae85;
@@ -69,7 +69,7 @@ void ota_sha256_init(ota_sha256_ctx_t *ctx) {
     ctx->state[6] = 0x1f83d9ab; ctx->state[7] = 0x5be0cd19;
 }
 
-void ota_sha256_update(ota_sha256_ctx_t *ctx,
+void sha256_update(sha256_ctx_t *ctx,
                        const uint8_t *data, size_t len) {
     for (size_t i = 0; i < len; i++) {
         ctx->block[ctx->block_len++] = data[i];
@@ -81,7 +81,7 @@ void ota_sha256_update(ota_sha256_ctx_t *ctx,
     }
 }
 
-void ota_sha256_final(ota_sha256_ctx_t *ctx, uint8_t out[32]) {
+void sha256_final(sha256_ctx_t *ctx, uint8_t out[32]) {
     size_t i = ctx->block_len;
 
     if (i < 56) {

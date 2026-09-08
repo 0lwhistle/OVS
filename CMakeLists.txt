@@ -34,6 +34,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/modules/w25q128
     ${CMAKE_SOURCE_DIR}/components/modules/internal_flash
     ${CMAKE_SOURCE_DIR}/components/modules/holder
+    ${CMAKE_SOURCE_DIR}/thirdparty/sha256
     ${CMAKE_SOURCE_DIR}/src/lvgl
 )
 
@@ -46,3 +47,14 @@ idf_build_set_property(INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include" APPEND)
 
 # SPIFFS 镜像生成（用于设备树配置）
 spiffs_create_partition_image(spiffs components/dtbs/config FLASH_IN_PROJECT)
+
+# 设备树 A/B 槽容器（OTA 上传用，pack_dtb.py 生成 build/dtb.bin）
+add_custom_command(
+    OUTPUT ${CMAKE_BINARY_DIR}/dtb.bin
+    COMMAND python3 ${CMAKE_SOURCE_DIR}/scripts/pack_dtb.py
+            ${CMAKE_SOURCE_DIR}/components/dtbs/config/ovs.dtb.json
+            ${CMAKE_BINARY_DIR}/dtb.bin
+    DEPENDS ${CMAKE_SOURCE_DIR}/components/dtbs/config/ovs.dtb.json
+    COMMENT "Packing device tree container (dtb.bin)"
+)
+add_custom_target(dtb_bin ALL DEPENDS ${CMAKE_BINARY_DIR}/dtb.bin)

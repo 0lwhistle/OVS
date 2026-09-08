@@ -1,5 +1,5 @@
 idf_component_register(
-    SRCS "ota.c" "ota_sha256.c"
+    SRCS "ota.c"
     INCLUDE_DIRS "."
-    REQUIRES app_update esp_partition esp_app_format esp_system esp_timer freertos logger
+    REQUIRES app_update sha256 dtbs esp_partition esp_app_format esp_system esp_timer freertos logger
 )
