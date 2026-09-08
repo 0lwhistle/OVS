@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 #
-# 构建脚本：编译 Vue 前端 + 打包 Web 资源 + 编译固件 + 签名 + 烧录
+# 构建脚本：编译 Vue 前端 + 打包 Web 资源 + 编译固件 + 烧录
+# (OTA 固件无需签名预处理, 推送用 scripts/ota_push.sh)
 #
-# 用法: bash ./scripts/mybuild.sh [--clean] [串口]
+# 用法: bash ./scripts/mybuild.sh [--clean] [--no-flash] [串口]
 #   --clean    清理 build 目录（默认开启）
+#   --no-flash 只构建不烧录（ovs_release 内部用）
 #   串口       烧录串口，默认 /dev/ttyACM0
 #
 # 示例:
 #   bash ./scripts/mybuild.sh
+#   bash ./scripts/mybuild.sh --no-flash
 #   bash ./scripts/mybuild.sh /dev/ttyUSB0
 #   bash ./scripts/mybuild.sh --clean /dev/ttyUSB0
 #
@@ -33,11 +36,15 @@ cd "$PROJECT_ROOT"
 
 # 解析参数
 CLEAN_BUILD=true
+NO_FLASH=false
 SERIAL_PORT=""
 for arg in "$@"; do
     case $arg in
         --clean)
             CLEAN_BUILD=true
+            ;;
+        --no-flash)
+            NO_FLASH=true
             ;;
         /dev/*)
             SERIAL_PORT="$arg"
@@ -109,13 +116,19 @@ idf.py build
 echo -e "${GREEN}  Done!${NC}"
 echo ""
 
-# 4. 签名固件（用于 OTA 升级）
-echo -e "${YELLOW}[4/4] Signing firmware for OTA...${NC}"
-python3 "$PROJECT_ROOT/scripts/sign_firmware.py" "$PROJECT_ROOT/build/ovs.bin"
-echo ""
+# 4. 烧录（串口；--no-flash 跳过，ovs_release 走 OTA 推送）
+if [ "$NO_FLASH" = true ]; then
+    echo -e "${YELLOW}[4/4] Skipping flash (--no-flash)${NC}"
+    echo ""
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${GREEN}  Build complete!${NC}"
+    echo -e "${CYAN}========================================${NC}"
+    echo ""
+    echo "Firmware: build/ovs.bin"
+    return 0 2>/dev/null || exit 0
+fi
 
-# 5. 自动烧录
-echo -e "${YELLOW}[5/5] Flashing firmware...${NC}"
+echo -e "${YELLOW}[4/4] Flashing firmware...${NC}"
 FLASH_PORT="${SERIAL_PORT:-/dev/ttyACM0}"
 echo "  Port: $FLASH_PORT"
 echo ""
@@ -129,7 +142,6 @@ echo -e "${GREEN}  Build & Flash complete!${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo ""
 echo "Firmware: build/ovs.bin"
-echo "Signed:   build/ovs_signed.bin"
 echo ""
 echo "Monitor:  idf.py -p $FLASH_PORT monitor"
-echo "OTA:      ./scripts/ota_update.sh <esp32-ip>"
+echo "OTA 推送: ./scripts/ota_push.sh [ovs.local|IP]   (日常迭代免串口)"

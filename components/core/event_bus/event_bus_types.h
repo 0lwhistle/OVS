@@ -129,6 +129,12 @@ typedef enum {
     /** WiFi获取IP地址 */
     EVENT_WIFI_GOT_IP               = (MODULE_ID_WIFI << 16) | 0x0007,
     
+    /** SoftAP已启动 */
+    EVENT_WIFI_AP_STARTED           = (MODULE_ID_WIFI << 16) | 0x0008,
+    
+    /** SoftAP已停止 */
+    EVENT_WIFI_AP_STOPPED           = (MODULE_ID_WIFI << 16) | 0x0009,
+    
     /* ====================================================================== */
     /* 传感器事件 (MODULE_ID_SENSOR = 0x0003)                                  */
     /* ====================================================================== */

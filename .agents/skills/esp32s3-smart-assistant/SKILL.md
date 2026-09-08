@@ -21,8 +21,8 @@ ovs/
 ├── CMakeLists.txt               # 项目CMake配置
 ├── sdkconfig                    # ESP-IDF配置
 │
-├── main/                        # 主程序入口
-│   └── main.c                   # app_main() 入口函数
+├── main/                        # main 组件垫片（IDF 要求组件名 main，
+│                                #   仅 CMakeLists，注册 src/app 源文件）
 │
 ├── components/                  # 组件目录
 │   ├── core/                    # 核心服务层
@@ -31,16 +31,16 @@ ovs/
 │   │   ├── logger/              #   日志系统 (彩色分级)
 │   │   └── ovs_vfs/             #   VFS 虚拟文件系统
 │   │
-│   ├── drivers/                 # 硬件驱动层
+│   ├── drivers/                 # 硬件驱动层（纯硬件操作，无策略）
 │   │   ├── spi_drv/             #   SPI驱动
 │   │   ├── uart_drv/            #   UART驱动
 │   │   ├── i2s_drv/             #   I2S驱动
 │   │   ├── i2c_drv/             #   I2C驱动
 │   │   ├── gpio/                #   GPIO驱动
 │   │   ├── led/                 #   LED驱动
-│   │   └── wifi/                #   WiFi驱动
+│   │   └── wifi/                #   WiFi驱动（esp_wifi封装，启停/扫描/网络信息）
 │   │
-│   ├── modules/                 # 功能模块层
+│   ├── modules/                 # 功能模块层（业务策略）
 │   │   ├── st7789/              #   ST7789显示屏
 │   │   ├── w25q128/             #   W25Q128 Flash
 │   │   ├── internal_flash/      #   内部Flash VFS适配
@@ -50,8 +50,10 @@ ovs/
 │   │   ├── cst816s/             #   CST816S触摸屏
 │   │   ├── holder/              #   模块注册表管理器
 │   │   ├── heartbeat/           #   心跳监控
-│   │   ├── ota/                 #   OTA升级
-│   │   └── web/                 #   Web服务器
+│   │   ├── net_mgr/             #   网络管理器（STA/AP状态机、凭据NVS/设备树、
+│   │   │                        #     配网provider接口、热切换回退、mDNS ovs.local）
+│   │   ├── ota/                 #   OTA升级（流式直写、SHA256、回滚保护）
+│   │   └── web/                 #   Web服务器（路由注册表、流式OTA上传、WS推送）
 │   │
 │   └── dtbs/                    # 设备树层
 │       ├── dtree.h/.c           #   解析器（公共API在 include/dtree.h）
@@ -59,6 +61,8 @@ ovs/
 │           └── ovs.dtb.json     #   单棵树设备树配置（SPIFFS镜像源）
 │
 ├── src/                         # 源代码
+│   ├── app/                     # 应用代码（main.c 入口、应用级测试；
+│   │                            #   OTA保护区注释在此文件头部与app_main内）
 │   └── lvgl/                    # LVGL UI模块 (六层架构)
 │       ├── ui/                  #   控件层
 │       ├── widgets/             #   窗口层
@@ -120,7 +124,34 @@ tasker_task_init_mi(&node, 1000, -1, "task_name", task_fn, ctx);
 tasker_enqueue(&node);
 ```
 
-### 2.3 Device Tree - 设备树
+### 2.3 Net Manager - 网络管理器 (modules/net_mgr)
+
+**作用**: STA/AP 模式状态机、凭据持久化、配网通道、热切换回退
+
+```c
+#include "net_mgr.h"
+
+net_mgr_init(NULL);              // NULL = NVS/设备树默认配置
+net_mgr_start(NET_MODE_STA);     // STA/AP 互斥切换
+net_status_t st;
+net_mgr_get_status(&st);         // mode/state/ssid/ip/rssi/switching
+
+// 配网通道（web 已注册，蓝牙模块实现后注册即接入）
+net_provision_register(&provider);
+net_provision_submit(ssid, pass);  // 凭据统一入口: 持久化+切换+30s回退
+```
+
+**凭据优先级**: 显式config > 设备树变更(哈希变化→覆盖NVS) > NVS(用户配网，跨OTA幸存)
+**覆盖规则**: 烧录含新 wifi.sta 的设备树后，下次启动自动覆盖 NVS；设备树未变则用户配网配置持续生效
+**热切换**: 30s 超时自动回退 RAM 配置 + NVS
+
+### 2.4 OTA - 固件升级 (modules/ota)
+
+**流式直写**: `ota_begin(expected) → ota_write(chunk) → ota_end()`，无整包缓冲；
+回滚保护: 启动15s后自动确认有效，崩溃则bootloader回退旧槽。
+开发期推送: `./scripts/ota_push.sh`（详见 docs/ota_guide.md）。
+
+### 2.5 Device Tree - 设备树
 
 **作用**: JSON配置硬件参数，代码与配置分离
 
@@ -132,7 +163,7 @@ int32_t pin;
 DTREE_INT("spi.lcd_display", "cs_pin", &pin);
 ```
 
-### 2.4 LVGL - 六层UI架构
+### 2.6 LVGL - 六层UI架构
 
 ```
 pages (页面层) → widgets (窗口层) → ui (控件层)
@@ -149,6 +180,8 @@ navigator (导航层) ← presenters (展示器层) ← bridge (桥接层)
 | **架构设计** | `docs/ARCHITECTURE.md` | 系统架构详解 (必读) |
 | 项目结构 | `docs/PROJECT_STRUCTURE.md` | 目录结构权威说明 |
 | **开发日志** | `docs/development_log.md` | 开发进度记录 (每次开发必更新) |
+| **OTA指南** | `docs/ota_guide.md` | OTA 使用文档（免串口迭代流程） |
+| **网络/OTA日志** | `docs/development_log_net_ota.md` | OTA+网络线独立日志 |
 | 交接摘要 | `docs/handoff_summary.md` | 跨会话上下文交接 |
 | 设备树配置 | `components/dtbs/config/*.json` | JSON硬件配置 |
 | LVGL架构 | `src/lvgl/README.md` | LVGL六层架构说明 |
@@ -189,6 +222,12 @@ navigator (导航层) ← presenters (展示器层) ← bridge (桥接层)
 ### LoRa 模块（UART）
 - GPIO9: TXD, GPIO10: RXD
 - GPIO8: M0, GPIO3: M1, GPIO46: AUX
+
+### WiFi（配置在设备树 ovs.dtb.json 的 wifi 节点）
+- STA 凭据: wifi.sta.ssid / wifi.sta.password（出厂默认，首次启动播种NVS；
+  用户配网后 NVS 优先）
+- AP 参数: wifi.ap.{ssid_prefix,password,channel,max_connection}
+- 主机名: ovs.local（mDNS）
 
 ### 调试串口
 - GPIO43: TX, GPIO44: RX
@@ -416,8 +455,8 @@ idf.py -p /dev/ttyUSB0 monitor
 # 烧录并监控
 idf.py -p /dev/ttyUSB0 flash monitor
 
-# OTA 升级
-./scripts/ota_update.sh <esp32-ip>
+# OTA 推送（日常免串口迭代）
+./scripts/ota_push.sh [ovs.local|IP]
 ```
 
 ---
@@ -431,7 +470,7 @@ idf.py -p /dev/ttyUSB0 flash monitor
 3. 创建实现文件 `my_module.c`
 4. 创建 `CMakeLists.txt` (指定依赖)
 5. 在项目 `CMakeLists.txt` 注册
-6. 在 `main.c` 中初始化
+6. 在 `src/app/main.c` 中初始化
 
 ### 9.2 添加新事件
 
@@ -529,6 +568,6 @@ if (!dtree_has_node("my_device.sensor")) {
 
 ---
 
-**技能版本**: v2.1 (2026-09-08 由 Codex 迁移至 ZCode)  
+**技能版本**: v2.2 (2026-09-08 网络架构更新: net_mgr/OTA流式/src/app/设备树WiFi)  
 **最后更新**: 2026-09-08  
 **维护团队**: OVS Team

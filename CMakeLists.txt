@@ -23,6 +23,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/drivers/spi_drv
     ${CMAKE_SOURCE_DIR}/components/drivers/uart_drv
     ${CMAKE_SOURCE_DIR}/components/modules/ota
+    ${CMAKE_SOURCE_DIR}/components/modules/net_mgr
     ${CMAKE_SOURCE_DIR}/components/modules/web
     ${CMAKE_SOURCE_DIR}/components/modules/heartbeat
     ${CMAKE_SOURCE_DIR}/components/modules/audio_module

@@ -13,6 +13,7 @@
 #include "w25q128_vfs.h"
 #include "internal_flash_vfs.h"
 #include "ovs_vfs.h"
+#include "vfs_stress.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -25,6 +26,50 @@
 #include "nvs_flash.h"
 
 static const char* TAG = "[MAIN]";
+
+/* ============================================================================
+ * ▶▶▶ OTA / 网络 保护区 —— 本块由 OTA 线维护，其他开发线请勿删改 ◀◀◀
+ * ============================================================================
+ * 作用：提供开发期固件 OTA 迭代通道（build 后 scripts/ota_push.sh 免串口更新）。
+ *
+ * 其他线协作规则（务必遵守，违反 = 设备失去 OTA 能力，只能串口救援）：
+ *   1. OVS_ENABLE_NET 必须保持 1。推送到设备的固件若为 0，
+ *      Web/OTA 服务不会启动，之后只能串口烧录恢复；
+ *   2. app_main 中的 net_stack_init() 调用勿移除（见下方标记）；
+ *   3. 本块的头文件包含、函数实现请勿改动；
+ *      调整网络行为请改 net_mgr/web/ota 各自模块，不要在 main.c 里写逻辑；
+ *   4. 改动本块前先与 OTA 线确认（docs/development_log_net_ota.md）。
+ * ========================================================================== */
+#define OVS_ENABLE_NET  1
+
+#if OVS_ENABLE_NET
+#include "net_mgr.h"
+#include "web.h"
+#include "ota.h"
+
+/**
+ * @brief 网络 + OTA + Web 初始化（开发期固件 OTA 迭代通道）
+ *
+ * 启动流程：STA 连接（凭据存 NVS，出厂默认在 wifi.h）→ Web 服务。
+ * OTA 固件上传端点: POST /api/ota/firmware（流式）；
+ * 状态查询: GET /api/ota/status；上传脚本: scripts/ota_push.sh。
+ * 升级后 15s 内未确认有效则 bootloader 自动回退旧固件（回滚保护）。
+ */
+static void net_stack_init(void) {
+    ota_init();                       /* 含回滚确认定时器 */
+
+    net_mgr_init(NULL);               /* NULL = NVS/出厂默认配置 */
+    net_mgr_start(NET_MODE_STA);      /* 开发期默认 STA；AP 用 NET_MODE_AP */
+
+    web_spiffs_init();
+    web_server_start();               /* 内部自建任务 */
+}
+#endif
+/* ======================== OTA/网络 保护区结束 ============================ */
+
+/* 分区重排过渡开关：W25Q128 分区布局变更后置 1 烧录一次（挂载失败自动格式化），
+ * 完成过渡后必须置回 0，避免日后每次启动静默清空已存媒体文件 */
+#define OVS_MEDIA_FORMAT_ON_FIRST_BOOT  0
 
 /* ============================================================ */
 /*                    设备树配置挂载                              */
@@ -69,21 +114,28 @@ static void vfs_auto_mount_from_dtree(void) {
         int32_t offset = 0;
         int32_t size = 0;
         int32_t format_if_fail = 1;
-        
+
         dtree_get_string(item, "path", &mount_path);
         dtree_get_string(item, "device", &device);
         dtree_get_int(item, "offset", &offset);
         dtree_get_int(item, "size", &size);
         dtree_get_int(item, "format_if_fail", &format_if_fail);
-        
+
+#if OVS_MEDIA_FORMAT_ON_FIRST_BOOT
+        /* 过渡期：外部 Flash 分区重排后首次烧录时格式化重建 */
+        if (device && strcmp(device, "w25q128") == 0) {
+            format_if_fail = 1;
+        }
+#endif
+
         if (!mount_path || !device) {
             LOGW(TAG, "Invalid mount config at index %d", i);
             continue;
         }
-        
-        LOGI(TAG, "Mount config: path=%s, device=%s, offset=%" PRId32 ", size=%" PRId32, 
+
+        LOGI(TAG, "Mount config: path=%s, device=%s, offset=%" PRId32 ", size=%" PRId32,
              mount_path, device, offset, size);
-        
+
         /* 挂载 */
         vfs_err_t ret = vfs_mount_littlefs(mount_path, device, offset, size, format_if_fail);
         if (ret == VFS_OK) {
@@ -91,6 +143,7 @@ static void vfs_auto_mount_from_dtree(void) {
             LOGI(TAG, "✅ 挂载成功: %s", mount_path);
         } else {
             LOGE(TAG, "❌ 挂载失败: %s (err=%d)", mount_path, ret);
+            LOGW(TAG, "提示：若刚变更过分区布局，置 OVS_MEDIA_FORMAT_ON_FIRST_BOOT=1 烧录一次");
         }
     }
     
@@ -236,6 +289,24 @@ static void test_vfs(void) {
     } else {
         LOGE(TAG, "❌ 读取文件失败");
     }
+
+    /* /media 媒体分区写入读取测试 */
+    f = fopen("/media/test.txt", "w");
+    if (f) {
+        bool ok = (fprintf(f, "Hello MEDIA!") > 0);
+        ok = (fclose(f) == 0) && ok;
+        LOGI(TAG, "%s 写入 /media/test.txt", ok ? "✅" : "❌");
+    }
+    f = fopen("/media/test.txt", "r");
+    if (f) {
+        char buf[32] = {0};
+        size_t rd = fread(buf, 1, sizeof(buf) - 1, f);
+        bool ok = (rd > 0 && !ferror(f));
+        ok = (fclose(f) == 0) && ok;
+        LOGI(TAG, "%s 读取 /media/test.txt: \"%s\"", ok ? "✅" : "❌", buf);
+    } else {
+        LOGE(TAG, "❌ 打开 /media/test.txt 失败");
+    }
     
     /* 7. 测试路径匹配 */
     LOGI(TAG, "");
@@ -243,6 +314,7 @@ static void test_vfs(void) {
     LOGI(TAG, "/audio/test.bin -> %s", vfs_is_mounted("/audio/test.bin") ? "已挂载" : "未挂载");
     LOGI(TAG, "/font/hzk16.bin -> %s", vfs_is_mounted("/font/hzk16.bin") ? "已挂载" : "未挂载");
     LOGI(TAG, "/config/settings.json -> %s", vfs_is_mounted("/config/settings.json") ? "已挂载" : "未挂载");
+    LOGI(TAG, "/media/pic001.jpg -> %s", vfs_is_mounted("/media/pic001.jpg") ? "已挂载" : "未挂载");
     LOGI(TAG, "/other/file.txt -> %s", vfs_is_mounted("/other/file.txt") ? "已挂载" : "未挂载");
     
     /* 8. 性能测试 */
@@ -299,7 +371,7 @@ void app_main(void) {
     /* 核心服务初始化 */
     event_bus_init();
     tasker_init();
-    
+
     /* SPIFFS 初始化（设备树配置） */
     esp_vfs_spiffs_conf_t spiffs_conf = {
         .base_path = "/spiffs",
@@ -323,6 +395,13 @@ void app_main(void) {
         /* 检查 vfs 节点是否存在 */
         LOGI(TAG, "Checking 'vfs' node: %s", dtree_has_node("vfs") ? "EXISTS" : "NOT FOUND");
     }
+
+#if OVS_ENABLE_NET
+    /* ▶ OTA 线保护区：net_stack_init 调用点，勿移除（说明见文件头部保护区注释）
+     * 依赖顺序：必须在 dtree_init() 之后（net_mgr 从设备树读 WiFi 配置），
+     * 依赖 NVS/event_bus/tasker/SPIFFS 已就绪 */
+    net_stack_init();
+#endif
     
     /* W25Q128 初始化 */
     w25q128_err_t w25_ret = w25q128_init();
@@ -334,6 +413,14 @@ void app_main(void) {
     
     /* VFS 测试 */
     test_vfs();
+
+    /* VFS 压力测试（失败项在末尾总结中列出） */
+    int stress_failed = vfs_stress_run();
+    if (stress_failed == 0) {
+        LOGI(TAG, "✅ VFS 压力测试全部通过");
+    } else if (stress_failed > 0) {
+        LOGE(TAG, "❌ VFS 压力测试未通过: %d 项失败（见上方总结）", stress_failed);
+    } /* <0: 测试未能启动，日志中已有原因 */
     
     LOGI(TAG, "========================================");
     LOGI(TAG, "  测试完成!");

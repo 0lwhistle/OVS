@@ -473,7 +473,7 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 		if (slot == NULL){
 
 			worker_queue->queue[i] = node;
-			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
+			LOGD(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
 
 			pthread_cond_signal(&(des->cond));
 			pthread_mutex_unlock(&(des->mtx));
@@ -483,7 +483,7 @@ int worker_task_enqueue(struct task_worker* des, struct task_node* node){
 		if ((slot->cancel || slot->done) && !slot->dispatched){
 			task_node_pool_free(slot);
 			worker_queue->queue[i] = node;
-			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
+			LOGD(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
 
 			pthread_cond_signal(&(des->cond));
 			pthread_mutex_unlock(&(des->mtx));
@@ -511,7 +511,7 @@ static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_nod
 		if (slot == NULL){
 
 			worker_queue->queue[i] = node;
-			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
+			LOGD(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
 
 			pthread_cond_signal(&(des->cond));
 			pthread_mutex_unlock(&(des->mtx));
@@ -521,7 +521,7 @@ static int worker_task_enqueue_nocancel(struct task_worker* des, struct task_nod
 		if ((slot->cancel || slot->done) && !slot->dispatched){
 			task_node_pool_free(slot);
 			worker_queue->queue[i] = node;
-			LOGI(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
+			LOGD(TASK_WORKER_TAG, "task: %s enqueue successfully.", node->name);
 
 			pthread_cond_signal(&(des->cond));
 			pthread_mutex_unlock(&(des->mtx));

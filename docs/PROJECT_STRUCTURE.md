@@ -25,14 +25,15 @@ ovs/
 │   │       ├── lora.json        #     - LoRa 模块配置
 │   │       └── spi.json         #     - SPI 总线配置
 │   ├── drivers/                 # 硬件驱动
-│   │   ├── wifi/                #   - WiFi 驱动
+│   │   ├── wifi/                #   - WiFi 驱动（esp_wifi 纯封装，无策略）
 │   │   ├── led/                 #   - LED 驱动
 │   │   ├── beep/                #   - 蜂鸣器驱动
 │   │   ├── gpio/                #   - GPIO 驱动
 │   │   └── sr04/                #   - 超声波传感器
 │   └── modules/                 # 功能模块
-│       ├── ota/                 #   - OTA 升级模块
-│       ├── web/                 #   - Web 服务器
+│       ├── net_mgr/             #   - 网络管理器（STA/AP 状态机、凭据持久化、配网接口）
+│       ├── ota/                 #   - OTA 升级模块（流式、回滚保护）
+│       ├── web/                 #   - Web 服务器（路由注册表、流式上传）
 │       └── heartbeat/           #   - 心跳监控
 ├── thirdparty/                  # 第三方库目录 (新增)
 │   ├── cJSON/                   #   - cJSON JSON 解析库
@@ -51,9 +52,10 @@ ovs/
 │   ├── heartbeat.h              #   - 心跳 API
 │   ├── ota.h                    #   - OTA API
 │   └── web.h                    #   - Web API
-├── main/                        # 主程序入口
+├── main/                        # main 组件垫片（IDF 要求组件名为 main；
+│                                #   仅 CMakeLists 注册 src/app 的源文件）
 ├── scripts/                     # 工具脚本
-├── src/app/                     # 应用代码
+├── src/app/                     # 应用代码（main.c、vfs_stress 等）
 ├── web/                         # Web 前端源码
 ├── CMakeLists.txt               # 项目 CMake 配置
 └── README.md
@@ -108,13 +110,14 @@ int din_pin = dtree_get_int(mic, "data_in_pin", 7);
 ## 组件依赖关系
 
 ```
-main
+main（垫片，注册 src/app 源文件）
 ├── tasker_api ──→ tasker ──→ esp_driver_gptimer, esp_timer, logger
 ├── dtbs ──→ logger, spiffs, cJSON (thirdparty)
 ├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, logger
 ├── led ──→ esp_driver_gpio, gpio
-├── ota ──→ app_update, esp_system, logger
-├── web ──→ spiffs, esp_http_server, ota, heartbeat, tasker_api, wifi, logger, mongoose (thirdparty)
+├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, logger
+├── net_mgr ──→ wifi, dtbs, nvs_flash, espressif__mdns, event_bus, logger
+├── web ──→ spiffs, ota, net_mgr, wifi, heartbeat, tasker_api, logger, mongoose (thirdparty)
 └── heartbeat ──→ esp_wifi, esp_timer, tasker_api, logger
 ```
 
@@ -147,8 +150,8 @@ main
 # 烧录
 ./scripts/burn.sh
 
-# OTA 升级
-./scripts/ota_update.sh <esp32-ip>
+# OTA 升级（免串口日常迭代，详见 docs/ota_guide.md）
+./scripts/ota_push.sh [ovs.local|IP]
 ```
 
 ## 添加新设备

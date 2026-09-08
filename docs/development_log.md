@@ -1,5 +1,90 @@
 # OVS项目开发日志
 
+## 2026-09-08 - 开发环境脚本完善（env.sh / ovs_release）
+
+### 任务目标
+source env.sh 后 idf 命令与 scripts/ 下脚本均可直接使用（免路径）；
+完善 ovs_release 一键发布流程。
+
+### 实现内容
+- **env.sh 重写**：
+  - 修复未定义颜色变量、删除无效的 `export ./ovs_release`；
+  - 基于 BASH_SOURCE 定位项目根，scripts/ 追加进 PATH（防重复），
+    任意目录 source 后 `idf.py`、`mybuild.sh`、`ota_push.sh`、`ovs_release`
+    等全部可直接按名字调用；自动 cd 到项目根；
+  - 导出 `OVS_PROJECT_ROOT`、`OVS_SERIAL_PORT`、`OVS_HOST` 共享变量。
+- **ovs_release 重写**：`ovs_release` 只完整构建（Vue+打包+固件）；
+  `ovs_release --ota [主机]` 构建后 OTA 推送（缺省 OVS_HOST/ovs.local）；
+  任意 cwd 可用（自身定位项目），`--help` 帮助、未知参数报错。
+- **mybuild.sh**：新增 `--no-flash`（只构建不烧录，供 ovs_release 复用），
+  默认行为不变。
+- 全部脚本加执行权限并通过 bash -n 与实际 source 验证
+  （/tmp 下 source 后 idf.py --version、各脚本 command -v 全部 OK）。
+
+## 2026-09-08 - Logger 分级打印（ERROR/WARNING/INFO 过滤）
+
+### 任务目标
+日志系统支持等级过滤：ERROR 级只打印 LOGE；WARNING 级打印 LOGE/LOGW；
+INFO 级全打印（含 LOGD）。
+
+### 实现内容（components/core/logger）
+- `log_level_t` 枚举：DEBUG < INFO < WARN < ERROR < NONE（数值越小越详细）；
+- 全局等级 = 编译期默认 `LOGGER_DEFAULT_LEVEL`（未定义时 INFO，保持历史行为）
+  + 运行期 `logger_set_level()/logger_get_level()` 可调，越界钳位；
+- `LOGx` 宏统一走 `_LOG_PRINT`：先 `logger_level_enabled()` 判断再 printf，
+  do-while(0) 包装保持语句语义；颜色方案不变；
+- LOGD 在 INFO 级输出，WARNING 及以上静音。
+
+### 兼容性
+- 全库无把 LOG 宏当表达式使用的代码（已 grep 验证），do-while 包装无副作用；
+- 默认 INFO = 原行为，未调用 set_level 的代码路径零变化。
+
+### OTA 已推送验证：升级成功，回滚确认通过。
+
+## 2026-09-08 - WiFi信息接口修复 + OTA上传链路两处关键修复
+
+### 任务目标
+1. WiFi驱动补齐 IP/网关/子网掩码/RSSI/扫描 接口；修复运行时 "Failed to get STA netif handle"。
+2. 修复 OTA 推送失败（HTTP 500 flash error）。
+
+### 实现内容（WiFi, components/drivers/wifi）
+- **根因**：`wifi_get_net_info` 用 ifkey `"STA_DEF"` 反查 netif，而默认 STA 网卡的
+  ifkey 是 `"WIFI_STA_DEF"`，恒查不到 → 整个网络信息获取失败。
+- **修复**：`wifi_init` 创建 STA netif 时缓存句柄（`s_sta_netif`），查询直接使用。
+- **新增接口**：`wifi_get_ip/gateway/netmask(char *buf, int len)`；
+  `wifi_get_net_info/wifi_get_rssi/wifi_scan_aps` 原有。验证：`/api/wifi/status`
+  正常返回 ip/rssi（-35dBm）。
+
+### 实现内容（OTA/web, 关键度递减）
+1. **Mongoose HDRS 接管吞 body**（OTA 失败根因，证据：设备收到的首块从固件
+   偏移 0x159D 开始、magic 位为 0x00）：`MG_EV_HTTP_HDRS` 事件中
+   `hm->message.len` 包含已随头部提前到达的 body 前缀，`stream_try_takeover`
+   按它删除缓冲区把固件开头 5533 字节一起删了。改为扫描 `"\r\n\r\n"` 定位
+   头部边界（web.c）。
+2. **重启阻塞事件循环**：`ota_reboot` 原用 `vTaskDelay` 在 web 任务内等待，
+   导致 HTTP 200 响应永远 flush 不出去（curl rc=56 或挂起）。改为 esp_timer
+   500ms 单次定时重启，事件循环继续跑、响应正常发出（ota.c）。
+3. **脚本容错**：`ota_push.sh` 上传连接中断时不再直接报错，轮询设备状态，
+   槽位翻转即判定升级成功。
+4. **日志降噪**：tasker 每秒的 "enqueue successfully" 从 LOGI 降为 LOGD
+   （task_worker.c，之前被误认为死循环刷屏）。
+
+### 验证
+- OTA 全流程闭环：200 正常返回、上传 14s（修复前 75s）、回滚 15s 自动确认、
+  槽位 0↔1 交替正常（ota_push.sh 连续两次成功）。
+- WiFi 修复经 OTA 生效（本项目首次完整 OTA 迭代闭环）。
+
+### 代码变更
+- components/drivers/wifi/wifi.c/.h（netif 缓存 + 3 个查询接口）
+- components/modules/web/web.c（HDRS 头部边界修复）
+- components/modules/ota/ota.c（esp_timer 延迟重启）
+- components/core/tasker/task_worker.c（enqueue 日志降级）
+- scripts/ota_push.sh（中断轮询容错）
+
+### 下一步
+- `wifi_scan_aps` 在 AP 模式下不可用（esp_wifi 限制），web 端扫描入口待接入。
+- 版本号仍为 git dirty 描述，可考虑 OTA 后差异化版本便于脚本判断。
+
 ## 2026-09-07 - Holder模块开发
 
 ### 任务目标
@@ -643,3 +728,149 @@ PCB 已定型，ST7789 与 W25Q128 共用 SPI2，下版硬件才会拆分总线�
 ### 本次提交内容
 设备树重构（嵌套单棵树 + compatible 绑定）、SPI 共总线性能优化、
 冗余文件清理、文档同步，见上方 2026-09-08 各条目。
+
+## 2026-09-08 - VFS 媒体存储分区重排（/media 上线）
+
+### 需求背景
+VFS 用于存放媒体：音频供设备扬声器播放，图片/视频为小文件、后续由
+桌面开发工具推送。原布局（/audio 8MB + /font 8MB）占满 W25Q128，
+没有媒体文件的位置（字库实际 <2MB）。
+
+### 分区重排（components/dtbs/config/ovs.dtb.json）
+| 挂载点 | 设备 | 偏移 | 大小 | 用途 |
+|---|---|---|---|---|
+| /font  | w25q128 | 0       | 2MB | 字库 |
+| /audio | w25q128 | 2MB     | 6MB | 扬声器音频 |
+| /media | w25q128 | 8MB     | 8MB | 图片/小视频（桌面工具管理） |
+| /config | internal | -     | 9MB | 配置（不变） |
+
+### 配套改动
+- main.c 新增 `OVS_MEDIA_FORMAT_ON_FIRST_BOOT` 过渡开关（默认 0）：
+  分区布局变更后置 1 烧录一次（挂载失败自动格式化 w25q128 各分区），
+  完成后必须置回 0，避免日后启动静默清空媒体；
+- 挂载失败日志增加上述提示；
+- test_vfs 增加 /media 写读与路径匹配测试。
+
+### 性能预期（按当前实测）
+- 播放（读 1.1MB/s）：MP3@128kbps 仅需 16KB/s，宽裕；
+- 桌面推送（写 16.5KB/s）：小文件可接受，后续可调 LittleFS
+  geometry/cache 参数或应用层聚合写提至接近裸写 447KB/s；
+- /audio 6MB ≈ MP3@128kbps 约 5 分钟（提示音场景足够）。
+
+### 编译状态
+- ✅ `idf.py build` 通过（含新 SPIFFS 镜像）
+
+### 待硬件验证
+- [ ] 置 OVS_MEDIA_FORMAT_ON_FIRST_BOOT=1 烧录 → 四个挂载点全部成功 → 置回 0 重烧；
+- [ ] /media 读写测试通过；断电重启后文件仍在。
+
+## 2026-09-08 - VFS 文件系统压力测试套件
+
+### 需求
+针对 VFS/LittleFS 增加全面高压测试，未通过项在末尾总结集中打印。
+
+### 实现（main/vfs_stress.c + .h，main.c 末尾自动执行）
+专用 FreeRTOS 任务（16KB 栈，64KB×2 堆缓冲），五个板块：
+- **A 数据完整性**：5 种位型 × 5 种尺寸写读校验；边界尺寸（4KB-1、64KB）
+  随机数据比对；64KB 文件 50 次随机位置覆盖写后全文件比对；100 次追加写
+  （周期性重开）后逐段比对；
+- **B 目录与文件管理**：8 级嵌套目录；150 个小文件创建/readdir 计数/删除/空目录
+  校验；重命名后旧名消失、覆盖写截断语义；5 项错误路径（读不存在、写缺失目录、
+  删不存在、重复 mkdir、超长文件名）必须优雅失败；
+- **C 容量与碎片（/font）**：16KB 文件打满至 ENOSPC（校验可用量 1.5~2MB）、
+  删除后 512KB 回写验证回收；20 文件交错写入→删奇数→500KB 大文件写入碎片空间
+  并全文件比对；
+- **D 多任务并发**：3 个任务并行（/audio×2 + /media×1 各 256KB）写读校验，
+  120s 超时保护；
+- **E 性能统计**（只报告）：1KB/4KB/32KB/64KB 块顺序写读速率、随机 4KB 读延迟、
+  50 小文件创建速率。
+
+### 行为
+- 失败项立即打印 FAIL 并存入列表（上限 32 条），结束后打印总结：
+  总检查项/通过/失败/耗时 + 失败明细 + 「未通过/全部通过」结论；
+- 测试文件全部置于各分区 /stress 目录，结束后尽力清理；
+- 分区未挂载时自动跳过对应板块（预检计入检查项）。
+
+### 已知事项
+- 过渡开关 OVS_MEDIA_FORMAT_ON_FIRST_BOOT 当前为 1（待烧录格式化新分区，
+  确认通过后需置回 0）；
+- 上一轮烧录因串口被监控会话占用失败（ttyACM0 被 PID 占用）。
+
+### 编译状态
+- ✅ `idf.py build` 通过，零警告
+
+## 2026-09-08 - 修复并发压力测试崩溃 + 进度输出
+
+### 问题：D 节多任务并发开始时设备自动重启
+### 根因
+/media 与 /audio 的并发 worker 会同时调用 W25Q128 驱动（不同挂载点、
+同一块 SPI 设备句柄）。ESP-IDF SPI 主机驱动**不允许两个任务对同一设备
+句柄并发提交事务**（总线锁按设备粒度仲裁，同一设备的事务槽位只有一个），
+并发提交导致崩溃。此前从未有多任务同时访问该驱动的场景，故未暴露。
+
+### 修复（components/modules/w25q128/w25q128.c）
+- 新增设备级互斥锁 `s_dev_mutex`（init 时创建）；
+- read/write/erase_sector/erase_chip/health_check 五个触及 SPI 的公开
+  函数体改为 `_locked` 静态实现，公开包装器统一拿锁/还锁；
+- 锁内操作均有内部超时（busy 等待 5s、整片擦除 60s），等待有界；
+- 已确认内部实现无公开函数互调，无递归锁风险。
+
+### 压力测试进度输出（main/vfs_stress.c）
+- A1 每种位型完成、A3 每 10 次覆盖、B2 每 50 个文件、
+  C1 每 128KB、C2 每 4 轮交错/每 128KB、D 每 5s 汇报 worker 完成数，
+  均带已耗时秒数。
+
+### 编译状态
+- ✅ `idf.py build` 通过，零警告
+
+## 2026-09-08 - 压力测试：看门狗防护与可复制总结块
+
+### 看门狗分析
+- sdkconfig：CONFIG_ESP_TASK_WDT_PANIC 未启用 → 任务看门狗超时仅打印不重启；
+  监视对象是 idle 任务（5s 超时）；INT_WDT 300ms 与外部 SPI flash 操作无关；
+- 上次 D 节重启确认非看门狗，是 SPI 同设备并发崩溃（已修，见上条）；
+- 双保险：C1 打满循环（每 8 文件）、C2 交错（每 4 轮）、C2 大文件（每 128KB）、
+  D worker（每 8 个 4KB 块）加显式 vTaskDelay(1) 让步，杜绝 idle 饿死。
+
+### 总结块重构（便于整块复制反馈）
+末尾输出一个连续区块，包含：
+- [环境] 总耗时 / 空闲堆 / 最低堆
+- [分区] /media /audio /font 挂载状态
+- [总计] 检查项 / 通过 / 失败
+- [板块] 各板块检查数/失败数/耗时（sec_record 统计）
+- [性能] E 板块全部实测数据行（perf_log 捕获）
+- [失败n] 全部失败明细
+- [结论] 全部通过 / 未通过: N 项失败
+日志中搜索"VFS 压力测试总结"到"总结结束"即为完整可复制块。
+
+### 编译状态
+- ✅ `idf.py build` 通过，零警告
+
+## 2026-09-08 - 首轮压测结果分析与三项优化
+
+### 首轮结果（850.5s，54 项检查）
+- 53 通过 / 1 失败；D 并发不再重启（互斥锁修复生效）；
+- 写 20.4~20.8 KB/s（与块大小无关），读 1.24~1.33 MB/s，随机 4KB 读 3.9ms。
+
+### 发现与修复
+1. **B1 失败为测试代码 bug**：A 板块清理移除了 /media/stress 父目录，
+   B1 首个 mkdir(/media/stress/d0) 因父目录缺失失败。已修（先重建父目录），
+   并给失败信息补充路径细节。
+2. **B2 期间触发一次 IDLE0 任务看门狗（仅打印未重启）**：150 个小文件的
+   创建/删除循环未让步。已在 B2 创建/删除循环（每 10 个）和 E 小文件循环
+   （每 10 个）补 vTaskDelay(1)。
+3. **写入吞吐瓶颈定位**：写速度恒定 ~20.8KB/s 且与块大小无关，根因是
+   忙等待 10ms 轮询粒度——每个 256B 页编程都要等一个 10ms tick
+   （理论上限 25.6KB/s）。
+   **修复**：wait_busy 改为三阶段轮询——立即首查（典型页编程 <1ms 一次完成）→
+   前 2ms 短自旋（100µs 粒度）→ 超过 2ms 按 tick 让出轮询（覆盖扇区/整片擦除）。
+   预期写入提升至接近裸驱动水平，待下轮压测验证。
+
+### 其他观察
+- C 期间出现过一次 esp_littlefs "No more free space" 打印但全部 C 检查通过
+  （碎片删除后 lookahead 未及时回收的瞬态，操作已恢复）；暂不处理，若复现
+  再增大 CONFIG_LITTLEFS_LOOKAHEAD_SIZE。
+
+### 状态
+- ✅ 编译通过零警告
+- OVS_MEDIA_FORMAT_ON_FIRST_BOOT 已置回 0（分区已完成格式化过渡）
