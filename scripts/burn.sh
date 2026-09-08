@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 #
-# 烧录脚本：将固件烧录到 ESP32-S3
+# 烧录脚本：将固件烧录到 ESP32-S3（串口完整烧录）
 #
 # 用法: bash ./scripts/burn.sh [串口]
 #   串口默认: /dev/ttyACM0
+#
+# 日常固件/设备树迭代请用 ota_push.sh / ovs_release --ota（免串口）。
+# 本脚本用于：bootloader/partitions.csv 变更、设备首次引导、OTA 不可用时的救援。
 #
 
 # 确保使用 bash 执行

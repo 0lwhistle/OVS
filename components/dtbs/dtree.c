@@ -7,6 +7,7 @@
  */
 
 #include "dtree.h"
+#include "dtb_ab.h"
 #include "logger.h"
 #include "cJSON.h"
 
@@ -96,11 +97,29 @@ dtree_err_t dtree_init(void) {
         LOGI(TAG, "Already initialized");
         return DTREE_OK;
     }
-    
+
     LOGI(TAG, "Initializing device tree...");
 
-    // 加载设备树文件（单棵树）
-    s_root = load_device_tree(DTREE_CONFIG_DIR, DTREE_CONFIG_FILE);
+    /* 首选 A/B 槽（OTA 更新的设备树），失败回退固件内置 SPIFFS 文件 */
+    uint8_t *json_text = NULL;
+    size_t json_len = 0;
+    int slot = -1;
+    if (dtb_ab_load(&json_text, &json_len, &slot) == 0) {
+        s_root = cJSON_Parse((char *)json_text);
+        free(json_text);
+        if (!s_root) {
+            LOGE(TAG, "slot %d JSON parse error: %s", slot,
+                 cJSON_GetErrorPtr() ? cJSON_GetErrorPtr() : "?");
+        } else {
+            LOGI(TAG, "Loaded device tree from A/B slot %d", slot);
+        }
+    }
+
+    if (!s_root) {
+        LOGI(TAG, "Falling back to built-in %s/%s",
+             DTREE_CONFIG_DIR, DTREE_CONFIG_FILE);
+        s_root = load_device_tree(DTREE_CONFIG_DIR, DTREE_CONFIG_FILE);
+    }
     if (!s_root) {
         LOGE(TAG, "Failed to load device tree file");
         return DTREE_ERR_IO;

@@ -1449,7 +1449,8 @@ if (!dtree_has_property(node, "pin")) {
 
 #### 4. LittleFS 组件集成
 - 下载 esp_littlefs 组件到 `components/esp_littlefs/`
-- 添加 littlefs 分区（9MB @ 0x720000）
+- 添加 littlefs 分区（9MB @ 0x720000；2026-09-08 让位 dtb A/B 槽后
+  调整为 0x740000 起 8.75MB）
 - 测试通过：目录创建、文件读写、性能测试
 
 #### 5. VFS 虚拟文件系统设计
@@ -1691,7 +1692,17 @@ vfs_auto_mount_from_dtree();
 
 #### 1. 配置格式
 - 原 6 个分总线 JSON 合并为单棵树 `components/dtbs/config/ovs.dtb.json`
-  （构建用此目录生成 SPIFFS 镜像，需重新烧录 SPIFFS 分区）；
+  （构建生成 SPIFFS 镜像作出厂回退源；2026-09-08 起设备树走 A/B 槽 OTA，
+  内容变更免串口，见下条）；
+
+#### 1.5 设备树 A/B 分区 OTA（2026-09-08）
+- 新增 dtb_0/dtb_1 裸分区（data, 0xA0, 64KB×2），`components/dtbs/dtb_ab.{h,c}`
+  管理事务性指针（NVS: active/trial）；启动选树：app 待确认→trial 槽，
+  否则 active 槽，校验失败试另一槽，全废→回退 SPIFFS 出厂树；
+- OTA 上传 `OVSO` 容器（96B 头+app+dtb，scripts/ovs_pack_payload.py），
+  dtb 写非活动槽，app 15s 确认时翻转（app 回滚则树同回旧版）；
+- 独立设备树更新：POST /api/dtb/firmware（body=dtb.bin）；
+- 语义正确性靠人工评审，A/B 只防过程损坏（断网/断电/写坏）。
 - 设备节点嵌套在总线节点下；总线节点名即控制器编号（`spi2`/`i2c0`/`uart1`），
   删除 `host` 属性；lora 设备挂到 uart1 下。
 

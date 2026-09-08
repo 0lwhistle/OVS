@@ -112,12 +112,12 @@ int din_pin = dtree_get_int(mic, "data_in_pin", 7);
 ```
 main（垫片，注册 src/app 源文件）
 ├── tasker_api ──→ tasker ──→ esp_driver_gptimer, esp_timer, logger
-├── dtbs ──→ logger, spiffs, cJSON (thirdparty)
+├── dtbs ──→ logger, spiffs, cJSON (thirdparty), sha256 (thirdparty), nvs_flash, esp_partition, app_update
 ├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, logger
 ├── led ──→ esp_driver_gpio, gpio
-├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, logger
+├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, logger, sha256 (thirdparty), dtbs
 ├── net_mgr ──→ wifi, dtbs, nvs_flash, espressif__mdns, event_bus, logger
-├── web ──→ spiffs, ota, net_mgr, wifi, heartbeat, tasker_api, logger, mongoose (thirdparty)
+├── web ──→ spiffs, ota, net_mgr, wifi, heartbeat, tasker_api, logger, dtbs, mongoose (thirdparty)
 └── heartbeat ──→ esp_wifi, esp_timer, tasker_api, logger
 ```
 
@@ -152,6 +152,11 @@ main（垫片，注册 src/app 源文件）
 
 # OTA 升级（免串口日常迭代，详见 docs/ota_guide.md）
 ./scripts/ota_push.sh [ovs.local|IP]
+
+# 环境初始化（之后脚本与 idf 命令免路径）+ 一键发布
+source scripts/env.sh
+./scripts/ovs_release          # 只完整构建
+./scripts/ovs_release --ota [IP]  # 构建后 OTA 推送
 ```
 
 ## 添加新设备

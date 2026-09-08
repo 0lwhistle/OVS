@@ -52,9 +52,16 @@ idf.py -p /dev/ttyACM0 monitor
 ```bash
 source scripts/env.sh       # 一次性环境初始化（脚本与 idf 命令免路径）
 idf.py build                # 或 mybuild.sh（会多构建 Vue 前端）或 ovs_release
-ota_push.sh                 # 默认推 build/ovs.bin 到 ovs.local（OVS_HOST 可改默认目标）
+ota_push.sh                 # 默认推到 ovs.local（OVS_HOST 可改默认目标）
 # 或一条龙：ovs_release --ota 192.168.2.111  （完整构建+推送）
 ```
+
+**设备树一起升级（2026-09-08 起）**：build 时自动生成 `build/dtb.bin`（设备树
+A/B 槽容器）；`ota_push.sh` 检测到它就自动拼成 `OVSO` 容器（96B 头 + app + dtb）
+一次上传。设备树写非活动槽并随 app 一起走 15s 回滚确认（app 崩溃回滚则树也回
+旧版），确认通过后自动切换。**改 `ovs.dtb.json` 只需 OTA，无需串口**。
+单独更新设备树（不动固件）：`curl -X POST --data-binary @build/dtb.bin \
+  http://<设备IP>/api/dtb/firmware`，重启后生效。
 
 **脚本反馈（WSL2 适配）**：
 - 主机解析自动三级回退：IP 直用 → WSL 内 `getent` → 借 `powershell.exe`
@@ -117,6 +124,8 @@ OVS_HOST=192.168.2.154 ./scripts/ota_push.sh # 环境变量方式
 建议隔壁 VFS 线改 main.c 时保留该宏与 `net_stack_init()` 调用。
 
 注意：W25Q128 的分区布局变更（外部 flash）**不属于**上表，OTA 即可更新。
+设备树 JSON 内容变更也**不属于**上表：走 A/B 槽 OTA 即可（仅 `partitions.csv`
+里 dtb 槽/littlefs 位置变化这类分区表改动才需要串口）。
 
 ---
 
@@ -155,8 +164,9 @@ curl http://ovs.local/api/ota/status
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
-| POST | `/api/ota/firmware` | 流式固件上传（body=固件二进制） |
-| GET  | `/api/ota/status` | 升级状态/进度/SHA256/槽位/版本 |
+| POST | `/api/ota/firmware` | 流式固件上传（纯 app 或 OVSO 容器：app+设备树） |
+| GET  | `/api/ota/status` | 升级状态/进度/SHA256/槽位/版本（含 dtb_slot） |
+| POST | `/api/dtb/firmware` | 独立设备树更新（body=dtb.bin，重启生效） |
 | GET  | `/api/status` | 设备总览（uptime/rssi/free_heap/net） |
 | GET  | `/api/wifi/scan` | 扫描附近 AP |
 | GET  | `/api/wifi/status` | 网络状态 + 热切换进度 |

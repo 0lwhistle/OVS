@@ -6,4 +6,7 @@ phy_init,    data, phy,     0x10000, 0x1000,
 ota_0,       app,  ota_0,   0x20000, 0x280000,
 ota_1,       app,  ota_1,   0x2a0000,0x280000,
 spiffs,      data, spiffs,  0x520000,0x200000,
-littlefs,    data, spiffs,  0x720000,0x8E0000,
+# 设备树 A/B 裸槽（子类型 0xA0 自定义；OTA 只写非活动槽，指针在 NVS）
+dtb_0,       data, 0xA0,    0x720000,0x10000,
+dtb_1,       data, 0xA0,    0x730000,0x10000,
+littlefs,    data, spiffs,  0x740000,0x8C0000,
