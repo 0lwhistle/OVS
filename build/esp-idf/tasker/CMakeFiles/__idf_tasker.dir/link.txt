@@ -1,2 +1,0 @@
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc libtasker.a CMakeFiles/__idf_tasker.dir/task_manager.c.obj CMakeFiles/__idf_tasker.dir/task_worker.c.obj CMakeFiles/__idf_tasker.dir/tasker_test.c.obj
-/root/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib libtasker.a

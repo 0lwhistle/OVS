@@ -33,6 +33,7 @@ typedef enum {
 
 /* ========== 类型定义 ========== */
 typedef struct i2c_drv_config {
+    int32_t port;               /**< I2C 控制器编号：设备树 "i2c0"→0、"i2c1"→1 */
     int32_t sda_pin;
     int32_t scl_pin;
     int32_t freq_hz;
@@ -45,24 +46,31 @@ typedef struct i2c_drv_handle* i2c_drv_handle_t;
 /* ========== 公共 API ========== */
 
 /**
- * @brief 从设备树加载I2C配置
- * 
+ * @brief 从设备树总线节点加载I2C配置
+ *
+ * @param bus_node 总线节点（节点名形如 "i2c0"，设备节点的父节点）
  * @param config 输出参数，存储配置信息
  * @return i2c_drv_err_t 错误码
  */
-i2c_drv_err_t i2c_drv_load_config(i2c_drv_config_t* config);
+i2c_drv_err_t i2c_drv_load_config(dtree_node_t* bus_node, i2c_drv_config_t* config);
 
 /**
  * @brief 初始化I2C驱动
+ *
+ * Linux 式共享计数模型：同一条 I2C 总线（SDA/SCL 一致）只初始化一次，
+ * 多个模块（AHT30、CST816S 等）获取同一个句柄并增加引用计数。
+ * 配置不一致时返回 I2C_DRV_ERR_CONFIG。
  * 
  * @param config 配置信息
- * @param handle 输出参数，存储驱动句柄
+ * @param handle 输出参数，存储共享的总线句柄
  * @return i2c_drv_err_t 错误码
  */
 i2c_drv_err_t i2c_drv_init(const i2c_drv_config_t* config, i2c_drv_handle_t* handle);
 
 /**
  * @brief 反初始化I2C驱动
+ *
+ * 只释放本调用方的一个引用；引用计数归零时才删除总线与设备链表。
  * 
  * @param handle 驱动句柄
  * @return i2c_drv_err_t 错误码

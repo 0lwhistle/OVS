@@ -35,6 +35,12 @@ holder_register_module("st7789", st7789_init_wrapper, true, NULL);
 
 // 注册可选模块（初始化失败只记录错误）
 holder_register_module("aht30", aht30_init_wrapper, false, NULL);
+
+// 注册带依赖的模块（总线控制器先就绪，设备模块后初始化）
+static const char* const st7789_deps[] = { "spi_bus" };
+holder_register_module("spi_bus", spi_bus_init_wrapper, true, NULL);
+holder_register_module_ex("st7789", st7789_init_wrapper, true,
+                          st7789_deps, 1, NULL);
 ```
 
 ### 3. 初始化所有模块
@@ -42,6 +48,9 @@ holder_register_module("aht30", aht30_init_wrapper, false, NULL);
 // 初始化所有注册的模块
 holder_ret = holder_init_all(true);  // true表示遇到必需模块错误时停止
 ```
+
+使用 `holder_register_module_ex()` 声明依赖后，`holder_init_all()`
+会按依赖分批初始化；缺失依赖或循环依赖的模块会被标记为 ERROR。
 
 ### 4. 查询模块状态
 ```c

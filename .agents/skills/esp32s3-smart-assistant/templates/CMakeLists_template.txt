@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS 
+        "[module_name].c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES 
+        driver
+        esp_log
+        freertos
+        # 添加其他依赖
+)

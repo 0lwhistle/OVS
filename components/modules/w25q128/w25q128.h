@@ -29,7 +29,14 @@ typedef enum {
     W25Q128_ERR_TIMEOUT = -4,
     W25Q128_ERR_BUSY = -5,
     W25Q128_ERR_VERIFY = -6,
+    W25Q128_ERR_OFFLINE = -7,   /**< 芯片不在线/设备故障 */
 } w25q128_err_t;
+
+/* ========== 设备状态 ========== */
+typedef enum {
+    W25Q128_STATE_READY = 0,    /**< 可正常操作 */
+    W25Q128_STATE_FAULT,        /**< 连续错误，等待恢复探测 */
+} w25q128_state_t;
 
 /* ========== 类型定义 ========== */
 
@@ -125,6 +132,26 @@ w25q128_err_t w25q128_erase_chip(void);
  * @return false 未初始化
  */
 bool w25q128_is_initialized(void);
+
+/**
+ * @brief 查询设备是否可用于读写
+ *
+ * 与 is_initialized 的区别：FAULT 状态下返回 false，
+ * 表示当前不应执行任何 Flash 操作。
+ */
+bool w25q128_is_ready(void);
+
+/**
+ * @brief 执行健康检查（JEDEC ID 探测）
+ *
+ * 每次公开读写/擦除前驱动内部都会调用；
+ * 也可由上层周期性调用，用于监控设备在线状态。
+ *
+ * @return W25Q128_OK 设备在线
+ * @return W25Q128_ERR_OFFLINE 设备不在线/故障
+ * @return W25Q128_ERR_NOT_INIT 未初始化
+ */
+w25q128_err_t w25q128_health_check(void);
 
 #ifdef __cplusplus
 }

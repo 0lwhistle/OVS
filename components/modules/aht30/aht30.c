@@ -25,6 +25,9 @@
 
 static const char* TAG = "[AHT30]";
 
+/* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
+#define AHT30_DT_COMPAT   "aht30-sensor"
+
 /* ========================================================================== */
 /*                              常量定义                                       */
 /* ========================================================================== */
@@ -248,10 +251,22 @@ aht30_err_t aht30_init(void) {
     }
     
     LOGI(TAG, "Initializing AHT30...");
-    
-    /* 加载I2C配置 */
+
+    /* 按 compatible 定位自己的设备节点，父节点即所属 I2C 总线 */
+    dtree_node_t* dev_node = dtree_find_by_compatible(AHT30_DT_COMPAT);
+    if (!dev_node) {
+        LOGE(TAG, "Device node '%s' not found in device tree", AHT30_DT_COMPAT);
+        return AHT30_ERR_I2C;
+    }
+    dtree_node_t* bus_node = dtree_get_parent(dev_node);
+    if (!bus_node) {
+        LOGE(TAG, "Device node '%s' has no parent bus node", AHT30_DT_COMPAT);
+        return AHT30_ERR_I2C;
+    }
+
+    /* 加载I2C总线配置（从父总线节点） */
     i2c_drv_config_t i2c_config;
-    i2c_drv_err_t ret = i2c_drv_load_config(&i2c_config);
+    i2c_drv_err_t ret = i2c_drv_load_config(bus_node, &i2c_config);
     if (ret != I2C_DRV_OK) {
         LOGE(TAG, "Failed to load I2C config: %d", ret);
         return AHT30_ERR_I2C;

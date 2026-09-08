@@ -63,7 +63,9 @@ static vfs_bd_err_t w25q128_vfs_erase(void* priv, size_t offset, size_t size) {
 
 static size_t w25q128_vfs_get_size(void* priv) {
     w25q128_info_t info;
-    w25q128_get_info(&info);
+    if (w25q128_get_info(&info) != W25Q128_OK) {
+        return 0;
+    }
     return info.total_size;
 }
 
@@ -78,8 +80,8 @@ static const vfs_block_dev_ops_t s_w25q128_ops = {
 /* ========== 公共 API ========== */
 
 void w25q128_register_vfs(void) {
-    if (!w25q128_is_initialized()) {
-        LOGE(TAG, "W25Q128 not initialized, cannot register to VFS");
+    if (!w25q128_is_ready()) {
+        LOGE(TAG, "W25Q128 not ready, cannot register to VFS");
         return;
     }
     

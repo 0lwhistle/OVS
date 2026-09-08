@@ -123,28 +123,48 @@ static void test_performance(const char* path) {
     
     int64_t start = esp_timer_get_time();
     FILE* f = fopen(filepath, "wb");
+    bool write_ok = false;
     if (f) {
-        fwrite(buf, 1, test_size, f);
-        fclose(f);
+        size_t written = fwrite(buf, 1, test_size, f);
+        bool close_ok = (fclose(f) == 0);
+        write_ok = (written == test_size) && close_ok;
+        if (!write_ok) {
+            LOGE(TAG, "性能写入失败: written=%u, close_ok=%d",
+                 (unsigned)written, close_ok ? 1 : 0);
+        }
     }
     int64_t end = esp_timer_get_time();
     
     float write_ms = (end - start) / 1000.0f;
-    LOGI(TAG, "写入 %uKB: %.2f ms (%.2f KB/s)", 
-         test_size/1024, write_ms, (test_size/1024.0f) / (write_ms/1000.0f));
+    if (write_ok) {
+        LOGI(TAG, "写入 %uKB: %.2f ms (%.2f KB/s)",
+             test_size/1024, write_ms, (test_size/1024.0f) / (write_ms/1000.0f));
+    } else {
+        LOGW(TAG, "写入 %uKB 失败, 耗时 %.2f ms", test_size/1024, write_ms);
+    }
     
     /* 读取测试 */
     start = esp_timer_get_time();
     f = fopen(filepath, "rb");
+    bool read_ok = false;
     if (f) {
-        fread(buf, 1, test_size, f);
-        fclose(f);
+        size_t rd = fread(buf, 1, test_size, f);
+        bool close_ok = (fclose(f) == 0);
+        read_ok = (rd == test_size) && close_ok;
+        if (!read_ok) {
+            LOGE(TAG, "性能读取失败: read=%u, close_ok=%d",
+                 (unsigned)rd, close_ok ? 1 : 0);
+        }
     }
     end = esp_timer_get_time();
     
     float read_ms = (end - start) / 1000.0f;
-    LOGI(TAG, "读取 %uKB: %.2f ms (%.2f KB/s)", 
-         test_size/1024, read_ms, (test_size/1024.0f) / (read_ms/1000.0f));
+    if (read_ok) {
+        LOGI(TAG, "读取 %uKB: %.2f ms (%.2f KB/s)",
+             test_size/1024, read_ms, (test_size/1024.0f) / (read_ms/1000.0f));
+    } else {
+        LOGW(TAG, "读取 %uKB 失败, 耗时 %.2f ms", test_size/1024, read_ms);
+    }
     
     /* 清理 */
     unlink(filepath);
@@ -190,9 +210,13 @@ static void test_vfs(void) {
     /* 写入测试 */
     FILE* f = fopen("/audio/test.txt", "w");
     if (f) {
-        fprintf(f, "Hello VFS! This is a test file on W25Q128.");
-        fclose(f);
-        LOGI(TAG, "✅ 写入文件成功: /audio/test.txt");
+        bool ok = (fprintf(f, "Hello VFS! This is a test file on W25Q128.") > 0);
+        ok = (fclose(f) == 0) && ok;
+        if (ok) {
+            LOGI(TAG, "✅ 写入文件成功: /audio/test.txt");
+        } else {
+            LOGE(TAG, "❌ 写入文件失败（磁盘错误）: /audio/test.txt");
+        }
     } else {
         LOGE(TAG, "❌ 写入文件失败");
     }
@@ -201,9 +225,14 @@ static void test_vfs(void) {
     f = fopen("/audio/test.txt", "r");
     if (f) {
         char buf[64] = {0};
-        fread(buf, 1, sizeof(buf) - 1, f);
-        fclose(f);
-        LOGI(TAG, "✅ 读取文件成功: \"%s\"", buf);
+        size_t rd = fread(buf, 1, sizeof(buf) - 1, f);
+        bool ok = (rd > 0 && !ferror(f));
+        ok = (fclose(f) == 0) && ok;
+        if (ok) {
+            LOGI(TAG, "✅ 读取文件成功: \"%s\"", buf);
+        } else {
+            LOGE(TAG, "❌ 读取文件失败（磁盘错误）");
+        }
     } else {
         LOGE(TAG, "❌ 读取文件失败");
     }

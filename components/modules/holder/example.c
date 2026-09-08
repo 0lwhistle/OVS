@@ -11,6 +11,9 @@
 
 static const char* TAG = "[EXAMPLE]";
 
+// 示例：模块B依赖模块A（总线/设备分层时使用同款机制）
+static const char* s_module_b_deps[] = { "module_a" };
+
 // 示例模块初始化函数
 static int example_module_a_init(void) {
     LOGI(TAG, "Initializing module A");
@@ -42,8 +45,10 @@ void holder_example(void) {
     
     // 2. 注册模块
     holder_register_module("module_a", example_module_a_init, true, NULL);
-    holder_register_module("module_b", example_module_b_init, false, NULL);  // 非必需模块
-    holder_register_module("module_c", example_module_c_init, true, NULL);
+    holder_register_module_ex("module_b", example_module_b_init, false,
+                              s_module_b_deps, 1, NULL);  // 依赖 module_a
+    holder_register_module_ex("module_c", example_module_c_init, true,
+                              s_module_b_deps, 1, NULL);  // 依赖 module_b
     
     // 3. 初始化所有模块
     ret = holder_init_all(true);  // 遇到必需模块错误时停止

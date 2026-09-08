@@ -16,6 +16,7 @@
 #include "driver/uart.h"
 #include "esp_err.h"
 #include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
 
@@ -35,11 +36,78 @@ static const char* TAG = "[UART_DRV]";
 struct uart_drv_handle {
     uart_port_t port;             /**< UART端口号 */
     uart_config_t uart_config;    /**< UART配置 */
+    uart_drv_config_t drv_config; /**< 用户配置（共享一致性校验） */
     QueueHandle_t event_queue;    /**< 事件队列 */
     bool initialized;             /**< 初始化标志 */
     int tx_pin;                   /**< TX引脚 */
     int rx_pin;                   /**< RX引脚 */
+    uint32_t ref_count;           /**< 引用计数（共享计数模型） */
 };
+
+/* ========================================================================== */
+/*                    共享总线注册表（引用计数模型）                            */
+/* ========================================================================== */
+
+#define UART_DRV_MAX_PORTS 3
+static struct uart_drv_handle* s_uart_buses[UART_DRV_MAX_PORTS] = { NULL };
+static SemaphoreHandle_t s_uart_bus_lock = NULL;
+
+static int uart_port_to_slot(int32_t port) {
+    if (port >= 0 && port < UART_DRV_MAX_PORTS) {
+        return (int)port;
+    }
+    return -1;
+}
+
+static bool uart_bus_lock_take(void) {
+    if (!s_uart_bus_lock) {
+        s_uart_bus_lock = xSemaphoreCreateMutex();
+    }
+    if (!s_uart_bus_lock) {
+        LOGE(TAG, "Failed to create UART bus lock");
+        return false;
+    }
+    xSemaphoreTake(s_uart_bus_lock, portMAX_DELAY);
+    return true;
+}
+
+static void uart_bus_lock_give(void) {
+    if (s_uart_bus_lock) {
+        xSemaphoreGive(s_uart_bus_lock);
+    }
+}
+
+static bool uart_drv_config_equal(const uart_drv_config_t* a, const uart_drv_config_t* b) {
+    return a && b
+        && a->port == b->port
+        && a->tx_pin == b->tx_pin
+        && a->rx_pin == b->rx_pin
+        && a->baud_rate == b->baud_rate
+        && a->data_bits == b->data_bits
+        && a->stop_bits == b->stop_bits
+        && ((a->parity == NULL && b->parity == NULL)
+            || (a->parity && b->parity && strcmp(a->parity, b->parity) == 0));
+}
+
+static uart_drv_err_t uart_bus_destroy(int slot) {
+    if (slot < 0 || slot >= UART_DRV_MAX_PORTS) {
+        return UART_DRV_ERR_PARAM;
+    }
+
+    struct uart_drv_handle* h = s_uart_buses[slot];
+    if (!h) {
+        return UART_DRV_OK;
+    }
+
+    esp_err_t ret = uart_driver_delete(h->port);
+    if (ret != ESP_OK) {
+        LOGE(TAG, "Failed to delete UART driver: %s", esp_err_to_name(ret));
+    }
+
+    free(h);
+    s_uart_buses[slot] = NULL;
+    return UART_DRV_OK;
+}
 
 /* ========================================================================== */
 /*                              内部函数                                       */
@@ -63,50 +131,68 @@ static uart_parity_t parse_parity(const char* parity) {
 /*                              公共API实现                                    */
 /* ========================================================================== */
 
-uart_drv_err_t uart_drv_load_config(const char* path, uart_drv_config_t* config) {
-    if (!path || !config) {
+uart_drv_err_t uart_drv_load_config(dtree_node_t* bus_node, uart_drv_config_t* config) {
+    if (!bus_node || !config) {
         return UART_DRV_ERR_PARAM;
     }
-    
+
+    /* 总线节点 compatible 校验，防止把错误的节点当总线 */
+    const char* compat = dtree_get_compatible(bus_node);
+    if (!compat || strcmp(compat, "esp32s3-uart") != 0) {
+        LOGE(TAG, "Bus node compatible '%s' is not 'esp32s3-uart'",
+             compat ? compat : "null");
+        return UART_DRV_ERR_CONFIG;
+    }
+
     dtree_err_t err;
-    
-    err = DTREE_INT(path, "tx_pin", &config->tx_pin);
+
+    /* 控制器编号来自节点名，例如 "uart0"、"uart1"、"uart2" */
+    err = dtree_get_host_id(bus_node, "uart", &config->port);
+    DTREE_CHECK_ERROR("Read uart host id", err);
+    if (err != DTREE_OK || uart_port_to_slot(config->port) < 0) {
+        LOGE(TAG, "Unsupported UART port id: %" PRId32, config->port);
+        return UART_DRV_ERR_CONFIG;
+    }
+
+    err = dtree_get_int(bus_node, "tx_pin", &config->tx_pin);
     DTREE_CHECK_ERROR("Read tx_pin", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT(path, "rx_pin", &config->rx_pin);
+
+    err = dtree_get_int(bus_node, "rx_pin", &config->rx_pin);
     DTREE_CHECK_ERROR("Read rx_pin", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT(path, "baud_rate", &config->baud_rate);
+
+    err = dtree_get_int(bus_node, "baud_rate", &config->baud_rate);
     DTREE_CHECK_ERROR("Read baud_rate", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT(path, "data_bits", &config->data_bits);
+
+    err = dtree_get_int(bus_node, "data_bits", &config->data_bits);
     DTREE_CHECK_ERROR("Read data_bits", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
-    
-    err = DTREE_INT(path, "stop_bits", &config->stop_bits);
+
+    err = dtree_get_int(bus_node, "stop_bits", &config->stop_bits);
     DTREE_CHECK_ERROR("Read stop_bits", err); if (err != DTREE_OK) {
         return UART_DRV_ERR_CONFIG;
     }
-    
+
     config->parity = NULL;
-    err = DTREE_STR(path, "parity", &config->parity);
+    err = dtree_get_string(bus_node, "parity", &config->parity);
     DTREE_CHECK_ERROR("Read parity", err); if (err != DTREE_OK) {
         /* parity是可选的，默认为"none" */
         config->parity = "none";
     }
-    
-    LOGI(TAG, "UART config loaded from '%s': tx=%" PRId32 ", rx=%" PRId32 
-         ", baud=%" PRId32 ", bits=%" PRId32 ", stop=%" PRId32 ", parity=%s",
-         path, config->tx_pin, config->rx_pin, config->baud_rate, 
+
+    LOGI(TAG, "UART config loaded from '%s': port=uart%" PRId32 ", tx=%" PRId32
+         ", rx=%" PRId32 ", baud=%" PRId32 ", bits=%" PRId32 ", stop=%" PRId32
+         ", parity=%s",
+         dtree_get_node_name(bus_node) ? dtree_get_node_name(bus_node) : "?",
+         config->port, config->tx_pin, config->rx_pin, config->baud_rate,
          config->data_bits, config->stop_bits, config->parity);
-    
+
     return UART_DRV_OK;
 }
 
@@ -114,8 +200,37 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     if (!config || !handle) {
         return UART_DRV_ERR_PARAM;
     }
-    
-    LOGI(TAG, "Initializing UART driver...");
+
+    if (!uart_bus_lock_take()) {
+        return UART_DRV_ERR_HW;
+    }
+
+    int slot = uart_port_to_slot(config->port);
+    if (slot < 0) {
+        LOGE(TAG, "Unsupported UART port id: %" PRId32, config->port);
+        uart_bus_lock_give();
+        return UART_DRV_ERR_CONFIG;
+    }
+
+    /* 对应 port 的总线已存在：配置一致则共享句柄（引用计数 +1） */
+    struct uart_drv_handle* existing = s_uart_buses[slot];
+    if (existing) {
+        if (!uart_drv_config_equal(config, &existing->drv_config)) {
+            LOGE(TAG, "UART port uart%" PRId32 " already initialized with different config",
+                 config->port);
+            uart_bus_lock_give();
+            return UART_DRV_ERR_CONFIG;
+        }
+
+        existing->ref_count++;
+        *handle = existing;
+        LOGI(TAG, "UART port uart%" PRId32 " shared: ref=%" PRIu32,
+             config->port, existing->ref_count);
+        uart_bus_lock_give();
+        return UART_DRV_OK;
+    }
+
+    LOGI(TAG, "Initializing UART driver (port uart%" PRId32 ", first user)...", config->port);
     LOGI(TAG, "  TX pin: %" PRId32, config->tx_pin);
     LOGI(TAG, "  RX pin: %" PRId32, config->rx_pin);
     LOGI(TAG, "  Baud: %" PRId32, config->baud_rate);
@@ -124,6 +239,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     struct uart_drv_handle* h = (struct uart_drv_handle*)malloc(sizeof(struct uart_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
+        uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
     memset(h, 0, sizeof(struct uart_drv_handle));
@@ -143,14 +259,14 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
         },
     };
     
-    /* 使用UART1作为默认端口（UART0通常用于console） */
-    uart_port_t port = UART_NUM_1;
+    uart_port_t port = (uart_port_t)config->port;
     
     /* 安装UART驱动 */
     esp_err_t ret = uart_driver_install(port, 1024, 1024, 10, &h->event_queue, 0);
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to install UART driver: %s", esp_err_to_name(ret));
         free(h);
+        uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
     
@@ -160,6 +276,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
         LOGE(TAG, "Failed to configure UART: %s", esp_err_to_name(ret));
         uart_driver_delete(port);
         free(h);
+        uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
     
@@ -169,20 +286,25 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
         LOGE(TAG, "Failed to set UART pins: %s", esp_err_to_name(ret));
         uart_driver_delete(port);
         free(h);
+        uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
-    
+
     /* 保存配置 */
     h->port = port;
     h->uart_config = uart_config;
+    h->drv_config = *config;
     h->tx_pin = (int)config->tx_pin;
     h->rx_pin = (int)config->rx_pin;
     h->initialized = true;
-    
+    h->ref_count = 1;
+
+    s_uart_buses[slot] = h;
     *handle = h;
-    
-    LOGI(TAG, "UART driver initialized successfully (port=%d)", port);
-    
+
+    LOGI(TAG, "UART driver initialized successfully (port=uart%" PRId32 ", ref=1)",
+         config->port);
+    uart_bus_lock_give();
     return UART_DRV_OK;
 }
 
@@ -194,21 +316,42 @@ uart_drv_err_t uart_drv_deinit(uart_drv_handle_t handle) {
     if (!handle->initialized) {
         return UART_DRV_ERR_NOT_INIT;
     }
-    
-    LOGI(TAG, "Deinitializing UART driver...");
-    
-    /* 删除UART驱动 */
-    esp_err_t ret = uart_driver_delete(handle->port);
-    if (ret != ESP_OK) {
-        LOGE(TAG, "Failed to delete UART driver: %s", esp_err_to_name(ret));
+
+    if (!uart_bus_lock_take()) {
+        return UART_DRV_ERR_HW;
     }
-    
-    handle->initialized = false;
-    free(handle);
-    
-    LOGI(TAG, "UART driver deinitialized");
-    
-    return UART_DRV_OK;
+
+    int slot = -1;
+    for (int i = 0; i < UART_DRV_MAX_PORTS; i++) {
+        if (s_uart_buses[i] == handle) {
+            slot = i;
+            break;
+        }
+    }
+    if (slot < 0) {
+        LOGE(TAG, "Handle is not owned by UART driver registry");
+        uart_bus_lock_give();
+        return UART_DRV_ERR_PARAM;
+    }
+
+    if (handle->ref_count == 0) {
+        LOGW(TAG, "UART bus already fully released");
+        uart_bus_lock_give();
+        return UART_DRV_OK;
+    }
+
+    if (handle->ref_count > 1) {
+        handle->ref_count--;
+        LOGI(TAG, "UART driver released one reference (remaining=%" PRIu32 ")",
+             handle->ref_count);
+        uart_bus_lock_give();
+        return UART_DRV_OK;
+    }
+
+    LOGI(TAG, "Deinitializing UART driver (last reference)...");
+    uart_drv_err_t err = uart_bus_destroy(slot);
+    uart_bus_lock_give();
+    return err;
 }
 
 uart_drv_err_t uart_drv_send(uart_drv_handle_t handle, const void* data, size_t size) {

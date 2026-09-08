@@ -260,3 +260,386 @@ E (2236) esp_littlefs: Failed to register Littlefs to "/audio"
 - **代码质量**：✅ 良好
 - **版本控制**：✅ 已同步到GitHub
 
+## 2026-09-08 - 修复VFS卸载后无法重新挂载（ESP_ERR_NO_MEM）
+
+### 问题现象
+首次挂载 `/audio`、`/font`、`/config` 全部成功，执行 `vfs_unmount_all()`
+后再自动挂载时全部失败：
+
+```
+[VFS]: esp_vfs_unregister for '/config' returned: ESP_ERR_INVALID_STATE
+[VFS]: Dummy VFS register failed: ESP_ERR_NO_MEM
+E (2189) esp_littlefs: Failed to register Littlefs to "/audio"
+[VFS_LFS]: esp_vfs_littlefs_register returned: ESP_ERR_NO_MEM (257)
+[MAIN]: ❌ 挂载失败: /audio (err=-3)
+```
+
+### 根因分析
+此问题与堆内存无关（测试时 free_heap 约 8.6MB），真正原因在 ESP-IDF 的
+VFS 内部实现：
+
+1. `components/vfs/vfs.c` 使用静态计数 `s_vfs_count` 记录 VFS 注册的
+   “历史峰值”，该值**只增不减**；
+2. `esp_vfs_register_fs_common()` 在 `s_vfs_count >= CONFIG_VFS_MAX_COUNT`
+   时直接返回 `ESP_ERR_NO_MEM`；
+3. 本项目 `CONFIG_VFS_MAX_COUNT=8`，首次挂载（SPIFFS + 3个LittleFS挂载点，
+   加上系统 /dev/uart、/dev/null、/dev/console 等）使 `s_vfs_count` 达到 8；
+4. `esp_vfs_unregister()` 会释放槽位，但不会让 `s_vfs_count` 回退，
+   因此卸载后再次注册时即便有空槽位也会立即返回 `ESP_ERR_NO_MEM`。
+
+日志中的 “Dummy VFS register failed: ESP_ERR_NO_MEM” 正是该现象的直接证据：
+路径 `/dummy` 从未注册过、堆也充足，说明失败来自 VFS 数量上限而不是内存。
+
+### 修复内容
+1. **sdkconfig**：`CONFIG_VFS_MAX_COUNT` 由 8 提高到 16，
+   为“卸载后重新注册”预留足够的余量（VFS 历史峰值不再等于上限）。
+2. **`components/core/ovs_vfs/src/vfs.c`**：
+   - 删除卸载分支中重复的 `esp_vfs_unregister()` 调用；
+     `esp_vfs_littlefs_unregister_blockdev()` 内部已完成 VFS 注销，
+     重复调用只会得到 `ESP_ERR_INVALID_STATE`。
+   - 删除 “dummy VFS 注册/注销循环” 的错误尝试；
+     该方法无法让 ESP-IDF 的 `s_vfs_count` 回退，反而可能在未到上限时
+     把历史峰值推高，加剧问题。
+
+### 验证计划
+- [ ] 重新编译并烧录
+- [ ] 观察日志：卸载后再挂载 3 个挂载点全部成功
+- [ ] 无 `ESP_ERR_INVALID_STATE` / “Dummy VFS register failed” 日志
+
+### 项目状态
+- **编译状态**：待重新编译验证
+- **代码质量**：✅ 良好
+
+## 2026-09-08 - SPI总线共享设计分析（ST7789显示屏 + W25Q128）
+
+### 需求背景
+确认 ST7789（2.8寸 SPI 电容触控屏，SPI部分）与 W25Q128（16MB SPI NOR Flash）
+是否可以共享同一条 SPI 总线，以及如何避免冲突和性能下降。
+
+### 结论
+1. **电气/协议层面可以共享**：
+   - 当前设备树 `spi.json` 中两者共用 SCLK/MOSI/MISO（GPIO42/40/41），
+     片选独立：LCD=GPIO48，Flash=GPIO13；
+   - CST816S 触摸走 I2C（GPIO16/17），不占用 SPI 总线；
+   - 只要 CS 独立、时序/模式匹配，不会产生总线冲突。
+2. **当前软件层面存在冲突隐患**：
+   - `st7789.c` 与 `w25q128.c` 各自持有一个 `s_spi_handle`，
+     并且各自调用 `spi_drv_init()`；
+   - `spi_drv_init()` 内部固定对 `SPI2_HOST` 调用 `spi_bus_initialize()`，
+     而一条 SPI 总线只能初始化一次；
+   - 因此两者同时使能时，后初始化的模块会拿到
+     `ESP_ERR_INVALID_STATE` 导致初始化失败（不只是性能下降）。
+3. **性能上会时间片共享**：
+   - 同一总线上两个设备的所有传输严格串行；
+   - 全屏刷新 240x280x2≈134KB，40MHz 下理论耗时约 27ms/帧；
+   - W25Q128 4KB 写入实测约 55ms（含擦除等待），期间若与刷屏抢占总线，
+     画面会卡顿/撕裂；
+   - 注意：W25Q128 擦除等待本身不占用 SPI 总线，适合放到独立任务异步等待。
+
+### 推荐方案（按优先级）
+1. **必须做**：SPI 总线单例化。
+   `spi_drv_init()` 改为引用计数/共享句柄，总线只初始化一次；
+   各模块通过同一句柄 `spi_drv_add_device()` 注册自己的设备。
+2. **性能敏感场景**：把显示和 Flash 拆分到两条 SPI 主机
+   （ESP32-S3 上 `SPI2_HOST` 之外还有 `SPI3_HOST` 可用），
+   两条总线各自独立 DMA/时钟，互不阻塞。
+3. **共享总线场景的缓解措施**：
+   - LCD 刷新使用 DMA 队列 + 双缓冲，刷新任务与文件读写任务分离；
+   - Flash 大块擦除/写入放后台任务，擦除期间不阻塞刷屏；
+   - /font 等静态数据上电后载入 RAM，减少运行期 Flash 读；
+   - 有条件时给 W25Q128 开 Quad 模式，降低总线占用。
+
+### 项目状态
+- **结论已归档**：`docs/peripheral_drivers_summary.md`
+- **代码改动**：✅ 已实施（总线驱动共享计数重构），详见下方日志
+
+## 2026-09-08 - 总线驱动共享计数重构（Linux 式）
+
+### 任务目标
+整套架构按 Linux 驱动模型统一：总线/外设驱动使用共享计数，
+同一总线只初始化一次，最后一个使用者释放时才真正销毁硬件。
+
+### 实现内容
+1. **SPI 驱动**（`components/drivers/spi_drv/`）
+   - 增加总线单实例注册表与引用计数；
+   - `spi_drv_init()` 变为“获取共享句柄”：首次调用初始化 SPI2_HOST，
+     后续相同配置调用只增加引用；
+   - `spi_drv_deinit()` 递减引用，归零才调用 `spi_bus_free()`；
+   - 总线销毁前自动清理未移除设备与未完成 DMA 传输，避免悬垂/泄漏；
+   - 配置不一致返回 `SPI_DRV_ERR_CONFIG`。
+2. **I2C 驱动**：同一 SDA/SCL 总线共享句柄、引用计数；
+   总线销毁时统一释放设备链表与 I2C 主机。
+3. **I2S / UART 驱动**：同样改为共享计数单例，
+   为未来多个调用方共用做准备。
+4. **模块侧修正**
+   - `st7789` 在释放前先 `spi_drv_remove_device()`；
+   - `cst816s` 释放时归还 I2C 引用（原来只置空句柄，会造成引用泄漏）。
+
+### 风险与错误处理约定
+- init/deinit 受互斥锁保护；配置不一致显式报错，不静默复用错误总线；
+- 释放顺序固定：先 remove 自己的 device，再释放 bus 引用；
+- 最后一个引用释放失败（如 `spi_bus_free` 失败）返回错误码，
+  总线保持可重试，不产生半初始化状态；
+- 引用计数模型下禁止模块重复调用 deinit，模块侧以 initialized 标志保证一次释放。
+
+### 编译状态
+- ✅ `idf.py build` 通过
+
+## 2026-09-08 会话收尾总结
+
+### 本次会话完成内容
+1. **VFS 修复**：卸载后无法重挂载（`ESP_ERR_NO_MEM`）
+   - 根因：ESP-IDF VFS `s_vfs_count` 只增不减且 `CONFIG_VFS_MAX_COUNT=8`；
+   - 修复：上限提高到 16，清理重复 unregister 与 dummy VFS hack。
+2. **总线驱动共享计数**（Linux 式）
+   - SPI/I2C/I2S/UART 统一引用计数；SPI/I2C 均支持同总线多设备。
+3. **设备树 host 显式化**
+   - 各总线增加 `host` 属性；dtree 新增 `DTREE_HOST()` 解析；
+   - SPI2/SPI3、I2C0/1、I2S0/1、UART0/1/2 多控制器注册表。
+4. **Holder 依赖初始化**
+   - 新增 `holder_register_module_ex()` 与依赖分批初始化。
+5. **W25Q128 健康状态机**
+   - READY/FAULT、操作前 JEDEC 探测、自动恢复；
+   - 修复 FreeRTOS 100Hz 下 `pdMS_TO_TICKS(1)=0` 导致的忙等空转；
+   - 关闭自动格式化；测试脚本补错误检查。
+
+### 当前状态
+- ✅ `idf.py build` 通过
+- ⚠️ 未烧录硬件验证
+- ⚠️ 改动未提交 git
+
+### 下次继续
+1. 烧录最新固件 + SPIFFS；
+2. 验证 W25Q128 正常读写、拔插故障、恢复；
+3. 验证 /audio、/font、/config 三个挂载点；
+4. 确认后再提交并开始下一模块开发。
+- ⚠️ 待硬件验证：ST7789 + W25Q128 同时初始化并共享 SPI2_HOST
+
+## 2026-09-08 - SPI 共用优化方案对比
+
+### 方案A：维持共享总线（当前）
+- 两个设备共用 SPI2_HOST、独立 CS；
+- 适合低频 Flash 操作（字库上电读入 RAM、配置写入等）；
+- 性能上限：总线时间片串行，全屏刷新 134KB @40MHz 约 27ms，
+  Flash 大文件持续读会与刷屏竞争；
+- 风险：刷屏卡顿/撕裂；信号完整性与线长。
+- 缓解：LCD DMA+双缓冲、Flash 后台任务、按需缓存字库、W25Q128 Quad 模式。
+
+### 方案B：拆分两条 SPI 主机（推荐做性能预留）
+- ST7789 走 SPI2_HOST（40MHz），W25Q128 走 SPI3_HOST（可提到 80MHz）；
+- 两条总线独立 DMA/时钟，Flash 操作不再阻塞刷屏；
+- 风险：需要改板（W25Q128 的 4 根信号改接到 SPI3 引脚组）或者使用
+  GPIO 矩阵重映射到另一组可用引脚；引脚不够时不可行；
+- 错误处理：驱动层需支持多总线注册表（当前 SPI 注册表预留了该扩展点）。
+
+### 方案C：更换存储接口
+- W25Q128 若仍不够用，改用 SD/SDMMC 或 QSPI Flash；
+- 风险：硬件改动大、成本高，仅当 Flash 吞吐成为瓶颈时考虑。
+
+### 项目状态
+- **代码改动**：✅ SPI/I2C/I2S/UART 共享计数已实现并编译通过
+- **硬件验证**：待烧录验证
+
+## 2026-09-08 - 总线 host 显式化与 dtree/holder 适配
+
+### 任务目标
+设备树中显式区分每个总线的控制器（host/port），驱动按 host 建立
+多实例共享注册表；dtree 与 holder 配套适配，为将来 SPI2/SPI3 拆分、
+多 I2C/I2S/UART 控制器提供基础设施。
+
+### 实现内容
+1. **设备树 host 属性**（`components/dtbs/config/*.json` 与 `spiffs_image/`）
+   - `spi.bus.host = "spi2"`
+   - `i2c.bus.host = "i2c0"`
+   - `i2s.bus.host = "i2s0"`
+   - `lora.uart.host = "uart1"`、`system.uart0.host = "uart0"`
+2. **dtree 解析适配**
+   - 新增 `dtree_get_host()`：解析 `"<prefix><number>"`，
+     校验前缀与数字格式；
+   - 新增便捷宏 `DTREE_HOST(path, prefix, value)`。
+3. **驱动多实例注册表**
+   - SPI：`host=2/3` 各维护一个共享总线表项；
+   - I2C：`port=0/1`；I2S：`port=0/1`；UART：`port=0/1/2`；
+   - 每个控制器实例内部仍是引用计数共享模型。
+4. **Holder 适配**
+   - 新增 `holder_register_module_ex()`，支持声明依赖；
+   - `holder_init_all()` 改为按依赖分批初始化，缺失/循环依赖
+     自动标记 ERROR，不再依赖注册顺序。
+
+### 约定与错误处理
+- host 缺失、前缀不匹配或编号越界：load_config 返回
+  `*_DRV_ERR_CONFIG`，模块初始化失败由 holder 记录；
+- 同一 host 被不同引脚配置重复获取：返回配置错误，不破坏既有总线；
+- holder 直接调用 `holder_init_module()` 时若依赖未就绪，
+  返回 `HOLDER_ERR_DEPENDENCY`，请使用 `holder_init_all()` 自动排序。
+
+### 编译状态
+- ✅ `idf.py build` 通过
+- ⚠️ 需重新生成并烧录 SPIFFS（配置 JSON 已变更）
+
+## 2026-09-08 - W25Q128 健康状态机（READY/FAULT）
+
+### 任务目标
+让 W25Q128 在测试阶段具备基本产品可靠性：芯片接触不良/被移除时不静默
+返回错误数据、不长时间卡死，并能在恢复后自动回到可用状态。
+
+### 实现内容
+1. **状态机**：`READY` / `FAULT`
+   - 连续 3 次操作失败（含探测失败）进入 `FAULT`；
+   - `FAULT` 后至少间隔 1s 才允许再次探测，避免高频重试；
+   - 探测成功自动恢复 `READY`，发布 `EVENT_STORAGE_READY`。
+2. **每次公开操作前做 JEDEC 探测**
+   - 芯片不在线时返回 `W25Q128_ERR_OFFLINE`，不再执行 I/O；
+   - 读操作不再出现“拔掉后静默读全 0xFF”的情况。
+3. **忙等超时**
+   - 单次/扇区 busy 等待保持 5000ms；
+     （曾压到 1000ms，实测部分扇区擦除超过 1s 会被误报超时，已恢复；
+     由于操作前已有 JEDEC 探测，芯片不在线时不会进入该等待）
+   - 整片擦除等待单独保留 60s（正常芯片本身耗时较长）。
+
+   > 修正：`CONFIG_FREERTOS_HZ=100` 时 `pdMS_TO_TICKS(1)` 取整为 0 tick，
+   > 原 busy 等待实际是空转轮询而非按毫秒延时。已改为每 10ms 轮询一次，
+   > 使 5000ms 真正对应 5 秒等待上限。
+4. **禁止静默自动格式化**
+   - `vfs.json` 的 `format_if_fail` 全部改为 false；
+   - 只有显式调用 `vfs_format()` 才允许格式化。
+5. **接口**
+   - 新增 `w25q128_health_check()`、`w25q128_is_ready()`；
+   - VFS 块设备注册/取大小改为检查 ready 状态。
+6. **测试脚本修正**
+   - 文件/性能测试补上对 `fwrite`、`fread`、`fclose` 返回值的检查，
+     避免“磁盘写失败但仍打印 ✅ 成功”的假日志。
+
+### 待硬件验证
+- [ ] 正常读写/擦除不受影响；
+- [ ] 拔掉芯片后，连续操作 3 次进入 FAULT，后续快速返回 OFFLINE；
+- [ ] 重新插上后，下一轮操作自动恢复 READY；
+- [ ] SPIFFS 中 `vfs.json` 与代码同步生效（需重新烧录 spiffs）。
+
+### 编译状态
+- ✅ `idf.py build` 通过
+
+## 2026-09-08 - 设备树重构：嵌套单棵树 + compatible 查询绑定
+
+### 任务目标
+模仿真实 Linux 设备树重构 dtree：配置合并为单棵树（设备节点嵌套在总线节点下，
+父子关系即挂载关系）；消除代码中硬编码的节点路径，改为按 compatible 属性查询绑定。
+
+### 原有设计的问题
+- `lcd_display`/`flash` 等设备节点与 `bus` 平级，JSON 中无任何挂载关系，
+  绑定全靠 C 代码硬编码路径约定（如 st7789.c 同时写死 `"spi.lcd_display"` 与
+  间接写死 `"spi.bus"`）；
+- 一个文件只能有一条总线（`bus` 节点名固定），无法表达 SPI2/SPI3 拆分；
+- `compatible` 字段存在但没有任何代码消费它。
+
+### 实现内容
+1. **配置格式**（`components/dtbs/config/ovs.dtb.json`，替代原 6 个 JSON）
+   - 单棵树：`buses.spi2/i2c0/i2s0/uart0/uart1`，设备节点嵌套在总线节点内；
+   - 总线节点名即控制器地址（`"spi2"`→host 2），删除 `host` 属性；
+   - lora 设备节点挂在 uart1 下（control 引脚扁平化 + default_config 子节点）；
+   - 顶层 `leds.status`、`vfs`（mounts 数组原样迁移）；mcu 信息保留在根下。
+   - 同步 `spiffs_image/`（注意：构建实际使用 `components/dtbs/config/`）。
+2. **dtree API**（`include/dtree.h`、`components/dtbs/dtree.c`）
+   - 新增 `dtree_find_by_compatible()`（全树 DFS）、`dtree_get_parent()`、
+     `dtree_get_host_id()`（从节点名解析编号）、`dtree_get_node_name()`；
+   - 删除 `dtree_get_host()`/`DTREE_HOST()`；
+   - 加载逻辑改为单文件 `/spiffs/ovs.dtb.json`，文件缺失返回 `DTREE_ERR_IO`；
+   - 修复节点池 name 悬垂隐患（统一取 cJSON 键，生命周期与树相同）。
+3. **总线驱动**（spi/i2c/i2s/uart）
+   - `*_drv_load_config()` 统一改为 `(dtree_node_t* bus_node, config)` 签名，
+     从总线节点读属性，节点名解析 host/port；
+   - 增加总线节点 compatible 校验（`esp32s3-spi/i2c/i2s/uart`），防呆；
+   - i2s_drv 不再读麦克风/功放引脚（设备解耦），din/dout 由调用方填充。
+4. **设备模块**（st7789/w25q128/cst816s/aht30/lora/audio_module）
+   - 统一模式：`dtree_find_by_compatible(自己的compatible)` → `dtree_get_parent()`
+     → 总线驱动 load/init → 设备属性从自己的节点读取；
+   - 各模块以宏声明自己服务的 compatible（如 `ST7789_DT_COMPAT "st7789-lcd"`）；
+   - audio_module 按 compatible 查 mic/amp 节点后填充 din/dout。
+5. **未改动**：main.c 的 `vfs`/`vfs.mounts` 路径在新树中依然有效；holder 编排不变。
+
+### 编译状态
+- ✅ `idf.py build` 通过，改动文件零警告
+- ✅ `build/spiffs.bin` 已包含 ovs.dtb.json（compatible 字符串已确认在镜像中）
+
+### 待硬件验证
+- [ ] 烧录 app + spiffs 后：设备树加载、W25Q128/VFS 挂载正常；
+- [ ] ST7789 + W25Q128 共享 SPI2 初始化无冲突（本次重构未烧录验证）。
+
+### 下一步计划
+1. 硬件验证上述全部功能（需同时烧录 SPIFFS 分区）；
+2. 验证通过后将本次设备树重构与上次总线驱动改动一并提交 git。
+
+## 2026-09-08 - 冗余文件与过时文档清理
+
+### 删除内容（均可从 git 历史恢复）
+- 根目录：`CMakeLists.txt.bak/.bak2`、`README.md.bak`、`sdkconfig.old`、
+  `config/`（09-06 旧配置副本）、`spiffs_image/`（遗留副本，构建实际使用
+  `components/dtbs/config/`）、`temp_drivers/`（beep/sr04 实验驱动，未接入构建）
+- docs：`ARCHITECTURE.md.bak`、`peripheral_drivers_summary.md.bak`、
+  `VFS_DESIGN.md`（VFS 已实现，结论收录于开发日志与架构文档，原文已过时）
+- 技能目录：`references/`（skill 自述为过时 v1 资料）；SKILL.md 目录树与注记
+  已同步更新为现状
+
+### 其他
+- `docs/handoff_summary.md` 重写为 2026-09-08 当前状态
+- 清理后 `idf.py build` 复验通过
+
+## 2026-09-08 - SPI 共总线性能优化（LCD + W25Q128）
+
+### 背景
+PCB 已定型，ST7789 与 W25Q128 共用 SPI2，下版硬件才会拆分总线。
+分析确认：正确性无风险（IDF 总线锁按事务串行 + CS 独立 + Flash 擦除等待
+不占总线），但存在两个性能问题：
+1. `spi_device_polling_transmit` 使刷屏的 27-40ms 内 CPU 自旋，饿死低优先级任务；
+2. LCD 整帧 134KB 一笔事务独占总线，flash 操作尾延迟最多等一帧。
+
+### 实现内容
+1. **spi_drv 同步传输改队列+休眠**（spi_drv.c）
+   - `spi_device_polling_transmit` → `spi_device_transmit`（队列+阻塞等待）；
+   - 传输期间调用任务休眠，CPU 让出；事务粒度由 IDF 仲裁，两设备自然交错；
+   - 消除将来混用 polling/queue 的 ESP_ERR_INVALID_STATE 隐患。
+2. **st7789 刷屏分片**（st7789.c）
+   - `st7789_flush()` 按片发送（每片 24 行 ≈ 11.5KB，整帧 12 片），
+     片间总线空闲，flash 事务（4KB 读约 1ms）可插空；
+   - 新增常驻内部 DMA RAM 暂存缓冲（约 12KB，init 时一次分配），
+     替代原来 spi_drv 内每帧 malloc/free 135KB 的 DMA 安全拷贝；
+   - LCD 设备 `max_transfer_sz` 相应降为单片大小（暂存分配失败时回退
+     整帧发送并保持原 max_transfer_sz）；
+   - deinit 释放暂存缓冲。
+
+### 预期收益
+| 指标 | 改前 | 改后 |
+|---|---|---|
+| 刷屏 CPU | 27-40ms/帧自旋 | ≈0（休眠） |
+| flash 尾延迟（撞刷屏） | ≤40ms | ≤3ms |
+| 每帧临时内存 | malloc/free 135KB | 0（常驻 ~12KB） |
+
+### 使用约定（不改代码）
+- Flash 写/擦除提交到 tasker Lots 队列后台执行，完成后发事件；
+- 字库等静态资源上电一次性载入 PSRAM。
+
+### 编译状态
+- ✅ `idf.py build` 通过，零警告
+
+### 待硬件验证
+- [ ] LCD 刷屏显示正确（分片边界无错位/花屏）；
+- [ ] 刷屏同时进行 flash 读写，双方无报错、时延符合预期。
+
+## 2026-09-08 - 架构文档同步与仓库清理提交
+
+### 架构文档同步
+- `docs/ARCHITECTURE.md`（v1.1）与重构后代码对齐：
+  - 2.3 节重写为"单棵树 + compatible 绑定"（设计理念/架构图/JSON示例/API/优势表）；
+  - 第三章协作关系图设备树框改为 ovs.dtb.json 单棵树示意；
+  - 第四章目录结构修正（docs/ 实际位置、ovs.dtb.json、无根级架构文档）；
+  - 5.5 节开发指导改为 compatible 绑定流程；
+  - 末尾更新日志追加 2026-09-08 条目。
+
+### 版本控制清理
+- `build/`（4567 个产物文件）从 git 跟踪中移除（本地保留）；
+  `.gitignore` 早已包含 `build/`，但此前文件在生效前已被提交，一直跟随变更；
+- `components/esp_littlefs` 为子仓库（gitlink），指针变化不随本次提交。
+
+### 本次提交内容
+设备树重构（嵌套单棵树 + compatible 绑定）、SPI 共总线性能优化、
+冗余文件清理、文档同步，见上方 2026-09-08 各条目。

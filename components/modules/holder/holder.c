@@ -55,6 +55,37 @@ static holder_node_t* find_module_node(const char* name) {
 }
 
 /**
+ * @brief 检查模块依赖是否全部就绪（需要持有锁）
+ */
+static bool module_deps_ready_locked(const holder_node_t* node) {
+    if (!node || node->info.dependency_count <= 0) {
+        return true;
+    }
+
+    for (int i = 0; i < node->info.dependency_count; i++) {
+        const char* dep = node->info.dependencies[i];
+        if (!dep || strcmp(dep, node->info.name) == 0) {
+            return false;
+        }
+        holder_node_t* dep_node = find_module_node(dep);
+        if (!dep_node || dep_node->info.state != HOLDER_MODULE_STATE_READY) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool module_deps_ready(const char* name) {
+    if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
+        return false;
+    }
+    holder_node_t* node = find_module_node(name);
+    bool ready = node && module_deps_ready_locked(node);
+    xSemaphoreGive(s_holder_ctx.mutex);
+    return ready;
+}
+
+/**
  * @brief 初始化holder模块
  */
 holder_err_t holder_init(void) {
@@ -80,16 +111,19 @@ holder_err_t holder_init(void) {
 /**
  * @brief 注册模块到holder
  */
-holder_err_t holder_register_module(const char* name, 
-                                   holder_module_init_fn init_fn,
-                                   bool required,
-                                   void* user_data) {
+holder_err_t holder_register_module_ex(const char* name,
+                                       holder_module_init_fn init_fn,
+                                       bool required,
+                                       const char* const* dependencies,
+                                       int dependency_count,
+                                       void* user_data) {
     if (!s_holder_ctx.initialized) {
         LOGE(TAG, "Holder not initialized");
         return HOLDER_ERR_NOT_INITIALIZED;
     }
     
-    if (!name || !init_fn) {
+    if (!name || !init_fn || dependency_count < 0
+        || (dependency_count > 0 && !dependencies)) {
         LOGE(TAG, "Invalid parameters");
         return HOLDER_ERR_INVALID_PARAM;
     }
@@ -123,6 +157,8 @@ holder_err_t holder_register_module(const char* name,
     new_node->info.last_error = NULL;
     new_node->info.required = required;
     new_node->info.user_data = user_data;
+    new_node->info.dependencies = dependencies;
+    new_node->info.dependency_count = dependency_count;
     new_node->next = NULL;
     
     // 添加到链表尾部
@@ -141,6 +177,16 @@ holder_err_t holder_register_module(const char* name,
     
     LOGI(TAG, "Module %s registered (required: %s)", name, required ? "yes" : "no");
     return HOLDER_OK;
+}
+
+/**
+ * @brief 注册模块到holder（无依赖版本）
+ */
+holder_err_t holder_register_module(const char* name,
+                                    holder_module_init_fn init_fn,
+                                    bool required,
+                                    void* user_data) {
+    return holder_register_module_ex(name, init_fn, required, NULL, 0, user_data);
 }
 
 /**
@@ -215,6 +261,14 @@ holder_err_t holder_init_module(const char* name) {
         LOGI(TAG, "Module %s already initialized", name);
         return HOLDER_OK;
     }
+
+    /* 依赖未就绪时直接初始化会破坏总线/设备顺序 */
+    if (!module_deps_ready_locked(node)) {
+        node->info.last_error = "Dependency not ready (use holder_init_all)";
+        xSemaphoreGive(s_holder_ctx.mutex);
+        LOGE(TAG, "Module %s dependency not ready", name);
+        return HOLDER_ERR_DEPENDENCY;
+    }
     
     // 设置初始化中状态
     node->info.state = HOLDER_MODULE_STATE_INITIALIZING;
@@ -265,46 +319,106 @@ holder_err_t holder_init_all(bool stop_on_required_error) {
     if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
         return HOLDER_ERR_MUTEX;
     }
-    
-    holder_node_t* current = s_holder_ctx.head;
+
+    uint32_t total = s_holder_ctx.count;
+    xSemaphoreGive(s_holder_ctx.mutex);
+
+    if (total == 0) {
+        holder_print_status();
+        LOGI(TAG, "All modules initialized successfully");
+        return HOLDER_OK;
+    }
+
+    const char** pending = (const char**)malloc(total * sizeof(const char*));
+    if (!pending) {
+        LOGE(TAG, "Failed to allocate init snapshot");
+        return HOLDER_ERR_NO_MEMORY;
+    }
+
     holder_err_t result = HOLDER_OK;
-    
-    while (current) {
-        holder_node_t* next = current->next;
-        const char* name = current->info.name;
-        bool required = current->info.required;
-        
-        xSemaphoreGive(s_holder_ctx.mutex);
-        
-        // 初始化模块
-        holder_err_t ret = holder_init_module(name);
-        
-        if (ret != HOLDER_OK) {
-            LOGE(TAG, "Failed to initialize module %s", name);
-            if (required && stop_on_required_error) {
-                result = HOLDER_ERR_INIT_FAILED;
-                break;
+
+    /* 按依赖分批初始化：没有依赖的模块先就绪，随后每一轮“解锁”下一批 */
+    bool progress = true;
+    uint32_t rounds = 0;
+    while (progress && rounds < total) {
+        progress = false;
+        rounds++;
+
+        if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
+            free(pending);
+            return HOLDER_ERR_MUTEX;
+        }
+
+        uint32_t pending_count = 0;
+        holder_node_t* current = s_holder_ctx.head;
+        while (current && pending_count < total) {
+            if (current->info.state == HOLDER_MODULE_STATE_REGISTERED) {
+                pending[pending_count++] = current->info.name;
             }
-        } else {
-            // 检查初始化是否成功
+            current = current->next;
+        }
+        xSemaphoreGive(s_holder_ctx.mutex);
+
+        if (pending_count == 0) {
+            break;
+        }
+
+        for (uint32_t i = 0; i < pending_count; i++) {
+            const char* name = pending[i];
             holder_module_state_t state = holder_get_module_state(name);
-            if (state == HOLDER_MODULE_STATE_ERROR) {
-                if (required && stop_on_required_error) {
-                    result = HOLDER_ERR_INIT_FAILED;
-                    break;
+            if (state != HOLDER_MODULE_STATE_REGISTERED) {
+                continue;
+            }
+
+            /* 依赖尚未就绪：留到下一轮 */
+            if (!module_deps_ready(name)) {
+                continue;
+            }
+
+            progress = true;
+            holder_err_t ret = holder_init_module(name);
+
+            holder_module_info_t info;
+            if (holder_get_module_info(name, &info) == HOLDER_OK) {
+                bool failed = (ret != HOLDER_OK
+                               || info.state == HOLDER_MODULE_STATE_ERROR);
+                if (failed) {
+                    if (info.required && stop_on_required_error) {
+                        result = HOLDER_ERR_INIT_FAILED;
+                        break;
+                    }
                 }
             }
         }
-        
-        if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
-            return HOLDER_ERR_MUTEX;
+
+        if (result != HOLDER_OK) {
+            break;
         }
-        
-        current = next;
     }
-    
+
+    /* 剩余 REGISTERED 说明依赖缺失/循环，标记错误 */
+    if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
+        free(pending);
+        return HOLDER_ERR_MUTEX;
+    }
+
+    holder_node_t* current = s_holder_ctx.head;
+    while (current) {
+        if (current->info.state == HOLDER_MODULE_STATE_REGISTERED) {
+            current->info.state = HOLDER_MODULE_STATE_ERROR;
+            current->info.error_count++;
+            current->info.last_error = "Dependency not satisfied or cycle detected";
+            LOGE(TAG, "Module %s dependency error", current->info.name);
+            if (current->info.required && stop_on_required_error && result == HOLDER_OK) {
+                result = HOLDER_ERR_INIT_FAILED;
+            }
+        }
+        current = current->next;
+    }
     xSemaphoreGive(s_holder_ctx.mutex);
-    
+
+    free(pending);
+
     // 打印状态
     holder_print_status();
     

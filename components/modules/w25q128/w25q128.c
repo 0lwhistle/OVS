@@ -16,6 +16,7 @@
 #include "logger.h"
 
 #include "freertos/FreeRTOS.h"
+#include "esp_timer.h"
 #include "dtree.h"
 #include "freertos/task.h"
 
@@ -25,6 +26,9 @@
 #include <inttypes.h>
 
 static const char* TAG = "[W25Q128]";
+
+/* 本模块服务的设备（设备树 compatible），初始化时按它查找自己的节点 */
+#define W25Q128_DT_COMPAT   "w25q128-flash"
 
 /* ========================================================================== */
 /*                              常量定义                                       */
@@ -55,6 +59,26 @@ static const char* TAG = "[W25Q128]";
 #define W25Q128_BLOCK_SIZE_64K      65536
 #define W25Q128_TOTAL_SIZE          (16 * 1024 * 1024)  /* 16MB */
 
+/**
+ * 单次/扇区操作忙等上限。
+ * 健康芯片通常几十~几百 ms 内完成，但供电/批次差异可能更长；
+ * 每次操作前已有 JEDEC 探测，芯片不在线时不会进入该等待，
+ * 因此这里保留宽裕上限避免误报超时。
+ */
+#define W25Q128_BUSY_TIMEOUT_MS     5000
+
+/** 整片擦除忙等上限（W25Q128 整片擦除耗时较长） */
+#define W25Q128_CHIP_ERASE_TIMEOUT_MS 60000
+
+/** 连续失败多少次后进入 FAULT */
+#define W25Q128_FAULT_THRESHOLD     3
+
+/** FAULT 后多久允许尝试一次恢复探测 */
+#define W25Q128_RECOVERY_INTERVAL_MS 1000
+
+/** busy 轮询间隔：ESP-IDF FreeRTOS 默认 100Hz，1ms 会取整为 0 tick */
+#define W25Q128_POLL_DELAY_MS       10
+
 /* ========================================================================== */
 
 /* ========================================================================== */
@@ -70,8 +94,124 @@ static spi_device_handle_t s_spi_dev = NULL;
 /** 初始化标志 */
 static bool s_initialized = false;
 
+/** 设备状态 */
+static w25q128_state_t s_state = W25Q128_STATE_READY;
+
+/** 连续错误计数 */
+static uint32_t s_error_count = 0;
+
+/** 进入 FAULT 的时间（us） */
+static uint64_t s_fault_time_us = 0;
+
 /** Flash信息 */
 static w25q128_info_t s_info = {0};
+
+/* ========================================================================== */
+/*                    健康状态机（READY / FAULT）                              */
+/* ========================================================================== */
+
+/**
+ * @brief JEDEC ID 探测：芯片在线且类型正确才返回 true
+ */
+static bool w25q128_probe_device(void) {
+    if (!s_spi_handle || !s_spi_dev) {
+        return false;
+    }
+
+    uint8_t tx_data[4] = {W25Q128_CMD_JEDEC_ID, 0x00, 0x00, 0x00};
+    uint8_t rx_data[4] = {0};
+
+    if (spi_drv_transfer(s_spi_handle, s_spi_dev, tx_data, rx_data, 4) != SPI_DRV_OK) {
+        return false;
+    }
+
+    return rx_data[1] == 0xEF && rx_data[2] == 0x40 && rx_data[3] == 0x18;
+}
+
+/**
+ * @brief 进入 FAULT 状态（只发布一次事件）
+ */
+static void w25q128_enter_fault(void) {
+    if (s_state == W25Q128_STATE_FAULT) {
+        return;
+    }
+
+    s_state = W25Q128_STATE_FAULT;
+    s_fault_time_us = esp_timer_get_time();
+    LOGE(TAG, "Storage FAULT: %lu consecutive errors", (unsigned long)s_error_count);
+    EVENT_BUS_PUBLISH_EMPTY(EVENT_STORAGE_ERROR);
+}
+
+/**
+ * @brief 从 FAULT 恢复到 READY
+ */
+static void w25q128_recover(void) {
+    if (s_state != W25Q128_STATE_FAULT) {
+        return;
+    }
+
+    s_state = W25Q128_STATE_READY;
+    s_error_count = 0;
+    LOGI(TAG, "Storage recovered, W25Q128 back to READY");
+    EVENT_BUS_PUBLISH_EMPTY(EVENT_STORAGE_READY);
+}
+
+static w25q128_err_t w25q128_on_operation_result(w25q128_err_t err);
+
+/**
+ * @brief 每次公开操作前的守卫
+ *
+ * READY：先探测一次，不在线立即计入错误并可能进入 FAULT；
+ * FAULT：至少等待 RECOVERY_INTERVAL_MS，才允许再探测一次；
+ * 探测成功则恢复 READY 并继续本次操作。
+ */
+static w25q128_err_t w25q128_begin_operation(void) {
+    if (!s_initialized) {
+        return W25Q128_ERR_NOT_INIT;
+    }
+
+    if (s_state == W25Q128_STATE_FAULT) {
+        uint64_t now = esp_timer_get_time();
+        if (now - s_fault_time_us < (uint64_t)W25Q128_RECOVERY_INTERVAL_MS * 1000ULL) {
+            return W25Q128_ERR_OFFLINE;
+        }
+
+        if (!w25q128_probe_device()) {
+            /* 仍然不在线：刷新探测时间，避免被高频重试持续打扰 */
+            s_fault_time_us = now;
+            return W25Q128_ERR_OFFLINE;
+        }
+
+        w25q128_recover();
+        return W25Q128_OK;
+    }
+
+    if (!w25q128_probe_device()) {
+        return w25q128_on_operation_result(W25Q128_ERR_OFFLINE);
+    }
+
+    return W25Q128_OK;
+}
+
+/**
+ * @brief 操作结束：成功清零计数；失败累计并可能进入 FAULT
+ */
+static w25q128_err_t w25q128_on_operation_result(w25q128_err_t err) {
+    if (err == W25Q128_OK) {
+        s_error_count = 0;
+        return W25Q128_OK;
+    }
+
+    if (s_state != W25Q128_STATE_FAULT) {
+        s_error_count++;
+        LOGW(TAG, "Operation failed (%d), error_count=%lu",
+             err, (unsigned long)s_error_count);
+        if (s_error_count >= W25Q128_FAULT_THRESHOLD) {
+            w25q128_enter_fault();
+        }
+    }
+    return err;
+}
 
 /* ========================================================================== */
 /*                              内部函数                                       */
@@ -96,10 +236,14 @@ static w25q128_err_t w25q128_read_status(uint8_t* status) {
 /**
  * @brief 等待Flash空闲
  */
-static w25q128_err_t w25q128_wait_busy(void) {
+static w25q128_err_t w25q128_wait_busy_ms(uint32_t timeout_ms) {
     uint8_t status;
-    uint32_t timeout = 0;
-    
+    uint32_t elapsed_ms = 0;
+    TickType_t poll_ticks = pdMS_TO_TICKS(W25Q128_POLL_DELAY_MS);
+    if (poll_ticks == 0) {
+        poll_ticks = 1;
+    }
+
     do {
         w25q128_err_t err = w25q128_read_status(&status);
         if (err != W25Q128_OK) {
@@ -110,12 +254,16 @@ static w25q128_err_t w25q128_wait_busy(void) {
             return W25Q128_OK;
         }
         
-        vTaskDelay(pdMS_TO_TICKS(1));
-        timeout++;
-    } while (timeout < 5000);
+        vTaskDelay(poll_ticks);
+        elapsed_ms += W25Q128_POLL_DELAY_MS;
+    } while (elapsed_ms < timeout_ms);
     
     LOGE(TAG, "Timeout waiting for Flash");
     return W25Q128_ERR_TIMEOUT;
+}
+
+static w25q128_err_t w25q128_wait_busy(void) {
+    return w25q128_wait_busy_ms(W25Q128_BUSY_TIMEOUT_MS);
 }
 
 /**
@@ -130,7 +278,11 @@ static w25q128_err_t w25q128_write_enable(void) {
     
     /* 等待WEL位置位 */
     uint8_t status;
-    uint32_t timeout = 0;
+    uint32_t elapsed_ms = 0;
+    TickType_t poll_ticks = pdMS_TO_TICKS(W25Q128_POLL_DELAY_MS);
+    if (poll_ticks == 0) {
+        poll_ticks = 1;
+    }
     w25q128_err_t err;
     do {
         err = w25q128_read_status(&status);
@@ -142,9 +294,9 @@ static w25q128_err_t w25q128_write_enable(void) {
             return W25Q128_OK;
         }
         
-        vTaskDelay(pdMS_TO_TICKS(1));
-        timeout++;
-    } while (timeout < 1000);
+        vTaskDelay(poll_ticks);
+        elapsed_ms += W25Q128_POLL_DELAY_MS;
+    } while (elapsed_ms < 1000);
     
     return W25Q128_ERR_TIMEOUT;
 }
@@ -198,26 +350,38 @@ w25q128_err_t w25q128_init(void) {
     }
     
     LOGI(TAG, "Initializing W25Q128 Flash...");
-    
-    /* 从设备树读取SPI总线配置 */
+
+    /* 按 compatible 定位自己的设备节点，父节点即所属 SPI 总线 */
+    dtree_node_t* dev_node = dtree_find_by_compatible(W25Q128_DT_COMPAT);
+    if (!dev_node) {
+        LOGE(TAG, "Device node '%s' not found in device tree", W25Q128_DT_COMPAT);
+        return W25Q128_ERR_SPI;
+    }
+    dtree_node_t* bus_node = dtree_get_parent(dev_node);
+    if (!bus_node) {
+        LOGE(TAG, "Device node '%s' has no parent bus node", W25Q128_DT_COMPAT);
+        return W25Q128_ERR_SPI;
+    }
+
+    /* 从父总线节点读取SPI总线配置 */
     spi_drv_config_t spi_config;
-    spi_drv_err_t spi_err = spi_drv_load_config(&spi_config);
+    spi_drv_err_t spi_err = spi_drv_load_config(bus_node, &spi_config);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to load SPI config from device tree: %d", spi_err);
         return W25Q128_ERR_SPI;
     }
-    
-    /* 从设备树读取Flash特定配置 */
+
+    /* 从设备节点读取Flash特定配置 */
     int32_t cs_pin = 13;      /* 默认值 */
     int32_t flash_freq = 20;  /* 默认值 MHz */
-    
+
     dtree_err_t dt_err;
-    dt_err = DTREE_INT("spi.flash", "cs_pin", &cs_pin);
+    dt_err = dtree_get_int(dev_node, "cs_pin", &cs_pin);
     if (dt_err != DTREE_OK) {
         LOGW(TAG, "Failed to read cs_pin from dtree, using default: %" PRId32, cs_pin);
     }
-    
-    dt_err = DTREE_INT("spi.flash", "spi_freq_mhz", &flash_freq);
+
+    dt_err = dtree_get_int(dev_node, "spi_freq_mhz", &flash_freq);
     if (dt_err != DTREE_OK) {
         LOGW(TAG, "Failed to read spi_freq_mhz from dtree, using default: %" PRId32, flash_freq);
     }
@@ -244,6 +408,10 @@ w25q128_err_t w25q128_init(void) {
     spi_err = spi_drv_add_device(s_spi_handle, &dev_config, &s_spi_dev);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to add SPI device: %d", spi_err);
+        if (s_spi_handle) {
+            spi_drv_deinit(s_spi_handle);
+            s_spi_handle = NULL;
+        }
         return W25Q128_ERR_SPI;
     }
     
@@ -260,6 +428,10 @@ w25q128_err_t w25q128_init(void) {
     spi_err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_data, rx_data, 4);
     if (spi_err != SPI_DRV_OK) {
         LOGE(TAG, "Failed to read JEDEC ID: %d", spi_err);
+        spi_drv_remove_device(s_spi_handle, s_spi_dev);
+        s_spi_dev = NULL;
+        spi_drv_deinit(s_spi_handle);
+        s_spi_handle = NULL;
         return W25Q128_ERR_SPI;
     }
     
@@ -271,6 +443,10 @@ w25q128_err_t w25q128_init(void) {
     /* 验证ID (Winbond W25Q128: EF 40 18) */
     if (id[0] == 0xFF && id[1] == 0xFF && id[2] == 0xFF) {
         LOGE(TAG, "JEDEC ID is 0xFF 0xFF 0xFF, SPI communication failed!");
+        spi_drv_remove_device(s_spi_handle, s_spi_dev);
+        s_spi_dev = NULL;
+        spi_drv_deinit(s_spi_handle);
+        s_spi_handle = NULL;
         return W25Q128_ERR_SPI;
     }
     
@@ -289,6 +465,9 @@ w25q128_err_t w25q128_init(void) {
     s_info.sector_count = W25Q128_TOTAL_SIZE / W25Q128_SECTOR_SIZE;
     
     s_initialized = true;
+    s_state = W25Q128_STATE_READY;
+    s_error_count = 0;
+    s_fault_time_us = 0;
     
     LOGI(TAG, "W25Q128 Flash initialized: %lu MB, %lu sectors", 
          s_info.total_size / (1024 * 1024), s_info.sector_count);
@@ -321,6 +500,9 @@ w25q128_err_t w25q128_deinit(void) {
     }
     
     s_initialized = false;
+    s_state = W25Q128_STATE_READY;
+    s_error_count = 0;
+    s_fault_time_us = 0;
     
     LOGI(TAG, "W25Q128 Flash deinitialized");
     
@@ -335,6 +517,10 @@ w25q128_err_t w25q128_get_info(w25q128_info_t* info) {
     if (!s_initialized) {
         return W25Q128_ERR_NOT_INIT;
     }
+
+    if (s_state == W25Q128_STATE_FAULT) {
+        return W25Q128_ERR_OFFLINE;
+    }
     
     *info = s_info;
     
@@ -345,11 +531,12 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
     if (!buffer) {
         return W25Q128_ERR_PARAM;
     }
-    
-    if (!s_initialized) {
-        return W25Q128_ERR_NOT_INIT;
+
+    w25q128_err_t err = w25q128_begin_operation();
+    if (err != W25Q128_OK) {
+        return err;
     }
-    
+
     if (addr + size > s_info.total_size) {
         LOGE(TAG, "Read out of range: addr=0x%06lX, size=%zu", addr, size);
         return W25Q128_ERR_PARAM;
@@ -366,7 +553,7 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
     if (!tx_buf || !rx_buf) {
         free(tx_buf);
         free(rx_buf);
-        return W25Q128_ERR_SPI;
+        return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
     /* 构造发送缓冲区 */
@@ -377,12 +564,12 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
     memset(tx_buf + 4, 0xFF, size);  /* 发送0xFF作为dummy bytes */
     
     /* 全双工传输 */
-    spi_drv_err_t err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_buf, rx_buf, total);
+    spi_drv_err_t spi_err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_buf, rx_buf, total);
     
-    if (err != SPI_DRV_OK) {
+    if (spi_err != SPI_DRV_OK) {
         free(tx_buf);
         free(rx_buf);
-        return W25Q128_ERR_SPI;
+        return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
     /* 复制接收到的数据（跳过前4个字节的命令阶段） */
@@ -391,18 +578,19 @@ w25q128_err_t w25q128_read(uint32_t addr, void* buffer, size_t size) {
     free(tx_buf);
     free(rx_buf);
     
-    return W25Q128_OK;
+    return w25q128_on_operation_result(W25Q128_OK);
 }
 
 w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
     if (!data) {
         return W25Q128_ERR_PARAM;
     }
-    
-    if (!s_initialized) {
-        return W25Q128_ERR_NOT_INIT;
+
+    w25q128_err_t err = w25q128_begin_operation();
+    if (err != W25Q128_OK) {
+        return err;
     }
-    
+
     if (addr + size > s_info.total_size) {
         LOGE(TAG, "Write out of range: addr=0x%06lX, size=%zu", addr, size);
         return W25Q128_ERR_PARAM;
@@ -412,6 +600,7 @@ w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
     size_t remaining = size;
     const uint8_t* src = (const uint8_t*)data;
     uint32_t current_addr = addr;
+    uint32_t page_count = 0;
     
     while (remaining > 0) {
         /* 计算当前页剩余空间 */
@@ -419,25 +608,32 @@ w25q128_err_t w25q128_write(uint32_t addr, const void* data, size_t size) {
         size_t write_size = (remaining < page_remaining) ? remaining : page_remaining;
         
         /* 写入一页 */
-        w25q128_err_t err = w25q128_write_page(current_addr, src, write_size);
+        err = w25q128_write_page(current_addr, src, write_size);
         if (err != W25Q128_OK) {
             LOGE(TAG, "Write failed at 0x%06lX", current_addr);
-            return err;
+            return w25q128_on_operation_result(err);
         }
-        
+
         remaining -= write_size;
         src += write_size;
         current_addr += write_size;
+        page_count++;
     }
-    
-    return W25Q128_OK;
+
+    if (page_count > 0) {
+        LOGD(TAG, "Write completed: addr=0x%06lX, pages=%lu",
+             (unsigned long)addr, (unsigned long)page_count);
+    }
+
+    return w25q128_on_operation_result(W25Q128_OK);
 }
 
 w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
-    if (!s_initialized) {
-        return W25Q128_ERR_NOT_INIT;
+    w25q128_err_t err = w25q128_begin_operation();
+    if (err != W25Q128_OK) {
+        return err;
     }
-    
+
     if (sector_index >= s_info.sector_count) {
         LOGE(TAG, "Sector index out of range: %lu", sector_index);
         return W25Q128_ERR_PARAM;
@@ -448,9 +644,9 @@ w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
     LOGD(TAG, "Erasing sector %lu (addr=0x%06lX)", sector_index, addr);
     
     /* 使能写操作 */
-    w25q128_err_t err = w25q128_write_enable();
+    err = w25q128_write_enable();
     if (err != W25Q128_OK) {
-        return err;
+        return w25q128_on_operation_result(err);
     }
     
     /* 发送擦除命令 */
@@ -462,38 +658,57 @@ w25q128_err_t w25q128_erase_sector(uint32_t sector_index) {
     
     spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, cmd, 4);
     if (spi_err != SPI_DRV_OK) {
-        return W25Q128_ERR_SPI;
+        return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
     /* 等待擦除完成 */
-    return w25q128_wait_busy();
+    return w25q128_on_operation_result(w25q128_wait_busy());
 }
 
 w25q128_err_t w25q128_erase_chip(void) {
-    if (!s_initialized) {
-        return W25Q128_ERR_NOT_INIT;
+    w25q128_err_t err = w25q128_begin_operation();
+    if (err != W25Q128_OK) {
+        return err;
     }
-    
+
     LOGI(TAG, "Erasing entire chip...");
     
     /* 使能写操作 */
-    w25q128_err_t err = w25q128_write_enable();
+    err = w25q128_write_enable();
     if (err != W25Q128_OK) {
-        return err;
+        return w25q128_on_operation_result(err);
     }
     
     /* 发送整片擦除命令 */
     uint8_t cmd = W25Q128_CMD_CHIP_ERASE;
     spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, &cmd, 1);
     if (spi_err != SPI_DRV_OK) {
-        return W25Q128_ERR_SPI;
+        return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
     /* 等待擦除完成（可能需要较长时间） */
     LOGI(TAG, "Waiting for chip erase to complete...");
-    return w25q128_wait_busy();
+    return w25q128_on_operation_result(
+        w25q128_wait_busy_ms(W25Q128_CHIP_ERASE_TIMEOUT_MS));
 }
 
 bool w25q128_is_initialized(void) {
     return s_initialized;
+}
+
+bool w25q128_is_ready(void) {
+    return s_initialized && s_state == W25Q128_STATE_READY;
+}
+
+w25q128_err_t w25q128_health_check(void) {
+    if (!s_initialized) {
+        return W25Q128_ERR_NOT_INIT;
+    }
+
+    if (w25q128_probe_device()) {
+        w25q128_recover();
+        return W25Q128_OK;
+    }
+
+    return w25q128_on_operation_result(W25Q128_ERR_OFFLINE);
 }
