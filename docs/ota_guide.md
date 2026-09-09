@@ -5,20 +5,19 @@
 
 ---
 
-## 一、现在能用了吗？（重要，先看这个）
+## 一、现在能用了吗？
 
-**代码已就绪、编译通过，但还需要一次串口引导烧录才能开始用。**
+**OTA 通道已在线运行**（2026-09-08 完成串口引导，此后日常迭代全程免串口），
+且**固件与设备树都支持 OTA**：
 
-原因：OTA 的原理是"设备上跑着一个带 Web 服务器的新固件，接收新固件写入备用槽"。
-而现在设备上运行的还是**旧固件**（不含 OTA/Web 服务），它没法接收 OTA。
-另外新固件启用了 bootloader 回滚保护，bootloader 本身也只在串口烧录时更新。
+| 内容 | 方式 | 生效 |
+|------|------|------|
+| 固件（app） | `ota_push.sh` 推 OVSO 容器 | 写备用槽 → 15s 回滚确认后切换 |
+| 设备树（dtb） | 随 OVSO 容器一起推，或单独 `POST /api/dtb/firmware` | 写非活动 dtb 槽，与 app 配对试运行 |
 
-所以流程分两段：
-
-| 阶段 | 操作 | 用串口？ |
-|------|------|----------|
-| **一次性引导**（只做一次） | 串口烧录本固件 | ✅ 需要 |
-| **日常迭代**（之后永远） | `idf.py build` + `ota_push.sh` | ❌ 不需要 |
+> 历史备注：OTA 依赖设备上先运行一个含 Web 服务的固件，因此项目初期需要
+> 一次串口引导烧录（含启用回滚保护的 bootloader）。该步骤早已完成，仅在
+> 全新出厂设备/换 bootloader 配置/改分区表时才需要再做（见第四节）。
 
 ---
 
@@ -56,12 +55,7 @@ ota_push.sh                 # 默认推到 ovs.local（OVS_HOST 可改默认目�
 # 或一条龙：ovs_release --ota 192.168.2.111  （完整构建+推送）
 ```
 
-**设备树一起升级（2026-09-08 起）**：build 时自动生成 `build/dtb.bin`（设备树
-A/B 槽容器）；`ota_push.sh` 检测到它就自动拼成 `OVSO` 容器（96B 头 + app + dtb）
-一次上传。设备树写非活动槽并随 app 一起走 15s 回滚确认（app 崩溃回滚则树也回
-旧版），确认通过后自动切换。**改 `ovs.dtb.json` 只需 OTA，无需串口**。
-单独更新设备树（不动固件）：`curl -X POST --data-binary @build/dtb.bin \
-  http://<设备IP>/api/dtb/firmware`，重启后生效。
+设备树 OTA 详见第三节。
 
 **脚本反馈（WSL2 适配）**：
 - 主机解析自动三级回退：IP 直用 → WSL 内 `getent` → 借 `powershell.exe`
@@ -87,6 +81,42 @@ OVS_HOST=192.168.2.154 ./scripts/ota_push.sh # 环境变量方式
 
 ---
 
+## 三点二、设备树 OTA（A/B 槽，与固件同级能力）
+
+**改 `ovs.dtb.json` 只需 OTA，无需串口。** 机制（详见 `components/dtbs/dtb_ab`）：
+
+- **容器与双槽**：build 时 `scripts/pack_dtb.py` 自动生成 `build/dtb.bin`
+  （OVSO 容器 = 96B 头 + app + dtb 一次上传）；设备树写**非活动 dtb 槽**
+  （dtb_0/dtb_1 各 64KB），NVS 里的事务性指针决定哪个槽生效。
+- **配对试运行**：设备树与 app 捆绑走同一次 15s 回滚确认——新 app 崩溃回滚，
+  **设备树一并回旧版**（配对防错配：旧固件 + 新树、新固件 + 旧树的组合不会
+  持久存在）；15s 稳定后指针翻转，新树正式生效。
+- **兜底**：双 dtb 槽全部损坏时，启动自动回退 SPIFFS 里的出厂设备树
+  （`/spiffs/ovs.dtb.json`），系统不会因树损坏而变砖。
+- **WiFi 凭据联动**：烧录含新 `wifi.sta` 配置的树后，下次启动按配置哈希检测
+  变更**自动覆盖 NVS 旧凭据**；树未变时用户经 `/api/wifi/connect` 配的凭据
+  持续生效且跨 OTA 幸存。
+
+**单独只更新设备树**（不动固件）：
+
+```bash
+curl -X POST --data-binary @build/dtb.bin http://<设备IP>/api/dtb/firmware
+# 重启后生效（走同样的 A/B 槽 + 指针切换）
+```
+
+**怎么确认树已切换**：
+
+```bash
+curl http://<设备IP>/api/ota/status     # 看 "dtb_slot" 字段（0/1）
+# 串口启动日志：
+#   [DTREE]: Loaded device tree from A/B slot N
+```
+
+**注意**：设备树内容变更走 OTA 即可；只有 `partitions.csv` 里 dtb 槽/littlefs
+的位置变化这类**分区表改动**才需要串口（见第四节）。
+
+---
+
 ## 三点五、main.c 中的 OTA 保护区（其他开发线必读）
 
 `src/app/main.c` 中有一段带横幅注释的 **OTA/网络保护区**（main/ 只是 CMake 垫片，代码都在 src/app），包含：
@@ -95,12 +125,16 @@ OVS_HOST=192.168.2.154 ./scripts/ota_push.sh # 环境变量方式
 |------|------|------|
 | `#define OVS_ENABLE_NET 1` | 文件头保护区 | 网络栈总开关，**必须保持 1** |
 | `#include "net_mgr.h" "web.h" "ota.h"` | 保护区内部 | 模块头文件 |
-| `static void net_stack_init()` | 保护区内部 | 初始化顺序：ota→net→web |
-| `net_stack_init()` 调用 | app_main 内（带 ▶ 标记） | 接入点，勿移除 |
+| `static void net_stack_init()` | 保护区内部 | 初始化顺序：ota→net→web（内部顺序勿动） |
+| `app_init_set_net_stack(net_stack_init)` | app_main（原调用点，带 ▶ 迁移注记） | 把函数指针注入 holder 注册表 |
+
+> **2026-09-09 Phase 1 变更**：net_stack_init 的调用点已从 app_main 迁移至
+> holder 编排（`src/app/app_init.c` 的 "net_stack" 模块：required、依赖 dtree
+> 就绪后执行）。能力等价性经 OTA 双向验证，原调用点留有迁移注记。
 
 协作规则（保护区横幅注释里也写了）：
 1. `OVS_ENABLE_NET` 保持 1——置 0 的固件一旦推上设备，OTA 通道关闭只能串口救；
-2. 不要删 `net_stack_init()` 的调用；
+2. 不要删除 net_stack_init 的调用链（现为 app_main 注入 → holder 注册表执行）；
 3. 不要在 main.c 里改网络逻辑，调行为请去 net_mgr/web/ota 各模块；
 4. VFS 线增删 main.c 其他内容（测试函数等）不受影响，保护区在文件头部和
    app_main 各占一小段，正常并行修改不会冲突。

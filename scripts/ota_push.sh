@@ -15,10 +15,11 @@
 # 成功反馈: 上传进度条 → 设备校验 → 自动重启 → 打印旧/新版本对比 + 槽位
 #           + 回滚确认提示；任何一步失败给出明确原因并以非 0 退出。
 #
-# 示例:
-#   ./scripts/ota_push.sh                       # ovs.local + build/ovs.bin
-#   ./scripts/ota_push.sh 192.168.2.154
-#   OVS_HOST=192.168.2.154 ./scripts/ota_push.sh
+#   ./scripts/ota_push.sh [--app-only] [主机] [固件路径]
+#   环境变量 OVS_HOST 可代替"主机"参数
+#
+#   --app-only: 只推纯 app（跳过 OVSO 容器打包，不带设备树）；
+#               默认检测到 build/dtb.bin 会自动拼 OVSO（app+dtb 一起升）
 #
 
 set -uo pipefail
@@ -28,8 +29,16 @@ RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
-HOST_IN="${1:-${OVS_HOST:-ovs.local}}"
-FIRMWARE="${2:-build/ovs.bin}"
+APP_ONLY=false
+POSITIONAL=()
+for arg in "$@"; do
+    case "$arg" in
+        --app-only) APP_ONLY=true ;;
+        *) POSITIONAL+=("$arg") ;;
+    esac
+done
+HOST_IN="${POSITIONAL[0]:-${OVS_HOST:-ovs.local}}"
+FIRMWARE="${POSITIONAL[1]:-build/ovs.bin}"
 RESP_FILE=$(mktemp /tmp/ota_resp.XXXXXX)
 trap 'rm -f "$RESP_FILE"' EXIT
 
@@ -39,9 +48,12 @@ die() { echo -e "${RED}❌ $*${NC}"; exit 1; }
 [ -f "$FIRMWARE" ] || die "固件不存在: $FIRMWARE\n   先构建: idf.py build  或  ./scripts/mybuild.sh"
 
 # 设备树容器存在 → 打包为 OVSO 容器（app+dtb 一次上传，A/B 保护）
+# --app-only 时跳过（只升 app，设备树保持设备上当前版本）
 UPLOAD_FILE="$FIRMWARE"
 DTB_NOTE=""
-if [ -f "build/dtb.bin" ]; then
+if $APP_ONLY; then
+    DTB_NOTE=" (app-only: 不带设备树)"
+elif [ -f "build/dtb.bin" ]; then
     PAYLOAD="build/ota_payload.bin"
     if python3 scripts/ovs_pack_payload.py "$FIRMWARE" build/dtb.bin -o "$PAYLOAD" >/dev/null; then
         UPLOAD_FILE="$PAYLOAD"

@@ -2,6 +2,41 @@
 
 # OVS项目开发日志
 
+## 2026-09-09 - Phase 0a 清理：include/ 解散 + 空壳/备份/未引用文件删除（未提交，待与用户代码合并提交）
+
+### 任务目标
+REFACTORING_PLAN Phase 0a（C1-C10/C16/C17）：清除陈旧头副本、空壳与
+备份残留、未引用组件/拷贝。按用户要求不提交（用户并行开发 lora/aht30/
+扬声器中），改动全部留在工作区。
+
+### 完成内容
+- **include/ 目录解散（C1/C2/C3）**：dtree.h 真实本体迁入
+  components/dtbs/（dtbs CMake 同步移除对全局 include 的引用）；删除
+  logger.h/ota.h/web.h/heartbeat.h 陈旧副本及 dtree.h.bak；根 CMake
+  移除全局 INCLUDE_DIRS 注入。全部引用方经核对均有组件级 REQUIRES
+  （net_mgr 本就含 dtbs，无需补）。
+- **eventbus_api 空壳组件删除（C5）**：目录 + 根 CMake + main REQUIRES。
+- **空壳文件删除（C9）**：w25q128/storage_module.c、st7789/display_module.c、
+  lora/wireless_module.c、cst816s/touch_module.c、aht30/sensor_module.c
+  （0-1 行，均无引用；不影响用户正在开发的 lora/aht30 主文件）。
+- **备份残留删除（C10）**：main.c.bak、main.c.backup、CMakeLists.txt.bak、
+  event_bus_types.h.bak、w25q128.c.bak、vfs.c.bak、diy-smart-assistant ×4。
+- **其他（C7/C8/C16/C17）**：thirdparty/littlefs-2.11.3（1.3 万行零引用）
+  删除；event_bus_test.c/example_usage.c/tasker_test.c 及其头文件删除
+  （已被 tests/ovs_tests 取代）；scripts/sign_firmware.py（C16）、
+  web/vue-ui HelloWorld.vue（C17）删除。
+
+### 验证
+idf.py build 通过（1.52MB，ota 余 39%）；ovs_tests 89/89 全绿；
+eventbus_api/空壳/备份零残留引用。
+
+### 注意
+- 本条目与 Phase 0a 改动均未提交，随用户 lora/aht30/扬声器开发一并提交。
+- drivers/gpio、drivers/led 删除（C11）未做——gpio 引用核对工作量较大，
+  建议与 power_srv 状态灯（12.4）一并处理。
+
+# OVS项目开发日志
+
 ## 2026-09-09 - Phase 1 收尾：holder 启用 + app_init 注册表 + /api/modules（验收全项 PASS）
 
 ### 任务目标
