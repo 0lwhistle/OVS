@@ -2,7 +2,7 @@
 
 | 项目 | 内容 |
 |------|------|
-| 文档版本 | v1.0 |
+| 文档版本 | v1.1（2026-09-09 修订，变更记录见附录 D） |
 | 日期 | 2026-09-09 |
 | 适用代码基线 | main 分支 @ 0889f2b6（其后三次提交：VFS 修复 / 设备树 A/B OTA / WiFi 热切换均已合入） |
 | 目标读者 | 本项目后续所有开发会话（人/AI 均适用），是下阶段开发的**总纲** |
@@ -212,6 +212,8 @@
 
 > 原则：周期轮询任务（aht30 1s、cst816s 现为 20ms 轮询）中，**触摸改中断驱动**（6.3），aht30 等慢传感器留在 tasker。
 
+> **v1.1 分工终版裁决**：自建任务仅限上表（lvgl / audio_in / audio_out / codec / jpeg / touch / lora_rx，web 既有）；**无自有任务、纯事件驱动**：net_mgr、power_srv（event_bus+esp_timer）、lora_proto 会话状态机、intercom 业务逻辑、ble_prov（NimBLE 栈自带任务）；**进 tasker**：aht30 轮询、time_srv 闹钟比对、heartbeat 采样、lora 信标广播触发；20ms 级背光渐变步进用 esp_timer 不进 tasker。口诀：**持续循环或硬实时→自建任务；间歇秒级短活→tasker；纯事件响应→event_bus 订阅+esp_timer**。
+
 ### 4.3 事件驱动模型
 
 **决策：保留并修复 event_bus，作为模块间唯一解耦通道；全部跨模块通知走事件，禁止模块间头文件互相 include 业务 API（服务注册接口除外）。**
@@ -283,7 +285,8 @@ components/
 src/
 ├── app/           main.c（瘦身为编排）+ app_init.c（holder 注册表）
 └── lvgl/          六层 UI + port/（显示/触摸移植层，6.2/6.3）
-thirdparty/        cJSON / mongoose / sha256 / codec2（新增）/ esp_littlefs
+thirdparty/        cJSON / mongoose / sha256 / codec2（新增）/ esp_littlefs / lvgl-9.5.0+lvgl_lib
+sim/               PC 模拟器（SDL2 宿主，与 ESP 共编译 src/lvgl 六层；v1.1 新增）
 web/vue-ui/        + FileManager.vue / Alarm.vue / Media.vue（十）
 tests/             新：event_bus/tasker 测试迁移地（C8）
 ```
@@ -306,11 +309,15 @@ tests/             新：event_bus/tasker 测试迁移地（C8）
 
 验收：`event_bus_print_subscribers()` 在集成测试中列出 ≥6 个真实订阅者；压测 1000 事件/秒无堆增长（`heap_caps_get_free_size` 前后差 <2KB）。
 
+**测试分层（v1.1）**：event_bus 纯 C 无硬件依赖，单元/压力测试在 PC 宿主跑（复用 sim/ CMake 工具链建 `ovs_tests` 目标）：订阅/退订生命周期、锁外回调（handler 内再订阅/退订不死锁）、池耗尽退化为 malloc 兜底、名表全覆盖非 UNKNOWN、快照上限 8 溢出堆扩展分支。PC 反复压测 + 真机最终验收双层。
+
 ### 5.2 tasker：原地重构（不推翻）
 
 现状：能用但粗糙——dispatcher `vTaskDelay(1)` 忙轮询（双核空转）、标志位跨核无原子性、"优先级"维度名存实亡（恒 last）、超时只能升级不能中断。
 
 **决策：保留 tasker_api 形态与三级 worker 分类（这个分类对慢周期任务是合理的），核心实现做三处修复：**
+
+> **v1.1 追加约束（用户裁定）**：对外 API 与宏签名**冻结**，仅动内部实现；改动前后以 tests/ 的 PC 回归测试做门禁，防止影响现有调用方。
 
 1. dispatcher 改**阻塞等待**：`xEventGroupWaitBits(s_wake_evt)`，enqueue 时 `set_bits`——空闲零 CPU；
 2. `done/cancel/dispatched/timeout_flag` 读写全部进 `portENTER_CRITICAL` 短临界区；
@@ -321,19 +328,13 @@ tests/             新：event_bus/tasker 测试迁移地（C8）
 
 同时统一依赖：aht30/cst816s/lora/w25q128/audio_module 的 CMake `REQUIRES` 从 `tasker` 改为 `tasker_api`，`include/tasker.h` 副本删除（C2/C6）。
 
-### 5.3 logger：统一为 esp_log 薄封装
+### 5.3 logger：保留 printf 实现（v1.1 改判，用户裁定）
 
-现状：`printf` + ANSI 色码，无时间戳/任务名，且存在同名异体旧头（C1，最危险项）。
+现状：`printf` + ANSI 色码、等级过滤可用；无时间戳/任务名（放弃该收益）。存在同名异体旧头（C1，最危险项）。
 
-重构（单文件替换 `core/logger/logger.c`）：
+**v1.1 改判：原"统一为 esp_log 薄封装"方案废弃。** 理由：PC 模拟器（sim/）当前零改造直接复用 `core/logger/logger.c`，绑定 esp_log 会拆掉双平台基建；时间戳/任务名为锦上添花非必需。
 
-```c
-#include "esp_log.h"
-#define LOGE(tag, fmt, ...) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,  tag, fmt, ##__VA_ARGS__)
-// LOGW/LOGI/LOGD 同构；logger_set_level → esp_log_level_set("*", lvl)
-```
-
-收益：时间戳/任务名/CPU 号、每 tag 运行期调级、UART 驱动输出（不阻塞）、`CONFIG_LOG_MASTER_LEVEL` 编译期裁剪。**调用方零修改**（宏签名不变）。删除 `include/logger.h` 后全仓库唯一版本。
+保留动作：仅删除 `include/logger.h` 同名异体旧副本（C1 不变——危险在双版本并存，不在实现本身）；运行期 `logger_set_level()` 维持。后期若确需 esp_log 后端（master level 编译期裁剪），按平台分层演进为 `logger_esp.c` + `logger_pc.c`，`logger.h` 接口不动。
 
 ### 5.4 ovs_vfs：加锁 + 清半成品
 
@@ -369,22 +370,18 @@ main/CMakeLists.txt  → REQUIRES 改为实际依赖组件
 
 ## 六、显示与 UI 子系统设计
 
-### 6.1 LVGL 引入决策
+### 6.1 LVGL 引入决策（v1.1：已实施，路线变更）
 
-**决策：LVGL v9.2 LTS**，经 `main/idf_component.yml` managed component 引入（项目已有 managed 依赖 mdns 先例）：
+**已实施（2026-09-09）：LVGL v9.5.0 vendored + lv_conf.h 路线**，替代原"v9.2 managed component + Kconfig"方案：
 
-```yaml
-dependencies:
-  espressif/lvgl: "^9.2.0"
-  espressif/esp_jpeg: "^1.0"    # S3 硬件 JPEG 解码（图片/视频共用）
-```
+- `thirdparty/lvgl-9.5.0`（裁非运行时目录）+ `thirdparty/lvgl_lib` IDF 包装组件（全量 glob src/*.c，bin_decoder 等必需解码器不可排除）；
+- 配置走 `src/lvgl/lv_conf.h` 双平台共用一份（`OVS_SIMULATOR` 宏仅 PC 开 SDL），不使用 Kconfig；
+- 内存 `LV_STDLIB_CLIB`（libc malloc，不用 64KB 内置静态池）；
+- **PC 模拟器（sim/，SDL2）同步落地**——原方案没有的维度：UI 开发可全程脱离真机，六层 UI 两端编译同一份；
+- R1（v9 × IDF 6.0.1）已真机编译+运行验证关闭；
+- 实施细节：`docs/superpowers/specs/2026-09-09-lvgl-dual-platform-design.md`。
 
-理由：
-- v8 已停止功能维护；现有 `src/lvgl/lv_conf.h` 是 v8 风格（`LV_COLOR_16_SWAP` 等），**重写为 v9 风格**（`LV_COLOR_DEPTH 16`、`LV_DRAW_SW` 等），工作量小于迁移成本；
-- v9 的 `lv_display_set_flush_cb/draw_buf`、`lv_indev`、tileview、`lv_cache`（图片缓存）覆盖本项目全部需求；
-- sdkconfig 打开 `CONFIG_LV_USE_...` 各开关（字体/控件裁剪）。
-
-lv_conf 要点：RGB565、`LV_MEM_SIZE 64KB`（或用 `LV_MEM_CUSTOM` 接 tlsf/系统堆）、`LV_CACHE_DEF_SIZE 4MB`（PSRAM 图片缓存，`LV_IMAGE_HEADER_CACHE` 开）、中文外部字体 bin 放 /font 运行时加载（`lv_font_load`，免重烧字库）。
+esp_jpeg（S3 硬解）仍按原计划 Phase 4 经 managed component 引入。中文外部字体 bin 放 /font 运行时加载（`lv_font_load`）——**前置依赖（v1.1 新识别）：需为 ovs_vfs 实现 lv_fs 后端**，i18n 多语言（附录 D）同样依赖它。
 
 ### 6.2 st7789 对接 LVGL（port/display_port.c）
 
@@ -395,15 +392,15 @@ lv_conf 要点：RGB565、`LV_MEM_SIZE 64KB`（或用 `LV_MEM_CUSTOM` 接 tlsf/�
 ```
 lv_display_t* display_port_init(void)
 ├─ st7789_init()（改造：width/height/rotation/invert 从 dtree 读）
-├─ draw_buf ×2：各 240×40×2B = 19.2KB，heap_caps 内部 DMA 内存（共 38KB 内部RAM）
-├─ lv_display_create(240,280) + set_flush_cb(flush_cb) + set_draw_bufs 双缓冲
+├─ draw_buf ×2：各 320×40×2B = 25.6KB，heap_caps 内部 DMA 内存（共 51KB；紧张可降 20 行×2=25.6KB，骨架现为 20 行）
+├─ lv_display_create(320,240) + set_flush_cb(flush_cb) + set_draw_bufs 双缓冲（宽高读 dtree，骨架 null 冒烟版已实现）
 └─ flush_cb(disp, area, color_p):
    ├─ st7789_set_window(area)          // 现有窗口地址命令
    ├─ st7789_blit_dma(area, color_p)   // 复用现有 24 行分片 DMA 发送器
    └─ 片间总线让出 W25Q128（现有机制保留，8.3 有并发分析）
 ```
 
-- **局部刷新模式**（非全帧 direct_mode）：240×280 全帧 134KB @40MHz SPI ≈ 27ms/帧（约 37fps 上限），交互场景 LVGL 脏区通常 <1/4 屏，实际 40-60fps；
+- **局部刷新模式**（非全帧 direct_mode）：320×240 全帧 150KB @40MHz SPI ≈ 30ms/帧（约 33fps 上限），交互场景 LVGL 脏区通常 <1/4 屏，实际 40-60fps；
 - 背光 **LEDC PWM**（GPIO38，5kHz/10bit），`display_set_brightness(%)` 归 power_srv 管（12.3），替换现有 `st7789_set_backlight` 的开关式 GPIO；
 - PSRAM 大图（照片帧）路径：解码目标缓冲在 PSRAM，flush_cb 里对 PSRAM 源用 GDMA（S3 支持 PSRAM→SPI DMA，需对齐），不满足对齐时 memcpy 到内部弹跳缓冲——**弹跳缓冲 8KB 预分配**。
 
@@ -420,7 +417,7 @@ gpio_install_isr_service 一次性
 │    收到通知 → cst816s_read()（I2C 读 0x01-0x06）→ 写入双态点缓冲
 │    └─ 30ms 无新通知 → 发松开事件（去抖/抬手判定）
 ├─ lv_indev_drv: read_cb 返回最近点状态（pressed/released + xy）
-│    └─ Y 坐标按 rotation 变换；240×280 全区映射
+│    └─ X/Y 坐标按 rotation 变换（原生 240×320 面板转 320×240 横屏，两个轴都需映射）
 └─ 手势（cst816s_get_gesture 上滑/双击等）→ EVENT_TOUCH_GESTURE
      → power_srv 订阅（抬手/双击唤醒，12.3）
 ```
@@ -451,8 +448,8 @@ I2C 读取 ~400kHz 下 6 字节约 0.2ms，中断驱动后 CPU 占用可忽略�
 
 | 功能 | 方案 | 关键点 |
 |------|------|--------|
-| 图片轮换 | /media JPEG 列表 → `esp_jpeg` 解码（硬解）→ PSRAM RGB565 帧 → `lv_image` 换源 + 淡入淡出 | 切换间隔可配；解码 ~15ms/张（240×280）；解码线程 media_player，不在 lvgl_task |
-| 视频播放 | 自定义 `.mjp` 容器（帧索引表 + JPEG 帧 [+ 可选 16k PCM 音轨]），`media_player` 20fps 解码 + audio_srv 同步播放 | S3 硬解 JPEG ~30fps@240×280 有余量；文件由 Web 上传，工具脚本 `scripts/make_mjp.py`（ffmpeg 抽帧+压 JPEG+打包） |
+| 图片轮换 | /media JPEG 列表 → `esp_jpeg` 解码（硬解）→ PSRAM RGB565 帧 → `lv_image` 换源 + 淡入淡出 | 切换间隔可配；解码 ~20ms/张（320×240）；解码线程 media_player，不在 lvgl_task |
+| 视频播放 | 自定义 `.mjp` 容器（帧索引表 + JPEG 帧 [+ 可选 16k PCM 音轨]），`media_player` 20fps 解码 + audio_srv 同步播放 | S3 硬解 JPEG ~30fps@320×240 有余量；文件由 Web 上传，工具脚本 `scripts/make_mjp.py`（ffmpeg 抽帧+压 JPEG+打包） |
 | 待机动画 | 低帧（8-10fps）小尺寸（如 160×186）RGB565 帧序列 bin（预制转换，`scripts/png_to_frames.py`），PSRAM 加载循环播放 | 待机时 LVGL 只跑这一个动画 timer；背光降至 10-20% |
 | WiFi UI | bridge_wifi 调 `/api/wifi/*` 同源逻辑：设备端直接调 `net_mgr`/wifi 驱动 API（同进程无需 HTTP） | 扫描结果 lv_list；密码 lv_keyboard；连接中态 + 30s 回退倒计时（复用 net_provision 逻辑） |
 | 蓝牙配网 UI | settings 入口页：展示配网二维码/设备名 + 等待状态（bridge_prov → ble_prov 模块） | 9.2 |
@@ -823,7 +820,7 @@ web_ota OVSO 容器 → app 流式写槽 + dtb 写非活动槽 → 15s 确认翻
 |------|------|
 | LVGL 堆（`LV_MEM_CUSTOM`→malloc+PSRAM 优先） | 2MB |
 | LVGL 图片缓存（lv_cache） | 3MB |
-| JPEG 解码帧缓冲（双帧 240×280×3×2） | ~800KB |
+| JPEG 解码帧缓冲（双帧 320×240×3×2） | ~900KB |
 | 音频环形队列（录 4s） | 128KB |
 | 对讲抖动缓冲 | 16KB |
 | cJSON 设备树 + 余量 | >1.5MB |
@@ -847,7 +844,9 @@ web_ota OVSO 容器 → app 流式写槽 + dtb 写非活动槽 → 15s 确认翻
 - Mongoose 静态资源 gzip（10.3）+ 浏览器缓存，OTA 推送速度预期 700KB/s → 1MB/s+；
 - 这些是 Phase 5 可选项，实测瓶颈不在 WiFi 时不动。
 
-### 14.5 分区表重排（Phase 0 执行，需串口烧录一次）
+### 14.5 分区表重排（Phase 0b 执行，需串口烧录一次）
+
+> v1.1 实测更新：固件含 LVGL 后 1.54MB / ota 分区余 41%（且 sdkconfig 仍为 Debug 优化，切 -Os 还会缩减）。紧迫度从"必爆"降为"Phase 4（JPEG+BLE）之前必须"；仍建议尽早（0b）执行——分区表无法 OTA，改布局只能串口烧。
 
 ```
 # 现状问题: ota 2.5MB 偏小(内嵌web资产706KB+LVGL+蓝牙)；littlefs(/config) 8.75MB 严重超配
@@ -877,14 +876,20 @@ littlefs  0x9E0000 0x100000    (8.75MB → 1MB, /config)
 
 > 每阶段独立可验证、可 OTA 交付；阶段内任务可并行。验收标准以真机为准，完成即写开发日志。
 
-### Phase 0：清理与地基修复（预计 2-3 个会话）
+### Phase 0：清理与地基修复（v1.1 拆分 0a/0b）
 
-1. include/ 解散（5.6，C1-C4）+ eventbus_api/littlefs 拷贝/空壳文件/备份文件删除（C5-C10）；
-2. 分区表重排 + 全量烧录验证 OTA 双槽（14.5）；
-3. Bug 修复：heartbeat 接线（C12）、dtree 四修复（5.5）、ovs_vfs 加锁（5.4）、w25q128 缓冲与文档（C13/C14）；
-4. logger 切 esp_log（5.3）；
-5. 测试代码迁出固件（C8）。
-   **验收**：全量构建零警告新增；烧录后 WiFi/OTA/VFS/Web 回归全通过；`/api/status` rssi 非 0。
+**Phase 0a：纯删除类清理（1 个会话内）**
+1. include/ 解散（5.6；C4 lvgl.h 已完成）+ eventbus_api/littlefs 拷贝/空壳文件/备份文件删除（C5-C10）；
+2. 测试代码迁出固件（C8，迁入 tests/ 作 PC 回归测试，兼作 5.1/5.2 门禁）。
+   **验收**：全量构建通过；WiFi/OTA/VFS/Web 回归全通过。
+
+**Phase 0b：分区表重排（独立交付，需串口烧录一次，见 14.5）**
+1. 新分区布局烧录 + `OVS_MEDIA_FORMAT_ON_FIRST_BOOT` 过渡格式化；
+2. OTA 双槽回归验证。
+   **验收**：OTA v1→v2 升级回滚演练通过；littlefs 1MB 挂载正常。
+
+**地基 bug 修复（0a/0b 之间穿插）**：heartbeat 接线（C12）、dtree 四修复（5.5）、ovs_vfs 加锁（5.4）、w25q128 缓冲与文档（C13/C14）；~~logger 切 esp_log（5.3）~~ **v1.1 改判取消**。
+**验收**：全量构建零警告新增；`/api/status` rssi 非 0。
 
 ### Phase 1：核心层与编排（预计 2-3 个会话）
 
@@ -893,18 +898,19 @@ littlefs  0x9E0000 0x100000    (8.75MB → 1MB, /config)
 3. holder 启用 + app_init.c 注册表 + main.c 瘦身（4.4）+ `/api/modules` 端点。
    **验收**：开机日志打印各模块 init 耗时；拔掉任一可选模块（模拟失败）系统降级运行；订阅者 ≥6。
 
-### Phase 2：显示/触摸/LVGL 运行时（预计 4-6 个会话，UI 里程碑 M1）
+### Phase 2：显示/触摸/LVGL 运行时（v1.1 修订：骨架已落地，剩余 2-3 个会话，UI 里程碑 M1）
 
-1. 引入 LVGL v9 + esp_jpeg（6.1）；
-2. st7789 flush_cb 对接 + dtree 宽高 + 背光 LEDC（6.2）；
+1. ~~引入 LVGL v9~~（**已完成 2026-09-09**：9.5.0 vendored + 六层骨架 + lvgl_task/tick/显示锁 + PC 模拟器；esp_jpeg 移 Phase 4）；
+2. st7789 flush_cb 对接 + dtree 宽高 + 背光 LEDC（6.2）——**v1.1 建议提前为独立小里程碑（项目首次"点亮"）**；
 3. cst816s 中断改造 + indev 对接（6.3）；
-4. lvgl_app 重写（lvgl_task/显示锁/tick）+ 中文字体链路（/font + lv_font_load）；
+4. ~~lvgl_app 重写~~（已完成：lvgl_task/显示锁/lv_tick_set_cb）+ 中文字体链路（/font + lv_font_load + lv_fs 后端）；
 5. Flash QIO / PSRAM 80MHz 冒烟（14.6）。
    **验收**：LVGL 官方 demo 控件页 40fps+；触摸拖动滑块跟手；中文文本渲染；亮度可调。
 
 ### Phase 3：UI 应用框架与基础页面（M2）
 
-1. navigator/presenter/bridge 骨架实码化（6.4）；
+0. **i18n 多语言框架（v1.1 新增，页面开工前置）**：`_("键")` 宏（`i18n_tr` 实现）、/config/langs/*.json（cJSON→哈希驻 PSRAM）、缺失回退链（当前语言→默认语言→键名+LOGW）、切语言=nav 重建、配套 scripts/i18n_check.py 键集校验、切语言联动 lv_font_load 字体；
+1. navigator/presenter/bridge 骨架实码化（6.4；三横页 tileview/bridge_time/home 页骨架已落地，补 nav_push/nav_pop 页面栈与 on_create/on_show/on_hide/on_destroy 生命周期）；
 2. tileview 三主页 + settings 栈导航 + 滑动动画；
 3. home 页（时钟/温湿度挂件——aht30 此阶段接线/网络状态栏）；
 4. settings：WiFi 扫描连接页（复用 net_mgr）、亮度、关于；
@@ -938,7 +944,7 @@ B 线（Web）：fs API + FileManager.vue + alarm API/页 + 远程播放 API/Med
 
 | # | 风险/决策 | 影响 | 缓解/结论 |
 |---|-----------|------|-----------|
-| R1 | LVGL v9 + IDF 6.0.1 兼容性 | Phase 2 阻塞 | managed component 锁定小版本；若冲突退 v9.2 最低版或 vendored；v8 不选（停止维护） |
+| R1 | LVGL v9 + IDF 6.0.1 兼容性 | ~~Phase 2 阻塞~~ **已关闭（2026-09-09）** | 9.5.0 vendored 路线，真机编译+运行+OTA 冒烟 PASS |
 | R2 | QIO/80MHz PSRAM 稳定性 | 花屏/死机 | 冒烟压测门禁，不通过保持 DIO/40M（性能预算已按保守值给） |
 | R3 | Codec2 在 240MHz 单核实时性 | 对讲破音 | 1200bps 模式 ~15MIPS 远低于预算；实测不行则编码任务绑 Core1 + 关闭 WMMX 之外的优化 |
 | R4 | SF7 下对讲距离 <3km 预期 | 产品口径 | 已在 8.5 修订口径；UI/Web 明示当前空速档位 |
@@ -992,6 +998,8 @@ MODULE_ID_PROV   0x0010: EVENT_PROV_STARTED / PROV_CLIENT_CONNECTED / PROV_DONE 
 | modules/power_srv | power_srv.c/.h、backlight.c、status_led.c | dtbs、event_bus、logger、esp_timer |
 | modules/lora_proto | lora_proto.c/.h、frame.c、session.c、msgbox.c、beacon.c | lora、codec2、event_bus、logger |
 | modules/ble_prov | ble_prov.c/.h | net_mgr(net_provision)、event_bus、logger |
+| core/mem_pool（v1.1 新增） | mem_pool.c/.h：记账分配(按模块统计峰值)/定长块池/大缓冲助手 | 无（基础件；event_bus 池、音频帧池建于其上） |
+| modules/i18n（v1.1 新增） | i18n.c/.h（`_("键")`=i18n_tr）、lang_store.c、lv_fs_vfs.c（ovs_vfs→lv_fs 后端） | cJSON、ovs_vfs、event_bus、logger |
 | thirdparty/codec2 | vendored 源（codec2 1200 模式裁剪） | — |
 | src/lvgl/port | display_port.c、indev_port.c、lvgl_port.h | lvgl、st7789、cst816s、power_srv |
 | src/lvgl 实码化 | navigator/nav.c、pages/page_*.c（7 页）、presenters/*.c、bridge/bridge_*.c、ui/基础控件 | lvgl、各服务模块头 |
@@ -999,6 +1007,26 @@ MODULE_ID_PROV   0x0010: EVENT_PROV_STARTED / PROV_CLIENT_CONNECTED / PROV_DONE 
 | scripts | make_mjp.py、png_to_frames.py | — |
 | web/vue-ui | FileManager.vue、Alarm.vue、Media.vue | — |
 | tests/ | event_bus_test.c、tasker_test.c 迁入 | — |
+
+## 附录 D：v1.1 变更记录（2026-09-09）
+
+依据：LVGL 双平台骨架落地实测 + 用户逐项裁定。实施记录见 `docs/development_log.md` 2026-09-09 条目与 `docs/superpowers/specs/2026-09-09-lvgl-dual-platform-design.md`。
+
+| # | 变更 | 状态 |
+|---|------|------|
+| 1 | R1（LVGL v9 × IDF 6.0.1）关闭；C4（include/lvgl.h 假 stub）完成 | 已完成 |
+| 2 | 6.1 路线变更：9.5.0 vendored + lv_conf.h 双平台配置；**新增 PC 模拟器（sim/）维度** | 已完成 |
+| 3 | 全文屏幕参数 240×280 → **320×240 横屏**（实物确认）；触摸改 X/Y 双轴变换 | 已回写 |
+| 4 | 5.3 logger 改判：**保留 printf 实现**（PC 端零改造复用），仅删 include/logger.h 旧副本（C1 不变） | 用户裁定 |
+| 5 | 5.2 tasker：对外 API **冻结**，内部优化以 tests/ PC 回归测试为门禁 | 用户裁定 |
+| 6 | 5.1 event_bus：四修复 + 池建于 mem_pool + **PC 宿主测试层**（ovs_tests）；修复后强制接入真实订阅者 ≥6 | 确认立项 |
+| 7 | 十二 power_srv：确认立项（电源状态机/背光 LEDC/状态灯/light sleep） | 确认立项 |
+| 8 | 新增 `core/mem_pool`（记账分配/定长块池/大缓冲助手；业务代码禁裸 malloc，LVGL 后期挂自定义分配器） | 新增设计 |
+| 9 | 新增 `modules/i18n`（`_("键")` 宏 + /config/langs JSON + 回退链 + 切语言重建导航）；前置 lv_fs 后端 | 新增设计 |
+| 10 | 4.2 线程/tasker 分工**终版裁决**（口诀：持续循环/硬实时→任务；间歇秒级→tasker；纯事件→订阅+esp_timer） | 裁定 |
+| 11 | **modules/lora、modules/aht30 驱动由用户本人开发**；上层只依赖公共头，接口以驱动需求规格约定，两线互不阻塞 | 边界约定 |
+| 12 | Phase 0 拆分 0a（纯删除）/0b（分区重排独立交付）；st7789 点屏提前为独立小里程碑；Phase 2 收缩为 2-3 会话 | 排序 |
+| 13 | B5/14.5 flash 紧迫度降级（实测 1.54MB/余 41%），分区重排仍尽早（0b）执行 | 实测修订 |
 
 ---
 
