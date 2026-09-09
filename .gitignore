@@ -35,3 +35,6 @@ build-sim/
 
 # PC 测试构建输出
 build-tests/
+
+# Large source archives (extracted dirs are tracked, zips are not)
+thirdparty/*.zip
