@@ -131,9 +131,10 @@ DTREE_INT("buses.i2s0", "bclk_pin", &bclk);
 
 ```
 main（垫片，注册 src/app 源文件）
-├── tasker_api ──→ tasker ──→ esp_driver_gptimer, esp_timer, logger
+├── tasker_api ──→ tasker ──→ freertos, esp_timer, esp_driver_gptimer, logger
+├── eventbus_api ──→ event_bus ──→ freertos, esp_timer, logger
 ├── dtbs ──→ logger, spiffs, cJSON (thirdparty), sha256 (thirdparty), nvs_flash, esp_partition, app_update
-├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, logger
+├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, freertos, logger
 ├── led ──→ esp_driver_gpio, gpio
 ├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, freertos, logger, sha256 (thirdparty), dtbs
 ├── net_mgr ──→ wifi, dtbs, nvs_flash, espressif__mdns, esp_wifi, esp_event, esp_netif, esp_timer, freertos, event_bus, logger
