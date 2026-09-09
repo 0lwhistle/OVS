@@ -1,5 +1,61 @@
 # OVS项目开发日志
 
+## 2026-09-09 - Phase 1（部分）：event_bus 四修复 + tasker 三修复完成（PC 门禁 89/89，真机自旋 bug 修复）
+
+### 任务目标
+REFACTORING_PLAN v1.1 Phase 1 前两项：5.1 event_bus 四修复+池化、
+5.2 tasker 三修复，建立 PC 宿主测试门禁。holder 启用（4.4）留下轮。
+
+### 完成内容
+- **event_bus 四修复（API 零改动）**：
+  1. 锁外分发：dispatch 锁内快照匹配订阅者（上限16，溢出告警），锁外调用
+     handler——handler 内再订阅/发布/退订不死锁（PC 测试实卡该场景）；
+  2. 事件内存池：mem_pool 48×268B（最大事件尺寸），池满退化堆分配并计数
+     （新 API event_bus_get_heap_fallback）；header.reserved 兼作来源标志；
+  3. 统计 C11 atomic 化；
+  4. 名表由枚举自动生成 43 项（原手工表缺失 WIFI_MODE_CHANGED 等）。
+  新增 port 层 event_bus_port.{h,c}（ESP=FreeRTOS 队列/信号量，PC=pthread
+  环形队列+互斥量），组件可在 PC 编译进 ovs_tests。event_bus_test.c/
+  example_usage.c 移出固件（C8）。
+- **tasker 三修复（API 冻结）**：
+  1. sched 忙轮询 vTaskDelay(1) → 最近截止时间 pthread_cond_timedwait
+     （enqueue signal 提前唤醒，空闲零 CPU）；dispatcher 删 vTaskDelay；
+  2. cancel/done/dispatched 原子化（atomic_int），结构体整块拷贝改逐字段；
+  3. worker_init 失败路径泄漏修复（worker_release_partial 幂等清理）。
+  ESP 头依赖收缩（去 esp_log/gptimer/freertos，统一 LOGx），新增
+  tasker_port.{h,c}（时基+超时定时器移植层，PC 端定时器 no-op）。
+- **依赖统一（C2/C6 部分）**：删 include/{event_bus,tasker}.h 陈旧副本；
+  8 个消费方（audio/heartbeat/cst816s/aht30/web/lora/w25q128/main）
+  REQUIRES tasker → tasker_api。
+- **PC 门禁 ovs_tests 扩至 89 用例**（mem 41 + event_bus + tasker），
+  10 轮连跑全绿；test_main.c 统一入口。
+- **真机自旋 bug（本日最重要战果）**：首次 OTA 后设备 76 分钟出现
+  task_wdt——worker_sched_handler 在 CPU0 热转饿死 IDLE0、WiFi 失联。
+  addr2line 定位 + 复盘触发链：web WS 推送任务入队（web.c:941）→ 调度表
+  非空 → ESP pthread_cond_timedwait 与 CLOCK_MONOTONIC condattr 兼容
+  问题 → 超时等待立即返回 → 空转。修复：cond 回归默认 REALTIME 时钟 +
+  非 ETIMEDOUT 错误兜底睡 2ms + 自旋熔断（空转 200 次强制降速 10ms 并
+  LOGE 诊断）。修复后 OTA 6 分钟监控：task_wdt 0（仅 OTA 上传瞬间 web
+  任务忙的既有提示）、sched spinning 0、bad magic 0。
+
+### 待解决问题
+- holder 启用 + app_init.c + /api/modules（Phase 1 第三项，下轮）。
+- WS 推送任务实际入队后的长时间稳定性观察（用户开网页上位机即触发）。
+- VFS 压测闭环仍待 W25Q128 接线。
+
+### 下一步计划
+- Phase 1 收尾（holder 编排）或按需先行 Phase 2 的 st7789 点屏里程碑。
+
+### 代码变更
+- 修改: components/core/event_bus/{event_bus.c,event_bus_internal.h,
+  event_bus_types.h,CMakeLists.txt}、components/core/tasker/{task_worker.c/h,
+  task_manager.c/h,CMakeLists.txt}、components/api/tasker_api/{tasker.h,tasker.c,
+  CMakeLists.txt}、8 个消费方 CMakeLists、tests/（扩容）
+- 删除: include/{event_bus.h,tasker.h}（C2 陈旧副本）
+- 新增: components/core/event_bus/event_bus_port.{h,c}、
+  components/core/tasker/tasker_port.{h,c}、tests/{test_main.c,
+  test_event_bus.c,test_tasker.c}
+
 ## 2026-09-09 - mem_pool 全仓库迁移完成（17文件117处+混用修复，真机零magic错误）
 
 ### 任务目标
