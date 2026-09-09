@@ -1,5 +1,73 @@
 # OVS项目开发日志
 
+## 2026-09-09 - LVGL 9.5.0 双平台骨架接入：ESP 固件 + PC 模拟器（真机 OTA 验证 PASS）
+
+### 任务目标
+引入 lvgl-9.5.0（用户下载的 zip），使项目可分别构建 **ESP32-S3 固件**与
+**PC 模拟器（SDL2）**两个产物，两端跑同一份 UI 代码；模拟器方便脱离硬件
+观看/修改/调整 UI。本期交付骨架（显示 null 输出冒烟），真实 st7789/cst816s
+对接留下一步（REFACTORING_PLAN 6.2/6.3）。
+
+设计文档: docs/superpowers/specs/2026-09-09-lvgl-dual-platform-design.md
+
+### 完成内容
+- **LVGL 库接入**：lvgl-9.5.0 解压 vendor 到 thirdparty/（裁掉 tests/demos/
+  docs/examples 非运行时目录，182M→59M）；新增 `thirdparty/lvgl_lib` IDF 包装
+  组件（glob 上游 src/*.c，不做目录排除——src/libs/bin_decoder 是 lv_init 必需
+  解码器，未启用库由宏守卫成空 TU；thorvg 为 .cpp 被 *.c 通配自然排除）。
+- **lv_conf.h 重写为 v9.5 双平台版**：旧文件是 v8 风格（LV_COLOR_16_SWAP/
+  LV_DRAW_COMPLEX/LV_MEM_CUSTOM 等宏在 v9 已失效全删）。现仅保留差异化配置：
+  RGB565、LV_STDLIB_CLIB（免内置 64KB 静态池）、30fps、LV_USE_OS=NONE、
+  WARN 级日志、Montserrat 16/20/28/48；`OVS_SIMULATOR` 宏时才开 LV_USE_SDL。
+  两端共用一份（v9 无 SWAP 宏，真屏字节交换将来在 flush_cb 内做）。
+- **src/lvgl 骨架六层**：navigator（tileview 三横页 [intercom][home][clock]）、
+  pages/page_home（状态栏+48号大字时钟+占位卡片，320×240 横屏）、
+  bridge/bridge_time.h（UI 唯一时间来源）。平台边界：port/ 仅 ESP
+  （display_port null flush 冒烟 + bridge_time_esp uptime）；sim/ 仅 PC。
+- **PC 模拟器**：sim/ 独立 CMake 工程（上游 os_desktop.cmake 路线，
+  LV_BUILD_CONF_DIR 指向共享 lv_conf.h）+ scripts/sim_build.sh [--run]。
+  SDL2 窗口 320×240 @2x 缩放、鼠标即触摸、关窗即退。logger 组件纯 printf
+  实现直接复用零改造。
+- **main.c 接线**：lvgl_app_init() 置于 vfs_stack_start() 之后，远离 OTA/网络
+  保护区（遵守保护区协作规则）。
+- **屏幕尺寸修正**：设备树 lcd_display 240×280 → **320×240**（用户确认实物
+  面板尺寸；st7789.c 内部仍硬编码 240×280 未动，6.2 对接时改读设备树）。
+- **真机 bug 修复——LVGL 时基**：首版 OTA 后串口发现 `lv_tick_inc() is not
+  called` 警告刷屏、smoke 定时器不触发：ESP 端未给 LVGL v9 提供时基。
+  修复：lvgl_app_init 中 `lv_tick_set_cb(esp_timer_get_time/1000)`（v9 标准
+  做法，无需轮询任务；PC 端 SDL 驱动自装回调互不影响）。
+- **验证结果**：双端构建通过（固件 1.54MB，ota 分区余 41%）；模拟器运行
+  正常（3 页滑动、时钟走字）；OTA 推真机 PASS——串口见 display 320x240
+  初始化、navigator ready、flush_count 持续增长（32→356+）、无 panic，
+  回滚保护自动确认。**R1（LVGL v9 × IDF 6.0.1）正式关闭**。
+
+### 待解决问题
+- 模拟器窗口需 WSLg（DISPLAY=:0 已验证可用）；Windows 侧直接跑需另配。
+- 中文 CJK 字体未接入（LV_FONT 默认 Montserrat），真实 UI 阶段处理。
+- lvgl_app.c 的 lvgl_task 与未来其他任务的 UI 访问需统一走
+  lvgl_app_lock/unlock（接口已备）。
+
+### 解决方案
+- IDF 组件重名：包装组件命名 lvgl_lib（src/lvgl 组件名是 lvgl，不能同名）。
+- main 组件报 lvgl_app.h 找不到：main/CMakeLists REQUIRES 增加 lvgl。
+- lvgl 组件缺 esp_timer/heap 头：PRIV_REQUIRES 补 esp_timer heap freertos。
+
+### 下一步计划
+- 按 REFACTORING_PLAN 6.2 做 st7789 flush_cb 真实对接（set_window+DMA blit+
+  rgb565_swap，宽高改读设备树），6.3 cst816s indev 接入，真屏点亮。
+- navigator 扩展 nav_push/nav_pop 页面栈与页面生命周期（on_hide 停 timer）。
+- 中文 CJK 字体接入。
+
+### 代码变更
+- 新增: thirdparty/lvgl-9.5.0/（vendor）、thirdparty/lvgl_lib/、sim/（CMake+
+  main.c+bridge_time_sim.c）、scripts/sim_build.sh、src/lvgl/port/{display_port,
+  bridge_time_esp}、src/lvgl/{navigator/nav,pages/page_home,bridge/bridge_time.h}、
+  docs/superpowers/specs/2026-09-09-lvgl-dual-platform-design.md
+- 修改: src/lvgl/{lv_conf.h,lvgl_app.c/h,CMakeLists.txt}、src/app/main.c、
+  main/CMakeLists.txt、CMakeLists.txt、components/dtbs/config/ovs.dtb.json、
+  .gitignore、thirdparty/（删 lvgl-9.5.0.zip.Zone.Identifier）
+- 删除: include/lvgl.h（24 行假 stub，REFACTORING_PLAN C4）
+
 ## 2026-09-09 - 全项目审读 + 重构与架构优化方案（docs/REFACTORING_PLAN.md）
 
 ### 任务目标
