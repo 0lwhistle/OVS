@@ -273,8 +273,11 @@ esp_err_t module_set_callback(callback_t callback);
 
 ## 参考文档
 
-### 1. 项目结构规范
-位置：`references/project_structure.md`
+> 早期 v1 的 `references/`（project_structure.md、coding_standards.md）已删除，
+> 以下为现行权威文档（均在项目仓库内）。
+
+### 1. 项目结构说明
+位置：`docs/PROJECT_STRUCTURE.md`
 
 内容：
 - 目录结构规范
@@ -282,16 +285,14 @@ esp_err_t module_set_callback(callback_t callback);
 - 文件命名规范
 - 依赖关系图
 
-### 2. 代码规范
-位置：`references/coding_standards.md`
+### 2. 架构设计
+位置：`docs/ARCHITECTURE.md`
 
 内容：
+- 核心架构（Event Bus / Tasker / 设备树 / OTA / Holder）
 - 命名规范
 - 代码格式
-- 注释规范
-- 错误处理
-- 内存管理
-- 任务管理
+- 错误处理与日志规范
 
 ## 常见问题
 

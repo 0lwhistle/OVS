@@ -133,6 +133,7 @@ tasker_enqueue(&node);
 
 net_mgr_init(NULL);              // NULL = NVS/设备树默认配置
 net_mgr_start(NET_MODE_STA);     // STA/AP 互斥切换
+net_mgr_switch_mode(NET_MODE_AP, &prev);  // 免重启热切换（发布 EVENT_WIFI_MODE_CHANGED）
 net_status_t st;
 net_mgr_get_status(&st);         // mode/state/ssid/ip/rssi/switching
 
@@ -162,9 +163,13 @@ net_provision_submit(ssid, pass);  // 凭据统一入口: 持久化+切换+30s�
 ```c
 #include "dtree.h"
 
-// 读取配置
+// 读取配置（单棵树路径，设备嵌套于总线节点下）
 int32_t pin;
-DTREE_INT("spi.lcd_display", "cs_pin", &pin);
+DTREE_INT("buses.spi2.lcd_display", "cs_pin", &pin);
+
+// 模块推荐按 compatible 定位节点，父节点即所属总线
+dtree_node_t* dev = dtree_find_by_compatible("w25q128-flash");
+dtree_node_t* bus = dtree_get_parent(dev);
 ```
 
 **A/B 槽机制**（components/dtbs/dtb_ab.{h,c}）：dtb_0/dtb_1 裸分区(64KB×2)，
@@ -193,7 +198,7 @@ navigator (导航层) ← presenters (展示器层) ← bridge (桥接层)
 | **OTA指南** | `docs/ota_guide.md` | OTA 使用文档（免串口迭代流程） |
 | **网络/OTA日志** | `docs/development_log_net_ota.md` | OTA+网络线独立日志 |
 | 交接摘要 | `docs/handoff_summary.md` | 跨会话上下文交接 |
-| 设备树配置 | `components/dtbs/config/*.json` | JSON硬件配置 |
+| 设备树配置 | `components/dtbs/config/ovs.dtb.json` | 单棵树JSON硬件配置 |
 | LVGL架构 | `src/lvgl/README.md` | LVGL六层架构说明 |
 | 外设驱动 | `docs/peripheral_drivers_summary.md` | 驱动实现总结 |
 
@@ -207,7 +212,7 @@ navigator (导航层) ← presenters (展示器层) ← bridge (桥接层)
 ## 四、启动流程（按需读取）
 
 1. **必读**: `docs/ARCHITECTURE.md` 了解系统架构
-2. **必做**: 读取 `docs/development_log.md` 末尾，恢复开发进度和待解决问题
+2. **必做**: 读取 `docs/development_log.md` 顶部（新条目在文件顶部），恢复开发进度和待解决问题
 3. **仅当任务涉及硬件时**: 读取对应的设备树JSON配置
 4. **仅当任务涉及LVGL UI时**: 读取 `src/lvgl/README.md`
 5. **不要一次性读取所有文档**
@@ -594,6 +599,6 @@ if (!dtree_has_node("my_device.sensor")) {
 
 ---
 
-**技能版本**: v2.4 (2026-09-08 设备树AB分区OTA: dtb_ab/OVSO容器/独立dtb通道)  
-**最后更新**: 2026-09-08  
+**技能版本**: v2.5 (2026-09-09 文档校准: 设备树示例路径改 buses.* + 热切换接口/端点)  
+**最后更新**: 2026-09-09  
 **维护团队**: OVS Team

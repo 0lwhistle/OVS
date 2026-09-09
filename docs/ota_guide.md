@@ -28,7 +28,7 @@
 
 ```bash
 # 1. 确认网络开关已打开（当前默认就是 1，无需改动）
-#    main/main.c:  #define OVS_ENABLE_NET  1
+#    src/app/main.c:  #define OVS_ENABLE_NET  1
 
 # 2. 编译
 idf.py build
@@ -107,7 +107,8 @@ OVS_HOST=192.168.2.154 ./scripts/ota_push.sh # 环境变量方式
 5. WiFi SSID/密码配置：设备树 `wifi.sta` 为准——烧录了含新 WiFi 配置的
    设备树后，下次启动**自动覆盖 NVS 旧配置**（按配置哈希检测变更）；
    设备树未变时，用户经 `/api/wifi/connect` 配置的凭据持续生效且跨 OTA 幸存。
-   改设备树后需完整 `idf.py flash`（OTA/app-flash 不更新 SPIFFS 里的设备树）。
+   串口更新设备树需完整 `idf.py flash`（`ota`/`app-flash` 子命令不更新
+   SPIFFS 里的设备树）；日常改设备树走 A/B 槽 OTA 即可（见第三节），无需串口。
 
 ---
 
@@ -171,7 +172,9 @@ curl http://ovs.local/api/ota/status
 | GET  | `/api/wifi/scan` | 扫描附近 AP |
 | GET  | `/api/wifi/status` | 网络状态 + 热切换进度 |
 | POST | `/api/wifi/connect` | 提交 WiFi 凭据（`{"ssid":"x","password":"y"}`） |
+| POST | `/api/net/mode` | 网络模式热切换（`{"mode":"sta"\|"ap"\|"off"}`，免重启） |
 | POST | `/api/web/update` | tar 网页包更新（免整机 OTA） |
+| GET  | `/api/hello` | 连通性测试 |
 | GET  | `/ws` | WebSocket 状态推送 |
 
 ## 七、并行开发注意（两条线共用一台设备时）

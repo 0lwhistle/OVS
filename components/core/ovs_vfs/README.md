@@ -140,14 +140,16 @@ void app_main(void) {
 
 ### 3. 设备树配置自动挂载
 
+挂载配置位于单棵树 `components/dtbs/config/ovs.dtb.json` 的 `vfs.mounts` 节点：
+
 ```json
-// components/dtbs/config/vfs.json
 {
     "vfs": {
         "mounts": [
-            {"path": "/audio", "device": "w25q128", "offset": 0, "size": 8388608},
-            {"path": "/font", "device": "w25q128", "offset": 8388608, "size": 8388608},
-            {"path": "/config", "device": "internal", "offset": 0, "size": 0}
+            {"path": "/font",   "device": "w25q128", "offset": 0,       "size": 2097152, "format_if_fail": false},
+            {"path": "/audio",  "device": "w25q128", "offset": 2097152, "size": 6291456, "format_if_fail": false},
+            {"path": "/media",  "device": "w25q128", "offset": 8388608, "size": 8388608, "format_if_fail": false},
+            {"path": "/config", "device": "internal", "offset": 0,      "size": 0,       "format_if_fail": false}
         ]
     }
 }
@@ -155,13 +157,14 @@ void app_main(void) {
 
 ## 存储分区示例
 
-W25Q128 16MB 可分区使用：
+当前 `ovs.dtb.json` 中的 W25Q128 分区布局：
 
 | 路径 | 设备 | 偏移 | 大小 | 用途 |
 |------|------|------|------|------|
-| /audio | w25q128 | 0 | 8MB | 音频文件 |
-| /font | w25q128 | 8MB | 8MB | 字库文件 |
-| /config | internal | 0 | 2MB | 配置文件 |
+| /font | w25q128 | 0 | 2MB | 字库文件 |
+| /audio | w25q128 | 2MB | 6MB | 音频文件 |
+| /media | w25q128 | 8MB | 8MB | 媒体文件 |
+| /config | internal | 0 | 0（整分区） | 配置文件（内部 flash littlefs 分区） |
 
 ## 编译依赖
 

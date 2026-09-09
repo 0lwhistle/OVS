@@ -11,39 +11,52 @@ ovs/
 ├── components/                  # ESP-IDF 组件目录
 │   ├── api/                     # 公共 API 层
 │   │   ├── tasker_api/          #   - 任务调度器 API
-│   │   └── eventbus_api/        #   - 事件总线 API (待实现)
+│   │   └── eventbus_api/        #   - 事件总线 API
 │   ├── core/                    # 核心基础设施
 │   │   ├── tasker/              #   - 任务调度器实现
-│   │   ├── event_bus/           #   - 事件总线实现 (待实现)
-│   │   └── logger/              #   - 日志系统
-│   ├── dtbs/                    # 设备树模块 (新增)
-│   │   ├── dtree.c              #   - 设备树解析器
-│   │   └── config/              #   - JSON 配置文件
-│   │       ├── system.json      #     - 系统配置
-│   │       ├── i2s.json         #     - I2S 总线配置
-│   │       ├── i2c.json         #     - I2C 总线配置
-│   │       ├── lora.json        #     - LoRa 模块配置
-│   │       └── spi.json         #     - SPI 总线配置
+│   │   ├── event_bus/           #   - 事件总线实现
+│   │   ├── logger/              #   - 日志系统
+│   │   └── ovs_vfs/             #   - VFS 虚拟文件系统
+│   ├── dtbs/                    # 设备树模块
+│   │   ├── dtree.c              #   - 设备树解析器（公共API在 include/dtree.h）
+│   │   ├── dtb_ab.{h,c}         #   - 设备树 A/B 裸分区管理（OTA 用）
+│   │   └── config/
+│   │       └── ovs.dtb.json     #     - 单棵树设备树配置（SPIFFS 镜像源）
+│   ├── esp_littlefs/            # LittleFS 组件（vendor 目录）
 │   ├── drivers/                 # 硬件驱动
 │   │   ├── wifi/                #   - WiFi 驱动（esp_wifi 纯封装，无策略）
 │   │   ├── led/                 #   - LED 驱动
-│   │   ├── beep/                #   - 蜂鸣器驱动
 │   │   ├── gpio/                #   - GPIO 驱动
-│   │   └── sr04/                #   - 超声波传感器
+│   │   ├── spi_drv/             #   - SPI 驱动（共享计数，多设备共总线）
+│   │   ├── i2c_drv/             #   - I2C 驱动
+│   │   ├── i2s_drv/             #   - I2S 驱动
+│   │   └── uart_drv/            #   - UART 驱动
 │   └── modules/                 # 功能模块
-│       ├── net_mgr/             #   - 网络管理器（STA/AP 状态机、凭据持久化、配网接口）
+│       ├── net_mgr/             #   - 网络管理器（STA/AP 状态机、凭据持久化、配网接口、热切换）
 │       ├── ota/                 #   - OTA 升级模块（流式、回滚保护）
-│       ├── web/                 #   - Web 服务器（路由注册表、流式上传）
-│       └── heartbeat/           #   - 心跳监控
-├── thirdparty/                  # 第三方库目录 (新增)
+│       ├── web/                 #   - Web 服务器（路由注册表、流式上传、WS 推送）
+│       ├── heartbeat/           #   - 心跳监控
+│       ├── holder/              #   - 全局硬件模块注册表
+│       ├── st7789/              #   - ST7789 显示屏
+│       ├── w25q128/             #   - W25Q128 NOR Flash（含 VFS 适配）
+│       ├── internal_flash/      #   - 内部 Flash VFS 适配
+│       ├── lora/                #   - LoRa 无线模块
+│       ├── audio_module/        #   - 音频模块
+│       ├── aht30/               #   - AHT30 温湿度传感器
+│       └── cst816s/             #   - CST816S 触摸屏
+├── thirdparty/                  # 第三方库目录
 │   ├── cJSON/                   #   - cJSON JSON 解析库
-│   └── mongoose/                #   - Mongoose Web 服务器
-├── config/                      # 项目配置
-│   ├── sdkconfig                #   - ESP-IDF 配置
-│   └── partitions.csv           #   - 分区表
+│   ├── mongoose/                #   - Mongoose Web 服务器
+│   └── sha256/                  #   - SHA256（OTA 校验）
 ├── docs/                        # 项目文档
 │   ├── ARCHITECTURE.md          #   - 架构文档
-│   └── PROJECT_STRUCTURE.md     #   - 项目结构 (本文件)
+│   ├── PROJECT_STRUCTURE.md     #   - 项目结构 (本文件)
+│   ├── ota_guide.md             #   - OTA 使用指南
+│   ├── development_log.md       #   - 开发日志（新条目在顶部）
+│   ├── development_log_net_ota.md # - 网络/OTA 开发日志
+│   ├── handoff_summary.md       #   - 跨会话交接摘要
+│   ├── peripheral_drivers_summary.md # - 外设驱动总结
+│   └── diy-smart-assistant/     #   - DIY 教程文档集
 ├── include/                     # 公共头文件
 │   ├── tasker.h                 #   - 任务调度器 API
 │   ├── dtree.h                  #   - 设备树 API
@@ -51,13 +64,16 @@ ovs/
 │   ├── logger.h                 #   - 日志 API
 │   ├── heartbeat.h              #   - 心跳 API
 │   ├── ota.h                    #   - OTA API
-│   └── web.h                    #   - Web API
+│   ├── web.h                    #   - Web API
+│   └── lvgl.h                   #   - LVGL 头（临时占位）
 ├── main/                        # main 组件垫片（IDF 要求组件名为 main；
 │                                #   仅 CMakeLists 注册 src/app 的源文件）
 ├── scripts/                     # 工具脚本
 ├── src/app/                     # 应用代码（main.c、vfs_stress 等）
 ├── web/                         # Web 前端源码
 ├── CMakeLists.txt               # 项目 CMake 配置
+├── sdkconfig                    # ESP-IDF 配置
+├── partitions.csv               # 分区表
 └── README.md
 ```
 
@@ -65,27 +81,30 @@ ovs/
 
 ### 设计理念
 
-模仿 Linux 设备树模型，使用 JSON 文件描述硬件配置：
-- **配置与代码分离**: 修改引脚只需改 JSON，无需重编译
+模仿 Linux 设备树模型，使用**单棵嵌套 JSON 树**（`ovs.dtb.json`）描述硬件配置：
+- **配置与代码分离**: 修改引脚只需改 JSON，无需重编译（可走 A/B 槽 OTA）
+- **嵌套表达挂载**: 设备节点嵌套在总线节点下（如 `buses.spi2.flash`），父子关系即挂载关系
+- **compatible 绑定**: 模块以 `dtree_find_by_compatible()` 定位自己的节点，代码零硬编码路径
 - **统一管理**: 所有硬件配置集中存放
-- **易于维护**: 清晰的层次结构
 
-### JSON 配置示例
+### JSON 配置示例（ovs.dtb.json 节选）
 
 ```json
 {
-    "compatible": "i2s-bus",
-    "description": "I2S 总线配置",
-    
-    "bus": {
-        "bclk_pin": 6,
-        "ws_pin": 5,
-        "sample_rate_hz": 16000
-    },
-    
-    "microphone": {
-        "compatible": "i2s-microphone",
-        "data_in_pin": 7
+    "compatible": "ovs,esp32s3-smart-assistant",
+    "buses": {
+        "i2s0": {
+            "compatible": "esp32s3-i2s",
+            "description": "I2S 总线 (麦克风 + 功放)",
+            "bclk_pin": 6,
+            "ws_pin": 5,
+            "sample_rate_hz": 16000,
+
+            "microphone": {
+                "compatible": "i2s-microphone",
+                "data_in_pin": 7
+            }
+        }
     }
 }
 ```
@@ -95,16 +114,17 @@ ovs/
 ```c
 #include "dtree.h"
 
-// 初始化设备树
+// 初始化设备树（A/B 槽优先，失败回退 /spiffs/ovs.dtb.json）
 dtree_init();
 
-// 获取引脚配置
-int bclk = DTREE_INT("i2s.bus", "bclk_pin", 6);
-int ws = DTREE_INT("i2s.bus", "ws_pin", 5);
+// 按 compatible 定位设备节点（推荐），父节点即所属总线
+dtree_node_t* mic = dtree_find_by_compatible("i2s-microphone");
+int32_t din_pin;
+dtree_get_int(mic, "data_in_pin", &din_pin);
 
-// 获取子节点属性
-dtree_node_t* mic = dtree_get_node("i2s.microphone");
-int din_pin = dtree_get_int(mic, "data_in_pin", 7);
+// 或通过完整路径读取属性（任意深度）
+int32_t bclk;
+DTREE_INT("buses.i2s0", "bclk_pin", &bclk);
 ```
 
 ## 组件依赖关系
@@ -115,10 +135,10 @@ main（垫片，注册 src/app 源文件）
 ├── dtbs ──→ logger, spiffs, cJSON (thirdparty), sha256 (thirdparty), nvs_flash, esp_partition, app_update
 ├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, logger
 ├── led ──→ esp_driver_gpio, gpio
-├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, logger, sha256 (thirdparty), dtbs
-├── net_mgr ──→ wifi, dtbs, nvs_flash, espressif__mdns, event_bus, logger
-├── web ──→ spiffs, ota, net_mgr, wifi, heartbeat, tasker_api, logger, dtbs, mongoose (thirdparty)
-└── heartbeat ──→ esp_wifi, esp_timer, tasker_api, logger
+├── ota ──→ app_update, esp_partition, esp_app_format, esp_system, esp_timer, freertos, logger, sha256 (thirdparty), dtbs
+├── net_mgr ──→ wifi, dtbs, nvs_flash, espressif__mdns, esp_wifi, esp_event, esp_netif, esp_timer, freertos, event_bus, logger
+├── web ──→ spiffs, freertos, ota, net_mgr, dtbs, wifi, heartbeat, tasker, logger, esp_timer, mongoose (thirdparty)
+└── heartbeat ──→ esp_wifi, esp_timer, freertos, tasker, tasker_api, logger
 ```
 
 ## 第三方库
@@ -133,7 +153,7 @@ main（垫片，注册 src/app 源文件）
 | 类型 | 命名规则 | 示例 |
 |------|---------|------|
 | 组件目录 | 小写 + 下划线 | `tasker_api`, `dtbs` |
-| JSON 文件 | 小写 + 下划线 | `i2s.json`, `system.json` |
+| 设备树配置 | 小写 + 点分 | `ovs.dtb.json` |
 | 头文件 | 小写 + 下划线 | `dtree.h`, `tasker.h` |
 | 函数名 | 小写 + 下划线 | `dtree_init()`, `dtree_get_int()` |
 | 宏定义 | 大写 + 下划线 | `DTREE_INT()`, `TASK_OK` |
@@ -161,35 +181,34 @@ source scripts/env.sh
 
 ## 添加新设备
 
-1. 在 `components/dtbs/config/` 下创建 JSON 文件
-2. 描述设备引脚和配置参数
-3. 在驱动模块中使用 `dtree` API 读取配置
+1. 在 `components/dtbs/config/ovs.dtb.json` 中，把设备节点嵌套到对应总线节点下
+2. 为节点写明 `compatible` 与引脚/参数属性
+3. 在驱动/模块中用 `dtree_find_by_compatible()` 定位节点并读取配置
 
 ```c
-// 示例：读取新设备配置
-dtree_node_t* dev = dtree_get_node("my_device");
-int pin = dtree_get_int(dev, "data_pin", -1);
+// 示例：模块内定位新设备节点（父节点即所属总线）
+dtree_node_t* dev = dtree_find_by_compatible("my-sensor");
+int32_t pin;
+dtree_get_int(dev, "data_pin", &pin);
 ```
 
 ## LVGL UI 模块
 
 ### 目录结构
 
+> 当前状态：六层目录为脚手架（各层目录暂只含 README 与设计约定），
+> 仅 `lvgl_app.c` 参与编译（见 `src/lvgl/CMakeLists.txt` 的 TODO 列表）。
+
 ```
 src/lvgl/
-├── lvgl_app.c/h         # LVGL 应用层主文件
+├── lvgl_app.c/h         # LVGL 应用层主文件（当前唯一参与编译的源文件）
 ├── lv_conf.h            # LVGL 配置文件
-├── pages/               # UI 页面
-│   ├── page_home.c      #   - 主页
-│   ├── page_menu.c      #   - 菜单页
-│   ├── page_settings.c  #   - 设置页
-│   ├── page_lora.c      #   - LoRa 聊天页
-│   ├── page_audio.c     #   - 音频播放页
-│   └── page_about.c     #   - 关于页
-├── widgets/             # 自定义控件
-│   ├── widgets.c/h      #   - 控件实现
-├── themes/              # 主题
-│   ├── theme_dark.c/h   #   - 暗色主题
+├── ui/                  # 控件层（脚手架）
+├── widgets/             # 窗口层（脚手架）
+├── pages/               # 页面层（脚手架）
+├── navigator/           # 导航层（脚手架）
+├── presenters/          # 展示器层（脚手架）
+├── bridge/              # 桥接层（脚手架）
 ├── fonts/               # 字体文件
 └── assets/              # 资源文件 (图片、图标)
 ```
@@ -202,36 +221,25 @@ src/lvgl/
 // 初始化
 lvgl_app_init();
 
-// 切换页面
-lvgl_app_switch_page(PAGE_MENU);
-
-// 在主循环中处理
+// 在任务循环中处理（内部加锁保护 LVGL）
 while (1) {
     lvgl_app_handler(10);
 }
+
+// 背光亮度
+lvgl_app_set_brightness(128);
+
+// 其他任务里安全操作 LVGL 对象
+lvgl_app_lock();
+/* ... LVGL 操作 ... */
+lvgl_app_unlock();
 ```
 
-### 添加新页面
+### 添加新页面 / 自定义控件
 
-1. 在 `pages/` 目录创建 `page_xxx.c`
-2. 实现 `void page_xxx_create(lv_obj_t* parent)` 函数
-3. 在 `page_id_t` 枚举中添加页面 ID
-4. 在 `lvgl_app.c` 的页面函数表中注册
-
-### 自定义控件
-
-常用控件封装在 `widgets/` 目录：
-- 状态栏 (`widget_status_bar_*`)
-- 消息对话框 (`widget_msgbox_*`)
-- 加载动画 (`widget_spinner_*`)
-
-### 主题
-
-暗色主题颜色定义：
-- 背景色: `0x1a1a2e`
-- 表面色: `0x16213e`
-- 主色调: `0x0f3460`
-- 强调色: `0x533483`
+按下方"LVGL UI 模块 (六层架构)"的分层约定实现：页面放 `pages/`、
+窗口放 `widgets/`、控件放 `ui/`，经 `navigator/` 注册，
+业务逻辑在 `presenters/`、后端对接在 `bridge/`。
 
 ## LVGL UI 模块 (六层架构)
 
@@ -283,7 +291,6 @@ src/lvgl/
 │   ├── pages/                   #   页面展示器
 │   ├── widgets/                 #   窗口展示器
 │   └── controls/                #   控件展示器
-├── themes/                      # 主题
 ├── fonts/                       # 字体
 └── assets/                      # 资源文件
 ```

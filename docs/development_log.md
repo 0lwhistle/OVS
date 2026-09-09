@@ -1,5 +1,99 @@
 # OVS项目开发日志
 
+## 2026-09-09 - 全项目审读 + 重构与架构优化方案（docs/REFACTORING_PLAN.md）
+
+### 任务目标
+整体理解项目现状，判定过时/无效内容，产出指导达成产品目标
+（LVGL触屏UI系统、LoRa对讲、Web上位机、蓝牙配网）的重构与优化方案文档。
+
+### 完成内容
+- **全库审读**：三路并行深读（核心层+设备树 / 全部modules+drivers / 应用层+
+  LVGL+Web前端+构建配置），交叉验证 grep 调用链、sdkconfig、partitions.csv。
+- **产出 `docs/REFACTORING_PLAN.md` v1.0**，要点：
+  - 过时判定 33 项（代码 C1-C18 / 文档 D1-D7 / 配置 B1-B6），均附依据与处置。
+    重点：include/ 全局头 6 对同名异体（logger 旧版最危险）、eventbus_api 空壳、
+    thirdparty/littlefs-2.11.3 未引用拷贝、heartbeat_init 无人调用致
+    /api/status rssi 恒 0、hardware_notes_for_software.md v3.3 引脚表与
+    接线图/设备树大面积冲突（LoRa/LCD_RST/LED/I2S 引脚）。
+  - 核心判断：主线（net_mgr/ota+dtb A/B/ovs_vfs/web）真机验证保留加固；
+    st7789/cst816s/aht30/lora/audio_module/holder 约4600行"写完未接线"
+    属半成品资产，盘活而非重写；LVGL 库本身缺失是最大空白。
+  - 架构设计：启用 holder 依赖拓扑编排替代 main.c 手工序列（required 仅5个，
+    人机类失败降级无屏运行）；event_bus 四修复（锁外回调/内存池/统计原子/
+    名表）后全链路接线（现零订阅者）；tasker 原地重构（忙轮询→事件组阻塞）。
+  - 五大新基建模块设计：audio_srv（I2S管线+混音，音频帧走FreeRTOS队列不过
+    事件总线）、media_player（esp_jpeg硬解+自研.mjp容器+20fps视频）、
+    time_srv（SNTP+闹钟JSON存储）、power_srv（五态电源机+LEDC背光+light sleep）、
+    lora_proto（帧同步头+CRC16修订版协议+Codec2 1200bps，SF7空口约束论证：
+    初稿ADPCM方案带宽不可行）、ble_prov（官方wifi_prov_mgr+NimBLE，非自研GATT）。
+  - 性能/功耗：SRAM/PSRAM 内存预算表、SPI共线调度纪律、双核任务-优先级总表、
+    分区重排方案（ota 2.5→3.8MB×2，littlefs 8.75→1MB，尾部预留5MB）、
+    电源五状态机与电流预算估算。
+  - 路线图 Phase 0-6（清理→核心层→LVGL运行时→UI框架→媒体音频→对讲+Web→
+    BLE+电源+发布），每阶段附真机验收标准；风险决策 R1-R10。
+
+### 待解决问题
+- 方案中三处需真机验证后定案：LVGL v9 与 IDF 6.0.1 兼容性（R1）、
+  Flash QIO / PSRAM 80MHz 稳定性（R2）、Codec2 实时性实测（R3）。
+- wiring_diagram.md LED 引脚表内部矛盾（GPIO4 vs GPIO14）待与实物核对。
+
+### 下一步计划
+按 Phase 0 执行：include/ 解散 + 垃圾文件清理 + 分区重排 + bug 修复
+（heartbeat 接线、dtree 节点池、ovs_vfs 加锁、w25q128 缓冲）。
+
+### 代码变更
+仅新增 docs/REFACTORING_PLAN.md；本文档条目。未改任何源码。
+
+## 2026-09-09 - 全仓库文档一致性校准（README/docs/组件README/技能文档）
+
+### 任务目标
+基于当前代码与最近提交（设备树单棵树重构、A/B 分区 OTA、WiFi 热切换、
+VFS 修复），检查仓库自有文档是否过时或与实现不一致；仅修正可直接从
+代码/配置/提交记录确证的内容，保持原文档结构与写作风格。
+
+### 完成内容
+- **根 README.md**：目录树对齐现状（esp_littlefs、thirdparty+sha256、
+  删虚构 config/、main/ 改垫片说明）；ota_update.sh（已删除的脚本）→
+  ota_push.sh；5 个分总线 JSON 表 → 单棵树 ovs.dtb.json；DTREE 使用示例
+  改为输出指针语义 + find_by_compatible；OTA 特性删"断点续传"（代码无此
+  实现）改"15s 回滚保护"；Node 16+ → 20+（vite ^8）。
+- **docs/PROJECT_STRUCTURE.md**：目录树全面对齐（删 beep/sr04、补全
+  modules/core/drivers、dtb_ab、esp_littlefs、docs 清单）；删"待实现"
+  标记；组件依赖按各 CMakeLists 实际 REQUIRES 修正（web 依赖 tasker 而
+  非 tasker_api 等）；旧版 LVGL 章节（page_home.c/theme_dark.c/
+  lvgl_app_switch_page 等不存在项）改写为现状 + 脚手架说明。
+- **docs/ARCHITECTURE.md**：目录树 main/ 垫片化 + 补 src/app；删不存在的
+  themes/；"开发日志新条目追加在末尾"→顶部（与实际相反）。更新日志历史
+  段落未动。
+- **docs/ota_guide.md**：main/main.c → src/app/main.c（OVS_ENABLE_NET 实际
+  所在）；API 表补 POST /api/net/mode 与 GET /api/hello（web.c 实测路由）；
+  规则5"改设备树需完整 flash"补 A/B 槽 OTA 通道说明（与第三/四节自洽）。
+- **docs/handoff_summary.md**：补 2026-09-08 后三次提交成果（VFS 修复压测
+  54/54、dtb A/B OTA、热切换真机 PASS）；待办对齐开发日志"下一步"；
+  日志方向改"顶部"。
+- **docs/peripheral_drivers_summary.md**：spi.json/vfs.json 引用 →
+  ovs.dtb.json；bus.host 属性与 DTREE_HOST()（均已删除）改为节点名 +
+  dtree_get_host_id()；初始化流程对齐当前 app_main（外设 init 未接入）。
+- **组件 README**：event_bus 补 4 个 WiFi 事件 + WATCHDOG_FEED +
+  LORA_READY；w25q128 修错误码表（与枚举不符）、10/20MHz→40MHz、
+  超时常量、文件结构补 w25q128_vfs、设备树配置节选改嵌套单棵树；
+  ovs_vfs 挂载示例/分区表对齐 ovs.dtb.json（/font 2MB、/audio 6MB、
+  /media 8MB、/config internal）；holder 删"参考 main.c 使用示例"
+  （main.c 未接入 holder）。
+- **技能文档**：SKILL.md 设备树示例路径 spi.* → buses.spi2.*、补
+  net_mgr_switch_mode、日志读取方向；README/USAGE_GUIDE 结构树对齐实际
+  目录（references/ 已删除）；SKILL 版本 v2.4 → v2.5。
+- **代码注释**：dtb_ab.h 槽子类型注释 0x90 → 0xA0（partitions.csv、
+  dtb_ab.c、ARCHITECTURE 更新日志三处均为 0xA0）。
+- diy-smart-assistant README/PROJECT_SUMMARY 同步修 ota_update.sh、
+  JSON 表、main/ 说明与文档集实际位置。
+
+### 未改动说明
+- development_log*.md 既有条目、ARCHITECTURE.md 更新日志段（历史记录，
+  不回写）；diy web_interface.md 等设计文档（定义目标产品，非实现描述）；
+  第三方库文档（esp_littlefs/cJSON/littlefs/mongoose）；LVGL 各层 README
+  （设计约定类，与脚手架现状相符，仅 src/lvgl/README.md 加现状说明）。
+
 ## 2026-09-08 - WiFi AP/STA 免重启热切换：接口封装 + 真机双向验证
 
 ### 结论

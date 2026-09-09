@@ -33,7 +33,7 @@
   - 提供 `w25q128_health_check()` / `w25q128_is_ready()`。
 - **忙等策略**: 页/扇区 5s、整片擦除 60s；轮询间隔 10ms
   （适配 FreeRTOS 100Hz，避免 `pdMS_TO_TICKS(1)=0` 空转）
-- **格式化策略**: `vfs.json` 关闭 `format_if_fail`，
+- **格式化策略**: `ovs.dtb.json` 的 `vfs.mounts` 关闭 `format_if_fail`，
   仅显式调用 `vfs_format()` 才格式化，防止拔盘误清数据
 
 ### 3. LoRa 无线通信模块
@@ -83,8 +83,8 @@
 
 ### SPI总线共享分析（2026-09-08）
 
-**当前总线拓扑**（见 `components/dtbs/config/spi.json`）：
-- 总线控制器：`bus.host = "spi2"`（SPI2_HOST）
+**当前总线拓扑**（见 `components/dtbs/config/ovs.dtb.json`，设备嵌套于 `buses` 下）：
+- 总线控制器：总线节点名 `buses.spi2`（SPI2_HOST，节点名即控制器编号）
 - ST7789 显示屏（2.8寸，SPI部分）：CS=GPIO48，DC=GPIO47
 - W25Q128 Flash：CS=GPIO13
 - 共用 SCLK=GPIO42、MOSI=GPIO40、MISO=GPIO41
@@ -105,16 +105,17 @@
 - 维持共享总线时，LCD 用 DMA+双缓冲，Flash 大操作放后台任务，
   静态字体文件上电后缓存到 RAM。
 
-**host/port 声明约定**（所有总线节点必填）：
-| 总线 | host 格式 | 示例 |
+**总线节点命名约定**（2026-09-08 设备树重构后，host 属性已删除，
+控制器编号直接写在总线节点名里）：
+| 总线 | 节点名格式 | 示例 |
 |------|-----------|------|
 | SPI | `spi<2/3>` | `"spi2"` |
 | I2C | `i2c<0/1>` | `"i2c0"` |
 | I2S | `i2s<0/1>` | `"i2s0"` |
 | UART | `uart<0/1/2>` | `"uart1"` |
 
-dtree 通过 `DTREE_HOST(path, "spi"/"i2c"/"i2s"/"uart", &id)` 解析；
-驱动按 host/port 维护多实例共享注册表。
+dtree 通过 `dtree_get_host_id(bus_node, "spi"/"i2c"/"i2s"/"uart", &id)`
+从总线节点名解析控制器编号；驱动按 host/port 维护多实例共享注册表。
 
 ---
 
@@ -190,30 +191,24 @@ dtree 通过 `DTREE_HOST(path, "spi"/"i2c"/"i2s"/"uart", &id)` 解析；
 
 ## 初始化流程
 
-在`main.c`中的初始化顺序：
+当前 `src/app/main.c` 中 app_main 的初始化顺序（2026-09-08 起）：
 
 ```c
 void app_main(void) {
     // 1. NVS初始化
-    // 2. 事件总线初始化 (event_bus_init)
-    // 3. WiFi初始化
-    // 4. OTA初始化
-    // 5. Tasker初始化
-    // 6. 心跳任务初始化
-    // 7. 外设模块初始化:
-    //    - ST7789显示屏
-    //    - W25Q128 Flash
-    //    - LoRa模块
-    //    - 音频模块
-    //    - AHT30传感器
-    //    - CST816S触摸屏
-    // 8. 周期性任务启动:
-    //    - AHT30每2秒采集
-    //    - CST816S每50ms检测
-    //    - LoRa每100ms接收
-    // 9. Web服务器任务启动
+    // 2. 核心服务: event_bus_init + tasker_init
+    // 3. SPIFFS 挂载（出厂设备树回退源）
+    // 4. 设备树初始化 (dtree_init，A/B 槽优先、SPIFFS 回退)
+    // 5. 网络栈 (net_stack_init 保护区，OVS_ENABLE_NET=1 时):
+    //    ota_init → net_mgr_init → web 服务
+    // 6. W25Q128 初始化 (w25q128_init)
+    // 7. VFS 挂载 (vfs_stack_start，按设备树 vfs.mounts)
+    // 8. 可选: OVS_RUN_APP_TESTS=1 时跑 VFS 测试与压力测试
 }
 ```
+
+> 注：ST7789/LoRa/音频/AHT30/CST816S/心跳等外设模块的 init 当前未接入
+> app_main（模块已具备，待后续开发线经 holder 或直接接入）。
 
 ---
 

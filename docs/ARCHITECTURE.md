@@ -770,8 +770,8 @@ ovs/
 ├── sdkconfig                    # ESP-IDF配置
 ├── partitions.csv               # 分区表
 │
-├── main/                        # 主程序入口
-│   └── main.c                   # app_main() 入口函数
+├── main/                        # main 组件垫片（IDF 要求组件名为 main，
+│   └── CMakeLists.txt           #   仅注册 src/app 的源文件）
 │
 ├── components/                  # 组件目录
 │   ├── core/                    # 核心服务层
@@ -814,6 +814,7 @@ ovs/
 │           └── ovs.dtb.json     #   单棵树设备树配置（SPIFFS镜像源）
 │
 ├── src/                         # 源代码
+│   ├── app/                     # 应用代码（main.c 入口、vfs_stress 测试）
 │   └── lvgl/                    # LVGL UI模块
 │       ├── lvgl_app.c/h        #   应用入口
 │       ├── lv_conf.h            #   LVGL配置
@@ -823,7 +824,6 @@ ovs/
 │       ├── navigator/           #   导航层
 │       ├── presenters/          #   展示器层
 │       ├── bridge/              #   桥接层
-│       ├── themes/              #   主题
 │       ├── fonts/               #   字体
 │       └── assets/              #   资源文件
 │
@@ -844,7 +844,7 @@ ovs/
 └── docs/                        # 文档
     ├── ARCHITECTURE.md          #   架构文档（本文档）
     ├── PROJECT_STRUCTURE.md     #   目录结构权威说明
-    ├── development_log.md       #   开发日志（新条目追加在末尾）
+    ├── development_log.md       #   开发日志（新条目追加在顶部）
     ├── handoff_summary.md       #   跨会话交接摘要
     └── peripheral_drivers_summary.md
 ```

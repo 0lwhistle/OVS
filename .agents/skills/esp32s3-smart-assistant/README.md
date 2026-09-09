@@ -52,19 +52,15 @@
 esp32s3-smart-assistant/
 ├── SKILL.md                    # 技能主文件
 ├── README.md                   # 说明文档
-├── agents/
-│   └── openai.yaml            # UI配置
-├── logs/
-│   └── development_log.md     # 开发日志
-├── references/
-│   ├── project_structure.md   # 项目结构规范
-│   └── coding_standards.md    # 代码规范
-├── scripts/                    # 辅助脚本
+├── USAGE_GUIDE.md              # 使用指南
 └── templates/
     ├── module_template.h      # 头文件模板
     ├── module_template.c      # 源文件模板
     └── CMakeLists_template.txt # CMake模板
 ```
+
+> 注：早期 v1 的 `agents/openai.yaml`、技能内 `logs/`、`references/`、
+> `scripts/` 已随迁移移除（见顶部迁移说明）。
 
 ## 日志系统
 
@@ -139,5 +135,5 @@ esp32s3-smart-assistant/
 ## 支持与反馈
 
 如有问题或建议，请通过以下方式联系：
-- 项目文档: `/root/diy-smart-assistant/`
+- 项目文档: `docs/`（ARCHITECTURE.md、PROJECT_STRUCTURE.md 等）
 - 开发日志: `docs/development_log.md`（项目根目录下）

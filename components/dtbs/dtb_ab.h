@@ -2,7 +2,7 @@
  * @file dtb_ab.h
  * @brief 设备树 A/B 裸分区管理（事务性指针切换 + 试运行配对）
  *
- * 两个裸分区槽（dtb_0/dtb_1，子类型 0x90）存放 pack_dtb.py 生成的容器：
+ * 两个裸分区槽（dtb_0/dtb_1，子类型 0xA0）存放 pack_dtb.py 生成的容器：
  *   [ "DTBI"(4) | ver(1) | rsv(3) | json_len(4LE) | sha256(json)(32) | json ]
  *
  * OTA 只写非活动槽；全部校验通过后经 NVS 指针提交：
