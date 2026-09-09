@@ -130,7 +130,9 @@ void event_bus_destroy_event(event_t* event) {
     if (event == NULL) {
         return;
     }
-    if (event->header.reserved == 0 && s_event_pool) {
+    /* 带外归属判定: mem_pool_free 会把空闲链指针写进块首（覆盖事件头），
+     * 块内标志不可靠，必须按地址范围判定归属 */
+    if (s_event_pool && mem_pool_contains(s_event_pool, event)) {
         mem_pool_free(s_event_pool, event);
     } else {
         mem_free(event);

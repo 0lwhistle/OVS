@@ -31,7 +31,8 @@ bus_queue_t* bus_queue_create(int depth, int item_size) {
 }
 
 bool bus_queue_send(bus_queue_t* q, void* item) {
-    return q && xQueueSend(q->h, &item, 0) == pdTRUE;
+    /* item 即元素地址：xQueue 按 item_size 拷贝元素内容（与 PC 分支语义一致） */
+    return q && xQueueSend(q->h, item, 0) == pdTRUE;
 }
 
 bool bus_queue_recv(bus_queue_t* q, void* item, int timeout_ms) {

@@ -11,6 +11,8 @@
 #include "wifi.h"
 #include "heartbeat.h"
 #include "tasker.h"
+#include "event_bus.h"
+#include "holder.h"
 #include "logger.h"
 
 #include <stdio.h>
@@ -608,6 +610,81 @@ static void handle_net_mode(struct mg_connection *c, struct mg_http_message *hm)
                   net_state_to_str(st.state), st.ssid, st.ip);
 }
 
+// GET /api/modules — holder 全模块状态（Phase 1 验收：init 耗时/状态/错误）
+static void handle_modules(struct mg_connection *c, struct mg_http_message *hm) {
+    (void)hm;
+    /* mg_http_reply 一次调用即完整响应，须先拼缓冲再一次发送 */
+    char body[2048];
+    size_t off = 0;
+    off += (size_t)snprintf(body + off, sizeof(body) - off, "{\"modules\":[");
+    uint32_t count = holder_get_module_count();
+    for (uint32_t i = 0; i < count && off < sizeof(body) - 160; i++) {
+        const char* name = holder_get_module_name((int)i);
+        holder_module_info_t info;
+        if (name == NULL || holder_get_module_info(name, &info) != HOLDER_OK) continue;
+        const char* state = "unknown";
+        switch (info.state) {
+            case HOLDER_MODULE_STATE_REGISTERED:    state = "registered";    break;
+            case HOLDER_MODULE_STATE_INITIALIZING:  state = "initializing";  break;
+            case HOLDER_MODULE_STATE_READY:         state = "ready";         break;
+            case HOLDER_MODULE_STATE_ERROR:         state = "error";         break;
+            case HOLDER_MODULE_STATE_DISABLED:      state = "disabled";      break;
+            default:                                state = "unknown";       break;
+        }
+        off += (size_t)snprintf(body + off, sizeof(body) - off,
+                      "%s{\"name\":\"%s\",\"state\":\"%s\",\"required\":%s,"
+                      "\"init_time_ms\":%lu,\"error\":\"%s\"}",
+                      i ? "," : "", name, state,
+                      info.required ? "true" : "false",
+                      (unsigned long)info.init_time_ms,
+                      info.last_error ? info.last_error : "");
+    }
+    off += (size_t)snprintf(body + off, sizeof(body) - off, "]}");
+    mg_http_reply(c, 200, "Content-Type: application/json\r\n", "%.*s",
+                  (int)off, body);
+}
+
+// ---------------------------------------------------------------------------
+// 事件总线订阅 → WS 广播（Phase 1 验收: 真实订阅者 ≥6；
+// 回调运行于事件任务上下文，web_ws_broadcast 内部队列桥接线程安全）
+// ---------------------------------------------------------------------------
+static int on_event_ws_push(const event_t* e, void* ud) {
+    (void)ud;
+    char buf[192];
+    const char* name = event_bus_get_type_name(e->header.type);
+
+    if (e->header.type == EVENT_SENSOR_TEMP_HUMIDITY &&
+        e->header.data_len >= sizeof(event_sensor_temp_humidity_t)) {
+        event_sensor_temp_humidity_t d;
+        memcpy(&d, e->data, sizeof(d));
+        snprintf(buf, sizeof(buf),
+                 "{\"ev\":\"%s\",\"temperature\":%.1f,\"humidity\":%.1f}",
+                 name, (double)d.temperature, (double)d.humidity);
+    } else {
+        snprintf(buf, sizeof(buf), "{\"ev\":\"%s\"}", name);
+    }
+    web_ws_broadcast(buf, strlen(buf));
+    return 0;
+}
+
+static void web_events_setup(void) {
+    static const event_type_t k_watch[] = {
+        EVENT_WIFI_CONNECTED,
+        EVENT_WIFI_DISCONNECTED,
+        EVENT_WIFI_GOT_IP,
+        EVENT_WIFI_MODE_CHANGED,
+        EVENT_SENSOR_TEMP_HUMIDITY,
+        EVENT_STORAGE_ERROR,
+        EVENT_SYSTEM_ERROR,
+    };
+    int ok = 0;
+    for (size_t i = 0; i < sizeof(k_watch) / sizeof(k_watch[0]); i++) {
+        if (event_bus_subscribe(k_watch[i], on_event_ws_push, NULL) != NULL) ok++;
+    }
+    LOGI("[WEB]", "event subscribers registered: %d/%d", ok,
+         (int)(sizeof(k_watch) / sizeof(k_watch[0])));
+}
+
 static void register_builtin_routes(void) {
     web_route_t r;
 
@@ -625,7 +702,10 @@ static void register_builtin_routes(void) {
     web_register_route(&r);
     r = (web_route_t){"POST", "/api/web/update", handle_web_update};
     web_register_route(&r);
+    r = (web_route_t){"GET", "/api/modules", handle_modules};
+    web_register_route(&r);
 
+    web_events_setup();   /* Phase 1: 事件总线真实订阅者（≥6） */
     web_ota_routes_init();
 }
 
