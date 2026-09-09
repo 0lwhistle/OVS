@@ -36,8 +36,8 @@ esp_efuse_disable_rom_download_mode();
 // 触控屏地址
 #define I2C_ADDR_TOUCH  0x15
 
-// ATH30温湿度传感器地址
-#define I2C_ADDR_ATH30  0x38
+// AHT30温湿度传感器地址
+#define I2C_ADDR_AHT30  0x38
 ```
 
 ### 第四步：确认SPI设备片选引脚
@@ -122,7 +122,7 @@ void i2s_config_wrong() {
 
 ### I2C测试
 - [ ] 测试触控屏通信
-- [ ] 测试ATH30读取
+- [ ] 测试AHT30读取
 - [ ] 测试I2C设备扫描
 
 ### I2S测试

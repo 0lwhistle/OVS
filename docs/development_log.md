@@ -1,5 +1,103 @@
 # OVS项目开发日志
 
+## 2026-09-09 - 三任务吸收原批次 T1/T2/T4（three_tasks_plan.md 全量改版）
+
+### 任务目标
+按用户要求把原闲时批次 T1(AHT30 收口)/T2(音频)/T4(lora_tp) 并入三个
+并行任务对话，重新分配并更新提示词。
+
+### 完成内容
+- **分配**：[HUB] 数据中枢 = 统一数据接口 + T1 AHT30 收口（子批次②）+
+  T4 lora_tp（子批次③，数据服务域）；[GUI] 板端体验 = T2 音频升级
+  （子批次①，音频消费者是板端 UI）+ LVGL 蓝白界面（子批次②）；
+  [WEB] 不变。three_tasks_plan.md 全量改版：§1 拆分表加"吸收批次"列、
+  §2 边界更新（GUI 增持 audio_module/audio_player，HUB 增持 aht30/lora_tp，
+  aht30.h 签名不得变更、lora 驱动对外行为不得改）、新增 I7/I8 域内接口
+  契约（跨任务只经 event_bus，禁 include 对方头）、§5/§6/§7 三份提示词
+  改为子批次制（跨会话进度以 task_board 条目交接）、新增 §8 原批次去向
+  对照表。
+- idle_modules_plan.md §5 批次表改为去向对照；task_board.md 初始条目
+  更新为新范围与建议起点（HUB 先交批次①骨架；GUI 先做音频，不依赖 HUB）。
+
+### 待解决问题
+- lora_tp 的 LEVEL 档位占位值（手册核实前不阻塞 PC mock 开发）；
+- event_bus_types.h/i18n json 为三方共用 append-only 文件，追加前须在
+  task_board 声明（规则已在板头写明）。
+
+### 下一步计划
+三个对话分别投喂更新后的 §5/§6/§7 提示词；每会话结束看 task_board
+交接进度；全部子批次完成后进集成阶段（T5）。
+
+### 代码变更
+- 修改 docs/three_tasks_plan.md（全量改版）、docs/task_board.md、
+  docs/idle_modules_plan.md（§5）；docs/development_log.md 本条目。
+  无代码改动。
+
+## 2026-09-09 - 三任务并行计划定稿（docs/three_tasks_plan.md：HUB/GUI/WEB）+ 协作板建立
+
+### 任务目标
+按用户新增需求（Web 界面：Vue 模块化/多语言 JSON/温湿度/网络配置/OTA
+上传界面；LVGL 升级：蓝白主题/_(label)多语言/时间/温湿度/网络/待机接口）
+拆分为三个并行任务对话，冻结对接接口，给出三份自包含提示词。
+
+### 完成内容
+- **docs/three_tasks_plan.md**：任务命名 [HUB]数据中枢/[GUI]LVGL界面/
+  [WEB]Web界面 与目录所有权边界（三方共同禁改 core 非本任务文件、ota、
+  net_mgr、drivers；"核心特殊 API"原则=共有代码只经 REQ[HUB] 新增满足）；
+  冻结契约 I1~I6——i18n（/i18n/<lang>.json 单一翻译源，GUI 宏 _() 与
+  WEB fetch 共用）、sensor_cache 快照、sysinfo 只读网络信息（ip/netmask/
+  gw/mac/rssi，不动 net_mgr）、time_svc（NTP 预留桩）、Web HTTP 契约
+  （/api/sensor、/api/net/info、/api/time、/i18n 静态服务；OTA 复用既有
+  /api/ota/*，前端校验魔数 0xE9/OVSO+大小，后端不动）、LVGL 待机接口
+  navigator_set_standby；协作规则（task_board 必读必写/REQ/DONE/BREAK、
+  共用文件 append-only）；三份提示词 HUB/GUI/WEB（含"其他任务在做什么"
+  交代与 mock 先行策略）；附录A i18n 标签种子清单 ~40 项。
+- **docs/task_board.md** 建立（规则+三方初始条目）。
+- idle_modules_plan.md §6.3 T3 提示词标记废弃，由 [GUI] 取代。
+
+### 待解决问题
+- i18n 打包进 /i18n/ 的 SPIFFS 镜像机制由 [HUB] 参照 ovs.dtb.json 先例
+  落地；三个会话执行中的 REQ/BREAK 均以 task_board.md 为准。
+
+### 下一步计划
+三个对话分别投喂 §5/§6/§7 提示词并行开发；T1(AHT30)/T2(音频)/T4(lora_tp)
+批次不变，待并行任务完成后插空执行。
+
+### 代码变更
+- 新增 docs/three_tasks_plan.md、docs/task_board.md；修改
+  docs/idle_modules_plan.md（T3 废弃标注）；docs/development_log.md 本条目。
+  无代码改动。
+
+## 2026-09-09 - 闲时模块计划定稿（docs/idle_modules_plan.md：lora/音频/AHT30/UI）+ ATH30 命名勘误
+
+### 任务目标
+确定 lora、MAX98357A 音频、AHT30、LVGL UI 四模块的需求与方案，产出
+闲时任务实现提示词（仅方案与提示词，不写实现代码）。
+
+### 完成内容
+- **docs/idle_modules_plan.md**：现状盘点（aht30 已实现待收口/audio_module
+  阻塞式待异步化/UI 六层脚手架待实装/lora 设计已定稿待实现）；通用设计
+  原则块（模块化/Linux 分层/错误处理/核心模块使用/可移植性/验证纪律，
+  供逐字复制进各提示词）；音频方案仿 Linux 声卡栈三层（i2s_drv→
+  audio_module 演进为 PCM 设备抽象：异步写/软件音量/SD 静音→新增
+  audio_player 播放队列+codec2 解码挂点）；AHT30 审计收口清单（事件
+  注册/tasker 周期/CRC8/降级/单测）；UI 六层实装三里程碑（M1 框架+
+  假数据主页，M2 真事件，M3 聊天页接 lora_tp）与零业务 include 铁律；
+  批次 T0-T5 依赖表；T1/T2/T3 三份自包含提示词，T4 引用
+  lora_transport_design.md §9。
+- **ATH30→AHT30 命名勘误**：docs/ 下 7 个文件统一修正（真实芯片奥松
+  AHT30），代码组件 aht30 本就正确，零残留已验证。
+
+### 待解决问题
+- T4 依赖 DX-LR22 手册 6 项核实（lora_protocol.md §10）。
+
+### 下一步计划
+闲时按 T1(小)→T2/T3(中,可并行)→T4→T5 执行；每批次完成后回报验收结果。
+
+### 代码变更
+- 新增 docs/idle_modules_plan.md；docs/development_log.md 本条目；
+  docs/diy-smart-assistant/ 下 7 个 md 命名勘误（ATH30→AHT30）。无代码改动。
+
 ## 2026-09-09 - LoRa 传输服务层设计方案定稿（docs/lora_transport_design.md，未实现）
 
 ### 任务目标
