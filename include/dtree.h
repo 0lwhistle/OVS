@@ -249,13 +249,6 @@ dtree_err_t dtree_get_host_id(dtree_node_t* node, const char* prefix, int32_t* i
 #define DTREE_CHECK_ERROR(op, err) \
     do { if ((err) != DTREE_OK) LOGE("[DTREE]", "%s failed: %d", (op), (err)); } while(0)
 
-#ifdef __cplusplus
-}
-#endif
-
-
-#endif /* DTREE_H */
-
 /* ========== 数组 API ========== */
 
 /**
@@ -289,3 +282,9 @@ int dtree_array_size(const char* path);
  * @return 子节点指针，NULL 表示不存在
  */
 dtree_node_t* dtree_array_item(const char* path, int index);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* DTREE_H */
