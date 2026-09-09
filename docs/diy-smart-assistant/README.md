@@ -17,16 +17,16 @@
 ovs/
 ├── components/              # ESP-IDF 组件
 │   ├── api/                 #   公共 API 层
-│   ├── core/                #   核心基础设施 (tasker, logger)
+│   ├── core/                #   核心基础设施 (tasker, logger, event_bus, ovs_vfs)
 │   ├── dtbs/                #   设备树模块
-│   ├── drivers/             #   硬件驱动 (wifi, led, gpio)
-│   └── modules/             #   功能模块 (ota, web, heartbeat)
-├── thirdparty/              # 第三方库 (cJSON, mongoose)
+│   ├── drivers/             #   硬件驱动 (wifi, led, gpio, spi/i2c/i2s/uart)
+│   └── modules/             #   功能模块 (ota, web, net_mgr, heartbeat, ...)
+├── thirdparty/              # 第三方库 (cJSON, mongoose, sha256)
 ├── include/                 # 公共头文件
-├── main/                    # 主程序入口
+├── main/                    # main 组件垫片（应用代码在 src/app/）
 ├── scripts/                 # 工具脚本
 ├── docs/                    # 项目文档
-└── src/app/diy-smart-assistant/  # 本应用
+└── docs/diy-smart-assistant/  # 本文档集
     ├── docs/                #   应用文档
     ├── hardware/            #   硬件文档
     └── logs/                #   开发日志
@@ -41,21 +41,14 @@ ovs/
 # 烧录
 ./scripts/burn.sh
 
-# OTA 升级
-./scripts/ota_update.sh <esp32-ip>
+# OTA 推送
+./scripts/ota_push.sh [ovs.local|IP]
 ```
 
 ## 设备树配置
 
-硬件引脚通过 JSON 文件配置，位于 `components/dtbs/config/`：
-
-| 文件 | 说明 |
-|------|------|
-| system.json | 系统配置 |
-| i2s.json | I2S 总线 (麦克风 + 功放) |
-| i2c.json | I2C 总线 (触控 + 温湿度) |
-| lora.json | LoRa 模块 |
-| spi.json | SPI 总线 (显示屏 + Flash) |
+硬件引脚通过 JSON 配置，单棵树文件为 `components/dtbs/config/ovs.dtb.json`
+（设备节点嵌套在总线节点下，模块按 compatible 定位）。
 
 ## 文档
 

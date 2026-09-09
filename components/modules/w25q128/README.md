@@ -13,7 +13,7 @@ W25Q128模块提供对Winbond W25Q128 SPI NOR Flash（16MB）的完整驱动支�
 | VCC          | 3.3V         | 电源 |
 | GND          | GND          | 地线 |
 
-**SPI配置**：10MHz, Mode 0
+**SPI配置**：40MHz, Mode 0（见 `components/dtbs/config/ovs.dtb.json` 的 `buses.spi2.flash`）
 
 ## 核心功能
 - ✅ JEDEC ID读取验证（0xEF 0x40 0x18）
@@ -81,10 +81,13 @@ if (w25q128_is_initialized()) {
 | 错误码 | 值 | 说明 |
 |--------|-----|------|
 | W25Q128_OK | 0 | 成功 |
-| W25Q128_ERR_SPI | -1 | SPI通信错误 |
-| W25Q128_ERR_TIMEOUT | -2 | 等待超时 |
-| W25Q128_ERR_PARAM | -3 | 参数错误 |
-| W25Q128_ERR_NOT_INIT | -4 | 未初始化 |
+| W25Q128_ERR_NOT_INIT | -1 | 未初始化 |
+| W25Q128_ERR_PARAM | -2 | 参数错误 |
+| W25Q128_ERR_SPI | -3 | SPI通信错误 |
+| W25Q128_ERR_TIMEOUT | -4 | 等待超时 |
+| W25Q128_ERR_BUSY | -5 | 忙 |
+| W25Q128_ERR_VERIFY | -6 | 校验失败 |
+| W25Q128_ERR_OFFLINE | -7 | 芯片不在线/设备故障 |
 
 ## 事件总线集成
 初始化成功后发布 `EVENT_STORAGE_READY` 事件：
@@ -110,9 +113,9 @@ status = rx[1];  // 有效数据在第二个字节
 ```
 
 ### 超时配置
-- 擦除等待：5000ms
-- 写使能等待：1000ms
-- 轮询间隔：1ms
+- 忙等超时（页写入/扇区擦除）：5000ms
+- 整片擦除超时：60000ms
+- FAULT 恢复探测间隔：1000ms
 
 ## 文件结构
 ```
@@ -120,7 +123,9 @@ components/modules/w25q128/
 ├── CMakeLists.txt    # 构建配置
 ├── README.md         # 本文档
 ├── w25q128.h         # 公共API头文件
-└── w25q128.c         # 驱动实现
+├── w25q128.c         # 驱动实现
+├── w25q128_vfs.h     # VFS 适配头文件
+└── w25q128_vfs.c     # VFS 块设备适配（w25q128_register_vfs）
 ```
 
 ## 注意事项
@@ -142,24 +147,28 @@ components/modules/w25q128/
 W25Q128模块从设备树读取配置，不再硬编码引脚。
 
 ### 配置文件位置
-`components/dtbs/config/spi.json`
+`components/dtbs/config/ovs.dtb.json`（单棵树，设备嵌套于总线节点下）
 
-### 配置示例
+### 配置示例（ovs.dtb.json 节选）
 ```json
 {
-    "bus": {
-        "sclk_pin": 42,
-        "miso_pin": 41,
-        "mosi_pin": 40,
-        "max_freq_mhz": 40,
-        "mode": 0
-    },
-    "flash": {
-        "compatible": "w25q128-flash",
-        "cs_pin": 13,
-        "spi_freq_mhz": 20,
-        "size_mb": 16,
-        "quad_enable": false
+    "buses": {
+        "spi2": {
+            "compatible": "esp32s3-spi",
+            "sclk_pin": 42,
+            "miso_pin": 41,
+            "mosi_pin": 40,
+            "max_freq_mhz": 40,
+            "mode": 0,
+
+            "flash": {
+                "compatible": "w25q128-flash",
+                "cs_pin": 13,
+                "spi_freq_mhz": 40,
+                "size_mb": 16,
+                "quad_enable": false
+            }
+        }
     }
 }
 ```
@@ -167,13 +176,16 @@ W25Q128模块从设备树读取配置，不再硬编码引脚。
 ### 配置项说明
 | 配置项 | 路径 | 说明 |
 |--------|------|------|
-| sclk_pin | spi.bus | SPI时钟引脚 |
-| miso_pin | spi.bus | 主入从出引脚 |
-| mosi_pin | spi.bus | 主出从入引脚 |
-| max_freq_mhz | spi.bus | 总线最大频率 |
-| mode | spi.bus | SPI模式 (0-3) |
-| cs_pin | spi.flash | Flash片选引脚 |
-| spi_freq_mhz | spi.flash | Flash实际工作频率 |
+| sclk_pin | buses.spi2 | SPI时钟引脚 |
+| miso_pin | buses.spi2 | 主入从出引脚 |
+| mosi_pin | buses.spi2 | 主出从入引脚 |
+| max_freq_mhz | buses.spi2 | 总线最大频率 |
+| mode | buses.spi2 | SPI模式 (0-3) |
+| cs_pin | buses.spi2.flash | Flash片选引脚 |
+| spi_freq_mhz | buses.spi2.flash | Flash实际工作频率 |
+
+模块通过 `dtree_find_by_compatible("w25q128-flash")` 定位自身节点，
+父节点即所属总线（总线驱动从总线节点读取配置）。
 
 ### 使用设备树的好处
 1. 修改引脚无需重新编译代码
@@ -184,11 +196,11 @@ W25Q128模块从设备树读取配置，不再硬编码引脚。
 
 ## 性能参数与优化
 
-### 当前性能 (20MHz SPI)
+### 当前性能 (40MHz SPI)
 | 操作 | 速度 | 说明 |
 |------|------|------|
-| 顺序读取 | ~2.5 MB/s | 20MHz / 8 = 2.5 MB/s 理论值 |
-| 页写入 | ~365 KB/s | 256字节/页，典型0.7ms/页 |
+| 顺序读取 | ~4357 KB/s | 40MHz 实测（2026-09-07，见 ARCHITECTURE.md 更新日志） |
+| 页写入 | ~447 KB/s | 256字节/页（40MHz 实测） |
 | 扇区擦除 | ~89 KB/s | 4KB/扇区，典型45ms/扇区 |
 | 整片擦除 | ~30-60秒 | 16MB全片擦除 |
 
@@ -202,16 +214,16 @@ W25Q128模块从设备树读取配置，不再硬编码引脚。
 
 ### 提升速度的方法
 
-#### 1. 提高SPI频率（推荐）
-修改 `spi.json` 中的 `spi_freq_mhz`：
+#### 1. 提高SPI频率
+当前已配置 40MHz（`ovs.dtb.json` 的 `buses.spi2.flash.spi_freq_mhz`）：
 ```json
 "flash": {
-    "spi_freq_mhz": 40,  // 或 80
+    "spi_freq_mhz": 80,  // 从 40 提升到 80
 }
 ```
 - ESP32-S3 SPI最高支持80MHz
 - W25Q128支持最高104MHz
-- 建议先测试40MHz，稳定后再提升到80MHz
+- 建议改后充分测试稳定性
 
 #### 2. 使用DMA传输
 ESP-IDF的SPI驱动默认使用轮询模式，可配置为DMA模式：

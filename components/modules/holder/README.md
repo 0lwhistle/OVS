@@ -84,7 +84,8 @@ holder_print_status();
 - 错误码自定义，不依赖平台特定错误码
 
 ## 集成示例
-参考 `main.c` 中的使用示例，展示如何将现有硬件模块集成到holder系统中。
+参考 `holder.h` 的接口注释与 `docs/ARCHITECTURE.md` 的 Holder 章节
+（注意：当前 `src/app/main.c` 尚未接入 holder，接入后各外设模块统一走注册表初始化）。
 
 ## 注意事项
 1. 必须在使用任何模块功能前初始化holder

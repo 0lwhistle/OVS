@@ -111,14 +111,14 @@ Web 管理、OTA 升级、远程监控。
 # 完整构建
 ./scripts/mybuild.sh
 
-# 清理后重新构建
+# 清理后重新构建（mybuild 默认即先清理，此为显式写法）
 ./scripts/mybuild.sh --clean
 
 # 烧录
 ./scripts/burn.sh
 
-# OTA 升级
-./scripts/ota_update.sh <esp32-ip>
+# OTA 推送
+./scripts/ota_push.sh [ovs.local|IP]
 ```
 
 ---

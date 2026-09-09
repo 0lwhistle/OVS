@@ -134,6 +134,7 @@ void my_module_deinit(void) {
 | `EVENT_SYSTEM_SHUTDOWN` | 系统即将关闭 | 无 |
 | `EVENT_SYSTEM_ERROR` | 系统错误 | `event_system_error_t` |
 | `EVENT_SYSTEM_REBOOT` | 系统重启请求 | 无 |
+| `EVENT_SYSTEM_WATCHDOG_FEED` | 看门狗喂狗 | 无 |
 
 ### WiFi事件
 
@@ -145,6 +146,10 @@ void my_module_deinit(void) {
 | `EVENT_WIFI_SWITCH_START` | 开始切换AP | `event_wifi_switch_t` |
 | `EVENT_WIFI_SWITCH_DONE` | 切换完成 | `event_wifi_switch_t` |
 | `EVENT_WIFI_SWITCH_FAILED` | 切换失败 | `event_wifi_switch_t` |
+| `EVENT_WIFI_GOT_IP` | STA获取IP地址 | 无 |
+| `EVENT_WIFI_AP_STARTED` | SoftAP已启动 | 无 |
+| `EVENT_WIFI_AP_STOPPED` | SoftAP已停止 | 无 |
+| `EVENT_WIFI_MODE_CHANGED` | 网络模式切换完成（net_mgr_switch_mode 触发） | `event_wifi_mode_changed_t` |
 
 ### 传感器事件
 
