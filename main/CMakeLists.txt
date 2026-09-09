@@ -5,7 +5,6 @@ idf_component_register(
     INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/app"
     REQUIRES
         tasker_api
-        eventbus_api
         event_bus
         logger
         dtbs

@@ -152,7 +152,7 @@
             "description": "状态指示灯",
             "pin": 4,
             "active_level": "high",
-            "default_state": "off"
+            "default_state": "on"
         }
     },
 
