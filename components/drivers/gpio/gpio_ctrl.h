@@ -3,7 +3,7 @@
 
 #include "driver/gpio.h"
 #include "esp_log.h"
-
+#include "logger.h"
 #define GPIO_NUM 34
 
 enum gpio_err{

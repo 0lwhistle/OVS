@@ -16,12 +16,12 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/dtbs
     ${CMAKE_SOURCE_DIR}/components/core/ovs_vfs
     ${CMAKE_SOURCE_DIR}/components/drivers/wifi
-    ${CMAKE_SOURCE_DIR}/components/drivers/led
     ${CMAKE_SOURCE_DIR}/components/drivers/gpio
     ${CMAKE_SOURCE_DIR}/components/drivers/i2s_drv
     ${CMAKE_SOURCE_DIR}/components/drivers/i2c_drv
     ${CMAKE_SOURCE_DIR}/components/drivers/spi_drv
     ${CMAKE_SOURCE_DIR}/components/drivers/uart_drv
+    ${CMAKE_SOURCE_DIR}/components/modules/led
     ${CMAKE_SOURCE_DIR}/components/modules/ota
     ${CMAKE_SOURCE_DIR}/components/modules/net_mgr
     ${CMAKE_SOURCE_DIR}/components/modules/web

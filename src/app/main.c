@@ -17,6 +17,10 @@
 #include "ovs_vfs.h"
 #include "mem.h"
 #include "app_init.h"
+#include "dtree.h"
+#include "led_ctrl.h"
+#include "logger.h"
+#include "tasker.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -235,12 +239,9 @@ static void test_vfs(void) {
 }
 #endif /* OVS_RUN_APP_TESTS */
 
-/* ============================================================ */
-/*                     主函数                                    */
-/* ============================================================ */
-void app_main(void) {
-    LOGI(TAG, "========================================");
-    LOGI(TAG, "  OVS boot (Open Voice Assistant)");
+void sys_boot(void){
+	LOGI(TAG, "========================================");
+    LOGI(TAG, "  OVS boot");
     LOGI(TAG, "========================================");
 
     /* NVS 初始化 */
@@ -298,6 +299,15 @@ void app_main(void) {
         LOGE(TAG, "❌ VFS 压力测试未通过: %d 项失败", stress_failed);
     }
 #endif
+}
 
-    LOGI(TAG, "Boot complete");
+
+
+/* ============================================================ */
+/*                     主函数                                    */
+/* ============================================================ */
+void app_main(void) {
+
+	sys_boot();
+	
 }

@@ -38,7 +38,7 @@ static uint32_t lvgl_tick_ms_cb(void) {
 /** 冒烟日志：每 5s 报告 flush 帧计数，OTA 后据此确认渲染管线存活 */
 static void smoke_timer_cb(lv_timer_t* timer) {
     (void)timer;
-    LOGI(TAG, "smoke: flush_count=%u", (unsigned)display_port_get_flush_count());
+    // LOGI(TAG, "smoke: flush_count=%u", (unsigned)display_port_get_flush_count());
 }
 
 static void lvgl_task(void* arg) {

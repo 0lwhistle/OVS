@@ -9,7 +9,7 @@ uint8_t gpio_reset_val_vec[GPIO_NUM] = {0};
 void gpio_ctrl_init(uint8_t gpio_num, uint8_t gpio_val, gpio_config_t io_conf){
 
 	if (gpio_init_vec[gpio_num]){
-		ESP_LOGW(TAG, "gpio %d already init", gpio_num);
+		LOGW(TAG, "gpio %d already init", gpio_num);
 		return;
 	}
 	gpio_config(&io_conf);
@@ -22,7 +22,7 @@ void gpio_ctrl_init(uint8_t gpio_num, uint8_t gpio_val, gpio_config_t io_conf){
 
 int gpio_ctrl_set(uint8_t gpio_num, uint8_t gpio_val){
 	if (!gpio_init_vec[gpio_num]){
-		ESP_LOGW(TAG, "gpio %d not init", gpio_num);
+		LOGW(TAG, "gpio %d not init", gpio_num);
 		return GPIO_ERR_INIT;
 	}
 
@@ -36,7 +36,7 @@ int gpio_ctrl_set(uint8_t gpio_num, uint8_t gpio_val){
 
 int gpio_ctrl_reset(uint8_t gpio_num){
 	if (!gpio_init_vec[gpio_num]){
-		ESP_LOGW(TAG, "gpio %d not init", gpio_num);
+		LOGW(TAG, "gpio %d not init", gpio_num);
 		return GPIO_ERR_INIT;
 	}
 
@@ -51,7 +51,7 @@ int gpio_ctrl_reset(uint8_t gpio_num){
 
 int gpio_ctrl_toggle(uint8_t gpio_num){
 	if (!gpio_init_vec[gpio_num]){
-		ESP_LOGW(TAG, "gpio %d not init", gpio_num);
+		LOGW(TAG, "gpio %d not init", gpio_num);
 		return GPIO_ERR_INIT;
 	}
 
@@ -65,7 +65,7 @@ int gpio_ctrl_toggle(uint8_t gpio_num){
 
 uint8_t gpio_ctrl_read(uint8_t gpio_num){
 	if (!gpio_init_vec[gpio_num]){
-		ESP_LOGW(TAG, "gpio %d not init", gpio_num);
+		LOGW(TAG, "gpio %d not init", gpio_num);
 		return GPIO_ERR_INIT;
 	}
 
