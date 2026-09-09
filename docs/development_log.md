@@ -1,5 +1,99 @@
 # OVS项目开发日志
 
+## 2026-09-09 - LoRa 传输服务层设计方案定稿（docs/lora_transport_design.md，未实现）
+
+### 任务目标
+按用户需求设计模块化传输接口：lora 模块对上暴露 send(des, data)/接收
+接口，载荷任意透明，分片/校验/断点续传内建，应用不感知驱动，后续可
+自行封装协议。只定方案与实现提示词，不做代码。
+
+### 完成内容
+- **新文档 docs/lora_transport_design.md**：分层边界（应用/lora_tp/lora
+  驱动/DX-LR22 四层铁律）；lora_tp.h 公共 API 草案——lora_tp_des_t
+  （addr+QOS_RELIABLE/UNRELIABLE+档位）、lora_tp_source_t/sink_t 数据
+  源汇抽象（内存/文件统一，依赖注入核心）、异步会话制 send+token
+  查询/取消、收端整包重组回调+大消息 sink 路径；语义：单 RELIABLE
+  会话+FIFO 深度4、消息级 CRC32+PHY CRC 双层、滑窗 ARQ+断点续传、
+  广播仅限 UNRELIABLE、(src,msg_id) 幂等去重；lora_tp_deps_t 依赖注入
+  （驱动函数指针表为 PC mock 回环测试留桩）；设备树 lora_tp 节点配置；
+  验收标准 6 场景（成功/丢30%重传/断链续传/CRC注入/广播限制/大消息）；
+  §9 实现提示词（后续会话直接投喂）。
+- 设计要点：协议文档 v2 的命令层（PN/ST/TX 等）降级为应用层协议示例，
+  不进 lora_tp 组件——保证传输层职责单一。
+
+### 待解决问题
+- 实现未开始（用户指示先定方案）；LEVEL 档位数值仍是手册核实前占位。
+
+### 下一步计划
+1. 核实 DX-LR22 手册 6 项；2. 投喂 §9 提示词实现 lora_tp；3. 设备树
+   lora 节点键位修正随实现一并做。
+
+### 代码变更
+- 新增 docs/lora_transport_design.md；docs/development_log.md 本条目。无代码改动。
+
+## 2026-09-09 - LoRa 协议重构：新写 docs/lora_protocol.md v2（消息对话+语音留言+指令）
+
+### 任务目标
+评估旧协议文档（docs/diy-smart-assistant/docs/lora_protocol.md，厂商AT表+通用
+LoRa协议混写）后，按用户收敛的需求（微信式语音/文本对话为主，实时对讲不做）
+重构 LoRa 通信协议设计；参考用户旧项目 UART 串口协议做取舍。
+
+### 完成内容
+- **需求可行性结论**：实时对讲在 LoRa 上不可行（ADPCM 32kbps 超信道 16~60
+  倍，SF7 高档应用吞吐仅 1~2kB/s）；微信式语音留言可行（Codec2 3200，
+  10s 语音≈4KB≈2~4s 送达）；文本秒级；大文件不适用。
+- **新文档 docs/lora_protocol.md（v2）**：二进制定长帧头（magic/ver/type/
+  flags/dst/src/seq/len，11B 开销，载荷 200B）；帧类型 DATA/VOICE/CMD/
+  CMD_ACK/DATA_ACK/BEACON/PING/PONG；命令层沿用旧 UART 协议 op(?/=/*)+
+  2字节cmd码+errCode 表(0~6)；可靠传输=消息子头+滑窗W=4+累积ACK+位图
+  NACK+断点续传+seq回绕处理；语音=Codec2+NOACK+PRI 抢占仲裁；半包/粘包
+  改为魔数+长度域三态状态机（HUNT/LEN/PAYLOAD）替代旧协议结束符扫描；
+  超时按档位公式化（ACK_TIMEOUT=2×airtime+50ms）；存储文件名改 msg_id
+  （弃时间戳，SNTP 不可信依赖）。
+- **弃用项**（均记录于附录A对照表）：ASCII+JSON 响应体、`;` 结束符、
+  协议层 CRC（PHY 已有）、48B 小负载、逐帧停等 ACK、心跳/休眠、三步握手
+  信标、旧文档 PCM/ADPCM 与实时对讲章节。
+- 旧文档未改动，仍作厂商 AT 指令表参考。
+
+### 待解决问题
+- DX-LR22 手册 6 项核实（新文档 §10）：AT 进模式方式（+++ vs M0/M1，两份
+  资料矛盾）、LEVEL↔SF 映射、分帧窗口、AUX 极性、CHANNEL 范围（0-31 vs
+  00~63hex）、AT+SWITCH 与引脚关系。定稿与设备树键位修正（spreading_factor
+  等无效键→channel/level/power）依赖此项。
+
+### 下一步计划
+1. 核实手册后定稿 §8 档位表；2. 修正 ovs.dtb.json lora 节点与 lora.h
+   channel 注释；3. lora.c 加 AT 配置层+三态帧解析；4. 实现 PN/ST/TX
+   三命令打通文本链路。
+
+### 代码变更
+- 新增 docs/lora_protocol.md；docs/development_log.md 本条目。无代码改动。
+
+## 2026-09-09 - 修复 OTA 纯 app 推送 500 "invalid state"（未提交，随用户 lora/aht30/扬声器开发一并提交）
+
+### 任务目标
+`ota_push.sh --app-only`（纯 app 流，不带设备树）推送时设备返回 HTTP 500
+"invalid state"。根因：web_ota.c 的 fw_parse_hdr 返回 rc==1（旧式纯 app 流）
+分支直接调 ota_write，从未调 ota_begin，s_state 停在 IDLE。以往推送全走
+OVSO 容器分支（内有 ota_begin）故从未暴露；--app-only 是纯 app 路径首次真实使用。
+
+### 完成内容
+- **components/modules/web/web_ota.c**：ota_upload_on_data 的 rc==1 分支、
+  首次 ota_write 之前补 `ota_begin(s_expected)`，失败则 503 + fw_session_reset。
+  纯 app 收尾路径 fw_finish_plain（ota_end + reply_ok_and_reboot + ota_reboot）
+  经核对本就完整，无需改动。
+
+### 验证
+1. idf.py build 通过；
+2. 因设备上跑的仍是未修复固件（纯 app 推送会先失败），先用 OVSO 容器
+   推送修复固件（9afe0c6d-dirty 槽1 → 0aa2ec81-dirty 槽0，回滚确认 PASS）；
+3. 重启后 `ota_push.sh --app-only 192.168.2.111` 实测：上传 16s、校验、
+   重启、回滚确认全 PASS（槽0 → 槽1），纯 app 路径打通。
+
+### 注意
+- task_wdt 在 OTA 上传期间报 web 任务忙为既有无害现象，未改动。
+- 本条目与改动均未提交（用户并行开发 lora/aht30/扬声器中）。
+
 # OVS项目开发日志
 
 ## 2026-09-09 - Phase 0a 清理：include/ 解散 + 空壳/备份/未引用文件删除（未提交，待与用户代码合并提交）

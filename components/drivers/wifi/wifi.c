@@ -145,14 +145,7 @@ void wifi_init(void) {
 
     // 2. 创建 STA 网络接口并缓存 MAC 地址
     esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
-    if (sta_netif) {
-        s_sta_netif = sta_netif;
-        uint8_t mac[6] = {0};
-        if (esp_netif_get_mac(sta_netif, mac) == ESP_OK) {
-            snprintf(s_mac_str, sizeof(s_mac_str), MACSTR, MAC2STR(mac));
-            printf("[WiFi] MAC address: %s\n", s_mac_str);
-        }
-    }
+    
 
     // 3. 创建 AP 网络接口（SoftAP 模式按需启用）
     if (!esp_netif_create_default_wifi_ap()) {
@@ -164,6 +157,15 @@ void wifi_init(void) {
     if (esp_wifi_init(&cfg) != ESP_OK) {
         printf("[WiFi] esp_wifi_init failed\n");
         return;
+    }
+
+	if (sta_netif) {
+        s_sta_netif = sta_netif;
+        uint8_t mac[6] = {0};
+        if (esp_netif_get_mac(sta_netif, mac) == ESP_OK) {
+            snprintf(s_mac_str, sizeof(s_mac_str), MACSTR, MAC2STR(mac));
+            printf("[WiFi] MAC address: %s\n", s_mac_str);
+        }
     }
 
     // 5. 注册事件回调（ANY_ID 覆盖 STA/AP 全部事件）

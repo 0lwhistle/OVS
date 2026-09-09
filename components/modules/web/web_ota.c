@@ -294,6 +294,13 @@ static size_t ota_upload_on_data(struct mg_connection *c,
             /* 旧式流：缓冲区里的"头部字节"其实是 app 数据开头 */
             size_t n = s_expected - s_received;
             if (s_hdr_got > n) s_hdr_got = n;
+            ota_err_t berr = ota_begin(s_expected);
+            if (berr != OTA_OK) {
+                LOGE(TAG, "ota_begin failed: %s", ota_err_to_str(berr));
+                reply_error(c, 503, ota_err_to_str(berr));
+                fw_session_reset();
+                return (size_t)-1;
+            }
             ota_err_t err = ota_write(s_hdr_buf, s_hdr_got);
             if (err != OTA_OK) {
                 LOGE(TAG, "ota_write failed: %s", ota_err_to_str(err));

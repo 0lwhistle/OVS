@@ -1,5 +1,106 @@
 # LoRa通讯协议设计
 
+## AT指令表
+
+指令	功能	说明（默认值）
++++	进入或退出AT命令模式	上电默认为传输模式
+AT	测试指令	用于测试串口
+AT+RESET	软件重启	
+AT+DEFAULT	恢复出厂设置	
+AT+BAUD	设置/查询串口波特率	默认：3（9600）
+AT+PARI	设置/查询串口校验位	默认：0（无校验）
+AT+HELP	查询配置信息	
+AT+LEVEL	设置/查询模块空中速率和通讯距离	默认：2
+AT+MODE	设置/查询传输模式	默认：0（透明传输）
+AT+SLEEP	设置/查询工作模式	默认：2（高时效模式）
+AT+SWITCH	设置/查询硬件控制引脚状态	默认：0（关闭）
+AT+CHANNEL	设置/查询工作信道	默认：00
+AT+MAC	设置/查询设备地址	默认：ff,ff
+AT+OPENKEY	设置/查询模块密钥开关	默认：1（打开）
+AT+KEY	设置模块密钥	默认：12345
+AT+PACKET	设置/查询分包长度	默认：3（230bytes）
+AT+DRSSI	设置/查询数据包RSSI	默认：0（关闭）
+AT+POWE	设置/查询发射功率	默认：22
+AT+LBT	设置/查询LBT状态	默认：0（关闭）
+AT+LRSSI	设置/查询LBT监听阀值	默认：-100
+AT+ERSSI	查询当前信道噪声水平	
+
+# DX-LR22 LoRa模组 AT指令集
+
+## 命令格式说明
+
+```
+AT+Command<param1,param2,...><CR><LF>
+```
+
+- 所有指令以 `AT` 开头，以 `<CR><LF>` 结束（`\r` = 0x0D，`\n` = 0x0A）
+- 所有AT命令字符均为英文大写
+- 多个参数以逗号`,`隔开
+- 指令执行成功返回 `OK`，失败返回 `ERROR=<错误码>`
+
+## 回应格式说明
+
+```
++Indication=<param1,param2,...><CR><LF>
+```
+
+- 回应以 `+` 开头，以 `<CR><LF>` 结束
+- `=` 后面为回应参数
+
+---
+
+## AT指令一览表
+
+| 指令 | 功能 | 参数 | 默认值 | 查询回应 | 设置回应 |
+|------|------|------|--------|----------|----------|
+| `+++` | 进入/退出AT命令模式 | 无 | — | `Entry AT` 或 `Exit AT` | — |
+| `AT` | 测试指令 | 无 | — | `OK` | — |
+| `AT+RESET` | 软件重启 | 无 | — | `OK` `Power On` | — |
+| `AT+DEFAULT` | 恢复出厂设置 | 无 | — | `OK` `Power On` | — |
+| `AT+BAUD` | 设置/查询串口波特率 | `1`=2400, `2`=4800, `3`=9600, `4`=19200, `5`=38400, `6`=57600, `7`=115200 | `3` (9600) | `+BAUD=<baud>` | `+BAUD=<baud>` `OK` |
+| `AT+PARI` | 设置/查询串口校验位 | `0`=无校验, `1`=奇校验, `2`=偶校验 | `0` (无校验) | `+PARI=<param>` | `+PARI=<param>` `OK` |
+| `AT+HELP` | 查询配置信息 | 无 | — | 返回多项配置参数 | — |
+| `AT+LEVEL` | 设置/查询空中速率和通讯距离 | `0`~`7`（8个档位） | `2` | `+LEVEL=<param>` | `+LEVEL=<param>` `OK` |
+| `AT+MODE` | 设置/查询传输模式 | `0`=透明传输, `1`=定点传输, `2`=广播传输 | `0` (透明传输) | `+MODE=<param>` | `+MODE=<param>` `OK` |
+| `AT+SLEEP` | 设置/查询工作模式 | `0`=休眠模式, `1`=空中唤醒模式, `2`=高时效模式 | `2` (高时效模式) | `+SLEEP=<param>` | `+SLEEP=<param>` `OK` |
+| `AT+SWITCH` | 设置/查询硬件控制引脚状态 | `0`=关闭, `1`=打开 | `0` (关闭) | `+SWITCH=<param>` | `+SWITCH=<param>` `OK` |
+| `AT+CHANNEL` | 设置/查询工作信道 | `00`~`63`（十六进制） | 433T22D: `00`<br>900T22D: `41` | `+CHANNEL=<param>` | `+CHANNEL=<param>` `OK` |
+| `AT+MAC` | 设置/查询设备地址 | 两字节十六进制（如 `ff,ff`） | `ff,ff` | `+MAC=<param>,<param>` | `+MAC=<param>,<param>` `OK` |
+| `AT+OPENKEY` | 设置/查询模块密钥开关 | `0`=关闭, `1`=打开 | `1` (打开) | `+OPENKEY=<param>` | `+OPENKEY=<param>` `OK` |
+| `AT+KEY` | 设置模块密钥 | `0`~`65535` | `12345` | 不可查询 | `+KEY=<param>` `OK` |
+| `AT+PACKET` | 设置/查询分包长度 | `0`=32bytes, `1`=64bytes, `2`=128bytes, `3`=230bytes | `3` (230bytes) | `+PACKET=<param>` | `+PACKET=<param>` `OK` |
+| `AT+DRSSI` | 设置/查询数据包RSSI | `0`=关闭, `1`=打开 | `0` (关闭) | `+DRSSI=<param>` | `+DRSSI=<param>` `OK` |
+| `AT+POWE` | 设置/查询发射功率 | `0`~`22` dBm（整数值） | `22` | `+POWE=<param>` | `+POWE=<param>` `OK` |
+| `AT+LBT` | 设置/查询LBT状态 | `0`=关闭, `1`=打开 | `0` (关闭) | `+LBT=<param>` | `+LBT=<param>` `OK` |
+| `AT+LRSSI` | 设置/查询LBT监听阈值 | `-255`~`0` | `-100` | `+LRSSI=<param>` | `+LRSSI=<param>` `OK` |
+| `AT+ERSSI` | 查询当前信道噪声水平 | 无 | — | `+ERSSI=<param>` | — |
+| `AT+IQ` | 设置/查询IQ翻转（仅900T22D） | `0`=关闭, `1`=开启 | `1` (开启) | `+IQ=<param>` | `+IQ=<param>` `OK` |
+| `AT+CRC` | 设置/查询CRC校验（仅900T22D） | `0`=关闭, `1`=开启 | `1` (开启) | `+CRC=<param>` | `+CRC=<param>` `OK` |
+
+---
+
+## 错误码
+
+| 错误码 | 说明 |
+|--------|------|
+| `104` | 无效指令 |
+| `105` | 无效参数 |
+| `106` | 其他错误 |
+
+---
+
+## 重要说明
+
+1. **重启生效**：以下指令设置后需发送 `AT+RESET` 重启生效：`AT+BAUD`、`AT+PARI`、`AT+LEVEL`、`AT+MODE`、`AT+SLEEP`、`AT+SWITCH`、`AT+CHANNEL`、`AT+MAC`、`AT+OPENKEY`、`AT+KEY`、`AT+PACKET`、`AT+DRSSI`、`AT+POWE`、`AT+LBT`、`AT+LRSSI`、`AT+IQ`、`AT+CRC`
+
+2. **退出AT模式**：发送 `+++` 退出AT命令模式时会自动复位
+
+3. **`+++` 指令掉电不保存**
+
+4. **`AT+KEY` 不可查询**，只能设置
+
+5. **`AT+ERSSI` 只可查询**，不可设置
+
 ## 概述
 
 本文档定义了ESP32-S3桌面智能助手的LoRa通讯协议，支持实时对讲和留言功能。
@@ -435,3 +536,4 @@ typedef struct {
 - ✅ 安全隔离
 
 协议简单高效，适合ESP32-S3的资源限制，同时保证了通讯的可靠性。
+

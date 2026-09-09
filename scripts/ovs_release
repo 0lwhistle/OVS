@@ -5,10 +5,13 @@
 #   ovs_release --app  --ota [主机]   编译并 OTA 更新 app 程序（不带设备树）
 #   ovs_release --dtb  --ota [主机]   只打包设备树并 OTA 更新设备树（不编译固件）
 #   ovs_release       --ota [主机]    编译打包，app + 设备树一起 OTA 更新
+#   ovs_release --pc                   只编译 PC 端模拟器（sim/，SDL2 窗口）
+#   ovs_release --pc --run             编译并运行 PC 端模拟器
 #
 # 说明:
 #   - --app 与 --dtb 互斥；不带它们而只给 --ota 即"app+dtb 一起升"（默认）
 #   - --dtb 需要设备上已有可运行的固件（走 /api/dtb/firmware，立即生效）
+#   - --pc 走 PC 模拟器构建（scripts/sim_build.sh），与 --app/--dtb/--ota 互斥
 #   - 主机可用 OVS_HOST 环境变量设默认；任意目录均可执行
 #
 set -e
@@ -24,6 +27,8 @@ cd "$PROJECT_ROOT"
 DO_OTA=false
 DO_APP=false
 DO_DTB=false
+DO_PC=false
+PC_RUN=false
 OTA_HOST="${OVS_HOST:-ovs.local}"
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -33,18 +38,30 @@ while [ $# -gt 0 ]; do
             ;;
         --app)  DO_APP=true ;;
         --dtb)  DO_DTB=true ;;
+        --pc)   DO_PC=true ;;
+        --run)  PC_RUN=true ;;
         -h|--help)
-            sed -n '2,12p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+            sed -n '2,14p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
             exit 0
             ;;
         *)
             echo -e "${RED}未知参数: $1${NC}"
-            echo "用法: ovs_release [--app | --dtb] [--ota [主机]]"
+            echo "用法: ovs_release [--app | --dtb] [--ota [主机]]  |  ovs_release --pc [--run]"
             exit 1
             ;;
     esac
     shift
 done
+
+if $DO_PC; then
+    if $DO_APP || $DO_DTB || $DO_OTA; then
+        echo -e "${RED}--pc 与 --app/--dtb/--ota 互斥（PC 模拟器不走 OTA）${NC}"
+        exit 1
+    fi
+    PC_ARGS=()
+    $PC_RUN && PC_ARGS+=(--run)
+    exec bash "$SCRIPT_DIR/sim_build.sh" "${PC_ARGS[@]}"
+fi
 
 if $DO_APP && $DO_DTB; then
     echo -e "${RED}--app 与 --dtb 互斥（app+dtb 一起升请只给 --ota）${NC}"

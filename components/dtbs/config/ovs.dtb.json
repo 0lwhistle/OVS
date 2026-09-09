@@ -150,7 +150,7 @@
         "status": {
             "compatible": "gpio-led",
             "description": "状态指示灯",
-            "pin": 4,
+            "pin": 48,
             "active_level": "high",
             "default_state": "on"
         }
