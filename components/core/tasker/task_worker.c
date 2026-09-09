@@ -1,4 +1,5 @@
 #include "task_worker.h"
+#include "mem.h"
 
 const char* TASK_WORKER_TAG = "[TASK_WORKER]";
 
@@ -20,11 +21,11 @@ int worker_init(void){
 
 	int ret = 0;
 
-	s_task_worker_ctx.little_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
-	s_task_worker_ctx.middle_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
-	s_task_worker_ctx.lots_worker = (struct task_worker*)malloc(sizeof(struct task_worker));
-	s_task_worker_ctx.s_dispatcher = (struct task_worker*)malloc(sizeof(struct task_worker));
-	s_task_worker_ctx.s_sched_table = (struct task_worker*)malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.little_worker = (struct task_worker*)mem_malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.middle_worker = (struct task_worker*)mem_malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.lots_worker = (struct task_worker*)mem_malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.s_dispatcher = (struct task_worker*)mem_malloc(sizeof(struct task_worker));
+	s_task_worker_ctx.s_sched_table = (struct task_worker*)mem_malloc(sizeof(struct task_worker));
 
 	if (!s_task_worker_ctx.little_worker || !s_task_worker_ctx.middle_worker ||
 		!s_task_worker_ctx.lots_worker || !s_task_worker_ctx.s_dispatcher ||
@@ -625,8 +626,8 @@ void worker_delete(struct task_worker* worker){
 	pthread_join(worker->pt, NULL);
 	pthread_mutex_destroy(&(worker->mtx));	
 	pthread_cond_destroy(&(worker->cond));
-	free(worker->worker_queue->queue);
-	free(worker->worker_queue);
-	free(worker);
+	mem_free(worker->worker_queue->queue);
+	mem_free(worker->worker_queue);
+	mem_free(worker);
 
 }

@@ -50,7 +50,7 @@ static bool s_strict = false;
 static const char* module_name(mem_module_t mod) {
     static const char* names[MEM_MOD_COUNT] = {
         "SYS", "APP", "NET", "WEB", "OTA", "VFS", "DTREE", "LVGL",
-        "AUDIO", "MEDIA", "LORA", "TIME", "POWER", "PROV",
+        "AUDIO", "MEDIA", "LORA", "TIME", "POWER", "PROV", "CORE", "DRV",
     };
     return (mod < MEM_MOD_COUNT) ? names[mod] : "?";
 }
@@ -152,11 +152,16 @@ void mem_free_(void* ptr) {
     }
     mem_hdr_t* hdr = (mem_hdr_t*)((uint8_t*)ptr - sizeof(mem_hdr_t));
     if (hdr->magic != MEM_MAGIC) {
+        /* magic=0 → 我们自己释放过的块被再次释放（double free）；
+         * 乱值 → 外来指针（非 mem 分配，如 strdup/IDF API 返回值） */
         if (s_strict) {
-            LOGE(TAG, "free: bad magic ptr=%p -- STRICT abort", ptr);
+            LOGE(TAG, "free: bad magic ptr=%p magic=0x%04x -- STRICT abort", ptr, hdr->magic);
             abort();
         }
-        LOGE(TAG, "free: bad magic ptr=%p (wild/double free?) -- reject", ptr);
+        LOGE(TAG, "free: bad magic ptr=%p magic=0x%04x size=%u module=%u caller=%p -- reject%s",
+             ptr, hdr->magic, (unsigned)hdr->size, (unsigned)hdr->module,
+             __builtin_return_address(0),
+             hdr->magic == 0 ? " (DOUBLE FREE)" : " (FOREIGN PTR?)");
         return;
     }
 
@@ -192,7 +197,7 @@ void* mem_heap_alloc_(mem_module_t mod, size_t size, uint32_t caps) {
         mem_hdr_t* hdr = (mem_hdr_t*)raw;
         hdr->magic = MEM_MAGIC;
         hdr->module = (uint8_t)mod;
-        hdr->flags = (caps & 0x02) ? MEM_FLAG_PSRAM : MEM_FLAG_DMA;
+        hdr->flags = (caps & MALLOC_CAP_SPIRAM) ? MEM_FLAG_PSRAM : MEM_FLAG_DMA;
         hdr->size = (uint32_t)size;
     }
 

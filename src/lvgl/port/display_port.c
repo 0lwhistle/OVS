@@ -11,6 +11,7 @@
 #include "lvgl.h"
 #include "dtree.h"
 #include "logger.h"
+#include "mem.h"
 
 #include "esp_heap_caps.h"
 #include <stdlib.h>
@@ -57,12 +58,12 @@ lv_display_t* display_port_init(void) {
     }
 
     size_t buf_size = (size_t)w * OVS_DRAW_BUF_LINES * 2;   /* RGB565 */
-    s_buf1 = heap_caps_malloc(buf_size, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
-    s_buf2 = heap_caps_malloc(buf_size, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
+    s_buf1 = mem_heap_alloc(buf_size, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
+    s_buf2 = mem_heap_alloc(buf_size, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
     if (!s_buf1 || !s_buf2) {
         LOGE(TAG, "Draw buffer alloc failed (%uB x2)", (unsigned)buf_size);
-        free(s_buf1);
-        free(s_buf2);
+        mem_free(s_buf1);
+        mem_free(s_buf2);
         s_buf1 = s_buf2 = NULL;
         return NULL;
     }

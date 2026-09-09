@@ -18,6 +18,7 @@
  */
 
 #include "web_ota.h"
+#include "mem.h"
 #include "web.h"
 #include "ota.h"
 #include "dtb_ab.h"
@@ -111,7 +112,7 @@ static void fw_session_reset(void) {
     s_hdr_done = false;
     s_has_dtb = false;
     s_dtb_stage = false;
-    free(s_dtb_buf);
+    mem_free(s_dtb_buf);
     s_dtb_buf = NULL;
     s_dtb_size = 0;
     s_dtb_got = 0;
@@ -222,7 +223,7 @@ static int fw_parse_hdr(struct mg_connection *c) {
     s_expected = app_size;
     s_has_dtb = (dtb_size > 0);
     if (s_has_dtb) {
-        s_dtb_buf = malloc(dtb_size);
+        s_dtb_buf = mem_malloc(dtb_size);
         if (!s_dtb_buf) {
             reply_error(c, 500, "oom for dtb");
             return -1;
@@ -385,7 +386,7 @@ static int dtb_upload_on_hdrs(struct mg_connection *c,
         reply_error(c, 413, "dtb exceeds slot size");
         return -1;
     }
-    s_dtbup_buf = malloc((size_t)total);
+    s_dtbup_buf = mem_malloc((size_t)total);
     if (!s_dtbup_buf) {
         reply_error(c, 500, "oom");
         return -1;
@@ -408,13 +409,13 @@ static size_t dtb_upload_on_data(struct mg_connection *c,
         if (dtb_ab_write_inactive(s_dtbup_buf, s_dtbup_size, &slot) != 0) {
             LOGE(TAG, "[dtb] write failed");
             reply_error(c, 500, "dtb write failed");
-            free(s_dtbup_buf);
+            mem_free(s_dtbup_buf);
             s_dtbup_buf = NULL;
             return (size_t)-1;
         }
         if (dtb_ab_set_active(slot) != 0) {
             reply_error(c, 500, "dtb activate failed");
-            free(s_dtbup_buf);
+            mem_free(s_dtbup_buf);
             s_dtbup_buf = NULL;
             return (size_t)-1;
         }
@@ -432,7 +433,7 @@ static size_t dtb_upload_on_data(struct mg_connection *c,
                   "%.*s", blen, blen, body);
         c->is_draining = 1;
         LOGI(TAG, "[dtb] activated slot %d", slot);
-        free(s_dtbup_buf);
+        mem_free(s_dtbup_buf);
         s_dtbup_buf = NULL;
     }
     return take;
@@ -442,7 +443,7 @@ static void dtb_upload_on_close(struct mg_connection *c) {
     (void)c;
     if (s_dtbup_buf) {
         LOGW(TAG, "[dtb] upload aborted at %u bytes", (unsigned)s_dtbup_got);
-        free(s_dtbup_buf);
+        mem_free(s_dtbup_buf);
         s_dtbup_buf = NULL;
     }
 }

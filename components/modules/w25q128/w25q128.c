@@ -10,6 +10,7 @@
  */
 
 #include "w25q128.h"
+#include "mem.h"
 #include "spi_drv.h"
 #include "event_bus.h"
 #include "tasker.h"
@@ -341,7 +342,7 @@ static w25q128_err_t w25q128_write_page(uint32_t addr, const void* data, size_t 
     }
     
     /* 构造命令缓冲区 */
-    uint8_t* buf = (uint8_t*)malloc(4 + size);
+    uint8_t* buf = (uint8_t*)mem_malloc(4 + size);
     if (!buf) {
         return W25Q128_ERR_SPI;
     }
@@ -354,7 +355,7 @@ static w25q128_err_t w25q128_write_page(uint32_t addr, const void* data, size_t 
     
     /* 发送数据 */
     spi_drv_err_t spi_err = spi_drv_write(s_spi_handle, s_spi_dev, buf, 4 + size);
-    free(buf);
+    mem_free(buf);
     
     if (spi_err != SPI_DRV_OK) {
         return W25Q128_ERR_SPI;
@@ -581,11 +582,11 @@ static w25q128_err_t w25q128_read_locked(uint32_t addr, void* buffer, size_t siz
      * 接收: ignore(4) + data(N)
      */
     size_t total = 4 + size;
-    uint8_t* tx_buf = (uint8_t*)malloc(total);
-    uint8_t* rx_buf = (uint8_t*)malloc(total);
+    uint8_t* tx_buf = (uint8_t*)mem_malloc(total);
+    uint8_t* rx_buf = (uint8_t*)mem_malloc(total);
     if (!tx_buf || !rx_buf) {
-        free(tx_buf);
-        free(rx_buf);
+        mem_free(tx_buf);
+        mem_free(rx_buf);
         return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
@@ -600,16 +601,16 @@ static w25q128_err_t w25q128_read_locked(uint32_t addr, void* buffer, size_t siz
     spi_drv_err_t spi_err = spi_drv_transfer(s_spi_handle, s_spi_dev, tx_buf, rx_buf, total);
     
     if (spi_err != SPI_DRV_OK) {
-        free(tx_buf);
-        free(rx_buf);
+        mem_free(tx_buf);
+        mem_free(rx_buf);
         return w25q128_on_operation_result(W25Q128_ERR_SPI);
     }
     
     /* 复制接收到的数据（跳过前4个字节的命令阶段） */
     memcpy(buffer, rx_buf + 4, size);
     
-    free(tx_buf);
-    free(rx_buf);
+    mem_free(tx_buf);
+    mem_free(rx_buf);
     
     return w25q128_on_operation_result(W25Q128_OK);
 }

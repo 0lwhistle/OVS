@@ -227,7 +227,7 @@ static void test_performance(const char* path) {
     LOGI(TAG, "--- 性能测试: %s ---", path);
 
     size_t test_size = 4096;
-    uint8_t* buf = malloc(test_size);
+    uint8_t* buf = mem_malloc(test_size);
     if (!buf) {
         LOGE(TAG, "Failed to allocate test buffer");
         return;
@@ -271,7 +271,7 @@ static void test_performance(const char* path) {
     }
 
     unlink(filepath);
-    free(buf);
+    mem_free(buf);
 }
 
 static void test_vfs(void) {

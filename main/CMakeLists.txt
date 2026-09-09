@@ -39,3 +39,6 @@ idf_component_register(
         freertos
         lvgl
 )
+
+# mem_pool 模块标签
+target_compile_definitions(${COMPONENT_LIB} PRIVATE MEM_MODULE_TAG=MEM_MOD_APP)

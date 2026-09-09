@@ -11,6 +11,7 @@
  */
 
 #include "i2c_drv.h"
+#include "mem.h"
 #include "logger.h"
 
 #include "driver/i2c_master.h"
@@ -106,7 +107,7 @@ static i2c_drv_err_t i2c_bus_destroy(int slot) {
     while (node) {
         i2c_dev_node_t* next = node->next;
         i2c_master_bus_rm_device(node->dev_handle);
-        free(node);
+        mem_free(node);
         node = next;
     }
     h->dev_list = NULL;
@@ -116,7 +117,7 @@ static i2c_drv_err_t i2c_bus_destroy(int slot) {
         h->bus_handle = NULL;
     }
 
-    free(h);
+    mem_free(h);
     s_i2c_buses[slot] = NULL;
     return I2C_DRV_OK;
 }
@@ -153,7 +154,7 @@ static i2c_master_dev_handle_t get_or_create_dev(struct i2c_drv_handle* h, uint8
     }
     
     /* 添加到链表 */
-    i2c_dev_node_t* new_node = (i2c_dev_node_t*)malloc(sizeof(i2c_dev_node_t));
+    i2c_dev_node_t* new_node = (i2c_dev_node_t*)mem_malloc(sizeof(i2c_dev_node_t));
     if (!new_node) {
         i2c_master_bus_rm_device(dev_handle);
         return NULL;
@@ -270,7 +271,7 @@ i2c_drv_err_t i2c_drv_init(const i2c_drv_config_t* config, i2c_drv_handle_t* han
     LOGI(TAG, "  SCL pin: %" PRId32, config->scl_pin);
     LOGI(TAG, "  Freq: %" PRId32 " Hz", config->freq_hz);
 
-    struct i2c_drv_handle* h = calloc(1, sizeof(struct i2c_drv_handle));
+    struct i2c_drv_handle* h = mem_calloc(1, sizeof(struct i2c_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
         i2c_bus_lock_give();
@@ -290,7 +291,7 @@ i2c_drv_err_t i2c_drv_init(const i2c_drv_config_t* config, i2c_drv_handle_t* han
     esp_err_t ret = i2c_new_master_bus(&bus_config, &h->bus_handle);
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to create I2C master bus: %s", esp_err_to_name(ret));
-        free(h);
+        mem_free(h);
         i2c_bus_lock_give();
         return I2C_DRV_ERR_HW;
     }
@@ -438,7 +439,7 @@ i2c_drv_err_t i2c_drv_write_reg(i2c_drv_handle_t handle, uint8_t device_addr,
     
     /* 构造写入缓冲区: 寄存器地址 + 数据 */
     size_t total_size = 1 + size;
-    uint8_t* buf = (uint8_t*)malloc(total_size);
+    uint8_t* buf = (uint8_t*)mem_malloc(total_size);
     if (!buf) {
         LOGE(TAG, "Failed to allocate write buffer");
         return I2C_DRV_ERR_HW;
@@ -450,7 +451,7 @@ i2c_drv_err_t i2c_drv_write_reg(i2c_drv_handle_t handle, uint8_t device_addr,
     /* 写入数据 */
     i2c_drv_err_t ret = i2c_drv_write(handle, device_addr, buf, total_size);
     
-    free(buf);
+    mem_free(buf);
     
     return ret;
 }
