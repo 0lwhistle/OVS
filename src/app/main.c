@@ -2,25 +2,21 @@
  * @file main.c
  * @brief OVS 应用入口：系统启动编排
  *
- * 启动顺序（依赖关系决定，勿随意调换）：
- *   NVS → event_bus/tasker → SPIFFS → 设备树(dtree_init，可选 A/B 槽)
- *   → 网络/OTA/Web(保护区) → W25Q128 → VFS 挂载(设备树 vfs 节点)
+ * 启动顺序（REFACTORING_PLAN 4.4，holder 依赖拓扑编排）：
+ *   NVS → SPIFFS（手工，holder 的前置依赖）
+ *   → app_init.c 注册表: event_bus→tasker→dtree→w25q128→ovs_vfs→net_stack(保护区)
+ *     →st7789/cst816s/aht30→heartbeat→lvgl_app（optional 失败降级）
+ * 详见 src/app/app_init.c 与 docs/development_log.md 2026-09-09 Phase 1 条目
  *
  * VFS 功能测试/压力测试收在 OVS_RUN_APP_TESTS 编译开关内（默认关），
  * 需要时置 1 烧录运行；测试代码主体在 vfs_stress 模块。
  */
 
-#include "tasker.h"
-#include "event_bus.h"
 #include "logger.h"
-#include "dtree.h"
 #include "esp_spiffs.h"
-#include "w25q128.h"
-#include "w25q128_vfs.h"
-#include "internal_flash_vfs.h"
 #include "ovs_vfs.h"
 #include "mem.h"
-#include "lvgl_app.h"
+#include "app_init.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -142,80 +138,6 @@ static void net_hotswap_test_task(void *arg) {
 }
 #endif
 
-/* ============================================================ */
-/*                    VFS 栈与挂载                                */
-/* ============================================================ */
-
-/** 注册块设备并按设备树 vfs 节点挂载（无 vfs 节点时用默认布局） */
-static void vfs_stack_start(void) {
-    vfs_err_t ret = vfs_init();
-    if (ret != VFS_OK) {
-        LOGE(TAG, "VFS init failed: %d", ret);
-        return;
-    }
-
-    w25q128_register_vfs();
-    internal_flash_register_vfs("littlefs");
-
-    if (!dtree_has_node("vfs")) {
-        LOGW(TAG, "Device tree 'vfs' node not found, using default layout");
-        vfs_mount_littlefs("/audio", "w25q128", 0, 8 * 1024 * 1024, true);
-        vfs_mount_littlefs("/font", "w25q128", 8 * 1024 * 1024, 8 * 1024 * 1024, true);
-        vfs_mount_littlefs("/config", "internal", 0, 0, true);
-        return;
-    }
-
-    int array_size = dtree_array_size("vfs.mounts");
-    if (array_size <= 0) {
-        LOGW(TAG, "No mounts configured in device tree");
-        return;
-    }
-
-    int mount_count = 0;
-    for (int i = 0; i < array_size; i++) {
-        dtree_node_t* item = dtree_array_item("vfs.mounts", i);
-        if (!item) {
-            LOGW(TAG, "Failed to get mount config at index %d", i);
-            continue;
-        }
-
-        const char* mount_path = NULL;
-        const char* device = NULL;
-        int32_t offset = 0;
-        int32_t size = 0;
-        int32_t format_if_fail = 1;
-
-        dtree_get_string(item, "path", &mount_path);
-        dtree_get_string(item, "device", &device);
-        dtree_get_int(item, "offset", &offset);
-        dtree_get_int(item, "size", &size);
-        dtree_get_int(item, "format_if_fail", &format_if_fail);
-
-#if OVS_MEDIA_FORMAT_ON_FIRST_BOOT
-        /* 过渡期：外部 Flash 分区重排后首次烧录时格式化重建 */
-        if (device && strcmp(device, "w25q128") == 0) {
-            format_if_fail = 1;
-        }
-#endif
-
-        if (!mount_path || !device) {
-            LOGW(TAG, "Invalid mount config at index %d", i);
-            continue;
-        }
-
-        ret = vfs_mount_littlefs(mount_path, device, offset, size, format_if_fail);
-        if (ret == VFS_OK) {
-            mount_count++;
-            LOGI(TAG, "VFS mounted: %s (%s @+%" PRId32 ", %" PRId32 "KB)",
-                 mount_path, device, offset, size / 1024);
-        } else {
-            LOGE(TAG, "VFS mount failed: %s (err=%d)", mount_path, ret);
-            LOGW(TAG, "提示：若刚变更过分区布局，置 OVS_MEDIA_FORMAT_ON_FIRST_BOOT=1 烧录一次");
-        }
-    }
-    LOGI(TAG, "VFS mounts ready: %d/%d", mount_count, array_size);
-}
-
 #if OVS_RUN_APP_TESTS
 /* ============================================================ */
 /*           应用级测试（OVS_RUN_APP_TESTS=1 时编译）             */
@@ -329,11 +251,7 @@ void app_main(void) {
     }
     ESP_ERROR_CHECK(nvs_ret);
 
-    /* 核心服务 */
-    event_bus_init();
-    tasker_init();
-
-    /* SPIFFS（出厂设备树回退源 + 运行时存储） */
+    /* SPIFFS（出厂设备树回退源 + 运行时存储；holder 的前置依赖，保持手工） */
     esp_vfs_spiffs_conf_t spiffs_conf = {
         .base_path = "/spiffs",
         .partition_label = "spiffs",
@@ -344,17 +262,13 @@ void app_main(void) {
         LOGW(TAG, "SPIFFS mount failed: %s", esp_err_to_name(spiffs_ret));
     }
 
-    /* 设备树（A/B 槽 → SPIFFS 回退） */
-    dtree_err_t dtree_ret = dtree_init();
-    if (dtree_ret != DTREE_OK) {
-        LOGE(TAG, "Device tree init failed: %d", dtree_ret);
-    }
-
 #if OVS_ENABLE_NET
-    /* ▶ OTA 线保护区：net_stack_init 调用点，勿移除（说明见文件头部保护区注释）
-     * 依赖顺序：必须在 dtree_init() 之后（net_mgr 从设备树读 WiFi 配置），
-     * 依赖 NVS/event_bus/tasker/SPIFFS 已就绪 */
-    net_stack_init();
+    /* ▶ OTA 线保护区注记（2026-09-09）: net_stack_init 的调用点迁移至 holder
+     * 注册表（src/app/app_init.c "net_stack" 模块：required、依赖 dtree 就绪，
+     * OVS_ENABLE_NET 总开关语义不变；ota→net_mgr→web 内部顺序保留在
+     * net_stack_init 内部未动）。能力等价性已在 Phase 1 OTA 验证。
+     * 记录: docs/development_log.md 2026-09-09 Phase 1 条目 */
+    app_init_set_net_stack(net_stack_init);
 #endif
 
 #if OVS_ENABLE_NET && OVS_NET_HOTSWAP_TEST
@@ -362,18 +276,13 @@ void app_main(void) {
                 tskIDLE_PRIORITY + 1, NULL);
 #endif
 
-    /* W25Q128 外部 Flash + VFS 挂载 */
-    w25q128_err_t w25_ret = w25q128_init();
-    if (w25_ret != W25Q128_OK) {
-        LOGE(TAG, "W25Q128 init failed: %d", w25_ret);
+    /* 核心层/存储/网络/人机/应用 全部由 holder 依赖拓扑编排
+     * （注册表见 src/app/app_init.c；required 失败即停，optional 失败降级） */
+    if (app_init_setup() != 0) {
+        LOGE(TAG, "app_init_setup failed");
     }
-    vfs_stack_start();
-
-    /* LVGL UI（双平台骨架：显示为 null 输出冒烟，st7789 对接见 REFACTORING_PLAN 6.2；
-     * 自建 lvgl 任务，与 tasker 长任务纪律一致） */
-    lvgl_app_err_t lvgl_ret = lvgl_app_init();
-    if (lvgl_ret != LVGL_APP_OK) {
-        LOGE(TAG, "LVGL app init failed: %d", lvgl_ret);
+    if (app_init_run() != 0) {
+        LOGE(TAG, "app_init_run: required 模块初始化失败（详见上方 holder 状态表）");
     }
 
     /* mem_pool 各模块内存账单（迁移验收期打印，稳定后可移到 /api/mem） */

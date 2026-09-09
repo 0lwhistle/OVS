@@ -187,6 +187,11 @@ void holder_print_status(void);
  * @return 模块数量
  */
 uint32_t holder_get_module_count(void);
+/**
+ * @brief 按索引获取模块名（配合 holder_get_module_count 遍历）
+ * @return 模块名；索引越界返回 NULL
+ */
+const char* holder_get_module_name(int index);
 
 /**
  * @brief 检查holder是否已初始化

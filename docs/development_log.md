@@ -1,5 +1,63 @@
 # OVS项目开发日志
 
+# OVS项目开发日志
+
+## 2026-09-09 - Phase 1 收尾：holder 启用 + app_init 注册表 + /api/modules（验收全项 PASS）
+
+### 任务目标
+Phase 1 第三项（REFACTORING_PLAN 4.4）：holder 依赖拓扑编排取代 main.c
+手工启动序列，并完成 Phase 1 三条验收（init 耗时日志/可选模块降级/
+订阅者 ≥6）。屏幕点亮里程碑按用户指示推后。
+
+### 完成内容
+- **src/app/app_init.c/h**：注册表 11 模块——required 6 个（event_bus/
+  tasker/dtree/w25q128/ovs_vfs/net_stack，依赖链 批0→批1→批2），optional
+  5 个（st7789/cst816s/aht30/heartbeat/lvgl_app）。VFS 挂载逻辑自 main.c
+  迁入（mod_vfs，含 OVS_MEDIA_FORMAT_ON_FIRST_BOOT 过渡逻辑）。
+  net_stack 经函数指针桥接（app_init_set_net_stack，main.c 注入
+  net_stack_init），OVS_ENABLE_NET=0 时模块不注册，语义不变。原调用点
+  留迁移注记。强制失败钩子 OVS_FORCE_FAIL_MODULE（降级验收用）。
+- **main.c 瘦身**：仅剩 NVS/SPIFFS 手工 + holder 编排 + 内存账单 + 应用
+  级测试开关；OTA 保护区注记更新（调用点迁移说明，ota→net→web 内部顺序
+  未动）。
+- **web**：新增 GET /api/modules（holder 全模块状态 JSON，含
+  state/required/init_time_ms/error；注意 mg_http_reply 须单次完整响应）；
+  新增 6+1 路事件订阅（WIFI_CONNECTED/DISCONNECTED/GOT_IP/MODE_CHANGED/
+  SENSOR_TEMP_HUMIDITY/STORAGE_ERROR/SYSTEM_ERROR）→ web_ws_broadcast
+  推送给网页客户端。web REQUIRES 增 holder/event_bus。
+- **holder 增枚举 API**：holder_get_module_name(index)。
+- **修复（magic 防护与 addr2line 第三次立功）**：event_bus 队列 ESP 分支
+  语义错误（xQueueSend(&item) 双重取址 → 队列存发布方栈地址 → 悬挂读）
+  → 改回元素拷贝语义；事件池/堆归属改带外判定 mem_pool_contains（池
+  free 链指针覆盖块内 reserved 标志，块内标志不可靠）。
+
+### 验收结果（全部 PASS）
+1. 开机日志打印各模块 init 耗时：event_bus 43ms / tasker 23ms / dtree
+   55ms / w25q128 95ms / ovs_vfs 411ms / net_stack 284ms / st7789 381ms /
+   heartbeat 11ms / lvgl_app 41ms（holder_print_status）；
+2. 可选模块降级：OVS_FORCE_FAIL_MODULE="st7789" 构建验证——st7789 置
+   ERROR、系统降级续跑（LVGL/Web/ API 全存活），/api/modules 如实反映；
+   另 cst816s/aht30 因外设未接线真实失败，同样降级续跑（双重复证）；
+3. 订阅者 ≥6：实测 7 个（web 事件桥 ×7）。
+   附加: /api/modules、/api/status(rssi=-37，C12 heartbeat 接线顺带修复)、
+   6 分钟稳定性监控零异常、OTA 双向验证。
+
+### 待解决问题
+- cst816s/aht30 init 失败因外设未接线（用户确认），接线后自动转 ready。
+- WS 推送长稳观察；Phase 1 剩余增强（开机页模块状态 UI）随 Phase 3。
+
+### 下一步计划
+- Phase 2：st7789 flush_cb 真实对接（点屏里程碑，用户已同意推后）、
+  cst816s indev、中文字体链路、QIO/80M 冒烟。
+
+### 代码变更
+- 新增: src/app/app_init.c/h
+- 修改: src/app/main.c（瘦身）、components/modules/web/{web.c,CMakeLists.txt}、
+  components/modules/holder/{holder.h,holder.c}（+枚举 API）
+- 修复: components/core/event_bus/event_bus_port.c（ESP 队列拷贝语义）、
+  components/core/mem_pool/mem_pool.{h,c}(+contains)、
+  components/core/event_bus/event_bus.c（析构带外归属判定）
+
 ## 2026-09-09 - Phase 1（部分）：event_bus 四修复 + tasker 三修复完成（PC 门禁 89/89，真机自旋 bug 修复）
 
 ### 任务目标

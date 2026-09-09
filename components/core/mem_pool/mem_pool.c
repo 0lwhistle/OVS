@@ -141,6 +141,13 @@ void mem_pool_free(mem_pool_t* pool, void* blk) {
     POOL_UNLOCK();
 }
 
+bool mem_pool_contains(mem_pool_t* pool, const void* ptr) {
+    if (!pool || !ptr) return false;
+    const uint8_t* p = (const uint8_t*)ptr;
+    return (p >= pool->storage && p < pool->storage_end &&
+            (size_t)(p - pool->storage) % pool->block_size == 0);
+}
+
 uint32_t mem_pool_in_use(mem_pool_t* pool) {
     return pool ? pool->in_use : 0;
 }

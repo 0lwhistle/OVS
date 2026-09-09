@@ -39,6 +39,9 @@ void* mem_pool_alloc(mem_pool_t* pool);
 void mem_pool_free(mem_pool_t* pool, void* blk);
 
 /* 统计（in_use/peak 为块数） */
+/** 指针是否属于本池存储范围（带外归属判定，不受块内容改写影响） */
+bool mem_pool_contains(mem_pool_t* pool, const void* ptr);
+
 uint32_t mem_pool_in_use(mem_pool_t* pool);
 uint32_t mem_pool_peak_use(mem_pool_t* pool);
 

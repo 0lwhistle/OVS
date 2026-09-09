@@ -571,6 +571,22 @@ void holder_print_status(void) {
 /**
  * @brief 获取已注册模块数量
  */
+const char* holder_get_module_name(int index) {
+    if (!s_holder_ctx.initialized || index < 0) {
+        return NULL;
+    }
+    if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
+        return NULL;
+    }
+    holder_node_t* node = s_holder_ctx.head;
+    for (int i = 0; node != NULL && i < index; i++) {
+        node = node->next;
+    }
+    const char* name = (node != NULL) ? node->info.name : NULL;
+    xSemaphoreGive(s_holder_ctx.mutex);
+    return name;
+}
+
 uint32_t holder_get_module_count(void) {
     if (!s_holder_ctx.initialized) {
         return 0;
