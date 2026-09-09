@@ -1,9 +1,11 @@
 #include "task_worker.h"
+#include <errno.h>
 #include "mem.h"
 
 const char* TASK_WORKER_TAG = "[TASK_WORKER]";
 
 int worker_init_flag = 0;
+static uint32_t s_spin_fallback_usleeps = 0;
 
 struct task_worker_ctx s_task_worker_ctx = {0};
 
@@ -254,12 +256,10 @@ int worker_sched_init(void){
 		return ret;
 	}
 
-	/* 5.2 修复1: sched 等待时钟用 CLOCK_MONOTONIC（不受系统时间跳变影响） */
-	pthread_condattr_t cattr;
-	pthread_condattr_init(&cattr);
-	pthread_condattr_setclock(&cattr, CLOCK_MONOTONIC);
-	ret = pthread_cond_init(&(worker->cond), &cattr);
-	pthread_condattr_destroy(&cattr);
+	/* 5.2 修复1: cond 超时等待替代忙轮询。
+	 * 时钟用默认 CLOCK_REALTIME（ESP pthread 对 MONOTONIC condattr 支持
+	 * 不确定，曾致 timedwait 立即返回 → IDLE0 饿死），睡眠上限 1s 限损害 */
+	ret = pthread_cond_init(&(worker->cond), NULL);
 	if (ret != 0) {
 		LOGE(TASK_WORKER_TAG, "Cond init failed: %d", ret);
 		ret = TASK_INNER_ERR;
@@ -388,16 +388,40 @@ void* worker_sched_handler(void* arg){
 			}
 			if (deadline > now){
 				struct timespec ts;
-				clock_gettime(CLOCK_MONOTONIC, &ts);
-				uint64_t delta_ns = (deadline - now) * 1000000ULL;
-				ts.tv_sec += (time_t)(delta_ns / 1000000000ULL);
-				ts.tv_nsec += (long)(delta_ns % 1000000000ULL);
+				clock_gettime(CLOCK_REALTIME, &ts);   /* 与 cond 默认时钟一致 */
+				uint64_t delta_ms = deadline - now;   /* 已被 SCHED_MAX_SLEEP_MS 封顶 */
+				ts.tv_sec += (time_t)(delta_ms / 1000u);
+				ts.tv_nsec += (long)(delta_ms % 1000u) * 1000000L;
 				if (ts.tv_nsec >= 1000000000L){
 					ts.tv_sec += 1;
 					ts.tv_nsec -= 1000000000L;
 				}
-				pthread_cond_timedwait(&worker->cond, &worker->mtx, &ts);
+				int rc = pthread_cond_timedwait(&worker->cond, &worker->mtx, &ts);
+				if (rc != 0 && rc != ETIMEDOUT){
+					/* 时钟/参数异常兜底：绝对等待失效时保底睡 2ms，绝不自旋 */
+					s_spin_fallback_usleeps++;
+					usleep(2000);
+				}
 			}
+		}
+
+		/* 自旋熔断：调度循环空转过快（如 timedwait 异常立即返回）时强制降速
+		 * 并打诊断，绝不允许饿死 IDLE（真机教训 2026-09-09） */
+		{
+			static uint64_t last_loop_ms = 0;
+			static int fast_loops = 0;
+			uint64_t now_loop = get_time_ms();
+			if (now_loop == last_loop_ms){
+				if (++fast_loops > 200){
+					fast_loops = 0;
+					LOGE(TASK_WORKER_TAG, "sched spinning detected, throttle 10ms "
+					     "(nodes=%d)", worker->worker_queue->size);
+					usleep(10000);
+				}
+			} else {
+				fast_loops = 0;
+			}
+			last_loop_ms = now_loop;
 		}
 
 		int size = worker->worker_queue->size;
