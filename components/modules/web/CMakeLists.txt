@@ -6,6 +6,6 @@ idf_component_register(
     INCLUDE_DIRS "."
                  "${CMAKE_SOURCE_DIR}/thirdparty/mongoose"
                  "web_data"
-    REQUIRES mem_pool spiffs freertos ota net_mgr dtbs wifi heartbeat tasker logger esp_timer
+    REQUIRES mem_pool spiffs freertos ota net_mgr dtbs wifi heartbeat tasker_api logger esp_timer
 )
 target_compile_definitions(${COMPONENT_LIB} PRIVATE MEM_MODULE_TAG=MEM_MOD_WEB)

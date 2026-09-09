@@ -6,13 +6,8 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "esp_log.h"
-#include "esp_timer.h"
-#include "driver/gptimer.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-
 #include "task_manager.h"
+#include "tasker_port.h"
 #include "logger.h"
 
 extern const char* TASK_WORKER_TAG;
@@ -36,7 +31,8 @@ typedef struct task_node* (*find_by_name_fn)(struct task_node*);
 struct task_worker{
 	int stop;
 	int timeout_flag;
-	esp_timer_handle_t timeout_timer;
+	tasker_timer_t timeout_timer;
+	int pt_created;                       /* pthread_create 成功标记（安全 join） */
 	pthread_t pt;
 	pthread_mutex_t mtx;
 	pthread_cond_t cond;
@@ -60,8 +56,6 @@ void* worker_lots_handler(void* arg);
 void* worker_dispatcher_handler(void* arg);
 void* worker_sched_handler(void* arg);
 void worker_do_handler(struct task_worker* worker);
-
-esp_timer_handle_t* timeout_timer_init(const int timeout, void* arg);
 
 int worker_sched_enqueue(struct task_node* node);
 int worker_task_enqueue(struct task_worker* worker, struct task_node* node);

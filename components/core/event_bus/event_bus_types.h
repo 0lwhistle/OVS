@@ -38,6 +38,9 @@ extern "C" {
 /** 最大事件数据大小 (字节) */
 #define EVENT_BUS_MAX_EVENT_SIZE    256
 
+/* 事件内存池块数（5.1 修复项2: 定长块池，池满退化堆分配） */
+#define EVENT_POOL_BLOCKS           48
+
 /** 事件处理任务栈大小 */
 #define EVENT_BUS_TASK_STACK_SIZE   4096
 

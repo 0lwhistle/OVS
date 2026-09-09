@@ -1,5 +1,5 @@
 idf_component_register(
     SRCS "tasker.c"
     INCLUDE_DIRS "."
-    REQUIRES freertos tasker logger
+    REQUIRES freertos tasker logger esp_timer
 )

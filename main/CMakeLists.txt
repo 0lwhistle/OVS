@@ -6,7 +6,6 @@ idf_component_register(
     REQUIRES
         tasker_api
         eventbus_api
-        tasker
         event_bus
         logger
         dtbs

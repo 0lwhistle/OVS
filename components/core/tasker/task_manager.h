@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdatomic.h>
 
-#include "esp_log.h"
-#include "esp_timer.h"
-#include "driver/gptimer.h"
+#include "logger.h"
+#include "tasker_port.h"
 
 #define LITTLE_TASK_QUEUE_SIZE 8
 #define MIDDLE_TASK_QUEUE_SIZE 8
@@ -55,8 +55,9 @@ enum task_time_cost_level{
 typedef enum task_t (*task_fn)(void* ctx);
 
 struct task_node{
-	int done;
-	int cancel;
+	/* cancel/done/dispatched 跨线程读写（5.2 修复2: 原子化） */
+	atomic_int done;
+	atomic_int cancel;
 	int timeout;
 	int is_timeout;
 	int period;
@@ -67,7 +68,7 @@ struct task_node{
 	uint64_t inject_time;
 	char name[32];
 	void* ctx;
-	int dispatched; /* 1 while the node is borrowed by dispatcher/worker */
+	atomic_int dispatched; /* 1 while the node is borrowed by dispatcher/worker */
 };
 
 struct task_manager{

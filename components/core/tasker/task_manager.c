@@ -53,12 +53,12 @@ void task_node_pool_free(struct task_node* node){
 struct task_manager* task_manager_init(const unsigned int size){
 	struct task_manager* manager = (struct task_manager*)mem_malloc(sizeof(struct task_manager));
 	if (!manager){
-		ESP_LOGE(TASK_MANAGER_TAG, "manager malloc fail!");
+		LOGE(TASK_MANAGER_TAG, "manager malloc fail!");
 		return NULL;
 	}
 	struct task_node** queue = (struct task_node**)mem_malloc(size * sizeof(struct task_node*));
 	if (!queue){
-		ESP_LOGE(TASK_MANAGER_TAG, "queue malloc fail!");
+		LOGE(TASK_MANAGER_TAG, "queue malloc fail!");
 		mem_free(manager);
 		return NULL;
 	}

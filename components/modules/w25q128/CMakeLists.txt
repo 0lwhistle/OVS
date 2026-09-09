@@ -8,7 +8,7 @@ idf_component_register(
         mem_pool
         spi_drv 
         event_bus 
-        tasker 
+        tasker_api 
         logger 
         dtbs
         ovs_vfs
