@@ -217,7 +217,7 @@ static void test_threads(void) {
     CHECK(cur_of(MEM_MOD_SYS) == base);                 /* 账目精确归零 */
 }
 
-int main(void) {
+void test_mem_run(int* pass, int* fail) {
     mem_strict_set(false);
     test_semantics();
     test_accounting();
@@ -227,6 +227,7 @@ int main(void) {
     test_threads();
     mem_stat_print();
 
-    printf("\n==== ovs_tests: %d passed, %d failed ====\n", s_pass, s_fail);
-    return s_fail ? 1 : 0;
+    printf("\n==== [MEM] %d passed, %d failed ====\n", s_pass, s_fail);
+    *pass += s_pass;
+    *fail += s_fail;
 }

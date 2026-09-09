@@ -5,5 +5,5 @@
 idf_component_register(
     SRCS "aht30.c"
     INCLUDE_DIRS "."
-    REQUIRES i2c_drv event_bus tasker logger dtbs
+    REQUIRES i2c_drv event_bus tasker_api logger dtbs
 )

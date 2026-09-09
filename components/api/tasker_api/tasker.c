@@ -6,12 +6,13 @@
  */
 #include "tasker.h"
 #include "task_worker.h"
+#include "tasker_port.h"
 #include "logger.h"
 #include <string.h>
 
 /* 获取当前时间 (毫秒) */
 static inline uint64_t tasker_get_time_ms(void) {
-    return esp_timer_get_time() / 1000;
+    return tasker_now_ms();
 }
 
 /* 自动初始化检查 */

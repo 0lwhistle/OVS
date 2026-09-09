@@ -1,5 +1,3 @@
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 /**
  * @file event_bus_internal.h
  * @brief 事件总线内部数据结构
@@ -15,6 +13,7 @@
 #define EVENT_BUS_INTERNAL_H
 
 #include "event_bus_types.h"
+#include <stdatomic.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -76,7 +75,7 @@ typedef struct {
  */
 typedef struct {
     void* queue;                    /**< 事件队列句柄 (QueueHandle_t) */
-    TaskHandle_t task_handle;              /**< 事件处理任务句柄 (TaskHandle_t) */
+    void* task_handle;              /**< 事件处理任务句柄 (port层) */              /**< 事件处理任务句柄 (TaskHandle_t) */
     
     /** 订阅者数组 */
     subscriber_t subscribers[EVENT_BUS_MAX_SUBSCRIBERS];
@@ -84,15 +83,15 @@ typedef struct {
     uint32_t next_subscriber_id;    /**< 下一个订阅者ID */
     int subscriber_count;           /**< 当前订阅者数量 */
     
-    void* mutex;                    /**< 互斥锁 (SemaphoreHandle_t) */
+    void* lock;                     /**< 互斥锁 (port层句柄) */
     bool initialized;               /**< 是否已初始化 */
     
-    /** 统计信息 */
+    /** 统计信息（C11 原子计数，多任务无锁安全，5.1 修复项3） */
     struct {
-        uint32_t events_published;      /**< 已发布事件数 */
-        uint32_t events_processed;      /**< 已处理事件数 */
-        uint32_t events_dropped;        /**< 丢弃的事件数 (队列满) */
-        uint32_t handler_errors;        /**< 处理函数错误数 */
+        atomic_uint events_published;   /**< 已发布事件数 */
+        atomic_uint events_processed;   /**< 已处理事件数 */
+        atomic_uint events_dropped;     /**< 丢弃的事件数 (队列满) */
+        atomic_uint handler_errors;     /**< 处理函数错误数 */
     } stats;
 } event_bus_context_t;
 
