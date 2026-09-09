@@ -1,5 +1,57 @@
 # OVS项目开发日志
 
+## 2026-09-09 - mem_pool 核心内存管理模块落地（批次1迁移完成，真机账单验证 PASS）
+
+### 任务目标
+按 v1.1 方案新增 `core/mem_pool`（设计文档
+docs/superpowers/specs/2026-09-09-mem-pool-design.md）：malloc/free 同签名
+drop-in 接口 + 8B 分配头记账 + 模块桶归属 + magic 防护 + 定长块池，
+并完成批次 1（dtbs）迁移与真机回归。
+
+### 完成内容
+- **组件 `components/core/mem_pool`**：mem.h（drop-in 层 mem_malloc/calloc/
+  realloc/free + 显式层 mem_heap_alloc/dma/psram + 统计接口）、mem_pool.h/c
+  （侵入式空闲栈定长块池，范围/对齐/重复归还校验）、mem.c（8B 头 magic
+  校验、free 前清魔数捕获 double-free、严格模式 abort、短临界区记账、
+  实际 malloc 在锁外；ESP=portMUX / PC=pthread）。_Static_assert 锁定头
+  布局 8B。
+- **PC 宿主测试 `tests/`（ovs_tests）**：41 用例全绿——libc 语义对表、
+  记账核对（+8 头开销精确入账/桶不串账/峰值）、防护（野 free/重复 free
+  拒绝 + fork 验证 strict SIGABRT）、块池（耗尽/LIFO/越界/重复归还）、
+  双线程 10 万次压测账目归零。
+- **批次 1 迁移（dtbs）**：dtree.c/dtb_ab.c 共 6 处文本替换 mem_malloc/
+  mem_free；组件 CMake 加 `MEM_MODULE_TAG=MEM_MOD_DTREE`。ovs_vfs 实查
+  零 malloc 调用（全走 littlefs 适配层），无需迁移。
+- **main.c**：开机 mem_stat_print() 账单（OTA 保护区之外）。
+- **真机验证**：OTA 推送测试固件——设备树 JSON 经 mem_malloc 路径从 A/B
+  槽加载解析成功（vfs.mounts 读出 4 项）；DTREE 桶 1 笔分配峰值 6242B
+  （= 树 JSON 实际大小）、释放归零；全程零 magic 错误零 panic；正式固件
+  二次 OTA 回滚确认 PASS。固件 1.54MB，分区余 41%。
+
+### 待解决问题
+- **W25Q128 硬件故障（阻塞 VFS 压测回归）**：串口实测 JEDEC ID=0x000000
+  （期望 0xEF4018），外部 Flash 无应答，/media /audio /font 三挂载失败、
+  压测 P0 中止。**该故障在上一轮 LVGL 冒烟抓包中已存在**，早于 mem 迁移，
+  判定硬件问题（疑设备断电重上后接线松动：CS=13/SCLK=42/MISO=41/MOSI=40
+  + 供电）。**待用户检查接线后重跑 VFS 压测（置 OVS_RUN_APP_TESTS=1）**。
+- cJSON hooks 未挂（留待 web 线统一 cJSON 时一并入 DTREE 桶）。
+
+### 解决方案
+- xtensa 下 uint32_t 为 long unsigned：printf 行显式 (unsigned) 转换。
+- 测试野指针构造改为"伪负载"模式（libc 块 +8 处清零传入），避免头校验
+  越界读块前内存。
+
+### 下一步计划
+- 用户检修 W25Q128 接线 → 重跑 VFS 压测闭环批次 1 回归。
+- 批次 2 迁移（ota/net_mgr/web）+ cJSON hooks；event_bus 5.1 池重建于
+  mem_pool（Phase 1）。
+
+### 代码变更
+- 新增: components/core/mem_pool/{mem.h,mem_pool.h,mem.c,mem_pool.c,CMakeLists.txt}、
+  tests/{CMakeLists.txt,test_mem.c}、docs/superpowers/specs/2026-09-09-mem-pool-design.md
+- 修改: components/dtbs/{dtree.c,dtb_ab.c,CMakeLists.txt}、src/app/main.c
+  （+mem 统计/测试开关已复位）、CMakeLists.txt、.gitignore
+
 ## 2026-09-09 - LVGL 9.5.0 双平台骨架接入：ESP 固件 + PC 模拟器（真机 OTA 验证 PASS）
 
 ### 任务目标

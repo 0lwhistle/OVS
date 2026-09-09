@@ -32,3 +32,6 @@ sdkconfig.old
 
 # PC 模拟器构建输出
 build-sim/
+
+# PC 测试构建输出
+build-tests/

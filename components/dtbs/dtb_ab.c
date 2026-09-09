@@ -14,6 +14,7 @@
 #include "nvs_flash.h"
 #include "sha256.h"
 #include "logger.h"
+#include "mem.h"
 
 static const char *TAG = "[DTB_AB]";
 
@@ -107,13 +108,13 @@ static uint8_t *slot_read_json(int slot, size_t *out_len) {
         return NULL;
     }
 
-    uint8_t *json = malloc(h.json_len + 1);
+    uint8_t *json = mem_malloc(h.json_len + 1);
     if (!json) {
         LOGE(TAG, "oom for %u bytes", (unsigned)h.json_len);
         return NULL;
     }
     if (esp_partition_read(p, DTB_HDR_SIZE, json, h.json_len) != ESP_OK) {
-        free(json);
+        mem_free(json);
         return NULL;
     }
     json[h.json_len] = '\0';
@@ -126,7 +127,7 @@ static uint8_t *slot_read_json(int slot, size_t *out_len) {
     sha256_final(&ctx, digest);
     if (memcmp(digest, h.sha, 32) != 0) {
         LOGW(TAG, "slot %d: sha mismatch", slot);
-        free(json);
+        mem_free(json);
         return NULL;
     }
 

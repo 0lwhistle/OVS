@@ -19,6 +19,7 @@
 #include "w25q128_vfs.h"
 #include "internal_flash_vfs.h"
 #include "ovs_vfs.h"
+#include "mem.h"
 #include "lvgl_app.h"
 
 #include <stdio.h>
@@ -374,6 +375,9 @@ void app_main(void) {
     if (lvgl_ret != LVGL_APP_OK) {
         LOGE(TAG, "LVGL app init failed: %d", lvgl_ret);
     }
+
+    /* mem_pool 各模块内存账单（迁移验收期打印，稳定后可移到 /api/mem） */
+    mem_stat_print();
 
 #if OVS_RUN_APP_TESTS
     LOGI(TAG, "App tests enabled (OVS_RUN_APP_TESTS=1)");
