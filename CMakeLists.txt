@@ -13,6 +13,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/core/tasker
     ${CMAKE_SOURCE_DIR}/components/core/event_bus
     ${CMAKE_SOURCE_DIR}/components/core/logger
+    ${CMAKE_SOURCE_DIR}/components/core/mem_pool
     ${CMAKE_SOURCE_DIR}/components/dtbs
     ${CMAKE_SOURCE_DIR}/components/core/ovs_vfs
     ${CMAKE_SOURCE_DIR}/components/drivers/wifi

@@ -9,6 +9,7 @@
 #include "dtree.h"
 #include "dtb_ab.h"
 #include "logger.h"
+#include "mem.h"
 #include "cJSON.h"
 
 #include <stdio.h>
@@ -45,7 +46,7 @@ static cJSON* load_json_file(const char* filepath) {
     long size = ftell(fp);
     fseek(fp, 0, SEEK_SET);
     
-    char* buffer = (char*)malloc(size + 1);
+    char* buffer = (char*)mem_malloc(size + 1);
     if (!buffer) {
         fclose(fp);
         LOGE(TAG, "Memory alloc failed for: %s", filepath);
@@ -57,7 +58,7 @@ static cJSON* load_json_file(const char* filepath) {
     fclose(fp);
     
     cJSON* json = cJSON_Parse(buffer);
-    free(buffer);
+    mem_free(buffer);
     
     if (!json) {
         LOGE(TAG, "JSON parse error in: %s", filepath);
@@ -106,7 +107,7 @@ dtree_err_t dtree_init(void) {
     int slot = -1;
     if (dtb_ab_load(&json_text, &json_len, &slot) == 0) {
         s_root = cJSON_Parse((char *)json_text);
-        free(json_text);
+        mem_free(json_text);
         if (!s_root) {
             LOGE(TAG, "slot %d JSON parse error: %s", slot,
                  cJSON_GetErrorPtr() ? cJSON_GetErrorPtr() : "?");
