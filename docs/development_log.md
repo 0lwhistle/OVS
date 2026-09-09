@@ -1,5 +1,35 @@
 # OVS项目开发日志
 
+## 2026-09-09 - 三任务改为无板开发模式 + 共享成果文档（hardware_test_guide.md）
+
+### 任务目标
+落实用户补充约束：本轮开发板不连接，验收止于编译+PC 门禁；产出一
+三任务共享的真机测试指导文档，供项目所有者后续上板测试。
+
+### 完成内容
+- **新建 docs/hardware_test_guide.md**：三任务共享成果文档，章节归属
+  [HUB]=§1 全局前置/§2 数据接口+AHT30+lora_tp、[GUI]=§3 音频+LVGL、
+  [WEB]=§4 访问/Dashboard/OTA 实测、§5 已知限制（append-only）；
+  每测试项固定格式：前置条件→步骤→预期结果（串口日志关键字/界面
+  表现）→排查点。骨架已建，各任务会话中填充自己章节。
+- **three_tasks_plan.md 更新**：§4 协作机制新增第 5 条"无板开发与成果
+  文档制度"；三份提示词（§5/§6/§7）各新增：必读清单加该文档、边界后
+  加【无板约束】块（禁止真机验证+验收口径调整：音频=mock i2s 单测、
+  UI=PC 模拟器、WEB=vite dev/build、lora_tp=PC mock 回环）、验收行
+  增加"同步更新 hardware_test_guide.md 本任务章节"。
+- task_board.md 规则头新增第 7 条（成果文档维护规则）。
+
+### 待解决问题
+- 无（文档层面完成；三个对话按更新后提示词启动即可）。
+
+### 下一步计划
+三任务并行执行；每会话结束检查 hardware_test_guide.md 对应章节是否
+随交付更新；全部完成后项目所有者按该文档一次性上板验收。
+
+### 代码变更
+- 新增 docs/hardware_test_guide.md；修改 docs/three_tasks_plan.md、
+  docs/task_board.md；docs/development_log.md 本条目。无代码改动。
+
 ## 2026-09-09 - 三任务吸收原批次 T1/T2/T4（three_tasks_plan.md 全量改版）
 
 ### 任务目标

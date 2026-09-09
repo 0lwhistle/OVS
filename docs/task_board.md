@@ -6,7 +6,9 @@
 > 3. 跨任务请求：`REQ[发起方→接收方] 内容/原因/期望`；完成方回 `DONE[任务名]`；
 > 4. 接口契约变更先发 `BREAK[任务名]` 说明，不得先斩后奏；
 > 5. 共用文件（assets/i18n/*.json、event_bus_types.h）只追加，禁改删他人键/定义；
-> 6. 禁止删除或改写他人条目。
+> 6. 禁止删除或改写他人条目；
+> 7. 无板开发：真机测试指导统一写 docs/hardware_test_guide.md，
+>    每任务只更新自己章节（[HUB]=§1/§2 [GUI]=§3 [WEB]=§4，§5 append-only）。
 >
 > 任务名与范围：
 > [HUB] 数据中枢 = 统一数据接口(i18n/sensor_cache/time_svc/sysinfo)

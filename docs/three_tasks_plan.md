@@ -144,7 +144,13 @@ lvgl_nav_err_t navigator_set_standby(screen_create_cb cb, uint32_t timeout_s);
    遵循"只追加"原则；
 4. 惯例：HUB 尽先交付 I1~I4 可编译骨架（哪怕桩实现），GUI/WEB 全程
    可用 mock 推进，互不阻塞；各任务含多个子批次时，按提示词内"建议
-   顺序"推进，跨会话续作以上一条目为交接。
+   顺序"推进，跨会话续作以上一条目为交接；
+5. **无板开发与成果文档制度**（本轮约束）：开发板不连接，验收=编译
+  （idf.py build / PC 模拟 / vite build）+ PC 门禁（tests/ovs_tests），
+  **不做任何真机验证**；真机测试指导统一写入共享成果文档
+  `docs/hardware_test_guide.md`——每个任务只编写/更新自己章节
+  （[HUB]=§1/§2，[GUI]=§3，[WEB]=§4），§5 已知限制 append-only，
+  禁止改删他人章节；每会话结束若本章有新交付项，同步更新该文档。
 
 ---
 
@@ -180,7 +186,8 @@ WEB_FW_REBOOT, WEB_LANG
 5. docs/lora_protocol.md 与 docs/lora_transport_design.md（子批次③依据，
    其 §9 为 lora_tp 详细提示词）
 6. components/modules/aht30/、components/modules/lora/、
-   components/core/event_bus/event_bus_types.h、src/app/app_init.c
+   components/core/event_bus/event_bus_types.h、src/app/app_init.c；
+   docs/hardware_test_guide.md（三任务共享成果文档，结束更新[HUB]章节）
 
 其他任务在做什么（你只提供接口，不得替它们实现）：
 - [GUI] 拥有 src/lvgl 与 modules/{audio_module,audio_player}，在实装
@@ -245,9 +252,14 @@ WEB_FW_REBOOT, WEB_LANG
 边界：禁改 web/、src/lvgl、modules/web、modules/net_mgr、modules/ota、
 modules/lora 现有对外行为；aht30 仅限收口所需改动且签名不变；需要改
 共有代码时只在 board 说明并以新增 API 满足。
+【无板约束】本轮开发板不连接：不做任何真机验证，全部验收止于编译与
+PC 门禁；真机测试步骤写入 docs/hardware_test_guide.md 供项目所有者
+后续上板执行。
 验收（每子批次）：ovs_tests 全绿 + idf.py build 通过；更新
 development_log.md + task_board.md 条目（写明契约交付状态供 GUI/WEB
-集成、子批次进度与下一步）。
+集成、子批次进度与下一步）；同步更新 hardware_test_guide.md 的
+[HUB]章节（§1 全局前置/§2 各测试项：前置条件、步骤、预期串口日志
+关键字、通过标准、排查点）。
 ```
 
 ## 6. 任务提示词 [GUI] 板端体验（LVGL + T2 音频）
@@ -267,7 +279,8 @@ development_log.md + task_board.md 条目（写明契约交付状态供 GUI/WEB
    （§1 通用设计原则逐字遵守；§2 为子批次①依据、§4 为②参考）
 4. components/modules/audio_module/（现有实现，演进勿重写）、
    components/drivers/i2s_drv/i2s_drv.h、components/drivers/gpio/、
-   components/dtbs/config/ovs.dtb.json
+   components/dtbs/config/ovs.dtb.json；
+   docs/hardware_test_guide.md（三任务共享成果文档，结束更新[GUI]章节）
 
 其他任务在做什么（涉及模块，你不得代改）：
 - [HUB] 拥有 components/core/{i18n,sensor_cache,time_svc}、
@@ -325,9 +338,14 @@ development_log.md + task_board.md 条目（写明契约交付状态供 GUI/WEB
 （根 CMake 注册除外）；禁改 components/core 实现、web/、modules/web、
 modules/net_mgr、modules/ota；要新标签→task_board append；要新接口→
 REQ[GUI→HUB]。
+【无板约束】本轮开发板不连接：不做任何真机验证（外放试听、触摸显示
+等全部写入测试指南供后续上板）；音频验收=mock i2s 单测+编译，UI 验收
+=PC 模拟器+编译。
 验收（每子批次）：ovs_tests 全绿 + idf.py build 与 PC 模拟 build 双绿；
-批次②另验三页导航/主题/语言热切换/mock 数据显示；更新
-development_log.md + task_board.md 条目（交接子批次进度）。
+批次②另验三页导航/主题/语言热切换/mock 数据显示（PC 模拟器内）；
+更新 development_log.md + task_board.md 条目（交接子批次进度）；同步
+更新 hardware_test_guide.md 的[GUI]章节（§3 音频/LVGL 各测试项：前置、
+步骤、预期表现与串口日志、通过标准、排查点）。
 ```
 
 ## 7. 任务提示词 [WEB] Web 界面
@@ -345,7 +363,8 @@ development_log.md + task_board.md 条目（交接子批次进度）。
 3. docs/task_board.md（开始读、结束追加）；docs/idle_modules_plan.md §1
 4. web/vue-ui/（现有工程：vite+App.vue）、components/modules/web/web.c
    （路由注册表）、web_ota.c（OTA 上传既有实现，只读参考）、
-   web_data/（dist 打包机制）
+   web_data/（dist 打包机制）；
+   docs/hardware_test_guide.md（三任务共享成果文档，结束更新[WEB]章节）
 
 其他任务在做什么（涉及模块，你不得代改）：
 - [HUB] 拥有 components/core/{i18n,sensor_cache,time_svc}、
@@ -387,8 +406,13 @@ i18n,router,stores,views}；api 层集中封装 fetch（统一错误处理/code
 边界：只动 web/vue-ui/src/** 与 modules/web/ 新增文件；禁改 src/lvgl、
 components/core、modules/{ota,net_mgr,aht30,lora_tp,audio_*}；要新数据→
 REQ[WEB→HUB]。
-验收：本地 vite dev 用 mock 联调全页面可用；idf.py build 通过（含
-新路由与打包）；更新 development_log.md + task_board.md 条目。
+【无板约束】本轮开发板不连接：不做任何真机验证；验收=vite dev（mock
+数据）+ vite build + idf.py build；上板测试步骤（含 curl 端点自测与
+OTA 网页上传流程）写入测试指南供后续执行。
+验收：本地 vite dev 用 mock 联调全页面可用；vite build + idf.py build
+通过（含新路由与打包）；更新 development_log.md + task_board.md 条目；
+同步更新 hardware_test_guide.md 的[WEB]章节（§4：访问入口、各页面
+测试步骤、curl 端点自测命令、OTA 上传实测流程与预期、通过标准）。
 ```
 
 ---
