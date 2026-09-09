@@ -1,5 +1,47 @@
 # OVS项目开发日志
 
+## 2026-09-09 - mem_pool 全仓库迁移完成（17文件117处+混用修复，真机零magic错误）
+
+### 任务目标
+将 mem_pool 接入全部存量业务代码（核心层+外设驱动+应用层），做好分桶
+统计；迁移中发现并修复的真实问题一并闭环。
+
+### 完成内容
+- **普查**：全仓库 malloc 族调用点 18 文件 ~125 处；11 个组件实查为零
+  （ota/net_mgr/aht30/cst816s/lora/internal_flash/heartbeat/led/gpio/
+  logger/ovs_vfs——静态缓冲为主），lora/aht30 零改动（用户领地未碰）。
+- **机械迁移 16 文件 113 处**（python 脚本：词边界替换 + 自动插 mem.h
+  include）+ st7789 重跑 4 处 + display_port/spi_drv/st7789 的 6 处
+  heap_caps_malloc 改 mem_dma_alloc/mem_heap_alloc——**业务代码原生
+  heap_caps 调用清零**（第三方除外）。
+- **桶标签 9 个**：DTREE（批次1）/CORE（event_bus/tasker/holder）/DRV
+  （spi/i2s/i2c/uart/wifi 驱动+st7789）/WEB/VFS（w25q128）/AUDIO/APP
+  （main）/LVGL（src/lvgl）/SYS（默认）。枚举追加 CORE/DRV（只增不删）。
+- **迁移实抓并修复 3 个真问题**：
+  1. spi_drv 三处 heap_caps_malloc 配 mem_free 的坏配对（账册混用，真机
+     bad magic 当场拦截，caller=addr2line 定位 564 行）→ 统一 mem_dma_alloc；
+  2. st7789 slice_buf 原生配对统一入账；
+  3. mem.h caps 常量硬编码错误隐患（0x01/0x02 ≠ IDF 真实 MALLOC_CAP_DMA/
+     SPIRAM）→ ESP 端引用真实宏。**前两个是迁移前就潜伏的配对混乱，magic
+     机制首次实战即见效**。
+- **真机验证**：OTA 回滚确认 PASS；bad magic=0；开机账单精确——DTREE
+  6242B 树 JSON / LVGL 25616B（2×12800 DMA 缓冲+2×8B 头，分毫不差）/
+  CORE 17 笔 / DRV 5 笔，当前 26.7KB 峰值 33KB；固件 1.54MB 余 41%。
+
+### 待解决问题
+- VFS 压测 54 项闭环仍待 W25Q128 接线恢复（用户确认当前未接线，JEDEC
+  0x000000 为预期现象非故障）。
+- cJSON hooks 未挂；web 运行期分配（WS 推送等）需跑一段时间观察 WEB 桶。
+
+### 下一步计划
+- Phase 1：event_bus 四修复（池建在 mem_pool 上，迁 ovs_tests）+ tasker
+  内部优化（API 冻结，同套 PC 回归门禁）。
+
+### 代码变更
+- 修改: 17 个 .c（113+4 处替换/display_port+spi_drv+st7789 caps 统一）、
+  12 个组件 CMakeLists（mem_pool 依赖+标签）、main 与 src/lvgl CMakeLists、
+  mem_pool（枚举+caps 修正+bad magic 诊断日志增强）
+
 ## 2026-09-09 - mem_pool 核心内存管理模块落地（批次1迁移完成，真机账单验证 PASS）
 
 ### 任务目标

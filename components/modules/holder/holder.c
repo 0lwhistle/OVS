@@ -7,6 +7,7 @@
  */
 
 #include "holder.h"
+#include "mem.h"
 #include "logger.h"
 #include <stdlib.h>
 #include <string.h>
@@ -141,7 +142,7 @@ holder_err_t holder_register_module_ex(const char* name,
     }
     
     // 分配新节点
-    holder_node_t* new_node = (holder_node_t*)malloc(sizeof(holder_node_t));
+    holder_node_t* new_node = (holder_node_t*)mem_malloc(sizeof(holder_node_t));
     if (!new_node) {
         xSemaphoreGive(s_holder_ctx.mutex);
         LOGE(TAG, "Failed to allocate memory for module %s", name);
@@ -217,7 +218,7 @@ holder_err_t holder_unregister_module(const char* name) {
                 s_holder_ctx.head = current->next;
             }
             
-            free(current);
+            mem_free(current);
             s_holder_ctx.count--;
             xSemaphoreGive(s_holder_ctx.mutex);
             
@@ -329,7 +330,7 @@ holder_err_t holder_init_all(bool stop_on_required_error) {
         return HOLDER_OK;
     }
 
-    const char** pending = (const char**)malloc(total * sizeof(const char*));
+    const char** pending = (const char**)mem_malloc(total * sizeof(const char*));
     if (!pending) {
         LOGE(TAG, "Failed to allocate init snapshot");
         return HOLDER_ERR_NO_MEMORY;
@@ -345,7 +346,7 @@ holder_err_t holder_init_all(bool stop_on_required_error) {
         rounds++;
 
         if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
-            free(pending);
+            mem_free(pending);
             return HOLDER_ERR_MUTEX;
         }
 
@@ -398,7 +399,7 @@ holder_err_t holder_init_all(bool stop_on_required_error) {
 
     /* 剩余 REGISTERED 说明依赖缺失/循环，标记错误 */
     if (xSemaphoreTake(s_holder_ctx.mutex, pdMS_TO_TICKS(1000)) != pdTRUE) {
-        free(pending);
+        mem_free(pending);
         return HOLDER_ERR_MUTEX;
     }
 
@@ -417,7 +418,7 @@ holder_err_t holder_init_all(bool stop_on_required_error) {
     }
     xSemaphoreGive(s_holder_ctx.mutex);
 
-    free(pending);
+    mem_free(pending);
 
     // 打印状态
     holder_print_status();
@@ -608,7 +609,7 @@ void holder_destroy(void) {
     holder_node_t* current = s_holder_ctx.head;
     while (current) {
         holder_node_t* next = current->next;
-        free(current);
+        mem_free(current);
         current = next;
     }
     

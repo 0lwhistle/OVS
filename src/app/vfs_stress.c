@@ -7,6 +7,7 @@
  */
 
 #include "vfs_stress.h"
+#include "mem.h"
 #include "logger.h"
 
 #include <stdio.h>
@@ -638,8 +639,8 @@ static void stress_worker(void* arg) {
     wrk_t* w = (wrk_t*)arg;
     w->ok = false;
 
-    uint8_t* buf = malloc(4096);
-    uint8_t* expect = malloc(4096);
+    uint8_t* buf = mem_malloc(4096);
+    uint8_t* expect = mem_malloc(4096);
 
     if (buf && expect) {
         FILE* fp = fopen(w->path, "wb");
@@ -672,8 +673,8 @@ static void stress_worker(void* arg) {
         }
     }
 
-    free(buf);
-    free(expect);
+    mem_free(buf);
+    mem_free(expect);
     xSemaphoreGive(s_worker_sem);
     vTaskDelete(NULL);
 }
@@ -883,8 +884,8 @@ static void vfs_stress_task(void* arg) {
         LOGI(TAG, ">>> 结果: 全部通过 <<<");
     }
 
-    free(s_buf1);
-    free(s_buf2);
+    mem_free(s_buf1);
+    mem_free(s_buf2);
     s_buf1 = s_buf2 = NULL;
     xSemaphoreGive(s_task_done);
     vTaskDelete(NULL);
@@ -901,20 +902,20 @@ int vfs_stress_run(void) {
     s_fail_count = 0;
     memset(s_fail_msgs, 0, sizeof(s_fail_msgs));
 
-    s_buf1 = malloc(BUF_SIZE);
-    s_buf2 = malloc(BUF_SIZE);
+    s_buf1 = mem_malloc(BUF_SIZE);
+    s_buf2 = mem_malloc(BUF_SIZE);
     if (!s_buf1 || !s_buf2) {
         LOGE(TAG, "Alloc %u KB buffers failed", (unsigned)(BUF_SIZE / 1024));
-        free(s_buf1);
-        free(s_buf2);
+        mem_free(s_buf1);
+        mem_free(s_buf2);
         s_buf1 = s_buf2 = NULL;
         return -1;
     }
 
     s_task_done = xSemaphoreCreateBinary();
     if (!s_task_done) {
-        free(s_buf1);
-        free(s_buf2);
+        mem_free(s_buf1);
+        mem_free(s_buf2);
         s_buf1 = s_buf2 = NULL;
         return -1;
     }
@@ -922,8 +923,8 @@ int vfs_stress_run(void) {
     if (xTaskCreate(vfs_stress_task, "vfs_stress", 16384, NULL, 5, NULL) != pdPASS) {
         LOGE(TAG, "Create stress task failed");
         vSemaphoreDelete(s_task_done);
-        free(s_buf1);
-        free(s_buf2);
+        mem_free(s_buf1);
+        mem_free(s_buf2);
         s_buf1 = s_buf2 = NULL;
         return -1;
     }

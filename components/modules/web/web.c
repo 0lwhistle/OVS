@@ -4,6 +4,7 @@
  */
 
 #include "web.h"
+#include "mem.h"
 #include "web_data.h"       /* 由 tools/fs_to_c.py 生成的内嵌资源 */
 #include "mongoose.h"
 #include "net_mgr.h"
@@ -297,7 +298,7 @@ static void handle_wifi_scan(struct mg_connection *c, struct mg_http_message *hm
     }
 
     int est_len = 64 * count + 64;
-    char *buf = malloc(est_len);
+    char *buf = mem_malloc(est_len);
     if (!buf) {
         mg_http_reply(c, 500, "Content-Type: application/json\r\n",
                       "{\"error\":\"oom\"}");
@@ -324,7 +325,7 @@ static void handle_wifi_scan(struct mg_connection *c, struct mg_http_message *hm
 
     mg_http_reply(c, 200, "Content-Type: application/json\r\n",
                   "%.*s", off, buf);
-    free(buf);
+    mem_free(buf);
 }
 
 // GET /api/wifi/status — net_mgr 状态（含热切换进度）
@@ -648,7 +649,7 @@ static void stream_try_takeover(struct mg_connection *c,
         int rc = r->on_hdrs(c, hm);   /* 拒绝时函数内已回复错误 */
         if (rc != 0) return;
 
-        web_stream_ctx_t *ctx = calloc(1, sizeof(*ctx));
+        web_stream_ctx_t *ctx = mem_calloc(1, sizeof(*ctx));
         if (!ctx) {
             mg_http_reply(c, 500, "", "{\"error\":\"oom\"}");
             c->is_draining = 1;
@@ -698,7 +699,7 @@ static void stream_on_close(web_stream_ctx_t *ctx, struct mg_connection *c) {
     if (ctx->route->on_close) {
         ctx->route->on_close(c);
     }
-    free(ctx);
+    mem_free(ctx);
 }
 
 // ===========================================================================
@@ -708,12 +709,12 @@ static void stream_on_close(web_stream_ctx_t *ctx, struct mg_connection *c) {
 int web_ws_broadcast(const char *json, size_t len) {
     if (!s_ws_queue || !json || len == 0) return -1;
     ws_msg_t msg;
-    msg.json = malloc(len);
+    msg.json = mem_malloc(len);
     if (!msg.json) return -1;
     memcpy(msg.json, json, len);
     msg.len = len;
     if (xQueueSend(s_ws_queue, &msg, 0) != pdTRUE) {
-        free(msg.json);
+        mem_free(msg.json);
         return -1;
     }
     return 0;
@@ -740,7 +741,7 @@ static void ws_broadcast_status(void) {
         if (client->c == NULL || client->c->is_closing ||
             client->c->is_resp == 0) {
             *p = client->next;
-            free(client);
+            mem_free(client);
         } else {
             mg_ws_send(client->c, json, len, WEBSOCKET_OP_TEXT);
             p = &client->next;
@@ -754,7 +755,7 @@ static void ws_remove_client(struct mg_connection *c) {
         if ((*p)->c == c) {
             struct ws_client *dead = *p;
             *p = dead->next;
-            free(dead);
+            mem_free(dead);
             LOGI(TAG, "WebSocket client left");
             return;
         }
@@ -772,7 +773,7 @@ static void handle_ws_upgrade(struct mg_connection *c,
 
     mg_ws_upgrade(c, hm, NULL);
 
-    struct ws_client *client = calloc(1, sizeof(*client));
+    struct ws_client *client = mem_calloc(1, sizeof(*client));
     if (client) {
         client->c = c;
         client->next = s_ws_clients;
@@ -875,14 +876,14 @@ static void web_task(void *arg) {
                 if (client->c == NULL || client->c->is_closing ||
                     client->c->is_resp == 0) {
                     *p = client->next;
-                    free(client);
+                    mem_free(client);
                 } else {
                     mg_ws_send(client->c, msg.json, msg.len,
                                WEBSOCKET_OP_TEXT);
                     p = &client->next;
                 }
             }
-            free(msg.json);
+            mem_free(msg.json);
         }
 
         mg_mgr_poll(&s_mgr, 50);

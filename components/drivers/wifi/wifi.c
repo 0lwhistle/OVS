@@ -7,6 +7,7 @@
  */
 
 #include "wifi.h"
+#include "mem.h"
 #include <string.h>
 #include <stdio.h>
 #include "logger.h"
@@ -40,7 +41,7 @@ static void wifi_scan_done_handler(void *arg, esp_event_base_t event_base,
         return;
     }
 
-    wifi_ap_record_t *raw = malloc(sizeof(wifi_ap_record_t) * ap_count);
+    wifi_ap_record_t *raw = mem_malloc(sizeof(wifi_ap_record_t) * ap_count);
     if (!raw) {
         s_scan_count = 0;
         xSemaphoreGive(s_scan_sem);
@@ -68,7 +69,7 @@ static void wifi_scan_done_handler(void *arg, esp_event_base_t event_base,
         s_scan_buf[i].authmode = raw[i].authmode;
     }
     s_scan_count = limit;
-    free(raw);
+    mem_free(raw);
 
     xSemaphoreGive(s_scan_sem);
 }

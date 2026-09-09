@@ -10,6 +10,7 @@
  */
 
 #include "spi_drv.h"
+#include "mem.h"
 #include "logger.h"
 
 #include "driver/spi_master.h"
@@ -144,9 +145,9 @@ static spi_drv_err_t spi_bus_destroy(int slot) {
             if (h->devices[i].pending_xfer) {
                 void* tx_buf = (void*)h->devices[i].pending_xfer->tx_buffer;
                 if (tx_buf) {
-                    free(tx_buf);
+                    mem_free(tx_buf);
                 }
-                free(h->devices[i].pending_xfer);
+                mem_free(h->devices[i].pending_xfer);
                 h->devices[i].pending_xfer = NULL;
             }
             h->devices[i].async_busy = false;
@@ -165,7 +166,7 @@ static spi_drv_err_t spi_bus_destroy(int slot) {
         return SPI_DRV_ERR_HW;
     }
 
-    free(h);
+    mem_free(h);
     s_spi_buses[slot] = NULL;
     return SPI_DRV_OK;
 }
@@ -200,7 +201,7 @@ static const void* ensure_dma_safe(const void* data, size_t size, void** out_cop
     }
     
     // 需要复制到DMA安全内存
-    void* copy = heap_caps_malloc(size, MALLOC_CAP_DMA);
+    void* copy = mem_dma_alloc(size);
     if (!copy) {
         LOGE(TAG, "Failed to allocate DMA buffer (%d bytes)", size);
         return NULL;
@@ -315,7 +316,7 @@ spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* han
     }
 
     /* 首次获取：真正初始化硬件 */
-    struct spi_drv_handle* h = calloc(1, sizeof(struct spi_drv_handle));
+    struct spi_drv_handle* h = mem_calloc(1, sizeof(struct spi_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
         spi_bus_lock_give();
@@ -335,7 +336,7 @@ spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* han
     spi_host_device_t host = spi_host_to_hw(config->host, &host_ok);
     if (!host_ok) {
         LOGE(TAG, "Unsupported SPI host id: %" PRId32, config->host);
-        free(h);
+        mem_free(h);
         spi_bus_lock_give();
         return SPI_DRV_ERR_CONFIG;
     }
@@ -343,7 +344,7 @@ spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* han
     esp_err_t ret = spi_bus_initialize(host, &bus_config, SPI_DMA_CH_AUTO);
     if (ret != ESP_OK) {
         LOGE(TAG, "SPI bus init failed: %s", esp_err_to_name(ret));
-        free(h);
+        mem_free(h);
         spi_bus_lock_give();
         return SPI_DRV_ERR_HW;
     }
@@ -491,7 +492,7 @@ spi_drv_err_t spi_drv_remove_device(spi_drv_handle_t handle, spi_device_handle_t
     
     // 释放挂起的传输
     if (ctx->pending_xfer) {
-        free(ctx->pending_xfer);
+        mem_free(ctx->pending_xfer);
         ctx->pending_xfer = NULL;
     }
     
@@ -531,11 +532,11 @@ spi_drv_err_t spi_drv_transfer(spi_drv_handle_t handle,
     void* tx_copy = NULL;
     void* rx_copy __attribute__((unused)) = NULL;
     const void* tx_safe = tx_data ? ensure_dma_safe(tx_data, size, &tx_copy) : NULL;
-    void* rx_safe = rx_data ? heap_caps_malloc(size, MALLOC_CAP_DMA) : NULL;
+    void* rx_safe = rx_data ? mem_dma_alloc(size) : NULL;
     
     if ((tx_data && !tx_safe) || (rx_data && !rx_safe)) {
-        free(tx_copy);
-        free(rx_safe);
+        mem_free(tx_copy);
+        mem_free(rx_safe);
         return SPI_DRV_ERR_DMA;
     }
     
@@ -557,8 +558,8 @@ spi_drv_err_t spi_drv_transfer(spi_drv_handle_t handle,
     }
     
     // 清理
-    free(tx_copy);
-    free(rx_safe);
+    mem_free(tx_copy);
+    mem_free(rx_safe);
     
     if (ret != ESP_OK) {
         LOGE(TAG, "Transfer failed: %s", esp_err_to_name(ret));
@@ -609,16 +610,16 @@ spi_drv_err_t spi_drv_write_async(spi_drv_handle_t handle,
     }
     
     // 分配传输结构
-    spi_transaction_t* trans = heap_caps_malloc(sizeof(spi_transaction_t), MALLOC_CAP_DMA);
+    spi_transaction_t* trans = mem_dma_alloc(sizeof(spi_transaction_t));
     if (!trans) {
         return SPI_DRV_ERR_DMA;
     }
     memset(trans, 0, sizeof(spi_transaction_t));
     
     // 分配DMA缓冲区并复制数据
-    void* buf = heap_caps_malloc(size, MALLOC_CAP_DMA);
+    void* buf = mem_dma_alloc(size);
     if (!buf) {
-        free(trans);
+        mem_free(trans);
         return SPI_DRV_ERR_DMA;
     }
     memcpy(buf, data, size);
@@ -637,8 +638,8 @@ spi_drv_err_t spi_drv_write_async(spi_drv_handle_t handle,
     if (ret != ESP_OK) {
         ctx->async_busy = false;
         ctx->pending_xfer = NULL;
-        free(buf);
-        free(trans);
+        mem_free(buf);
+        mem_free(trans);
         LOGE(TAG, "Queue async failed: %s", esp_err_to_name(ret));
         return SPI_DRV_ERR_HW;
     }
@@ -670,8 +671,8 @@ spi_drv_err_t spi_drv_wait_async(spi_drv_handle_t handle,
     if (ctx->pending_xfer) {
         // 释放DMA缓冲区（在trans->tx_buffer中）
         void* buf = (void*)ctx->pending_xfer->tx_buffer;
-        free(buf);
-        free(ctx->pending_xfer);
+        mem_free(buf);
+        mem_free(ctx->pending_xfer);
         ctx->pending_xfer = NULL;
     }
     

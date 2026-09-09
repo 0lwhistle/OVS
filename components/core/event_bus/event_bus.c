@@ -19,6 +19,7 @@
  */
 
 #include "event_bus.h"
+#include "mem.h"
 #include "logger.h"
 
 #include "freertos/FreeRTOS.h"
@@ -87,7 +88,7 @@ event_t* event_bus_create_event(event_type_t type, const void* data, uint16_t da
     
     /* 分配内存 */
     size_t total_size = calc_event_total_size(data_len);
-    event_t* event = (event_t*)malloc(total_size);
+    event_t* event = (event_t*)mem_malloc(total_size);
     if (event == NULL) {
         LOGE(TAG, "create_event: malloc failed, size=%zu", total_size);
         return NULL;
@@ -112,7 +113,7 @@ event_t* event_bus_create_event(event_type_t type, const void* data, uint16_t da
  */
 void event_bus_destroy_event(event_t* event) {
     if (event != NULL) {
-        free(event);
+        mem_free(event);
     }
 }
 

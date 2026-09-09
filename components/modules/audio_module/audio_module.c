@@ -10,6 +10,7 @@
  */
 
 #include "audio_module.h"
+#include "mem.h"
 #include "i2s_drv.h"
 #include "event_bus.h"
 #include "tasker.h"
@@ -118,7 +119,7 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     LOGI(TAG, "Initializing audio module...");
     
     /* 分配句柄 */
-    struct audio_module_handle* h = (struct audio_module_handle*)malloc(sizeof(struct audio_module_handle));
+    struct audio_module_handle* h = (struct audio_module_handle*)mem_malloc(sizeof(struct audio_module_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
         return AUDIO_MODULE_ERR_HW;
@@ -131,7 +132,7 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     if (!mic_node || !amp_node) {
         LOGE(TAG, "I2S device nodes not found (mic=%p, amp=%p)",
              (void*)mic_node, (void*)amp_node);
-        free(h);
+        mem_free(h);
         return AUDIO_MODULE_ERR_HW;
     }
 
@@ -139,7 +140,7 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     dtree_node_t* bus_node = dtree_get_parent(mic_node);
     if (!bus_node) {
         LOGE(TAG, "I2S microphone node has no parent bus node");
-        free(h);
+        mem_free(h);
         return AUDIO_MODULE_ERR_HW;
     }
 
@@ -148,7 +149,7 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     i2s_drv_err_t i2s_err = i2s_drv_load_config(bus_node, &i2s_config);
     if (i2s_err != I2S_DRV_OK) {
         LOGE(TAG, "Failed to load I2S config: %d", i2s_err);
-        free(h);
+        mem_free(h);
         return AUDIO_MODULE_ERR_HW;
     }
 
@@ -161,16 +162,16 @@ audio_module_err_t audio_module_init(audio_module_handle_t* handle) {
     i2s_err = i2s_drv_init(&i2s_config, &h->i2s_handle);
     if (i2s_err != I2S_DRV_OK) {
         LOGE(TAG, "Failed to init I2S: %d", i2s_err);
-        free(h);
+        mem_free(h);
         return AUDIO_MODULE_ERR_HW;
     }
     
     /* 分配录音缓冲区 */
-    h->record_buffer = (uint8_t*)malloc(AUDIO_BUFFER_SIZE);
+    h->record_buffer = (uint8_t*)mem_malloc(AUDIO_BUFFER_SIZE);
     if (!h->record_buffer) {
         LOGE(TAG, "Failed to allocate record buffer");
         i2s_drv_deinit(h->i2s_handle);
-        free(h);
+        mem_free(h);
         return AUDIO_MODULE_ERR_HW;
     }
     h->record_buffer_size = AUDIO_BUFFER_SIZE;
@@ -205,7 +206,7 @@ audio_module_err_t audio_module_deinit(audio_module_handle_t handle) {
     
     /* 释放缓冲区 */
     if (handle->record_buffer) {
-        free(handle->record_buffer);
+        mem_free(handle->record_buffer);
         handle->record_buffer = NULL;
     }
     
@@ -215,7 +216,7 @@ audio_module_err_t audio_module_deinit(audio_module_handle_t handle) {
         s_handle = NULL;
     }
     
-    free(handle);
+    mem_free(handle);
     
     LOGI(TAG, "Audio module deinitialized");
     

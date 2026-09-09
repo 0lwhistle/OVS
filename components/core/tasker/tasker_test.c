@@ -11,6 +11,7 @@
  */
 
 #include "tasker_test.h"
+#include "mem.h"
 #include "task_manager.h"
 #include "task_worker.h"
 #include <string.h>
@@ -89,8 +90,8 @@ static enum task_t fn_cpu_burn(void* ctx) {
 static enum task_t fn_mem_churn(void* ctx) {
     (void)ctx;
     for (int i = 0; i < 10; i++) {
-        void* p = malloc(256);
-        if (p) free(p);
+        void* p = mem_malloc(256);
+        if (p) mem_free(p);
     }
     return TASK_OK;
 }

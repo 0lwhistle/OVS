@@ -9,6 +9,7 @@
  * @date 2026-09-07
  */
 
+#include "mem.h"
 #include "st7789.h"
 #include "spi_drv.h"
 #include "event_bus.h"
@@ -298,7 +299,7 @@ st7789_err_t st7789_init(void) {
     dtree_get_int(dev_node, "cs_pin", &cs_pin);
 
     /* 刷屏分片暂存缓冲：常驻内部 DMA RAM，一次分配整个运行期复用 */
-    s_slice_buf = heap_caps_malloc(ST7789_SLICE_BYTES, MALLOC_CAP_DMA);
+    s_slice_buf = mem_dma_alloc(ST7789_SLICE_BYTES);
     if (!s_slice_buf) {
         LOGW(TAG, "Slice buffer alloc failed (%u bytes), flush falls back to whole-frame",
              (unsigned)ST7789_SLICE_BYTES);
@@ -337,7 +338,7 @@ st7789_err_t st7789_init(void) {
     st7789_set_backlight(true);
     
     /* 分配帧缓冲 */
-    s_framebuffer = (uint16_t*)malloc(s_width * s_height * 2);
+    s_framebuffer = (uint16_t*)mem_malloc(s_width * s_height * 2);
     if (!s_framebuffer) {
         LOGW(TAG, "Failed to allocate framebuffer, drawing directly to display");
     }
@@ -364,13 +365,13 @@ st7789_err_t st7789_deinit(void) {
     
     /* 释放帧缓冲 */
     if (s_framebuffer) {
-        free(s_framebuffer);
+        mem_free(s_framebuffer);
         s_framebuffer = NULL;
     }
 
     /* 释放刷屏分片暂存缓冲 */
     if (s_slice_buf) {
-        heap_caps_free(s_slice_buf);
+        mem_free(s_slice_buf);
         s_slice_buf = NULL;
     }
     
@@ -436,7 +437,7 @@ st7789_err_t st7789_fill_rect(const st7789_rect_t* rect, st7789_color_t color) {
     st7789_write_cmd(ST7789_CMD_RAMWR);
     
     /* 逐行填充（避免缓冲区过大） */
-    uint16_t* line_buf = (uint16_t*)malloc(rect->width * 2);
+    uint16_t* line_buf = (uint16_t*)mem_malloc(rect->width * 2);
     if (!line_buf) {
         return ST7789_ERR_HW;
     }
@@ -450,7 +451,7 @@ st7789_err_t st7789_fill_rect(const st7789_rect_t* rect, st7789_color_t color) {
         spi_drv_write(s_spi_handle, s_spi_dev, line_buf, rect->width * 2);
     }
     
-    free(line_buf);
+    mem_free(line_buf);
     
     return ST7789_OK;
 }

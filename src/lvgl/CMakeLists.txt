@@ -38,6 +38,9 @@ idf_component_register(
         "themes"
         "fonts"
         "assets"
-    REQUIRES lvgl_lib logger dtbs
+    REQUIRES lvgl_lib logger dtbs mem_pool
     PRIV_REQUIRES esp_timer heap freertos
 )
+
+# mem_pool 模块标签：UI 层分配记入 LVGL 桶
+target_compile_definitions(${COMPONENT_LIB} PRIVATE MEM_MODULE_TAG=MEM_MOD_LVGL)

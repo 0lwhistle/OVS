@@ -20,6 +20,17 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#if defined(ESP_PLATFORM)
+#include "esp_heap_caps.h"      /* MALLOC_CAP_DMA / MALLOC_CAP_SPIRAM 真实值 */
+#else
+#ifndef MALLOC_CAP_DMA
+#define MALLOC_CAP_DMA   0x08
+#endif
+#ifndef MALLOC_CAP_SPIRAM
+#define MALLOC_CAP_SPIRAM 0x400
+#endif
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,6 +51,8 @@ typedef enum {
     MEM_MOD_TIME,
     MEM_MOD_POWER,
     MEM_MOD_PROV,      /* ble_prov */
+    MEM_MOD_CORE,      /* event_bus / tasker / holder 等核心服务 */
+    MEM_MOD_DRV,       /* 总线/外设驱动层 */
     MEM_MOD_COUNT
 } mem_module_t;
 
@@ -83,11 +96,10 @@ static inline void* mem_heap_alloc(size_t size, uint32_t caps) {
     return mem_heap_alloc_((mem_module_t)MEM_MODULE_TAG, size, caps);
 }
 static inline void* mem_dma_alloc(size_t size) {
-    /* caps 值见 esp_heap_caps.h MALLOC_CAP_DMA；PC 端忽略 */
-    return mem_heap_alloc_((mem_module_t)MEM_MODULE_TAG, size, 0x01);
+    return mem_heap_alloc_((mem_module_t)MEM_MODULE_TAG, size, MALLOC_CAP_DMA);
 }
 static inline void* mem_psram_alloc(size_t size) {
-    return mem_heap_alloc_((mem_module_t)MEM_MODULE_TAG, size, 0x02);
+    return mem_heap_alloc_((mem_module_t)MEM_MODULE_TAG, size, MALLOC_CAP_SPIRAM);
 }
 
 /* ========== 统计与诊断 ========== */

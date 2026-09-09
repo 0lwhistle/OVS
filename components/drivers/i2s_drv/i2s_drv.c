@@ -11,6 +11,7 @@
  */
 
 #include "i2s_drv.h"
+#include "mem.h"
 #include "logger.h"
 
 #include "driver/i2s_std.h"
@@ -106,7 +107,7 @@ static i2s_drv_err_t i2s_bus_destroy(int slot) {
         h->rx_handle = NULL;
     }
 
-    free(h);
+    mem_free(h);
     s_i2s_buses[slot] = NULL;
     return I2S_DRV_OK;
 }
@@ -223,7 +224,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
     LOGI(TAG, "  Data bits: %" PRId32, config->data_bits);
     
     /* 分配句柄 */
-    struct i2s_drv_handle* h = (struct i2s_drv_handle*)malloc(sizeof(struct i2s_drv_handle));
+    struct i2s_drv_handle* h = (struct i2s_drv_handle*)mem_malloc(sizeof(struct i2s_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
         i2s_bus_lock_give();
@@ -243,7 +244,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
         case 32: bits = I2S_DATA_BIT_WIDTH_32BIT; break;
         default:
             LOGE(TAG, "Unsupported data bits: %" PRId32, config->data_bits);
-            free(h);
+            mem_free(h);
             i2s_bus_lock_give();
             return I2S_DRV_ERR_PARAM;
     }
@@ -263,7 +264,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
     esp_err_t ret = i2s_new_channel(&chan_cfg, &h->tx_handle, &h->rx_handle);
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to create I2S channels: %s", esp_err_to_name(ret));
-        free(h);
+        mem_free(h);
         i2s_bus_lock_give();
         return I2S_DRV_ERR_HW;
     }
@@ -292,7 +293,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
         LOGE(TAG, "Failed to init TX channel: %s", esp_err_to_name(ret));
         i2s_del_channel(h->tx_handle);
         i2s_del_channel(h->rx_handle);
-        free(h);
+        mem_free(h);
         i2s_bus_lock_give();
         return I2S_DRV_ERR_HW;
     }
@@ -303,7 +304,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
         LOGE(TAG, "Failed to init RX channel: %s", esp_err_to_name(ret));
         i2s_del_channel(h->tx_handle);
         i2s_del_channel(h->rx_handle);
-        free(h);
+        mem_free(h);
         i2s_bus_lock_give();
         return I2S_DRV_ERR_HW;
     }
@@ -314,7 +315,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
         LOGE(TAG, "Failed to enable TX channel: %s", esp_err_to_name(ret));
         i2s_del_channel(h->tx_handle);
         i2s_del_channel(h->rx_handle);
-        free(h);
+        mem_free(h);
         i2s_bus_lock_give();
         return I2S_DRV_ERR_HW;
     }
@@ -325,7 +326,7 @@ i2s_drv_err_t i2s_drv_init(const i2s_drv_config_t* config, i2s_drv_handle_t* han
         i2s_channel_disable(h->tx_handle);
         i2s_del_channel(h->tx_handle);
         i2s_del_channel(h->rx_handle);
-        free(h);
+        mem_free(h);
         i2s_bus_lock_give();
         return I2S_DRV_ERR_HW;
     }

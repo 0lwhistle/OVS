@@ -11,6 +11,7 @@
  */
 
 #include "uart_drv.h"
+#include "mem.h"
 #include "logger.h"
 
 #include "driver/uart.h"
@@ -104,7 +105,7 @@ static uart_drv_err_t uart_bus_destroy(int slot) {
         LOGE(TAG, "Failed to delete UART driver: %s", esp_err_to_name(ret));
     }
 
-    free(h);
+    mem_free(h);
     s_uart_buses[slot] = NULL;
     return UART_DRV_OK;
 }
@@ -236,7 +237,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     LOGI(TAG, "  Baud: %" PRId32, config->baud_rate);
     
     /* 分配句柄 */
-    struct uart_drv_handle* h = (struct uart_drv_handle*)malloc(sizeof(struct uart_drv_handle));
+    struct uart_drv_handle* h = (struct uart_drv_handle*)mem_malloc(sizeof(struct uart_drv_handle));
     if (!h) {
         LOGE(TAG, "Failed to allocate handle");
         uart_bus_lock_give();
@@ -265,7 +266,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     esp_err_t ret = uart_driver_install(port, 1024, 1024, 10, &h->event_queue, 0);
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to install UART driver: %s", esp_err_to_name(ret));
-        free(h);
+        mem_free(h);
         uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
@@ -275,7 +276,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to configure UART: %s", esp_err_to_name(ret));
         uart_driver_delete(port);
-        free(h);
+        mem_free(h);
         uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
@@ -285,7 +286,7 @@ uart_drv_err_t uart_drv_init(const uart_drv_config_t* config, uart_drv_handle_t*
     if (ret != ESP_OK) {
         LOGE(TAG, "Failed to set UART pins: %s", esp_err_to_name(ret));
         uart_driver_delete(port);
-        free(h);
+        mem_free(h);
         uart_bus_lock_give();
         return UART_DRV_ERR_HW;
     }
