@@ -29,3 +29,6 @@ sdkconfig.old
 *.bin
 *.elf
 *.map
+
+# PC 模拟器构建输出
+build-sim/

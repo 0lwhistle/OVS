@@ -19,6 +19,7 @@
 #include "w25q128_vfs.h"
 #include "internal_flash_vfs.h"
 #include "ovs_vfs.h"
+#include "lvgl_app.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -366,6 +367,13 @@ void app_main(void) {
         LOGE(TAG, "W25Q128 init failed: %d", w25_ret);
     }
     vfs_stack_start();
+
+    /* LVGL UI（双平台骨架：显示为 null 输出冒烟，st7789 对接见 REFACTORING_PLAN 6.2；
+     * 自建 lvgl 任务，与 tasker 长任务纪律一致） */
+    lvgl_app_err_t lvgl_ret = lvgl_app_init();
+    if (lvgl_ret != LVGL_APP_OK) {
+        LOGE(TAG, "LVGL app init failed: %d", lvgl_ret);
+    }
 
 #if OVS_RUN_APP_TESTS
     LOGI(TAG, "App tests enabled (OVS_RUN_APP_TESTS=1)");

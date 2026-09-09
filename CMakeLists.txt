@@ -35,6 +35,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/modules/internal_flash
     ${CMAKE_SOURCE_DIR}/components/modules/holder
     ${CMAKE_SOURCE_DIR}/thirdparty/sha256
+    ${CMAKE_SOURCE_DIR}/thirdparty/lvgl_lib
     ${CMAKE_SOURCE_DIR}/src/lvgl
 )
 
