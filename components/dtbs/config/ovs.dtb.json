@@ -156,6 +156,15 @@
         }
     },
 
+    "audio": {
+        "compatible": "ovs-audio-policy",
+        "description": "音频输出策略（[GUI] audio_module/audio_player 读取，缺省兜底）",
+        "sd_pin": -1,
+        "volume_default": 80,
+        "buf_frames": 2048,
+        "queue_depth": 4
+    },
+
     "wifi": {
         "compatible": "esp32s3-wifi",
         "description": "WiFi 网络配置（net_mgr 读取；NVS 已有用户配网凭据时优先于 sta）",

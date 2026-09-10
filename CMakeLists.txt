@@ -27,6 +27,7 @@ set(EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/components/modules/web
     ${CMAKE_SOURCE_DIR}/components/modules/heartbeat
     ${CMAKE_SOURCE_DIR}/components/modules/audio_module
+    ${CMAKE_SOURCE_DIR}/components/modules/audio_player
     ${CMAKE_SOURCE_DIR}/components/modules/st7789
     ${CMAKE_SOURCE_DIR}/components/modules/aht30
     ${CMAKE_SOURCE_DIR}/components/modules/cst816s

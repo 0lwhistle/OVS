@@ -11,7 +11,7 @@
 #include "lvgl.h"
 #include "logger.h"
 #include "display_port.h"
-#include "nav.h"
+#include "ui_bootstrap.h"
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -80,7 +80,8 @@ lvgl_app_err_t lvgl_app_init(void) {
         return LVGL_APP_ERR_INIT;
     }
 
-    nav_init(lv_screen_active());
+    /* UI 装配：主题→桥→导航→presenters→首页（六层，见 ui_bootstrap.c） */
+    ui_bootstrap_run(lv_screen_active());
     lv_timer_create(smoke_timer_cb, 5000, NULL);
 
     BaseType_t ret = xTaskCreatePinnedToCore(lvgl_task, "lvgl",

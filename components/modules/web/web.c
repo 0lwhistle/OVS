@@ -35,6 +35,8 @@
 
 // web 模块内置的 OTA 端点（流式上传 + 状态查询）
 int web_ota_routes_init(void);
+// [WEB] 只读信息路由（/api/sensor、/api/net/info、/api/time、/i18n/*，契约 I5）
+int web_api_sysinfo_init(void);
 
 static const char *TAG = "[WEB]";
 
@@ -707,6 +709,7 @@ static void register_builtin_routes(void) {
 
     web_events_setup();   /* Phase 1: 事件总线真实订阅者（≥6） */
     web_ota_routes_init();
+    web_api_sysinfo_init();   /* [WEB] 契约 I5 只读信息路由（additive） */
 }
 
 // ===========================================================================

@@ -11,6 +11,8 @@
 void test_mem_run(int* pass, int* fail);
 void test_event_bus_run(int* pass, int* fail);
 void test_tasker_run(int* pass, int* fail);
+void test_audio_run(int* pass, int* fail);
+void test_nav_stack_run(int* pass, int* fail);
 
 int main(void) {
     int pass = 0, fail = 0;
@@ -18,6 +20,8 @@ int main(void) {
     test_mem_run(&pass, &fail);
     test_event_bus_run(&pass, &fail);
     test_tasker_run(&pass, &fail);
+    test_audio_run(&pass, &fail);
+    test_nav_stack_run(&pass, &fail);
 
     printf("\n==== ovs_tests TOTAL: %d passed, %d failed ====\n", pass, fail);
     return fail ? 1 : 0;

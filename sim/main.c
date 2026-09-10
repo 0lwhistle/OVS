@@ -2,15 +2,16 @@
  * @file main.c
  * @brief OVS PC 模拟器入口：SDL2 窗口宿主 LVGL UI
  *
- * 与 ESP 端共享 navigator/pages/bridge 与 lv_conf.h；
+ * 与 ESP 端共享 navigator/pages/presenters/bridge 与 lv_conf.h（六层全量）；
  * 显示/输入由 LVGL SDL 后端提供（鼠标=触摸、关窗即退出）。
+ * 差异：bridge 走 mock 常量（OVS_BRIDGE_HUB_REAL=0 / OVS_BRIDGE_AUDIO=0）。
  */
 
 #include <SDL2/SDL.h>
 
 #include "lvgl.h"
 #include "logger.h"
-#include "nav.h"
+#include "ui_bootstrap.h"
 
 #define SIM_HOR_RES  320
 #define SIM_VER_RES  240
@@ -30,9 +31,10 @@ int main(void) {
         return 1;
     }
     lv_sdl_window_set_zoom(disp, SIM_ZOOM);
-    lv_sdl_mouse_create();   /* 鼠标作为触摸输入，可滑动 tileview */
+    lv_sdl_mouse_create();   /* 鼠标作为触摸输入 */
 
-    nav_init(lv_screen_active());
+    /* UI 装配：主题→mock 桥→事件总线→导航→presenters→首页（与 ESP 同构） */
+    ui_bootstrap_run(lv_screen_active());
 
     LOGI("[SIM]", "running... close window to exit");
     while (1) {
