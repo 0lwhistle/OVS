@@ -1,8 +1,10 @@
 # OVS PC 模拟器（LVGL UI 的 SDL2 宿主）
 # 用法: scripts/sim_build.sh [--run]
-# 与 ESP 端共享: src/lvgl/navigator|pages|bridge 头与实现、src/lvgl/lv_conf.h、
-#                components/core/logger（纯 printf 实现，可直接复用）
+# 与 ESP 端共享: src/lvgl 六层全部实现（ui/widgets/pages/navigator/bridge/
+#                presenters/themes）与 lv_conf.h、components/core/logger
 # 不编译: src/lvgl/lvgl_app.c、src/lvgl/port/*（ESP 专用）
+# 差异:   bridge 走 mock（OVS_BRIDGE_HUB_REAL=0 / OVS_BRIDGE_AUDIO=0）；
+#         lvgl_app 锁用 sim/lvgl_lock_sim.c 空实现（单线程渲染）
 
 cmake_minimum_required(VERSION 3.16)
 project(ovs_sim C CXX)
@@ -37,17 +39,108 @@ target_link_libraries(lvgl PUBLIC ${SDL2_LINK_TARGET})
 # ---------- 模拟器可执行 ----------
 add_executable(ovs_sim
     main.c
-    bridge_time_sim.c
-    ${OVS_ROOT}/src/lvgl/navigator/nav.c
+    lvgl_lock_sim.c
+
+    # 主题
+    ${OVS_ROOT}/src/lvgl/themes/theme_base.c
+
+    # 控件层
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_card.c
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_list_item.c
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_round_btn.c
+    # 指示层
+    ${OVS_ROOT}/src/lvgl/ui/indicators/ui_status_dot.c
+    ${OVS_ROOT}/src/lvgl/ui/indicators/ui_value_label.c
+
+    # 页面层
     ${OVS_ROOT}/src/lvgl/pages/page_home.c
+    ${OVS_ROOT}/src/lvgl/pages/page_settings.c
+    ${OVS_ROOT}/src/lvgl/pages/page_standby.c
+
+    # 导航层
+    ${OVS_ROOT}/src/lvgl/navigator/nav_stack.c
+    ${OVS_ROOT}/src/lvgl/navigator/navigator.c
+
+    # 桥接层（mock 模式）
+    ${OVS_ROOT}/src/lvgl/bridge/bridge.c
+
+    # 展示器层
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_home.c
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_settings.c
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_standby.c
+    ${OVS_ROOT}/src/lvgl/presenters/ui_bootstrap.c
+
+    # core：logger + event_bus（presenter 事件订阅链路）
     ${OVS_ROOT}/components/core/logger/logger.c
+    ${OVS_ROOT}/components/core/mem_pool/mem.c
+    ${OVS_ROOT}/components/core/mem_pool/mem_pool.c
+    ${OVS_ROOT}/components/core/event_bus/event_bus.c
+    ${OVS_ROOT}/components/core/event_bus/event_bus_port.c
 )
 target_include_directories(ovs_sim PRIVATE
     ${OVS_ROOT}/src/lvgl
     ${OVS_ROOT}/src/lvgl/navigator
     ${OVS_ROOT}/src/lvgl/pages
     ${OVS_ROOT}/src/lvgl/bridge
+    ${OVS_ROOT}/src/lvgl/presenters
+    ${OVS_ROOT}/src/lvgl/themes
+    ${OVS_ROOT}/src/lvgl/ui
+    ${OVS_ROOT}/src/lvgl/ui/controls
+    ${OVS_ROOT}/src/lvgl/ui/indicators
     ${OVS_ROOT}/components/core/logger
+    ${OVS_ROOT}/components/core/mem_pool
+    ${OVS_ROOT}/components/core/event_bus
 )
-target_compile_definitions(ovs_sim PRIVATE OVS_SIMULATOR=1)
+target_compile_definitions(ovs_sim PRIVATE
+    OVS_SIMULATOR=1
+    OVS_BRIDGE_AUDIO=0
+    OVS_BRIDGE_HUB_REAL=0
+)
 target_link_libraries(ovs_sim PRIVATE lvgl)
+
+# ---------- UI headless 冒烟测试（CI 可跑：无显示设备，只建对象树） ----------
+add_executable(ovs_ui_smoke
+    ui_smoke_main.c
+    lvgl_lock_sim.c
+    ${OVS_ROOT}/src/lvgl/themes/theme_base.c
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_card.c
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_list_item.c
+    ${OVS_ROOT}/src/lvgl/ui/controls/ui_round_btn.c
+    ${OVS_ROOT}/src/lvgl/ui/indicators/ui_status_dot.c
+    ${OVS_ROOT}/src/lvgl/ui/indicators/ui_value_label.c
+    ${OVS_ROOT}/src/lvgl/pages/page_home.c
+    ${OVS_ROOT}/src/lvgl/pages/page_settings.c
+    ${OVS_ROOT}/src/lvgl/pages/page_standby.c
+    ${OVS_ROOT}/src/lvgl/navigator/nav_stack.c
+    ${OVS_ROOT}/src/lvgl/navigator/navigator.c
+    ${OVS_ROOT}/src/lvgl/bridge/bridge.c
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_home.c
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_settings.c
+    ${OVS_ROOT}/src/lvgl/presenters/presenter_standby.c
+    ${OVS_ROOT}/src/lvgl/presenters/ui_bootstrap.c
+    ${OVS_ROOT}/components/core/logger/logger.c
+    ${OVS_ROOT}/components/core/mem_pool/mem.c
+    ${OVS_ROOT}/components/core/mem_pool/mem_pool.c
+    ${OVS_ROOT}/components/core/event_bus/event_bus.c
+    ${OVS_ROOT}/components/core/event_bus/event_bus_port.c
+)
+target_include_directories(ovs_ui_smoke PRIVATE
+    ${OVS_ROOT}/src/lvgl
+    ${OVS_ROOT}/src/lvgl/navigator
+    ${OVS_ROOT}/src/lvgl/pages
+    ${OVS_ROOT}/src/lvgl/bridge
+    ${OVS_ROOT}/src/lvgl/presenters
+    ${OVS_ROOT}/src/lvgl/themes
+    ${OVS_ROOT}/src/lvgl/ui
+    ${OVS_ROOT}/src/lvgl/ui/controls
+    ${OVS_ROOT}/src/lvgl/ui/indicators
+    ${OVS_ROOT}/components/core/logger
+    ${OVS_ROOT}/components/core/mem_pool
+    ${OVS_ROOT}/components/core/event_bus
+)
+target_compile_definitions(ovs_ui_smoke PRIVATE
+    OVS_SIMULATOR=1
+    OVS_BRIDGE_AUDIO=0
+    OVS_BRIDGE_HUB_REAL=0
+)
+target_link_libraries(ovs_ui_smoke PRIVATE lvgl)

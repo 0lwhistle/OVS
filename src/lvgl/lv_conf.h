@@ -35,11 +35,14 @@
 #define LV_LOG_PRINTF               1   /* printf 直出（ESP=串口控制台 / PC=stdout） */
 
 /* ==================== 字体 ==================== */
-/* 默认字体 montserrat_14（模板默认）；中文 CJK 字体待真实 UI 阶段接入 */
+/* 默认字体 montserrat_14（模板默认）；
+ * 中文 CJK：LVGL 9.5 内置思源黑体 14/16（常用简体字集），作为 UI 基础字体 */
 #define LV_FONT_MONTSERRAT_16       1
 #define LV_FONT_MONTSERRAT_20       1
 #define LV_FONT_MONTSERRAT_28       1
 #define LV_FONT_MONTSERRAT_48       1
+#define LV_FONT_SOURCE_HAN_SANS_SC_14_CJK 1
+#define LV_FONT_SOURCE_HAN_SANS_SC_16_CJK 1
 
 /* ==================== 平台差异 ==================== */
 #if defined(OVS_SIMULATOR)

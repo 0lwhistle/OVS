@@ -224,6 +224,18 @@ typedef enum {
     /** 音频模块就绪事件 */
     EVENT_AUDIO_READY               = (MODULE_ID_AUDIO << 16) | 0x0006,
 
+    /* [GUI] 2026-09-10 追加（I8 audio_player 契约，追加前已在 task_board 声明）：
+     * 0x0001/0x0002 为 audio_module 内部无载荷状态事件，跨模块请用以下
+     * 带 token 载荷的播放服务事件（audio_player 发布） */
+    /** 播放服务：某项开始播放（载荷 event_audio_play_t） */
+    EVENT_AUDIO_PLAY_STARTED        = (MODULE_ID_AUDIO << 16) | 0x0007,
+
+    /** 播放服务：进度通知（载荷 event_audio_play_t，节流 ≥10%） */
+    EVENT_AUDIO_PLAY_PROGRESS       = (MODULE_ID_AUDIO << 16) | 0x0008,
+
+    /** 播放服务：某项播放失败/被停止（载荷 event_audio_play_t，err=原因） */
+    EVENT_AUDIO_PLAY_FAILED         = (MODULE_ID_AUDIO << 16) | 0x0009,
+
     /* ====================================================================== */
     /* 存储事件 (MODULE_ID_STORAGE = 0x0008)                                  */
     /* ====================================================================== */
@@ -485,6 +497,19 @@ typedef struct {
     uint32_t sample_rate;       /**< 采样率 */
     uint8_t bits_per_sample;    /**< 位宽 */
 } event_audio_data_t;
+
+/**
+ * @brief 播放服务事件数据（[GUI] 2026-09-10 追加，I8 契约）
+ *
+ * 用于 EVENT_AUDIO_PLAY_STARTED / EVENT_AUDIO_PLAY_DONE（复用 0x0002，
+ * 原 unused 无载荷事件） / EVENT_AUDIO_PLAY_PROGRESS / EVENT_AUDIO_PLAY_FAILED
+ */
+typedef struct {
+    uint32_t token;             /**< 播放项令牌（audio_player 返回值） */
+    int32_t err;                /**< 0=正常；负值=失败/停止原因（audio_player_err_t） */
+    uint32_t duration_ms;       /**< 项总时长（按 PCM 样本数推算） */
+    uint32_t position_ms;       /**< 当前位置（DONE/STARTED 时为 0/0，PROGRESS 有效） */
+} event_audio_play_t;
 
 /**
  * @brief 存储操作事件数据

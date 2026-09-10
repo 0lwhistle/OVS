@@ -24,9 +24,11 @@
 
 ## 目录结构
 
-> 当前状态：以下为**目标结构**——六层目录现为脚手架（各层目录暂只含
-> README 与设计约定，无 .c/.h 实现），仅 `lvgl_app.c` 参与编译
-> （见 `CMakeLists.txt` 的 TODO 列表）。
+> 当前状态：六层已实装（2026-09-10，[GUI] 批次②）——themes 蓝白主题、
+> ui 控件（card/list_item/round_btn/status_dot/value_label）、navigator
+> （注册表+页面栈+I6 待机接口）、pages（home/settings/standby）、bridge
+> （I1~I4 函数表，mock/真身编译开关）、presenters（home/settings/standby+
+> bootstrap）；ESP 与 PC 模拟器共享全部六层源码。
 
 ```
 src/lvgl/

@@ -1,5 +1,206 @@
 # OVS项目开发日志
 
+## 2026-09-10 - [GUI] T2 音频升级（批次①）+ LVGL 六层 UI 实装（批次②）全部交付
+
+### 任务目标
+三任务并行体系 [GUI] 板端体验：子批次① audio_module 异步化 + 新增
+audio_player 播放服务；子批次② LVGL 六层 UI 实装（蓝白主题/多语言/
+主页/设置/待机接口 I6）。无板约束：不做真机验证，真机项全部写入
+docs/hardware_test_guide.md §3。
+
+### 完成内容
+**批次① T2 音频（分层严格按 idle_modules_plan §2.2）**
+- audio_module 演进（录音路径零改动，仅任务创建改经移植层）：
+  新增 `audio_module_write_async()`（环形缓冲 2048 帧+tasker Little 喂数
+  任务"audio_feed"20ms 周期）、`set_volume/get_volume`（0~100，int16
+  饱和缩放出队施加）、`mute/is_muted`（SD 脚硬静音经 gpio_ctrl 驱动+
+  出队清零双保险；SD 脚未接时仅软件静音）、`play_finish/drain(timeout)/
+  abort_playback`、完成回调 `set_play_done_cb`（DONE/ABORTED/ERROR 状态）；
+  阻塞 `play()` 保留并标注 deprecated。新增平台移植层
+  `audio_port.{h,c}`（锁/线程/时基/SD 脚，ESP=FreeRTOS+gpio_ctrl、
+  PC=pthread，业务 .c 零条件编译）。
+- 新增 components/modules/audio_player/：播放队列（设备树 queue_depth，
+  缺省 4，钳位 3~8）、文件播放（ovs_vfs 挂载路径 + stdio，裸 PCM 头
+  audio_player_pcm_hdr_t："OPCM"+rate/ch/bits/data_len，12 字节）、
+  audio_decoder_t 解码挂点（probe/decode 函数指针，v1 注册
+  pcm-passthrough，codec2 未来 audio_player_register_decoder 即插）、
+  音量持久化移植点 apl_port_volume_load/save（ESP=NVS 命名空间
+  "audio_player"/PC=stub）、token 查询 get_status。并发模型：pump/喂块/
+  完成回调/stop 全经 tasker Little 单 worker 串行化，无独立锁。
+- 事件（追加前已在 task_board 声明）：event_bus_types.h 新增
+  EVENT_AUDIO_PLAY_STARTED(0x0007)/PROGRESS(0x0008，节流每 10% 台阶
+  一条)/FAILED(0x0009)，EVENT_AUDIO_PLAY_DONE 复用既有 0x0002（原无
+  载荷无使用者，grep 核实）；统一载荷 event_audio_play_t
+  {token,err,duration_ms,position_ms}。
+- 设备树：ovs.dtb.json 新增顶层 audio 策略节点（compatible=
+  "ovs-audio-policy"：sd_pin/volume_default/buf_frames/queue_depth），
+  DTREE 读取+缺省兜底（-1/80/2048/4）；amplifier 既有 sd_pin 键不动。
+- 单测：tests/test_audio.c（mock i2s 捕获+mock dtree）覆盖 §2.4 全场景：
+  A1 异步 10KB→完成回调+drain 幂等；A2 音量 0/50/100 饱和缩放逐样本
+  断言+静音清零；A3 abort→ABORTED+丢弃+流可重入；A4 队列 3 条依次播放
+  +STARTED/DONE 顺序+进度事件存在；A5 文件播放+缺文件 IO 错误；A6 音量
+  get/set+stop(0) 全停清队。
+
+**批次② LVGL 六层 UI（铁律：三层零业务头文件，grep 自检通过）**
+- themes/base：蓝白主题常量集中定义（主蓝 #1E6FFF 系、白卡片、#F5F7FA
+  页面底、文本三级 #1F2937/#5B6472/#9CA3AF、成功/危险/分隔线/待机底），
+  共享 page/card 样式 + page_root/label 便捷工厂；lv_conf.h 启用
+  思源黑体 CJK 14/16（中文 UI 基础字体）+ montserrat 20/28/48。
+- ui/controls+indicators：ui_card（图标+标题+主值+单位+副值+灰显）、
+  ui_list_item（标题+右侧插槽）、ui_round_btn（圆形主蓝钮，click+
+  LONG_PRESSED 按住语义预留）、ui_status_dot、ui_value_label（数值+单位）。
+- navigator：nav_stack 纯逻辑栈（深度 8，PC 单测）+ navigator.c（注册表
+  8 页、push/pop/switch、on_enter/on_exit 生命周期、reload 重建）；
+  契约 I6 `navigator_set_standby(cb,timeout_s)`（60s 无输入覆盖层待机，
+  任意触摸唤醒，cb=NULL 关闭）+ pages/standby 占位页（深色底+时钟+提示）。
+- pages：home（顶栏 APP_TITLE+网络状态点+未读角标 0+设置钮；大字时钟
+  synced=false 照常显示并灰显；温度卡 milli 换算+湿度副值；网络卡
+  STA/AP/OFF+ssid+ip+rssi 字段与 WEB /api/net/info 一致）、settings
+  （返回钮+音量 slider 实调 audio_player_set_volume+语言 dropdown 即时
+  切换+设备名/待机占位）、standby；全部文案走 `_("LABEL")` 宏。
+- presenters+bridge：bridge.h 定义 I1~I4 函数表（`_(label)` 宏、time/
+  sensor/net/volume/lang/device_name）——全工程唯一可 include HUB 公共头
+  的地方；bridge.c 双编译开关 `OVS_BRIDGE_HUB_REAL`（0=mock 常量内置
+  zh/en 词表 / 1=HUB 真身，交付后置 1 重编）与 `OVS_BRIDGE_AUDIO`
+  （ESP=1 实调 audio_player / sim=0）；presenters 持生命周期（home 1s
+  timer 仅刷时间，sensor/net 走 EVENT_BUS 订阅+lvgl_app 锁内更新），
+  ui_bootstrap 统一装配（主题→桥→事件总线→导航→presenters→待机→首页）。
+- PC 模拟器与门禁：sim 全量编译六层（OVS_BRIDGE_* mock）+ 新增
+  ovs_ui_smoke headless 冒烟（导航 switch/reload/语言热切换/mock 数据
+  断言/待机画面创建，17 项）；tests 新增 test_nav_stack.c（49 项）；
+  esp 与 sim 双端 CMake 同步。
+
+### 验证（全部在本会话内真实执行）
+- ovs_tests：**234 passed / 0 failed**（mem 20 + event_bus 49 + tasker 49
+  + audio 96 + nav_stack 49 ≈，容器 gcc:13 实跑）；
+- idf.py build（容器 espressif/idf:v6.0.1，esp32s3）：**通过**，
+  ovs.bin 生成，app 分区余 39%；
+- PC 模拟 build（容器 SDL2）：**通过**；Xvfb 虚拟显示实跑 8s 无
+  ERROR/assert；ovs_ui_smoke **17/17**。
+
+### 待解决问题
+- OVS_BRIDGE_HUB_REAL 当前=0（HUB 未交付）；HUB 交付后置 1 并在
+  src/lvgl/CMakeLists.txt REQUIRES 补 i18n/sensor_cache/sysinfo/time_svc；
+- 中文 CJK 为 LVGL 内置思源黑体常用字集（约 1000 字），生僻字回退方框；
+  全字库自定义字体归 fonts/ 后续批次；
+- 音频 pump/喂块经 tasker Little 周期任务（20ms），板端满负荷时的实时性
+  归真机批次验证；提示音钩子（消息事件→play_mem）已留口未接（可选后置）。
+
+### 下一步计划
+- [GUI] 集成阶段：HUB I1~I4 交付后翻 bridge 开关接真数据；lora_tp 事件
+  接入未读角标/聊天页；提示音钩子；真机批次按 hardware_test_guide §3
+  逐项验收。
+- 本条目与 task_board/hardware_test_guide §3 同步更新完毕，交接给
+  集成阶段。
+
+### 代码变更
+- 新增：components/modules/audio_player/{audio_player.h/.c,
+  audio_player_port.h, audio_player_port_esp.c, audio_player_port_stub.c,
+  CMakeLists.txt}；components/modules/audio_module/{audio_port.h/.c}；
+  tests/{test_audio.c, test_nav_stack.c, i2s_mock.c, dtree_mock.c}；
+  src/lvgl/{themes/theme_base.h/.c, ui/controls/ui_{card,list_item,
+  round_btn}.h/.c, ui/indicators/ui_{status_dot,value_label}.h/.c,
+  navigator/{nav_stack,navigator}.h/.c, pages/{page_settings,page_standby}
+  .h/.c, bridge/bridge.h/.c, presenters/{presenter_home,presenter_settings,
+  presenter_standby,ui_bootstrap}.h/.c}；sim/{lvgl_lock_sim.c,
+  ui_smoke_main.c}。
+- 修改：components/modules/audio_module/{audio_module.h/.c}；
+  components/core/event_bus/event_bus_types.h（只追加）；
+  components/dtbs/config/ovs.dtb.json（追加 audio 节点）；CMakeLists.txt
+  （注册 audio_player）；src/lvgl/{lvgl_app.c, lvgl_app.h 注释, lv_conf.h,
+  pages/page_home.h/.c, CMakeLists.txt, README.md}；sim/{main.c,
+  CMakeLists.txt}；tests/{CMakeLists.txt, test_main.c}；
+  docs/{development_log.md, task_board.md, hardware_test_guide.md}。
+- 删除：src/lvgl/navigator/{nav.c,nav.h}、src/lvgl/bridge/bridge_time.h、
+  src/lvgl/port/bridge_time_esp.c、sim/bridge_time_sim.c（被六层新实现
+  取代）。
+
+## 2026-09-10 - [WEB] Vue 上位机重构 + 多语言 + 只读信息 API + OTA 上传界面
+
+### 任务目标
+按 docs/three_tasks_plan.md §7 完成 [WEB] 任务：Vue 前端模块化重构与
+蓝白主题美化（与板端 GUI 一致）、zh-CN/en-US 多语言（与 LVGL 共用
+/i18n/<lang>.json 单一事实来源）、Dashboard 温湿度/网络信息展示、
+Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合法性
+检查，复用既有 OTA 接口）、后端按契约 I5 新增只读路由。
+
+### 完成内容
+- **前端模块化重构**（web/vue-ui/src 全量重写，未引任何新依赖）：
+  - 目录 src/{api,components,composables,i18n,router,stores,views}；
+    api 层统一封装 fetch（超时/JSON/ApiError{status,code} 错误码判型，
+    errorKey 映射 i18n 文案）；
+  - 自研 hash 路由（router/，#/network 等 4 路由 + hashchange）与
+    轻量 store（stores/settings.js 语言偏好 localStorage 持久化），
+    控制固件体积不引 vue-router/pinia；
+  - 组件层：AppIcon（内联 SVG 图标集）/BaseCard/InfoRow/ProgressBar/
+    StatusDot/EmptyState/LanguagePicker；composables：usePolling
+    （定时轮询+手动刷新+页面隐藏暂停+卸载清理）、useOta（OTA 状态机）；
+  - 视图层：DashboardView（温湿度卡 /api/sensor 30s 轮询+手动刷新；
+    网络卡 /api/net/info 全字段；/api/time 时间章）、NetworkView
+    （/api/wifi/status 轮询、STA/AP/OFF 热切换、扫描列表按 RSSI 排序、
+    选网+密码连接、切换中状态）、FirmwareView（OTA 全流程）、
+    SettingsView（语言即时切换+音量/设备名/待机占位）；
+  - 蓝白主题：style.css CSS 变量（主蓝 #1E6FFF、白卡片、#F5F7FA 页
+    底、三级深色文本），底部导航白底蓝高亮，文案零硬编码全走 i18n 键。
+- **多语言**：i18n 双语包（契约 I1 schema {lang,ver,strings}，扁平大写
+  下划线键），附录 A 种子键全量覆盖 + WEB 域扩展键；t() 回退链 当前
+  语言→en-US→键名（dev 告警）；优先 fetch('/i18n/<lang>.json')（与
+  LVGL 同源），失败回退内置包（设备未部署语言包/开发环境不受影响）。
+- **OTA 上传界面**（前后端双重合法性检查，web_ota.c 零改动）：
+  - 前端校验三关：扩展名 .bin → 魔数（首字节 0xE9=纯 app；头 4 字节
+    "OVSO"=容器，据此区分限额 0x280000 / 0x280000+96+32K）→ 大小
+    ≤OTA 分区；不合法直接拒绝不发（UI 校验清单逐项展示）；
+  - 上传 XHR POST /api/ota/firmware（进度条）+ 1s 轮询 /api/ota/status
+    （设备侧写入进度）；HTTP 200 后设备 500ms 重启（ota_reboot 既有
+    逻辑），UI 重启倒计时 8s → 探测 /api/hello 等待上线 → 展示
+    "升级成功+新版本号"（重新拉 /api/ota/status）。
+- **后端 additive**（modules/web/web_api_sysinfo.c，约 250 行）：
+  - 按契约 I5 实现 GET /api/sensor（毫单位→一位小数换算）、
+    /api/net/info（mode 小写 sta/ap/off + ssid JSON 转义）、/api/time
+    （HH:MM + synced）、/i18n/<lang>.json（SPIFFS 读取；URI 白名单
+    {zh-CN,en-US} 精确匹配双重防穿越；no-cache 头）；
+  - HUB 数据接缝：WEB_API_USE_HUB 宏（默认 0=路由内 mock JSON 先行；
+    交付后置 1 调 sensor_snapshot_get/sysinfo_net_get/time_svc_get，
+    CMake 注释已预留开关与 REQUIRES 追加说明）；
+  - 胶水仅两处 additive：web.c register_builtin_routes() 追加
+    web_api_sysinfo_init() 调用（+前置声明，仿 web_ota_routes_init
+    既有模式）、CMakeLists.txt SRCS 追加一行。
+- **构建验证**：vite build 通过（98KB JS/37.5KB gz + 15KB CSS）；既有
+  fs_to_c.py 打包链路对新 dist 重新生成 web_data（5 文件 125KB，
+  SPIFFS 分区 2MB 限额内）；vite dev + mock 全页面浏览器联调通过
+  （四页导航/温湿度/网络扫描连接/模式热切换/语言即时切换/OTA 校验
+  拒绝与全流程上传到"新版本 v0.9.3→v0.9.4"模拟）。
+
+### 待解决问题
+- **idf.py build 未在本机执行**：当前 Windows 主机无 ESP-IDF 环境
+  （项目常规构建在 Linux/docker 主机 mybuild.sh）。已用
+  gcc -fsyntax-only -Wall -Wextra 对新增 web_api_sysinfo.c 做语法
+  门禁（通过，仅 1 处 localtime_r 平台分支已按 newlib/_WIN32 显式
+  处理），且改动纯 additive、未动既有逻辑；需在构建主机跑
+  `mybuild.sh --no-flash` 做最终确认。
+- /api/* 数据为 mock：等 [HUB] 批次①（sensor_cache/sysinfo/time_svc）
+  交付后翻转 WEB_API_USE_HUB=1；/i18n/*.json 等其打包部署到 SPIFFS
+  后与前端自动同源。
+- vite dev 的设备联调开关：VITE_USE_DEVICE=1 时经 vite 代理直连真机
+  （代理目标 192.168.4.1 沿用既有 vite.config.js，未改动）。
+
+### 下一步计划
+- [HUB] 批次①交付后：切换 WEB_API_USE_HUB=1、核对错误枚举名、
+  assets/i18n 以 vue-ui/src/i18n/locales 为种子合并；
+- 项目所有者按 docs/hardware_test_guide.md §4 上板执行 Web 全功能
+  与 OTA 网页上传实测。
+
+### 代码变更
+- 新增：web/vue-ui/src/{api,components,composables,i18n,router,
+  stores,views}/**（约 22 文件）；components/modules/web/
+  web_api_sysinfo.c；
+- 修改：web/vue-ui/src/{App.vue,main.js,style.css}；components/
+  modules/web/{web.c（+2 行）,CMakeLists.txt（+1 行）}；web_data/
+  由 fs_to_c.py 重新生成；
+- 删除：web/vue-ui/src/components/{Dashboard,OtaUpdate,WifiConfig}.vue
+  （旧单文件组件，职责已并入 views/）、src/assets/*（未引用资源）；
+- 文档：docs/task_board.md、docs/hardware_test_guide.md §4/§5、本日志。
+
 ## 2026-09-09 - 三任务改为无板开发模式 + 共享成果文档（hardware_test_guide.md）
 
 ### 任务目标
