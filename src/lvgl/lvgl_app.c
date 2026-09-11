@@ -18,6 +18,9 @@
 #include "freertos/semphr.h"
 #include "esp_timer.h"
 
+#include "st7789.h"
+#include "event_bus.h"
+
 static const char* TAG = "[LVGL]";
 
 static SemaphoreHandle_t s_mutex = NULL;
@@ -39,6 +42,21 @@ static uint32_t lvgl_tick_ms_cb(void) {
 static void smoke_timer_cb(lv_timer_t* timer) {
     (void)timer;
     // LOGI(TAG, "smoke: flush_count=%u", (unsigned)display_port_get_flush_count());
+}
+
+/* st7789 就绪晚于 LVGL 时，首帧 flush 会被丢弃（blit NOT_INIT），
+ * 面板 GRAM 留上电噪声；屏幕可用后强制整屏失效重绘一次 */
+static int on_display_ready(const event_t* event, void* user_data) {
+    (void)event;
+    (void)user_data;
+    lvgl_app_lock();
+    lv_obj_t* screen = lv_screen_active();
+    if (screen) {
+        lv_obj_invalidate(screen);
+    }
+    lvgl_app_unlock();
+    LOGI(TAG, "display ready, full redraw scheduled");
+    return 0;
 }
 
 static void lvgl_task(void* arg) {
@@ -83,6 +101,14 @@ lvgl_app_err_t lvgl_app_init(void) {
     /* UI 装配：主题→桥→导航→presenters→首页（六层，见 ui_bootstrap.c） */
     ui_bootstrap_run(lv_screen_active());
     lv_timer_create(smoke_timer_cb, 5000, NULL);
+
+    /* 屏幕就绪时机不定：st7789 先就绪则直接补一次整屏重绘，
+     * 否则订阅 DISPLAY_READY 由事件触发补绘 */
+    if (st7789_is_initialized()) {
+        lv_obj_invalidate(lv_screen_active());
+    } else {
+        event_bus_subscribe(EVENT_DISPLAY_READY, on_display_ready, NULL);
+    }
 
     BaseType_t ret = xTaskCreatePinnedToCore(lvgl_task, "lvgl",
                                              LVGL_TASK_STACK_SIZE, NULL,

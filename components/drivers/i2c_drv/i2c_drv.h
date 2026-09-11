@@ -58,7 +58,7 @@ i2c_drv_err_t i2c_drv_load_config(dtree_node_t* bus_node, i2c_drv_config_t* conf
  * @brief 初始化I2C驱动
  *
  * Linux 式共享计数模型：同一条 I2C 总线（SDA/SCL 一致）只初始化一次，
- * 多个模块（AHT30、CST816S 等）获取同一个句柄并增加引用计数。
+ * 多个模块（ath30、CST816S 等）获取同一个句柄并增加引用计数。
  * 配置不一致时返回 I2C_DRV_ERR_CONFIG。
  * 
  * @param config 配置信息

@@ -21,6 +21,7 @@ static struct dtree_node s_nodes[] = {
     { "i2s-microphone" },
     { "i2s-amplifier" },
     { "ovs-audio-policy" },
+    { "ath30-sensor" },   /* [HUB] 批次② ath30 收口单测 */
 };
 #define DTREE_MOCK_NODE_COUNT (sizeof(s_nodes) / sizeof(s_nodes[0]))
 
@@ -41,7 +42,11 @@ void dtree_mock_set_int(const char* compat, const char* prop, int32_t value) {
     if (s_entry_count >= DTREE_MOCK_MAX_ENTRIES) {
         return;
     }
-    s_entries[s_entry_count].node = (const struct dtree_node*)compat;
+    dtree_node_t* node = dtree_find_by_compatible(compat);
+    if (!node) {
+        return;   /* 未注册的 compatible：忽略（与真实设备树行为对齐） */
+    }
+    s_entries[s_entry_count].node = node;
     s_entries[s_entry_count].prop = prop;
     s_entries[s_entry_count].value = value;
     s_entry_count++;

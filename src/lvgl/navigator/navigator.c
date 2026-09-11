@@ -46,7 +46,13 @@ static lv_obj_t* page_obj_at(int idx) {
 static void standby_exit(void);
 
 static void standby_wake_cb(lv_event_t* e) {
-    (void)e;
+    /* 只在真实触摸/手势事件上唤醒；若挂 LV_EVENT_ALL，绘制派发的事件
+     * 会在覆盖层绘制中途触发删除（UAF） */
+    lv_event_code_t code = lv_event_get_code(e);
+    if (code != LV_EVENT_PRESSING && code != LV_EVENT_CLICKED &&
+        code != LV_EVENT_GESTURE) {
+        return;
+    }
     if (s_standby_active) {
         standby_exit();
     }
@@ -82,11 +88,15 @@ static void standby_exit(void) {
     if (!s_standby_active) {
         return;
     }
-    if (s_standby_obj) {
-        lv_obj_delete(s_standby_obj);
-        s_standby_obj = NULL;
-    }
+    /* 先清状态再删对象：lv_obj_delete 会派发 LV_EVENT_DELETE 进 wake_cb，
+     * 若此时 active 仍为 true 会递归重删同一对象（对象树损坏→布局崩溃）；
+     * 异步删除避免在事件回调栈内同步销毁对象 */
     s_standby_active = false;
+    if (s_standby_obj) {
+        lv_obj_t* overlay = s_standby_obj;
+        s_standby_obj = NULL;
+        lv_obj_delete_async(overlay);
+    }
     lv_display_trigger_activity(NULL);
     LOGI(TAG, "standby exited");
 }

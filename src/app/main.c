@@ -5,7 +5,7 @@
  * 启动顺序（REFACTORING_PLAN 4.4，holder 依赖拓扑编排）：
  *   NVS → SPIFFS（手工，holder 的前置依赖）
  *   → app_init.c 注册表: event_bus→tasker→dtree→w25q128→ovs_vfs→net_stack(保护区)
- *     →st7789/cst816s/aht30→heartbeat→lvgl_app（optional 失败降级）
+ *     →st7789/cst816s/ath30→heartbeat→lvgl_app（optional 失败降级）
  * 详见 src/app/app_init.c 与 docs/development_log.md 2026-09-09 Phase 1 条目
  *
  * VFS 功能测试/压力测试收在 OVS_RUN_APP_TESTS 编译开关内（默认关），
@@ -32,7 +32,8 @@
 
 static const char* TAG = "[MAIN]";
 
-/* 应用级测试开关：1 = 启动时跑 VFS 功能测试 + 压力测试（约 13 分钟） */
+/* 应用级测试开关：1 = 启动时跑 VFS 功能测试 + 压力测试（约 13 分钟），
+ * 并启动 5s 周期换页（LCD 持续刷屏，与 flash 压测共享 SPI 总线） */
 #define OVS_RUN_APP_TESTS  0
 
 /* 网络模式热切换自测：1 = STA 稳定后自动 STA→AP→STA 一个来回（免重启验证） */
@@ -148,6 +149,19 @@ static void net_hotswap_test_task(void *arg) {
 /* ============================================================ */
 #include "vfs_stress.h"
 #include "esp_timer.h"
+#include "lvgl.h"
+#include "lvgl_app.h"
+#include "navigator.h"
+
+/* SPI 共享总线压力（LCD + W25Q128 同总线）：压力测试期间每 5s 换页一次，
+ * 迫使 LCD 持续全页重建刷屏，与 flash 读写并发，验证互不干扰 */
+static void page_cycle_timer_cb(lv_timer_t* timer) {
+    (void)timer;
+    static bool on_settings = false;
+    on_settings = !on_settings;
+    navigator_switch(on_settings ? "settings" : "home");
+    LOGI(TAG, "page cycle -> %s", on_settings ? "settings" : "home");
+}
 
 static void test_performance(const char* path) {
     LOGI(TAG, "--- 性能测试: %s ---", path);
@@ -291,6 +305,12 @@ void sys_boot(void){
 
 #if OVS_RUN_APP_TESTS
     LOGI(TAG, "App tests enabled (OVS_RUN_APP_TESTS=1)");
+
+    /* LCD 换页定时器与 flash 压测并发（SPI 共享总线互扰测试） */
+    lvgl_app_lock();
+    lv_timer_create(page_cycle_timer_cb, 5000, NULL);
+    lvgl_app_unlock();
+
     test_vfs();
     int stress_failed = vfs_stress_run();
     if (stress_failed == 0) {

@@ -34,7 +34,7 @@ if (ret != HOLDER_OK) {
 holder_register_module("st7789", st7789_init_wrapper, true, NULL);
 
 // 注册可选模块（初始化失败只记录错误）
-holder_register_module("aht30", aht30_init_wrapper, false, NULL);
+holder_register_module("ath30", ath30_init_wrapper, false, NULL);
 
 // 注册带依赖的模块（总线控制器先就绪，设备模块后初始化）
 static const char* const st7789_deps[] = { "spi_bus" };
@@ -60,7 +60,7 @@ if (holder_is_module_ready("st7789")) {
 }
 
 // 获取模块状态
-holder_module_state_t state = holder_get_module_state("aht30");
+holder_module_state_t state = holder_get_module_state("ath30");
 
 // 打印状态报告
 holder_print_status();

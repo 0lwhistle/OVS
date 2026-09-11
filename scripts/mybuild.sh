@@ -104,6 +104,11 @@ echo ""
 
 # 2. 将 Vue 构建产物打包为 C 代码
 echo -e "${YELLOW}[2/4] Packing web resources...${NC}"
+# i18n 语言包并入 web 部署资源（单一事实来源 assets/i18n/）：web 首次
+# 部署会格式化 SPIFFS，只有随 web_data 写入的文件才能幸存（真机教训
+# 2026-09-10：独立放 spiffs.bin 的 /i18n/ 会被部署格式化抹掉）
+mkdir -p "$PROJECT_ROOT/web/vue-ui/dist/i18n"
+cp "$PROJECT_ROOT"/assets/i18n/*.json "$PROJECT_ROOT/web/vue-ui/dist/i18n/"
 python3 "$PROJECT_ROOT/scripts/fs_to_c.py" \
     "$PROJECT_ROOT/web/vue-ui/dist" \
     "$PROJECT_ROOT/components/modules/web/web_data"

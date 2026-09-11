@@ -362,7 +362,7 @@ if (!dtree_has_node("buses.uart1.lora")) { /* 降级 */ }
 | 节点 | compatible | 你的模块 |
 |---|---|---|
 | `buses.uart1.lora` | `lora-module`（含 `default_config` 子节点） | lora |
-| `buses.i2c0.temperature_sensor` | `aht30-sensor`（含 `precision`） | aht30 |
+| `buses.i2c0.temperature_sensor` | `ath30-sensor`（含 `precision`） | ath30 |
 | `buses.i2s0.amplifier` | `i2s-amplifier` | 扬声器 |
 
 改设备树后 `idf.py build` 会重打 SPIFFS 镜像 + dtb.bin，OTA 推送即生效（A/B 槽自动切换）。
@@ -435,19 +435,19 @@ uart_drv_flush(s_uart);
 
 lora 特有（M0/M1 配置模式、AUX 握手）属于你的驱动业务，M0/M1/AUX 直接用 `driver/gpio.h` 的 esp gpio API 直控（gpio 驱动组件按 C11 计划将删除，勿依赖）；注意 M0=GPIO8/M1=GPIO3/AUX=GPIO46/TXD=9/RXD=10（设备树为准）。接收建议改造成 **UART 事件 + 任务**（低延迟），不要 tasker 轮询。
 
-### 4.2 aht30 —— I2C 总线（`buses.i2c0.temperature_sensor`）
+### 4.2 ath30 —— I2C 总线（`buses.i2c0.temperature_sensor`）
 
 ```c
 #include "i2c_drv.h"
 
-dtree_node_t* dev = dtree_find_by_compatible("aht30-sensor");
+dtree_node_t* dev = dtree_find_by_compatible("ath30-sensor");
 uint8_t i2c_addr = 0x38;   /* 或从设备树属性读 */
 
 i2c_drv_read_reg(s_i2c, i2c_addr, 0x00, raw, 6, &n);    /* 寄存器读 */
 i2c_drv_write_reg(s_i2c, i2c_addr, reg, bytes, len);    /* 寄存器写 */
 ```
 
-**现有 `modules/aht30` 就是一份完整参考实现**（含 CRC8 校验、测量触发、事件发布 `EVENT_SENSOR_TEMP_HUMIDITY`），重写时以它为对照基准；它 init 失败时 holder 会自动降级（当前因未接线处于 ERROR 状态，接线即恢复）。
+**现有 `modules/ath30` 就是一份完整参考实现**（含 CRC8 校验、测量触发、事件发布 `EVENT_SENSOR_TEMP_HUMIDITY`），重写时以它为对照基准；它 init 失败时 holder 会自动降级（当前因未接线处于 ERROR 状态，接线即恢复）。
 
 ### 4.3 扬声器 —— I2S 总线（`buses.i2s0.amplifier`）
 

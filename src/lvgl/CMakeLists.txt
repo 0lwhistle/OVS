@@ -60,7 +60,8 @@ idf_component_register(
         "themes"
         "fonts"
         "assets"
-    REQUIRES lvgl_lib logger dtbs mem_pool event_bus tasker_api audio_player
+    REQUIRES lvgl_lib logger dtbs mem_pool event_bus tasker_api audio_player st7789
+             i18n sensor_cache sysinfo time_svc
     PRIV_REQUIRES esp_timer heap freertos
 )
 
@@ -70,5 +71,5 @@ target_compile_definitions(${COMPONENT_LIB} PRIVATE MEM_MODULE_TAG=MEM_MOD_LVGL)
 # 桥接模式：ESP 端音量走 audio_player 真身；HUB 数据未交付前用 mock 常量
 target_compile_definitions(${COMPONENT_LIB} PRIVATE
     OVS_BRIDGE_AUDIO=1
-    OVS_BRIDGE_HUB_REAL=0   # HUB 交付 I1~I4 后置 1（同时补 REQUIRES i18n sensor_cache sysinfo time_svc）
+    OVS_BRIDGE_HUB_REAL=1   # HUB I1~I4 已交付（2026-09-10 [HUB] 批次①）
 )

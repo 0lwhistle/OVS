@@ -329,7 +329,9 @@ spi_drv_err_t spi_drv_init(const spi_drv_config_t* config, spi_drv_handle_t* han
         .sclk_io_num = (int)config->sclk_pin,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
-        .max_transfer_sz = 4096,
+        /* 32KB：LCD 整行块 DMA（320x24x2=15360B）不得超过此值，
+         * 否则 spi_device_transmit 报 txdata transfer > host maximum */
+        .max_transfer_sz = 32768,
     };
 
     bool host_ok = false;
