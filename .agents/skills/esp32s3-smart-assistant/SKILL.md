@@ -46,7 +46,7 @@ ovs/
 │   │   ├── internal_flash/      #   内部Flash VFS适配
 │   │   ├── lora/                #   LoRa无线模块
 │   │   ├── audio_module/        #   音频模块
-│   │   ├── aht30/               #   AHT30传感器
+│   │   ├── ath30/               #   ath30传感器
 │   │   ├── cst816s/             #   CST816S触摸屏
 │   │   ├── holder/              #   模块注册表管理器
 │   │   ├── heartbeat/           #   心跳监控
@@ -225,7 +225,7 @@ navigator (导航层) ← presenters (展示器层) ← bridge (桥接层)
 - GPIO6: BCLK, GPIO5: WS
 - GPIO7: DIN(麦克风), GPIO15: DOUT(功放)
 
-### I2C 总线（触控 + AHT30）
+### I2C 总线（触控 + ath30）
 - GPIO16: SDA, GPIO17: SCL
 - GPIO18: INT(触控), GPIO39: RST(触控)
 

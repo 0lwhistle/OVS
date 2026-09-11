@@ -21,7 +21,7 @@
 ## 近期完成工作（2026-09-08）
 ### 1. 设备树重构（嵌套单棵树 + compatible 绑定）
 - 四个总线驱动 `*_drv_load_config()` 统一为 `(bus_node, config)` 签名 + compatible 校验
-- st7789/w25q128/cst816s/aht30/lora/audio_module 全部改为 compatible 查询定位节点
+- st7789/w25q128/cst816s/ath30/lora/audio_module 全部改为 compatible 查询定位节点
 - i2s_drv 与设备解耦（din/dout 由 audio_module 从 mic/amp 节点读取）
 - 编译零警告；spiffs.bin 已含新设备树；详见 development_log.md 2026-09-08
 

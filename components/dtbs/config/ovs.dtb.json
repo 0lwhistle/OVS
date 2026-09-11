@@ -30,10 +30,10 @@
                 "bl_active_level": "high",
                 "width": 320,
                 "height": 240,
+                "rotation": 1,
                 "pixel_format": "rgb565",
                 "spi_freq_mhz": 40,
-                "invert_color": true,
-                "rotation": 0
+                "invert_color": true
             },
 
             "flash": {
@@ -51,25 +51,28 @@
             "description": "I2C 总线 (触控 + 温湿度)",
             "sda_pin": 16,
             "scl_pin": 17,
-            "freq_hz": 400000,
+            "freq_hz": 100000,
             "pullup": true,
             "pullup_resistor_ohm": 4700,
 
             "touchscreen": {
-                "compatible": "cst816s-touch",
-                "description": "CST816S 电容触控",
-                "address": "0x15",
+                "compatible": "gt967-touch",
+                "description": "GT967 单层5点电容触控（GT9xx系）",
+                "address": "0x5D",
                 "int_pin": 18,
                 "rst_pin": 39,
-                "gesture_support": true,
                 "max_x": 240,
-                "max_y": 280
+                "max_y": 280,
+                "swap_xy": 0,
+                "mirror_x": 0,
+                "mirror_y": 0
             },
 
             "temperature_sensor": {
-                "compatible": "aht30-sensor",
-                "description": "AHT30 温湿度传感器",
+                "compatible": "ath30-sensor",
+                "description": "ath30 温湿度传感器",
                 "address": "0x38",
+                "sample_interval_ms": 30000,
                 "measure_interval_ms": 1000,
                 "precision": {
                     "temperature": 0.3,
@@ -133,6 +136,23 @@
                 "m1_pin": 3,
                 "aux_pin": 46,
                 "aux_active_level": "high",
+
+                "lora_tp": {
+                    "compatible": "lora-tp",
+                    "description": "LoRa 可靠传输层配置（档位数值为手册核实前占位）",
+                    "local_address": 1,
+                    "tx_queue_depth": 4,
+                    "window": 4,
+                    "max_retries": 3,
+                    "msg_max_bytes": 65535,
+                    "rx_inline_max_bytes": 2048,
+                    "ack_timeout_ms_p0": 350,
+                    "ack_timeout_ms_p1": 110,
+                    "ack_timeout_ms_p2": 5700,
+                    "tx_gap_ms_p0": 300,
+                    "tx_gap_ms_p1": 60,
+                    "tx_gap_ms_p2": 5600
+                },
 
                 "default_config": {
                     "frequency_mhz": 433.0,

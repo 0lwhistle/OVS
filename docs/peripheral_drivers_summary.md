@@ -48,8 +48,8 @@
 - **功能**: 麦克风录音、功放播放
 - **事件**: `EVENT_AUDIO_DATA`, `EVENT_AUDIO_READY`
 
-### 5. AHT30 温湿度传感器
-- **路径**: `components/modules/aht30/`
+### 5. ath30 温湿度传感器
+- **路径**: `components/modules/ath30/`
 - **接口**: I2C
 - **功能**: 周期性温湿度数据采集
 - **事件**: `EVENT_SENSOR_TEMP_HUMIDITY`, `EVENT_SENSOR_ERROR`
@@ -129,7 +129,7 @@ dtree 通过 `dtree_get_host_id(bus_node, "spi"/"i2c"/"i2s"/"uart", &id)`
 ### Tasker (任务调度器)
 - **路径**: `components/core/tasker/`
 - **功能**: 周期性任务调度
-- **使用**: AHT30、CST816S、LoRa等模块的周期性采集
+- **使用**: ath30、CST816S、LoRa等模块的周期性采集
 
 ### Logger (日志系统)
 - **路径**: `components/core/logger/`
@@ -207,7 +207,7 @@ void app_main(void) {
 }
 ```
 
-> 注：ST7789/LoRa/音频/AHT30/CST816S/心跳等外设模块的 init 当前未接入
+> 注：ST7789/LoRa/音频/ath30/CST816S/心跳等外设模块的 init 当前未接入
 > app_main（模块已具备，待后续开发线经 holder 或直接接入）。
 
 ---
@@ -245,7 +245,7 @@ components/
     ├── w25q128/            # W25Q128 Flash
     ├── lora/               # LoRa无线模块
     ├── audio_module/       # 音频模块
-    ├── aht30/              # AHT30传感器
+    ├── ath30/              # ath30传感器
     └── cst816s/            # CST816S触摸屏
 ```
 

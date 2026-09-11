@@ -6,7 +6,7 @@
  *   [批0] event_bus → tasker → dtree                (required)
  *   [批1] w25q128(dep dtree) → ovs_vfs(dep 两者)     (required)
  *   [批2] net_stack(dep dtree, 由 main.c 注入)       (required)
- *   [批3] st7789 / cst816s / aht30 (dep dtree)       (optional——失败无屏/无传感器仍可 Web 管理)
+ *   [批3] st7789 / gt967 / ath30 (dep dtree)       (optional——失败无屏/无传感器仍可 Web 管理)
  *   [批4] heartbeat (dep net_stack)                  (optional——C12 接线修复)
  *   [批5] lvgl_app (dep dtree；真实屏幕依赖待 6.2 后补 st7789+cst816s) (optional)
  *
@@ -28,10 +28,17 @@
 #include "ovs_vfs.h"
 
 #include "st7789.h"
-#include "cst816s.h"
-#include "aht30.h"
+#include "gt967.h"
+#include "ath30.h"
 #include "heartbeat.h"
 #include "lvgl_app.h"
+#include "i18n.h"
+#include "sensor_cache.h"
+#include "time_svc.h"
+#include "sysinfo.h"
+#include "lora.h"
+#include "lora_tp.h"
+#include "time_svc_port.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -176,19 +183,105 @@ static int mod_st7789(void) {
     return (st7789_init() == ST7789_OK) ? 0 : -1;
 }
 
-static int mod_cst816s(void) {
-    if (force_fail_check("cst816s")) return -1;
-    return (cst816s_init() == CST816S_OK) ? 0 : -1;
+static int mod_gt967(void) {
+    if (force_fail_check("gt967")) return -1;
+    return (gt967_init() == GT967_OK) ? 0 : -1;
 }
 
-static int mod_aht30(void) {
-    if (force_fail_check("aht30")) return -1;
-    return (aht30_init() == AHT30_OK) ? 0 : -1;
+static int mod_ath30(void) {
+    if (force_fail_check("ath30")) return -1;
+    return (ath30_init() == ath30_OK) ? 0 : -1;
 }
 
 static int mod_heartbeat(void) {
     if (force_fail_check("heartbeat")) return -1;
     return (heartbeat_init() == 0) ? 0 : -1;
+}
+
+/* ===== [HUB] 统一数据接口（契约 I1~I4，均 optional 缺席降级） ===== */
+
+static int mod_i18n(void) {
+    if (force_fail_check("i18n")) return -1;
+    /* 依赖 web 挂载的 /spiffs；失败时 _(label) 回退键原文 */
+    return (i18n_init("zh-CN") == I18N_OK) ? 0 : -1;
+}
+
+static int mod_sensor_cache(void) {
+    if (force_fail_check("sensor_cache")) return -1;
+    return (sensor_cache_init() == SENSOR_OK) ? 0 : -1;
+}
+
+static int mod_time_svc(void) {
+    if (force_fail_check("time_svc")) return -1;
+    return (time_svc_init() == TIME_SVC_OK) ? 0 : -1;
+}
+
+static int mod_sysinfo(void) {
+    if (force_fail_check("sysinfo")) return -1;
+    return (sysinfo_init() == SYSINFO_OK) ? 0 : -1;
+}
+
+/* ===== [HUB] lora_tp（契约 I7 域内服务，optional：lora 驱动缺席降级） ===== */
+
+static lora_drv_api_t s_lora_tp_drv;
+
+static lora_tp_err_t lora_tp_drv_send(void* ctx, const void* data, size_t len) {
+    (void)ctx;
+    return (lora_tp_err_t)lora_send(data, len);
+}
+
+static lora_tp_err_t lora_tp_drv_reg_rx(void* ctx,
+                                        void (*cb)(const uint8_t*, size_t, int8_t, void*),
+                                        void* user) {
+    (void)ctx;
+    return (lora_tp_err_t)lora_register_rx_callback(
+        (lora_rx_cb_t)cb, user);
+}
+
+static enum task_t mod_lora_tp_tick(void* ctx) {
+    (void)ctx;
+    lora_tp_tick();
+    return TASK_OK;
+}
+
+static uint32_t lora_tp_tick_ms_wrap(void) {
+    return (uint32_t)time_svc_uptime_ms();
+}
+
+static int mod_lora_tp(void) {
+    if (force_fail_check("lora_tp")) return -1;
+
+    /* lora 驱动当前无独立 holder 模块：此处一并拉起，失败即降级 */
+    if (!lora_is_initialized() && lora_init() != LORA_OK) {
+        LOGW(TAG, "lora driver unavailable, lora_tp degraded");
+        return -1;
+    }
+
+    s_lora_tp_drv.drv_ctx = NULL;
+    s_lora_tp_drv.send = lora_tp_drv_send;
+    s_lora_tp_drv.register_rx = lora_tp_drv_reg_rx;
+
+    lora_tp_deps_t deps = {
+        .drv = &s_lora_tp_drv,
+        .tick_ms = lora_tp_tick_ms_wrap,
+        .delay_ms = NULL,          /* 本组件不阻塞等待，delay 预留 */
+        .mem_alloc = mem_malloc,
+        .mem_free = mem_free_,
+    };
+    if (lora_tp_init(&deps) != LORA_TP_OK) {
+        LOGW(TAG, "lora_tp init failed, degraded");
+        return -1;
+    }
+
+    /* 10ms Little 级 tick 驱动状态机（组件内不建任务） */
+    static struct task_node s_tick_task;   /* 静态存储期 */
+    tasker_task_init_li(&s_tick_task, 10, TASK_CNT_INF, "lora_tp",
+                        mod_lora_tp_tick, NULL);
+    if (tasker_enqueue(&s_tick_task) != 0) {
+        LOGW(TAG, "lora_tp tick task enqueue failed");
+        return -1;
+    }
+    return 0;
 }
 
 static int mod_lvgl_app(void) {
@@ -228,13 +321,24 @@ int app_init_setup(void) {
 
     /* [批3] 人机外设（optional：失败降级为无屏/无触摸/无传感器，Web 仍可用） */
     holder_register_module_ex("st7789", mod_st7789, false, DEPS_DTREE, 1, NULL);
-    holder_register_module_ex("cst816s", mod_cst816s, false, DEPS_DTREE, 1, NULL);
-    holder_register_module_ex("aht30", mod_aht30, false, DEPS_DTREE, 1, NULL);
+    holder_register_module_ex("gt967", mod_gt967, false, DEPS_DTREE, 1, NULL);
+    holder_register_module_ex("ath30", mod_ath30, false, DEPS_DTREE, 1, NULL);
 
     /* [批4] 服务 */
     if (s_net_stack_fn != NULL) {
         holder_register_module_ex("heartbeat", mod_heartbeat, false, DEPS_HEARTBEAT, 1, NULL);
     }
+
+    /* [批4.5] HUB 数据中枢（optional：缺席时 bridge/路由各自降级）。
+     * 依赖顺序：i18n 读 /spiffs/i18n（net_stack[批2] 内 web_spiffs_init
+     * 挂载；OVS_ENABLE_NET=0 时本模块 init 失败降级）；sysinfo 运行期
+     * 查询 net_mgr，消费者（web 路由/bridge）均在 net_stack 就绪后才取数 */
+    holder_register_module_ex("i18n", mod_i18n, false, DEPS_EVENT_BUS, 1, NULL);
+    holder_register_module_ex("time_svc", mod_time_svc, false, DEPS_NONE, 0, NULL);
+    holder_register_module_ex("sensor_cache", mod_sensor_cache, false, DEPS_EVENT_BUS, 1, NULL);
+    holder_register_module_ex("sysinfo", mod_sysinfo, false, DEPS_EVENT_BUS, 1, NULL);
+    /* lora_tp 依赖 tasker + lora 驱动（驱动在此一并拉起，缺席降级） */
+    holder_register_module_ex("lora_tp", mod_lora_tp, false, DEPS_TASKER, 2, NULL);
 
     /* [批5] 应用 */
     holder_register_module_ex("lvgl_app", mod_lvgl_app, false, DEPS_DTREE, 1, NULL);

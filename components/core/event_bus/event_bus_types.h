@@ -189,6 +189,16 @@ typedef enum {
     /** LoRa模块就绪事件 */
     EVENT_LORA_READY                = (MODULE_ID_LORA << 16) | 0x0004,
 
+    /* ---- [HUB] lora_tp 传输层事件（2026-09-10 追加，I7 对外通知） ---- */
+    /** 传输会话完成 */
+    EVENT_LORA_TP_TX_DONE           = (MODULE_ID_LORA << 16) | 0x0005,
+    /** 传输会话失败（err=失败原因） */
+    EVENT_LORA_TP_TX_FAILED         = (MODULE_ID_LORA << 16) | 0x0006,
+    /** 接收完成（重组+校验通过） */
+    EVENT_LORA_TP_RX_COMPLETE       = (MODULE_ID_LORA << 16) | 0x0007,
+    /** 发送进度（≥5% 台阶节流，permille 0~1000） */
+    EVENT_LORA_TP_PROGRESS          = (MODULE_ID_LORA << 16) | 0x0008,
+
     /* ====================================================================== */
     /* UI事件 (MODULE_ID_UI = 0x0006)                                         */
     /* ====================================================================== */
@@ -371,6 +381,17 @@ typedef struct {
     bool success;               /**< 发送是否成功 */
     uint32_t timestamp;         /**< 发送时间戳 */
 } event_lora_send_done_t;
+
+/**
+ * @brief lora_tp 传输层事件统一载荷（EVENT_LORA_TP_*，[HUB] 批次③追加）
+ */
+typedef struct {
+    uint32_t token;             /**< 会话令牌（RX_COMPLETE 时为 0） */
+    uint16_t peer;              /**< 对端地址 */
+    uint32_t len;               /**< 消息字节数 */
+    int32_t  err;               /**< lora_tp_err_t（TX_FAILED 时有意义） */
+    uint32_t permille;          /**< 进度千分比 0~1000 */
+} event_lora_tp_t;
 
 /**
  * @brief 页面切换事件数据

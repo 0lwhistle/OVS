@@ -129,6 +129,16 @@ st7789_err_t st7789_fill_rect(const st7789_rect_t* rect, st7789_color_t color);
 st7789_err_t st7789_draw_pixel(uint16_t x, uint16_t y, st7789_color_t color);
 
 /**
+ * @brief 块传输：设置窗口后把 RGB565 像素数据写入 GRAM（LVGL flush 用）
+ *
+ * @param x0,y0,x1,y1 窗口（闭区间，物理坐标）
+ * @param data        像素数据（大端 RGB565 字节序，即 MSB 先发）
+ * @param len         字节数，应等于窗口像素数×2
+ */
+st7789_err_t st7789_blit(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
+                         const void* data, size_t len);
+
+/**
  * @brief 绘制线段
  * 
  * @param x0 起点X

@@ -26,7 +26,10 @@ static const char* TAG = "[BRIDGE]";
 /*                              mock 存储                                       */
 /* ========================================================================== */
 
+#if !OVS_BRIDGE_AUDIO
 static uint8_t s_mock_volume = 80;
+#endif
+#if !OVS_BRIDGE_HUB_REAL
 static char s_mock_lang[8] = "zh-CN";
 
 /* 迷你词表（mock 演示用；真身走 assets/i18n/<lang>.json） */
@@ -56,6 +59,7 @@ static const bridge_str_t s_strings[] = {
     { "STANDBY_HINT",   "触摸屏幕唤醒","Touch to wake" },
 };
 #define BRIDGE_STR_COUNT (sizeof(s_strings) / sizeof(s_strings[0]))
+#endif /* !OVS_BRIDGE_HUB_REAL */
 
 /* ========================================================================== */
 /*                              实现                                             */

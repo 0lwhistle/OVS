@@ -13,20 +13,150 @@
 
 ## 1. 全局前置与烧录（[HUB] 维护）
 
-（HUB 完成后填写：env.sh 初始化、mybuild.sh 烧录、monitor.sh 监控、
-PC 门禁运行命令 tests/ovs_tests、固件/设备树/i18n 资源打包说明、
-app_init 日志中各模块加载状态对照表）
+**开发环境初始化**
+```bash
+source scripts/env.sh        # ESP-IDF v6.0.1 + 项目脚本（mybuild/monitor/ota_push）
+```
+
+**构建与烧录（三选一）**
+```bash
+mybuild.sh                   # 完整构建（Vue 前端+打包+固件）+ 串口烧录
+idf.py build && idf.py -p /dev/ttyACM0 flash monitor   # 手动全流程
+idf.py build && ota_push.sh 192.168.2.xxx              # 免串口 OTA 迭代
+```
+监控：`monitor.sh`（或 `idf.py monitor`）。
+
+**PC 门禁（无板即可跑）**
+```bash
+cmake -S tests -B build-tests && cmake --build build-tests -j && ./build-tests/ovs_tests
+bash scripts/sim_build.sh && xvfb-run -a ./build-sim/ovs_ui_smoke   # PC 模拟+UI 冒烟
+```
+
+**SPIFFS 资源打包说明（[HUB] 批次①起）**：`idf.py build` 时自动把
+`components/dtbs/config/ovs.dtb.json`（设备树）与 `assets/i18n/*.json`
+（语言包，构建暂存于 `build/spiffs_root/`）打包进 `build/spiffs.bin`，
+烧录命令已含 `0x520000 build/spiffs.bin`；改语言包或设备树后重跑
+`idf.py build`（或 ota_push 携带容器）即可，无需手工步骤。
+
+**启动日志模块状态对照表（[APP_INIT] / holder_print_status 输出）**
+
+| 模块名 | required | 含义/缺席影响 |
+|---|---|---|
+| event_bus/tasker/dtree | ✓ | 核心，失败停机 |
+| w25q128/ovs_vfs | ✓ | 存储，失败停机 |
+| net_stack | ✓(可选编译) | 网络+Web+OTA（OVS_ENABLE_NET） |
+| st7789/cst816s/ath30 | 否 | 无屏/无触摸/无传感器降级 |
+| heartbeat | 否 | 心跳缺席 |
+| **i18n** | 否 | 读 /spiffs/i18n/zh-CN.json；缺席→`_(label)` 回退键原文 |
+| **time_svc** | 否 | 时间服务；缺席→bridge 时间恒 0 灰显 |
+| **sensor_cache** | 否 | 订阅传感器事件；缺席→温度/湿度卡"暂无数据" |
+| **sysinfo** | 否 | 网络/设备信息查询；缺席→网络卡离线态 |
+| lvgl_app | 否 | UI 入口 |
 
 ## 2. [HUB] 数据中枢测试项
 
 ### 2.1 统一数据接口（i18n / sensor_cache / time_svc / sysinfo）
-（待 HUB 填写）
 
-### 2.2 AHT30 收口
-（待 HUB 填写）
+**T2.1.1 i18n 语言包加载与热切换**
+- 前置：烧录含 spiffs.bin（内含 /i18n/zh-CN.json、en-US.json）的固件；
+- 步骤：上电观察启动日志 → LVGL 设置页切换语言（中/英）；
+- 预期：启动日志 `[I18N]: language pack loaded: /spiffs/i18n/zh-CN.json (N labels)`
+  （N=92）；切换语言后页面文案立即变英文/中文；`[WEB][SYSINFO]` 侧
+  `GET /i18n/zh-CN.json` 返回 200（浏览器访问 `http://<ip>/i18n/zh-CN.json`
+  可见 JSON）；
+- 排查：`i18n pack not found`→spiffs.bin 未烧或未重打包；生僻字方框→
+  LVGL 内置 CJK 常用字集限制（见 §5）。
+
+**T2.1.2 sensor_cache 快照**
+- 前置：ath30 已接（否则本项观察"降级路径"也视为通过）；
+- 步骤：上电后进入 LVGL 主页 / Web Dashboard；
+- 预期：主页温度/湿度卡与 Web /api/sensor 数值一致（来源同一缓存），
+  约 30s（设备树 sample_interval_ms）刷新一次；串口 `[SENSOR_CACHE]`
+  无连续 `lock timeout` 告警；
+- 排查：显示"暂无数据"→ 看 `[ath30]` 是否采集、`[SENSOR_CACHE]: cached`
+  是否出现；两者都有仍无数据→ i2c 总线冲突。
+
+**T2.1.3 time_svc 时间显示**
+- 步骤：观察主页大字时钟与 Web /api/time；
+- 预期：时钟从 00:00:00 起走（uptime 时钟）；LVGL 时钟灰显、Web
+  `"synced":false`（NTP 未接入的预期态）；时间数值照常走不冻结；
+- 排查：时钟不走→ `[TIME_SVC]` 未初始化或 bridge 未接真
+  （`[BRIDGE]: bridge mock mode` 出现即开关未翻）。
+
+**T2.1.4 sysinfo 网络信息**
+- 步骤：主页网络卡 / Web Dashboard 网络卡 / `curl http://<ip>/api/net/info`；
+- 预期：三处 mode/ssid/ip/netmask/gw/mac/rssi 一致；AP 模式下 rssi=0、
+  ip=192.168.4.1；`[SYSINFO]: sysinfo ready` 出现在启动日志；
+- 排查：字段全 0→ net_mgr 未启动或移植层 esp_netif 句柄未取到
+  （`esp_netif_get_handle_from_ifkey` 失败会回退 0.0.0.0）。
+
+**T2.1.5（PC 门禁已覆盖）** i18n/加载切换回退节流、sensor_cache 三态、
+time_svc、sysinfo mock 查询：`./build-tests/ovs_tests` 308 项全绿
+（test_hub.c [HUB-I1~I4] 段）。
+
+### 2.2 ath30 收口
+
+**T2.2.1 周期采集与设备树间隔**
+- 前置：ath30 接在 I2C（GPIO16/17），设备树 `temperature_sensor` 节点含
+  `sample_interval_ms: 30000`；
+- 步骤：上电观察串口 ≥35s；
+- 预期：启动日志 `[ath30]: Periodic read started, interval=30000 ms`；
+  每 30s 一条 `Temp: xx°C, Humidity: xx%`（DEBUG 级，需 logger
+  LOG_DEBUG 时可见）或 Web /api/sensor 的 age_ms 周期性归零重计；
+- 排查：`sample_interval_ms not set` LOGW→设备树未含新键（重烧
+  spiffs.bin/dtb）；interval=1000→读到旧键 measure_interval_ms。
+
+**T2.2.2 失败停采与恢复**
+- 前置：可断开 ath30 的 SDA/SCL 接线（模拟无应答）；
+- 步骤：正常运行中断开传感器 ≥3 个采集周期（约 90s）→ 观察日志 →
+  重新接上 → 再等 ≤5 个周期（150s）；
+- 预期：断开后看到 3 条 `measure failed (x), 1/3、2/3、3/3`，第 3 次
+  打 `sampling suspended` 并发布一次 EVENT_SENSOR_ERROR（Web
+  Dashboard 显示"暂无数据"）；停采期间无刷屏告警；重接后
+  `retrying measure...`→`sensor recovered, sampling resumed`，数据恢复；
+- 排查：ERROR 事件刷屏→停采逻辑未生效；不恢复→确认接线与上拉。
+
+**T2.2.3 CRC 校验**（PC 门禁已覆盖真逻辑，板端无需专测）
+- mock i2c 注入坏 CRC → `ath30_ERR_CRC`（ovs_tests 325 项中
+  [HUB-T1] 段 12 项）。
 
 ### 2.3 LoRa lora_tp（需两台设备，可延后）
-（待 HUB 填写；注明 LEVEL 档位占位值与手册核实前置）
+
+**前置（两台设备各执行一次）**
+- 设备树 `lora.lora_tp` 节点已含（本批已写）：`local_address` 两台分别
+  置 1 / 2（**当前两台镜像相同，上板前需手改其中一台的 local_address
+  并重烧**）；`ack_timeout_ms_p*`/`tx_gap_ms_p*` 为手册核实前占位值
+  （NORMAL=350/300ms），先按 NORMAL 档联调；
+- 两台同信道（AT+CHANNEL 一致）、波特率 115200、LBT 开启（AT 层配置
+  属驱动任务，本批未动，沿用现状）；
+- 启动日志确认：`[LORA_TP]: init ok (addr=0x0001 win=4 q=4 retries=3)`；
+  若出现 `lora driver unavailable, lora_tp degraded` → 检查 lora 模组
+  UART 接线（GPIO9/10）与 M0/M1/AUX（GPIO8/3/46）。
+
+**T2.3.1 可靠文本传输（UNRELIABLE 单帧）**
+- 步骤：两台上电后由应用/调试入口向对端 addr 发 ≤188B 消息；
+- 预期：对端 `[LORA_TP]: rx complete` 或应用 rx 回调收到一致内容；
+  `curl` 无关，纯板端；发送端日志 `unreliable sent`。
+
+**T2.3.2 可靠传输 8KB（分片+ARQ+CRC32）**
+- 步骤：A→B 发送 8KB（RELIABLE，NORMAL 档）；
+- 预期：B 收到 8192B 且内容一致（`rx complete ... len=8192`）；A
+  `tx done`；全程约 44 片、11 窗；EVENT_LORA_TP_RX_COMPLETE 进事件总线；
+- 排查：`ack timeout, window retry` 偶发可接受（重传兜底）；持续超时→
+  检查两台信道/地址；`peer lost state ... rewinding` 表示对端曾重启，
+  可自愈。
+
+**T2.3.3 断链恢复/大消息 sink**
+- 步骤：传输中途遮挡/关断一台天线数秒再恢复；或发 >2048B 消息验证
+  sink 路径（应用须事先 set_rx_sink，否则 `reject: large msg`）；
+- 预期：短断链（<max_retries×ack_timeout）自动续传完成；超长断链对端
+  `tx failed err=-6`（TIMEOUT，属协议预期）；sink 路径 `len=N (sink)`。
+
+**T2.3.4 已核实清单（拿 DX-LR22 手册后修正）**
+- LEVEL 档位与 ack_timeout/tx_gap 数值映射（现占位：350/110/5700、
+  300/60/5600）；
+- 单帧 200B 载荷上限与 AT+PACKET=3 实际值；
+- 空口速率对 FAST 档的实际吞吐。
 
 ## 3. [GUI] 板端体验测试项
 
@@ -102,7 +232,7 @@ PC 侧已用 ovs_sim（mock 数据）预验界面（本节为板端复核）。
   未命中回退原文并 LOGW `label not found: XXX`。
 
 **3.2.4 主页数据卡（HUB 集成后复核）**
-- 步骤：等 AHT30 采样周期（默认 30s）观察温湿度卡；切换网络模式观察
+- 步骤：等 ath30 采样周期（默认 30s）观察温湿度卡；切换网络模式观察
   网络卡与状态点。
 - 预期表现：温度卡 xx.x°C 主值+湿度副值（无数据灰显"暂无数据"）；
   网络卡 STA/AP/OFF + ssid + ip + rssi；状态点绿=在线/红=离线；时钟
@@ -160,7 +290,7 @@ curl http://<ip>/api/ota/status     # {"state":"idle",...,"version":"vX.Y.Z",...
 1. 仪表盘页确认时间章、温湿度卡（mock 值 26.5°C/48.2%RH，30s 自动
    刷新，点刷新图标立即更新）、网络信息卡（模式徽标 + SSID/IP/
    掩码/网关/MAC/RSSI 各行）；
-2. [HUB] AHT30 交付后复测：温湿度应与串口 `[AHT30]` 日志一致。
+2. [HUB] ath30 交付后复测：温湿度应与串口 `[ath30]` 日志一致。
 
 **Network（配网实测）**：
 1. "连接状态"卡对照 `/api/wifi/status`（串口 net_mgr 状态一致）；

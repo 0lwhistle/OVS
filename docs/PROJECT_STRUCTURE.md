@@ -42,7 +42,7 @@ ovs/
 │       ├── internal_flash/      #   - 内部 Flash VFS 适配
 │       ├── lora/                #   - LoRa 无线模块
 │       ├── audio_module/        #   - 音频模块
-│       ├── aht30/               #   - AHT30 温湿度传感器
+│       ├── ath30/               #   - ath30 温湿度传感器
 │       └── cst816s/             #   - CST816S 触摸屏
 ├── thirdparty/                  # 第三方库目录
 │   ├── cJSON/                   #   - cJSON JSON 解析库

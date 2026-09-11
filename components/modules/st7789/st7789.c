@@ -47,6 +47,20 @@ static const char* TAG = "[ST7789]";
 #define ST7789_CMD_MADCTL       0x36
 #define ST7789_CMD_COLMOD       0x3A
 
+/* 面板质量寄存器（迁自 thirdparty/Demo_STM32F103RCT6_Hardware_SPI
+ * 的 ST7789V 出厂初始化序列，2026-09-10 真机适配） */
+#define ST7789_CMD_PORCTRL      0xB2    /* 门廊控制（前/后廊） */
+#define ST7789_CMD_GCTRL        0xB7    /* VGH/VGL 电压 */
+#define ST7789_CMD_VCOMS        0xBB    /* VCOM 电压 */
+#define ST7789_CMD_LCMCTRL      0xC0    /* LCM 控制 */
+#define ST7789_CMD_VDVVRHEN     0xC2    /* VDV/VRH 使能 */
+#define ST7789_CMD_VRHS         0xC3    /* GVDD 电压 */
+#define ST7789_CMD_VDVS         0xC4    /* VDV 电压 */
+#define ST7789_CMD_FRCTRL2      0xC6    /* 帧率控制 */
+#define ST7789_CMD_PWCTRL0      0xD0    /* 电源控制 */
+#define ST7789_CMD_PVGAMCTRL    0xE0    /* 正伽马校正 */
+#define ST7789_CMD_NVGAMCTRL    0xE1    /* 负伽马校正 */
+
 /** MADCTL 位定义 */
 #define ST7789_MADCTL_MY        0x80
 #define ST7789_MADCTL_MX        0x40
@@ -74,14 +88,17 @@ static int s_rst_pin = -1;
 /** BL引脚 */
 static int s_bl_pin = -1;
 
-/** 屏幕宽度 */
+/** 屏幕宽度（初始化时按设备树 width/height/rotation 计算） */
 static uint16_t s_width = 240;
 
-/** 屏幕高度 */
-static uint16_t s_height = 280;
+/** 屏幕高度（面板原生 240x320，横屏后为 320x240） */
+static uint16_t s_height = 320;
 
 /** 初始化标志 */
 static bool s_initialized = false;
+
+/** MADCTL 值（init 时按设备树 rotation 计算） */
+static uint8_t s_madctl = ST7789_MADCTL_RGB;
 
 /** 显示缓冲区（可选，用于双缓冲） */
 static uint16_t* s_framebuffer = NULL;
@@ -106,11 +123,13 @@ static void st7789_write_cmd(uint8_t cmd) {
 }
 
 /**
- * @brief 发送数据
+ * @brief 发送数据（spi_drv 失败必须留痕，否则刷屏失败无感）
  */
 static void st7789_write_data(const void* data, size_t len) {
     gpio_set_level(s_dc_pin, 1);
-    spi_drv_write(s_spi_handle, s_spi_dev, data, len);
+    if (spi_drv_write(s_spi_handle, s_spi_dev, data, len) != SPI_DRV_OK) {
+        LOGE(TAG, "write %u bytes failed", (unsigned)len);
+    }
 }
 
 /**
@@ -168,15 +187,79 @@ static st7789_err_t st7789_hw_init(void) {
     st7789_write_cmd(ST7789_CMD_SLPOUT);
     vTaskDelay(pdMS_TO_TICKS(50));
     
-    /* 设置颜色模式为RGB565 */
+    /* 颜色模式：16bpp RGB565（Demo 序列值 0x05） */
     st7789_write_cmd(ST7789_CMD_COLMOD);
-    st7789_write_data_byte(0x55);
-    
-    /* 设置显示方向 */
+    st7789_write_data_byte(0x05);
+
+    /* 设置显示方向（设备树 width/height/rotation 决定 MADCTL；
+     * 面板原生 240x320，横屏 320x240 = MX|MV） */
     st7789_write_cmd(ST7789_CMD_MADCTL);
-    st7789_write_data_byte(ST7789_MADCTL_RGB);
-    
-    /* 打开显示反转（ST7789通常需要） */
+    st7789_write_data_byte(s_madctl);
+
+    /* ---- 以下面板寄存器迁自 Demo_STM32F103RCT6_Hardware_SPI 的
+     *      ST7789V 初始化序列（保证 IPS 屏显色/对比度正确） ---- */
+
+    /* 门廊控制：前后廊 12 HBITCK，禁用简单门廊 */
+    st7789_write_cmd(ST7789_CMD_PORCTRL);
+    {
+        static const uint8_t porch[] = {0x0C, 0x0C, 0x00, 0x33, 0x33};
+        st7789_write_data(porch, sizeof(porch));
+    }
+
+    /* GVDD/VGL：VGH=13.26V, VGL=-10.43V */
+    st7789_write_cmd(ST7789_CMD_GCTRL);
+    st7789_write_data_byte(0x35);
+
+    /* VCOM：0.9V */
+    st7789_write_cmd(ST7789_CMD_VCOMS);
+    st7789_write_data_byte(0x19);
+
+    /* LCM 控制：XMY=0, XBGR=0 */
+    st7789_write_cmd(ST7789_CMD_LCMCTRL);
+    st7789_write_data_byte(0x2C);
+
+    /* VDV/VRH 使能：命令列写入 */
+    st7789_write_cmd(ST7789_CMD_VDVVRHEN);
+    st7789_write_data_byte(0x01);
+
+    /* GVDD：4.45V */
+    st7789_write_cmd(ST7789_CMD_VRHS);
+    st7789_write_data_byte(0x12);
+
+    /* VDV：0V */
+    st7789_write_cmd(ST7789_CMD_VDVS);
+    st7789_write_data_byte(0x20);
+
+    /* 帧率：60Hz */
+    st7789_write_cmd(ST7789_CMD_FRCTRL2);
+    st7789_write_data_byte(0x0F);
+
+    /* 电源控制：AVDD=6.8V, AVCL=-4.8V, VDS=2.3V */
+    st7789_write_cmd(ST7789_CMD_PWCTRL0);
+    {
+        static const uint8_t pwr[] = {0xA4, 0xA1};
+        st7789_write_data(pwr, sizeof(pwr));
+    }
+
+    /* 正伽马校正 */
+    st7789_write_cmd(ST7789_CMD_PVGAMCTRL);
+    {
+        static const uint8_t pgam[] = {
+            0xD0, 0x04, 0x0D, 0x11, 0x13, 0x2B, 0x3F,
+            0x54, 0x4C, 0x18, 0x0D, 0x0B, 0x1F, 0x23};
+        st7789_write_data(pgam, sizeof(pgam));
+    }
+
+    /* 负伽马校正 */
+    st7789_write_cmd(ST7789_CMD_NVGAMCTRL);
+    {
+        static const uint8_t ngam[] = {
+            0xD0, 0x04, 0x0C, 0x11, 0x13, 0x2C, 0x3F,
+            0x44, 0x51, 0x2F, 0x1F, 0x1F, 0x20, 0x23};
+        st7789_write_data(ngam, sizeof(ngam));
+    }
+
+    /* 打开显示反转（IPS 屏需要，Demo 序列含 0x21） */
     st7789_write_cmd(ST7789_CMD_INVON);
     
     /* 正常显示模式 */
@@ -187,6 +270,25 @@ static st7789_err_t st7789_hw_init(void) {
     st7789_write_cmd(ST7789_CMD_DISPON);
     vTaskDelay(pdMS_TO_TICKS(10));
     
+    return ST7789_OK;
+}
+
+st7789_err_t st7789_blit(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
+                         const void* data, size_t len) {
+    if (!s_initialized) {
+        return ST7789_ERR_NOT_INIT;
+    }
+    if (!data || x1 < x0 || y1 < y0) {
+        return ST7789_ERR_PARAM;
+    }
+    if ((size_t)(x1 - x0 + 1) * (y1 - y0 + 1) * 2 != len) {
+        LOGW(TAG, "blit size mismatch: %uB vs %ux%u", (unsigned)len,
+             (unsigned)(x1 - x0 + 1), (unsigned)(y1 - y0 + 1));
+        return ST7789_ERR_PARAM;
+    }
+    st7789_set_window(x0, y0, x1, y1);
+    st7789_write_cmd(ST7789_CMD_RAMWR);
+    st7789_write_data(data, len);
     return ST7789_OK;
 }
 
@@ -268,6 +370,28 @@ st7789_err_t st7789_init(void) {
         return ST7789_ERR_PARAM;
     }
 
+    /* 面板尺寸与旋转（设备树 lcd_display：width/height/rotation） */
+    {
+        int32_t v = 0;
+        int32_t w = 240, h = 320, rot = 0;
+        if (dtree_get_int(dev_node, "width", &v) == DTREE_OK && v > 0) w = v;
+        if (dtree_get_int(dev_node, "height", &v) == DTREE_OK && v > 0) h = v;
+        if (dtree_get_int(dev_node, "rotation", &v) == DTREE_OK && v >= 0 && v <= 3) rot = v;
+
+        /* rotation: 0=纵向 1=横向(右) 2=纵向倒置 3=横向(左)，面板原生 240x320 */
+        static const uint8_t MADCTL_ROT[4] = {
+            ST7789_MADCTL_RGB,                       /* 0: 240x320 */
+            ST7789_MADCTL_MX | ST7789_MADCTL_MV | ST7789_MADCTL_RGB,  /* 1: 320x240 */
+            ST7789_MADCTL_MY | ST7789_MADCTL_RGB,    /* 2 */
+            ST7789_MADCTL_MY | ST7789_MADCTL_MX | ST7789_MADCTL_MV | ST7789_MADCTL_RGB, /* 3 */
+        };
+        s_madctl = MADCTL_ROT[rot];
+        s_width = (uint16_t)w;
+        s_height = (uint16_t)h;
+        LOGI(TAG, "panel %ldx%ld rotation=%ld (madctl=0x%02X)",
+             (long)w, (long)h, (long)rot, s_madctl);
+    }
+
     /* 初始化GPIO */
     st7789_err_t err = st7789_init_gpio(dev_node);
     if (err != ST7789_OK) {
@@ -334,17 +458,22 @@ st7789_err_t st7789_init(void) {
         return err;
     }
     
-    /* 打开背光 */
-    st7789_set_backlight(true);
-    
     /* 分配帧缓冲 */
     s_framebuffer = (uint16_t*)mem_malloc(s_width * s_height * 2);
     if (!s_framebuffer) {
         LOGW(TAG, "Failed to allocate framebuffer, drawing directly to display");
     }
-    
+
     s_initialized = true;
-    
+
+    /* 开背光前先清屏黑：盖掉 GRAM 上电噪声，开机窗口从彩噪变黑屏 */
+    if (st7789_clear(ST7789_BLACK) != ST7789_OK) {
+        LOGW(TAG, "Boot clear failed, panel may show GRAM noise until first frame");
+    }
+
+    /* 打开背光 */
+    st7789_set_backlight(true);
+
     LOGI(TAG, "ST7789 display initialized: %dx%d", s_width, s_height);
     
     /* 发布显示就绪事件 */

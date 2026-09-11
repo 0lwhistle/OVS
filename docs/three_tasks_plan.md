@@ -5,7 +5,7 @@
 > 协作日志 `docs/task_board.md`（三任务共用共读）。
 > 本文档取代 `docs/idle_modules_plan.md` §6 的 T1/T2/T3/T4 提示词：
 > T1/T4 并入 [HUB]，T2 并入 [GUI]，T3 由 [GUI] 升级版取代，T5 归集成阶段。
-> 原方案文档仍是各子任务的实现依据（音频 §2 / AHT30 §3 / lora 两文档）。
+> 原方案文档仍是各子任务的实现依据（音频 §2 / ath30 §3 / lora 两文档）。
 
 ---
 
@@ -13,12 +13,12 @@
 
 | 任务名 | 职责 | 拥有的目录 | 吸收批次 |
 |---|---|---|---|
-| **[HUB] 数据中枢** | 两个 UI 共用的数据与服务层：i18n、传感器快照、系统/网络信息、时间服务；AHT30 模块收口；LoRa 可靠传输层 | `components/core/{i18n,sensor_cache,time_svc}`、`components/modules/{sysinfo,aht30,lora_tp}`、`assets/i18n/*.json` | T1、T4 |
+| **[HUB] 数据中枢** | 两个 UI 共用的数据与服务层：i18n、传感器快照、系统/网络信息、时间服务；ath30 模块收口；LoRa 可靠传输层 | `components/core/{i18n,sensor_cache,time_svc}`、`components/modules/{sysinfo,ath30,lora_tp}`、`assets/i18n/*.json` | T1、T4 |
 | **[GUI] 板端体验** | 板端蓝白主题 UI：主页(时间/温湿度/网络)、设置、待机接口、`_(label)` 多语言；音频输出升级（异步播放+播放器服务，UI 播放/音量直接对接） | `src/lvgl/**`、`components/modules/{audio_module,audio_player}` | T2、T3、T5(板端侧) |
 | **[WEB] Web 界面** | Vue 前端重设计 + 后端新增只读 API 路由 + OTA 上传界面 | `web/vue-ui/src/**`、`components/modules/web/`（仅新增文件） | — |
 
 **拆分逻辑**：两个 UI 需要同一批数据与翻译，集中到 HUB 供数；音频的消费者
-是板端 UI（提示音/语音留言回放/音量），归 GUI 体验域；lora_tp/AHT30 是
+是板端 UI（提示音/语音留言回放/音量），归 GUI 体验域；lora_tp/ath30 是
 数据服务，归 HUB。三方互不依赖对方目录，HUB 未就绪时 GUI/WEB 用 mock
 先行，互不阻塞。
 
@@ -27,8 +27,8 @@
 三方共同禁改：`components/modules/ota`、`components/modules/net_mgr`、
 `components/drivers/**`、`scripts/**`、`main/`。
 
-- **[HUB]** 只新增组件/文件 + 收口 aht30（允许改 aht30.c/h 实现，但
-  aht30.h 现有函数签名不得变更）；lora_tp 只依赖 lora.h，禁改
+- **[HUB]** 只新增组件/文件 + 收口 ath30（允许改 ath30.c/h 实现，但
+  ath30.h 现有函数签名不得变更）；lora_tp 只依赖 lora.h，禁改
   `components/modules/lora` 既有对外行为；`event_bus_types.h` 只追加；
   不碰 `src/lvgl`、`web/`、`modules/web`；
 - **[GUI]** 动 `src/lvgl/**` 与 `components/modules/{audio_module,audio_player}`；
@@ -62,7 +62,7 @@ const char* i18n_current(void);
 - 标签命名 `<页>_<部件>_<名>` 大写下划线；种子清单见附录 A；
 - **追加规则**：三方均可 append 新键（附译文），禁止改/删他人键值。
 
-### I2 传感器快照（HUB 提供，内部订阅 EVENT_AHT30_DATA 缓存）
+### I2 传感器快照（HUB 提供，内部订阅 EVENT_ath30_DATA 缓存）
 
 ```c
 /* components/core/sensor_cache/sensor_cache.h */
@@ -169,11 +169,11 @@ WEB_FW_REBOOT, WEB_LANG
 
 ---
 
-## 5. 任务提示词 [HUB] 数据中枢（含 T1 AHT30 收口 + T4 lora_tp）
+## 5. 任务提示词 [HUB] 数据中枢（含 T1 ath30 收口 + T4 lora_tp）
 
 ```
 任务：实现 OVS 三任务并行开发中的 [HUB] 数据中枢，分三个子批次：
-①统一数据接口（i18n/传感器快照/系统信息/时间服务）②T1 AHT30 模块
+①统一数据接口（i18n/传感器快照/系统信息/时间服务）②T1 ath30 模块
 收口 ③T4 LoRa 可靠传输层 lora_tp。跨多个会话完成，每会话结束在协作板
 交接进度。
 
@@ -185,7 +185,7 @@ WEB_FW_REBOOT, WEB_LANG
    依据）
 5. docs/lora_protocol.md 与 docs/lora_transport_design.md（子批次③依据，
    其 §9 为 lora_tp 详细提示词）
-6. components/modules/aht30/、components/modules/lora/、
+6. components/modules/ath30/、components/modules/lora/、
    components/core/event_bus/event_bus_types.h、src/app/app_init.c；
    docs/hardware_test_guide.md（三任务共享成果文档，结束更新[HUB]章节）
 
@@ -223,7 +223,7 @@ WEB_FW_REBOOT, WEB_LANG
    回退原文+节流LOGW、_(label) 宏）；翻译源 assets/i18n/zh-CN.json+
    en-US.json（附录A 种子清单建文件+中英初译），构建打包至 /i18n/
    （参照 ovs.dtb.json 的 SPIFFS 镜像打包先例）；
-2. components/core/sensor_cache/：契约 I2；订阅 EVENT_AHT30_DATA 缓存
+2. components/core/sensor_cache/：契约 I2；订阅 EVENT_ath30_DATA 缓存
    最新值，get 返回快照+age_ms；
 3. components/modules/sysinfo/：契约 I3；只读查询 esp_netif/esp_wifi，
    不改 net_mgr/wifi 任何文件；
@@ -232,12 +232,12 @@ WEB_FW_REBOOT, WEB_LANG
 5. 四组件 app_init 注册（均 optional，缺席降级）；event_bus_types.h
    只允许追加；tests/ovs_tests：i18n（加载/切换/回退/append）、
    sensor_cache（注入事件→快照）、sysinfo/time_svc（PC mock）全绿。
-【批次② T1 AHT30 收口】（依据 idle_modules_plan §3，勿重写已有实现）
-6. 确认/补全 EVENT_AHT30_DATA/ERROR 事件注册与载荷（温度/湿度用
+【批次② T1 ath30 收口】（依据 idle_modules_plan §3，勿重写已有实现）
+6. 确认/补全 EVENT_ath30_DATA/ERROR 事件注册与载荷（温度/湿度用
    int32 milli 单位）；采集走 tasker Middle 周期任务，间隔读设备树
    sample_interval_ms（缺省 30000+LOGW）；
 7. CRC8 校验确认；连续失败 3 次→发 ERROR 事件并停采，之后每 5 个
-   周期重试恢复（LOGW）；aht30.h 现有签名不得变更；
+   周期重试恢复（LOGW）；ath30.h 现有签名不得变更；
 8. mock i2c 单测三场景：正常读取/无应答超时/CRC 错误，事件载荷断言。
 【批次③ T4 lora_tp 传输层】（依据 lora_transport_design.md §2/§3 API
    与 §9 提示词执行，此处不重复）
@@ -250,7 +250,7 @@ WEB_FW_REBOOT, WEB_LANG
     DTREE_* 读取+缺省兜底）。
 
 边界：禁改 web/、src/lvgl、modules/web、modules/net_mgr、modules/ota、
-modules/lora 现有对外行为；aht30 仅限收口所需改动且签名不变；需要改
+modules/lora 现有对外行为；ath30 仅限收口所需改动且签名不变；需要改
 共有代码时只在 board 说明并以新增 API 满足。
 【无板约束】本轮开发板不连接：不做任何真机验证，全部验收止于编译与
 PC 门禁；真机测试步骤写入 docs/hardware_test_guide.md 供项目所有者
@@ -284,8 +284,8 @@ development_log.md + task_board.md 条目（写明契约交付状态供 GUI/WEB
 
 其他任务在做什么（涉及模块，你不得代改）：
 - [HUB] 拥有 components/core/{i18n,sensor_cache,time_svc}、
-  components/modules/{sysinfo,aht30,lora_tp}，在实现统一数据接口/
-  AHT30 收口/LoRa 传输层——你 include 其公共头（i18n/sensor_cache/
+  components/modules/{sysinfo,ath30,lora_tp}，在实现统一数据接口/
+  ath30 收口/LoRa 传输层——你 include 其公共头（i18n/sensor_cache/
   sysinfo/time_svc）；未交付前 bridge 用 mock 常量（同签名假数据），
   交付后仅换 bridge 实现接真；聊天页/通知未来经 EVENT_LORA_TP_* 事件
   接入，你不 include lora_tp.h；
@@ -368,8 +368,8 @@ REQ[GUI→HUB]。
 
 其他任务在做什么（涉及模块，你不得代改）：
 - [HUB] 拥有 components/core/{i18n,sensor_cache,time_svc}、
-  components/modules/{sysinfo,aht30,lora_tp}，在实现统一数据接口/
-  AHT30 收口/LoRa 传输层——你的后端路由直接调 sensor_snapshot_get/
+  components/modules/{sysinfo,ath30,lora_tp}，在实现统一数据接口/
+  ath30 收口/LoRa 传输层——你的后端路由直接调 sensor_snapshot_get/
   sysinfo_net_get/time_svc_get（签名在 three_tasks_plan §3）；未交付前
   路由内返回 mock JSON 先行；
 - [GUI] 拥有 src/lvgl 与 modules/{audio_module,audio_player}，在做板端
@@ -404,7 +404,7 @@ i18n,router,stores,views}；api 层集中封装 fetch（统一错误处理/code
 3. 构建验证：vite build 产物经既有 web_data 打包链路可编译进固件。
 
 边界：只动 web/vue-ui/src/** 与 modules/web/ 新增文件；禁改 src/lvgl、
-components/core、modules/{ota,net_mgr,aht30,lora_tp,audio_*}；要新数据→
+components/core、modules/{ota,net_mgr,ath30,lora_tp,audio_*}；要新数据→
 REQ[WEB→HUB]。
 【无板约束】本轮开发板不连接：不做任何真机验证；验收=vite dev（mock
 数据）+ vite build + idf.py build；上板测试步骤（含 curl 端点自测与
@@ -421,7 +421,7 @@ OTA 网页上传流程）写入测试指南供后续执行。
 
 | 原批次 | 去向 |
 |---|---|
-| T1 AHT30 收口 | [HUB] 子批次②（§5） |
+| T1 ath30 收口 | [HUB] 子批次②（§5） |
 | T2 音频升级 | [GUI] 子批次①（§6） |
 | T3 UI 框架 M1 | 废弃，由 [GUI] 子批次②（升级版）取代 |
 | T4 lora_tp | [HUB] 子批次③（§5，详细依据 lora_transport_design §9） |

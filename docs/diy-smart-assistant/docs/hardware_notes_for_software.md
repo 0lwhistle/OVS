@@ -39,8 +39,8 @@
 | 6 | GPIO6 | I2S_WS | 麦克风/功放 | I2S字选择 |
 | 7 | GPIO7 | I2S_DIN | 麦克风 | 麦克风数据 |
 | 8 | GPIO15 | I2S_DOUT | 功放 | 功放数据 |
-| 9 | GPIO16 | I2C_SDA | 触控/AHT30 | I2C数据 |
-| 10 | GPIO17 | I2C_SCL | 触控/AHT30 | I2C时钟 |
+| 9 | GPIO16 | I2C_SDA | 触控/ath30 | I2C数据 |
+| 10 | GPIO17 | I2C_SCL | 触控/ath30 | I2C时钟 |
 | 11 | GPIO18 | 触控_INT | 触控 | 触控中断 |
 | 12 | GPIO8 | 空闲 | - | 未使用 |
 | 13 | GPIO3 | 空闲 | - | 未使用 |
@@ -174,7 +174,7 @@ i2s_config_t i2s_config = {
 
 ---
 
-### 3. I2C总线共用（触控 + AHT30）
+### 3. I2C总线共用（触控 + ath30）
 
 **共用引脚**：
 - GPIO16: SDA（数据线）
@@ -185,13 +185,13 @@ i2s_config_t i2s_config = {
 
 **设备地址**：
 - 触控屏：0x15（CST816S默认地址）
-- AHT30：0x38（AHT30默认地址）
+- ath30：0x38（ath30默认地址）
 
 **软件注意事项**：
 ```c
 // I2C设备地址定义
 #define I2C_ADDR_TOUCH  0x15
-#define I2C_ADDR_AHT30  0x38
+#define I2C_ADDR_ath30  0x38
 
 // I2C读写示例
 esp_err_t i2c_read_device(uint8_t device_addr, uint8_t reg_addr, uint8_t *data, size_t len) {
@@ -350,7 +350,7 @@ int16_t mic_data = i2s_buffer[0];  // 只使用左声道
 - 高电平：数据发送中/接收中/模式切换中
 - 低电平：数据发送完成/接收完成/模式切换完成
 
-### 6. AHT30 温湿度传感器（I2C）
+### 6. ath30 温湿度传感器（I2C）
 
 **参数**：
 - 设备地址：0x38
@@ -367,7 +367,7 @@ int16_t mic_data = i2s_buffer[0];  // 只使用左声道
 ## 六、电源注意事项
 
 ### 供电分配
-- **3.3V**：屏幕、W25Q128、麦克风、LoRa、AHT30、触摸
+- **3.3V**：屏幕、W25Q128、麦克风、LoRa、ath30、触摸
 - **5V**：ESP32-S3（VIN）、MAX98357A功放
 
 ### 电流需求
@@ -378,7 +378,7 @@ int16_t mic_data = i2s_buffer[0];  // 只使用左声道
 | W25Q128 | ~10mA |
 | 麦克风 | ~3mA |
 | LoRa | ~40mA (发射时) |
-| AHT30 | ~1mA |
+| ath30 | ~1mA |
 | 触摸 | ~5mA |
 | 功放 | ~500mA (最大) |
 | **总计** | **~700mA** |

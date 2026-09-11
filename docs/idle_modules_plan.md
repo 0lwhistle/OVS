@@ -1,10 +1,10 @@
-# 闲时模块开发计划：LoRa / 音频(MAX98357A) / AHT30 / LVGL UI
+# 闲时模块开发计划：LoRa / 音频(MAX98357A) / ath30 / LVGL UI
 
 > 状态：需求与方案定稿，实现提示词随附（§6），按闲时任务批次执行
 > 配套文档：LoRa 部分见 `docs/lora_protocol.md`（链路协议）与
 > `docs/lora_transport_design.md`（传输服务层，内含 lora 实现提示词）
-> 命名勘误：真实芯片为奥松 **AHT30**，docs/ 下 7 处 "ATH30" 拼写已于
-> 2026-09-09 统一修正；代码组件 components/modules/aht30 本就正确。
+> 命名勘误：真实芯片为奥松 **ath30**，docs/ 下 7 处 "ATH30" 拼写已于
+> 2026-09-09 统一修正；代码组件 components/modules/ath30 本就正确。
 
 ---
 
@@ -14,7 +14,7 @@
 |---|---|---|---|
 | lora | 协议 v2 + 传输层设计定稿，代码未动 | 文本消息/语音留言/指令（§lora 两文档） | 全部实现 + 手册核实 |
 | 音频 MAX98357A | audio_module 有阻塞式录音/播放基础（344行） | 提示音、语音留言回放、音量控制、异步播放 | 异步化/音量/完成事件/文件播放/codec2 挂点 |
-| AHT30 | 已实现（430行）+ event_bus 发布 + app_init 注册 | 温湿度采集显示、UI 数据通道 | 审计收口 + 单测 + 事件规格确认 |
+| ath30 | 已实现（430行）+ event_bus 发布 + app_init 注册 | 温湿度采集显示、UI 数据通道 | 审计收口 + 单测 + 事件规格确认 |
 | LVGL UI | 六层架构仅脚手架，仅 lvgl_app.c 编译 | 主页/LoRa 会话/设置页，事件驱动刷新 | 全部实装（分里程碑） |
 
 产品目标（需求源头）：微信式语音/文本对话（见 lora 文档）、桌面环境显示、
@@ -91,7 +91,7 @@ i2s_drv(现有)      总线驱动（≈sound card driver）：DMA 读写，不�
    队列 3 条依次播放；
 2. 板端（真机批次）：外放可闻提示音与 8kHz 语音样例，音量 5 档可辨。
 
-## 3. AHT30 方案（审计收口，非重写）
+## 3. ath30 方案（审计收口，非重写）
 
 ### 3.1 需求
 
@@ -102,12 +102,12 @@ R4 PC 单测覆盖（mock i2c）。
 ### 3.2 方案要点
 
 现有实现已含 init/采集/event_bus 发布，按清单收口：
-1. 确认事件类型已在 event_bus_types.h 正式注册（MODULE_ID_AHT30 +
-   EVENT_AHT30_DATA/ERROR，载荷 struct 版本化）；
-2. 确认采集走 tasker 周期任务（Middle 级），间隔从设备树 aht30 节点
+1. 确认事件类型已在 event_bus_types.h 正式注册（MODULE_ID_ath30 +
+   EVENT_ath30_DATA/ERROR，载荷 struct 版本化）；
+2. 确认采集走 tasker 周期任务（Middle 级），间隔从设备树 ath30 节点
    `sample_interval_ms` 读取；
 3. 数据结构审计：温度/湿度定点或浮点统一（建议 milli 度 int32，
-   避免板端软浮点）；CRC 校验（AHT30 状态字节+CRC8）是否已实现；
+   避免板端软浮点）；CRC 校验（ath30 状态字节+CRC8）是否已实现；
 4. tests/ovs_tests 增加 mock i2c 单测（正常/超时/CRC 错误三例）；
 5. docs 命名已统一（本次完成），代码无需改。
 
@@ -126,7 +126,7 @@ R4 全程触摸可用，页面切换 ≤300ms，无阻塞卡顿（业务在 brid
 里程碑 M1（框架跑通）：themes/base 主题 → ui/controls+indicators 基础
   控件（卡片/列表项/气泡/圆形按钮）→ navigator 页面栈 → pages/home
   静态版 → bridge 假数据注入。验收：PC 模拟器+板端均可导航三页。
-里程碑 M2（真数据）：bridge 订阅 EVENT_AHT30_DATA/EVENT_AUDIO_*/LoRa
+里程碑 M2（真数据）：bridge 订阅 EVENT_ath30_DATA/EVENT_AUDIO_*/LoRa
   状态刷新主页；设置页读写音量/设备名。
 里程碑 M3（聊天）：lora/pages 聊天页接 EVENT_LORA_TP_*，录音按钮走
   audio_module 采集 + lora_tp 发送（依赖 lora 批次完成）。
@@ -134,7 +134,7 @@ R4 全程触摸可用，页面切换 ≤300ms，无阻塞卡顿（业务在 brid
 
 铁律：ui/widgets/pages 三层**零业务头文件**（只 include lvgl.h 与层内
 头）；业务依赖只出现在 presenters/bridge；bridge 是全工程唯一同时
-include lora_tp.h/audio_player.h/aht30.h 的地方（对 UI 屏蔽后端，
+include lora_tp.h/audio_player.h/ath30.h 的地方（对 UI 屏蔽后端，
 接口为桥接函数表）；刷新一律事件驱动（bridge 订阅 event_bus 后投递到
 LVGL 线程锁内更新），pages 内禁止轮询。
 
@@ -153,8 +153,8 @@ M2：主页数值随传感器事件变化（PC 用注入事件验证）；M3 与
 
 | 原批次 | 内容 | 规模 | 现归属 |
 |---|---|---|---|
-| T0 ✅ | ATH30→AHT30 文档命名统一 | 已完成 | — |
-| T1 | AHT30 审计收口+单测 | 小 | [HUB] 子批次② |
+| T0 ✅ | ATH30→ath30 文档命名统一 | 已完成 | — |
+| T1 | ath30 审计收口+单测 | 小 | [HUB] 子批次② |
 | T2 | audio_module 异步化+audio_player | 中 | [GUI] 子批次① |
 | T3 | UI 里程碑 M1（框架+主页静态） | 中 | 废弃→[GUI] 子批次② |
 | T4 | lora_tp 传输层 | 大 | [HUB] 子批次③ |
@@ -162,30 +162,30 @@ M2：主页数值随传感器事件变化（PC 用注入事件验证）；M3 与
 
 ## 6. 实现提示词
 
-### 6.1 T1 AHT30 审计收口
+### 6.1 T1 ath30 审计收口
 
 ```
-任务：审计并收口 OVS 的 AHT30 温湿度模块（勿重写，已有实现可用）。
+任务：审计并收口 OVS 的 ath30 温湿度模块（勿重写，已有实现可用）。
 
 必读：.agents/skills/esp32s3-smart-assistant/SKILL.md；
-components/modules/aht30/{aht30.h,aht30.c}；components/core/event_bus/
+components/modules/ath30/{ath30.h,ath30.c}；components/core/event_bus/
 event_bus_types.h（LORA/AHT 相关事件段）；components/dtbs/config/
-ovs.dtb.json 的 aht30 节点；docs/idle_modules_plan.md §3。
+ovs.dtb.json 的 ath30 节点；docs/idle_modules_plan.md §3。
 
 【设计原则】（本任务全程遵守）
 （粘贴 §1 通用设计原则全文）
 
 工作项：
-1. 事件规格：确认/补全 event_bus_types.h 中 MODULE_ID_AHT30 的事件
-   EVENT_AHT30_DATA/EVENT_AHT30_ERROR 及载荷结构（温湿度用 int32
-   milli 单位，注释注明单位），aht30.c 发布点与之一致；
+1. 事件规格：确认/补全 event_bus_types.h 中 MODULE_ID_ath30 的事件
+   EVENT_ath30_DATA/EVENT_ath30_ERROR 及载荷结构（温湿度用 int32
+   milli 单位，注释注明单位），ath30.c 发布点与之一致；
 2. 周期采集：确认采集经 tasker 周期任务（Middle 级），间隔读设备树
    sample_interval_ms（无该键默认 30000，LOGW 提示）；
-3. 健壮性：确认实现 AHT30 CRC8 校验；连续失败 3 次→发 ERROR 事件并
+3. 健壮性：确认实现 ath30 CRC8 校验；连续失败 3 次→发 ERROR 事件并
    停止采样，之后每 5 次周期重试一次恢复（LOGW 记录）；
-4. 单测：tests/ovs_tests 新增 aht30 用例，mock i2c_drv 覆盖三场景：
+4. 单测：tests/ovs_tests 新增 ath30 用例，mock i2c_drv 覆盖三场景：
    正常读取、设备无应答（超时）、CRC 错误；发布事件断言载荷正确；
-5. 禁止改动 aht30.h 现有函数签名；新增接口须经设计评审说明。
+5. 禁止改动 ath30.h 现有函数签名；新增接口须经设计评审说明。
 
 验收：ovs_tests 全绿 + idf.py build 通过；更新 development_log.md。
 ```

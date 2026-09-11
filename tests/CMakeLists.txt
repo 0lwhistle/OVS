@@ -16,6 +16,9 @@ add_executable(ovs_tests
     test_tasker.c
     test_audio.c
     test_nav_stack.c
+    test_hub.c
+    test_ath30.c
+    test_lora_tp.c
 
     # 被测 core 组件
     ${OVS_ROOT}/components/core/mem_pool/mem.c
@@ -38,7 +41,26 @@ add_executable(ovs_tests
 
     # navigator 栈纯逻辑（[GUI] 批次②）
     ${OVS_ROOT}/src/lvgl/navigator/nav_stack.c
+
+    # [HUB] 批次①统一数据接口（契约 I1~I4；sysinfo 用 net_mgr_mock 替身）
+    ${OVS_ROOT}/components/core/i18n/i18n.c
+    ${OVS_ROOT}/thirdparty/cJSON/cJSON.c
+    ${OVS_ROOT}/components/core/sensor_cache/sensor_cache.c
+    ${OVS_ROOT}/components/core/sensor_cache/sensor_cache_port.c
+    ${OVS_ROOT}/components/core/time_svc/time_svc.c
+    ${OVS_ROOT}/components/core/time_svc/time_svc_port.c
+    ${OVS_ROOT}/components/modules/sysinfo/sysinfo.c
+    ${OVS_ROOT}/components/modules/sysinfo/sysinfo_port.c
+    net_mgr_mock.c
+
+    # [HUB] 批次② AHT30 收口（真实模块 + mock i2c/dtree + FreeRTOS 垫片）
+    ${OVS_ROOT}/components/modules/ath30/ath30.c
+    i2c_mock.c
+
+    # [HUB] 批次③ lora_tp（真实实现 + loop mock 驱动回环）
+    ${OVS_ROOT}/components/modules/lora/lora_tp.c
 )
+target_include_directories(ovs_tests PRIVATE ${OVS_ROOT}/tests/shim)
 
 target_include_directories(ovs_tests PRIVATE
     ${OVS_ROOT}/components/core/mem_pool
@@ -51,6 +73,15 @@ target_include_directories(ovs_tests PRIVATE
     ${OVS_ROOT}/components/modules/audio_module
     ${OVS_ROOT}/components/modules/audio_player
     ${OVS_ROOT}/src/lvgl/navigator
+    ${OVS_ROOT}/components/core/i18n
+    ${OVS_ROOT}/components/core/sensor_cache
+    ${OVS_ROOT}/components/core/time_svc
+    ${OVS_ROOT}/components/modules/sysinfo
+    ${OVS_ROOT}/components/modules/net_mgr
+    ${OVS_ROOT}/components/modules/ath30
+    ${OVS_ROOT}/components/modules/lora
+    ${OVS_ROOT}/components/drivers/i2c_drv
+    ${OVS_ROOT}/thirdparty/cJSON
 )
 
 # PC 测试视作 ESP 构建（启用相同代码路径：port 层 pthread 分支由非 ESP 走）

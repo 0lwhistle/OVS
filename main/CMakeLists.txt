@@ -20,9 +20,14 @@ idf_component_register(
         web
         heartbeat
         audio_module
+        audio_player
+        i18n
+        sensor_cache
+        time_svc
+        sysinfo
         st7789
-        aht30
-        cst816s
+        ath30
+        gt967
         lora
         w25q128
         holder

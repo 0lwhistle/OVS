@@ -1,5 +1,433 @@
 # OVS项目开发日志
 
+## 2026-09-10 - I2C(GPIO16/17)排查：串口实锤总线物理卡死（SDA被钳低），锁定硬件层
+
+### 任务目标
+排查 ath30 与触摸（GT967）同时不可用、I2C 全地址扫描无 ACK 的原因。
+（初判"3V3 孤立网络"被用户纠正：3v3 排针由外部电源模块供电，孤立网络
+结论作废。）
+
+### 串口实测证据（复位抓启动日志）
+- 软件配置正确：`I2C config loaded: sda=16, scl=17, freq=100000, pullup=1`，
+  驱动初始化成功。
+- 错误类型为**硬件级**：`i2c.master: I2C transaction timeout detected` +
+  `ESP_ERR_INVALID_RESPONSE`——连 START 都发不出去，不是无设备的干净
+  NAK（那会是 ESP_FAIL）。
+- GT967 探测失败后做总线恢复（SDA 内部上拉输入，SCL 打 9 脉冲）：
+  **"bus recovered" 0 次打印**——SDA 在 4.7K 外部上拉 + 内部上拉并联
+  （≈4.3K）作用下仍被死死钳在低电平。
+- 恢复后全总线扫描 0x03-0x77 无任何 ACK。
+
+### 结论
+SDA（net16）被物理钳低，软件/配置/地址全部排除。假设排序：
+- **H1（最可疑）外部 3.3V 实际没送到器件**：若 ATH.1/Tou.1 实际无电，
+  未上电器件经 SDA/SCL ESD 二极管把总线钳到 ~0.6-0.7V，正好呈现
+  "上拉拉不高、恢复无效、全地址超时"。用户确认过电源模块开着，但
+  需实测器件端电压确认链路。
+- **H2 SDA 对 GND 短路**（焊接桥连/触摸或 ath30 模块引脚顺序与丝印
+  不符，SDA 落在模块 GND 上）。
+- **H3 某器件损坏**（引脚击穿灌电流）。
+
+### 下一步（最小化逐项验证，ATH/Tou 均为排针插座可免焊拔插）
+1. 上电实测：ATH.1 对 GND 电压（应 ~3.3V）；SDA（ATH.4）电平。
+   若 ATH.1 无电 → H1 实锤，检查外部电源接线/共地。
+2. 拔 ath30 复位看扫描；再拔触摸复测；都拔仍卡死 → 断电电阻档在
+   L.9/ATH.4/Tou.3 三点测 net16 对 GND 阻值定位短路区段（H2/H3）。
+3. 顺带实测外部电源模块输出电压（排除过压锁死）。
+4. 总线恢复后扫描应见 0x38（ath30）/0x5D（GT967）。
+
+## 2026-09-10 - 推回正常固件 + 开机黑屏改善（背光前清屏）
+
+### 任务目标
+上会话遗留：设备仍在压测固件上（OVS_RUN_APP_TESTS=1），源码已改回 0 但未
+推送；另做开机"花屏"窗口低成本改善（st7789 init 后立即清屏黑）。
+
+### 完成内容
+- **正常固件推回 ✅**：核对 main.c 两开关均为 0，`ovs_release --ota
+  192.168.2.111` 完整构建推送成功（OVSO 容器 2.1MB，槽 0→槽 1，15s
+  回滚确认通过）。设备 uptime 复查：STA 已连接、Web 200，压测解除。
+- **开机黑屏改善 ✅**：st7789.c init 顺序调整——先置 s_initialized 并
+  st7789_clear(ST7789_BLACK)，再开背光。开背光时 GRAM 上电噪声已被黑屏
+  覆盖，开机窗口从彩噪变黑屏；清屏失败仅 LOGW 不阻断初始化。
+
+### 待解决（沿上会话）
+- D 板块并发压测 OOM：大缓冲/worker 缓冲 PSRAM 化、DMA 分配失败降级。
+- /config 挂载失败（littlefs CORRUPT，addr=0x740000）：格式化开关需扩
+  覆盖 /config 或做一次性格式化。
+- GT967 探测失败触发的 I2C 全总线扫描（无 ACK，硬件问题未解）仍拖慢
+  UI 启动；黑屏改善只治观感，根治依赖 I2C 硬件修复。
+- 一次 OTA 期间 panic（LoadProhibited，疑 standby 双退出竞态）未复现，
+  复发时用新 ELF addr2line。
+
+### 观察
+本次 OTA 脚本提示设备端 SHA256 与本地不一致（镜像校验通过，脚本判一般
+无害）；沿用观察，若复现再查 OVSO 容器打包/传输链路。
+
+## 2026-09-10 - [SPI共享] flash+LCD 并发压测：总线正确性通过，遗留 D 板块 OOM 与 /config 挂载失败
+
+### 任务目标
+验证 W25Q128 与 ST7789 共享 SPI2 总线能否同时正常工作（LCD 持续换页刷屏 +
+flash 并发写读）。
+
+### 做法
+测试固件（OVS_RUN_APP_TESTS=1 + OVS_MEDIA_FORMAT_ON_FIRST_BOOT=1）：
+启动即跑 vfs_stress 全量压测（A 数据完整性/B 目录文件/C 容量碎片/
+D 多任务并发/E 性能），另在 main.c 加 5s 周期 navigator_switch("home"↔
+"settings") 定时器迫使 LCD 持续整页重建刷屏。
+
+### 结果
+- **总线正确性 ✅**：54 项检查 52 过；全程 0 次 SPI Transfer failed、
+  0 次 st7789 写失败、0 panic、约 100 次换页 + 7 次待机进出下 W25Q128
+  写读零数据损坏（含 500KB 碎片化写读）。性能：写 78KB/s、读 750~1160KB/s
+  （LCD 共享下）。
+- **附带修掉 standby UAF**（本次换页压测暴露，此前 OTA 期间 panic 同源）：
+  standby_wake_cb 挂 LV_EVENT_ALL，绘制事件即触发 standby_exit→
+  lv_obj_delete→DELETE 事件→重入再删同对象；改为只监听 PRESSING/CLICKED/
+  GESTURE + 先清标志再 lv_obj_delete_async。复验 7 次进出零崩溃。
+- **遗留1（D 板块 2 失败）**：非总线问题，内部 RAM 耗尽——worker2
+  xTaskCreate 失败 + SPI_DRV ensure_dma_safe 4100B 内部 DMA(caps=0x8)
+  分配失败致 W25Q128 读失败。3×256KB 并发写 + UI 换页 + WiFi/Web 同跑
+  属超极端场景。方案：压测大缓冲/worker 缓冲改 PSRAM；DMA 拷贝失败降级；
+  DMA 内存低水位预留。
+- **遗留2**：/config 挂载失败（littlefs CORRUPT，内部 flash 分区
+  addr=0x740000），现格式化开关不覆盖 /config，需扩覆盖或一次性格式化。
+
+### 设备状态 ⚠️
+设备仍在测试固件上（每次上电自动跑 ~13min 压测并 5s 换页）。源码已把
+OVS_RUN_APP_TESTS / OVS_MEDIA_FORMAT_ON_FIRST_BOOT 改回 0，**尚未 build+OTA
+推回**（用户叫停，下次会话先做）。standby UAF / SPI 修复均在源码中。
+
+### 补充：开机"花屏"窗口（非刷屏故障，用户实测确认）
+重启后到 LVGL 首次刷屏前屏幕显示 GRAM 上电噪声，观感即"花屏"；
+GT967 探测失败触发的 I2C 全总线扫描（逐地址超时，I2C 总线无 ACK 硬件
+问题未解）拖住 UI 启动数分钟，窗口被拉长。抓串口验证该窗口内 0 刷屏
+错误。低成本改善项（未做，下次一并）：st7789 init 完成背光打开后立即
+st7789_clear 黑屏，开机窗口从彩噪变黑屏；根治依赖 I2C 硬件修复。
+
+## 2026-09-10 - 花屏真因：SPI 总线 max_transfer_sz=4096 卡死大块刷屏
+
+### 任务目标
+接上条：整屏补绘后仍"除中央小块外全屏彩噪"，需继续排查。
+
+### 根因（串口实锤）
+ spi_master: check_trans_valid: txdata transfer > host maximum
+ spi_bus_initialize 写死 max_transfer_sz=4096，而 LVGL 局部缓冲整行块
+ 320x20x2=12800B、st7789 自刷分片 320x24x2=15360B 全部 >4096 被拒；
+ <4096B 的小块（时间标签 ~3KB）能过——正是"只有正中间正常"的原因。
+ 此前 st7789_write_data 忽略 spi_drv 返回值，失败完全无感（两个教训：
+ 驱动分层返回值必须透传留痕；-display_ready 补绘方向对但治标）。
+
+### 解决
+- spi_drv.c：bus max_transfer_sz 4096→32768（覆盖 LCD 15360 分片）。
+- st7789_write_data：spi_drv_write 失败 LOGE 留痕。
+- 复验：OTA 后运行态串口 0 次 Transfer failed、无 bytes failed、无 panic。
+
+### 待观察
+- 一次 OTA 期间 panic（LoadProhibited，"standby exited" 连打两次后），
+  本次复验未复现；疑 standby 页双退出事件竞态，复发时用新 ELF addr2line。
+
+## 2026-09-10 - 修复"仅中央小块正常、其余全屏彩噪"：LVGL/st7789 初始化竞态
+
+### 任务目标
+真机屏幕除正中间（每秒刷新的时间标签）外全是彩色噪点，仅该小块正常。
+
+### 根因
+lvgl_app 依赖仅 DEPS_DTREE，与 st7789（同为 DEPS_DTREE 可选模块）无顺序约束。
+lvgl_app 先启动时，首帧整屏 flush 调 st7789_blit 返回 NOT_INIT 被丢弃
+（flush_cb 仍调 lv_display_flush_ready，LVGL 以为已上屏），面板 GRAM 保留
+上电随机数据；此后只有时间标签等增量脏区真正写屏 → 全屏噪声 + 中央小块正常。
+
+### 解决
+lvgl_app：st7789 已初始化则直接 lv_obj_invalidate 整屏补绘；否则订阅
+EVENT_DISPLAY_READY，就绪回调（持 lvgl_app_lock）整屏失效重绘一次。
+未改成硬依赖，保住"无屏板仍可 Web 管理"的设计。
+
+### 验证
+idf.py build 通过；OTA 推送 192.168.2.111，15s 回滚确认通过，待用户目视确认。
+
+## 2026-09-10 - 修复屏幕"局部花屏"：CJK 字体缺字形（缺字渲染为空白）
+
+### 任务目标
+真机屏幕中间文字部分显示不出来（用户描述"局部花屏，有些字显示不出来"）。
+
+### 根因
+UI 字体 `lv_font_source_han_sans_sc_14/16_cjk` 是 LVGL 自带的**演示子集字体**
+（lv_font_conv 文档里的日语示例字符集，仅 1433 字形），未覆盖 UI 简体字。
+与 zh-CN.json + src/lvgl 源码实际用字比对，缺 **89 字**
+（屏/网/设/开/间/页/验…），缺字形字符 LVGL 渲染为空白。
+
+### 解决
+- 用 lv_font_conv 以「UI 用字 ∪ 原演示字符集 ∪ 常用标点」共 1390 符号重新
+  生成 14pt/16pt 两个字体（--bpp 4 --no-compress，源字体
+  thirdparty/lvgl-9.5.0/scripts/built_in_font/SourceHanSansSC-Normal.otf）。
+- 修正生成文件的 include 为 `../../lvgl.h`（lv_font_conv 默认写 lvgl/lvgl.h，
+  编译不过）；比对确认缺字为 0。
+- 字体 .c 增大（16pt 约 1.2MB 源码），app 分区余 21%，无压力。
+
+### 验证
+idf.py build 通过；ota_push.sh 推送 192.168.2.111，15s 回滚确认通过。
+
+## 2026-09-10 - 真机 bring-up：ST7789V 驱动迁移 + GT967 触控组件 + I2C 总线诊断
+
+### 任务目标
+底板到手（/dev/ttyACM0，IP 192.168.2.111），烧录验证三任务成果；按
+用户提供的 Demo（thirdparty/Demo_STM32F103RCT6_Hardware_SPI）适配
+ST7789V 屏；触控芯片实为 GT967（单层 5 点电容，GT9xx 系），替换
+cst816s。
+
+### 完成内容
+- **真机首烧**：串口烧录 app+spiffs；发现 web 首次部署会格式化
+  SPIFFS，独立放 spiffs.bin 的 /i18n/*.json 被抹掉（i18n 404）——
+  修复：mybuild.sh 打包前把 assets/i18n/*.json 拷入 vue dist/i18n，
+  随 web_data 写入（真机已验证 /i18n/zh-CN.json 200、i18n 模块
+  92 词条加载 OK）。
+- **st7789**：迁移 Demo 的 ST7789V 出厂初始化序列（PORCTRL/GCTRL/
+  VCOMS/LCMCTRL/VDVVRHEN/VRHS/VDVS/FRCTRL2/PWCTRL0/正负伽马，
+  COLMOD 按 Demo 用 0x05），引脚仍走设备树（DC=47/RST=21/BL=38）。
+- **gt967 新组件**（components/modules/gt967，替代 cst816s 注册）：
+  GT9xx 16 位寄存器协议（写 2B 寄存器指针+读）、复位时序选址
+  （INT 低→0x5D/高→0x14）、状态寄存器轮询发布 EVENT_TOUCH_PRESS、
+  设备树 gt967-touch 节点（int_pin=18/rst_pin=39/max 240x280/
+  swap_xy/mirror_x/mirror_y 方向修正键）。探测失败路径带全总线
+  扫描诊断（保留，bring-up 用）。
+- **设备树/OTA**：OTA 推送两轮（app+dtb 容器），dtb A/B 翻转正常，
+  slot 加载验证 OK。
+
+### 验证（真机）
+- 14/16 模块 READY：UI（LVGL 运行时启动）、Web（端口 80，
+  /api/net/info 真数据 rssi=-27/mac 真实）、i18n、lora_tp、
+  sensor_cache/sysinfo/time_svc、st7789（背光亮、init OK）全通。
+- **未通（硬件层）**：I2C 总线全地址扫描（0x03~0x77）无任何设备
+  ACK——ath30(0x38) 与 GT967(0x5D/0x14) 两个独立芯片同时 NACK，
+  另有 I2C transaction timeout（总线疑似被拉死）。软件侧已排除
+  （驱动/设备树/时序正确）。待用户检查：SDA=GPIO16/SCL=GPIO17
+  焊接、上拉电阻、传感器供电。
+- W25Q128：JEDEC 识别正常（16MB），LittleFS 分区未格式化（新片，
+  预期），/audio 已挂载成功一次，其余分区需
+  OVS_MEDIA_FORMAT_ON_FIRST_BOOT=1 烧一次。
+
+### 代码变更
+- 新增：components/modules/gt967/。
+- 修改：components/modules/st7789/st7789.c（Demo 序列）、
+  scripts/mybuild.sh（i18n 并入 web_data）、components/dtbs/config/
+  ovs.dtb.json（touchscreen→gt967-touch）、src/app/app_init.c、
+  CMakeLists.txt、main/CMakeLists.txt。
+
+## 2026-09-10 - [HUB] lora_tp 迁入 lora 组件 + ath30 命名对齐
+
+### 任务目标
+应用户要求把 lora_tp 全部内容迁移进 components/modules/lora，修复依赖；
+对齐仓库全局 ath30 命名（模块实际名称，components/modules/ath30/
+ath30.c/.h、compatible="ath30-sensor"、枚举 ath30_OK，均为外部全局
+改名后的既成事实）。
+
+### 完成内容
+- **迁移**：lora_tp.{h,internal.h,c} 三文件移入 components/modules/lora/
+  并删除 lora_tp 组件目录；lora 组件 CMakeLists 合并 SRCS（lora.c+
+  lora_tp.c）与 REQUIRES（+event_bus/tasker_api/dtbs），分层注释保留
+  （同组件内仍是两层：链路驱动 lora.c / 传输服务 lora_tp.c，对外只
+  暴露 lora_tp.h）；根 CMakeLists 移除 lora_tp 组件注册；main
+  REQUIRES 移除 lora_tp（lora 原已在列）；tests 源路径/include 目录
+  同步改指 lora 组件。
+- **ath30 对齐**：tests/{test_aht30.c→test_ath30.c、CMakeLists 路径、
+  dtree_mock compatible "ath30-sensor"}；此前我误将外部改名当损坏
+  "修回" aht30（tests/CMakeLists 三处），已按用户确认改回 ath30。
+
+### 验证
+- ovs_tests **388/388 绿**；idf.py build **通过**（app 余 21%）；PC 模拟绿。
+
+## 2026-09-10 - [HUB] 批次③ T4 lora_tp LoRa 可靠传输层（三批次全部交付）
+
+### 任务目标
+按 lora_transport_design.md 实现 components/modules/lora_tp：异步会话制
+发送、滑窗 ARQ、消息级 CRC32、断点续传、UNRELIABLE 直通广播、收端
+sink 路径；mock 回环覆盖 §7 六场景；event_bus 通知接入。
+
+### 完成内容
+- **组件**：lora_tp.h（§2 公共 API 冻结集：send/cancel/query/register_rx/
+  set_rx_sink/get_stats/init/deinit/tick + lora_tp_deps_t 依赖注入 +
+  lora_drv_api_t 驱动抽象）+ lora_tp_internal.h（私有实例 API：公共
+  API 是单例，PC 回环测试经内部实例接口跑 A/B 双实例对发）。
+- **帧与子头**：空口帧按 lora_protocol.md §2.1（magic 0x4C/ver/type/
+  flags/dst/src/seq/len，小端，载荷 200B 上限）；DATA 载荷前置本组件
+  消息子头 12B = msg_id(2)+offset(2)+total(4)+crc32(4)（§5.1 的扩展版，
+  rsv 定为片偏移 + 4B 消息级 CRC32）；DATA_ACK 8B = msg_id+status+
+  contiguous（累积确认断点）。
+- **ARQ 设计要点**：收端只按序落盘（offset==contiguous，乱序/重复片
+  ACK 断点不落盘），使 CRC32 链式增量计算对 RAM 与 sink 路径统一；
+  发端整窗重试 max_retries 耗尽 FAILED(TIMEOUT)；ACK 的 contiguous <
+  cursor（对端丢重组状态）时发端回退断点整段重传，配合收端
+  (src,msg_id) 幂等记忆（已交付消息只补 ACK）避免重复投递与死锁。
+  同步回环下窗口发送中收到 ACK 即收尾会话的场景已做状态保护。
+- **QoS**：RELIABLE 分片+ARQ；UNRELIABLE 单帧直发（NOACK，上限 188B
+  净荷）；可靠广播 API 层拒绝（ERR_PARAM）；PRI 仲裁标志已解析（VOICE
+  属 v2 无生产者，挂起/续传钩子留）。
+- **事件**：event_bus_types.h 追加 EVENT_LORA_TP_TX_DONE(0x0005)/
+  TX_FAILED(0x0006)/RX_COMPLETE(0x0007)/PROGRESS(0x0008，≥5% 台阶节流)
+  + event_lora_tp_t 载荷（token/peer/len/err/permille）；LORA 域 0x0004
+  已被 EVENT_LORA_READY 占用故从 0x0005 起。
+- **配置**：ovs.dtb.json lora 节点下新增 lora_tp 子节点（compatible=
+  "lora-tp"：local_address/tx_queue_depth/window/max_retries/msg_max_
+  bytes/rx_inline_max_bytes/ack_timeout_ms_p*/tx_gap_ms_p*）；组件内
+  DTREE 读取+缺省兜底（树无节点也能工作）；档位数值为手册核实前
+  占位值（代码与 JSON 均有注释标记）。
+- **接入**：app_init 注册 "lora_tp"（optional，依赖 tasker；lora 驱动
+  在 mod 内一并拉起，缺席降级不阻塞）；10ms tasker Little 任务驱动
+  lora_tp_tick；main/CMakeLists.txt 补 REQUIRES（audio_player/i18n/
+  sensor_cache/time_svc/sysinfo/lora_tp，此前靠传递依赖侥幸通过，本次
+  补全）。
+- **单测**：tests/test_lora_tp.c（loop mock 双实例交叉路由+丢帧/断链/
+  CRC 注入故障注入）覆盖 §7 六场景：8KB 成功逐字节一致、30% 丢帧
+  ARQ 兜底、断链 300ms 断点续传、CRC 注入拒收 FAILED(PEER)、广播规
+  则、6KB sink 落盘+超限拒收，另加取消/查询/队列满 7 组共 63 项。
+
+### 验证（本机实跑，无板）
+- ovs_tests：**388 passed / 0 failed**；
+- idf.py build：**通过**（app 分区余 21%）；PC 模拟 build 通过。
+
+### 待解决问题
+- 两台设备 local_address 需在板端分别配置（现镜像相同，测试指南已
+  注明）；
+- LEVEL 档位数值、200B 单帧上限、AT+PACKET=3 均待 DX-LR22 手册核实
+  （hardware_test_guide §2.3.4 清单）；
+- 真机联调归集成阶段（语音流/业务命令层不在本批范围）。
+
+### 下一步计划
+- [HUB] 三批次全部交付；集成阶段（GUI lora_tp 事件接聊天页/提示音钩
+  子、真机批次）由 board 协调。
+
+### 代码变更
+- 新增：components/modules/lora_tp/{lora_tp.h,lora_tp_internal.h,
+  lora_tp.c,CMakeLists.txt}、tests/test_lora_tp.c。
+- 修改：components/core/event_bus/event_bus_types.h（追加 4 事件+载荷）、
+  components/dtbs/config/ovs.dtb.json（lora_tp 节点）、src/app/app_init.c
+  （注册+tick 任务）、main/CMakeLists.txt（REQUIRES）、CMakeLists.txt
+  （组件注册）、tests/{CMakeLists.txt,test_main.c}、
+  docs/{development_log.md,task_board.md,hardware_test_guide.md §2.3}。
+
+## 2026-09-10 - [HUB] 批次② T1 ath30 收口
+
+### 任务目标
+按 idle_modules_plan §3 清单收口（非重写）：设备树采集间隔、失败停采
++周期重试、mock i2c 三场景单测；ath30.h 签名零变更。
+
+### 完成内容
+- **init 自动启动周期采集**（tasker Middle，原 init 只采不启动）：间隔
+  读取设备树 `sample_interval_ms` → 兼容旧键 `measure_interval_ms` →
+  缺省 30000+LOGW（原 1000ms 缺省废弃）；start 时复位失败计数/停采
+  状态。
+- **失败降级与恢复**（ath30_periodic_task_fn 重构）：连续失败计数，
+  第 1/2 次仅 LOGW，第 3 次发布一次 EVENT_SENSOR_ERROR + 停采
+  （`sampling suspended`）；停采后每 5 个周期重试一次，成功即
+  `sensor recovered` 恢复正常采集（此前每次失败都发 ERROR 会刷屏且
+  永不恢复）。
+- **事件 milli 说明**：event_sensor_temp_humidity_t 既有 float 载荷
+  维持不变（event_bus_types.h 只追加原则，不改他人/既有 struct），
+  milli 换算由消费层 sensor_cache 完成（批次①已实现），符合 §3
+  "定点或浮点统一"的建议性条款。
+- **设备树**：ovs.dtb.json ath30 节点追加 `"sample_interval_ms": 30000`
+  （measure_interval_ms 保留兼容）。
+- **单测**：tests/test_ath30.c（12 项）+ i2c_mock.c（三场景可切换：
+  NORMAL=50%RH/25°C 合法帧+正确 CRC8、NO_ACK、BAD_CRC）+ FreeRTOS/
+  esp_timer 垫片（tests/shim/，仅测试用）；覆盖正常事件载荷、无应答
+  3 次停采+单次 ERROR、CRC 错误码、停采窗口触发次数≤1、恢复采样、
+  stop/deinit 幂等。
+- **mock 修复**：tests/dtree_mock.c 的 set_int 原以字符串指针存节点，
+  与 find_by_compatible 返回的节点指针不相等导致键查不到——改为内部
+  先解析节点再存指针（测试基建修复，生产行为无涉）。
+
+### 验证（本机实跑，无板）
+- ovs_tests：**325 passed / 0 failed**（含新增 [HUB-T1] 12 项）；
+- idf.py build：**通过**（app 分区余 22%）；PC 模拟 build 通过。
+
+### 待解决问题
+- 真机项归 hardware_test_guide §2.2（T2.2.1 间隔/T2.2.2 断线停采恢复）。
+
+### 下一步计划
+- [HUB] 批次③ T4 lora_tp（lora_transport_design §9，可跨会话）。
+
+### 代码变更
+- 修改：components/modules/ath30/ath30.c（收口，签名未动）；
+  components/dtbs/config/ovs.dtb.json（追加 1 键）；
+  tests/{test_ath30.c 新增, i2c_mock.c/.h 新增, dtree_mock.c 修复,
+  shim/ 新增, CMakeLists.txt, test_main.c}；
+  docs/{development_log.md, task_board.md, hardware_test_guide.md §2.2}。
+
+## 2026-09-10 - [HUB] 批次① 统一数据接口（契约 I1~I4）+ 三方集成收口
+
+### 任务目标
+接续三任务并行开发：实现 [GUI]/[WEB] 已预留调用点的四组件
+（i18n/sensor_cache/time_svc/sysinfo），翻转 OVS_BRIDGE_HUB_REAL 与
+WEB_API_USE_HUB 两开关完成三方接真，全量回归绿。
+
+### 完成内容
+- **i18n**（components/core/i18n/）：契约 I1。cJSON 解析
+  `<base>/<lang>.json`（schema {lang,ver,strings}，扁平 KV 深拷贝+
+  qsort/bsearch 查找）、热切换（失败保持原语言）、未命中回退 label 原文
+  +每种 label 节流 LOGW（≤32 条）、非法值跳过不失效；附加
+  i18n_set_base_path（PC 测试）/i18n_deinit。非线程安全（约定 UI 任务
+  上下文调用，Web 不经此组件直接读文件）。
+- **sensor_cache**（components/core/sensor_cache/）：契约 I2。订阅
+  EVENT_SENSOR_TEMP_HUMIDITY（float→milli 换算）与 EVENT_SENSOR_ERROR
+  （置 invalid），get 换算 age_ms；互斥锁+单调时基经 sensor_cache_port
+  移植层（ESP=FreeRTOS+esp_timer / PC=pthread+CLOCK_MONOTONIC，单文件
+  双分支，业务 .c 零条件编译）。
+- **time_svc**（components/core/time_svc/）：契约 I4。uptime 时钟
+  （time_svc_port 同风格移植层），synced 恒 false；NTP 桩
+  time_svc_ntp_enable/time_svc_set 返回 TIME_SVC_ERR_FAIL + TODO 注释。
+- **sysinfo**（components/modules/sysinfo/）：契约 I3。net_info_t 沿用
+  net_mgr.h 的 net_mode_t（NET_MODE_OFF/STA/AP，恰为 WEB 预写分支比较
+  名）；net_mgr_get_status（mode/ssid/rssi/switching）+ 移植层
+  esp_netif 查 ip/netmask/gw/mac（PC stub 静态值）；sysinfo_device_get
+  （fw 版本 esp_app_desc + uptime）。未改 net_mgr/wifi 任何文件。
+- **语言包与打包**：assets/i18n/{zh-CN,en-US}.json（92 键=WEB locales
+  种子 90 + GUI 域 HOME_NET/STANDBY_HINT，ver=2，双语键集一致，GUI 页面
+  实际使用的 13 个 label 全覆盖）；根 CMakeLists.txt SPIFFS 镜像源改为
+  build/spiffs_root 暂存目录（configure 期 file(COPY) ovs.dtb.json +
+  assets/i18n/，CMAKE_CONFIGURE_DEPENDS 跟踪源变更），/i18n/ 与设备树
+  同镜发布，WEB /i18n/<lang>.json 路由读同一份。
+- **集成收口（GUI/WEB 授权的两处翻转）**：src/lvgl/CMakeLists.txt
+  OVS_BRIDGE_HUB_REAL=1 + REQUIRES 补 i18n/sensor_cache/sysinfo/
+  time_svc；modules/web/CMakeLists.txt WEB_API_USE_HUB=1 + REQUIRES 同
+  补；web_api_sysinfo.c 零改动（枚举名恰好命中预写分支）。
+- **app_init**：[批4.5] 注册 i18n/time_svc/sensor_cache/sysinfo（均
+  optional，缺席降级；i18n 依赖 net_stack[批2] 内 web_spiffs_init 先行
+  挂载 /spiffs，故排序其后）。
+- **他域最小修复（报备）**：src/lvgl/bridge/bridge.c 接真后 mock 静态
+  存储未被引用触发 -Werror，将 s_mock_volume/s_mock_lang/mock 词表分别
+  以 !OVS_BRIDGE_AUDIO / !OVS_BRIDGE_HUB_REAL 宏包裹，零逻辑改动。
+
+### 验证（本机实跑，无板）
+- ovs_tests：**308 passed / 0 failed**（新增 test_hub.c 74 项：i18n
+  加载/切换/坏包/回退/节流、sensor_cache 数据/更新/错误/坏载荷事件注
+  入、time_svc 时钟/桩、sysinfo STA/AP 双态；net_mgr_mock.c 提供
+  net_mgr_get_status 替身）；
+- idf.py build（ESP-IDF v6.0.1，esp32s3）：**通过**，build/spiffs_root
+  确认含 i18n/{zh-CN,en-US}.json；
+- PC 模拟 build **通过**；ovs_ui_smoke **17/17**（sim 仍走 mock 分支，
+  语义未变）。
+
+### 待解决问题
+- 板端 /spiffs 挂载顺序：i18n init 依赖 web_spiffs_init（main.c 注入
+  net_stack），holder 拓扑仅按批序保证，若未来 web 提前失败 i18n 降级
+  （`_(label)` 回退键原文），可接受；
+- sysinfo AP 模式下 esp_netif AP 接口 IP 查询、ath30 真实数据→快照链
+  路归真机验证（hardware_test_guide §2.1 T2.1.1~T2.1.4）。
+
+### 下一步计划
+- [HUB] 批次② T1 ath30 收口（idle_modules_plan §3 清单）；
+- [HUB] 批次③ T4 lora_tp（lora_transport_design §9）。
+
+### 代码变更
+- 新增：components/core/{i18n,sensor_cache,time_svc}/、
+  components/modules/sysinfo/、assets/i18n/{zh-CN,en-US}.json、
+  tests/{test_hub.c,net_mgr_mock.c}。
+- 修改：CMakeLists.txt（组件注册+SPIFFS 暂存打包）、
+  src/lvgl/{CMakeLists.txt,bridge/bridge.c（最小宏包裹）}、
+  components/modules/web/CMakeLists.txt（开关+REQUIRES）、
+  src/app/app_init.c（[批4.5] 注册）、tests/{CMakeLists.txt,test_main.c}、
+  docs/{development_log.md,task_board.md,hardware_test_guide.md §1/§2.1}。
+
 ## 2026-09-10 - [GUI] T2 音频升级（批次①）+ LVGL 六层 UI 实装（批次②）全部交付
 
 ### 任务目标
@@ -209,7 +637,7 @@ Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合�
 
 ### 完成内容
 - **新建 docs/hardware_test_guide.md**：三任务共享成果文档，章节归属
-  [HUB]=§1 全局前置/§2 数据接口+AHT30+lora_tp、[GUI]=§3 音频+LVGL、
+  [HUB]=§1 全局前置/§2 数据接口+ath30+lora_tp、[GUI]=§3 音频+LVGL、
   [WEB]=§4 访问/Dashboard/OTA 实测、§5 已知限制（append-only）；
   每测试项固定格式：前置条件→步骤→预期结果（串口日志关键字/界面
   表现）→排查点。骨架已建，各任务会话中填充自己章节。
@@ -234,16 +662,16 @@ Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合�
 ## 2026-09-09 - 三任务吸收原批次 T1/T2/T4（three_tasks_plan.md 全量改版）
 
 ### 任务目标
-按用户要求把原闲时批次 T1(AHT30 收口)/T2(音频)/T4(lora_tp) 并入三个
+按用户要求把原闲时批次 T1(ath30 收口)/T2(音频)/T4(lora_tp) 并入三个
 并行任务对话，重新分配并更新提示词。
 
 ### 完成内容
-- **分配**：[HUB] 数据中枢 = 统一数据接口 + T1 AHT30 收口（子批次②）+
+- **分配**：[HUB] 数据中枢 = 统一数据接口 + T1 ath30 收口（子批次②）+
   T4 lora_tp（子批次③，数据服务域）；[GUI] 板端体验 = T2 音频升级
   （子批次①，音频消费者是板端 UI）+ LVGL 蓝白界面（子批次②）；
   [WEB] 不变。three_tasks_plan.md 全量改版：§1 拆分表加"吸收批次"列、
-  §2 边界更新（GUI 增持 audio_module/audio_player，HUB 增持 aht30/lora_tp，
-  aht30.h 签名不得变更、lora 驱动对外行为不得改）、新增 I7/I8 域内接口
+  §2 边界更新（GUI 增持 audio_module/audio_player，HUB 增持 ath30/lora_tp，
+  ath30.h 签名不得变更、lora 驱动对外行为不得改）、新增 I7/I8 域内接口
   契约（跨任务只经 event_bus，禁 include 对方头）、§5/§6/§7 三份提示词
   改为子批次制（跨会话进度以 task_board 条目交接）、新增 §8 原批次去向
   对照表。
@@ -291,7 +719,7 @@ Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合�
   落地；三个会话执行中的 REQ/BREAK 均以 task_board.md 为准。
 
 ### 下一步计划
-三个对话分别投喂 §5/§6/§7 提示词并行开发；T1(AHT30)/T2(音频)/T4(lora_tp)
+三个对话分别投喂 §5/§6/§7 提示词并行开发；T1(ath30)/T2(音频)/T4(lora_tp)
 批次不变，待并行任务完成后插空执行。
 
 ### 代码变更
@@ -299,25 +727,25 @@ Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合�
   docs/idle_modules_plan.md（T3 废弃标注）；docs/development_log.md 本条目。
   无代码改动。
 
-## 2026-09-09 - 闲时模块计划定稿（docs/idle_modules_plan.md：lora/音频/AHT30/UI）+ ATH30 命名勘误
+## 2026-09-09 - 闲时模块计划定稿（docs/idle_modules_plan.md：lora/音频/ath30/UI）+ ATH30 命名勘误
 
 ### 任务目标
-确定 lora、MAX98357A 音频、AHT30、LVGL UI 四模块的需求与方案，产出
+确定 lora、MAX98357A 音频、ath30、LVGL UI 四模块的需求与方案，产出
 闲时任务实现提示词（仅方案与提示词，不写实现代码）。
 
 ### 完成内容
-- **docs/idle_modules_plan.md**：现状盘点（aht30 已实现待收口/audio_module
+- **docs/idle_modules_plan.md**：现状盘点（ath30 已实现待收口/audio_module
   阻塞式待异步化/UI 六层脚手架待实装/lora 设计已定稿待实现）；通用设计
   原则块（模块化/Linux 分层/错误处理/核心模块使用/可移植性/验证纪律，
   供逐字复制进各提示词）；音频方案仿 Linux 声卡栈三层（i2s_drv→
   audio_module 演进为 PCM 设备抽象：异步写/软件音量/SD 静音→新增
-  audio_player 播放队列+codec2 解码挂点）；AHT30 审计收口清单（事件
+  audio_player 播放队列+codec2 解码挂点）；ath30 审计收口清单（事件
   注册/tasker 周期/CRC8/降级/单测）；UI 六层实装三里程碑（M1 框架+
   假数据主页，M2 真事件，M3 聊天页接 lora_tp）与零业务 include 铁律；
   批次 T0-T5 依赖表；T1/T2/T3 三份自包含提示词，T4 引用
   lora_transport_design.md §9。
-- **ATH30→AHT30 命名勘误**：docs/ 下 7 个文件统一修正（真实芯片奥松
-  AHT30），代码组件 aht30 本就正确，零残留已验证。
+- **ATH30→ath30 命名勘误**：docs/ 下 7 个文件统一修正（真实芯片奥松
+  ath30），代码组件 ath30 本就正确，零残留已验证。
 
 ### 待解决问题
 - T4 依赖 DX-LR22 手册 6 项核实（lora_protocol.md §10）。
@@ -327,7 +755,7 @@ Network 配网界面化、Firmware OTA 上传升级界面（前后端双重合�
 
 ### 代码变更
 - 新增 docs/idle_modules_plan.md；docs/development_log.md 本条目；
-  docs/diy-smart-assistant/ 下 7 个 md 命名勘误（ATH30→AHT30）。无代码改动。
+  docs/diy-smart-assistant/ 下 7 个 md 命名勘误（ATH30→ath30）。无代码改动。
 
 ## 2026-09-09 - LoRa 传输服务层设计方案定稿（docs/lora_transport_design.md，未实现）
 
@@ -398,7 +826,7 @@ LoRa协议混写）后，按用户收敛的需求（微信式语音/文本对话
 ### 代码变更
 - 新增 docs/lora_protocol.md；docs/development_log.md 本条目。无代码改动。
 
-## 2026-09-09 - 修复 OTA 纯 app 推送 500 "invalid state"（未提交，随用户 lora/aht30/扬声器开发一并提交）
+## 2026-09-09 - 修复 OTA 纯 app 推送 500 "invalid state"（未提交，随用户 lora/ath30/扬声器开发一并提交）
 
 ### 任务目标
 `ota_push.sh --app-only`（纯 app 流，不带设备树）推送时设备返回 HTTP 500
@@ -421,7 +849,7 @@ OVSO 容器分支（内有 ota_begin）故从未暴露；--app-only 是纯 app �
 
 ### 注意
 - task_wdt 在 OTA 上传期间报 web 任务忙为既有无害现象，未改动。
-- 本条目与改动均未提交（用户并行开发 lora/aht30/扬声器中）。
+- 本条目与改动均未提交（用户并行开发 lora/ath30/扬声器中）。
 
 # OVS项目开发日志
 
@@ -429,7 +857,7 @@ OVSO 容器分支（内有 ota_begin）故从未暴露；--app-only 是纯 app �
 
 ### 任务目标
 REFACTORING_PLAN Phase 0a（C1-C10/C16/C17）：清除陈旧头副本、空壳与
-备份残留、未引用组件/拷贝。按用户要求不提交（用户并行开发 lora/aht30/
+备份残留、未引用组件/拷贝。按用户要求不提交（用户并行开发 lora/ath30/
 扬声器中），改动全部留在工作区。
 
 ### 完成内容
@@ -440,8 +868,8 @@ REFACTORING_PLAN Phase 0a（C1-C10/C16/C17）：清除陈旧头副本、空壳�
   （net_mgr 本就含 dtbs，无需补）。
 - **eventbus_api 空壳组件删除（C5）**：目录 + 根 CMake + main REQUIRES。
 - **空壳文件删除（C9）**：w25q128/storage_module.c、st7789/display_module.c、
-  lora/wireless_module.c、cst816s/touch_module.c、aht30/sensor_module.c
-  （0-1 行，均无引用；不影响用户正在开发的 lora/aht30 主文件）。
+  lora/wireless_module.c、cst816s/touch_module.c、ath30/sensor_module.c
+  （0-1 行，均无引用；不影响用户正在开发的 lora/ath30 主文件）。
 - **备份残留删除（C10）**：main.c.bak、main.c.backup、CMakeLists.txt.bak、
   event_bus_types.h.bak、w25q128.c.bak、vfs.c.bak、diy-smart-assistant ×4。
 - **其他（C7/C8/C16/C17）**：thirdparty/littlefs-2.11.3（1.3 万行零引用）
@@ -454,7 +882,7 @@ idf.py build 通过（1.52MB，ota 余 39%）；ovs_tests 89/89 全绿；
 eventbus_api/空壳/备份零残留引用。
 
 ### 注意
-- 本条目与 Phase 0a 改动均未提交，随用户 lora/aht30/扬声器开发一并提交。
+- 本条目与 Phase 0a 改动均未提交，随用户 lora/ath30/扬声器开发一并提交。
 - drivers/gpio、drivers/led 删除（C11）未做——gpio 引用核对工作量较大，
   建议与 power_srv 状态灯（12.4）一并处理。
 
@@ -470,7 +898,7 @@ Phase 1 第三项（REFACTORING_PLAN 4.4）：holder 依赖拓扑编排取代 ma
 ### 完成内容
 - **src/app/app_init.c/h**：注册表 11 模块——required 6 个（event_bus/
   tasker/dtree/w25q128/ovs_vfs/net_stack，依赖链 批0→批1→批2），optional
-  5 个（st7789/cst816s/aht30/heartbeat/lvgl_app）。VFS 挂载逻辑自 main.c
+  5 个（st7789/cst816s/ath30/heartbeat/lvgl_app）。VFS 挂载逻辑自 main.c
   迁入（mod_vfs，含 OVS_MEDIA_FORMAT_ON_FIRST_BOOT 过渡逻辑）。
   net_stack 经函数指针桥接（app_init_set_net_stack，main.c 注入
   net_stack_init），OVS_ENABLE_NET=0 时模块不注册，语义不变。原调用点
@@ -495,13 +923,13 @@ Phase 1 第三项（REFACTORING_PLAN 4.4）：holder 依赖拓扑编排取代 ma
    heartbeat 11ms / lvgl_app 41ms（holder_print_status）；
 2. 可选模块降级：OVS_FORCE_FAIL_MODULE="st7789" 构建验证——st7789 置
    ERROR、系统降级续跑（LVGL/Web/ API 全存活），/api/modules 如实反映；
-   另 cst816s/aht30 因外设未接线真实失败，同样降级续跑（双重复证）；
+   另 cst816s/ath30 因外设未接线真实失败，同样降级续跑（双重复证）；
 3. 订阅者 ≥6：实测 7 个（web 事件桥 ×7）。
    附加: /api/modules、/api/status(rssi=-37，C12 heartbeat 接线顺带修复)、
    6 分钟稳定性监控零异常、OTA 双向验证。
 
 ### 待解决问题
-- cst816s/aht30 init 失败因外设未接线（用户确认），接线后自动转 ready。
+- cst816s/ath30 init 失败因外设未接线（用户确认），接线后自动转 ready。
 - WS 推送长稳观察；Phase 1 剩余增强（开机页模块状态 UI）随 Phase 3。
 
 ### 下一步计划
@@ -541,7 +969,7 @@ REFACTORING_PLAN v1.1 Phase 1 前两项：5.1 event_bus 四修复+池化、
   ESP 头依赖收缩（去 esp_log/gptimer/freertos，统一 LOGx），新增
   tasker_port.{h,c}（时基+超时定时器移植层，PC 端定时器 no-op）。
 - **依赖统一（C2/C6 部分）**：删 include/{event_bus,tasker}.h 陈旧副本；
-  8 个消费方（audio/heartbeat/cst816s/aht30/web/lora/w25q128/main）
+  8 个消费方（audio/heartbeat/cst816s/ath30/web/lora/w25q128/main）
   REQUIRES tasker → tasker_api。
 - **PC 门禁 ovs_tests 扩至 89 用例**（mem 41 + event_bus + tasker），
   10 轮连跑全绿；test_main.c 统一入口。
@@ -580,8 +1008,8 @@ REFACTORING_PLAN v1.1 Phase 1 前两项：5.1 event_bus 四修复+池化、
 
 ### 完成内容
 - **普查**：全仓库 malloc 族调用点 18 文件 ~125 处；11 个组件实查为零
-  （ota/net_mgr/aht30/cst816s/lora/internal_flash/heartbeat/led/gpio/
-  logger/ovs_vfs——静态缓冲为主），lora/aht30 零改动（用户领地未碰）。
+  （ota/net_mgr/ath30/cst816s/lora/internal_flash/heartbeat/led/gpio/
+  logger/ovs_vfs——静态缓冲为主），lora/ath30 零改动（用户领地未碰）。
 - **机械迁移 16 文件 113 处**（python 脚本：词边界替换 + 自动插 mem.h
   include）+ st7789 重跑 4 处 + display_port/spi_drv/st7789 的 6 处
   heap_caps_malloc 改 mem_dma_alloc/mem_heap_alloc——**业务代码原生
@@ -750,7 +1178,7 @@ drop-in 接口 + 8B 分配头记账 + 模块桶归属 + magic 防护 + 定长块
     /api/status rssi 恒 0、hardware_notes_for_software.md v3.3 引脚表与
     接线图/设备树大面积冲突（LoRa/LCD_RST/LED/I2S 引脚）。
   - 核心判断：主线（net_mgr/ota+dtb A/B/ovs_vfs/web）真机验证保留加固；
-    st7789/cst816s/aht30/lora/audio_module/holder 约4600行"写完未接线"
+    st7789/cst816s/ath30/lora/audio_module/holder 约4600行"写完未接线"
     属半成品资产，盘活而非重写；LVGL 库本身缺失是最大空白。
   - 架构设计：启用 holder 依赖拓扑编排替代 main.c 手工序列（required 仅5个，
     人机类失败降级无屏运行）；event_bus 四修复（锁外回调/内存池/统计原子/
@@ -1591,7 +2019,7 @@ VFS 内部实现：
      从总线节点读属性，节点名解析 host/port；
    - 增加总线节点 compatible 校验（`esp32s3-spi/i2c/i2s/uart`），防呆；
    - i2s_drv 不再读麦克风/功放引脚（设备解耦），din/dout 由调用方填充。
-4. **设备模块**（st7789/w25q128/cst816s/aht30/lora/audio_module）
+4. **设备模块**（st7789/w25q128/cst816s/ath30/lora/audio_module）
    - 统一模式：`dtree_find_by_compatible(自己的compatible)` → `dtree_get_parent()`
      → 总线驱动 load/init → 设备属性从自己的节点读取；
    - 各模块以宏声明自己服务的 compatible（如 `ST7789_DT_COMPAT "st7789-lcd"`）；

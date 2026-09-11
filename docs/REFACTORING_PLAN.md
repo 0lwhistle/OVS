@@ -54,10 +54,10 @@
 
 ### 1.2 "写完未接线"的模块（盘活对象，不是重写对象）
 
-`st7789`、`cst816s`、`aht30`、`lora`、`audio_module`、`holder` 共约 4600 行代码**已编译进固件但运行时无人调用**（main.c 未初始化）。它们的共同特点：
+`st7789`、`cst816s`、`ath30`、`lora`、`audio_module`、`holder` 共约 4600 行代码**已编译进固件但运行时无人调用**（main.c 未初始化）。它们的共同特点：
 
 - 设备树绑定（find_by_compatible → 总线驱动）已完成，模式统一；
-- 驱动层质量参差：aht30 完整（含 CRC8），st7789/cst816s 可用但**签名与 LVGL 不兼容**，lora **协议层为零**，audio_module 是骨架；
+- 驱动层质量参差：ath30 完整（含 CRC8），st7789/cst816s 可用但**签名与 LVGL 不兼容**，lora **协议层为零**，audio_module 是骨架；
 - 缺的是：main.c 接线 + 上层消费者（LVGL/音频管线/对讲业务）。
 
 **结论：这批模块是"半成品资产"，重构方式是补齐+接线，而非删除重写。**
@@ -150,7 +150,7 @@
 | Web 文件传输 | 无（OTA 流式通道可复用） | 文件管理 API + 前端页 | web 扩展（十） |
 | Web 闹钟设置 / 远程播放语音 / 远程播放音视频 | 无 | API + 与本地服务联动 | time_srv、audio_srv、media_player |
 | 蓝牙配网 | net_provision 接口已预留（web provider 已接） | BLE provider | wifi_prov_mgr（九） |
-| 温湿度显示（附带） | aht30 驱动完整未接线 | 一行 init + UI 挂件 | — |
+| 温湿度显示（附带） | ath30 驱动完整未接线 | 一行 init + UI 挂件 | — |
 
 **依赖拓扑结论**：几乎所有差距收敛到五个新基建——**LVGL 运行时、音频管线服务、LoRa 协议栈、时间服务、电源管理**。这五个基建 + 核心层加固构成下文设计主体。
 
@@ -171,7 +171,7 @@
 │  net_mgr 网络 │ ota 升级 │ web 上位机(HTTP/WS/文件管理)               │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 设备模块层 (modules，单设备策略)                                       │
-│  st7789 显示 │ cst816s 触摸 │ w25q128 存储 │ aht30 传感 │ lora 无线   │
+│  st7789 显示 │ cst816s 触摸 │ w25q128 存储 │ ath30 传感 │ lora 无线   │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 核心服务层 (core)                                                      │
 │  event_bus(修复) │ tasker(重构) │ logger(esp_log封装) │ ovs_vfs(加锁) │
@@ -210,9 +210,9 @@
 | `intercom` 会话任务 | lora_proto | 6KB | 4 | Any | PTT 会话状态机 |
 | idle/tasker/timer | IDF | — | 0/1 | — | 系统任务 |
 
-> 原则：周期轮询任务（aht30 1s、cst816s 现为 20ms 轮询）中，**触摸改中断驱动**（6.3），aht30 等慢传感器留在 tasker。
+> 原则：周期轮询任务（ath30 1s、cst816s 现为 20ms 轮询）中，**触摸改中断驱动**（6.3），ath30 等慢传感器留在 tasker。
 
-> **v1.1 分工终版裁决**：自建任务仅限上表（lvgl / audio_in / audio_out / codec / jpeg / touch / lora_rx，web 既有）；**无自有任务、纯事件驱动**：net_mgr、power_srv（event_bus+esp_timer）、lora_proto 会话状态机、intercom 业务逻辑、ble_prov（NimBLE 栈自带任务）；**进 tasker**：aht30 轮询、time_srv 闹钟比对、heartbeat 采样、lora 信标广播触发；20ms 级背光渐变步进用 esp_timer 不进 tasker。口诀：**持续循环或硬实时→自建任务；间歇秒级短活→tasker；纯事件响应→event_bus 订阅+esp_timer**。
+> **v1.1 分工终版裁决**：自建任务仅限上表（lvgl / audio_in / audio_out / codec / jpeg / touch / lora_rx，web 既有）；**无自有任务、纯事件驱动**：net_mgr、power_srv（event_bus+esp_timer）、lora_proto 会话状态机、intercom 业务逻辑、ble_prov（NimBLE 栈自带任务）；**进 tasker**：ath30 轮询、time_srv 闹钟比对、heartbeat 采样、lora 信标广播触发；20ms 级背光渐变步进用 esp_timer 不进 tasker。口诀：**持续循环或硬实时→自建任务；间歇秒级短活→tasker；纯事件响应→event_bus 订阅+esp_timer**。
 
 ### 4.3 事件驱动模型
 
@@ -224,7 +224,7 @@
 |--------|--------|--------|------|
 | WIFI_*（现有 8 个） | net_mgr | bridge_wifi（UI 状态栏）、web（WS 推送）、time_srv（GOT_IP→SNTP） | 网络状态全端同步 |
 | TOUCH_* | cst816s 中断任务 | （改走 LVGL indev，事件仅保留手势 GESTURE） | 手势唤醒/快捷操作 |
-| SENSOR_DATA | aht30 | bridge_sensor → UI 挂件、web /api/status | 温湿度 |
+| SENSOR_DATA | ath30 | bridge_sensor → UI 挂件、web /api/status | 温湿度 |
 | LORA_* / INTERCOM_* | lora_proto | intercom presenter（UI）、web（WS） | 对讲呼入/留言 |
 | AUDIO_* | audio_srv | UI 播放器页、web | 录放状态 |
 | MEDIA_* | media_player | UI 播放器页 | 进度/完成 |
@@ -250,7 +250,7 @@ holder_init()
 │             → web（dep: net_mgr+ota, optional——失败仅失去远程管理）
 ├─ [批3 人机] st7789（dep: dtree, optional——失败仍可 Web 管理）
 │             → cst816s（dep: dtree, optional）
-│             → aht30（dep: dtree, optional）
+│             → ath30（dep: dtree, optional）
 │             → audio_srv（dep: dtree, optional）
 ├─ [批4 服务] time_srv（dep: net_mgr, optional）
 │             → power_srv（dep: st7789, optional）
@@ -273,7 +273,7 @@ components/
 ├── core/          event_bus / tasker / logger / ovs_vfs（重构，无新增目录）
 ├── drivers/       spi_drv / i2c_drv / i2s_drv / uart_drv / wifi（删 gpio、led）
 ├── modules/
-│   ├── st7789/ cst816s/ w25q128/ internal_flash/ aht30/ net_mgr/ ota/ web/ heartbeat/（既有）
+│   ├── st7789/ cst816s/ w25q128/ internal_flash/ ath30/ net_mgr/ ota/ web/ heartbeat/（既有）
 │   ├── audio_srv/      新：音频管线服务（七）
 │   ├── media_player/   新：图片/视频/MJPEG 播放服务（6.5）
 │   ├── time_srv/       新：SNTP 时钟/闹钟/定时器（十一）
@@ -326,7 +326,7 @@ tests/             新：event_bus/tasker 测试迁移地（C8）
    - priority 维度废弃，仅 level 有效；
 4. 顺带修 `worker_init()` 失败路径泄漏。
 
-同时统一依赖：aht30/cst816s/lora/w25q128/audio_module 的 CMake `REQUIRES` 从 `tasker` 改为 `tasker_api`，`include/tasker.h` 副本删除（C2/C6）。
+同时统一依赖：ath30/cst816s/lora/w25q128/audio_module 的 CMake `REQUIRES` 从 `tasker` 改为 `tasker_api`，`include/tasker.h` 副本删除（C2/C6）。
 
 ### 5.3 logger：保留 printf 实现（v1.1 改判，用户裁定）
 
@@ -728,7 +728,7 @@ API：`time_srv_init / get_now(struct tm*) / is_synced() / alarm_add/del/list/en
 app_main: NVS → SPIFFS(设备树回退源) → holder_init → holder_init_all
   批0 logger/event_bus/tasker/dtree ──► 批1 w25q128→ovs_vfs(/font /audio /media /config)
   ──► 批2 net_mgr(STA) → ota(15s确认定时器) → web(路由表+WS)
-  ──► 批3 st7789→cst816s(中断)→aht30→audio_srv
+  ──► 批3 st7789→cst816s(中断)→ath30→audio_srv
   ──► 批4 time_srv→power_srv→lora_proto(模块配置SF切换)
   ──► 批5 lvgl_app(字体加载→nav_init→home页)→intercom
 UI 开机页显示 holder 各模块状态 → 2s 后转 home
@@ -912,7 +912,7 @@ littlefs  0x9E0000 0x100000    (8.75MB → 1MB, /config)
 0. **i18n 多语言框架（v1.1 新增，页面开工前置）**：`_("键")` 宏（`i18n_tr` 实现）、/config/langs/*.json（cJSON→哈希驻 PSRAM）、缺失回退链（当前语言→默认语言→键名+LOGW）、切语言=nav 重建、配套 scripts/i18n_check.py 键集校验、切语言联动 lv_font_load 字体；
 1. navigator/presenter/bridge 骨架实码化（6.4；三横页 tileview/bridge_time/home 页骨架已落地，补 nav_push/nav_pop 页面栈与 on_create/on_show/on_hide/on_destroy 生命周期）；
 2. tileview 三主页 + settings 栈导航 + 滑动动画；
-3. home 页（时钟/温湿度挂件——aht30 此阶段接线/网络状态栏）；
+3. home 页（时钟/温湿度挂件——ath30 此阶段接线/网络状态栏）；
 4. settings：WiFi 扫描连接页（复用 net_mgr）、亮度、关于；
 5. time_srv + clock 页（闹钟/定时器完整闭环，含响铃弹窗）。
    **验收**：完整人机交互循环——滑动切页、连 WiFi、设闹钟次日触发亮屏响铃。
@@ -965,7 +965,7 @@ B 线（Web）：fs API + FileManager.vue + alarm API/页 + 远程播放 API/Med
 |------|-----|
 | **删除文件/目录** | include/（整目录解散：logger.h tasker.h ota.h web.h heartbeat.h event_bus.h dtree.h.bak lvgl.h）；api/eventbus_api/；thirdparty/littlefs-2.11.3/；drivers/gpio/；drivers/led/；五个 *_module.c 空壳；全部 *.bak/backup；scripts/sign_firmware.py；vue HelloWorld.vue；lora_config_t 之外 cst816s_touch_cb_t 死类型 |
 | **移动** | include/dtree.h → components/dtbs/；event_bus/tasker 测试 → tests/ 组件（OVS_ENABLE_TESTS） |
-| **修复接线** | heartbeat_init（main/app_init）；w25q128 DMA 缓冲；aht30/cst816s/st7789 init（holder 批3） |
+| **修复接线** | heartbeat_init（main/app_init）；w25q128 DMA 缓冲；ath30/cst816s/st7789 init（holder 批3） |
 | **重写/补齐** | lv_conf.h（v8→v9）；lvgl_app.c；audio_module→audio_srv；lora 配置模式+lora_proto；lvgl stub 删除后真库引入 |
 | **配置变更** | 分区表重排；sdkconfig（BT/NimBLE、PM、QIO、80M PSRAM、release 基线）；main/idf_component.yml（lvgl/esp_jpeg） |
 | **文档重写** | hardware_notes_for_software.md 引脚表（以 dtree 为源）；lora_protocol.md v2（8.3/8.5）；development_roadmap.md 标注由本文档取代；ARCHITECTURE.md tasker/holder 章随代码同步 |
@@ -1024,7 +1024,7 @@ MODULE_ID_PROV   0x0010: EVENT_PROV_STARTED / PROV_CLIENT_CONNECTED / PROV_DONE 
 | 8 | 新增 `core/mem_pool`（记账分配/定长块池/大缓冲助手；业务代码禁裸 malloc，LVGL 后期挂自定义分配器） | 新增设计 |
 | 9 | 新增 `modules/i18n`（`_("键")` 宏 + /config/langs JSON + 回退链 + 切语言重建导航）；前置 lv_fs 后端 | 新增设计 |
 | 10 | 4.2 线程/tasker 分工**终版裁决**（口诀：持续循环/硬实时→任务；间歇秒级→tasker；纯事件→订阅+esp_timer） | 裁定 |
-| 11 | **modules/lora、modules/aht30 驱动由用户本人开发**；上层只依赖公共头，接口以驱动需求规格约定，两线互不阻塞 | 边界约定 |
+| 11 | **modules/lora、modules/ath30 驱动由用户本人开发**；上层只依赖公共头，接口以驱动需求规格约定，两线互不阻塞 | 边界约定 |
 | 12 | Phase 0 拆分 0a（纯删除）/0b（分区重排独立交付）；st7789 点屏提前为独立小里程碑；Phase 2 收缩为 2-3 会话 | 排序 |
 | 13 | B5/14.5 flash 紧迫度降级（实测 1.54MB/余 41%），分区重排仍尽早（0b）执行 | 实测修订 |
 

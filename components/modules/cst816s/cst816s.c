@@ -277,7 +277,7 @@ cst816s_err_t cst816s_init(void) {
         return CST816S_ERR_I2C;
     }
 
-    /* 初始化I2C驱动 (如果AHT30已经初始化，会复用同一个I2C总线) */
+    /* 初始化I2C驱动 (如果ath30已经初始化，会复用同一个I2C总线) */
     if (!s_i2c_handle) {
         ret = i2c_drv_init(&i2c_config, &s_i2c_handle);
         if (ret != I2C_DRV_OK) {
