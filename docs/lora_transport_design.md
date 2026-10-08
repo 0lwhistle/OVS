@@ -1,6 +1,7 @@
 # LoRa 传输服务层（lora_tp）设计方案
 
-> 状态：设计定稿，待实现（实现提示词见 §9）
+> 状态：已实现（2026-09-10 [HUB] 批次③；lora_tp 最终落在
+> `components/modules/lora/` 下，公共API与本文件 §2 一致，实现提示词见 §9）
 > 上游文档：`docs/lora_protocol.md`（链路层帧格式/ARQ/语音仲裁，本文引用不重复）
 > 下游依赖：`components/modules/lora`（现有驱动：UART 收发 + AUX 流控 + AT 配置层）
 > 本文只定义**分层边界与公共 API**，实现细节以协议文档 v2 为准。
@@ -238,37 +239,3 @@ ack_timeout 公式见协议文档 §8。）
    dtree 配置 + tests/ovs_tests 回环用例。
 
 ---
-
-## 9. 实现提示词（后续会话直接投喂）
-
-```
-任务：按设计文档实现 OVS 的 LoRa 传输服务层组件 lora_tp。
-
-必读（按序）：
-1. .agents/skills/esp32s3-smart-assistant/SKILL.md（项目规范、七步流程、日志要求）
-2. docs/lora_transport_design.md（本次实现的设计依据，API 以其 §2 为准）
-3. docs/lora_protocol.md（链路层帧格式 §2/§3、ARQ §5、仲裁 §6.3、档位 §8）
-4. components/modules/lora/lora.h（下层驱动现有 API；lora.c 可参考但不修改
-   其对外行为）
-5. docs/development_log.md 顶部两条（当前未提交上下文）
-
-实现要求：
-- 新组件 components/modules/lora_tp/（lora_tp.h/.c/CMakeLists.txt），根
-  CMakeLists 注册，src/app/main.c 按 holder/app_init 模式接入（optional 模块，
-  lora 驱动缺席时降级不注册）；
-- API 与语义严格按 docs/lora_transport_design.md §2/§3，不得增删公共接口；
-- 可移植性硬约束：lora_tp.h 不含 esp/FreeRTOS 头；依赖经 lora_tp_deps_t
-  注入；内存走 deps 注入的池接口；定时由 tasker 周期任务驱动，组件内不建
-  FreeRTOS 任务；错误处理 goto cleanup；日志用 logger.h（TAG="[LORA_TP]"）；
-- 设备树配置按设计 §5 增补 ovs.dtb.json 的 lora.lora_tp 节点并用 DTREE_*
-  读取，缺省值兜底（树中无节点也能工作）；
-- event_bus_types.h 新增 EVENT_LORA_TP_* 四事件；
-- 测试：tests/ovs_tests 新增 mock 驱动回环套件，覆盖设计 §7 验收的 6 个
-  场景（成功/丢帧重传/断点续传/CRC错误/广播限制/大消息sink路径），
-  PC 门禁必须全绿；板端先只保证 idf.py build 通过（真机联调另起任务）；
-- 明确不做：语音流编码、业务命令层（聊天/指令协议属应用层）、AT 配置层
-  重写（另列任务）；LEVEL 档位数值用手册核实前的占位值并注释标记；
-
-完成后：运行 PC 测试与 idf.py build，按 SKILL.md 规范在
-docs/development_log.md 顶部追加条目（含验收结果与待核实项）。
-```

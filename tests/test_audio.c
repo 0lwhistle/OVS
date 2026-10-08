@@ -2,7 +2,7 @@
  * @file test_audio.c
  * @brief 音频 T2 升级 PC 门禁测试（mock i2s + mock dtree）
  *
- * 覆盖 idle_modules_plan §2.4 第 1 条全部场景：
+ * 覆盖规划场景：
  *   A1 异步播放→完成回调+drain 语义；A2 音量 0/50/100 饱和缩放；
  *   A3 播放中 abort（stop）→ABORTED+丢弃；A4 队列依次播放+事件序列；
  *   A5 文件播放/缺文件 IO 错误；A6 音量 get/set + 进度事件节流存在性。

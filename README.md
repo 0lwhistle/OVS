@@ -18,12 +18,17 @@ ovs/
 ├── thirdparty/              # 第三方库
 │   ├── cJSON/               #   - JSON 解析库
 │   ├── mongoose/            #   - Web 服务器库
-│   └── sha256/              #   - SHA256（OTA 校验）
+│   ├── sha256/              #   - SHA256（OTA 校验）
+│   └── lvgl_lib/            #   - LVGL 9.5 图形库
 ├── docs/                    # 项目文档
-├── include/                 # 公共头文件
 ├── main/                    # main 组件垫片（应用代码在 src/app/）
 ├── scripts/                 # 工具脚本
-├── src/app/                 # 应用代码
+├── sim/                     # PC 模拟器（LVGL UI 无板调试）
+├── src/                     # 源代码
+│   ├── app/                 #   应用代码
+│   └── lvgl/                #   LVGL UI（六层架构）
+├── tests/                   # PC 门禁单元测试（ovs_tests）
+├── assets/                  # i18n 语言包等资源
 └── web/                     # Web 前端
 ```
 
@@ -86,10 +91,13 @@ DTREE_INT("buses.spi2", "sclk_pin", &sclk);
 
 | 脚本 | 说明 |
 |------|------|
+| `scripts/env.sh` | 一次性环境初始化（source 后 idf 命令与脚本免路径） |
 | `scripts/mybuild.sh` | 完整构建（Vue 前端 + 固件 + 串口烧录） |
 | `scripts/mybuild.sh --no-flash` | 只构建不烧录 |
 | `scripts/burn.sh` | 烧录固件 |
+| `scripts/monitor.sh` | 串口监控 |
 | `scripts/ota_push.sh` | OTA 远程推送（免串口日常迭代） |
+| `scripts/ovs_release [--ota IP]` | 只构建 / 构建后 OTA 推送 |
 
 ## 主要功能
 

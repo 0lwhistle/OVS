@@ -2,7 +2,7 @@
  * @file audio_player.h
  * @brief 音频播放服务（播放器策略层，≈userspace player）
  *
- * 职责（idle_modules_plan §2.2）：播放队列（设备树 queue_depth，深度≥3）、
+ * 职责：播放队列（设备树 queue_depth，深度≥3）、
  * 文件播放（ovs_vfs 挂载路径，裸 PCM 头）、audio_decoder_t 解码挂点
  * （v1 注册 passthrough，未来 codec2 即插）、音量 NVS 持久化。
  * 对外只暴露 EVENT_AUDIO_PLAY_* 事件（I8 契约），调用方不感知内部队列。

@@ -1,6 +1,6 @@
 /**
  * @file app_init.c
- * @brief 应用初始化注册表实现（holder 依赖拓扑编排，REFACTORING_PLAN 4.4）
+ * @brief 应用初始化注册表实现（holder 依赖拓扑编排）
  *
  * 批次与依赖（required 仅核心+存储，其余 optional 失败降级）:
  *   [批0] event_bus → tasker → dtree                (required)

@@ -2,7 +2,7 @@
  * @file web_api_sysinfo.c
  * @brief [WEB] 只读信息路由：传感器快照 / 网络信息 / 时间 / i18n 语言包
  *
- * 契约 I5（docs/three_tasks_plan.md §3）：
+ * 契约 I5：
  *   GET /api/sensor      {"temp_c":26.5,"humi_p":48.2,"age_ms":1234,"valid":true}
  *   GET /api/net/info    {"mode":"sta","ssid":...,"ip":...,"netmask":...,
  *                         "gw":...,"mac":...,"rssi":-52,"switching":false}

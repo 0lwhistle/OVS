@@ -2,7 +2,7 @@
  * i18n：与板端 LVGL 共用同一翻译源（设备端 /i18n/<lang>.json）。
  * 加载顺序：fetch 设备语言包（单一事实来源）→ 内置包（打包进固件，
  * 设备无语言包/开发环境兜底）→ en-US 回退 → 键名原文。
- * schema 契约见 docs/three_tasks_plan.md §3 I1：
+ * schema 契约：
  *   {"lang":"zh-CN","ver":1,"strings":{"HOME_TEMP":"温度",...}}
  */
 import { reactive, shallowRef, computed } from 'vue'

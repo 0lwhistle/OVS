@@ -55,7 +55,6 @@ ovs/
 - [项目结构](../../../docs/PROJECT_STRUCTURE.md)
 - [架构设计](../../../docs/ARCHITECTURE.md)
 - [接线图](hardware/wiring_diagram.md)
-- [开发日志](logs/development_log.md)
 
 ## 许可证
 

@@ -2,7 +2,7 @@
  * @file audio_module.h
  * @brief 音频模块接口（PCM 设备抽象层）
  *
- * 职责（idle_modules_plan §2.2 分层）：≈ALSA pcm core——异步写（环形缓冲
+ * 职责：≈ALSA pcm core——异步写（环形缓冲
  * + tasker 喂数）、软件音量缩放（int16 饱和）、SD 引脚硬静音、drain/abort、
  * 播放完成回调。播放策略（队列/文件/解码/事件）在 audio_player 层。
  *

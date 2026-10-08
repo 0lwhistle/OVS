@@ -119,9 +119,11 @@ Event Bus 是系统的核心通信枢纽，采用**发布-订阅模式**实现�
 #define MODULE_ID_SENSOR    0x0003
 #define MODULE_ID_TOUCH     0x0004
 #define MODULE_ID_LORA      0x0005
+#define MODULE_ID_UI        0x0006
 #define MODULE_ID_AUDIO     0x0007
 #define MODULE_ID_STORAGE   0x0008
 #define MODULE_ID_DISPLAY   0x0009
+#define MODULE_ID_WEB       0x000A
 
 // 示例
 EVENT_SENSOR_TEMP_HUMIDITY = (MODULE_ID_SENSOR << 16) | 0x0001
@@ -322,7 +324,7 @@ tasker_cancel_by_name("task_name");
             "lcd_display": {
                 "compatible": "st7789-lcd",
                 "cs_pin": 48, "dc_pin": 47, "rst_pin": 21, "bl_pin": 38,
-                "width": 240, "height": 280, "spi_freq_mhz": 40
+                "width": 320, "height": 240, "rotation": 1, "spi_freq_mhz": 40
             },
             "flash": {
                 "compatible": "w25q128-flash",
@@ -338,7 +340,7 @@ tasker_cancel_by_name("task_name");
             }
         }
     },
-    "leds":  { "status": { "compatible": "gpio-led", "pin": 4 } },
+    "leds":  { "status": { "compatible": "gpio-led", "pin": 48 } },
     "vfs":   { "mounts": [ ... ] }
 }
 ```
@@ -774,19 +776,25 @@ ovs/
 │   └── CMakeLists.txt           #   仅注册 src/app 的源文件）
 │
 ├── components/                  # 组件目录
+│   ├── api/                     # 公共API垫片
+│   │   └── tasker_api/          #   tasker.h 公共API（内核在 core/tasker）
 │   ├── core/                    # 核心服务层
 │   │   ├── event_bus/           #   事件总线
 │   │   │   ├── event_bus.h      #     公共API
 │   │   │   ├── event_bus_types.h#     事件类型定义
 │   │   │   ├── event_bus.c      #     实现
 │   │   │   └── README.md        #     使用文档
-│   │   ├── tasker/              #   任务调度器
+│   │   ├── tasker/              #   任务调度器内核
 │   │   │   ├── task_manager.h   #     核心数据结构
-│   │   │   ├── tasker.h         #     公共API
-│   │   │   └── tasker.c         #     实现
-│   │   └── logger/              #   日志系统
-│   │       ├── logger.h         #     日志宏定义
-│   │       └── logger.c         #     实现
+│   │   │   └── task_worker.h    #     工作线程
+│   │   ├── logger/              #   日志系统
+│   │   │   ├── logger.h         #     日志宏定义
+│   │   │   └── logger.c         #     实现
+│   │   ├── mem_pool/            #   内存池（mem.h，malloc 同签名 + 记账）
+│   │   ├── ovs_vfs/             #   VFS 虚拟文件系统
+│   │   ├── i18n/                #   多语言
+│   │   ├── sensor_cache/        #   传感器数据缓存
+│   │   └── time_svc/            #   时间服务
 │   │
 │   ├── drivers/                 # 硬件驱动层
 │   │   ├── spi_drv/             #   SPI驱动
@@ -794,27 +802,33 @@ ovs/
 │   │   ├── i2s_drv/             #   I2S驱动
 │   │   ├── i2c_drv/             #   I2C驱动
 │   │   ├── gpio/                #   GPIO驱动
-│   │   ├── led/                 #   LED驱动
 │   │   └── wifi/                #   WiFi驱动
 │   │
 │   ├── modules/                 # 功能模块层
 │   │   ├── st7789/              #   ST7789显示屏
 │   │   ├── w25q128/             #   W25Q128 Flash
-│   │   ├── lora/                #   LoRa无线模块
+│   │   ├── lora/                #   LoRa无线模块（含 lora_tp 可靠传输层）
 │   │   ├── audio_module/        #   音频模块
+│   │   ├── audio_player/        #   音频播放器
 │   │   ├── ath30/               #   ath30传感器
+│   │   ├── gt967/               #   GT967触摸屏（当前设备树绑定）
 │   │   ├── cst816s/             #   CST816S触摸屏
+│   │   ├── sysinfo/             #   系统/网络信息查询
 │   │   ├── heartbeat/           #   心跳监控
+│   │   ├── net_mgr/             #   网络管理器
+│   │   ├── holder/              #   模块注册表
+│   │   ├── internal_flash/      #   内部 Flash VFS 适配
+│   │   ├── led/                 #   LED驱动
 │   │   ├── ota/                 #   OTA升级
 │   │   └── web/                 #   Web服务器
 │   │
 │   └── dtbs/                    # 设备树层
-│       ├── dtree.c              #   解析器实现（公共API在 include/dtree.h）
+│       ├── dtree.{h,c}          #   解析器（公共API头 dtree.h 同目录）
 │       └── config/
 │           └── ovs.dtb.json     #   单棵树设备树配置（SPIFFS镜像源）
 │
 ├── src/                         # 源代码
-│   ├── app/                     # 应用代码（main.c 入口、vfs_stress 测试）
+│   ├── app/                     # 应用代码（main.c 入口、app_init.c 注册表）
 │   └── lvgl/                    # LVGL UI模块
 │       ├── lvgl_app.c/h        #   应用入口
 │       ├── lv_conf.h            #   LVGL配置
@@ -827,11 +841,8 @@ ovs/
 │       ├── fonts/               #   字体
 │       └── assets/              #   资源文件
 │
-├── include/                     # 公共头文件
-│   ├── dtree.h                  #   设备树API
-│   ├── event_bus.h              #   事件总线API
-│   ├── tasker.h                 #   任务调度器API
-│   └── logger.h                 #   日志API
+├── sim/                         # PC 模拟器（SDL2，复用 src/lvgl 六层源码）
+├── tests/                       # PC 门禁单元测试（ovs_tests）
 │
 ├── scripts/                     # 构建/发布脚本（source env.sh 后可免路径调用）
 │   ├── env.sh                   #   开发环境初始化（IDF + scripts/ 入 PATH）
@@ -844,8 +855,6 @@ ovs/
 └── docs/                        # 文档
     ├── ARCHITECTURE.md          #   架构文档（本文档）
     ├── PROJECT_STRUCTURE.md     #   目录结构权威说明
-    ├── development_log.md       #   开发日志（新条目追加在顶部）
-    ├── handoff_summary.md       #   跨会话交接摘要
     └── peripheral_drivers_summary.md
 ```
 
@@ -1678,7 +1687,6 @@ vfs_auto_mount_from_dtree();
   清理 `vfs.c` 中重复的 `esp_vfs_unregister()` 和无效的
   dummy-VFS 循环；
 - 验证：`idf.py build` 通过。
-- 详细日志见 `docs/development_log.md` 2026-09-08。
 
 #### 3. W25Q128 产品级可靠性（详见开发日志）
 - 新增 `READY`/`FAULT` 健康状态机；

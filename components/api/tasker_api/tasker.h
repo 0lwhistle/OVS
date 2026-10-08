@@ -4,7 +4,7 @@
 #include "task_manager.h"
 
 /* ============================================================
- * tasker 使用约定（REFACTORING_PLAN 5.2，违反将导致调度失真）:
+ * tasker 使用约定（违反将导致调度失真）:
  * 1. 长任务（>1s）禁止进 tasker，须自建 FreeRTOS 任务/pthread
  *    （audio/web/lvgl 均如此）；tasker 仅收 <=500ms 短周期任务；
  * 2. priority 维度（first/middle/last）已废弃，仅 level

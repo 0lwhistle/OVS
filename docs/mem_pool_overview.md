@@ -3,7 +3,6 @@
 | 项目 | 内容 |
 |------|------|
 | 位置 | `components/core/mem_pool`（核心基础件，ESP32-S3 / PC 双平台） |
-| 设计文档 | `docs/superpowers/specs/2026-09-09-mem-pool-design.md` |
 | 配套 | 全仓库迁移（17 文件 117 处）、`tests/test_mem.c` 41 用例、9 模块记账桶 |
 | 状态 | 已上线：全业务代码接入，真机零 magic 异常运行 |
 

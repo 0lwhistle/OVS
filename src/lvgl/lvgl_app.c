@@ -2,9 +2,9 @@
  * @file lvgl_app.c
  * @brief LVGL 应用层入口实现（ESP 端）
  *
- * 骨架阶段（REFACTORING_PLAN Phase 3 前置）：
+ * 骨架阶段：
  *   lv_init → display_port（null 输出冒烟）→ navigator → 演示页 → lvgl_task。
- * 真实 st7789/cst816s 对接见 REFACTORING_PLAN 6.2/6.3。
+ * 真实 st7789/cst816s 对接见 docs/ARCHITECTURE.md。
  */
 
 #include "lvgl_app.h"
@@ -26,7 +26,7 @@ static const char* TAG = "[LVGL]";
 static SemaphoreHandle_t s_mutex = NULL;
 static uint8_t s_brightness = 200;
 
-#define LVGL_TASK_STACK_SIZE  (16 * 1024)   /* REFACTORING_PLAN 双核任务表 */
+#define LVGL_TASK_STACK_SIZE  (16 * 1024)   
 #define LVGL_TASK_PRIORITY    4
 #define LVGL_TASK_CORE        1
 #define LVGL_TICK_MS          5
@@ -137,7 +137,7 @@ void lvgl_app_unlock(void) {
 }
 
 void lvgl_app_set_brightness(uint8_t brightness) {
-    /* TODO: power_srv 接入 LEDC 背光 PWM（REFACTORING_PLAN 12.3） */
+    /* TODO: power_srv 接入 LEDC 背光 PWM */
     s_brightness = brightness;
 }
 

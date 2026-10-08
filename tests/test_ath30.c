@@ -2,7 +2,7 @@
  * @file test_ath30.c
  * @brief [HUB] 批次② ath30 收口 PC 门禁（mock i2c 三场景 + 停采/恢复）
  *
- * 场景（idle_modules_plan §3.2-4）：
+ * 场景：
  *   A1 正常读取：事件载荷断言（float→milli 由消费层换算，这里验证
  *      事件发布与数值正确性）；
  *   A2 无应答超时：连续失败 3 次→停采+仅发布一次 ERROR；

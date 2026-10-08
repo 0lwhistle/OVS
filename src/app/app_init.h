@@ -1,6 +1,6 @@
 /**
  * @file app_init.h
- * @brief 应用初始化注册表（REFACTORING_PLAN 4.4：holder 依赖拓扑编排）
+ * @brief 应用初始化注册表（holder 依赖拓扑编排）
  *
  * main.c 只保留 NVS/SPIFFS 手工初始化，其余模块统一在此注册并由
  * holder 按 依赖分批 初始化（required 失败即停，optional 失败降级）。

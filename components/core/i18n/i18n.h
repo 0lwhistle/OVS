@@ -4,7 +4,7 @@
  *
  * 翻译源：SPIFFS /i18n/<lang>.json（schema {"lang","ver","strings"}，
  * 与 Web 上位机 GET /i18n/<lang>.json 同一份文件，单一事实来源；
- * 种子见 assets/i18n/，键清单见 three_tasks_plan.md 附录 A）。
+ * 种子见 assets/i18n/）。
  *
  * 线程契约：非线程安全——i18n_init/i18n_set_language/i18n_get 约定在
  * UI 任务上下文调用（板端唯一消费者是 LVGL bridge；Web 直接读文件，

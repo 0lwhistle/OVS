@@ -85,7 +85,8 @@ holder_print_status();
 
 ## 集成示例
 参考 `holder.h` 的接口注释与 `docs/ARCHITECTURE.md` 的 Holder 章节
-（注意：当前 `src/app/main.c` 尚未接入 holder，接入后各外设模块统一走注册表初始化）。
+（`src/app/app_init.c` 已通过 holder 统一编排全部模块初始化，
+状态见开机串口表与 `GET /api/modules`）。
 
 ## 注意事项
 1. 必须在使用任何模块功能前初始化holder

@@ -101,7 +101,6 @@ Web 管理、OTA 升级、远程监控。
 | 硬件说明 | `docs/hardware_notes_for_software.md` | 软件视角的硬件说明 |
 | LoRa协议 | `docs/lora_protocol.md` | LoRa 通讯协议 |
 | Web接口 | `docs/web_interface.md` | Web 上位机设计 |
-| 开发日志 | `logs/development_log.md` | 开发进度记录 |
 
 ---
 

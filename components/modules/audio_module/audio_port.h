@@ -5,7 +5,7 @@
  * ESP:   FreeRTOS 互斥信号量 / xTask / vTaskDelay / esp_timer / gpio_ctrl
  * PC:    pthread 互斥量 / pthread 线程 / nanosleep / clock_gettime（ovs_tests 门禁用）
  *
- * 可移植性原则（SKILL.md §7）：平台相关代码集中在移植层，业务 .c 不出现
+ * 可移植性原则：平台相关代码集中在移植层，业务 .c 不出现
  * 条件编译；SD 静音脚经 gpio 驱动控制，PC 侧为空操作。
  */
 

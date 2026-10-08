@@ -1,6 +1,6 @@
 /**
  * @file event_bus.c
- * @brief 事件总线核心实现（REFACTORING_PLAN 5.1 四修复版）
+ * @brief 事件总线核心实现
  *
  * 架构设计:
  * - 事件队列: port 层有界队列（ESP=FreeRTOS 队列 / PC=pthread 环形队列）

@@ -45,7 +45,7 @@ bash scripts/sim_build.sh && xvfb-run -a ./build-sim/ovs_ui_smoke   # PC 模拟+
 | event_bus/tasker/dtree | ✓ | 核心，失败停机 |
 | w25q128/ovs_vfs | ✓ | 存储，失败停机 |
 | net_stack | ✓(可选编译) | 网络+Web+OTA（OVS_ENABLE_NET） |
-| st7789/cst816s/ath30 | 否 | 无屏/无触摸/无传感器降级 |
+| st7789/gt967/ath30 | 否 | 无屏/无触摸/无传感器降级 |
 | heartbeat | 否 | 心跳缺席 |
 | **i18n** | 否 | 读 /spiffs/i18n/zh-CN.json；缺席→`_(label)` 回退键原文 |
 | **time_svc** | 否 | 时间服务；缺席→bridge 时间恒 0 灰显 |
@@ -206,7 +206,7 @@ time_svc、sysinfo mock 查询：`./build-tests/ovs_tests` 308 项全绿
 
 ### 3.2 LVGL 界面（导航/主题/语言/主页数据卡/待机）
 
-**前置条件**：§1 烧录完成；屏幕（ST7789）与触摸（CST816S）正常；
+**前置条件**：§1 烧录完成；屏幕（ST7789）与触摸（GT967）正常；
 PC 侧已用 ovs_sim（mock 数据）预验界面（本节为板端复核）。
 
 **3.2.1 三页导航**
@@ -214,7 +214,7 @@ PC 侧已用 ovs_sim（mock 数据）预验界面（本节为板端复核）。
 - 预期表现：主页（顶栏/大字时钟/温湿度卡/网络卡）↔ 设置页（音量/
   语言/设备名/待机四行）正常切换无残影卡死；启动日志
   `[NAV]: page registered: home/settings`。
-- 排查点：白屏查 st7789/背光；触摸无效查 cst816s（app_init 状态表）；
+- 排查点：白屏查 st7789/背光；触摸无效查 gt967（app_init 状态表）；
   切页无响应查 `[NAV]` 日志。
 
 **3.2.2 蓝白主题**
@@ -249,10 +249,10 @@ PC 侧已用 ovs_sim（mock 数据）预验界面（本节为板端复核）。
 
 ## 4. [WEB] Web 界面测试项
 
-> 前置说明：`/api/sensor`、`/api/net/info`、`/api/time` 当前为 mock
-> JSON（[HUB] 批次①未交付，`WEB_API_USE_HUB=0`），故 Dashboard 数值
-> 不随真实传感器变化；`/api/wifi/*`、`/api/net/mode`、`/api/ota/*`
-> 为真实接口，全部可实测。
+> 前置说明：`/api/sensor`、`/api/net/info`、`/api/time` 已切真实数据
+> （[HUB] 批次①已交付，`WEB_API_USE_HUB=1`，来源 sensor_cache/sysinfo/
+> time_svc，ath30 无数据时 `valid:false` 属预期）；`/api/wifi/*`、
+> `/api/net/mode`、`/api/ota/*` 为真实接口，全部可实测。
 
 ### 4.1 访问与入口
 
@@ -271,7 +271,7 @@ on port 80`；PC/手机与设备同网段（STA 模式）或已连接设备热�
 **curl 端点自测**（替代浏览器逐页点检）：
 ```bash
 curl http://<ip>/api/hello          # {"message":"Hello from ESP32!","status":"ok"}
-curl http://<ip>/api/sensor         # {"temp_c":26.5,"humi_p":48.2,"age_ms":1234,"valid":true}（mock）
+curl http://<ip>/api/sensor         # {"temp_c":26.5,"humi_p":48.2,"age_ms":1234,"valid":true}（真实缓存值，无传感器时 valid:false）
 curl http://<ip>/api/net/info       # {"mode":"ap","ssid":...,"ip":...,"netmask":...,"gw":...,"mac":...,"rssi":...,"switching":false}
 curl http://<ip>/api/time           # {"synced":false,"text":"HH:MM"}
 curl http://<ip>/i18n/zh-CN.json    # 设备端已部署语言包时返回原文；未部署 404（前端自动回退内置包）
@@ -287,10 +287,10 @@ curl http://<ip>/api/ota/status     # {"state":"idle",...,"version":"vX.Y.Z",...
 ### 4.2 Dashboard / Network / Settings
 
 **Dashboard**：
-1. 仪表盘页确认时间章、温湿度卡（mock 值 26.5°C/48.2%RH，30s 自动
+1. 仪表盘页确认时间章、温湿度卡（真实缓存值，30s 自动
    刷新，点刷新图标立即更新）、网络信息卡（模式徽标 + SSID/IP/
    掩码/网关/MAC/RSSI 各行）；
-2. [HUB] ath30 交付后复测：温湿度应与串口 `[ath30]` 日志一致。
+2. ath30 在位时温湿度应与串口 `[ath30]` 日志一致。
 
 **Network（配网实测）**：
 1. "连接状态"卡对照 `/api/wifi/status`（串口 net_mgr 状态一致）；

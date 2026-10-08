@@ -1,7 +1,6 @@
 # OVS OTA 使用指南
 
 > 适用：开发期固件迭代（改代码 → 编译 → WiFi 推送 → 设备自动重启运行新固件）
-> 详细设计见 `docs/development_log_net_ota.md`
 
 ---
 
@@ -203,6 +202,7 @@ curl http://ovs.local/api/ota/status
 | GET  | `/api/ota/status` | 升级状态/进度/SHA256/槽位/版本（含 dtb_slot） |
 | POST | `/api/dtb/firmware` | 独立设备树更新（body=dtb.bin，重启生效） |
 | GET  | `/api/status` | 设备总览（uptime/rssi/free_heap/net） |
+| GET  | `/api/modules` | 模块注册表状态（name/state/required/init 耗时/error） |
 | GET  | `/api/wifi/scan` | 扫描附近 AP |
 | GET  | `/api/wifi/status` | 网络状态 + 热切换进度 |
 | POST | `/api/wifi/connect` | 提交 WiFi 凭据（`{"ssid":"x","password":"y"}`） |

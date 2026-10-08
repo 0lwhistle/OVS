@@ -3,7 +3,7 @@
  * @brief 显示移植层（ESP 端）：LVGL display ↔ 硬件屏幕的边界
  *
  * 骨架阶段：创建 LVGL display（320×240，尺寸读设备树）+ null 输出 flush，
- * 仅让渲染管线在真机上跑通；真实 st7789 对接见 REFACTORING_PLAN 6.2。
+ * 仅让渲染管线在真机上跑通；真实 st7789 对接见 docs/ARCHITECTURE.md。
  */
 
 #ifndef DISPLAY_PORT_H

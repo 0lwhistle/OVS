@@ -44,7 +44,7 @@ static const char* TAG = "[ath30]";
 #define ath30_STATUS_BUSY       0x80
 #define ath30_STATUS_CALIBRATED 0x08
 
-/** 默认采集间隔 (ms)：设备树 sample_interval_ms 缺省兜底（idle_modules_plan §3） */
+/** 默认采集间隔 (ms)：设备树 sample_interval_ms 缺省兜底 */
 #define ath30_DEFAULT_INTERVAL_MS   30000
 
 /** 连续失败 N 次后停采并发布 ERROR 事件 */
@@ -354,7 +354,7 @@ ath30_err_t ath30_init(void) {
     LOGI(TAG, "ath30 initialized successfully");
     LOGI(TAG, "  I2C address: 0x%02X", ath30_I2C_ADDR);
 
-    /* 收口（idle_modules_plan §3）：init 即启动周期采集（tasker Middle），
+    /* 收口：init 即启动周期采集（tasker Middle），
      * 间隔=设备树 sample_interval_ms → 兼容旧键 measure_interval_ms →
      * 缺省 30000+LOGW */
     int32_t interval = 0;

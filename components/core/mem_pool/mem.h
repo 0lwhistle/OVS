@@ -2,7 +2,7 @@
  * @file mem.h
  * @brief mem_pool 核心内存管理 —— 堆替换层（drop-in）+ 显式能力层
  *
- * 设计文档: docs/superpowers/specs/2026-09-09-mem-pool-design.md
+ * 设计文档: docs/mem_pool_overview.md
  *
  * 用法（迁移存量 malloc/free 代码）:
  *   1. .c 文本替换: malloc(→mem_malloc(  calloc(→mem_calloc(

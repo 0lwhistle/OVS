@@ -10,22 +10,24 @@
 ovs/
 ├── components/                  # ESP-IDF 组件目录
 │   ├── api/                     # 公共 API 层
-│   │   ├── tasker_api/          #   - 任务调度器 API
-│   │   └── eventbus_api/        #   - 事件总线 API
+│   │   └── tasker_api/          #   - 任务调度器 API（内核在 core/tasker）
 │   ├── core/                    # 核心基础设施
 │   │   ├── tasker/              #   - 任务调度器实现
-│   │   ├── event_bus/           #   - 事件总线实现
+│   │   ├── event_bus/           #   - 事件总线实现（公共API在组件内 event_bus.h）
 │   │   ├── logger/              #   - 日志系统
-│   │   └── ovs_vfs/             #   - VFS 虚拟文件系统
+│   │   ├── mem_pool/            #   - 内存池（malloc 同签名 + 记账 + 块池）
+│   │   ├── ovs_vfs/             #   - VFS 虚拟文件系统
+│   │   ├── i18n/                #   - 多语言（/i18n/<lang>.json 热切换）
+│   │   ├── sensor_cache/        #   - 传感器数据缓存
+│   │   └── time_svc/            #   - 时间服务
 │   ├── dtbs/                    # 设备树模块
-│   │   ├── dtree.c              #   - 设备树解析器（公共API在 include/dtree.h）
+│   │   ├── dtree.{h,c}          #   - 设备树解析器（公共API在 dtree.h）
 │   │   ├── dtb_ab.{h,c}         #   - 设备树 A/B 裸分区管理（OTA 用）
 │   │   └── config/
 │   │       └── ovs.dtb.json     #     - 单棵树设备树配置（SPIFFS 镜像源）
 │   ├── esp_littlefs/            # LittleFS 组件（vendor 目录）
 │   ├── drivers/                 # 硬件驱动
 │   │   ├── wifi/                #   - WiFi 驱动（esp_wifi 纯封装，无策略）
-│   │   ├── led/                 #   - LED 驱动
 │   │   ├── gpio/                #   - GPIO 驱动
 │   │   ├── spi_drv/             #   - SPI 驱动（共享计数，多设备共总线）
 │   │   ├── i2c_drv/             #   - I2C 驱动
@@ -40,36 +42,32 @@ ovs/
 │       ├── st7789/              #   - ST7789 显示屏
 │       ├── w25q128/             #   - W25Q128 NOR Flash（含 VFS 适配）
 │       ├── internal_flash/      #   - 内部 Flash VFS 适配
-│       ├── lora/                #   - LoRa 无线模块
+│       ├── lora/                #   - LoRa 无线模块（链路驱动 + lora_tp 可靠传输层）
 │       ├── audio_module/        #   - 音频模块
+│       ├── audio_player/        #   - 音频播放器（播放队列、OPCM、音量 NVS）
 │       ├── ath30/               #   - ath30 温湿度传感器
-│       └── cst816s/             #   - CST816S 触摸屏
+│       ├── gt967/               #   - GT967 触摸屏（GT9xx 系，当前设备树绑定）
+│       ├── cst816s/             #   - CST816S 触摸屏
+│       ├── sysinfo/             #   - 系统/网络信息只读查询
+│       └── led/                 #   - LED 指示灯
 ├── thirdparty/                  # 第三方库目录
 │   ├── cJSON/                   #   - cJSON JSON 解析库
 │   ├── mongoose/                #   - Mongoose Web 服务器
-│   └── sha256/                  #   - SHA256（OTA 校验）
+│   ├── sha256/                  #   - SHA256（OTA 校验）
+│   └── lvgl_lib/                #   - LVGL 9.5 图形库（UI）
 ├── docs/                        # 项目文档
 │   ├── ARCHITECTURE.md          #   - 架构文档
 │   ├── PROJECT_STRUCTURE.md     #   - 项目结构 (本文件)
 │   ├── ota_guide.md             #   - OTA 使用指南
-│   ├── development_log.md       #   - 开发日志（新条目在顶部）
-│   ├── development_log_net_ota.md # - 网络/OTA 开发日志
-│   ├── handoff_summary.md       #   - 跨会话交接摘要
 │   ├── peripheral_drivers_summary.md # - 外设驱动总结
 │   └── diy-smart-assistant/     #   - DIY 教程文档集
-├── include/                     # 公共头文件
-│   ├── tasker.h                 #   - 任务调度器 API
-│   ├── dtree.h                  #   - 设备树 API
-│   ├── event_bus.h              #   - 事件总线 API
-│   ├── logger.h                 #   - 日志 API
-│   ├── heartbeat.h              #   - 心跳 API
-│   ├── ota.h                    #   - OTA API
-│   ├── web.h                    #   - Web API
-│   └── lvgl.h                   #   - LVGL 头（临时占位）
 ├── main/                        # main 组件垫片（IDF 要求组件名为 main；
 │                                #   仅 CMakeLists 注册 src/app 的源文件）
 ├── scripts/                     # 工具脚本
-├── src/app/                     # 应用代码（main.c、vfs_stress 等）
+├── sim/                         # PC 模拟器（SDL2，复用 src/lvgl 六层源码）
+├── src/app/                     # 应用代码（main.c、app_init.c 注册表）
+├── src/lvgl/                    # LVGL UI 模块（六层架构，见下文）
+├── tests/                       # PC 门禁单元测试（ovs_tests）
 ├── web/                         # Web 前端源码
 ├── CMakeLists.txt               # 项目 CMake 配置
 ├── sdkconfig                    # ESP-IDF 配置
@@ -132,7 +130,7 @@ DTREE_INT("buses.i2s0", "bclk_pin", &bclk);
 ```
 main（垫片，注册 src/app 源文件）
 ├── tasker_api ──→ tasker ──→ freertos, esp_timer, esp_driver_gptimer, logger
-├── eventbus_api ──→ event_bus ──→ freertos, esp_timer, logger
+├── event_bus ──→ freertos, esp_timer, logger
 ├── dtbs ──→ logger, spiffs, cJSON (thirdparty), sha256 (thirdparty), nvs_flash, esp_partition, app_update
 ├── wifi ──→ esp_wifi, esp_event, esp_netif, esp_timer, freertos, logger
 ├── led ──→ esp_driver_gpio, gpio
@@ -148,6 +146,7 @@ main（垫片，注册 src/app 源文件）
 |---|------|------|
 | cJSON | `thirdparty/cJSON/` | JSON 解析，用于设备树 |
 | mongoose | `thirdparty/mongoose/` | Web 服务器 |
+| LVGL | `thirdparty/lvgl_lib/` | UI 图形库（9.5，`lvgl-9.5.0/` 为源码包） |
 
 ## 命名规范
 
@@ -197,19 +196,22 @@ dtree_get_int(dev, "data_pin", &pin);
 
 ### 目录结构
 
-> 当前状态：六层目录为脚手架（各层目录暂只含 README 与设计约定），
-> 仅 `lvgl_app.c` 参与编译（见 `src/lvgl/CMakeLists.txt` 的 TODO 列表）。
+> 当前状态：六层已实装（2026-09-10，[GUI] 批次②）——themes 蓝白主题、
+> ui 控件（card/list_item/round_btn/status_dot/value_label）、navigator
+> （注册表+页面栈+待机接口）、pages（home/settings/standby）、bridge、
+> presenters 均参与编译（源文件清单见 `src/lvgl/CMakeLists.txt`）；
+> ESP 与 PC 模拟器（`sim/`）共享全部六层源码。
 
 ```
 src/lvgl/
-├── lvgl_app.c/h         # LVGL 应用层主文件（当前唯一参与编译的源文件）
+├── lvgl_app.c/h         # LVGL 应用入口
 ├── lv_conf.h            # LVGL 配置文件
-├── ui/                  # 控件层（脚手架）
-├── widgets/             # 窗口层（脚手架）
-├── pages/               # 页面层（脚手架）
-├── navigator/           # 导航层（脚手架）
-├── presenters/          # 展示器层（脚手架）
-├── bridge/              # 桥接层（脚手架）
+├── ui/                  # 控件层
+├── widgets/             # 窗口层
+├── pages/               # 页面层
+├── navigator/           # 导航层
+├── presenters/          # 展示器层
+├── bridge/              # 桥接层
 ├── fonts/               # 字体文件
 └── assets/              # 资源文件 (图片、图标)
 ```

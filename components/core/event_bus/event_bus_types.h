@@ -234,7 +234,7 @@ typedef enum {
     /** 音频模块就绪事件 */
     EVENT_AUDIO_READY               = (MODULE_ID_AUDIO << 16) | 0x0006,
 
-    /* [GUI] 2026-09-10 追加（I8 audio_player 契约，追加前已在 task_board 声明）：
+    /* [GUI] audio_player 契约：
      * 0x0001/0x0002 为 audio_module 内部无载荷状态事件，跨模块请用以下
      * 带 token 载荷的播放服务事件（audio_player 发布） */
     /** 播放服务：某项开始播放（载荷 event_audio_play_t） */

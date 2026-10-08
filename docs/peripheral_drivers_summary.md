@@ -16,7 +16,7 @@
 ### 1. ST7789 显示屏模块
 - **路径**: `components/modules/st7789/`
 - **接口**: SPI
-- **功能**: 240x280 TFT显示屏初始化、绘图、刷新
+- **功能**: 320x240 TFT显示屏初始化、绘图、刷新（设备树 `rotation: 1` 横屏）
 - **事件**: `EVENT_DISPLAY_READY`
 
 ### 2. W25Q128 Flash存储模块
@@ -59,6 +59,15 @@
 - **接口**: I2C
 - **功能**: 触摸检测、手势识别
 - **事件**: `EVENT_TOUCH_PRESS`, `EVENT_TOUCH_RELEASE`, `EVENT_TOUCH_SWIPE`
+
+### 7. GT967 触摸屏（当前设备树绑定）
+- **路径**: `components/modules/gt967/`
+- **接口**: I2C
+- **功能**: GT9xx 系 5 点电容触控检测（16 位寄存器、复位选址，tasker 周期轮询）
+- **事件**: `EVENT_TOUCH_PRESS`
+- **说明**: 2026-09-10 真机 bring-up 起设备树 `touchscreen` 节点为
+  `gt967-touch`（地址 0x5D），app_init 注册的是 gt967 模块；
+  cst816s 模块保留在仓库但未注册
 
 ---
 
@@ -191,24 +200,24 @@ dtree 通过 `dtree_get_host_id(bus_node, "spi"/"i2c"/"i2s"/"uart", &id)`
 
 ## 初始化流程
 
-当前 `src/app/main.c` 中 app_main 的初始化顺序（2026-09-08 起）：
+当前 `src/app/main.c` + `src/app/app_init.c` 的启动顺序（holder 依赖拓扑编排）：
 
 ```c
 void app_main(void) {
     // 1. NVS初始化
-    // 2. 核心服务: event_bus_init + tasker_init
-    // 3. SPIFFS 挂载（出厂设备树回退源）
-    // 4. 设备树初始化 (dtree_init，A/B 槽优先、SPIFFS 回退)
-    // 5. 网络栈 (net_stack_init 保护区，OVS_ENABLE_NET=1 时):
-    //    ota_init → net_mgr_init → web 服务
-    // 6. W25Q128 初始化 (w25q128_init)
-    // 7. VFS 挂载 (vfs_stack_start，按设备树 vfs.mounts)
-    // 8. 可选: OVS_RUN_APP_TESTS=1 时跑 VFS 测试与压力测试
+    // 2. SPIFFS 挂载（出厂设备树回退源 + 运行时存储）
+    // 3. app_init_set_net_stack(net_stack_init)  ← OTA 线保护区注入
+    // 4. app_init_setup(): 向 holder 注册全部模块（required/optional + 依赖）
+    // 5. app_init_run(): holder 按依赖分批初始化——
+    //    [required] event_bus→tasker→dtree→w25q128→ovs_vfs→net_stack(ota→net→web)
+    //    [optional] st7789/gt967/ath30/heartbeat/i18n/time_svc/sensor_cache/
+    //               sysinfo/lora_tp/lvgl_app 等失败自动降级
+    // 6. mem_stat_print() 打印内存账单
 }
 ```
 
-> 注：ST7789/LoRa/音频/ath30/CST816S/心跳等外设模块的 init 当前未接入
-> app_main（模块已具备，待后续开发线经 holder 或直接接入）。
+> 注：外设模块（ST7789/GT967/ath30/心跳/LVGL 等）均已通过 holder 注册表接入
+> （`src/app/app_init.c`），状态见开机串口表与 `GET /api/modules`。
 
 ---
 

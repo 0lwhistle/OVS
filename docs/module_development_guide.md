@@ -3,8 +3,8 @@
 | 项目 | 内容 |
 |------|------|
 | 版本 | v1.0（2026-09-09） |
-| 阅读对象 | 在本工程上开发新模块/新驱动的开发者（人/AI 均适用） |
-| 配套文档 | `docs/REFACTORING_PLAN.md`（架构总纲）、`docs/ARCHITECTURE.md`（现行架构）、`docs/development_log.md` |
+| 阅读对象 | 在本工程上开发新模块/新驱动的开发者 |
+| 配套文档 | `docs/ARCHITECTURE.md`（现行架构） |
 
 > 本文档所有 API 签名均与当前代码逐一核对（2026-09-09 基线）。改动核心模块后请同步修订本文。
 
@@ -484,7 +484,6 @@ i2s_drv_write(s_i2s, pcm_chunk, chunk_bytes, &written);
 3. `curl http://<ip>/api/modules` 能看到你的模块
 4. 发了事件的：串口能看到订阅者收到；接了 WS 的：网页能看到推送
 5. `mem_stat_print()` 里你的桶数字合理（无泄漏：启动后 cur 稳定）
-6. `docs/development_log.md` 顶部记录（目标/完成/问题/下一步/变更）
 
 ---
 

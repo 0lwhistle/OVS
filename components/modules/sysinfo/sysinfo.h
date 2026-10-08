@@ -3,7 +3,7 @@
  * @brief 契约 I3 系统/网络信息只读查询（[HUB] 数据中枢）
  *
  * 只读封装：net_mgr_get_status + esp_netif（ip/netmask/gw/mac）。
- * 不修改 net_mgr / wifi 驱动任何文件（three_tasks_plan §2）。
+ * 不修改 net_mgr / wifi 驱动任何文件。
  * net_mode_t 沿用 net_mgr.h 的枚举（NET_MODE_OFF/STA/AP），本头文件
  * 经 #include 引出，WEB /api/net/info 与 LVGL bridge 消费同一套值。
  */

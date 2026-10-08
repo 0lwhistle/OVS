@@ -38,3 +38,23 @@ build-tests/
 
 # Large source archives (extracted dirs are tracked, zips are not)
 thirdparty/*.zip
+
+# 本地协作文档（不入库）
+.agents/
+docs/superpowers/
+docs/development_log.md
+docs/development_log_net_ota.md
+docs/handoff_summary.md
+docs/task_board.md
+docs/three_tasks_plan.md
+docs/idle_modules_plan.md
+docs/REFACTORING_PLAN.md
+docs/diy-smart-assistant/logs/
+docs/diy-smart-assistant/docs/ai_behavior_rules.md
+docs/diy-smart-assistant/docs/skill_hardware_requirements.md
+docs/diy-smart-assistant/docs/development_roadmap.md
+docs/diy-smart-assistant/docs/pcb_design_tutorial.md
+*.bak2
+*.bak3
+ESPRX.md
+ESPTX.md

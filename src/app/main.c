@@ -2,11 +2,11 @@
  * @file main.c
  * @brief OVS 应用入口：系统启动编排
  *
- * 启动顺序（REFACTORING_PLAN 4.4，holder 依赖拓扑编排）：
+ * 启动顺序（holder 依赖拓扑编排）：
  *   NVS → SPIFFS（手工，holder 的前置依赖）
  *   → app_init.c 注册表: event_bus→tasker→dtree→w25q128→ovs_vfs→net_stack(保护区)
  *     →st7789/cst816s/ath30→heartbeat→lvgl_app（optional 失败降级）
- * 详见 src/app/app_init.c 与 docs/development_log.md 2026-09-09 Phase 1 条目
+ * 详见 src/app/app_init.c
  *
  * VFS 功能测试/压力测试收在 OVS_RUN_APP_TESTS 编译开关内（默认关），
  * 需要时置 1 烧录运行；测试代码主体在 vfs_stress 模块。
@@ -54,7 +54,7 @@ static const char* TAG = "[MAIN]";
  *   2. app_main 中的 net_stack_init() 调用勿移除（见下方标记）；
  *   3. 本块的头文件包含、函数实现请勿改动；
  *      调整网络行为请改 net_mgr/web/ota 各自模块，不要在 main.c 里写逻辑；
- *   4. 改动本块前先与 OTA 线确认（docs/development_log_net_ota.md）。
+ *   4. 改动本块前先与 OTA 线确认。
  * ========================================================================== */
 #define OVS_ENABLE_NET  1
 
@@ -282,7 +282,7 @@ void sys_boot(void){
      * 注册表（src/app/app_init.c "net_stack" 模块：required、依赖 dtree 就绪，
      * OVS_ENABLE_NET 总开关语义不变；ota→net_mgr→web 内部顺序保留在
      * net_stack_init 内部未动）。能力等价性已在 Phase 1 OTA 验证。
-     * 记录: docs/development_log.md 2026-09-09 Phase 1 条目 */
+     * */
     app_init_set_net_stack(net_stack_init);
 #endif
 

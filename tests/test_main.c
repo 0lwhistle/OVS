@@ -3,7 +3,6 @@
  * @brief ovs_tests 统一入口：core 层 PC 宿主测试
  *
  * mem_pool / event_bus / tasker —— 全部为可 PC 运行的纯逻辑模块
- * （REFACTORING_PLAN Phase 0a C8 + 5.1/5.2 门禁）
  */
 
 #include <stdio.h>

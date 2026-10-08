@@ -1,6 +1,6 @@
 /**
  * @file test_tasker.c
- * @brief tasker PC 宿主测试（REFACTORING_PLAN 5.2 验收门禁）
+ * @brief tasker PC 宿主测试
  *
  * 覆盖: 调度生命周期 / 一次性与周期任务执行 / 超时升级标记 / 取消 /
  * 队列状态。任务在 pthread 真实调度下运行（超时定时器为 PC no-op，

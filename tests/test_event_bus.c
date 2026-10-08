@@ -1,6 +1,6 @@
 /**
  * @file test_event_bus.c
- * @brief event_bus PC 宿主测试（REFACTORING_PLAN 5.1 验收门禁）
+ * @brief event_bus PC 宿主测试
  *
  * 覆盖: 订阅生命周期 / 发布与数据完整性 / 锁外回调（handler 内再订阅不
  * 死锁）/ 事件池耗尽兜底 / 名表全覆盖 / 统计与错误计数。
