@@ -4,6 +4,26 @@
 
 OVS 是一个基于 ESP32-S3 的智能助手项目，采用组件化架构，模仿 Linux 设备树模型管理硬件配置，支持 WiFi、OTA、Web 管理等功能。
 
+## 硬件平台
+
+- ESP32-S3-WROOM-1 模组 + 自研 4 层底板（嘉立创制版）；
+- Type-C + 锂电池双电源：IP2312 充电 + TPS63802 升降压，插电电池仅充电、拔出无缝转电池供电；
+- 单板集成 7 类外设：2.8 寸电容触摸屏、LoRa、GPS、陀螺仪、温湿度、麦克风与 32MB SPI Flash；
+- 引脚分配见 [docs/diy-smart-assistant/esp32s3r16n8引脚示意图.jpeg](docs/diy-smart-assistant/esp32s3r16n8引脚示意图.jpeg)。
+
+## 系统架构
+
+六层架构，详见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)：
+
+```mermaid
+graph TD
+    APP["应用层: Web上位机 / LVGL9 UI / OTA / 心跳监控"] --> MOD["模块层: 显示 / 触摸 / LoRa / GPS / IMU / 温湿度 / 麦克风 / Flash"]
+    MOD --> CORE["核心服务: Event Bus发布订阅 / Tasker三级优先级调度 / 内存池(魔数头检测) / Logger"]
+    CORE --> DRV["驱动层: SPI / I2C / I2S / UART / GPIO 总线引用计数复用"]
+    DRV --> DT["设备树层: JSON硬件配置 / compatible绑定 / A/B分区OTA"]
+    DT --> HW["硬件: ESP32-S3 + 自研4层底板"]
+```
+
 ## 项目结构
 
 ```
